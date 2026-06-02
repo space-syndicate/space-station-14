@@ -366,6 +366,7 @@ ui-options-accessability-header-content = Содержимое
 ui-options-enable-color-name = Цветные имена персонажей
 ui-options-colorblind-friendly = Режим для дальтоников
 ui-options-reduced-motion = Снижение интенсивности визуальных эффектов
+ui-options-disable-ai-static = Отключить статический эффект помех на ИИ.
 ui-options-screen-shake-intensity = Интенсивность дрожания экрана
 
 ui-options-chat-window-opacity = Непрозрачность окна чата
@@ -413,3 +414,6 @@ ui-options-admin-enable-overlay-starting-job = Show starting job
 ui-options-admin-overlay-merge-distance = Stack merge distance
 ui-options-admin-overlay-ghost-fade-distance = Ghost overlay fade range from mouse
 ui-options-admin-overlay-ghost-hide-distance = Ghost overlay hide range from mouse
+
+ui-options-admin-strip-overlay-title = Оверлей обыска
+ui-options-admin-strip-overlay-setting = Показывать админ-вид обыска по умолчанию
