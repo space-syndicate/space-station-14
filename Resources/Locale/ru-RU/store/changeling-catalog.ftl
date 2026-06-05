@@ -4,7 +4,7 @@ changeling-catalog-arm-blade-desc = Превратите свою руку в у
 changeling-catalog-flesh-clothing-name = Одежда из плоти
 changeling-catalog-flesh-clothing-desc = Поверхность вашего тела адаптируется, отражая одежду любого человека, в которого вы превращаетесь. Однако эти предметы одежды не функциональны и позволят легко раскрыть вас как генокрада, если кто-то попытается их снять. Можно переключать.
 
-changeling-catalog-voice-mimic-name = Мимикрия голоса
+changeling-catalog-voice-mimic-name = Подражание голоса
 changeling-catalog-voice-mimic-desc = Меняйте голосовые связки по своему желанию, чтобы имитировать существующих (и воображаемых) членов экипажа. Идеально подходит для заманивания добычи.
 
 changeling-catalog-biodegrade-name = Биоразложение

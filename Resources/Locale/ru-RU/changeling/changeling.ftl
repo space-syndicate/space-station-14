@@ -30,7 +30,7 @@ changeling-transform-bui-drop-identity-entity-popup = Мы избавились 
 changeling-transform-bui-drop-identity-cannot-drop = Мы не можем избавиться от текущей личности.
 
 # voice mimicry
-changeling-voice-mimic-window-title = Мимикрия голоса
+changeling-voice-mimic-window-title = Подражание голоса
 
 # flesh clothing
 changeling-flesh-clothing-removed-popop = {CAPITALIZE(THE($item))} распадается на мясистые куски!
