@@ -5,7 +5,7 @@ roles-antag-changeling-objective = Умный хищник, приобретаю
 # devour
 changeling-devour-attempt-failed-cannot-devour = Мы не можем поглотить это!
 changeling-devour-attempt-failed-already-devoured = Мы уже поглотили это тело!
-changeling-devour-attempt-failed-devoured-recently = Это тело слишком изуродовано, чтобы его можно было поглотить!
+changeling-devour-attempt-failed-devoured-recently = Это тело слишком изуродовано, его нельзя поглотить!
 changeling-devour-attempt-failed-not-dead = Это тело ещё живо! Мы не можем его поглотить!
 changeling-devour-attempt-failed-rotting = У этого трупа только гниющая биомасса.
 changeling-devour-attempt-failed-protected = Биомасса этой жертвы защищена бронёй!
