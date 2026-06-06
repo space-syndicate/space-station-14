@@ -21,6 +21,7 @@ public sealed partial class FTLTargetSetCommand : LocalizedEntityCommands
     [Dependency] private DockingSystem _dockSys = default!;
     [Dependency] private SharedTransformSystem _transformSys = default!;
     [Dependency] private SharedMapSystem _mapSys = default!;
+
     public override string Command => "ftltargetset";
 
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
