@@ -50144,7 +50144,6 @@ entities:
   - uid: 18879
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -5.5,-8.5
       parent: 18674
 - proto: CloningConsoleComputerCircuitboard
