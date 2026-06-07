@@ -13,6 +13,7 @@ cargo-console-menu-points-amount = ${ $amount }
 cargo-console-menu-shuttle-status-label = Статус шаттла:{ " " }
 cargo-console-menu-shuttle-status-away-text = Отбыл
 cargo-console-menu-order-capacity-label = Объём заказов:{ " " }
+cargo-console-menu-order-capacity-number = {$count}/{$capacity}
 cargo-console-menu-call-shuttle-button = Активировать телепад
 cargo-console-menu-permissions-button = Доступы
 cargo-console-menu-categories-label = Категории:{ " " }
@@ -53,7 +54,7 @@ cargo-console-fund-transfer-broadcast = [bold]{ $name } перевёл { $amount
 cargo-console-fund-transfer-user-unknown = Неизвестно
 
 cargo-console-paper-reason-default = Отсутствует
-cargo-console-paper-approver-default = Самостоятельно
+cargo-console-paper-approver-default = Неизвестный
 cargo-console-paper-print-name = Заказ #{ $orderNumber }
 cargo-console-paper-print-text = Заказ #{ $orderNumber }
     Товар: { $itemName }
