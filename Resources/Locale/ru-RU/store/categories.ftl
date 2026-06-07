@@ -26,4 +26,9 @@ store-caregory-spellbook-equipment = Волшебное снаряжение
 store-caregory-spellbook-events = Заклинания событий
 
 # Nukie Delivery
-store-category-nukie-delivery = Offers
+store-category-nukie-delivery = Предложения
+
+# Changeling
+store-category-combat = Боевые
+store-category-utility = Вспомогательные
+store-category-stealth = Скрытные

@@ -10,8 +10,8 @@ reagent-desc-buzzochloric-bees = Жидкие пчёлы. О боже, это Ж
 reagent-name-ground-bee = молотые пчёлы
 reagent-desc-ground-bee = Молотые пчёлы. Мерзость.
 
-reagent-name-saxoite = саксонит
-reagent-desc-saxoite = Отдаёт джазом.
+reagent-name-brass = латунь
+reagent-desc-brass = Пахнет часовым механизмом.
 
 reagent-name-licoxide = ликоксид
 reagent-desc-licoxide = Синтетическая аккумуляторная кислота. Выглядит... электризующе.
