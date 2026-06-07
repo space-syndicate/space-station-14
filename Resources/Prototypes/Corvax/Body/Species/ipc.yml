@@ -218,7 +218,6 @@
     interval: 30
     popUp: sleep-ipc
   - type: Butcherable
-    butcheringType: Spike
     spawned:
       - id: OrganIpcHead
         amount: 1
