@@ -9,6 +9,8 @@ namespace Content.Server.Chat.Systems;
 
 public sealed partial class ChatSystem
 {
+    public new readonly SoundSpecifier DefaultAnnouncementSound = new SoundPathSpecifier("/Audio/Corvax/Announcements/announce.ogg"); // Corvax-Announcements
+    public const string CentComAnnouncementSound = "/Audio/Corvax/Announcements/centcomm.ogg"; // Corvax-Announcements
     /// <inheritdoc />
     public override void DispatchGlobalAnnouncement(
         string message,
@@ -24,6 +26,7 @@ public sealed partial class ChatSystem
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
+            if (sender == Loc.GetString("admin-announce-announcer-default")) announcementSound = new SoundPathSpecifier(CentComAnnouncementSound); // Corvax-Announcements: Support custom alert sound from admin panel
             _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
