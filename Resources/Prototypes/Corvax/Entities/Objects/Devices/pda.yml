@@ -6,6 +6,8 @@
   components:
   - type: Pda
     id: IAAIDCard
+    penSlot:
+      startingItem: PenLegal
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
