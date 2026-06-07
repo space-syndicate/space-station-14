@@ -6455,31 +6455,26 @@ entities:
   - uid: 842
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -9.5,-12.5
       parent: 1
   - uid: 843
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -8.5,-12.5
       parent: 1
   - uid: 844
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -7.5,-12.5
       parent: 1
   - uid: 845
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -6.5,-12.5
       parent: 1
   - uid: 846
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -5.5,-12.5
       parent: 1
 - proto: KitchenKnife
