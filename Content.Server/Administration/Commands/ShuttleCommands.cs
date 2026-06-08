@@ -31,6 +31,17 @@ namespace Content.Server.Administration.Commands
             else
                 _roundEndSystem.RequestRoundEnd(shell.Player?.AttachedEntity, checkCooldown: false);
         }
+
+        // Corvax-Start
+        public override CompletionResult GetCompletion(IConsoleShell shell, string[] args) 
+        {
+            return args.Length switch
+            {
+                2 => CompletionResult.FromHintOptions(["false", "true"], Loc.GetString("[bool]")),
+                _ => CompletionResult.Empty,
+            };
+        }
+        // Corvax-End
     }
 
     [AdminCommand(AdminFlags.Round)]
