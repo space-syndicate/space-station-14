@@ -159,6 +159,8 @@ food-sequence-cotton-burger-content-plushie-moth = пуши
 food-sequence-cotton-burger-content-plushie-vulp = вульп
 food-sequence-cotton-burger-content-plushie-ian = корги
 food-sequence-cotton-burger-content-among-pequeno = сас
+food-sequence-cotton-burger-content-plushie-sheep = пушисто
+food-sequence-cotton-burger-content-plushie-sheepspace = космопушисто
 
 # TACO
 

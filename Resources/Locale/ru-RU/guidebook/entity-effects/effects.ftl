@@ -543,3 +543,10 @@ entity-effect-guidebook-plant-mutate-chemicals =
         [1] Мутирует
         *[other] мутируют
     } растение, чтобы то производило { $name }
+
+
+entity-effect-guidebook-add-reagent-to-bloodstream =
+    { $chance ->
+        [1] Вводит
+        *[other] вводят
+    } {$quantity} {$reagent} напрямую в кровоток
