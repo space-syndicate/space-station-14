@@ -16,11 +16,11 @@ namespace Content.Server.Corvax.GameTicking.Rules;
 
 public sealed class EvacVoteRuleSystem : GameRuleSystem<EvacVoteRuleComponent>
 {
-    [Dependency] private readonly IVoteManager _voteManager = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private IVoteManager _voteManager = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private RoundEndSystem _roundEndSystem = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     public override void Initialize()
     {
