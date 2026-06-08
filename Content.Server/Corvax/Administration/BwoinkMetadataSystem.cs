@@ -9,12 +9,12 @@ using Robust.Shared.Player;
 
 namespace Content.Server.Corvax.Administration;
 
-public sealed class BwoinkMetadataSystem : EntitySystem
+public sealed partial class BwoinkMetadataSystem : EntitySystem
 {
-    [Dependency] private readonly IAdminManager _adminManager = default!;
-    [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly SharedRoleSystem _role = default!;
+    [Dependency] private IAdminManager _adminManager = default!;
+    [Dependency] private IServerPreferencesManager _preferencesManager = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private SharedRoleSystem _role = default!;
 
     private static readonly Regex AdminColorRegex = new(@"\[color=(red|purple)\]", RegexOptions.Compiled);
 
