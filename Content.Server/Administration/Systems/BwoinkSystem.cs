@@ -25,6 +25,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server.Corvax.Administration; // Corvax-Administration
 
 namespace Content.Server.Administration.Systems
 {
@@ -678,6 +679,11 @@ namespace Content.Server.Administration.Systems
 
             bwoinkText = $"{(message.AdminOnly ? Loc.GetString("bwoink-message-admin-only") : !message.PlaySound ? Loc.GetString("bwoink-message-silent") : "")} {bwoinkText}: {escapedText}";
 
+            // Corvax-Start-Administration
+            var transformEv = new TransformBwoinkTextEvent(bwoinkText, senderSession);
+            RaiseLocalEvent(ref transformEv);
+            bwoinkText = transformEv.Text;
+            // Corvax-End-Administration
             // If it's not an admin / admin chooses to keep the sound and message is not an admin only message, then play it.
             var playSound = (!senderAHelpAdmin || message.PlaySound) && !message.AdminOnly;
             var msg = new BwoinkTextMessage(message.UserId, senderSession.UserId, bwoinkText, playSound: playSound, adminOnly: message.AdminOnly);
