@@ -36,6 +36,6 @@ public partial class VoiceMaskSystem
     {
         if (!component.Active)
             return;
-        args.Event.VoiceId = component.VoiceId;
+        args.Args.VoiceId = component.VoiceId;
     }
 }

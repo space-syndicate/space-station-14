@@ -353,6 +353,7 @@ figurines-thief-5 = Хм, я не знал, что эта стена может 
 
 figurines-wizard-1 = EI NATH!!
 figurines-wizard-2 = ONI'SOMA!!
+figurines-wizard-3 = Skidaddle skadoodle!
 figurines-wizard-4 = Настоящие волшебники поддерживают права меньшинств.
 figurines-wizard-5 = Кто из вас БОТАНОВ готов попасть в шкафчик?
 figurines-wizard-6 = Я не волшебник! Я капитан! Мне поменяли разум!

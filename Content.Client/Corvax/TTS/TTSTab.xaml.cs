@@ -16,7 +16,7 @@ namespace Content.Client.Corvax.TTS;
 [GenerateTypedNameReferences]
 public sealed partial class TTSTab : Control
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     public event Action<string>? OnVoiceSelected;
     public event Action<string>? OnPreviewRequested;

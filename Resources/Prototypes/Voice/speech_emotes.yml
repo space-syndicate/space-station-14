@@ -144,6 +144,7 @@
     # Corvax-Localization-Start
     - свистит
     - свистнул
+    - свистнула
     # Corvax-Localization-End
 
 - type: emote
@@ -189,6 +190,8 @@
     - squishes
     # Corvax-Localization-Start
     - хлюпает
+    - хлюпнул
+    - хлюпнула
     # Corvax-Localization-End
 
 - type: emote
@@ -210,6 +213,8 @@
    - chittered
    # Corvax-Localization-Start
    - стрекочет
+   - застрекотал
+   - застрекотала
    # Corvax-Localization-End
 
 - type: emote
@@ -231,6 +236,8 @@
    - squeaked
    # Corvax-Localization-Start
    - пищит
+   - пискнул
+   - пискнула
    # Corvax-Localization-End
 
 - type: emote
@@ -250,8 +257,9 @@
    - click
    - clicks
    # Corvax-Localization-Start
-   - клац
    - клацает
+   - клацнул
+   - клацнула
    # Corvax-Localization-End
 
 # Vulpkanin
@@ -272,6 +280,11 @@
   - barks
   - barked
   - barking
+  # Corvax-Localization-Start
+  - лает
+  - залаял
+  - залаяла
+  # Corvax-Localization-End
 
 - type: emote
   id: Snarl
@@ -290,6 +303,10 @@
   - snarls
   - snarled
   - snarling
+  # Corvax-Localization-Start
+  - зарычал
+  - зарычала
+  # Corvax-Localization-End
 
 - type: emote
   id: Whine
@@ -308,6 +325,11 @@
   - whines
   - whined
   - whining
+  # Corvax-Localization-Start
+  - скулит
+  - заскулил
+  - заскулила
+  # Corvax-Localization-End
 
 - type: emote
   id: Howl
@@ -328,11 +350,9 @@
   - howled
 # Corvax-Localization-Start
   - воет
-  - воет.
-  - воет!
   - завывает
-  - завывает.
-  - завывает!
+  - завыл
+  - завыла
 # Corvax-Localization-End
 
 - type: emote
@@ -354,8 +374,6 @@
   - growling
   # Corvax-Localization-Start
   - рычит
-  - рычит.
-  - рычит!
   # Corvax-Localization-End
 
 # hand emotes
@@ -377,12 +395,9 @@
     - clapped
     # Corvax-Localization-Start
     - хлопает
-    - хлопнул
-    - хлопнула
     - хлопает в ладоши
-    - хлопнул в ладоши
-    - хлопнула в ладоши
     - апплодирует
+    - аплодирует
     # Corvax-Localization-End
 
 - type: emote
@@ -403,6 +418,14 @@
     - claps her hands together
     - claps his hands together
     - claps its hands together
+    # Corvax-Localization-Start
+    - хлопнул
+    - хлопнула
+    - делает хлопок
+    - делает одиночный хлопок
+    - хлопнул в ладоши
+    - хлопнула в ладоши
+    # Corvax-Localization-End
 
 - type: emote
   id: Snap
@@ -509,6 +532,14 @@
    - gasp
    - gasps
    - gasped
+   # Corvax-Localization-Start
+   - задыхается
+   - не может вдохнуть
+   - ахает
+   - охает
+   - хватает ртом воздух
+   - вдыхает
+   # Corvax-Localization-End
 
 - type: emote
   id: DefaultDeathgasp
@@ -520,6 +551,12 @@
   chatMessages: ["chat-emote-msg-deathgasp"]
   chatTriggers:
   - deathgasp
+  # Corvax-Localization-Start
+  - издаёт предсмертный хрип
+  - хрипит
+  - умирает
+  - умер
+  # Corvax-Localization-End
 
 - type: emote
   id: MonkeyDeathgasp
@@ -591,6 +628,8 @@
     - chirping
     # Corvax-Localization-Start
     - чирикает
+    - чирикнул
+    - чирикнула
     # Corvax-Localization-End
 
 - type: emote

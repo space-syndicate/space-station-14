@@ -3,14 +3,11 @@
   id: DrinkAlexanderGlass
   suffix: alexander
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: Alexander
-          Quantity: 30
-  #- type: Drink
+          Quantity: 60
   - type: Icon
     sprite: Corvax/Objects/Consumable/Drinks/alexander.rsi
     state: icon
@@ -20,14 +17,11 @@
   id: DrinkBadTouchGlass
   suffix: bad touch
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: BadTouch
-          Quantity: 30
-  #- type: Drink
+          Quantity: 60
   - type: Icon
     sprite: Corvax/Objects/Consumable/Drinks/badTouch.rsi
     state: icon
@@ -37,14 +31,11 @@
   id: DrinkBoyarskyGlass
   suffix: boyarsky
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: Boyarsky
-          Quantity: 30
-  #- type: Drink
+          Quantity: 60
   - type: Icon
     sprite: Corvax/Objects/Consumable/Drinks/boyarsky.rsi
     state: icon
@@ -54,14 +45,11 @@
   id: DrinkBrambleGlass
   suffix: bramble
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: Bramble
-          Quantity: 30
-  #- type: Drink
+          Quantity: 60
   - type: Icon
     sprite: Corvax/Objects/Consumable/Drinks/bramble.rsi
     state: icon
@@ -71,13 +59,12 @@
   id: DrinkKvassGlass
   suffix: kvass
   components:
-    - type: SolutionContainerManager
-      solutions:
-        drink:
-          maxVol: 30
+    - type: Solution
+      solution:
+          maxVol: 60
           reagents:
             - ReagentId: Kvass
-              Quantity: 30
+              Quantity: 60
     - type: Sprite
       sprite: Corvax/Objects/Consumable/Drinks/kvass.rsi
 
@@ -86,14 +73,11 @@
   id: DrinkMaiTaiGlass
   suffix: mai tai
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: MaiTai
-          Quantity: 30
-  #- type: Drink
+          Quantity: 60
   - type: Icon
     sprite: Corvax/Objects/Consumable/Drinks/maiTai.rsi
     state: icon
@@ -103,14 +87,11 @@
   id: DrinkNegroniGlass
   suffix: negroni
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: Negroni
-          Quantity: 30
-  #- type: Drink
+          Quantity: 60
   - type: Icon
     sprite: Corvax/Objects/Consumable/Drinks/negroni.rsi
     state: icon
@@ -120,14 +101,11 @@
   id: DrinkOldFashionedGlass
   suffix: old fashioned
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: OldFashioned
-          Quantity: 30
-  #- type: Drink
+          Quantity: 60
   - type: Icon
     sprite: Corvax/Objects/Consumable/Drinks/oldFashioned.rsi
     state: icon
@@ -137,14 +115,11 @@
   id: DrinkPalomaGlass
   suffix: paloma
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: Paloma
-          Quantity: 30
-  #- type: Drink
+          Quantity: 60
   - type: Icon
     sprite: Corvax/Objects/Consumable/Drinks/paloma.rsi
     state: icon
@@ -154,14 +129,11 @@
   id: DrinkYorshGlass
   suffix: yorsh
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: Yorsh
-          Quantity: 30
-  #- type: Drink
+          Quantity: 60
   - type: Icon
     sprite: Corvax/Objects/Consumable/Drinks/yorsh.rsi
     state: icon
