@@ -14,7 +14,7 @@ using System.Reflection;
 
 namespace Content.Server.Corvax.GameTicking.Rules;
 
-public sealed class EvacVoteRuleSystem : GameRuleSystem<EvacVoteRuleComponent>
+public partial class EvacVoteRuleSystem : GameRuleSystem<EvacVoteRuleComponent>
 {
     [Dependency] private IVoteManager _voteManager = default!;
     [Dependency] private ChatSystem _chat = default!;
