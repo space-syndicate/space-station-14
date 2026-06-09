@@ -25,7 +25,11 @@ public sealed partial class ChatUIController
 
         foreach (var line in lines)
         {
+            if (line.StartsWith('|'))
+                continue;
+
             var parts = line.Split("|", 2, StringSplitOptions.TrimEntries);
+
             if (!line.Contains('|'))
                 continue;
 

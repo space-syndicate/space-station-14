@@ -832,8 +832,10 @@ public sealed partial class ChatUIController : UIController
         // Corvax-Replacement-Filter-Start
         foreach (var replacement in _replacements)
         {
-            msg.WrappedMessage = new Regex(replacement.Keyword, RegexOptions.IgnoreCase).Replace(msg.WrappedMessage, replacement.Replacement);
-            msg.Message = new Regex(replacement.Keyword, RegexOptions.IgnoreCase).Replace(msg.Message, replacement.Replacement);
+            var pattern = $"(?i)({replacement.Keyword})(?-i)(?![^\\[]*\\])";
+
+            msg.WrappedMessage = Regex.Replace(msg.WrappedMessage, pattern, replacement.Replacement);
+            msg.Message = Regex.Replace(msg.Message, $"(?i)({replacement.Keyword})(?-i)", replacement.Replacement);
         }
         // Corvax-Replacement-Filter-End
 
