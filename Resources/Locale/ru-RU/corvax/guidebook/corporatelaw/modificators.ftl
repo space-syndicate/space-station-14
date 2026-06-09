@@ -73,10 +73,7 @@ guidebook-corporatelaw-mod-optional-synth-effect = Полное наказани
 guidebook-corporatelaw-mod-optional-synth-desc = Манипулирование законами синтетиков, что привело к нарушению корпоративного закона лицом или синтетиком.
 
 guidebook-corporatelaw-mod-optional-official-crime-effect = +10 минут к наказанию
-guidebook-corporatelaw-mod-optional-official-crime-desc = 
-    Нарушение корпоративного закона должностным лицом.
-
-    Модификатор не влияет на срок для статьи «Превышение должностных полномочий».
+guidebook-corporatelaw-mod-optional-official-crime-desc = Нарушение корпоративного закона должностным лицом.
 
 guidebook-corporatelaw-mod-optional-crime-against-official-effect = +10 минут к наказанию
 guidebook-corporatelaw-mod-optional-crime-against-official-desc =
@@ -91,7 +88,7 @@ guidebook-corporatelaw-mod-optional-confession-effect = минус 5 минут 
 guidebook-corporatelaw-mod-optional-confession-desc = Чистосердечное признание в совершении преступления. Наказания по статье и модификатор выдаются независимо от того, была ли информация истинной.
 
 guidebook-corporatelaw-mod-optional-plea-deal-effect = Зависит от условий сделки
-guidebook-corporatelaw-mod-optional-plea-deal-desc = Предоставление интересующей корпорацию информации, касающейся совершённого преступления, о вражеских технологиях или об их деятельности против корпорации. Смотритель или глава СБ могут снизить срок приговора на любое разумное число. Капитан или магистрат могут заменить высшую меру на перманентное заключение.
+guidebook-corporatelaw-mod-optional-plea-deal-desc = Предоставление интересующей службу безопасности информации, касающейся совершённого преступления. Смотритель или глава СБ могут снизить срок приговора на любое разумное число.
 
 guidebook-corporatelaw-mod-optional-recidivism-effect = +5 минут к наказанию за каждый случай рецидива
 guidebook-corporatelaw-mod-optional-recidivism-desc = Повторное нарушение статьи.
