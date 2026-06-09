@@ -121,7 +121,7 @@ chat-speech-verb-goat-1 = блеет
 chat-speech-verb-goat-2 = кряхтит
 chat-speech-verb-goat-3 = кричит
 
-chat-speech-verb-name-sheep = Офца
+chat-speech-verb-name-sheep = Овца
 chat-speech-verb-sheep-1 = блеет
 chat-speech-verb-sheep-2 = фыркает
 

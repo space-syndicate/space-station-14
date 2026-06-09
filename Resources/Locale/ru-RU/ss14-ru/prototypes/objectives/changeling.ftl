@@ -5,4 +5,4 @@ ent-ChangelingSurviveObjective = Выживите.
 ent-ChangelingEscapeIdentityObjective = { ent-BaseObjective }
     .desc = Мы должны скрыться, используя личность этой жертвы с её ID-картой.
 ent-ChangelingKillRandomPersonObjective = { ent-BaseObjective }
-    .desc = Эта личность наша добыча. Мы должны убедиться, что она останется мертвым на станции.
+    .desc = Данная личность наша добыча. Мы должны убедиться, что она останется мертвой на станции.
