@@ -3,7 +3,7 @@
 sheep-shearable-examine-markup = У неё очень пушистая шерсть. Используя инструмент с возможностью [color=yellow]{$toolQuality}[/color], вы могли бы состричь её.
 # Appears in the description box when the sheep has NO wool to shear.
 sheep-not-shearable-examine-markup = Её шерсть недавно состригли.
-я.
+
 space-sheep-shearable-examine-markup = У неё прекрасная [color=#3b86ec]космическая[/color] шерсть. Используя инструмент с возможностью [color=yellow]{$toolQuality}[/color], вы могли бы состричь её.
 space-sheep-not-shearable-examine-markup = Её [color=#3b86ec]космическую[/color] шерсть недавно состригли.
 

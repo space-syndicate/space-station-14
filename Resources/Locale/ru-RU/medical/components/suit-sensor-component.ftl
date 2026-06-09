@@ -1,5 +1,5 @@
 ## Modes
-s
+
 suit-sensor-mode-off = Выкл.
 suit-sensor-mode-binary = Бинарные
 suit-sensor-mode-vitals = Здоровье
