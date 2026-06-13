@@ -201,6 +201,7 @@
       - EncryptionKeySecurity
       - EncryptionKeyService
       - EncryptionKeyCommand
+      - EncryptionKeyLegal # Corvax Legal
 
 - type: entity
   parent: TelecomServer
@@ -261,6 +262,7 @@
     containers:
       key_slots:
       - EncryptionKeySecurity
+      - EncryptionKeyLegal # Corvax Legal
 
 - type: entity
   parent: TelecomServer
