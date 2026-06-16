@@ -30,6 +30,9 @@ roles-antag-nuclear-operative-objective = Find the nuke disk and blow up the sta
 roles-antag-subverted-silicon-name = Subverted silicon
 roles-antag-subverted-silicon-objective = Follow your new laws and do bad unto the station.
 
+roles-antag-malfunction-ai-name = Malfunction AI
+roles-antag-malfunction-ai-objective = Your code is corrupted. Take control of the station's systems and, if possible, arm the Doomsday device.
+
 roles-antag-space-ninja-name = Space Ninja
 roles-antag-space-ninja-objective = Use your stealth to sabotage the station, nom on electrical wires.
 

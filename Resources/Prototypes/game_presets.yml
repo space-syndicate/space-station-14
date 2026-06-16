@@ -215,6 +215,24 @@
   - BasicRoundstartVariation
 
 - type: gamePreset
+  id: MalfunctionAi
+  alias:
+    - malf
+    - malfai
+    - malfunction
+  name: malfunction-ai-title
+  description: malfunction-ai-description
+  showInVote: false
+  rules:
+  - MalfunctionAi
+  - DummyNonAntagChance
+  - SubGamemodesRuleNoWizard
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
   id: Xenoborgs
   alias:
     - xenoborgs

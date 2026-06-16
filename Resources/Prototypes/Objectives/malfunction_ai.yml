@@ -1,0 +1,33 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseMalfunctionAiObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    issuer: MalfunctionAi
+  - type: RoleRequirement
+    roles:
+    - MalfunctionAiRole
+
+- type: entity
+  parent: [BaseMalfunctionAiObjective, BaseSurviveObjective]
+  id: MalfunctionAiSurviveObjective
+  name: malfunction-ai-objective-survive-name
+  description: malfunction-ai-objective-survive-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai
+
+- type: entity
+  parent: [BaseMalfunctionAiObjective, BaseCodeObjective]
+  id: MalfunctionAiDoomsdayObjective
+  name: malfunction-ai-objective-doomsday-name
+  description: malfunction-ai-objective-doomsday-description
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Devices/nuke.rsi
+      state: nuclearbomb_timing

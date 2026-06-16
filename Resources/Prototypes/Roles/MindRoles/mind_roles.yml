@@ -132,6 +132,18 @@
     subtype: role-subtype-subverted
   - type: SubvertedSiliconRole
 
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleMalfunctionAi
+  name: Malfunction AI Role
+  components:
+  - type: MindRole
+    antagPrototype: MalfunctionAi
+    exclusiveAntag: true
+    roleType: SiliconAntagonist
+    subtype: role-subtype-malfunction-ai
+  - type: MalfunctionAiRole
+
 # Dragon
 - type: entity
   parent: BaseMindRoleAntag

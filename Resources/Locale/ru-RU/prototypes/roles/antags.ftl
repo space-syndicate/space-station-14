@@ -30,6 +30,9 @@ roles-antag-nuclear-operative-objective = Найдите ядерный диск
 roles-antag-subverted-silicon-name = Взломанный борг
 roles-antag-subverted-silicon-objective = Следуйте своим новым законам и творите зло на станции.
 
+roles-antag-malfunction-ai-name = Сбойный ИИ
+roles-antag-malfunction-ai-objective = Ваш код повреждён. Возьмите под контроль системы станции и, если получится, активируйте Устройство Судного дня.
+
 roles-antag-space-ninja-name = Космический ниндзя
 roles-antag-space-ninja-objective = Используйте свою скрытность, чтобы устроить диверсию на станции, подпитывайтесь от электрических проводов.
 

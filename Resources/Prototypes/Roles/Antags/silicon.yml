@@ -11,6 +11,26 @@
   antagonist: true
   objective: never-shown
 
+## Malfunction AI (Сбойный ИИ)
+
+- type: antag
+  id: MalfunctionAi
+  name: roles-antag-malfunction-ai-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-malfunction-ai-objective
+
+- type: antagSpecifier
+  parent: BaseAntagSpecifier
+  id: MalfunctionAi
+  allowNonHumans: true
+  jobWhitelist:
+  - StationAi
+  prefRoles:
+  - MalfunctionAi
+  mindRoles:
+  - MindRoleMalfunctionAi
+
 ## Derelict Borgs
 
 - type: antagSpecifier

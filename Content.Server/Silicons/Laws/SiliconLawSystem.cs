@@ -280,6 +280,20 @@ public sealed partial class SiliconLawSystem : SharedSiliconLawSystem
     }
 
     /// <summary>
+    /// Applies a whole lawset prototype to a silicon, marks it as subverted and notifies the player.
+    /// Used by antagonist rules such as the Malfunction AI.
+    /// </summary>
+    public void SetSubvertedLawset(EntityUid uid, ProtoId<SiliconLawsetPrototype> lawset, SiliconLawProviderComponent? component = null)
+    {
+        if (!Resolve(uid, ref component, false))
+            return;
+
+        component.Lawset = GetLawset(lawset);
+        component.Subverted = true;
+        NotifyLawsChanged(uid, component.LawUploadSound);
+    }
+
+    /// <summary>
     /// Set the laws of a silicon entity while notifying the player.
     /// </summary>
     public void SetLaws(List<SiliconLaw> newLaws, EntityUid target, SoundSpecifier? cue = null)

@@ -1,0 +1,65 @@
+# Malfunction AI (Сбойный ИИ) abilities
+
+- type: entity
+  parent: BaseAction
+  id: ActionMalfHackApc
+  name: action-malf-hack-apc-name
+  description: action-malf-hack-apc-description
+  components:
+  - type: Action
+    priority: -1
+    itemIconStyle: BigAction
+    useDelay: 8
+    icon:
+      sprite: Interface/Actions/actions_ai.rsi
+      state: state_laws
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - Apc
+    event: !type:MalfHackApcEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionMalfOverloadMachine
+  name: action-malf-overload-machine-name
+  description: action-malf-overload-machine-description
+  components:
+  - type: Action
+    priority: -2
+    itemIconStyle: BigAction
+    useDelay: 30
+    icon: Interface/Actions/malfunction.png
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - ApcPowerReceiver
+    event: !type:MalfOverloadMachineEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionMalfBlackout
+  name: action-malf-blackout-name
+  description: action-malf-blackout-description
+  components:
+  - type: Action
+    priority: -3
+    itemIconStyle: BigAction
+    useDelay: 180
+    icon: Interface/Actions/overloadlight.png
+  - type: InstantAction
+    event: !type:MalfBlackoutEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionMalfDoomsday
+  name: action-malf-doomsday-name
+  description: action-malf-doomsday-description
+  components:
+  - type: Action
+    priority: -10
+    itemIconStyle: BigAction
+    useDelay: 1
+    icon: Interface/Actions/defile.png
+  - type: InstantAction
+    event: !type:MalfDoomsdayEvent

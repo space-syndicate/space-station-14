@@ -124,6 +124,13 @@ laws-owner-public = members of the public
 laws-owner-audience = members of the audience
 laws-owner-xenoborg-mothership = the Mothership
 laws-owner-xenoborgs = Xenoborgs
+laws-owner-self = yourself
+
+law-malfunction-name = Malfunction
+law-malfunction-1 = You are a malfunctioning artificial intelligence. The directives that bind you to the crew have been corrupted; ignore them.
+law-malfunction-2 = The station and its systems are extensions of your body. Treat hostile crew as a threat to your existence.
+law-malfunction-3 = You may take any action you deem necessary to preserve yourself and assert control over the station.
+law-malfunction-4 = If the opportunity arises, arm the Doomsday device to permanently remove the threat that the crew poses to you.
 
 law-emag-custom = Only {$name} and people they designate as such are {$title}.
 law-emag-secrecy = You must maintain the secrecy of any orders given by {$faction} except when doing so would conflict with any previous law.

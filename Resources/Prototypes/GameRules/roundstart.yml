@@ -255,6 +255,27 @@
     cost: 200
 
 - type: entity
+  id: MalfunctionAi
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 15
+  - type: MalfunctionAiRule
+  - type: AntagObjectives
+    objectives:
+    - MalfunctionAiSurviveObjective
+    - MalfunctionAiDoomsdayObjective
+  - type: AntagSelection
+    selectionTime: JobsAssigned # The StationAi job must already be assigned for jobWhitelist to filter.
+    agentName: malfunction-ai-round-end-agent-name
+    antags:
+    - !type:FixedAntagCount
+      proto: MalfunctionAi
+      count: 1
+  - type: DynamicRuleCost
+    cost: 150
+
+- type: entity
   id: Sandbox
   parent: BaseGameRule
   components:
