@@ -1,11 +1,11 @@
-name: Sync locale
+name: Sync Goob Locale
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ master ]
     paths:
-      - 'Resources/Locale/ru-RU/corvax/guidebook/SOP/**'
-      - 'Resources/Locale/ru-RU/corvax/guidebook/corporatelaw/**'
+      - 'Resources/Locale/ru-RU/corvax/guidebook/**'
 
 permissions:
   contents: read
@@ -18,10 +18,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - source: Resources/Locale/ru-RU/corvax/guidebook/SOP
-            target: Resources/Locale/ru-RU/corvax/guidebook/SOP
-          - source: Resources/Locale/ru-RU/corvax/guidebook/corporatelaw
-            target: Resources/Locale/ru-RU/corvax/guidebook/corporatelaw
+          - source: Resources/Locale/ru-RU/corvax/guidebook
+            target: Resources/Locale/ru-RU/corvax/guidebook
 
     steps:
       - name: Checkout source repo
