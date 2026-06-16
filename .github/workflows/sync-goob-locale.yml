@@ -30,7 +30,7 @@ jobs:
       - name: Sync folders
         run: |
           rsync -a --delete "Resources/Locale/ru-RU/corvax/guidebook/" \
-            "target/Resources/Locale/ru-RU/_CorvaxGoob/guidebook"
+            "target/Resources/Locale/ru-RU/_CorvaxGoob/guidebook/"
 
       - name: Commit and push
         working-directory: target
