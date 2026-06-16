@@ -47,7 +47,8 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
     private readonly Dictionary<NetUserId, ulong> _userThreads = new();
     private readonly Dictionary<ulong, NetUserId> _threadUsers = new();
     private readonly HashSet<ulong> _createdRootMessages = new();
-    private readonly Queue<PendingThreadRequest> _pendingThreadRequests = new();
+    private readonly Dictionary<NetUserId, PendingThreadRequest> _pendingThreadRequests = new();
+    private readonly HashSet<NetUserId> _creatingThreads = new();
     private readonly HttpClient _httpClient = new();
     private readonly JsonSerializerOptions _jsonOptions = new() { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull };
 
@@ -76,6 +77,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
             _threadUsers.Clear();
             _createdRootMessages.Clear();
             _pendingThreadRequests.Clear();
+            _creatingThreads.Clear();
         }
     }
 
@@ -102,8 +104,8 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
                 if (await TryHandleThreadCommandAsync(message))
                     return;
 
-                RelayDiscordMessageToGame(threadUserId, message);
-                RelayDiscordMessageToWebhookQueue(threadUserId, message);
+                await RelayDiscordMessageToGame(threadUserId, message);
+                await RelayDiscordMessageToWebhookQueue(threadUserId, message);
                 return;
             }
         }
@@ -138,7 +140,6 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
     private async Task SendPlayerListAsync(ulong channelId)
     {
         var sessions = _playerManager.Sessions
-            .Where(session => session.Status != SessionStatus.Disconnected)
             .OrderBy(session => session.Name)
             .ToArray();
 
@@ -150,7 +151,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
 
         var builder = new StringBuilder();
         builder.AppendLine("```");
-        builder.AppendLine("ckey | персонаж | должность | роли | антаг");
+        builder.AppendLine("ckey | статус | персонаж | должность | роли | антаг");
 
         foreach (var session in sessions)
         {
@@ -178,7 +179,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
                 antagonist = roles.Any(role => role.Antagonist) ? "да" : "нет";
             }
 
-            builder.AppendLine($"{session.Name} | {characterName} | {job} | {roleNames} | {antagonist}");
+            builder.AppendLine($"{session.Name} | {GetSessionStatusName(session.Status)} | {characterName} | {job} | {roleNames} | {antagonist}");
         }
 
         builder.AppendLine("```");
@@ -203,13 +204,13 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
             return;
         }
 
-        var authorName = message.Author.GlobalName ?? message.Author.Username;
+        var authorName = await GetDiscordAuthorNameAsync(message);
         var relayName = GetDiscordRelayName(authorName);
         var plainText = ahelpText.ReplaceLineEndings(" ");
         var bwoinkText = BuildDiscordBwoinkText(authorName, plainText);
 
         SendAHelpToGame(target.UserId, bwoinkText);
-        RegisterPendingThreadRequest(target);
+        RegisterPendingThreadRequest(target, relayName);
         QueueAHelpWebhookMessage(
             target.UserId,
             relayName,
@@ -233,6 +234,17 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         ckey = split[0];
         message = split[1];
         return true;
+    }
+
+    private static string GetSessionStatusName(SessionStatus status)
+    {
+        return status switch
+        {
+            SessionStatus.InGame => "в игре",
+            SessionStatus.Connected => "подключен",
+            SessionStatus.Disconnected => "отключен",
+            _ => status.ToString(),
+        };
     }
 
     private bool TryGetSessionByCkey(string ckey, [NotNullWhen(true)] out ICommonSession? session)
@@ -328,7 +340,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
             return;
 
         _sawmill.Debug($"Received root ahelp webhook message {message.Id} in channel {message.ChannelId}, scheduling thread creation.");
-        await TryCreateThreadForRootMessageAsync(message.Id);
+        await TryCreateThreadForRootMessageAsync(message.Id, message.Author.Username);
     }
 
     private bool TryGetAHelpWebhookChannelId(out ulong channelId)
@@ -386,7 +398,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         }
     }
 
-    private async Task TryCreateThreadForRootMessageAsync(ulong rootMessageId)
+    private async Task TryCreateThreadForRootMessageAsync(ulong rootMessageId, string authorUsername)
     {
         if (!TryGetAHelpWebhookChannelId(out var webhookChannelId))
             return;
@@ -406,7 +418,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
             await Task.Delay(100);
         }
 
-        if (userId == default && TryTakePendingThreadRequest(out var pending))
+        if (userId == default && TryTakePendingThreadRequest(authorUsername, out var pending))
         {
             userId = pending.UserId;
             username = pending.Username;
@@ -423,19 +435,29 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
             return;
         }
 
-        var threadName = BuildThreadName(username, characterName);
-        var thread = await CreateThreadFromMessageAsync(webhookChannelId, rootMessageId, threadName);
-        if (thread == null)
+        if (!TryBeginThreadCreation(userId))
             return;
 
-        lock (_stateLock)
+        try
         {
-            _userThreads[userId] = thread.Id;
-            _threadUsers[thread.Id] = userId;
-            _createdRootMessages.Add(rootMessageId);
-        }
+            var threadName = BuildThreadName(username, characterName);
+            var thread = await CreateThreadFromMessageAsync(webhookChannelId, rootMessageId, threadName);
+            if (thread == null)
+                return;
 
-        await JoinThreadAsync(thread.Id);
+            lock (_stateLock)
+            {
+                _userThreads[userId] = thread.Id;
+                _threadUsers[thread.Id] = userId;
+                _createdRootMessages.Add(rootMessageId);
+            }
+
+            await JoinThreadAsync(thread.Id);
+        }
+        finally
+        {
+            EndThreadCreation(userId);
+        }
     }
 
     private async Task EnsureThreadForUserFromRelayAsync(NetUserId userId)
@@ -472,22 +494,32 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         if (IsRootMessageProcessed(rootMessageId) || TryGetThreadForUser(userId, out _))
             return;
 
-        var threadName = BuildThreadName(username, characterName);
-        var thread = await CreateThreadFromMessageAsync(webhookChannelId, rootMessageId, threadName);
-        if (thread == null)
+        if (!TryBeginThreadCreation(userId))
             return;
 
-        lock (_stateLock)
+        try
         {
-            if (_userThreads.ContainsKey(userId))
+            var threadName = BuildThreadName(username, characterName);
+            var thread = await CreateThreadFromMessageAsync(webhookChannelId, rootMessageId, threadName);
+            if (thread == null)
                 return;
 
-            _userThreads[userId] = thread.Id;
-            _threadUsers[thread.Id] = userId;
-            _createdRootMessages.Add(rootMessageId);
-        }
+            lock (_stateLock)
+            {
+                if (_userThreads.ContainsKey(userId))
+                    return;
 
-        await JoinThreadAsync(thread.Id);
+                _userThreads[userId] = thread.Id;
+                _threadUsers[thread.Id] = userId;
+                _createdRootMessages.Add(rootMessageId);
+            }
+
+            await JoinThreadAsync(thread.Id);
+        }
+        finally
+        {
+            EndThreadCreation(userId);
+        }
     }
 
     private bool TryGetRelayMessageForUser(NetUserId userId, out ulong messageId, out string username, out string? characterName)
@@ -548,32 +580,42 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         }
     }
 
-    private void RegisterPendingThreadRequest(ICommonSession target)
+    private void RegisterPendingThreadRequest(ICommonSession target, string relayUsername)
     {
         lock (_stateLock)
         {
             RemoveExpiredPendingThreadRequests();
-            _pendingThreadRequests.Enqueue(new PendingThreadRequest(
+            _pendingThreadRequests[target.UserId] = new PendingThreadRequest(
                 target.UserId,
                 target.Name,
+                relayUsername,
                 _minds.GetCharacterName(target.UserId),
-                DateTime.UtcNow));
+                DateTime.UtcNow);
         }
     }
 
-    private bool TryTakePendingThreadRequest([NotNullWhen(true)] out PendingThreadRequest? request)
+    private bool TryTakePendingThreadRequest(string authorUsername, [NotNullWhen(true)] out PendingThreadRequest? request)
     {
         lock (_stateLock)
         {
             RemoveExpiredPendingThreadRequests();
 
-            while (_pendingThreadRequests.TryDequeue(out var pending))
+            var exactMatch = _pendingThreadRequests.Values
+                .FirstOrDefault(pending => string.Equals(pending.RelayUsername, authorUsername, StringComparison.OrdinalIgnoreCase));
+
+            if (exactMatch != null)
             {
-                if (!TryGetThreadForUser(pending.UserId, out _))
-                {
-                    request = pending;
-                    return true;
-                }
+                _pendingThreadRequests.Remove(exactMatch.UserId);
+                request = exactMatch;
+                return true;
+            }
+
+            if (_pendingThreadRequests.Count == 1)
+            {
+                var pending = _pendingThreadRequests.Values.First();
+                _pendingThreadRequests.Remove(pending.UserId);
+                request = pending;
+                return true;
             }
         }
 
@@ -585,15 +627,15 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
     {
         var cutoff = DateTime.UtcNow - TimeSpan.FromSeconds(30);
 
-        while (_pendingThreadRequests.Count > 0 && _pendingThreadRequests.Peek().CreatedAt < cutoff)
+        foreach (var pending in _pendingThreadRequests.Values.Where(pending => pending.CreatedAt < cutoff).ToArray())
         {
-            _pendingThreadRequests.Dequeue();
+            _pendingThreadRequests.Remove(pending.UserId);
         }
     }
 
-    private void RelayDiscordMessageToGame(NetUserId userId, Message message)
+    private async Task RelayDiscordMessageToGame(NetUserId userId, Message message)
     {
-        var authorName = message.Author.GlobalName ?? message.Author.Username;
+        var authorName = await GetDiscordAuthorNameAsync(message);
         var text = message.Content.ReplaceLineEndings(" ");
 
         if (string.IsNullOrWhiteSpace(text))
@@ -619,12 +661,12 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         }
     }
 
-    private void RelayDiscordMessageToWebhookQueue(NetUserId userId, Message message)
+    private async Task RelayDiscordMessageToWebhookQueue(NetUserId userId, Message message)
     {
         if (!TryGetAHelpWebhookUrl(out _))
             return;
 
-        var authorName = message.Author.GlobalName ?? message.Author.Username;
+        var authorName = await GetDiscordAuthorNameAsync(message);
         var text = message.Content.ReplaceLineEndings(" ");
         if (string.IsNullOrWhiteSpace(text))
             return;
@@ -637,6 +679,39 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         var escapedAuthor = FormattedMessage.EscapeText(authorName);
         var escapedText = FormattedMessage.EscapeText(text);
         return $"[color=red]{escapedAuthor} \\[D\\][/color]: {escapedText}";
+    }
+
+    private static async Task<string> GetDiscordAuthorNameAsync(Message message)
+    {
+        var author = message.Author;
+
+        if (message.Guild != null)
+        {
+            if (message.Guild.Users.TryGetValue(author.Id, out var cachedGuildUser) &&
+                !string.IsNullOrWhiteSpace(cachedGuildUser.Nickname))
+            {
+                return cachedGuildUser.Nickname;
+            }
+
+            try
+            {
+                var guildUser = await message.Guild.GetUserAsync(author.Id, default, default);
+                if (!string.IsNullOrWhiteSpace(guildUser.Nickname))
+                    return guildUser.Nickname;
+            }
+            catch (Exception)
+            {
+                // Fall back to user-level names if Discord member lookup is temporarily unavailable.
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(author.Username))
+            return author.Username;
+
+        if (!string.IsNullOrWhiteSpace(author.GlobalName))
+            return author.GlobalName;
+
+        return author.Id.ToString();
     }
 
     private static string GetDiscordRelayName(string authorName)
@@ -754,6 +829,26 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
             ?.GetValue(instance);
     }
 
+    private bool TryBeginThreadCreation(NetUserId userId)
+    {
+        lock (_stateLock)
+        {
+            if (_userThreads.ContainsKey(userId) || _creatingThreads.Contains(userId))
+                return false;
+
+            _creatingThreads.Add(userId);
+            return true;
+        }
+    }
+
+    private void EndThreadCreation(NetUserId userId)
+    {
+        lock (_stateLock)
+        {
+            _creatingThreads.Remove(userId);
+        }
+    }
+
     private static string BuildThreadName(string username, string? characterName)
     {
         var baseName = string.IsNullOrWhiteSpace(characterName)
@@ -770,6 +865,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
     private sealed record PendingThreadRequest(
         NetUserId UserId,
         string Username,
+        string RelayUsername,
         string? CharacterName,
         DateTime CreatedAt);
 }
