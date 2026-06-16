@@ -23,7 +23,7 @@ jobs:
       - name: Clone target repo
         env:
           TOKEN: ${{ secrets.GOOB_REPO_TOKEN }}
-          TARGET_REPO: Pok27/Goob-Station
+          TARGET_REPO: space-syndicate/Goob-Station
         run: |
           git clone "https://x-access-token:${TOKEN}@github.com/${TARGET_REPO}.git" target
 
