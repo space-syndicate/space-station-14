@@ -30,6 +30,7 @@ rules_file = "CorvaxRuleset"
 
 [discord]
 rich_main_icon_id = "corvax"
+ahelp_thread_bridge = true
 
 [admin]
 see_own_notes = true

@@ -12,6 +12,7 @@ using Content.Server.Administration.Systems;
 using Content.Server.Discord.DiscordLink;
 using Content.Server.GameTicking;
 using Content.Shared.Administration;
+using Content.Shared.Corvax.CCCVars;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Roles;
@@ -36,8 +37,10 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
     [Dependency] private GameTicker _gameTicker = default!;
     [Dependency] private SharedMindSystem _minds = default!;
     [Dependency] private SharedRoleSystem _roles = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private ISawmill _sawmill = default!;
+    private bool _isEnabled;
 
     private readonly HttpClient _httpClient = new();
     private readonly JsonSerializerOptions _jsonOptions = new() { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull };
@@ -47,16 +50,36 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         base.Initialize();
 
         _sawmill = _logManager.GetSawmill("corvax.ahelp.thread");
-        _discordLink.OnMessageReceived += OnDiscordMessageReceived;
+        _cfg.OnValueChanged(CCCVars.AHelpDiscordThreadBridge, OnEnabledChanged, true);
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => ClearState());
     }
 
     public override void Shutdown()
     {
-        _discordLink.OnMessageReceived -= OnDiscordMessageReceived;
+        if (_isEnabled)
+            _discordLink.OnMessageReceived -= OnDiscordMessageReceived;
+
+        _cfg.UnsubValueChanged(CCCVars.AHelpDiscordThreadBridge, OnEnabledChanged);
         ClearState();
         base.Shutdown();
+    }
+
+    private void OnEnabledChanged(bool enabled)
+    {
+        if (_isEnabled == enabled)
+            return;
+
+        _isEnabled = enabled;
+
+        if (enabled)
+        {
+            _discordLink.OnMessageReceived += OnDiscordMessageReceived;
+            return;
+        }
+
+        _sawmill.Info("Discord ahelp thread bridge is disabled by cvar, not subscribing to Discord messages.");
+        _discordLink.OnMessageReceived -= OnDiscordMessageReceived;
     }
 
     private void OnDiscordMessageReceived(Message message)

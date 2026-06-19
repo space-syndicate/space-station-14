@@ -15,6 +15,12 @@ public sealed class CCCVars
     public static readonly CVarDef<bool> PanicBunkerDenyVPN =
         CVarDef.Create("game.panic_bunker.deny_vpn", false, CVar.SERVERONLY);
 
+    /// <summary>
+    /// Enables the Discord ahelp thread bridge.
+    /// </summary>
+    public static readonly CVarDef<bool> AHelpDiscordThreadBridge =
+        CVarDef.Create("discord.ahelp_thread_bridge", false, CVar.SERVERONLY);
+
     /**
      * TTS (Text-To-Speech)
      */
