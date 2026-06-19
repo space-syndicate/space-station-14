@@ -12,7 +12,7 @@ public sealed partial class ChatUIController
 
     private static readonly Regex ReplacementStartDoubleQuote = new("\"$");
     private static readonly Regex ReplacementEndDoubleQuote = new("^\"|(?<=^@)\"");
-    private static readonly Regex EndDeclination = new(@"(.)$"); 
+    private static readonly Regex EndDeclination = new(@"(\\?.)$");
 
     private readonly record struct ReplacementRule(string Keyword, string Replacement);
 
