@@ -109,6 +109,16 @@
     PrinterPaper: 100
 
 - type: latheRecipe
+  id: PrintedDocumentApplicationAppointmentInterimCaptainRecipe
+  result: PrintedDocumentApplicationAppointmentInterimCaptain
+  categories:
+  - Statements
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    PrinterPaper: 100
+
+- type: latheRecipe
   id: PrintedDocumentApplicationEmploymentRecipe
   result: PrintedDocumentApplicationEmployment
   categories:
