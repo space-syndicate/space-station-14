@@ -840,7 +840,7 @@ guidebook-SOP-security-tooltip-regulation-speech =
     При проведении следственных процедур не одобряется использование размытых формулировок.
 guidebook-SOP-security-tooltip-extended-access = Доступ во все отделы станции, кроме кабинетов глав, капитана, ПНТ, АВД и оружейной.
 guidebook-SOP-security-tooltip-full-access = Доступ, аналогичный капитану станции.
-guidebook-SOP-security-tooltip-legal-immunity = Неприкосновенностью обладают капитан, магистрат, агент внутренних дел, сотрудники ЦК и ДСО.
+guidebook-SOP-security-tooltip-legal-immunity = Неприкосновенностью обладают капитан, магистрат, АВД, сотрудники ЦК и ДСО.
 guidebook-SOP-security-tooltip-significant-threat = Действия, направленные на причинение вреда существам с ОПРС или способствующие значительному материальному ущербу, не имеющие законной подоплеки.
 guidebook-SOP-security-tooltip-uniform =
     Обязательными частями униформы являются КПК и комбинезон, соответствующий должности.
