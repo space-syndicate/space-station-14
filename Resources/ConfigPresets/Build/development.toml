@@ -8,8 +8,19 @@ admin_job_tracking = true
 role_loadout_timers = false
 new_character_jobs = "Passenger, Captain"
 
+[corvax]
+map_rotation.enabled = true
+map_rotation.rare_map_interval = 5
+
 [events]
 enabled = false
+
+[vote]
+restart_required_ratio = 0.85
+same_type_timeout = 300.0
+timerrestart = 30
+preset_enabled = false
+restart_enabled = false
 
 [ghost]
 role_time = 0.5
