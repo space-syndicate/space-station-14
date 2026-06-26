@@ -5,6 +5,11 @@ maxplayers = 180
 soft_max_players = 100
 map_rotation = true
 
+[corvax]
+map_rotation.enabled = true
+map_rotation.server_key = "elysium"
+map_rotation.rare_map_interval = 5
+
 [server]
 lobby_name = "️🛰️ Corvax — Элизиум 🌑"
 

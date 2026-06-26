@@ -1,14 +1,28 @@
 ﻿[game]
-# Straight in-game baby
-lobbyenabled = false
-# Dev map for faster loading & convenience
-map = "Dev"
-role_timers = false
-admin_job_tracking = true
-role_loadout_timers = false
+hostname = "🛰️ Corvax — Элизиум 🌑[TTS]"
+desc = "Корвакс — первый русскоязычный проект в Space Station 14.\nЗдесь помогут новичкам!\nНа этом сервере пониженные требования к RP, но общие MRP правила.\nИмеется интеграция TTS (Text-To-Speech)."
+maxplayers = 180
+soft_max_players = 100
+map_rotation = true
+lobbyduration = 240
+map_pool = "CorvaxMapPool"
+secret_weight_prototype = "CorvaxSecretDefault"
+round_restart_time = 240
+
+[corvax]
+map_rotation.enabled = true
+map_rotation.server_key = "main"
+map_rotation.rare_map_interval = 5
 
 [events]
 enabled = false
+
+[vote]
+restart_required_ratio = 0.85
+same_type_timeout = 300.0
+timerrestart = 30
+preset_enabled = false
+restart_enabled = false
 
 [ghost]
 role_time = 0.5
@@ -45,12 +59,3 @@ new_player_threshold = 120
 random_characters = true
 random_species_weights = ""
 ssd_sleep_time = 3600
-
-[database]
-# Change to postgres if needed
-engine = "sqlite"
-pg_host = "localhost"
-pg_port = 5432
-pg_database = "ss14"
-pg_username = "postgres"
-pg_password = "postgres"
