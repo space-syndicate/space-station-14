@@ -95,7 +95,7 @@ public sealed partial class CorvaxMapVoteStatsSystem : EntitySystem
         if (string.IsNullOrWhiteSpace(_serverKey) ||
             _serverKey.Any(x => !char.IsLetterOrDigit(x) && x != '_' && x != '-'))
         {
-            _log.Error($"{CCCVars.MapRotationServerKey.Name} must be a non-empty key containing only letters, digits, '_' or '-'. Corvax map vote statistics are disabled.");
+            _log.Warning($"{CCCVars.MapRotationServerKey.Name} must be a non-empty key containing only letters, digits, '_' or '-'. Corvax map vote statistics are disabled.");
             return;
         }
 

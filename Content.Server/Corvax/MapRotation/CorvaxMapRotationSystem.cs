@@ -221,7 +221,7 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
         if (string.IsNullOrWhiteSpace(_serverKey) ||
             _serverKey.Any(x => !char.IsLetterOrDigit(x) && x != '_' && x != '-'))
         {
-            _log.Error($"{CCCVars.MapRotationServerKey.Name} must be a non-empty key containing only letters, digits, '_' or '-'. Corvax map rotation priority is disabled.");
+            _log.Warning($"{CCCVars.MapRotationServerKey.Name} must be a non-empty key containing only letters, digits, '_' or '-'. Corvax map rotation priority is disabled.");
             return;
         }
 
