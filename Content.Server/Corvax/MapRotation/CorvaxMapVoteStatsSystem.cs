@@ -1,10 +1,12 @@
 using System.IO;
 using System.Linq;
-using System.Text.Json;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Maps;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
+using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Serialization.Manager.Attributes;
+using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.MapRotation;
@@ -13,14 +15,9 @@ public sealed partial class CorvaxMapVoteStatsSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IResourceManager _resMan = default!;
+    [Dependency] private ISerializationManager _serialization = default!;
 
-    private static readonly ResPath VoteResultsPath = new("/corvax_map_vote_results.json");
-
-    private readonly JsonSerializerOptions _jsonOptions = new()
-    {
-        WriteIndented = true,
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-    };
+    private static readonly ResPath VoteResultsPath = new("/corvax_map_vote_results.yml");
 
     private ISawmill _log = default!;
     private string _serverKey = string.Empty;
@@ -112,8 +109,11 @@ public sealed partial class CorvaxMapVoteStatsSystem : EntitySystem
 
         try
         {
-            using var stream = _resMan.UserData.OpenRead(VoteResultsPath);
-            var results = ReadVoteResults(stream);
+            using var reader = _resMan.UserData.OpenText(VoteResultsPath);
+            var document = DataNodeParser.ParseYamlStream(reader).FirstOrDefault();
+            var results = document == null
+                ? new MapVoteResultsFile()
+                : _serialization.Read<MapVoteResultsFile>(document.Root, notNullableOverride: true);
 
             if (results.Version <= 0)
             {
@@ -130,85 +130,6 @@ public sealed partial class CorvaxMapVoteStatsSystem : EntitySystem
             BackupCorruptVoteResults();
             return new MapVoteResultsFile();
         }
-    }
-
-    private MapVoteResultsFile ReadVoteResults(Stream stream)
-    {
-        using var document = JsonDocument.Parse(stream);
-        var root = document.RootElement;
-        var results = new MapVoteResultsFile();
-
-        if (root.TryGetProperty("version", out var version) && version.TryGetInt32(out var versionValue))
-            results.Version = versionValue;
-
-        if (!root.TryGetProperty("servers", out var servers) || servers.ValueKind != JsonValueKind.Object)
-            return results;
-
-        foreach (var serverProperty in servers.EnumerateObject())
-        {
-            if (serverProperty.Value.ValueKind != JsonValueKind.Object ||
-                !serverProperty.Value.TryGetProperty("months", out var months) ||
-                months.ValueKind != JsonValueKind.Object)
-                continue;
-
-            var server = new VoteResultsServer();
-            results.Servers[serverProperty.Name] = server;
-
-            foreach (var monthProperty in months.EnumerateObject())
-            {
-                var groups = new List<MapVoteGroupStats>();
-                server.Months[monthProperty.Name] = groups;
-
-                if (monthProperty.Value.ValueKind != JsonValueKind.Array)
-                    continue;
-
-                foreach (var item in monthProperty.Value.EnumerateArray())
-                {
-                    if (item.ValueKind != JsonValueKind.Object)
-                        continue;
-
-                    if (item.TryGetProperty("voteCount", out _))
-                        AddExistingGroup(groups, item);
-                    else
-                        AddLegacyVote(groups, item);
-                }
-            }
-        }
-
-        return results;
-    }
-
-    private static void AddExistingGroup(List<MapVoteGroupStats> groups, JsonElement item)
-    {
-        var eligibleMaps = ReadStringArray(item, "eligibleMaps");
-        var voteCount = ReadInt(item, "voteCount");
-        var firstVoteAt = ReadDateTime(item, "firstVoteAt");
-        var lastVoteAt = ReadDateTime(item, "lastVoteAt");
-        var votes = ReadIntDictionary(item, "votes");
-        var winners = ReadIntDictionary(item, "winners");
-        var finalSelectedMaps = ReadIntDictionary(item, "finalSelectedMaps");
-        var rareRotationAppliedCount = ReadInt(item, "rareRotationAppliedCount");
-
-        var group = GetOrCreateVoteGroup(groups, eligibleMaps);
-        group.VoteCount += voteCount;
-        group.FirstVoteAt = MinDate(group.FirstVoteAt, firstVoteAt);
-        group.LastVoteAt = MaxDate(group.LastVoteAt, lastVoteAt);
-        AddCounts(group.Votes, votes);
-        AddCounts(group.Winners, winners);
-        AddCounts(group.FinalSelectedMaps, finalSelectedMaps);
-        group.RareRotationAppliedCount += rareRotationAppliedCount;
-    }
-
-    private static void AddLegacyVote(List<MapVoteGroupStats> groups, JsonElement item)
-    {
-        AddVoteToMonthGroups(
-            groups,
-            ReadDateTime(item, "startedAt") ?? DateTime.UtcNow,
-            ReadStringArray(item, "eligibleMaps"),
-            ReadIntDictionary(item, "votes"),
-            ReadString(item, "winner"),
-            ReadString(item, "finalSelectedMap"),
-            ReadBool(item, "rareRotationApplied"));
     }
 
     internal static void AddVoteToMonthGroups(
@@ -271,68 +192,12 @@ public sealed partial class CorvaxMapVoteStatsSystem : EntitySystem
         return left == null || right > left ? right : left;
     }
 
-    private static int ReadInt(JsonElement element, string property)
-    {
-        return element.TryGetProperty(property, out var value) && value.TryGetInt32(out var result)
-            ? result
-            : 0;
-    }
-
-    private static DateTime? ReadDateTime(JsonElement element, string property)
-    {
-        if (!element.TryGetProperty(property, out var value) || value.ValueKind != JsonValueKind.String)
-            return null;
-
-        return value.TryGetDateTime(out var result) ? result : null;
-    }
-
-    private static string ReadString(JsonElement element, string property)
-    {
-        if (!element.TryGetProperty(property, out var value) || value.ValueKind != JsonValueKind.String)
-            return string.Empty;
-
-        return value.GetString() ?? string.Empty;
-    }
-
-    private static bool ReadBool(JsonElement element, string property)
-    {
-        return element.TryGetProperty(property, out var value) && value.ValueKind == JsonValueKind.True;
-    }
-
-    private static List<string> ReadStringArray(JsonElement element, string property)
-    {
-        if (!element.TryGetProperty(property, out var value) || value.ValueKind != JsonValueKind.Array)
-            return new List<string>();
-
-        return value.EnumerateArray()
-            .Where(item => item.ValueKind == JsonValueKind.String)
-            .Select(item => item.GetString())
-            .Where(item => item != null)
-            .Select(item => item!)
-            .ToList();
-    }
-
-    private static Dictionary<string, int> ReadIntDictionary(JsonElement element, string property)
-    {
-        var dictionary = new Dictionary<string, int>();
-        if (!element.TryGetProperty(property, out var value) || value.ValueKind != JsonValueKind.Object)
-            return dictionary;
-
-        foreach (var item in value.EnumerateObject())
-        {
-            if (item.Value.TryGetInt32(out var count))
-                dictionary[item.Name] = count;
-        }
-
-        return dictionary;
-    }
-
     private void BackupCorruptVoteResults()
     {
         if (!_resMan.UserData.Exists(VoteResultsPath))
             return;
 
-        var backup = new ResPath($"/corvax_map_vote_results.corrupt.{DateTime.UtcNow:yyyyMMddHHmmss}.json");
+        var backup = new ResPath($"/corvax_map_vote_results.corrupt.{DateTime.UtcNow:yyyyMMddHHmmss}.yml");
         try
         {
             _resMan.UserData.Rename(VoteResultsPath, backup);
@@ -350,9 +215,9 @@ public sealed partial class CorvaxMapVoteStatsSystem : EntitySystem
 
         try
         {
-            using (var stream = _resMan.UserData.OpenWrite(tempPath))
+            using (var writer = _resMan.UserData.OpenWriteText(tempPath))
             {
-                JsonSerializer.Serialize(stream, results, _jsonOptions);
+                _serialization.WriteValue(results, alwaysWrite: true, notNullableOverride: true).Write(writer);
             }
 
             if (_resMan.UserData.RootDir is { } rootDir)
@@ -389,26 +254,48 @@ public sealed partial class CorvaxMapVoteStatsSystem : EntitySystem
         return server;
     }
 
-    private sealed class MapVoteResultsFile
+    [DataDefinition]
+    private sealed partial class MapVoteResultsFile
     {
-        public int Version { get; set; } = 1;
-        public Dictionary<string, VoteResultsServer> Servers { get; set; } = new();
+        [DataField("version")]
+        public int Version = 1;
+
+        [DataField("servers")]
+        public Dictionary<string, VoteResultsServer> Servers = new();
     }
 
-    private sealed class VoteResultsServer
+    [DataDefinition]
+    private sealed partial class VoteResultsServer
     {
-        public Dictionary<string, List<MapVoteGroupStats>> Months { get; set; } = new();
+        [DataField("months")]
+        public Dictionary<string, List<MapVoteGroupStats>> Months = new();
     }
 
-    internal sealed class MapVoteGroupStats
+    [DataDefinition]
+    internal sealed partial class MapVoteGroupStats
     {
-        public List<string> EligibleMaps { get; set; } = new();
-        public int VoteCount { get; set; }
-        public DateTime? FirstVoteAt { get; set; }
-        public DateTime? LastVoteAt { get; set; }
-        public Dictionary<string, int> Votes { get; set; } = new();
-        public Dictionary<string, int> Winners { get; set; } = new();
-        public Dictionary<string, int> FinalSelectedMaps { get; set; } = new();
-        public int RareRotationAppliedCount { get; set; }
+        [DataField("eligibleMaps")]
+        public List<string> EligibleMaps = new();
+
+        [DataField("voteCount")]
+        public int VoteCount;
+
+        [DataField("firstVoteAt")]
+        public DateTime? FirstVoteAt;
+
+        [DataField("lastVoteAt")]
+        public DateTime? LastVoteAt;
+
+        [DataField("votes")]
+        public Dictionary<string, int> Votes = new();
+
+        [DataField("winners")]
+        public Dictionary<string, int> Winners = new();
+
+        [DataField("finalSelectedMaps")]
+        public Dictionary<string, int> FinalSelectedMaps = new();
+
+        [DataField("rareRotationAppliedCount")]
+        public int RareRotationAppliedCount;
     }
 }

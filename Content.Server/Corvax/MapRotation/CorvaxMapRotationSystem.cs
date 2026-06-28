@@ -1,7 +1,5 @@
 using System.Linq;
 using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Shared.CCVar;
@@ -11,6 +9,9 @@ using Content.Shared.Maps;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Serialization.Manager.Attributes;
+using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.MapRotation;
@@ -21,14 +22,9 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
     [Dependency] private IGameMapManager _gameMapManager = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IResourceManager _resMan = default!;
+    [Dependency] private ISerializationManager _serialization = default!;
 
-    private static readonly ResPath StatsPath = new("/corvax_map_rotation.json");
-    private readonly JsonSerializerOptions _jsonOptions = new()
-    {
-        WriteIndented = true,
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        Converters = { new JsonStringEnumConverter() },
-    };
+    private static readonly ResPath StatsPath = new("/corvax_map_rotation.yml");
 
     private ISawmill _log = default!;
     private RotationStatsFile _stats = new();
@@ -314,8 +310,11 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
 
         try
         {
-            using var stream = _resMan.UserData.OpenRead(StatsPath);
-            _stats = JsonSerializer.Deserialize<RotationStatsFile>(stream, _jsonOptions) ?? new RotationStatsFile();
+            using var reader = _resMan.UserData.OpenText(StatsPath);
+            var document = DataNodeParser.ParseYamlStream(reader).FirstOrDefault();
+            _stats = document == null
+                ? new RotationStatsFile()
+                : _serialization.Read<RotationStatsFile>(document.Root, notNullableOverride: true);
 
             if (_stats.Version <= 0)
             {
@@ -339,7 +338,7 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
         if (!_resMan.UserData.Exists(StatsPath))
             return;
 
-        var backup = new ResPath($"/corvax_map_rotation.corrupt.{DateTime.UtcNow:yyyyMMddHHmmss}.json");
+        var backup = new ResPath($"/corvax_map_rotation.corrupt.{DateTime.UtcNow:yyyyMMddHHmmss}.yml");
         try
         {
             _resMan.UserData.Rename(StatsPath, backup);
@@ -360,9 +359,9 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
 
         try
         {
-            using (var stream = _resMan.UserData.OpenWrite(tempPath))
+            using (var writer = _resMan.UserData.OpenWriteText(tempPath))
             {
-                JsonSerializer.Serialize(stream, _stats, _jsonOptions);
+                _serialization.WriteValue(_stats, alwaysWrite: true, notNullableOverride: true).Write(writer);
             }
 
             if (_resMan.UserData.RootDir is { } rootDir)
@@ -390,22 +389,34 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
         }
     }
 
-    private sealed class RotationStatsFile
+    [DataDefinition]
+    private sealed partial class RotationStatsFile
     {
-        public int Version { get; set; } = 1;
-        public Dictionary<string, RotationServerStats> Servers { get; set; } = new();
+        [DataField("version")]
+        public int Version = 1;
+
+        [DataField("servers")]
+        public Dictionary<string, RotationServerStats> Servers = new();
     }
 
-    private sealed class RotationServerStats
+    [DataDefinition]
+    private sealed partial class RotationServerStats
     {
-        public int RotationRound { get; set; }
-        public Dictionary<string, MapRotationMapStats> Maps { get; set; } = new();
+        [DataField("rotationRound")]
+        public int RotationRound;
+
+        [DataField("maps")]
+        public Dictionary<string, MapRotationMapStats> Maps = new();
     }
 
-    private sealed class MapRotationMapStats
+    [DataDefinition]
+    private sealed partial class MapRotationMapStats
     {
-        public DateTime? LastStartedAt { get; set; }
-        public int StartCount { get; set; }
+        [DataField("lastStartedAt")]
+        public DateTime? LastStartedAt;
+
+        [DataField("startCount")]
+        public int StartCount;
     }
 
 }
