@@ -685,6 +685,12 @@ namespace Content.Server.Administration.Systems
 
             bwoinkText = $"{statusPrefix} {bwoinkText}: {messageText}";
 
+            // Corvax-Start-Administration
+            var transformEv = new TransformBwoinkTextEvent(bwoinkText, senderSession);
+            RaiseLocalEvent(ref transformEv);
+            bwoinkText = transformEv.Text;
+            // Corvax-End-Administration
+
             // If it's not an admin / admin chooses to keep the sound and message is not an admin only message, then play it.
             var playSound = (!senderAHelpAdmin || input.PlaySound) && !input.AdminOnly;
             return new BwoinkTextMessage(
@@ -718,11 +724,6 @@ namespace Content.Server.Administration.Systems
                 
             _afkManager.PlayerDidAction(senderSession);
 
-            // Corvax-Start-Administration
-            var transformEv = new TransformBwoinkTextEvent(bwoinkText, senderSession);
-            RaiseLocalEvent(ref transformEv);
-            bwoinkText = transformEv.Text;
-            // Corvax-End-Administration
             // If it's not an admin / admin chooses to keep the sound and message is not an admin only message, then play it.
             var playSound = (!senderAHelpAdmin || message.PlaySound) && !message.AdminOnly;
 

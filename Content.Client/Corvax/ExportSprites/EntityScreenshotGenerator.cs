@@ -288,10 +288,10 @@ public sealed partial class EntityScreenshotGenerator
     {
         icon = null;
 
-        foreach (var (_, entry) in prototype.Components)
+        if (prototype.TryGetComponent(out IconComponent? iconComp, _entityManager.ComponentFactory))
         {
-            if (TryExtractSpriteSpecifier(entry.Component.GetType(), entry.Mapping, out icon))
-                return true;
+            icon = iconComp.Icon;
+            return true;
         }
 
         return false;
