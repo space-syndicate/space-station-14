@@ -103,13 +103,13 @@ public sealed partial class AHelpDiscordThreadBridgeSystem
         }
 
         var authorName = await GetDiscordAuthorNameAsync(message);
-        var relayName = GetDiscordRelayName(authorName);
+        var relayName = AHelpDiscordRelayHelper.GetDiscordRelayName(authorName);
         var plainText = ahelpText.ReplaceLineEndings(" ");
-        var bwoinkText = BuildDiscordBwoinkText(authorName, plainText);
+        var bwoinkText = AHelpDiscordRelayHelper.BuildDiscordBwoinkText(authorName, plainText);
 
-        SendAHelpToGame(target.UserId, bwoinkText);
+        _relayService.SendAHelpToGame(target.UserId, bwoinkText);
         RegisterPendingThreadRequest(target, relayName);
-        QueueAHelpWebhookMessage(
+        _relayService.QueueWebhookMessage(
             target.UserId,
             relayName,
             plainText,

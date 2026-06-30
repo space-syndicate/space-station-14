@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Reflection;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
@@ -10,7 +11,7 @@ namespace Content.Server.Corvax.Discord;
 /// Corvax-only adapter around private <see cref="BwoinkSystem"/> relay state.
 /// The upstream system does not expose hooks for Discord webhook message ids,
 /// so the external AHelp API keeps all reflection here instead of spreading it
-/// through the bridge and listener implementations.
+/// through the bridge and API transport implementations.
 /// </summary>
 public sealed class AHelpBwoinkReflectionAdapter
 {
@@ -86,6 +87,11 @@ public sealed class AHelpBwoinkReflectionAdapter
         username = string.Empty;
         characterName = null;
         return false;
+    }
+
+    public bool HasActiveConversation(NetUserId userId)
+    {
+        return GetRelaySnapshots().Any(snapshot => snapshot.UserId == userId);
     }
 
     public IReadOnlyList<AHelpRelaySnapshot> GetRelaySnapshots()

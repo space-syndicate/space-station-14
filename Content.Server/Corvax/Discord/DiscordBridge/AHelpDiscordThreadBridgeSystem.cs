@@ -43,6 +43,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
     private bool _subscribedToDiscord;
     private AHelpBwoinkReflectionAdapter _bwoinkAdapter = default!;
     private AHelpDiscordLinkReflectionAdapter _discordLinkAdapter = default!;
+    private AHelpDiscordRelayService _relayService = default!;
 
     private readonly HttpClient _httpClient = new();
     private readonly JsonSerializerOptions _jsonOptions = new() { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull };
@@ -54,6 +55,12 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         _sawmill = _logManager.GetSawmill("corvax.ahelp.thread");
         _bwoinkAdapter = new AHelpBwoinkReflectionAdapter(_bwoinkSystem);
         _discordLinkAdapter = new AHelpDiscordLinkReflectionAdapter(_discordLink);
+        _relayService = new AHelpDiscordRelayService(
+            _adminManager,
+            _playerManager,
+            _gameTicker,
+            _bwoinkAdapter,
+            RaiseNetworkEvent);
         _cfg.OnValueChanged(CCCVars.AHelpDiscordThreadBridge, OnEnabledChanged, true);
         _cfg.OnValueChanged(CCCVars.AHelpApiEnabled, OnExternalApiEnabledChanged, true);
 
@@ -81,7 +88,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         {
             if (_externalApiEnabled)
             {
-                _sawmill.Info("Discord ahelp thread bridge is disabled because the external Corvax AHelp API is enabled.");
+                _sawmill.Info("Discord ahelp thread bridge is disabled because the central AHelp bot API is enabled.");
                 return;
             }
 
@@ -163,27 +170,6 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         }
     }
 
-    private void SendAHelpToGame(NetUserId userId, string text)
-    {
-        var admins = GetTargetAdmins();
-        var bwoinkMessage = new BwoinkTextMessage(
-            userId,
-            SystemUserId,
-            text,
-            sentAt: DateTime.Now,
-            playSound: true);
-
-        foreach (var admin in admins)
-        {
-            RaiseNetworkEvent(bwoinkMessage, admin);
-        }
-
-        if (_playerManager.TryGetSessionById(userId, out var session) && !admins.Contains(session.Channel))
-        {
-            RaiseNetworkEvent(bwoinkMessage, session.Channel);
-        }
-    }
-
     private async Task SendDiscordThreadWebhookMessageAsync(ulong channelId, string message)
     {
         if (!_bwoinkAdapter.TryGetAHelpWebhookUrl(out var webhookUrl))
@@ -247,24 +233,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         if (string.IsNullOrWhiteSpace(text))
             return;
 
-        var admins = GetTargetAdmins();
-        var bwoinkText = BuildDiscordBwoinkText(authorName, text);
-        var bwoinkMessage = new BwoinkTextMessage(
-            userId,
-            SystemUserId,
-            bwoinkText,
-            sentAt: DateTime.Now,
-            playSound: true);
-
-        foreach (var admin in admins)
-        {
-            RaiseNetworkEvent(bwoinkMessage, admin);
-        }
-
-        if (_playerManager.TryGetSessionById(userId, out var session) && !admins.Contains(session.Channel))
-        {
-            RaiseNetworkEvent(bwoinkMessage, session.Channel);
-        }
+        _relayService.SendAHelpToGame(userId, AHelpDiscordRelayHelper.BuildDiscordBwoinkText(authorName, text));
     }
 
     private async Task RelayDiscordMessageToWebhookQueue(NetUserId userId, Message message)
@@ -277,14 +246,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         if (string.IsNullOrWhiteSpace(text))
             return;
 
-        QueueAHelpWebhookMessage(userId, GetDiscordRelayName(authorName), text, isAdmin: true);
-    }
-
-    private static string BuildDiscordBwoinkText(string authorName, string text)
-    {
-        var escapedAuthor = FormattedMessage.EscapeText(authorName);
-        var escapedText = FormattedMessage.EscapeText(text);
-        return $"[color=red]{escapedAuthor} \\[D\\][/color]: {escapedText}";
+        _relayService.QueueWebhookMessage(userId, AHelpDiscordRelayHelper.GetDiscordRelayName(authorName), text, isAdmin: true);
     }
 
     private static async Task<string> GetDiscordAuthorNameAsync(Message message)
@@ -318,42 +280,6 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
             return author.GlobalName;
 
         return author.Id.ToString();
-    }
-
-    private static string GetDiscordRelayName(string authorName)
-    {
-        return $"{authorName} [D]";
-    }
-
-    private void QueueAHelpWebhookMessage(NetUserId userId, string username, string text, bool isAdmin)
-    {
-        if (!_bwoinkAdapter.TryGetAHelpWebhookUrl(out _))
-            return;
-
-        if (string.IsNullOrWhiteSpace(text))
-            return;
-
-        var roundTime = _gameTicker.RunLevel == GameRunLevel.InRound
-            ? _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss")
-            : string.Empty;
-
-        var messageParams = new AHelpMessageParams(
-            username,
-            text,
-            isAdmin,
-            roundTime,
-            _gameTicker.RunLevel,
-            playedSound: true);
-
-        _bwoinkAdapter.QueueWebhookMessage(userId, messageParams);
-    }
-
-    private IList<INetChannel> GetTargetAdmins()
-    {
-        return _adminManager.ActiveAdmins
-            .Where(p => _adminManager.GetAdminData(p)?.HasFlag(AdminFlags.Adminhelp) ?? false)
-            .Select(p => p.Channel)
-            .ToList();
     }
 
 }
