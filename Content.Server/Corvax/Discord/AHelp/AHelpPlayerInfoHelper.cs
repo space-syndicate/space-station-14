@@ -59,16 +59,6 @@ public static class AHelpPlayerInfoHelper
         return session != null;
     }
 
-    public static string GetLocalizedStatusName(SessionStatus status)
-    {
-        return status switch
-        {
-            SessionStatus.InGame => "в игре",
-            SessionStatus.Connected => "подключен",
-            SessionStatus.Disconnected => "отключен",
-            _ => status.ToString(),
-        };
-    }
 }
 
 public sealed record AHelpPlayerInfo(
