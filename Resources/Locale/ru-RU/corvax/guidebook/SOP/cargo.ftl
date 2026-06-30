@@ -69,7 +69,6 @@ guidebook-SOP-SalvageSpecialist-must =
     1. Выполнять утилизационные запросы от корпорации NanoTrasen.
 
 guidebook-SOP-SalvageSpecialist-right =
-    1. На использование в своей работе [tooltip="guidebook-SOP-cargo-tooltip-salvage-weapons" text="холодного и протокинетического оружия"].
     1. Использовать утилизационный шаттл для проведения утилизационных работ.
 
 guidebook-SOP-SalvageSpecialist-prohibited =
@@ -81,7 +80,6 @@ guidebook-SOP-SalvageSpecialist-prohibited =
 # Corvax-Goob-Start
 ## Шахтёр
 guidebook-SOP-ShaftMiner-must =
-    1. Выполнять добычу руды, а также проводить зачистку и утилизацию заброшенных объектов в рамках экспедиций на Лаваленде.
     1. Доставлять всю добытую руду, а так же утилизацию в отдел снабжения, обнаруженные в ходе экспедиции на Лаваленде.
 
 guidebook-SOP-ShaftMiner-right =
