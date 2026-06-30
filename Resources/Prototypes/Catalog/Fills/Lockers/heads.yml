@@ -54,11 +54,11 @@
         max: 15
     - id: PlushieLizardJobCaptain
       prob: 0.02
-    - id: SecApartmentTablet # Corvax-SecApartment
-    # Corvax-Resprite-Start
+    # Corvax-Start
+    - id: PrinterDocFlatpack
     - id: ClothingHeadCaptainHat
     - id: ClothingOuterCoatCaptain
-    # Corvax-Resprite-End
+    # Corvax-End
 
 # No laser table + Laser table
 - type: entityTable
@@ -176,6 +176,7 @@
     - id: MetalFoamGrenade
     - id: PlushieLizardJobChiefengineer
       prob: 0.02
+    - id: PrinterDocFlatpack # Corvax-Printer
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -232,6 +233,7 @@
     - id: BoxCMOCircuitboards
     - id: PlushieLizardJobChiefmedicalofficer
       prob: 0.02
+    - id: PrinterDocFlatpack # Corvax-Printer
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -283,6 +285,7 @@
     - id: RubberStampRd
     - id: PlushieLizardJobResearchdirector
       prob: 0.02
+    - id: PrinterDocFlatpack # Corvax-Printer
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -340,7 +343,6 @@
     - id: RubberStampHos
     - id: BoxHoSCircuitboards
     - id: WeaponDisabler
-    - id: WeaponTaser
     - id: WantedListCartridge
     - id: DrinkHosFlask
     - id: PlushieLizardJobHeadofsecurity
@@ -350,6 +352,8 @@
       prob: 0.5
     - id: ClothingOuterCoatHoSGreatcoat
     - id: BookBusido
+    - id: SecApartmentTablet
+    - id: PrinterDocFlatpack
     # Corvax-End
 
 # Hardsuit table, used for suit storage as well

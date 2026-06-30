@@ -141,7 +141,7 @@
     range: 5
     enabled: false
     sound:
-      path: /Audio/Ambience/Objects/server_fans.ogg
+      collection: ServerFans
   - type: WiresVisuals
   - type: Physics
     bodyType: Static
@@ -201,6 +201,7 @@
       - EncryptionKeySecurity
       - EncryptionKeyService
       - EncryptionKeyCommand
+      - EncryptionKeyLegal # Corvax Legal
 
 - type: entity
   parent: TelecomServer
@@ -261,6 +262,7 @@
     containers:
       key_slots:
       - EncryptionKeySecurity
+      - EncryptionKeyLegal # Corvax Legal
 
 - type: entity
   parent: TelecomServer

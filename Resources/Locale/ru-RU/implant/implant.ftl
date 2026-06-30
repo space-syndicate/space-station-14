@@ -1,11 +1,12 @@
 ## Implanter Attempt Messages
 
-implanter-component-implanting-target = { $user } пытается что-то в вас имплантировать!
+implanter-component-implanting-target = {CAPITALIZE(THE({$user}))} пытается что-то в вас имплантировать!
+implanter-component-draw-target = {CAPITALIZE(THE({$user}))} пытается что-то извлечь из вас!
 implanter-component-implant-failed = { $implant } нельзя имплантировать в { $target }!
 implanter-draw-failed-permanent = { $implant } вросся в { $target } и не может быть удалён!
 implanter-draw-failed = Вы пытаетесь удалить имплант, но ничего не находите.
 implanter-draw-failed-catastrophically = Имплантер ничего не находит и катастрофически выходит из строя, впивая генетический материал в руку { $user }!
-implanter-component-implant-already = { $target } уже имеет { $implant }!
+implanter-component-implant-already = {CAPITALIZE(THE({$target}))} уже имеет { $implant }!
 
 ## UI
 implanter-set-draw-verb = Установить извлечение импланта

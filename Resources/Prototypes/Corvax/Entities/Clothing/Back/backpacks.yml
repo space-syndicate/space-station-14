@@ -5,7 +5,7 @@
   description: A spacious backpack with lots of pockets, worn by military structures.
   components:
   - type: Sprite
-    sprite: Corvax/Back/Backpacks/military.rsi
+    sprite: Corvax/Clothing/Back/Backpacks/military.rsi
   - type: Storage
     grid:
     - 0,0,8,4
@@ -17,7 +17,7 @@
   description: A spacious backpack using bluespace technology.
   components:
   - type: Sprite
-    sprite: Corvax/Back/Backpacks/deathsquad-backpack.rsi
+    sprite: Corvax/Clothing/Back/Backpacks/deathsquad-backpack.rsi
   - type: Storage
     grid:
     - 0,0,13,7
@@ -30,7 +30,7 @@
   description: Technicially progressive backpack.
   components:
   - type: Sprite
-    sprite: Corvax/Back/Backpacks/ce.rsi
+    sprite: Corvax/Clothing/Back/Backpacks/ce.rsi
 
 - type: entity
   parent: ClothingBackpack
@@ -39,5 +39,4 @@
   description: It's a very robust blue backpack.
   components:
   - type: Sprite
-    sprite: Corvax/Back/Backpacks/warden.rsi
-    
+    sprite: Corvax/Clothing/Back/Backpacks/warden.rsi
