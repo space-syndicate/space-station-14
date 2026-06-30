@@ -15,7 +15,7 @@ public static class AHelpDiscordRelayHelper
 
     public static string GetDiscordRelayName(string authorName)
     {
-        return $"{authorName} [D]";
+        return $"{authorName}[D]";
     }
 
     public static AHelpMessageParams BuildWebhookMessageParams(
