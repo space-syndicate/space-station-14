@@ -138,10 +138,10 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
 
     private void OnDiscordMessageReceived(Message message)
     {
-        _taskManager.RunOnMainThread(() => HandleDiscordMessageOnMainThread(message));
+        _ = HandleDiscordMessageAsync(message);
     }
 
-    private async void HandleDiscordMessageOnMainThread(Message message)
+    private async Task HandleDiscordMessageAsync(Message message)
     {
         try
         {
@@ -156,11 +156,11 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
 
             if (TryGetUserForThread(message.ChannelId, out var threadUserId))
             {
-                if (await TryHandleThreadCommandAsync(message))
+                var authorName = await GetDiscordAuthorNameAsync(message);
+                if (await TryHandleThreadCommandAsync(message, authorName))
                     return;
 
-                await RelayDiscordMessageToGame(threadUserId, message);
-                await RelayDiscordMessageToWebhookQueue(threadUserId, message);
+                await RelayDiscordMessageAsync(threadUserId, authorName, message.Content);
                 return;
             }
         }
@@ -172,7 +172,9 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
 
     private async Task SendDiscordThreadWebhookMessageAsync(ulong channelId, string message)
     {
-        if (!_bwoinkAdapter.TryGetAHelpWebhookUrl(out var webhookUrl))
+        var webhookUrl = await _taskManager.RunOnMainThreadAsync(() =>
+            _bwoinkAdapter.TryGetAHelpWebhookUrl(out var url) ? url : string.Empty);
+        if (string.IsNullOrWhiteSpace(webhookUrl))
             return;
 
         try
@@ -225,28 +227,26 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         return chunks;
     }
 
-    private async Task RelayDiscordMessageToGame(NetUserId userId, Message message)
+    private async Task RelayDiscordMessageAsync(NetUserId userId, string authorName, string content)
     {
-        var authorName = await GetDiscordAuthorNameAsync(message);
-        var text = message.Content.ReplaceLineEndings(" ");
+        var text = content.ReplaceLineEndings(" ");
 
         if (string.IsNullOrWhiteSpace(text))
             return;
 
-        _relayService.SendAHelpToGame(userId, AHelpDiscordRelayHelper.BuildDiscordBwoinkText(authorName, text));
-    }
+        await _taskManager.RunOnMainThreadAsync(() =>
+        {
+            _relayService.SendAHelpToGame(userId, AHelpDiscordRelayHelper.BuildDiscordBwoinkText(authorName, text));
 
-    private async Task RelayDiscordMessageToWebhookQueue(NetUserId userId, Message message)
-    {
-        if (!_bwoinkAdapter.TryGetAHelpWebhookUrl(out _))
-            return;
-
-        var authorName = await GetDiscordAuthorNameAsync(message);
-        var text = message.Content.ReplaceLineEndings(" ");
-        if (string.IsNullOrWhiteSpace(text))
-            return;
-
-        _relayService.QueueWebhookMessage(userId, AHelpDiscordRelayHelper.GetDiscordRelayName(authorName), text, isAdmin: true);
+            if (_bwoinkAdapter.TryGetAHelpWebhookUrl(out _))
+            {
+                _relayService.QueueWebhookMessage(
+                    userId,
+                    AHelpDiscordRelayHelper.GetDiscordRelayName(authorName),
+                    text,
+                    isAdmin: true);
+            }
+        });
     }
 
     private static async Task<string> GetDiscordAuthorNameAsync(Message message)

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Content.Shared.GameTicking;
 using Robust.Shared;
 using Robust.Shared.Enums;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 
 namespace Content.Server.Corvax.Discord;
@@ -45,47 +46,61 @@ public sealed partial class AHelpExternalApiSystem
 
     private async Task OnApiConnectedAsync()
     {
-        _seenRelays.Clear();
-        await SendHelloAsync();
-        await SendCurrentConversationsAsync();
+        var payloads = await _taskManager.RunOnMainThreadAsync(BuildConnectedPayloads);
+        foreach (var payload in payloads)
+        {
+            await SendAsync(payload);
+        }
     }
 
     private void OnApiDisconnected()
     {
-        _seenRelays.Clear();
+        _taskManager.RunOnMainThread(() => _seenRelays.Clear());
     }
 
-    private async void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
+    private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
     {
-        if (!_seenRelays.ContainsKey(e.Session.UserId))
+        _ = HandlePlayerStatusChangedAsync(e);
+    }
+
+    private async Task HandlePlayerStatusChangedAsync(SessionStatusEventArgs e)
+    {
+        var snapshot = await _taskManager.RunOnMainThreadAsync(() =>
+            _seenRelays.ContainsKey(e.Session.UserId)
+                ? new PlayerStatusSnapshot(e.Session.UserId, e.Session.Name, e.NewStatus)
+                : null);
+
+        if (snapshot == null)
             return;
 
-        var status = e.NewStatus.ToString();
-        if (e.NewStatus == SessionStatus.Disconnected &&
-            await _dbManager.GetBanAsync(null, e.Session.UserId, null, null) != null)
+        var status = snapshot.Status.ToString();
+        if (snapshot.Status == SessionStatus.Disconnected &&
+            await _dbManager.GetBanAsync(null, snapshot.UserId, null, null) != null)
         {
             status = "Banned";
         }
 
         _ = SendAsync(new AHelpApiOutbound.PlayerStatus(
-            e.Session.UserId.ToString(),
-            e.Session.UserId.ToString(),
-            e.Session.Name,
+            snapshot.UserId.ToString(),
+            snapshot.UserId.ToString(),
+            snapshot.Ckey,
             status,
             DateTimeOffset.UtcNow));
     }
 
-    private async Task SendHelloAsync()
+    private object[] BuildConnectedPayloads()
     {
-        await SendAsync(new AHelpApiOutbound.Hello(
-            ProtocolVersion,
-            _cfg.GetCVar(CVars.GameHostName),
-            _gameTicker.RoundId,
-            _gameTicker.RunLevel.ToString()));
-    }
+        _seenRelays.Clear();
 
-    private async Task SendCurrentConversationsAsync()
-    {
+        var payloads = new List<object>
+        {
+            new AHelpApiOutbound.Hello(
+                ProtocolVersion,
+                _cfg.GetCVar(CVars.GameHostName),
+                _gameTicker.RoundId,
+                _gameTicker.RunLevel.ToString()),
+        };
+
         foreach (var snapshot in _bwoinkAdapter.GetRelaySnapshots())
         {
             if (snapshot.RootMessageId == null)
@@ -95,11 +110,11 @@ public sealed partial class AHelpExternalApiSystem
                 snapshot.RootMessageId,
                 SHA256.HashData(Encoding.UTF8.GetBytes(snapshot.Description)));
 
-            await SendConversationUpsertAsync(snapshot);
+            payloads.Add(BuildConversationUpsert(snapshot));
 
             if (!string.IsNullOrWhiteSpace(snapshot.Description))
             {
-                await SendAsync(new AHelpApiOutbound.AHelpMessage(
+                payloads.Add(new AHelpApiOutbound.AHelpMessage(
                     snapshot.UserId.ToString(),
                     snapshot.UserId.ToString(),
                     "transcript",
@@ -107,12 +122,14 @@ public sealed partial class AHelpExternalApiSystem
                     DateTimeOffset.UtcNow));
             }
         }
+
+        return payloads.ToArray();
     }
 
-    private async Task SendConversationUpsertAsync(AHelpRelaySnapshot snapshot)
+    private AHelpApiOutbound.ConversationUpsert BuildConversationUpsert(AHelpRelaySnapshot snapshot)
     {
         _bwoinkAdapter.TryGetAHelpWebhookChannelId(out var webhookChannelId);
-        await SendAsync(new AHelpApiOutbound.ConversationUpsert(
+        return new AHelpApiOutbound.ConversationUpsert(
             snapshot.UserId.ToString(),
             snapshot.UserId.ToString(),
             snapshot.Username,
@@ -121,8 +138,15 @@ public sealed partial class AHelpExternalApiSystem
             webhookChannelId == 0 ? null : webhookChannelId,
             _cfg.GetCVar(CVars.GameHostName),
             _gameTicker.RoundId,
-            snapshot.LastRunLevel.ToString()));
+            snapshot.LastRunLevel.ToString());
+    }
+
+    private async Task SendConversationUpsertAsync(AHelpRelaySnapshot snapshot)
+    {
+        await SendAsync(BuildConversationUpsert(snapshot));
     }
 
     private sealed record RelaySeenState(ulong? RootMessageId, byte[] DescriptionHash);
+
+    private sealed record PlayerStatusSnapshot(NetUserId UserId, string Ckey, SessionStatus Status);
 }

@@ -11,7 +11,9 @@ public sealed partial class AHelpDiscordThreadBridgeSystem
 {
     private async Task HandleRootWebhookMessageAsync(Message message)
     {
-        if (!TryGetAHelpWebhookChannelId(out var webhookChannelId) || message.ChannelId != webhookChannelId)
+        var webhookChannelId = await _taskManager.RunOnMainThreadAsync(() =>
+            TryGetAHelpWebhookChannelId(out var channelId) ? channelId : 0);
+        if (webhookChannelId == 0 || message.ChannelId != webhookChannelId)
             return;
 
         _sawmill.Debug($"Received root ahelp webhook message {message.Id} in channel {message.ChannelId}, scheduling thread creation.");
@@ -30,7 +32,9 @@ public sealed partial class AHelpDiscordThreadBridgeSystem
 
     private async Task TryCreateThreadForRootMessageAsync(ulong rootMessageId, string authorUsername)
     {
-        if (!TryGetAHelpWebhookChannelId(out var webhookChannelId))
+        var webhookChannelId = await _taskManager.RunOnMainThreadAsync(() =>
+            TryGetAHelpWebhookChannelId(out var channelId) ? channelId : 0);
+        if (webhookChannelId == 0)
             return;
 
         if (IsRootMessageProcessed(rootMessageId))
@@ -42,18 +46,33 @@ public sealed partial class AHelpDiscordThreadBridgeSystem
 
         for (var attempt = 0; attempt < 30; attempt++)
         {
-            if (TryGetRelayUserByMessageId(rootMessageId, out userId, out username, out characterName))
+            var snapshot = await _taskManager.RunOnMainThreadAsync(() =>
+                TryGetRelayUserByMessageId(rootMessageId, out var relayUserId, out var relayUsername, out var relayCharacterName)
+                    ? new RelayMessageLookup(relayUserId, relayUsername, relayCharacterName)
+                    : null);
+
+            if (snapshot != null)
+            {
+                userId = snapshot.UserId;
+                username = snapshot.Username;
+                characterName = snapshot.CharacterName;
                 break;
+            }
 
             await Task.Delay(100);
         }
 
-        if (userId == default && TryTakePendingThreadRequest(authorUsername, out var pending))
+        if (userId == default)
         {
-            userId = pending.UserId;
-            username = pending.Username;
-            characterName = pending.CharacterName;
-            _sawmill.Debug($"Matched root ahelp webhook message {rootMessageId} to pending Discord !ah request for {username}.");
+            var pending = await _taskManager.RunOnMainThreadAsync(() =>
+                TryTakePendingThreadRequest(authorUsername, out var request) ? request : null);
+            if (pending != null)
+            {
+                userId = pending.UserId;
+                username = pending.Username;
+                characterName = pending.CharacterName;
+                _sawmill.Debug($"Matched root ahelp webhook message {rootMessageId} to pending Discord !ah request for {username}.");
+            }
         }
 
         if (userId == default || string.IsNullOrEmpty(username) && characterName == null)
@@ -99,9 +118,18 @@ public sealed partial class AHelpDiscordThreadBridgeSystem
                 if (TryGetThreadForUser(userId, out _))
                     return;
 
-                if (TryGetRelayMessageForUser(userId, out var rootMessageId, out var username, out var characterName))
+                var snapshot = await _taskManager.RunOnMainThreadAsync(() =>
+                    TryGetRelayMessageForUser(userId, out var rootMessageId, out var username, out var characterName)
+                        ? new RelayMessageLookup(userId, username, characterName, rootMessageId)
+                        : null);
+
+                if (snapshot != null)
                 {
-                    await TryCreateThreadForKnownUserAsync(rootMessageId, userId, username, characterName);
+                    await TryCreateThreadForKnownUserAsync(
+                        snapshot.RootMessageId!.Value,
+                        userId,
+                        snapshot.Username,
+                        snapshot.CharacterName);
                     return;
                 }
 
@@ -118,7 +146,9 @@ public sealed partial class AHelpDiscordThreadBridgeSystem
 
     private async Task TryCreateThreadForKnownUserAsync(ulong rootMessageId, NetUserId userId, string username, string? characterName)
     {
-        if (!TryGetAHelpWebhookChannelId(out var webhookChannelId))
+        var webhookChannelId = await _taskManager.RunOnMainThreadAsync(() =>
+            TryGetAHelpWebhookChannelId(out var channelId) ? channelId : 0);
+        if (webhookChannelId == 0)
             return;
 
         if (IsRootMessageProcessed(rootMessageId) || TryGetThreadForUser(userId, out _))
@@ -211,4 +241,10 @@ public sealed partial class AHelpDiscordThreadBridgeSystem
 
         return $"ahelp: {baseName}";
     }
+
+    private sealed record RelayMessageLookup(
+        NetUserId UserId,
+        string Username,
+        string? CharacterName,
+        ulong? RootMessageId = null);
 }
