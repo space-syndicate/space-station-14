@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Reflection;
 using System.Threading.Tasks;
 using NetCord;
 using NetCord.Gateway;
@@ -22,49 +20,12 @@ public sealed partial class AHelpDiscordThreadBridgeSystem
 
     private bool TryGetAHelpWebhookChannelId(out ulong channelId)
     {
-        channelId = default;
-
-        var webhookData = GetPrivateFieldValue(_bwoinkSystem, "_webhookData");
-        if (webhookData == null)
-            return false;
-
-        var channelIdValue = webhookData.GetType().GetProperty("ChannelId", BindingFlags.Instance | BindingFlags.Public)?.GetValue(webhookData) as string;
-        return ulong.TryParse(channelIdValue, out channelId);
+        return _bwoinkAdapter.TryGetAHelpWebhookChannelId(out channelId);
     }
 
     private bool TryGetRelayUserByMessageId(ulong messageId, out NetUserId userId, out string username, out string? characterName)
     {
-        userId = default;
-        username = string.Empty;
-        characterName = null;
-
-        var relayMessages = GetPrivateFieldValue(_bwoinkSystem, "_relayMessages") as IEnumerable;
-        if (relayMessages == null)
-            return false;
-
-        foreach (var entry in relayMessages)
-        {
-            var entryType = entry.GetType();
-            var key = entryType.GetProperty("Key", BindingFlags.Instance | BindingFlags.Public)?.GetValue(entry);
-            if (key is not NetUserId currentUserId)
-                continue;
-
-            var value = entryType.GetProperty("Value", BindingFlags.Instance | BindingFlags.Public)?.GetValue(entry);
-            if (value == null)
-                continue;
-
-            var interactionType = value.GetType();
-            var id = interactionType.GetField("Id", BindingFlags.Instance | BindingFlags.Public)?.GetValue(value) as string;
-            if (!ulong.TryParse(id, out var relayMessageId) || relayMessageId != messageId)
-                continue;
-
-            userId = currentUserId;
-            username = interactionType.GetField("Username", BindingFlags.Instance | BindingFlags.Public)?.GetValue(value) as string ?? string.Empty;
-            characterName = interactionType.GetField("CharacterName", BindingFlags.Instance | BindingFlags.Public)?.GetValue(value) as string;
-            return true;
-        }
-
-        return false;
+        return _bwoinkAdapter.TryGetRelayUserByMessageId(messageId, out userId, out username, out characterName);
     }
 
     private async Task TryCreateThreadForRootMessageAsync(ulong rootMessageId, string authorUsername)
@@ -193,41 +154,12 @@ public sealed partial class AHelpDiscordThreadBridgeSystem
 
     private bool TryGetRelayMessageForUser(NetUserId userId, out ulong messageId, out string username, out string? characterName)
     {
-        messageId = default;
-        username = string.Empty;
-        characterName = null;
-
-        var relayMessages = GetPrivateFieldValue(_bwoinkSystem, "_relayMessages") as IEnumerable;
-        if (relayMessages == null)
-            return false;
-
-        foreach (var entry in relayMessages)
-        {
-            var entryType = entry.GetType();
-            var key = entryType.GetProperty("Key", BindingFlags.Instance | BindingFlags.Public)?.GetValue(entry);
-            if (key is not NetUserId currentUserId || currentUserId != userId)
-                continue;
-
-            var value = entryType.GetProperty("Value", BindingFlags.Instance | BindingFlags.Public)?.GetValue(entry);
-            if (value == null)
-                return false;
-
-            var interactionType = value.GetType();
-            var id = interactionType.GetField("Id", BindingFlags.Instance | BindingFlags.Public)?.GetValue(value) as string;
-            if (!ulong.TryParse(id, out messageId))
-                return false;
-
-            username = interactionType.GetField("Username", BindingFlags.Instance | BindingFlags.Public)?.GetValue(value) as string ?? string.Empty;
-            characterName = interactionType.GetField("CharacterName", BindingFlags.Instance | BindingFlags.Public)?.GetValue(value) as string;
-            return !string.IsNullOrEmpty(username) || characterName != null;
-        }
-
-        return false;
+        return _bwoinkAdapter.TryGetRelayMessageForUser(userId, out messageId, out username, out characterName);
     }
 
     private async Task<GuildThread?> CreateThreadFromMessageAsync(ulong channelId, ulong messageId, string threadName)
     {
-        var client = GetPrivateFieldValue(_discordLink, "_client") as GatewayClient;
+        var client = _discordLinkAdapter.GetGatewayClient();
         if (client == null)
             return null;
 
@@ -253,7 +185,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem
 
     private async Task JoinThreadAsync(ulong threadId)
     {
-        var client = GetPrivateFieldValue(_discordLink, "_client") as GatewayClient;
+        var client = _discordLinkAdapter.GetGatewayClient();
         if (client == null)
             return;
 

@@ -21,6 +21,30 @@ public sealed class CCCVars
     public static readonly CVarDef<bool> AHelpDiscordThreadBridge =
         CVarDef.Create("discord.ahelp_thread_bridge", false, CVar.SERVERONLY);
 
+    /// <summary>
+    /// Enables the external Corvax AHelp API used by the central Discord bot.
+    /// </summary>
+    public static readonly CVarDef<bool> AHelpApiEnabled =
+        CVarDef.Create("corvax.ahelp_api_enabled", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Host address for the external Corvax AHelp API listener.
+    /// </summary>
+    public static readonly CVarDef<string> AHelpApiHost =
+        CVarDef.Create("corvax.ahelp_api_host", "127.0.0.1", CVar.SERVERONLY);
+
+    /// <summary>
+    /// Port for the external Corvax AHelp API listener.
+    /// </summary>
+    public static readonly CVarDef<int> AHelpApiPort =
+        CVarDef.Create("corvax.ahelp_api_port", 12120, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Shared secret used by the central Discord bot to authenticate with the external Corvax AHelp API.
+    /// </summary>
+    public static readonly CVarDef<string> AHelpApiToken =
+        CVarDef.Create("corvax.ahelp_api_token", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
     /**
      * TTS (Text-To-Speech)
      */

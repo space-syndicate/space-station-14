@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Linq;
 using System.Net.Http;
-using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -41,6 +39,10 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
 
     private ISawmill _sawmill = default!;
     private bool _isEnabled;
+    private bool _externalApiEnabled;
+    private bool _subscribedToDiscord;
+    private AHelpBwoinkReflectionAdapter _bwoinkAdapter = default!;
+    private AHelpDiscordLinkReflectionAdapter _discordLinkAdapter = default!;
 
     private readonly HttpClient _httpClient = new();
     private readonly JsonSerializerOptions _jsonOptions = new() { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull };
@@ -50,17 +52,20 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
         base.Initialize();
 
         _sawmill = _logManager.GetSawmill("corvax.ahelp.thread");
+        _bwoinkAdapter = new AHelpBwoinkReflectionAdapter(_bwoinkSystem);
+        _discordLinkAdapter = new AHelpDiscordLinkReflectionAdapter(_discordLink);
         _cfg.OnValueChanged(CCCVars.AHelpDiscordThreadBridge, OnEnabledChanged, true);
+        _cfg.OnValueChanged(CCCVars.AHelpApiEnabled, OnExternalApiEnabledChanged, true);
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => ClearState());
     }
 
     public override void Shutdown()
     {
-        if (_isEnabled)
-            _discordLink.OnMessageReceived -= OnDiscordMessageReceived;
+        UnsubscribeDiscord();
 
         _cfg.UnsubValueChanged(CCCVars.AHelpDiscordThreadBridge, OnEnabledChanged);
+        _cfg.UnsubValueChanged(CCCVars.AHelpApiEnabled, OnExternalApiEnabledChanged);
         ClearState();
         base.Shutdown();
     }
@@ -74,12 +79,54 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
 
         if (enabled)
         {
-            _discordLink.OnMessageReceived += OnDiscordMessageReceived;
+            if (_externalApiEnabled)
+            {
+                _sawmill.Info("Discord ahelp thread bridge is disabled because the external Corvax AHelp API is enabled.");
+                return;
+            }
+
+            SubscribeDiscord();
             return;
         }
 
         _sawmill.Info("Discord ahelp thread bridge is disabled by cvar, not subscribing to Discord messages.");
+        UnsubscribeDiscord();
+    }
+
+    private void OnExternalApiEnabledChanged(bool enabled)
+    {
+        _externalApiEnabled = enabled;
+
+        if (!enabled)
+        {
+            if (_isEnabled)
+                SubscribeDiscord();
+
+            return;
+        }
+
+        if (_isEnabled)
+            UnsubscribeDiscord();
+
+        _sawmill.Info("External Corvax AHelp API enabled; in-process Discord ahelp thread bridge is inactive.");
+    }
+
+    private void SubscribeDiscord()
+    {
+        if (_subscribedToDiscord)
+            return;
+
+        _discordLink.OnMessageReceived += OnDiscordMessageReceived;
+        _subscribedToDiscord = true;
+    }
+
+    private void UnsubscribeDiscord()
+    {
+        if (!_subscribedToDiscord)
+            return;
+
         _discordLink.OnMessageReceived -= OnDiscordMessageReceived;
+        _subscribedToDiscord = false;
     }
 
     private void OnDiscordMessageReceived(Message message)
@@ -139,7 +186,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
 
     private async Task SendDiscordThreadWebhookMessageAsync(ulong channelId, string message)
     {
-        if (!TryGetAHelpWebhookUrl(out var webhookUrl))
+        if (!_bwoinkAdapter.TryGetAHelpWebhookUrl(out var webhookUrl))
             return;
 
         try
@@ -222,7 +269,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
 
     private async Task RelayDiscordMessageToWebhookQueue(NetUserId userId, Message message)
     {
-        if (!TryGetAHelpWebhookUrl(out _))
+        if (!_bwoinkAdapter.TryGetAHelpWebhookUrl(out _))
             return;
 
         var authorName = await GetDiscordAuthorNameAsync(message);
@@ -280,7 +327,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
 
     private void QueueAHelpWebhookMessage(NetUserId userId, string username, string text, bool isAdmin)
     {
-        if (!TryGetAHelpWebhookUrl(out _))
+        if (!_bwoinkAdapter.TryGetAHelpWebhookUrl(out _))
             return;
 
         if (string.IsNullOrWhiteSpace(text))
@@ -298,37 +345,7 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
             _gameTicker.RunLevel,
             playedSound: true);
 
-        var discordRelayedData = GenerateAHelpMessage(messageParams);
-        if (discordRelayedData == null)
-            return;
-
-        var messageQueues = GetPrivateFieldValue(_bwoinkSystem, "_messageQueues") as IDictionary;
-        if (messageQueues == null)
-            return;
-
-        if (!messageQueues.Contains(userId))
-        {
-            var queueType = messageQueues.GetType().GetGenericArguments()[1];
-            messageQueues[userId] = Activator.CreateInstance(queueType);
-        }
-
-        var queue = messageQueues[userId];
-        queue?.GetType()
-            .GetMethod("Enqueue", BindingFlags.Instance | BindingFlags.Public)
-            ?.Invoke(queue, new[] { discordRelayedData });
-    }
-
-    private object? GenerateAHelpMessage(AHelpMessageParams parameters)
-    {
-        return _bwoinkSystem.GetType()
-            .GetMethod("GenerateAHelpMessage", BindingFlags.Instance | BindingFlags.NonPublic)
-            ?.Invoke(_bwoinkSystem, new object[] { parameters });
-    }
-
-    private bool TryGetAHelpWebhookUrl(out string webhookUrl)
-    {
-        webhookUrl = GetPrivateFieldValue(_bwoinkSystem, "_webhookUrl") as string ?? string.Empty;
-        return !string.IsNullOrWhiteSpace(webhookUrl);
+        _bwoinkAdapter.QueueWebhookMessage(userId, messageParams);
     }
 
     private IList<INetChannel> GetTargetAdmins()
@@ -337,13 +354,6 @@ public sealed partial class AHelpDiscordThreadBridgeSystem : SharedBwoinkSystem
             .Where(p => _adminManager.GetAdminData(p)?.HasFlag(AdminFlags.Adminhelp) ?? false)
             .Select(p => p.Channel)
             .ToList();
-    }
-
-    private static object? GetPrivateFieldValue(object instance, string fieldName)
-    {
-        return instance.GetType()
-            .GetField(fieldName, BindingFlags.Instance | BindingFlags.NonPublic)
-            ?.GetValue(instance);
     }
 
 }
