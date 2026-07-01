@@ -8,6 +8,7 @@ using Content.Shared.Administration;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
+using Content.Shared.Objectives.Systems;
 using Content.Shared.Roles;
 using Robust.Server.Player;
 using Robust.Shared;
@@ -32,6 +33,7 @@ public sealed partial class AHelpExternalApiSystem : SharedBwoinkSystem
     [Dependency] private BwoinkSystem _bwoinkSystem = default!;
     [Dependency] private GameTicker _gameTicker = default!;
     [Dependency] private SharedMindSystem _minds = default!;
+    [Dependency] private SharedObjectivesSystem _objectives = default!;
     [Dependency] private SharedRoleSystem _roles = default!;
 
     private readonly JsonSerializerOptions _jsonOptions = new(JsonSerializerDefaults.Web)

@@ -20,6 +20,11 @@ public static class AHelpApiInbound
         string? AuthorExternalId,
         string? AuthorName,
         string Text);
+
+    public sealed record ListObjectives(
+        string Type,
+        string? RequestId,
+        string Ckey);
 }
 
 public static class AHelpApiOutbound
@@ -116,6 +121,35 @@ public static class AHelpApiOutbound
         string Job,
         string[] Roles,
         bool Antagonist);
+
+    public sealed record ObjectivesResponse(
+        string Type,
+        string? RequestId,
+        bool Ok,
+        string? Error,
+        string? UserId,
+        string? Ckey,
+        string? CharacterName,
+        ObjectiveInfo[] Objectives)
+    {
+        public ObjectivesResponse(
+            string? requestId,
+            string userId,
+            string ckey,
+            string? characterName,
+            ObjectiveInfo[] objectives)
+            : this("response", requestId, true, null, userId, ckey, characterName, objectives)
+        {
+        }
+    }
+
+    public sealed record ObjectiveInfo(
+        int Index,
+        string Entity,
+        string? Title,
+        string? Description,
+        int Progress,
+        bool Valid);
 
     public sealed record Response(string Type, string? RequestId, bool Ok, string? Error)
     {

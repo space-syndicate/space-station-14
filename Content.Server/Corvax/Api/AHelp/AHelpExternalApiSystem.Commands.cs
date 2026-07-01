@@ -40,6 +40,9 @@ public sealed partial class AHelpExternalApiSystem
             case "open_ahelp":
                 await HandleOpenAHelpAsync(json, message.RequestId);
                 return true;
+            case "list_objectives":
+                await HandleListObjectivesAsync(json, message.RequestId);
+                return true;
             default:
                 return false;
         }
@@ -116,5 +119,63 @@ public sealed partial class AHelpExternalApiSystem
             await SendErrorAsync(requestId, result);
         else
             await SendOkAsync(requestId);
+    }
+
+    private async Task HandleListObjectivesAsync(string json, string? requestId)
+    {
+        var message = JsonSerializer.Deserialize<AHelpApiInbound.ListObjectives>(json, _jsonOptions);
+        if (message == null || string.IsNullOrWhiteSpace(message.Ckey))
+        {
+            await SendErrorAsync(requestId, "ckey is required");
+            return;
+        }
+
+        var result = await RunOnMainThread(() =>
+        {
+            if (!TryGetSessionByCkey(message.Ckey, out var target))
+                return (Error: $"Player '{message.Ckey}' not found", Response: (AHelpApiOutbound.ObjectivesResponse?) null);
+
+            if (!_minds.TryGetMind(target, out var mindId, out var mind))
+                return (Error: $"Player '{target.Name}' does not have a mind", Response: (AHelpApiOutbound.ObjectivesResponse?) null);
+
+            var objectives = mind.Objectives
+                .Select((objective, index) =>
+                {
+                    var info = _objectives.GetInfo(objective, mindId, mind);
+                    if (info == null)
+                    {
+                        return new AHelpApiOutbound.ObjectiveInfo(
+                            index,
+                            objective.ToString(),
+                            null,
+                            null,
+                            0,
+                            false);
+                    }
+
+                    return new AHelpApiOutbound.ObjectiveInfo(
+                        index,
+                        objective.ToString(),
+                        info.Value.Title,
+                        info.Value.Description,
+                        (int) (info.Value.Progress * 100f),
+                        true);
+                })
+                .ToArray();
+
+            var response = new AHelpApiOutbound.ObjectivesResponse(
+                requestId,
+                target.UserId.ToString(),
+                target.Name,
+                _minds.GetCharacterName(target.UserId),
+                objectives);
+
+            return (Error: string.Empty, Response: (AHelpApiOutbound.ObjectivesResponse?) response);
+        });
+
+        if (!string.IsNullOrEmpty(result.Error))
+            await SendErrorAsync(requestId, result.Error);
+        else
+            await SendAsync(result.Response);
     }
 }

@@ -49,7 +49,7 @@ public sealed partial class AHelpExternalApiSystem
         if (!_enabled)
             return;
 
-        var payloads = await _taskManager.RunOnMainThreadAsync(BuildConnectedPayloads);
+        var payloads = await RunOnMainThread(BuildConnectedPayloads);
         foreach (var payload in payloads)
         {
             await SendAsync(payload);
@@ -68,7 +68,7 @@ public sealed partial class AHelpExternalApiSystem
 
     private async Task HandlePlayerStatusChangedAsync(SessionStatusEventArgs e)
     {
-        var snapshot = await _taskManager.RunOnMainThreadAsync(() =>
+        var snapshot = await RunOnMainThread(() =>
             _seenRelays.ContainsKey(e.Session.UserId)
                 ? new PlayerStatusSnapshot(e.Session.UserId, e.Session.Name, e.NewStatus)
                 : null);
