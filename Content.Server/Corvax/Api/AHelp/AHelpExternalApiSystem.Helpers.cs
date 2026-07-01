@@ -129,7 +129,7 @@ public sealed partial class AHelpExternalApiSystem
 
     private static string BuildExternalBwoinkText(string authorName, string text)
     {
-        return $"[color=red]{FormattedMessage.EscapeText(authorName)} \\[E\\][/color]: {FormattedMessage.EscapeText(text)}";
+        return $"[color=red]{FormattedMessage.EscapeText(authorName)} \\[D\\][/color]: {FormattedMessage.EscapeText(text)}";
     }
 
     private IList<INetChannel> GetTargetAdmins()
