@@ -1,11 +1,15 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
+using Content.Server.Administration.Systems;
+using Content.Server.GameTicking;
+using Content.Shared.Administration;
 using Content.Shared.Mind;
 using Content.Shared.Roles;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.Api.AHelp;
 
@@ -56,7 +60,84 @@ public sealed partial class AHelpExternalApiSystem
 
     private void RelayExternalMessageToAHelp(NetUserId userId, string authorName, string plainText)
     {
-        _relayService.RelayExternalMessageToAHelp(userId, authorName, plainText);
+        SendAHelpToGame(userId, BuildExternalBwoinkText(authorName, plainText));
+        QueueWebhookMessage(userId, $"{authorName}[D]", plainText, isAdmin: true);
+    }
+
+    private bool HasKnownConversation(NetUserId userId)
+    {
+        return _knownExternalConversations.Contains(userId) ||
+               _seenRelays.ContainsKey(userId) ||
+               _bwoinkAdapter.HasActiveConversation(userId);
+    }
+
+    private AHelpApiOutbound.ConversationUpsert RememberConversation(ICommonSession session)
+    {
+        _knownExternalConversations.Add(session.UserId);
+
+        if (!_seenRelays.TryGetValue(session.UserId, out var seen))
+            seen = new RelaySeenState(null, Array.Empty<byte>(), false);
+
+        _seenRelays[session.UserId] = seen;
+        return BuildConversationUpsert(session);
+    }
+
+    private void MarkConversationSent(NetUserId userId)
+    {
+        if (!_seenRelays.TryGetValue(userId, out var seen))
+            seen = new RelaySeenState(null, Array.Empty<byte>(), false);
+
+        _seenRelays[userId] = seen with { ConversationSent = true };
+    }
+
+    private void SendAHelpToGame(NetUserId userId, string text)
+    {
+        var admins = GetTargetAdmins();
+        var bwoinkMessage = new BwoinkTextMessage(
+            userId,
+            SystemUserId,
+            text,
+            sentAt: DateTime.Now,
+            playSound: true);
+
+        foreach (var admin in admins)
+        {
+            RaiseNetworkEvent(bwoinkMessage, admin);
+        }
+
+        if (_playerManager.TryGetSessionById(userId, out var session) && !admins.Contains(session.Channel))
+            RaiseNetworkEvent(bwoinkMessage, session.Channel);
+    }
+
+    private void QueueWebhookMessage(NetUserId userId, string username, string text, bool isAdmin)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return;
+
+        var messageParams = new AHelpMessageParams(
+            username,
+            text,
+            isAdmin,
+            _gameTicker.RunLevel == GameRunLevel.InRound
+                ? _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss")
+                : string.Empty,
+            _gameTicker.RunLevel,
+            playedSound: true);
+
+        _bwoinkAdapter.QueueWebhookMessage(userId, messageParams);
+    }
+
+    private static string BuildExternalBwoinkText(string authorName, string text)
+    {
+        return $"[color=red]{FormattedMessage.EscapeText(authorName)} \\[E\\][/color]: {FormattedMessage.EscapeText(text)}";
+    }
+
+    private IList<INetChannel> GetTargetAdmins()
+    {
+        return _adminManager.ActiveAdmins
+            .Where(p => _adminManager.GetAdminData(p)?.HasFlag(AdminFlags.Adminhelp) ?? false)
+            .Select(p => p.Channel)
+            .ToList();
     }
 
     private async Task SendOkAsync(string? requestId)

@@ -55,12 +55,17 @@ public sealed partial class AHelpExternalApiSystem
             .Select(BuildPlayerInfo)
             .ToArray());
 
-        await SendAsync(new AHelpApiOutbound.PlayersResponse(requestId, players));
+        await SendAsync(new AHelpApiOutbound.PlayersResponse(requestId, true, null, players));
     }
 
     private async Task HandleSendAHelpMessageAsync(string json, string? requestId)
     {
-        var message = JsonSerializer.Deserialize<AHelpApiInbound.SendAHelpMessage>(json, _jsonOptions);
+        if (!TryDeserialize(json, out AHelpApiInbound.SendAHelpMessage? message, out var error))
+        {
+            await SendErrorAsync(requestId, error);
+            return;
+        }
+
         if (message == null || string.IsNullOrWhiteSpace(message.Text))
         {
             await SendErrorAsync(requestId, "Text is required");
@@ -81,7 +86,7 @@ public sealed partial class AHelpExternalApiSystem
 
         var result = await RunOnMainThread(() =>
         {
-            if (!_bwoinkAdapter.HasActiveConversation(userId))
+            if (!HasKnownConversation(userId))
                 return "AHelp conversation is not active";
 
             RelayExternalMessageToAHelp(userId, authorName, plainText);
@@ -96,14 +101,21 @@ public sealed partial class AHelpExternalApiSystem
 
     private async Task HandleOpenAHelpAsync(string json, string? requestId)
     {
-        var message = JsonSerializer.Deserialize<AHelpApiInbound.OpenAHelp>(json, _jsonOptions);
+        if (!TryDeserialize(json, out AHelpApiInbound.OpenAHelp? message, out var deserializeError))
+        {
+            await SendErrorAsync(requestId, deserializeError);
+            return;
+        }
+
         if (message == null || string.IsNullOrWhiteSpace(message.Ckey) || string.IsNullOrWhiteSpace(message.Text))
         {
             await SendErrorAsync(requestId, "ckey and text are required");
             return;
         }
 
-        var result = await RunOnMainThread(() =>
+        NetUserId? openedUserId = null;
+        AHelpApiOutbound.ConversationUpsert? upsert = null;
+        var error = await RunOnMainThread(() =>
         {
             if (!TryGetSessionByCkey(message.Ckey, out var target))
                 return $"Player '{message.Ckey}' not found";
@@ -111,19 +123,31 @@ public sealed partial class AHelpExternalApiSystem
             var authorName = string.IsNullOrWhiteSpace(message.AuthorName)
                 ? message.AuthorExternalId ?? "External"
                 : message.AuthorName;
+            upsert = RememberConversation(target);
+            openedUserId = target.UserId;
             RelayExternalMessageToAHelp(target.UserId, authorName, message.Text.ReplaceLineEndings(" "));
             return string.Empty;
         });
 
-        if (!string.IsNullOrEmpty(result))
-            await SendErrorAsync(requestId, result);
+        if (!string.IsNullOrEmpty(error))
+            await SendErrorAsync(requestId, error);
         else
+        {
+            await SendAsync(upsert!);
+            if (openedUserId is { } userId)
+                await RunOnMainThread(() => MarkConversationSent(userId));
             await SendOkAsync(requestId);
+        }
     }
 
     private async Task HandleListObjectivesAsync(string json, string? requestId)
     {
-        var message = JsonSerializer.Deserialize<AHelpApiInbound.ListObjectives>(json, _jsonOptions);
+        if (!TryDeserialize(json, out AHelpApiInbound.ListObjectives? message, out var error))
+        {
+            await SendErrorAsync(requestId, error);
+            return;
+        }
+
         if (message == null || string.IsNullOrWhiteSpace(message.Ckey))
         {
             await SendErrorAsync(requestId, "ckey is required");
@@ -142,29 +166,28 @@ public sealed partial class AHelpExternalApiSystem
                 .Select((objective, index) =>
                 {
                     var info = _objectives.GetInfo(objective, mindId, mind);
-                    if (info == null)
-                    {
-                        return new AHelpApiOutbound.ObjectiveInfo(
+                    return info == null
+                        ? new AHelpApiOutbound.ObjectiveInfo(
                             index,
                             objective.ToString(),
                             null,
                             null,
                             0,
-                            false);
-                    }
-
-                    return new AHelpApiOutbound.ObjectiveInfo(
-                        index,
-                        objective.ToString(),
-                        info.Value.Title,
-                        info.Value.Description,
-                        (int) (info.Value.Progress * 100f),
-                        true);
+                            false)
+                        : new AHelpApiOutbound.ObjectiveInfo(
+                            index,
+                            objective.ToString(),
+                            info.Value.Title,
+                            info.Value.Description,
+                            (int) (info.Value.Progress * 100f),
+                            true);
                 })
                 .ToArray();
 
             var response = new AHelpApiOutbound.ObjectivesResponse(
                 requestId,
+                true,
+                null,
                 target.UserId.ToString(),
                 target.Name,
                 _minds.GetCharacterName(target.UserId),
@@ -177,5 +200,21 @@ public sealed partial class AHelpExternalApiSystem
             await SendErrorAsync(requestId, result.Error);
         else
             await SendAsync(result.Response);
+    }
+
+    private bool TryDeserialize<T>(string json, out T? message, out string error)
+    {
+        try
+        {
+            message = JsonSerializer.Deserialize<T>(json, _jsonOptions);
+            error = string.Empty;
+            return true;
+        }
+        catch (Exception e)
+        {
+            message = default;
+            error = $"Invalid payload: {e.Message}";
+            return false;
+        }
     }
 }

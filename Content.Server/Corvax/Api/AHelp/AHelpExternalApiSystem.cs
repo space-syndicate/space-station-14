@@ -41,11 +41,11 @@ public sealed partial class AHelpExternalApiSystem : SharedBwoinkSystem
         DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
     };
 
+    private readonly HashSet<NetUserId> _knownExternalConversations = new();
     private readonly Dictionary<NetUserId, RelaySeenState> _seenRelays = new();
 
     private ISawmill _sawmill = default!;
     private AHelpBwoinkReflectionAdapter _bwoinkAdapter = default!;
-    private AHelpExternalRelayService _relayService = default!;
     private bool _enabled;
 
     public override void Initialize()
@@ -54,12 +54,6 @@ public sealed partial class AHelpExternalApiSystem : SharedBwoinkSystem
 
         _sawmill = _logManager.GetSawmill("corvax.ahelp.api");
         _bwoinkAdapter = new AHelpBwoinkReflectionAdapter(_bwoinkSystem);
-        _relayService = new AHelpExternalRelayService(
-            _adminManager,
-            _playerManager,
-            _gameTicker,
-            _bwoinkAdapter,
-            RaiseNetworkEvent);
         _corvaxApi.RegisterService(
             ServiceName,
             OnApiConnectedAsync,
@@ -88,11 +82,15 @@ public sealed partial class AHelpExternalApiSystem : SharedBwoinkSystem
         if (_enabled && _corvaxApi.IsConnected)
             _ = OnApiConnectedAsync();
         else if (!_enabled)
+        {
+            _knownExternalConversations.Clear();
             _seenRelays.Clear();
+        }
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
+        _knownExternalConversations.Clear();
         _seenRelays.Clear();
 
         if (_enabled)

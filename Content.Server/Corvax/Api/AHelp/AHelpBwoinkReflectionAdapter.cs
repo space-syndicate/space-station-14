@@ -22,12 +22,6 @@ public sealed class AHelpBwoinkReflectionAdapter
         _bwoinkSystem = bwoinkSystem;
     }
 
-    public bool TryGetAHelpWebhookUrl(out string webhookUrl)
-    {
-        webhookUrl = GetPrivateFieldValue(_bwoinkSystem, "_webhookUrl") as string ?? string.Empty;
-        return !string.IsNullOrWhiteSpace(webhookUrl);
-    }
-
     public bool TryGetAHelpWebhookChannelId(out ulong channelId)
     {
         channelId = default;
@@ -41,52 +35,6 @@ public sealed class AHelpBwoinkReflectionAdapter
             ?.GetValue(webhookData) as string;
 
         return ulong.TryParse(channelIdValue, out channelId);
-    }
-
-    public bool TryGetRelayUserByMessageId(
-        ulong messageId,
-        out NetUserId userId,
-        out string username,
-        out string? characterName)
-    {
-        foreach (var snapshot in GetRelaySnapshots())
-        {
-            if (snapshot.RootMessageId != messageId)
-                continue;
-
-            userId = snapshot.UserId;
-            username = snapshot.Username;
-            characterName = snapshot.CharacterName;
-            return true;
-        }
-
-        userId = default;
-        username = string.Empty;
-        characterName = null;
-        return false;
-    }
-
-    public bool TryGetRelayMessageForUser(
-        NetUserId userId,
-        out ulong messageId,
-        out string username,
-        out string? characterName)
-    {
-        foreach (var snapshot in GetRelaySnapshots())
-        {
-            if (snapshot.UserId != userId || snapshot.RootMessageId == null)
-                continue;
-
-            messageId = snapshot.RootMessageId.Value;
-            username = snapshot.Username;
-            characterName = snapshot.CharacterName;
-            return !string.IsNullOrEmpty(username) || characterName != null;
-        }
-
-        messageId = default;
-        username = string.Empty;
-        characterName = null;
-        return false;
     }
 
     public bool HasActiveConversation(NetUserId userId)
@@ -130,7 +78,7 @@ public sealed class AHelpBwoinkReflectionAdapter
 
     public bool QueueWebhookMessage(NetUserId userId, AHelpMessageParams parameters)
     {
-        if (!TryGetAHelpWebhookUrl(out _))
+        if (string.IsNullOrWhiteSpace(GetPrivateFieldValue(_bwoinkSystem, "_webhookUrl") as string))
             return false;
 
         var discordRelayedData = _bwoinkSystem.GetType()

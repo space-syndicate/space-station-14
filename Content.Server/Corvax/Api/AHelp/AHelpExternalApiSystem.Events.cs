@@ -22,25 +22,24 @@ public sealed partial class AHelpExternalApiSystem
         {
             var descriptionHash = SHA256.HashData(Encoding.UTF8.GetBytes(snapshot.Description));
             if (!_seenRelays.TryGetValue(snapshot.UserId, out var seen))
-                seen = new RelaySeenState(null, Array.Empty<byte>());
+                seen = new RelaySeenState(null, Array.Empty<byte>(), false);
 
-            if (snapshot.RootMessageId != null && snapshot.RootMessageId != seen.RootMessageId)
-            {
-                _seenRelays[snapshot.UserId] = seen with { RootMessageId = snapshot.RootMessageId };
-                _ = SendConversationUpsertAsync(snapshot);
-            }
+            var sendUpsert = !seen.ConversationSent || snapshot.RootMessageId != seen.RootMessageId;
+            var sendTranscript = !string.IsNullOrWhiteSpace(snapshot.Description) &&
+                                 !descriptionHash.SequenceEqual(seen.DescriptionHash);
 
-            if (!descriptionHash.SequenceEqual(seen.DescriptionHash))
+            if (!sendUpsert && !sendTranscript)
+                continue;
+
+            var current = seen with
             {
-                var current = _seenRelays.GetValueOrDefault(snapshot.UserId) ?? seen;
-                _seenRelays[snapshot.UserId] = current with { DescriptionHash = descriptionHash };
-                _ = SendAsync(new AHelpApiOutbound.AHelpMessage(
-                    snapshot.UserId.ToString(),
-                    snapshot.UserId.ToString(),
-                    "transcript",
-                    snapshot.Description,
-                    DateTimeOffset.UtcNow));
-            }
+                RootMessageId = sendUpsert ? snapshot.RootMessageId : seen.RootMessageId,
+                DescriptionHash = sendTranscript ? descriptionHash : seen.DescriptionHash,
+                ConversationSent = true,
+            };
+            _seenRelays[snapshot.UserId] = current;
+
+            _ = SendRelayUpdateAsync(snapshot, sendUpsert, sendTranscript);
         }
     }
 
@@ -104,16 +103,27 @@ public sealed partial class AHelpExternalApiSystem
                 _gameTicker.RunLevel.ToString()),
         };
 
-        foreach (var snapshot in _bwoinkAdapter.GetRelaySnapshots())
+        var sentConversations = new HashSet<NetUserId>();
+        foreach (var userId in _knownExternalConversations)
         {
-            if (snapshot.RootMessageId == null)
+            if (!_playerManager.TryGetSessionById(userId, out var session))
                 continue;
 
+            _seenRelays[userId] = new RelaySeenState(null, Array.Empty<byte>(), true);
+            payloads.Add(BuildConversationUpsert(session));
+            sentConversations.Add(userId);
+        }
+
+        foreach (var snapshot in _bwoinkAdapter.GetRelaySnapshots())
+        {
+            var conversationAlreadySent = !sentConversations.Add(snapshot.UserId);
             _seenRelays[snapshot.UserId] = new RelaySeenState(
                 snapshot.RootMessageId,
-                SHA256.HashData(Encoding.UTF8.GetBytes(snapshot.Description)));
+                SHA256.HashData(Encoding.UTF8.GetBytes(snapshot.Description)),
+                true);
 
-            payloads.Add(BuildConversationUpsert(snapshot));
+            if (!conversationAlreadySent || snapshot.RootMessageId != null)
+                payloads.Add(BuildConversationUpsert(snapshot));
 
             if (!string.IsNullOrWhiteSpace(snapshot.Description))
             {
@@ -144,12 +154,38 @@ public sealed partial class AHelpExternalApiSystem
             snapshot.LastRunLevel.ToString());
     }
 
-    private async Task SendConversationUpsertAsync(AHelpRelaySnapshot snapshot)
+    private AHelpApiOutbound.ConversationUpsert BuildConversationUpsert(ICommonSession session)
     {
-        await SendAsync(BuildConversationUpsert(snapshot));
+        _bwoinkAdapter.TryGetAHelpWebhookChannelId(out var webhookChannelId);
+        return new AHelpApiOutbound.ConversationUpsert(
+            session.UserId.ToString(),
+            session.UserId.ToString(),
+            session.Name,
+            _minds.GetCharacterName(session.UserId),
+            null,
+            webhookChannelId == 0 ? null : webhookChannelId,
+            _cfg.GetCVar(CVars.GameHostName),
+            _gameTicker.RoundId,
+            _gameTicker.RunLevel.ToString());
     }
 
-    private sealed record RelaySeenState(ulong? RootMessageId, byte[] DescriptionHash);
+    private async Task SendRelayUpdateAsync(AHelpRelaySnapshot snapshot, bool sendUpsert, bool sendTranscript)
+    {
+        if (sendUpsert)
+            await SendAsync(BuildConversationUpsert(snapshot));
+
+        if (!sendTranscript)
+            return;
+
+        await SendAsync(new AHelpApiOutbound.AHelpMessage(
+            snapshot.UserId.ToString(),
+            snapshot.UserId.ToString(),
+            "transcript",
+            snapshot.Description,
+            DateTimeOffset.UtcNow));
+    }
+
+    private sealed record RelaySeenState(ulong? RootMessageId, byte[] DescriptionHash, bool ConversationSent);
 
     private sealed record PlayerStatusSnapshot(NetUserId UserId, string Ckey, SessionStatus Status);
 }

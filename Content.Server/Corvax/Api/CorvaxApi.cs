@@ -25,6 +25,7 @@ public sealed partial class CorvaxApiSystem : EntitySystem
     };
 
     private readonly Dictionary<string, CorvaxApiServiceHandler> _handlers = new();
+    private readonly object _handlersLock = new();
 
     private ISawmill _sawmill = default!;
     private CorvaxApiWebSocketClient _client = default!;
@@ -64,12 +65,18 @@ public sealed partial class CorvaxApiSystem : EntitySystem
         Func<string, Task<bool>> onMessage,
         Action onDisconnected)
     {
-        _handlers[serviceName] = new CorvaxApiServiceHandler(onConnected, onMessage, onDisconnected);
+        lock (_handlersLock)
+        {
+            _handlers[serviceName] = new CorvaxApiServiceHandler(onConnected, onMessage, onDisconnected);
+        }
     }
 
     public void UnregisterService(string serviceName)
     {
-        _handlers.Remove(serviceName);
+        lock (_handlersLock)
+        {
+            _handlers.Remove(serviceName);
+        }
     }
 
     public async Task SendAsync<T>(T payload)
@@ -97,7 +104,7 @@ public sealed partial class CorvaxApiSystem : EntitySystem
 
     private async Task OnApiConnectedAsync()
     {
-        foreach (var handler in _handlers.Values.ToArray())
+        foreach (var handler in GetHandlersSnapshot())
         {
             await handler.OnConnected();
         }
@@ -105,7 +112,7 @@ public sealed partial class CorvaxApiSystem : EntitySystem
 
     private async Task HandleInboundAsync(string json)
     {
-        foreach (var handler in _handlers.Values.ToArray())
+        foreach (var handler in GetHandlersSnapshot())
         {
             if (await handler.OnMessage(json))
                 return;
@@ -130,9 +137,17 @@ public sealed partial class CorvaxApiSystem : EntitySystem
 
     private void OnApiDisconnected()
     {
-        foreach (var handler in _handlers.Values.ToArray())
+        foreach (var handler in GetHandlersSnapshot())
         {
             handler.OnDisconnected();
+        }
+    }
+
+    private CorvaxApiServiceHandler[] GetHandlersSnapshot()
+    {
+        lock (_handlersLock)
+        {
+            return _handlers.Values.ToArray();
         }
     }
 
@@ -143,12 +158,9 @@ public sealed partial class CorvaxApiSystem : EntitySystem
 
     private sealed record CorvaxApiInboundBase(string Type, string? RequestId);
 
-    private sealed record CorvaxApiResponse(string Type, string? RequestId, bool Ok, string? Error)
+    private sealed record CorvaxApiResponse(string? RequestId, bool Ok, string? Error)
     {
-        public CorvaxApiResponse(string? requestId, bool ok, string? error)
-            : this("response", requestId, ok, error)
-        {
-        }
+        public string Type { get; init; } = "response";
     }
 }
 
