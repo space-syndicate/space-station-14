@@ -1,4 +1,4 @@
-namespace Content.Server.Corvax.Discord;
+namespace Content.Server.Corvax.Api.AHelp;
 
 public static class AHelpApiInbound
 {
@@ -9,7 +9,7 @@ public static class AHelpApiInbound
         string? RequestId,
         string? ConversationId,
         string? UserId,
-        string? AuthorDiscordId,
+        string? AuthorExternalId,
         string? AuthorName,
         string Text);
 
@@ -17,7 +17,7 @@ public static class AHelpApiInbound
         string Type,
         string? RequestId,
         string Ckey,
-        string? AuthorDiscordId,
+        string? AuthorExternalId,
         string? AuthorName,
         string Text);
 }

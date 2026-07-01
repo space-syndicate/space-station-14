@@ -5,11 +5,11 @@ using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
 using Robust.Shared.Network;
 
-namespace Content.Server.Corvax.Discord;
+namespace Content.Server.Corvax.Api.AHelp;
 
 /// <summary>
 /// Corvax-only adapter around private <see cref="BwoinkSystem"/> relay state.
-/// The upstream system does not expose hooks for Discord webhook message ids,
+/// The upstream system does not expose hooks for webhook message ids,
 /// so the external AHelp API keeps all reflection here instead of spreading it
 /// through the bridge and API transport implementations.
 /// </summary>

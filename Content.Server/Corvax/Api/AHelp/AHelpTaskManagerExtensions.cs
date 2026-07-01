@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Robust.Shared.Asynchronous;
 
-namespace Content.Server.Corvax.Discord;
+namespace Content.Server.Corvax.Api.AHelp;
 
 public static class AHelpTaskManagerExtensions
 {

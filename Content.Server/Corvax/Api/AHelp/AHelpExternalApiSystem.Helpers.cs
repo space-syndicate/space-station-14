@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
-namespace Content.Server.Corvax.Discord;
+namespace Content.Server.Corvax.Api.AHelp;
 
 public sealed partial class AHelpExternalApiSystem
 {
@@ -26,9 +26,9 @@ public sealed partial class AHelpExternalApiSystem
         return AHelpPlayerInfoHelper.TryGetSessionByCkey(_playerManager, ckey, out session);
     }
 
-    private void RelayDiscordMessageToAHelp(NetUserId userId, string authorName, string plainText)
+    private void RelayExternalMessageToAHelp(NetUserId userId, string authorName, string plainText)
     {
-        _relayService.RelayDiscordMessageToAHelp(userId, authorName, plainText);
+        _relayService.RelayExternalMessageToAHelp(userId, authorName, plainText);
     }
 
     private async Task SendOkAsync(string? requestId)
@@ -43,7 +43,7 @@ public sealed partial class AHelpExternalApiSystem
 
     private async Task SendAsync<T>(T payload)
     {
-        await _apiClient.SendAsync(payload);
+        await _corvaxApi.SendAsync(payload);
     }
 
     private async Task<T> RunOnMainThread<T>(Func<T> func)

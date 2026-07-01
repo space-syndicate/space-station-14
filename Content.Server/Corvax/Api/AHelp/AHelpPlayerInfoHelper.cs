@@ -6,7 +6,7 @@ using Robust.Server.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 
-namespace Content.Server.Corvax.Discord;
+namespace Content.Server.Corvax.Api.AHelp;
 
 public static class AHelpPlayerInfoHelper
 {

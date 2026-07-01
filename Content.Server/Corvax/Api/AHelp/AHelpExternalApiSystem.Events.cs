@@ -7,7 +7,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
-namespace Content.Server.Corvax.Discord;
+namespace Content.Server.Corvax.Api.AHelp;
 
 public sealed partial class AHelpExternalApiSystem
 {
@@ -15,7 +15,7 @@ public sealed partial class AHelpExternalApiSystem
     {
         base.Update(frameTime);
 
-        if (!_apiClient.IsConnected)
+        if (!_enabled || !_corvaxApi.IsConnected)
             return;
 
         foreach (var snapshot in _bwoinkAdapter.GetRelaySnapshots())
@@ -46,6 +46,9 @@ public sealed partial class AHelpExternalApiSystem
 
     private async Task OnApiConnectedAsync()
     {
+        if (!_enabled)
+            return;
+
         var payloads = await _taskManager.RunOnMainThreadAsync(BuildConnectedPayloads);
         foreach (var payload in payloads)
         {

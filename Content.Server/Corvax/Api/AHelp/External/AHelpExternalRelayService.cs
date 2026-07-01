@@ -7,9 +7,9 @@ using Robust.Server.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
-namespace Content.Server.Corvax.Discord;
+namespace Content.Server.Corvax.Api.AHelp;
 
-public sealed class AHelpDiscordRelayService
+public sealed class AHelpExternalRelayService
 {
     private readonly IAdminManager _adminManager;
     private readonly IPlayerManager _playerManager;
@@ -17,7 +17,7 @@ public sealed class AHelpDiscordRelayService
     private readonly AHelpBwoinkReflectionAdapter _bwoinkAdapter;
     private readonly Action<SharedBwoinkSystem.BwoinkTextMessage, INetChannel> _raiseNetworkEvent;
 
-    public AHelpDiscordRelayService(
+    public AHelpExternalRelayService(
         IAdminManager adminManager,
         IPlayerManager playerManager,
         GameTicker gameTicker,
@@ -31,10 +31,10 @@ public sealed class AHelpDiscordRelayService
         _raiseNetworkEvent = raiseNetworkEvent;
     }
 
-    public void RelayDiscordMessageToAHelp(NetUserId userId, string authorName, string text)
+    public void RelayExternalMessageToAHelp(NetUserId userId, string authorName, string text)
     {
-        SendAHelpToGame(userId, AHelpDiscordRelayHelper.BuildDiscordBwoinkText(authorName, text));
-        QueueWebhookMessage(userId, AHelpDiscordRelayHelper.GetDiscordRelayName(authorName), text, isAdmin: true);
+        SendAHelpToGame(userId, AHelpExternalRelayHelper.BuildExternalBwoinkText(authorName, text));
+        QueueWebhookMessage(userId, AHelpExternalRelayHelper.GetExternalRelayName(authorName), text, isAdmin: true);
     }
 
     public void SendAHelpToGame(NetUserId userId, string text)
@@ -61,7 +61,7 @@ public sealed class AHelpDiscordRelayService
         if (string.IsNullOrWhiteSpace(text))
             return;
 
-        var messageParams = AHelpDiscordRelayHelper.BuildWebhookMessageParams(
+        var messageParams = AHelpExternalRelayHelper.BuildWebhookMessageParams(
             username,
             text,
             isAdmin,

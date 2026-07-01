@@ -3,12 +3,15 @@ using System.Threading.Tasks;
 using System.Linq;
 using Robust.Shared.Network;
 
-namespace Content.Server.Corvax.Discord;
+namespace Content.Server.Corvax.Api.AHelp;
 
 public sealed partial class AHelpExternalApiSystem
 {
-    private async Task HandleInboundAsync(string json)
+    private async Task<bool> HandleInboundAsync(string json)
     {
+        if (!_enabled)
+            return false;
+
         AHelpApiInbound.Base? message;
         try
         {
@@ -17,29 +20,28 @@ public sealed partial class AHelpExternalApiSystem
         catch (Exception e)
         {
             _sawmill.Warning($"Invalid Corvax AHelp API message: {e.Message}");
-            return;
+            return false;
         }
 
         if (message == null || string.IsNullOrWhiteSpace(message.Type))
-            return;
+            return false;
 
         switch (message.Type)
         {
             case "ping":
                 await SendAsync(new AHelpApiOutbound.Pong(message.RequestId));
-                break;
+                return true;
             case "list_players":
                 await HandleListPlayersAsync(message.RequestId);
-                break;
+                return true;
             case "send_ahelp_message":
                 await HandleSendAHelpMessageAsync(json, message.RequestId);
-                break;
+                return true;
             case "open_ahelp":
                 await HandleOpenAHelpAsync(json, message.RequestId);
-                break;
+                return true;
             default:
-                await SendErrorAsync(message.RequestId, $"Unsupported message type '{message.Type}'");
-                break;
+                return false;
         }
     }
 
@@ -70,7 +72,7 @@ public sealed partial class AHelpExternalApiSystem
 
         var userId = new NetUserId(userGuid);
         var authorName = string.IsNullOrWhiteSpace(message.AuthorName)
-            ? message.AuthorDiscordId ?? "Discord"
+            ? message.AuthorExternalId ?? "External"
             : message.AuthorName;
         var plainText = message.Text.ReplaceLineEndings(" ");
 
@@ -79,7 +81,7 @@ public sealed partial class AHelpExternalApiSystem
             if (!_bwoinkAdapter.HasActiveConversation(userId))
                 return "AHelp conversation is not active";
 
-            RelayDiscordMessageToAHelp(userId, authorName, plainText);
+            RelayExternalMessageToAHelp(userId, authorName, plainText);
             return string.Empty;
         });
 
@@ -104,9 +106,9 @@ public sealed partial class AHelpExternalApiSystem
                 return $"Player '{message.Ckey}' not found";
 
             var authorName = string.IsNullOrWhiteSpace(message.AuthorName)
-                ? message.AuthorDiscordId ?? "Discord"
+                ? message.AuthorExternalId ?? "External"
                 : message.AuthorName;
-            RelayDiscordMessageToAHelp(target.UserId, authorName, message.Text.ReplaceLineEndings(" "));
+            RelayExternalMessageToAHelp(target.UserId, authorName, message.Text.ReplaceLineEndings(" "));
             return string.Empty;
         });
 

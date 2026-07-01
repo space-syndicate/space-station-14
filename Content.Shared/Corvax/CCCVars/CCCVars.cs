@@ -15,29 +15,31 @@ public sealed class CCCVars
     public static readonly CVarDef<bool> PanicBunkerDenyVPN =
         CVarDef.Create("game.panic_bunker.deny_vpn", false, CVar.SERVERONLY);
 
-    /// <summary>
-    /// Enables the game server connection to the central Discord bot AHelp API.
-    /// </summary>
-    public static readonly CVarDef<bool> AHelpApiEnabled =
-        CVarDef.Create("corvax.ahelp_api_enabled", false, CVar.SERVERONLY);
+    /*
+     * Corvax API
+     */
 
     /// <summary>
-    /// Host address of the central Discord bot AHelp API.
+    /// Base URL of the central Corvax API.
     /// </summary>
-    public static readonly CVarDef<string> AHelpApiHost =
-        CVarDef.Create("corvax.ahelp_api_host", "127.0.0.1", CVar.SERVERONLY);
+    public static readonly CVarDef<string> CorvaxApiUrl =
+        CVarDef.Create("corvax.api_url", "ws://127.0.0.1:12120", CVar.SERVERONLY);
 
     /// <summary>
-    /// Port of the central Discord bot AHelp API.
+    /// Shared secret used by this game server to authenticate with the central Corvax API.
     /// </summary>
-    public static readonly CVarDef<int> AHelpApiPort =
-        CVarDef.Create("corvax.ahelp_api_port", 12120, CVar.SERVERONLY);
+    public static readonly CVarDef<string> CorvaxApiToken =
+        CVarDef.Create("corvax.api_token", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /*
+     * Corvax API: AHelp
+     */
 
     /// <summary>
-    /// Shared secret used by this game server to authenticate with the central Discord bot AHelp API.
+    /// Enables the AHelp service over the central Corvax API.
     /// </summary>
-    public static readonly CVarDef<string> AHelpApiToken =
-        CVarDef.Create("corvax.ahelp_api_token", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+    public static readonly CVarDef<bool> AHelpEnabled =
+        CVarDef.Create("corvax.ahelp_enabled", false, CVar.SERVERONLY);
 
     /**
      * TTS (Text-To-Speech)
