@@ -23,7 +23,7 @@ public partial class VoiceMaskSystem
 
     private void OnChangeVoice(Entity<VoiceMaskComponent> entity, ref VoiceMaskChangeVoiceMessage msg)
     {
-        if (msg.Voice is { } id && !_proto.HasIndex<TTSVoicePrototype>(id))
+        if (msg.Voice is { } id && !ProtoMan.HasIndex<TTSVoicePrototype>(id))
             return;
 
         entity.Comp.VoiceId = msg.Voice;
