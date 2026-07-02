@@ -146,8 +146,7 @@
     speechVerb: Robotic
     speechSounds: Borg
   - type: Vocal
-    sounds:
-      Unsexed: UnisexSilicon
+    emoteSounds: UnisexSilicon
     wilhelmProbability: 0
   - type: DamagedSiliconAccent
   - type: UnblockableSpeech
@@ -372,8 +371,7 @@
     allowedEmotes:
     - Laugh
   - type: Vocal
-    sounds:
-      Unsexed: UnisexSiliconSyndicate
+    emoteSounds: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
   - type: BypassLock
@@ -433,8 +431,7 @@
     allowedEmotes:
     - Laugh
   - type: Vocal
-    sounds:
-      Unsexed: UnisexSiliconSyndicate
+    emoteSounds: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
   - type: BypassLock
@@ -488,8 +485,7 @@
     allowedEmotes:
     - Laugh
   - type: Vocal
-    sounds:
-      Unsexed: UnisexSiliconXenoborg
+    emoteSounds: UnisexSiliconXenoborg
     wilhelmProbability: 0
   - type: DamagedSiliconAccent
   - type: UnblockableSpeech

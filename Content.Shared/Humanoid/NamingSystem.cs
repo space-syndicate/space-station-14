@@ -15,15 +15,14 @@ namespace Content.Shared.Humanoid
         private static readonly ProtoId<SpeciesPrototype> FallbackSpecies = "Human";
 
         [Dependency] private IRobustRandom _random = default!;
-        [Dependency] private IPrototypeManager _prototypeManager = default!;
 
         public string GetName(string species, Gender? gender = null)
         {
             // if they have an old species or whatever just fall back to human I guess?
             // Some downstream is probably gonna have this eventually but then they can deal with fallbacks.
-            if (!_prototypeManager.TryIndex(species, out SpeciesPrototype? speciesProto))
+            if (!ProtoMan.TryIndex(species, out SpeciesPrototype? speciesProto))
             {
-                speciesProto = _prototypeManager.Index(FallbackSpecies);
+                speciesProto = ProtoMan.Index(FallbackSpecies);
                 Log.Warning($"Unable to find species {species} for name, falling back to {FallbackSpecies}");
             }
 
