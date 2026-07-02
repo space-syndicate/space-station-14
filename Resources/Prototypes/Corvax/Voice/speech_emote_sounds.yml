@@ -65,24 +65,7 @@
 
 # species
 - type: emoteSounds
-  id: MaleIpc
-  params:
-    variation: 0.125
-  sounds:
-    Scream:
-      path: /Audio/Corvax/Effects/Ipc/scream.ogg
-    Laugh:
-      path: /Audio/Corvax/Effects/Ipc/laugh.ogg
-    Snore:
-      path: /Audio/Machines/buzz-two.ogg
-    Crying:
-      path: /Audio/Corvax/Effects/Ipc/cry.ogg
-    Weh:
-      collection: Weh
-
-
-- type: emoteSounds
-  id: FemaleIpc
+  id: UnsexedIpc
   params:
     variation: 0.125
   sounds:
