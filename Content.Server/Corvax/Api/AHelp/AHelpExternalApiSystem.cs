@@ -1,10 +1,8 @@
 using System.Text.Json;
-using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.Corvax.Api;
 using Content.Server.Database;
 using Content.Server.GameTicking;
-using Content.Shared.Administration;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
@@ -28,7 +26,6 @@ public sealed partial class AHelpExternalApiSystem : EntitySystem
     [Dependency] private CorvaxApiSystem _corvaxApi = default!;
     [Dependency] private ITaskManager _taskManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
-    [Dependency] private IAdminManager _adminManager = default!;
     [Dependency] private IServerDbManager _dbManager = default!;
     [Dependency] private BwoinkSystem _bwoinkSystem = default!;
     [Dependency] private GameTicker _gameTicker = default!;

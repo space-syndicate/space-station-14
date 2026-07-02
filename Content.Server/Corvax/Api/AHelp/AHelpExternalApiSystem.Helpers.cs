@@ -3,14 +3,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
-using Content.Shared.Administration;
 using Content.Shared.Mind;
 using Content.Shared.Roles;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
-using BwoinkTextMessage = Content.Shared.Administration.SharedBwoinkSystem.BwoinkTextMessage;
 
 namespace Content.Server.Corvax.Api.AHelp;
 
@@ -61,7 +59,7 @@ public sealed partial class AHelpExternalApiSystem
 
     private void RelayExternalMessageToAHelp(NetUserId userId, string authorName, string plainText)
     {
-        SendAHelpToGame(userId, BuildExternalBwoinkText(authorName, plainText));
+        _bwoinkSystem.CorvaxSendAHelpToGame(userId, BuildExternalBwoinkText(authorName, plainText));
         QueueWebhookMessage(userId, $"{authorName}[D]", plainText, isAdmin: true);
     }
 
@@ -91,25 +89,6 @@ public sealed partial class AHelpExternalApiSystem
         _seenRelays[userId] = seen with { ConversationSent = true };
     }
 
-    private void SendAHelpToGame(NetUserId userId, string text)
-    {
-        var admins = GetTargetAdmins();
-        var bwoinkMessage = new BwoinkTextMessage(
-            userId,
-            SharedBwoinkSystem.SystemUserId,
-            text,
-            sentAt: DateTime.Now,
-            playSound: true);
-
-        foreach (var admin in admins)
-        {
-            RaiseNetworkEvent(bwoinkMessage, admin);
-        }
-
-        if (_playerManager.TryGetSessionById(userId, out var session) && !admins.Contains(session.Channel))
-            RaiseNetworkEvent(bwoinkMessage, session.Channel);
-    }
-
     private void QueueWebhookMessage(NetUserId userId, string username, string text, bool isAdmin)
     {
         if (string.IsNullOrWhiteSpace(text))
@@ -131,14 +110,6 @@ public sealed partial class AHelpExternalApiSystem
     private static string BuildExternalBwoinkText(string authorName, string text)
     {
         return $"[color=red]{FormattedMessage.EscapeText(authorName)} \\[D\\][/color]: {FormattedMessage.EscapeText(text)}";
-    }
-
-    private IList<INetChannel> GetTargetAdmins()
-    {
-        return _adminManager.ActiveAdmins
-            .Where(p => _adminManager.GetAdminData(p)?.HasFlag(AdminFlags.Adminhelp) ?? false)
-            .Select(p => p.Channel)
-            .ToList();
     }
 
     private async Task SendOkAsync(string? requestId)

@@ -31,6 +31,25 @@ public sealed partial class BwoinkSystem
             .ToArray();
     }
 
+    internal void CorvaxSendAHelpToGame(NetUserId userId, string text)
+    {
+        var admins = GetTargetAdmins();
+        var bwoinkMessage = new BwoinkTextMessage(
+            userId,
+            SystemUserId,
+            text,
+            sentAt: DateTime.Now,
+            playSound: true);
+
+        foreach (var admin in admins)
+        {
+            RaiseNetworkEvent(bwoinkMessage, admin);
+        }
+
+        if (_playerManager.TryGetSessionById(userId, out var session) && !admins.Contains(session.Channel))
+            RaiseNetworkEvent(bwoinkMessage, session.Channel);
+    }
+
     internal bool CorvaxQueueAHelpWebhookMessage(NetUserId userId, AHelpMessageParams parameters)
     {
         if (string.IsNullOrWhiteSpace(_webhookUrl))
