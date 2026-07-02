@@ -1191,7 +1191,7 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("species");
 
-                    b.Property<string>("TTSVoice")
+                    b.Property<string>("TTSVoice")  // Corvax-TTS
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("ttsvoice");

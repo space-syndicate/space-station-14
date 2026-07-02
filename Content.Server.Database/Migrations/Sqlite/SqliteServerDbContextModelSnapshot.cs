@@ -1126,7 +1126,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
 
-                    b.Property<string>("TTSVoice")
+                    b.Property<string>("TTSVoice")  // Corvax-TTS
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("ttsvoice");

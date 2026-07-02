@@ -5,7 +5,7 @@
 namespace Content.Server.Database.Migrations.Sqlite
 {
     /// <inheritdoc />
-    public partial class VoiceSelector : Migration
+    public partial class VoiceSelector : Migration  // Corvax-TTS
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

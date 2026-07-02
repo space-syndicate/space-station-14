@@ -174,7 +174,7 @@ public sealed partial class TTSTab : Control
         if (profile == null)
             return;
 
-        _selectedVoiceId = profile.Voice;
+        _selectedVoiceId = profile.TTSVoice;
 
         _allVoices = _prototypeManager
             .EnumeratePrototypes<TTSVoicePrototype>()

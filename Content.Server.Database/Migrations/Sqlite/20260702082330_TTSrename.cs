@@ -5,7 +5,7 @@
 namespace Content.Server.Database.Migrations.Sqlite
 {
     /// <inheritdoc />
-    public partial class TTSrename : Migration
+    public partial class TTSrename : Migration  // Corvax-TTS
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

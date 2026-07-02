@@ -49,7 +49,7 @@ public sealed partial class HumanoidProfileEditor
             return;
 
         _ttsTab.UpdateControls(Profile, Profile.Sex);
-        _ttsTab.SetSelectedVoice(Profile.Voice);
+        _ttsTab.SetSelectedVoice(Profile.TTSVoice);
     }
     private void SetVoice(string newVoice)
     {
