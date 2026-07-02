@@ -10,19 +10,30 @@ namespace Content.Server.Database.Migrations.Sqlite
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
+            migrationBuilder.AlterColumn<string>(
                 name: "voice",
                 table: "profile",
                 type: "TEXT",
-                nullable: true);
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "TEXT",
+                oldNullable: false);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
+            migrationBuilder.Sql("UPDATE profile SET voice = '' WHERE voice IS NULL");
+
+            migrationBuilder.AlterColumn<string>(
                 name: "voice",
-                table: "profile");
+                table: "profile",
+                type: "TEXT",
+                nullable: false,
+                defaultValue: "",
+                oldClrType: typeof(string),
+                oldType: "TEXT",
+                oldNullable: true);
         }
     }
 }

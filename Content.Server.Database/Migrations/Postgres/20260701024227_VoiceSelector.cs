@@ -10,19 +10,32 @@ namespace Content.Server.Database.Migrations.Postgres
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
+            migrationBuilder.AlterColumn<string>(
                 name: "voice",
                 table: "profile",
                 type: "text",
-                nullable: true);
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "text",
+                oldNullable: false);
+
+            migrationBuilder.Sql("UPDATE profile SET voice = NULL"); // Corvax-TTS Это было неприятно, да я мог сделать это наоборот но слишком поздно узнал.
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
+            migrationBuilder.Sql("UPDATE profile SET voice = '' WHERE voice IS NULL");
+
+            migrationBuilder.AlterColumn<string>(
                 name: "voice",
-                table: "profile");
+                table: "profile",
+                type: "text",
+                nullable: false,
+                defaultValue: "",
+                oldClrType: typeof(string),
+                oldType: "text",
+                oldNullable: true);
         }
     }
 }
