@@ -514,6 +514,7 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
+            if (TTSVoice != other.TTSVoice) return false; // Corvax-TTS
             return Appearance.Equals(other.Appearance);
         }
 
@@ -678,7 +679,7 @@ namespace Content.Shared.Preferences
             _traitPreferences.UnionWith(GetValidTraits(traits, prototypeManager));
 
             // Corvax-TTS-Start
-            prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var TTS_voice);
+            prototypeManager.TryIndex<TTSVoicePrototype>(TTSVoice, out var TTS_voice);
             if (TTS_voice is null || !CanHaveVoice(TTS_voice, Sex))
                 TTSVoice = HumanoidProfileSystem.DefaultSexVoice[sex];
             // Corvax-TTS-End
@@ -793,6 +794,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(Age);
             hashCode.Add((int)Sex);
             hashCode.Add(Voice);
+            hashCode.Add(TTSVoice); // Corvax-TTS
             hashCode.Add((int)Gender);
             hashCode.Add(Appearance);
             hashCode.Add((int)SpawnPriority);
