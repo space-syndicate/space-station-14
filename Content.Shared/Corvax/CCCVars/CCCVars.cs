@@ -23,7 +23,7 @@ public sealed class CCCVars
     /// Base URL of the central Corvax API.
     /// </summary>
     public static readonly CVarDef<string> CorvaxApiUrl =
-        CVarDef.Create("corvax.api_url", "ws://127.0.0.1:12120", CVar.SERVERONLY);
+        CVarDef.Create("corvax.api_url", "", CVar.SERVERONLY);
 
     /// <summary>
     /// Shared secret used by this game server to authenticate with the central Corvax API.

@@ -25,7 +25,7 @@ public sealed partial class CorvaxApiSystem : EntitySystem
 
     private ISawmill _sawmill = default!;
     private CorvaxApiWebSocketClient _client = default!;
-    private string _apiUrl = "ws://127.0.0.1:12120";
+    private string _apiUrl = string.Empty;
     private string _token = string.Empty;
 
     public bool IsConnected => _client.IsConnected;
@@ -83,6 +83,10 @@ public sealed partial class CorvaxApiSystem : EntitySystem
     private void RestartConnection()
     {
         _client.Stop();
+
+        if (string.IsNullOrWhiteSpace(_apiUrl) || string.IsNullOrWhiteSpace(_token))
+            return;
+
         _client.Start(_apiUrl, Path, AuthScheme, _token);
     }
 
