@@ -111,9 +111,9 @@ namespace Content.Server.Preferences.Managers
                 gender = genderVal;
 
             // Corvax-TTS-Start
-            var voice = profile.Voice;
-            if (voice == String.Empty)
-                voice = HumanoidProfileSystem.DefaultSexVoice[sex];
+            var TTSVoice = profile.TTSVoice;
+            if (TTSVoice == String.Empty)
+                TTSVoice = HumanoidProfileSystem.DefaultSexVoice[sex];
             // Corvax-TTS-End
 
             var markings =
@@ -188,7 +188,7 @@ namespace Content.Server.Preferences.Managers
                 profile.CharacterName,
                 profile.FlavorText,
                 species,
-                voice, // Corvax-TTS
+                TTSVoice, // Corvax-TTS
                 profile.Age,
                 sex,
                 voice,

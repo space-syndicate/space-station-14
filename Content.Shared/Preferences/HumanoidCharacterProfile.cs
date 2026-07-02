@@ -87,7 +87,7 @@ namespace Content.Shared.Preferences
         public ProtoId<SpeciesPrototype> Species { get; set; } = DefaultSpecies;
 
         [DataField] //Corvax-TTS
-        public string Voice { get; set; } = HumanoidProfileSystem.DefaultVoice;
+        public string TTSVoice { get; set; } = HumanoidProfileSystem.DefaultVoice;
 
         [DataField]
         public int Age { get; set; } = 18;
@@ -139,7 +139,7 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
-            string voice, // Corvax-TTS
+            string TTS_voice, // Corvax-TTS
             int age,
             Sex sex,
             ProtoId<EmoteSoundsPrototype> voice,
@@ -155,7 +155,7 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Species = species;
-            Voice = voice; // Corvax-TTS
+            TTSVoice = TTS_voice; // Corvax-TTS
             Age = age;
             Sex = sex;
             Voice = voice;
@@ -188,7 +188,7 @@ namespace Content.Shared.Preferences
             : this(other.Name,
                 other.FlavorText,
                 other.Species,
-                other.Voice,
+                other.TTSVoice,
                 other.Age,
                 other.Sex,
                 other.Voice,
@@ -292,7 +292,7 @@ namespace Content.Shared.Preferences
                 Age = age,
                 Gender = gender,
                 Species = species,
-                Voice = voiceId, // Corvax-TTS
+                TTSVoice = voiceId, // Corvax-TTS
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
             };
         }
@@ -335,7 +335,7 @@ namespace Content.Shared.Preferences
         // Corvax-TTS-Start
         public HumanoidCharacterProfile WithVoice(string voice)
         {
-            return new(this) { Voice = voice };
+            return new(this) { TTSVoice = voice };
         }
         // Corvax-TTS-End
 
@@ -678,9 +678,9 @@ namespace Content.Shared.Preferences
             _traitPreferences.UnionWith(GetValidTraits(traits, prototypeManager));
 
             // Corvax-TTS-Start
-            prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
-            if (voice is null || !CanHaveVoice(voice, Sex))
-                Voice = HumanoidProfileSystem.DefaultSexVoice[sex];
+            prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var TTS_voice);
+            if (TTS_voice is null || !CanHaveVoice(TTS_voice, Sex))
+                TTSVoice = HumanoidProfileSystem.DefaultSexVoice[sex];
             // Corvax-TTS-End
 
             // Checks prototypes exist for all loadouts and dump / set to default if not.
