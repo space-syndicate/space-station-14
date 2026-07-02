@@ -157,10 +157,10 @@ public sealed partial class AHelpExternalApiSystem
         var result = await RunOnMainThread(() =>
         {
             if (!TryGetSessionByCkey(message.Ckey, out var target))
-                return (Error: $"Player '{message.Ckey}' not found", Response: (AHelpApiOutbound.ObjectivesResponse?) null);
+                return (Error: $"Player '{message.Ckey}' not found", Response: (AHelpApiOutbound.ObjectivesResponse?)null);
 
             if (!_minds.TryGetMind(target, out var mindId, out var mind))
-                return (Error: $"Player '{target.Name}' does not have a mind", Response: (AHelpApiOutbound.ObjectivesResponse?) null);
+                return (Error: $"Player '{target.Name}' does not have a mind", Response: (AHelpApiOutbound.ObjectivesResponse?)null);
 
             var objectives = mind.Objectives
                 .Select((objective, index) =>
@@ -179,7 +179,7 @@ public sealed partial class AHelpExternalApiSystem
                             objective.ToString(),
                             info.Value.Title,
                             info.Value.Description,
-                            (int) (info.Value.Progress * 100f),
+                            (int)(info.Value.Progress * 100f),
                             true);
                 })
                 .ToArray();
@@ -193,7 +193,7 @@ public sealed partial class AHelpExternalApiSystem
                 _minds.GetCharacterName(target.UserId),
                 objectives);
 
-            return (Error: string.Empty, Response: (AHelpApiOutbound.ObjectivesResponse?) response);
+            return (Error: string.Empty, Response: (AHelpApiOutbound.ObjectivesResponse?)response);
         });
 
         if (!string.IsNullOrEmpty(result.Error))

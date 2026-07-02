@@ -1,6 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Content.Server.Administration.Systems;
 using Content.Shared.GameTicking;
 using Robust.Shared;
 using Robust.Shared.Enums;
@@ -18,7 +19,7 @@ public sealed partial class AHelpExternalApiSystem
         if (!_enabled || !_corvaxApi.IsConnected)
             return;
 
-        foreach (var snapshot in _bwoinkAdapter.GetRelaySnapshots())
+        foreach (var snapshot in _bwoinkSystem.CorvaxGetAHelpRelaySnapshots())
         {
             var descriptionHash = SHA256.HashData(Encoding.UTF8.GetBytes(snapshot.Description));
             if (!_seenRelays.TryGetValue(snapshot.UserId, out var seen))
@@ -39,7 +40,7 @@ public sealed partial class AHelpExternalApiSystem
             };
             _seenRelays[snapshot.UserId] = current;
 
-            _ = SendRelayUpdateAsync(snapshot, sendUpsert, sendTranscript);
+            RunLoggedAsync(SendRelayUpdateAsync(snapshot, sendUpsert, sendTranscript), "send relay update");
         }
     }
 
@@ -62,7 +63,7 @@ public sealed partial class AHelpExternalApiSystem
 
     private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
     {
-        _ = HandlePlayerStatusChangedAsync(e);
+        RunLoggedAsync(HandlePlayerStatusChangedAsync(e), "handle player status change");
     }
 
     private async Task HandlePlayerStatusChangedAsync(SessionStatusEventArgs e)
@@ -82,7 +83,7 @@ public sealed partial class AHelpExternalApiSystem
             status = "Banned";
         }
 
-        _ = SendAsync(new AHelpApiOutbound.PlayerStatus(
+        await SendAsync(new AHelpApiOutbound.PlayerStatus(
             snapshot.UserId.ToString(),
             snapshot.UserId.ToString(),
             snapshot.Ckey,
@@ -114,7 +115,7 @@ public sealed partial class AHelpExternalApiSystem
             sentConversations.Add(userId);
         }
 
-        foreach (var snapshot in _bwoinkAdapter.GetRelaySnapshots())
+        foreach (var snapshot in _bwoinkSystem.CorvaxGetAHelpRelaySnapshots())
         {
             var conversationAlreadySent = !sentConversations.Add(snapshot.UserId);
             _seenRelays[snapshot.UserId] = new RelaySeenState(
@@ -139,9 +140,9 @@ public sealed partial class AHelpExternalApiSystem
         return payloads.ToArray();
     }
 
-    private AHelpApiOutbound.ConversationUpsert BuildConversationUpsert(AHelpRelaySnapshot snapshot)
+    private AHelpApiOutbound.ConversationUpsert BuildConversationUpsert(CorvaxAHelpRelaySnapshot snapshot)
     {
-        _bwoinkAdapter.TryGetAHelpWebhookChannelId(out var webhookChannelId);
+        var webhookChannelId = _bwoinkSystem.CorvaxGetAHelpWebhookChannelId();
         return new AHelpApiOutbound.ConversationUpsert(
             snapshot.UserId.ToString(),
             snapshot.UserId.ToString(),
@@ -156,7 +157,7 @@ public sealed partial class AHelpExternalApiSystem
 
     private AHelpApiOutbound.ConversationUpsert BuildConversationUpsert(ICommonSession session)
     {
-        _bwoinkAdapter.TryGetAHelpWebhookChannelId(out var webhookChannelId);
+        var webhookChannelId = _bwoinkSystem.CorvaxGetAHelpWebhookChannelId();
         return new AHelpApiOutbound.ConversationUpsert(
             session.UserId.ToString(),
             session.UserId.ToString(),
@@ -169,7 +170,7 @@ public sealed partial class AHelpExternalApiSystem
             _gameTicker.RunLevel.ToString());
     }
 
-    private async Task SendRelayUpdateAsync(AHelpRelaySnapshot snapshot, bool sendUpsert, bool sendTranscript)
+    private async Task SendRelayUpdateAsync(CorvaxAHelpRelaySnapshot snapshot, bool sendUpsert, bool sendTranscript)
     {
         if (sendUpsert)
             await SendAsync(BuildConversationUpsert(snapshot));

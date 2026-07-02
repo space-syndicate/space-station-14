@@ -10,6 +10,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
+using BwoinkTextMessage = Content.Shared.Administration.SharedBwoinkSystem.BwoinkTextMessage;
 
 namespace Content.Server.Corvax.Api.AHelp;
 
@@ -68,7 +69,7 @@ public sealed partial class AHelpExternalApiSystem
     {
         return _knownExternalConversations.Contains(userId) ||
                _seenRelays.ContainsKey(userId) ||
-               _bwoinkAdapter.HasActiveConversation(userId);
+               _bwoinkSystem.CorvaxHasActiveAHelpConversation(userId);
     }
 
     private AHelpApiOutbound.ConversationUpsert RememberConversation(ICommonSession session)
@@ -95,7 +96,7 @@ public sealed partial class AHelpExternalApiSystem
         var admins = GetTargetAdmins();
         var bwoinkMessage = new BwoinkTextMessage(
             userId,
-            SystemUserId,
+            SharedBwoinkSystem.SystemUserId,
             text,
             sentAt: DateTime.Now,
             playSound: true);
@@ -124,7 +125,7 @@ public sealed partial class AHelpExternalApiSystem
             _gameTicker.RunLevel,
             playedSound: true);
 
-        _bwoinkAdapter.QueueWebhookMessage(userId, messageParams);
+        _bwoinkSystem.CorvaxQueueAHelpWebhookMessage(userId, messageParams);
     }
 
     private static string BuildExternalBwoinkText(string authorName, string text)
@@ -153,6 +154,27 @@ public sealed partial class AHelpExternalApiSystem
     private async Task SendAsync<T>(T payload)
     {
         await _corvaxApi.SendAsync(payload);
+    }
+
+    private void RunLoggedAsync(Task task, string operation)
+    {
+        _ = RunLoggedAsyncCore(task, operation);
+    }
+
+    private async Task RunLoggedAsyncCore(Task task, string operation)
+    {
+        try
+        {
+            await task;
+        }
+        catch (OperationCanceledException)
+        {
+            // Shutdown and reconnect paths may cancel pending API work.
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Corvax AHelp API failed to {operation}: {e}");
+        }
     }
 
     private async Task<T> RunOnMainThread<T>(Func<T> func)

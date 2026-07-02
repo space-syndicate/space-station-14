@@ -18,10 +18,10 @@ using Robust.Shared.Network;
 
 namespace Content.Server.Corvax.Api.AHelp;
 
-public sealed partial class AHelpExternalApiSystem : SharedBwoinkSystem
+public sealed partial class AHelpExternalApiSystem : EntitySystem
 {
     private const string ProtocolVersion = "1";
-    private const string ServiceName = "ahelp";
+    private const string MessageHandlerName = "ahelp";
 
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private ILogManager _logManager = default!;
@@ -45,7 +45,6 @@ public sealed partial class AHelpExternalApiSystem : SharedBwoinkSystem
     private readonly Dictionary<NetUserId, RelaySeenState> _seenRelays = new();
 
     private ISawmill _sawmill = default!;
-    private AHelpBwoinkReflectionAdapter _bwoinkAdapter = default!;
     private bool _enabled;
 
     public override void Initialize()
@@ -53,9 +52,8 @@ public sealed partial class AHelpExternalApiSystem : SharedBwoinkSystem
         base.Initialize();
 
         _sawmill = _logManager.GetSawmill("corvax.ahelp.api");
-        _bwoinkAdapter = new AHelpBwoinkReflectionAdapter(_bwoinkSystem);
-        _corvaxApi.RegisterService(
-            ServiceName,
+        _corvaxApi.RegisterMessageHandler(
+            MessageHandlerName,
             OnApiConnectedAsync,
             HandleInboundAsync,
             OnApiDisconnected);
@@ -70,7 +68,7 @@ public sealed partial class AHelpExternalApiSystem : SharedBwoinkSystem
     public override void Shutdown()
     {
         _cfg.UnsubValueChanged(CCCVars.AHelpEnabled, OnEnabledChanged);
-        _corvaxApi.UnregisterService(ServiceName);
+        _corvaxApi.UnregisterMessageHandler(MessageHandlerName);
         _playerManager.PlayerStatusChanged -= OnPlayerStatusChanged;
         base.Shutdown();
     }
@@ -80,7 +78,7 @@ public sealed partial class AHelpExternalApiSystem : SharedBwoinkSystem
         _enabled = value;
 
         if (_enabled && _corvaxApi.IsConnected)
-            _ = OnApiConnectedAsync();
+            RunLoggedAsync(OnApiConnectedAsync(), "send connected payloads");
         else if (!_enabled)
         {
             _knownExternalConversations.Clear();
@@ -94,6 +92,8 @@ public sealed partial class AHelpExternalApiSystem : SharedBwoinkSystem
         _seenRelays.Clear();
 
         if (_enabled)
-            _ = SendAsync(new AHelpApiOutbound.RoundChanged(_gameTicker.RoundId, _gameTicker.RunLevel.ToString()));
+            RunLoggedAsync(
+                SendAsync(new AHelpApiOutbound.RoundChanged(_gameTicker.RoundId, _gameTicker.RunLevel.ToString())),
+                "send round change");
     }
 }
