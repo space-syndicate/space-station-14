@@ -44,7 +44,7 @@ entity-condition-guidebook-reagent-threshold =
     }
 
 entity-condition-guidebook-mob-state-condition =
-    пациент в { $state }
+    пациент { $state }
 
 entity-condition-guidebook-job-condition =
     должность цели — { $job }
@@ -88,7 +88,7 @@ entity-condition-guidebook-breathing =
     }
 
 entity-condition-guidebook-internals =
-    the metabolizer is { $usingInternals ->
-        [true] using internals
-        *[false] breathing atmospheric air
+    цель { $usingInternals ->
+        [true] использует балон
+        *[false] дышит атмосферой
     }
