@@ -6,13 +6,6 @@ namespace Content.Server.Administration.Systems;
 
 public sealed partial class BwoinkSystem
 {
-    internal ulong? CorvaxGetAHelpWebhookChannelId()
-    {
-        return ulong.TryParse(_webhookData?.ChannelId, out var channelId)
-            ? channelId
-            : null;
-    }
-
     internal bool CorvaxHasActiveAHelpConversation(NetUserId userId)
     {
         return _relayMessages.ContainsKey(userId);
@@ -23,7 +16,8 @@ public sealed partial class BwoinkSystem
         return _relayMessages
             .Select(pair => new CorvaxAHelpRelaySnapshot(
                 pair.Key,
-                ulong.TryParse(pair.Value.Id, out var rootMessageId) ? rootMessageId : null,
+                pair.Value.Id,
+                _webhookData?.ChannelId,
                 pair.Value.Username,
                 pair.Value.CharacterName,
                 pair.Value.Description,
@@ -68,7 +62,8 @@ public sealed partial class BwoinkSystem
 
 internal sealed record CorvaxAHelpRelaySnapshot(
     NetUserId UserId,
-    ulong? RootMessageId,
+    string? RootMessageId,
+    string? WebhookChannelId,
     string Username,
     string? CharacterName,
     string Description,

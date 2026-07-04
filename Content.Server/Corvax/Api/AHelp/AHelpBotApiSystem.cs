@@ -83,7 +83,6 @@ public sealed partial class AHelpBotApiSystem : EntitySystem
 
     private AHelpApiEventRequest BuildEventRequest()
     {
-        var webhookChannelId = _bwoinkSystem.CorvaxGetAHelpWebhookChannelId();
         var conversations = _bwoinkSystem.CorvaxGetAHelpRelaySnapshots()
             .Select(snapshot => new AHelpApiConversation(
                 snapshot.UserId.ToString(),
@@ -91,7 +90,7 @@ public sealed partial class AHelpBotApiSystem : EntitySystem
                 snapshot.Username,
                 snapshot.CharacterName,
                 snapshot.RootMessageId,
-                webhookChannelId,
+                snapshot.WebhookChannelId,
                 _cfg.GetCVar(CVars.GameHostName),
                 _gameTicker.RoundId,
                 snapshot.LastRunLevel.ToString(),

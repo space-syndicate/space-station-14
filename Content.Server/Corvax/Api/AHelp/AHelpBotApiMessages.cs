@@ -24,9 +24,9 @@ public sealed record AHelpApiConversation(
     [property: JsonPropertyName("characterName")]
     string? CharacterName,
     [property: JsonPropertyName("rootMessageId")]
-    ulong? RootMessageId,
+    string? RootMessageId,
     [property: JsonPropertyName("webhookChannelId")]
-    ulong? WebhookChannelId,
+    string? WebhookChannelId,
     [property: JsonPropertyName("serverName")]
     string ServerName,
     [property: JsonPropertyName("roundId")]
