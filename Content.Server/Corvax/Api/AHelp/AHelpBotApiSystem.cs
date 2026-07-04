@@ -211,6 +211,12 @@ public sealed partial class AHelpBotApiSystem : EntitySystem
 
     internal async Task<bool> HandleCommandApiRequest(IStatusHandlerContext context)
     {
+        if (!_enabled)
+        {
+            await context.RespondAsync("AHelp API is disabled", HttpStatusCode.ServiceUnavailable);
+            return true;
+        }
+
         if (!await CheckCommandApiAccess(context))
             return true;
 
