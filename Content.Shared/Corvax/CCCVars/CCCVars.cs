@@ -16,30 +16,32 @@ public sealed class CCCVars
         CVarDef.Create("game.panic_bunker.deny_vpn", false, CVar.SERVERONLY);
 
     /*
-     * Corvax API
+     * AHelp Discord bot API
      */
 
     /// <summary>
-    /// Base URL of the central Corvax API.
+    /// Enables the external Discord AHelp bot HTTP API.
     /// </summary>
-    public static readonly CVarDef<string> CorvaxApiUrl =
-        CVarDef.Create("corvax.api_url", "", CVar.SERVERONLY);
+    public static readonly CVarDef<bool> AHelpApiEnabled =
+        CVarDef.Create("ahelp.api_enabled", false, CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
-    /// Shared secret used by this game server to authenticate with the central Corvax API.
+    /// URL of the Discord AHelp bot HTTP event endpoint.
     /// </summary>
-    public static readonly CVarDef<string> CorvaxApiToken =
-        CVarDef.Create("corvax.api_token", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
-
-    /*
-     * Corvax API: AHelp
-     */
+    public static readonly CVarDef<string> AHelpApiUrl =
+        CVarDef.Create("ahelp.api_url", "", CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
-    /// Enables the AHelp service over the central Corvax API.
+    /// Auth token used by this game server to authenticate with the Discord AHelp bot.
     /// </summary>
-    public static readonly CVarDef<bool> AHelpEnabled =
-        CVarDef.Create("corvax.ahelp_enabled", false, CVar.SERVERONLY);
+    public static readonly CVarDef<string> AHelpApiToken =
+        CVarDef.Create("ahelp.api_token", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// Amount of seconds before timeout for AHelp bot API requests.
+    /// </summary>
+    public static readonly CVarDef<int> AHelpApiTimeout =
+        CVarDef.Create("ahelp.api_timeout", 5, CVar.SERVERONLY | CVar.ARCHIVE);
 
     /**
      * TTS (Text-To-Speech)

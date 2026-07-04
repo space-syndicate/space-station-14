@@ -527,6 +527,7 @@ namespace Content.Server.Administration.Systems
             }
 
             _relayMessages[userId] = existingEmbed;
+            RaiseLocalEvent(new CorvaxAHelpRelayChangedEvent(userId)); // Corvax-API
 
             // Actually do the on call relay last, we just need to grab it before we dequeue every message above.
             if (onCallRelay &&
@@ -721,7 +722,7 @@ namespace Content.Server.Administration.Systems
 
             if (_rateLimit.CountAction(eventArgs.SenderSession, RateLimitKey) != RateLimitStatus.Allowed)
                 return;
-                
+
             _afkManager.PlayerDidAction(senderSession);
 
             // If it's not an admin / admin chooses to keep the sound and message is not an admin only message, then play it.

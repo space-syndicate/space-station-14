@@ -73,3 +73,8 @@ internal sealed record CorvaxAHelpRelaySnapshot(
     string? CharacterName,
     string Description,
     GameRunLevel LastRunLevel);
+
+internal sealed class CorvaxAHelpRelayChangedEvent(NetUserId userId) : EntityEventArgs
+{
+    public NetUserId UserId { get; } = userId;
+}
