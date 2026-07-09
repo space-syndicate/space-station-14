@@ -69,8 +69,8 @@ entity-effect-guidebook-smoke-area =
 
 entity-effect-guidebook-satiate-thirst =
     { $chance ->
-        [1] Уталяет
-        *[other] уталить
+        [1] Утоляет
+        *[other] утолить
     } { $relative ->
         [1] жажду
         *[other] жажду с { NATURALFIXED($relative, 3) }х эффективностью
@@ -78,8 +78,8 @@ entity-effect-guidebook-satiate-thirst =
 
 entity-effect-guidebook-satiate-hunger =
     { $chance ->
-        [1] Уталяет
-        *[other] уталить
+        [1] Утоляет
+        *[other] утолить
     } { $relative ->
         [1] голод
         *[other] голод с { NATURALFIXED($relative, 3) }х эффективностью
@@ -429,7 +429,7 @@ entity-effect-guidebook-movespeed-modifier =
     { $chance ->
         [1] Изменяет
         *[other] изменить
-    } скорость бега на { NATURALFIXED($sprintspeed, 3) }х миниум на { NATURALFIXED($time, 3) } { MANY("секунд", $time) }
+    } скорость бега на { NATURALFIXED($sprintspeed, 3) }х минимум на { NATURALFIXED($time, 3) } { MANY("секунд", $time) }
 
 entity-effect-guidebook-reset-narcolepsy =
     { $chance ->
@@ -486,7 +486,7 @@ entity-effect-guidebook-artifact-unlock =
     } разблокировать инопланетный артефакт.
 
 entity-effect-guidebook-artifact-durability-restore =
-    Востонавливает { $restored } прочности активных узлов артефакта.
+    Восстанавливает { $restored } прочности активных узлов артефакта.
 
 entity-effect-guidebook-plant-attribute =
     { $chance ->
