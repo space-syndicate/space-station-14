@@ -265,10 +265,10 @@ entity-effect-guidebook-adjust-reagent-group =
                 [1] Добавляет
                 *[-1] Удаляет
             }
-        *[other] { $deltasign ->
-                [1] Добавляет
-                *[-1]                 *[-1] удаляет
-
+        *[other]
+            { $deltasign ->
+                [1] добавляет
+                *[-1] удаляет
             }
     } { NATURALFIXED($amount, 2) }ед. реагентов из группы { $group } { $deltasign ->
         [1] в кровь
@@ -286,9 +286,9 @@ entity-effect-guidebook-adjust-temperature =
                 *[-1] удаляет
             }
     } { POWERJOULES($amount) } тепла { $deltasign ->
-        [1] в
-        *[-1] из
-    } организма
+        [1] в организм
+        *[-1] из организма
+    }
 
 entity-effect-guidebook-chem-cause-disease =
     { $chance ->
