@@ -36,6 +36,8 @@
   - Cryogenics
   - GenpopEnter
   - GenpopLeave
+  - Vault # Corvax-Vault-Access
+  - Satellite # Corvax-Satellite-Access
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

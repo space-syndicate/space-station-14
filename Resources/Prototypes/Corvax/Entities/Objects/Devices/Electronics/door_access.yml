@@ -1,0 +1,8 @@
+# Command
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsSatellite
+  suffix: AI Satellite, Locked
+  components:
+  - type: AccessReader
+    access: [["Satellite"]]

@@ -1,0 +1,13 @@
+# Pilot
+- type: entity
+  id: LockerPilot
+  parent: LockerBaseSecure
+  name: pilot's locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: armory
+    stateDoorOpen: armory_open
+    stateDoorClosed: armory_door
+  - type: AccessReader
+    access: [["Security"]]
