@@ -141,11 +141,10 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
                 {
                     antagonist = true;
                 }
-                else if (!foundJob)
+                else if (!foundJob && !string.IsNullOrWhiteSpace(roleName))
                 {
                     foundJob = true;
-                    if (!string.IsNullOrWhiteSpace(role.Name))
-                        job = roleName;
+                    job = roleName;
                 }
             }
         }
