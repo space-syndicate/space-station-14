@@ -72,8 +72,11 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
             return new AHelpApiCommandResponse(command.CommandId, false, "conversationId or userId must be a NetUserId guid");
 
         var userId = new NetUserId(userGuid);
-        if (!_bwoinkSystem.CorvaxHasActiveAHelpConversation(userId))
+        if (!_bwoinkSystem.CorvaxHasActiveAHelpConversation(userId) &&
+            !_playerManager.TryGetSessionById(userId, out _))
+        {
             return new AHelpApiCommandResponse(command.CommandId, false, "AHelp conversation is not active");
+        }
 
         RelayExternalMessageToAHelp(userId, GetAuthorName(command), command.Text);
         return new AHelpApiCommandResponse(command.CommandId, true);

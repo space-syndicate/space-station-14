@@ -110,7 +110,6 @@ public sealed partial class AHelpBotApiSystem : EntitySystem
         if (!_enabled || string.IsNullOrWhiteSpace(_apiUrl) || string.IsNullOrWhiteSpace(_apiToken))
             return;
 
-        AHelpApiEventRequest request;
         lock (_pushLock)
         {
             if (_pushInProgress)
@@ -120,7 +119,18 @@ public sealed partial class AHelpBotApiSystem : EntitySystem
             }
 
             _pushInProgress = true;
+        }
+
+        AHelpApiEventRequest request;
+        try
+        {
             request = BuildEventRequest();
+        }
+        catch (Exception e)
+        {
+            _sawmill.Warning($"Unable to build AHelp API event: {e.Message}");
+            FinishPush();
+            return;
         }
 
         _ = RunPushAsync(request);
@@ -153,20 +163,25 @@ public sealed partial class AHelpBotApiSystem : EntitySystem
         }
         finally
         {
-            var runQueued = false;
-            lock (_pushLock)
-            {
-                _pushInProgress = false;
-                if (_pushQueued)
-                {
-                    _pushQueued = false;
-                    runQueued = true;
-                }
-            }
-
-            if (runQueued)
-                _taskManager.RunOnMainThread(PushCurrentState);
+            FinishPush();
         }
+    }
+
+    private void FinishPush()
+    {
+        var runQueued = false;
+        lock (_pushLock)
+        {
+            _pushInProgress = false;
+            if (_pushQueued)
+            {
+                _pushQueued = false;
+                runQueued = true;
+            }
+        }
+
+        if (runQueued)
+            _taskManager.RunOnMainThread(PushCurrentState);
     }
 
     private void OnEnabledChanged(bool value)
@@ -211,14 +226,14 @@ public sealed partial class AHelpBotApiSystem : EntitySystem
 
     internal async Task<bool> HandleCommandApiRequest(IStatusHandlerContext context)
     {
+        if (!await CheckCommandApiAccess(context))
+            return true;
+
         if (!_enabled)
         {
             await context.RespondAsync("AHelp API is disabled", HttpStatusCode.ServiceUnavailable);
             return true;
         }
-
-        if (!await CheckCommandApiAccess(context))
-            return true;
 
         var command = await ReadCommandApiRequest(context);
         if (command == null)
