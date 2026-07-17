@@ -7,5 +7,5 @@ ent-PonderingOrb = шар размышлений
 ent-PonderingOrbWizard = шар размышлений
     .desc = Ponderous, man... Really ponderous. Волшебным образом показывает сеть камер станции.
     .suffix = Волшебник
-ent-Magic9Ball = magic 9 ball
-    .desc = An endless source of wisdom... Now with a speaker included!
+ent-Magic9Ball = шар судьбы
+    .desc = Неисчерпаемый источник мудрости... Теперь со встроенным динамиком!
