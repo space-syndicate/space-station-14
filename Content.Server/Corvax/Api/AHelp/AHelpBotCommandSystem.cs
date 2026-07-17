@@ -121,24 +121,33 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
 
     private AHelpApiPlayerInfo BuildPlayerInfo(ICommonSession session)
     {
-        var characterName = _minds.GetCharacterName(session.UserId);
+        string? characterName = null;
         var job = "-";
-        var roleNames = Array.Empty<string>();
+        var roleNames = new List<string>();
         var antagonist = false;
+        var foundJob = false;
 
         if (_minds.TryGetMind(session.UserId, out var mind))
         {
-            var allRoles = _roles.MindGetAllRoleInfo((mind.Value.Owner, mind.Value.Comp)).ToArray();
-            var jobRole = allRoles.FirstOrDefault(role => !role.Antagonist);
-            roleNames = allRoles
-                .Select(role => Loc.GetString(role.Name))
-                .Where(role => !string.IsNullOrWhiteSpace(role))
-                .ToArray();
+            characterName = mind.Value.Comp.CharacterName;
 
-            if (!string.IsNullOrWhiteSpace(jobRole.Name))
-                job = Loc.GetString(jobRole.Name);
+            foreach (var role in _roles.MindGetAllRoleInfo((mind.Value.Owner, mind.Value.Comp)))
+            {
+                var roleName = Loc.GetString(role.Name);
+                if (!string.IsNullOrWhiteSpace(roleName))
+                    roleNames.Add(roleName);
 
-            antagonist = allRoles.Any(role => role.Antagonist);
+                if (role.Antagonist)
+                {
+                    antagonist = true;
+                }
+                else if (!foundJob)
+                {
+                    foundJob = true;
+                    if (!string.IsNullOrWhiteSpace(role.Name))
+                        job = roleName;
+                }
+            }
         }
 
         return new AHelpApiPlayerInfo(
@@ -147,7 +156,7 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
             session.Status.ToString(),
             characterName,
             job,
-            roleNames,
+            roleNames.ToArray(),
             antagonist);
     }
 
