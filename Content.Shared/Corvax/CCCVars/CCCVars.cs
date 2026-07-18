@@ -15,6 +15,34 @@ public sealed class CCCVars
     public static readonly CVarDef<bool> PanicBunkerDenyVPN =
         CVarDef.Create("game.panic_bunker.deny_vpn", false, CVar.SERVERONLY);
 
+    /*
+     * AHelp Discord bot API
+     */
+
+    /// <summary>
+    /// Enables the external Discord AHelp bot HTTP API.
+    /// </summary>
+    public static readonly CVarDef<bool> AHelpApiEnabled =
+        CVarDef.Create("ahelp.api_enabled", false, CVar.SERVERONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// URL of the Discord AHelp bot HTTP event endpoint.
+    /// </summary>
+    public static readonly CVarDef<string> AHelpApiUrl =
+        CVarDef.Create("ahelp.api_url", "", CVar.SERVERONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Auth token used by this game server to authenticate with the Discord AHelp bot.
+    /// </summary>
+    public static readonly CVarDef<string> AHelpApiToken =
+        CVarDef.Create("ahelp.api_token", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// Amount of seconds before timeout for AHelp bot API requests.
+    /// </summary>
+    public static readonly CVarDef<int> AHelpApiTimeout =
+        CVarDef.Create("ahelp.api_timeout", 5, CVar.SERVERONLY | CVar.ARCHIVE);
+
     /**
      * TTS (Text-To-Speech)
      */
