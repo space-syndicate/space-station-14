@@ -1,4 +1,4 @@
-shared-solution-container-component-on-examine-main-text = Содержит [color={ $color }]{ $desc }[/color] { $chemCount ->
+shared-solution-container-component-on-examine-main-text = Содержит [color={ $color }]{ $colorName } { $desc }[/color] { $chemCount ->
     [1] вещество.
     *[other] смесь веществ.
 }

@@ -1,5 +1,7 @@
 ent-ActionRevertPolymorph = Вернуться
     .desc = Вернитесь в свою изначальную форму.
+ent-ActionRevertPolymorphConfirm = { ent-ActionRevertPolymorph }
+    .desc = { ent-ActionRevertPolymorph.desc}
 ent-BaseActionPolymorph = { ent-BaseAction }
     .desc = { ent-BaseAction.desc }
 ent-ActionPolymorphWizardSpider = Полиморф в паука

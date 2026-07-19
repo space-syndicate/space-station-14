@@ -18,3 +18,5 @@ ent-StatusEffectWoozy = головокружение
     .desc = { ent-MobStatusEffectDebuff.desc }
 ent-StatusEffectDrunk = опьянение
     .desc = { ent-StatusEffectWoozy.desc }
+ent-StatusEffectFlashed = ослеплён
+    .desc = { ent-MobStatusEffectDebuff.desc }

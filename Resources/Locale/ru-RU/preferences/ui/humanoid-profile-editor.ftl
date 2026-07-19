@@ -1,6 +1,13 @@
-humanoid-profile-editor-randomize-everything-button = Случайный персонаж
+humanoid-profile-editor-randomize = Рандомизация
+humanoid-profile-editor-randomize-unlocked-button = Рандомизировать
+humanoid-profile-editor-randomize-name-button = Имя
+humanoid-profile-editor-randomize-species-button = Вид
+humanoid-profile-editor-randomize-age-button = Возраст
+humanoid-profile-editor-randomize-sex-button = Пол
+humanoid-profile-editor-randomize-skin-button = Цвет кожи
+humanoid-profile-editor-randomize-eye-button = Цвет глаз
+humanoid-profile-editor-randomize-markings-button = Черты
 humanoid-profile-editor-name-label = Имя:
-humanoid-profile-editor-name-random-button = Сгенерировать
 humanoid-profile-editor-appearance-tab = Внешность
 humanoid-profile-editor-clothing = Отображать одежду
 humanoid-profile-editor-clothing-show = Переключить
@@ -8,9 +15,11 @@ humanoid-profile-editor-sex-label = Пол:
 humanoid-profile-editor-sex-male-text = Мужской
 humanoid-profile-editor-sex-female-text = Женский
 humanoid-profile-editor-sex-unsexed-text = Отсутствует
+humanoid-profile-editor-voice-label = Голос:
 humanoid-profile-editor-age-label = Возраст:
 humanoid-profile-editor-skin-color-label = Цвет кожи:
 humanoid-profile-editor-species-label = Вид:
+humanoid-profile-editor-randomizer-lock-tooltip = Предотвращает рандомизацию
 humanoid-profile-editor-pronouns-label = Личное местоимение:
 humanoid-profile-editor-pronouns-male-text = Он / Его
 humanoid-profile-editor-pronouns-female-text = Она / Её
@@ -62,3 +71,9 @@ humanoid-profile-editor-trait-count-hint = Доступно очков: [{ $curr
 trait-category-disabilities = Ограничения
 trait-category-speech = Черты речи
 trait-category-quirks = Причуды
+
+# Voices
+humanoid-profile-editor-voice-masculine = Мужественный
+humanoid-profile-editor-voice-feminine = Женственный
+humanoid-profile-editor-voice-neutral = Нетральный
+humanoid-profile-editor-voice-none = Безымянный голос
