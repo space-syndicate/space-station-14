@@ -308,12 +308,19 @@ namespace Content.Shared.Preferences
             return sex;
         }
 
-            // Corvax-TTS-Start
+        // Corvax-TTS-Start
+        public static String RandomTTS(Sex sex)
+        {
+            var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+            var random = IoCManager.Resolve<IRobustRandom>();
+
             var voiceId = random.Pick(prototypeManager
                 .EnumeratePrototypes<TTSVoicePrototype>()
                 .Where(o => CanHaveVoice(o, sex)).ToArray()
             ).ID;
-            // Corvax-TTS-End
+            return voiceId;
+        }
+        // Corvax-TTS-End
 
         /// <summary>
         /// Picks a random gender using species sex;
@@ -380,11 +387,10 @@ namespace Content.Shared.Preferences
             profile.Gender = (randomizeCfg & RandomizeCfg.Gender) != 0 ? RandomGender(profile.Sex) : baseProfile.Gender;
             profile.Name = (randomizeCfg & RandomizeCfg.Name) != 0 ? RandomName(speciesProto, profile.Gender) : baseProfile.Name;
             profile.Age = (randomizeCfg & RandomizeCfg.Age) != 0 ? RandomAge(speciesProto) : baseProfile.Age;
-
+            profile.TTSVoice = (randomizeCfg & RandomizeCfg.Age) != 0 ? RandomTTS(profile.Sex) : baseProfile.TTSVoice; // Corvax-TTS
             profile.Appearance = HumanoidCharacterAppearance.Random(randomizeCfg, baseProfile.Appearance, speciesProto, profile.Sex);
 
             return profile;
-                TTSVoice = voiceId, // Corvax-TTS
         }
 
         /// <summary>
