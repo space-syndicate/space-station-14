@@ -8,5 +8,12 @@
   skinColoration: Hues
   maleFirstNames: NamesMothFirstMale
   femaleFirstNames: NamesMothFirstFemale
+  # lastNames: NamesMothLast # Corvax-LastnameGender
+  defaultSoundsBySex:
+  - UnisexMoth
+  - UnisexMoth
+  - UnisexMoth
+  voices:
+  - UnisexMoth
   maleLastNames: NamesMothLast # Corvax-LastnameGender
   femaleLastNames: NamesMothLast # Corvax-LastnameGender

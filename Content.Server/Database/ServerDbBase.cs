@@ -212,9 +212,10 @@ namespace Content.Server.Database
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
             profile.Species = humanoid.Species;
-            profile.Voice = humanoid.Voice; // Corvax-TTS
+            profile.TTSVoice = humanoid.TTSVoice; // Corvax-TTS
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
+            profile.Voice = humanoid.Voice.ToString();
             profile.Gender = humanoid.Gender.ToString();
             profile.EyeColor = appearance.EyeColor.ToHex();
             profile.SkinColor = appearance.SkinColor.ToHex();
@@ -854,7 +855,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                     if (attempt >= maxRetryAttempts)
                     {
                         _opsLog.Error($"Max retry attempts reached. Failed to save {logs.Count} admin logs.");
-                        return;
+                        throw;
                     }
 
                     _opsLog.Warning($"Retrying in {retryDelay.TotalSeconds} seconds...");

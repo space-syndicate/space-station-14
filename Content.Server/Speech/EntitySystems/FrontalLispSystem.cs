@@ -1,11 +1,11 @@
 using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
-using Content.Shared.Speech;
+using Content.Shared.Speech.EntitySystems;
 using Robust.Shared.Random; // Corvax-Localization
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed partial class FrontalLispSystem : EntitySystem
+public sealed partial class FrontalLispSystem : RelayAccentSystem<FrontalLispComponent>
 {
     // @formatter:off
     private static readonly Regex RegexUpperTh = new(@"[T]+[Ss]+|[S]+[Cc]+(?=[IiEeYy]+)|[C]+(?=[IiEeYy]+)|[P][Ss]+|([S]+[Tt]+|[T]+)(?=[Ii]+[Oo]+[Uu]*[Nn]*)|[C]+[Hh]+(?=[Ii]*[Ee]*)|[Z]+|[S]+|[X]+(?=[Ee]+)");
@@ -29,16 +29,8 @@ public sealed partial class FrontalLispSystem : EntitySystem
 
     [Dependency] private IRobustRandom _random = default!; // Corvax-Localization
 
-    public override void Initialize()
+    public override string Accentuate(string message, Entity<FrontalLispComponent>? ent = null)
     {
-        base.Initialize();
-        SubscribeLocalEvent<FrontalLispComponent, AccentGetEvent>(OnAccent);
-    }
-
-    private void OnAccent(EntityUid uid, FrontalLispComponent component, AccentGetEvent args)
-    {
-        var message = args.Message;
-
         // handles ts, sc(i|e|y), c(i|e|y), ps, st(io(u|n)), ch(i|e), z, s
         message = RegexUpperTh.Replace(message, "TH");
         message = RegexLowerTh.Replace(message, "th");
@@ -59,6 +51,6 @@ public sealed partial class FrontalLispSystem : EntitySystem
         message = _regexUpperZ.Replace(message, _random.Prob(0.90f) ? "Ж" : "З");
         // Corvax-Localization End
 
-        args.Message = message;
+        return message;
     }
 }

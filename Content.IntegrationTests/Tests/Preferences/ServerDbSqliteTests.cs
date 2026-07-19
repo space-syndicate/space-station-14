@@ -52,7 +52,7 @@ namespace Content.IntegrationTests.Tests.Preferences
                 Name = "Charlie Charlieson",
                 FlavorText = "The biggest boy around.",
                 Species = "Human",
-                Voice = "Eugene", // Corvax-TTS
+                TTSVoice = "Eugene", // Corvax-TTS
                 Age = 21,
                 Appearance = new(
                     Color.Azure,
