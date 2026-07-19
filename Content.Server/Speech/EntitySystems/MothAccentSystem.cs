@@ -1,11 +1,12 @@
 using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
+using Content.Shared.Speech.EntitySystems;
 using Robust.Shared.Random;
 using Content.Shared.Speech;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed partial class MothAccentSystem : EntitySystem
+public sealed class MothAccentSystem : RelayAccentSystem<MothAccentComponent>
 {
     [Dependency] private IRobustRandom _random = default!; // Corvax-Localization
 
@@ -24,16 +25,8 @@ public sealed partial class MothAccentSystem : EntitySystem
     private static readonly List<string> _replacementsZUpper = new List<string> { "ЗЗ", "ЗЗЗ" };
     // Corvax-Localization-End
 
-    public override void Initialize()
+    public override string Accentuate(string message, Entity<MothAccentComponent>? ent = null)
     {
-        base.Initialize();
-        SubscribeLocalEvent<MothAccentComponent, AccentGetEvent>(OnAccent);
-    }
-
-    private void OnAccent(EntityUid uid, MothAccentComponent component, AccentGetEvent args)
-    {
-        var message = args.Message;
-
         // buzzz
         message = RegexLowerBuzz.Replace(message, "zzz");
         // buZZZ
@@ -46,6 +39,6 @@ public sealed partial class MothAccentSystem : EntitySystem
         message = _regexUpperZ.Replace(message, _random.Pick(_replacementsZUpper)); // используем существующий regexUpperZ
         // Corvax-Localization-End
 
-        args.Message = message;
+        return message;
     }
 }

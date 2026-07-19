@@ -26,7 +26,7 @@ public sealed partial class BarkAccentSystem : RelayAccentSystem<BarkAccentCompo
             //Corvax-Localization-End
         };
 
-    protected override string AccentuateInternal(EntityUid uid, BarkAccentComponent comp, string message)
+    public override string Accentuate(string message, Entity<BarkAccentComponent>? ent = null)
     {
         foreach (var (word, repl) in SpecialWords)
         {

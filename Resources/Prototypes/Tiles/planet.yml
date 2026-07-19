@@ -14,11 +14,6 @@
   name: tiles-dirt-planet-floor
   sprite: /Textures/Tiles/Planet/dirt.rsi/dirt.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
 
 # Desert
 - type: tile
@@ -42,13 +37,6 @@
   name: tiles-low-desert-floor
   sprite: /Textures/Tiles/Planet/Desert/low_desert.png
   variants: 6
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
 
 # Grass
 - type: tile
@@ -57,11 +45,6 @@
   name: tiles-grass-planet-floor
   sprite: /Textures/Tiles/Planet/Grass/grass.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   edgeSpritePriority: 1
   edgeSprites:
     SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png

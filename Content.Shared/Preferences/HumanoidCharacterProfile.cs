@@ -247,6 +247,7 @@ namespace Content.Shared.Preferences
             // appearance
             Eyes = 1 << 5,
             Skin = 1 << 6,
+            Markings = 1 << 7,
         }
 
         /// <summary>
@@ -259,7 +260,8 @@ namespace Content.Shared.Preferences
             | RandomizeCfg.Sex
             | RandomizeCfg.Gender
             | RandomizeCfg.Eyes
-            | RandomizeCfg.Skin;
+            | RandomizeCfg.Skin
+            | RandomizeCfg.Markings;
 
         /// <summary>
         /// Picks a random species from roundstart species.
@@ -388,7 +390,8 @@ namespace Content.Shared.Preferences
             profile.Name = (randomizeCfg & RandomizeCfg.Name) != 0 ? RandomName(speciesProto, profile.Gender) : baseProfile.Name;
             profile.Age = (randomizeCfg & RandomizeCfg.Age) != 0 ? RandomAge(speciesProto) : baseProfile.Age;
             profile.TTSVoice = (randomizeCfg & RandomizeCfg.Age) != 0 ? RandomTTS(profile.Sex) : baseProfile.TTSVoice; // Corvax-TTS
-            profile.Appearance = HumanoidCharacterAppearance.Random(randomizeCfg, baseProfile.Appearance, speciesProto, profile.Sex);
+
+            profile.Appearance = HumanoidCharacterAppearance.Random(speciesProto, profile.Sex, randomizeCfg, baseProfile.Appearance);
 
             return profile;
         }
@@ -490,7 +493,7 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithJobFromCvar(IConfigurationManager cfg)
         {
             // This path should run only rarely, so the cvar does not need to be locally stored
-            var jobs = new HashSet<string>( cfg.GetCVar(CCVars.NewCharacterJobs).Split(","));
+            var jobs = new HashSet<string>(cfg.GetCVar(CCVars.NewCharacterJobs).Split(","));
             var priority = JobPriority.High;
             Dictionary<ProtoId<JobPrototype>, JobPriority> priorities = new();
 
