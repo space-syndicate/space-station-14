@@ -156,7 +156,7 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
 
         // Safety step. Most systems which called Random() also called this, and not doing so caused issues with markings.
         // In the future it could *maybe* be removed, but it's probably worth the extra CPU cycles to validate this info.
-        return EnsureValid(appearance, species, sex);
+        return EnsureValid(appearance, species, sex, []); // Corvax-Sponsors
     }
 
     public static Color ClampColor(Color color)

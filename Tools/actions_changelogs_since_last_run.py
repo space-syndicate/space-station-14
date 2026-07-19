@@ -66,10 +66,6 @@ def main():
 
     send_message_lines(message_lines)
 
-        diff = diff_changelog(last_changelog, cur_changelog)
-        send_to_discord(diff)
-    # Corvax-MultiChangelog-End
-
 
 def get_most_recent_workflow(
     sess: requests.Session, github_repository: str, github_run: str

@@ -2,11 +2,10 @@ using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
 using Content.Shared.Speech.EntitySystems;
 using Robust.Shared.Random;
-using Content.Shared.Speech;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed class LizardAccentSystem : RelayAccentSystem<LizardAccentComponent>
+public sealed partial class LizardAccentSystem : RelayAccentSystem<LizardAccentComponent>
 {
     private static readonly Regex RegexLowerS = new("s+");
     private static readonly Regex RegexUpperS = new("S+");

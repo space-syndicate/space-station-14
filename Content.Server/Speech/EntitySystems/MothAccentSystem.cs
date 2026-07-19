@@ -2,11 +2,10 @@ using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
 using Content.Shared.Speech.EntitySystems;
 using Robust.Shared.Random;
-using Content.Shared.Speech;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed class MothAccentSystem : RelayAccentSystem<MothAccentComponent>
+public sealed partial class MothAccentSystem : RelayAccentSystem<MothAccentComponent>
 {
     [Dependency] private IRobustRandom _random = default!; // Corvax-Localization
 
