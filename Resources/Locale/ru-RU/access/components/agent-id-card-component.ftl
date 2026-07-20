@@ -5,7 +5,7 @@ agent-id-new = { CAPITALIZE($card) } { $number ->
     *[other] дала { $number } новых доступов
 }.
 
-agent-id-ui-menu-title = ID карта Агента
+agent-id-ui-menu-title = ID карта агента
 agent-id-ui-tab-settings = Настройки
 agent-id-ui-tab-job-icons = Иконка должности
 

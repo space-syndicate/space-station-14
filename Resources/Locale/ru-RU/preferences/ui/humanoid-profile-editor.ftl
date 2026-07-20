@@ -75,5 +75,5 @@ trait-category-quirks = Причуды
 # Voices
 humanoid-profile-editor-voice-masculine = Мужественный
 humanoid-profile-editor-voice-feminine = Женственный
-humanoid-profile-editor-voice-neutral = Нетральный
+humanoid-profile-editor-voice-neutral = Нейтральный
 humanoid-profile-editor-voice-none = Безымянный голос

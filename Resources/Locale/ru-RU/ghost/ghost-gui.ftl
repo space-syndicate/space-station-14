@@ -17,8 +17,8 @@ ghost-target-window-warp-to-title = [bold]Быстрый телепорт[/bold]
 ghost-target-window-warp-to-most-followed = Самый наблюдаемый
 ghost-target-window-warp-to-random-followed = Наблюдаемый
 ghost-target-window-warp-to-random = Случайно
-ghost-target-window-warp-to-most-followed-tooltip = Телепорт к самому наблюдаемый игроку
-ghost-target-window-warp-to-random-followed-tooltip = Телепорт к случайному наблюдаемый игроку
+ghost-target-window-warp-to-most-followed-tooltip = Телепорт к самому наблюдаемому игроку
+ghost-target-window-warp-to-random-followed-tooltip = Телепорт к случайному наблюдаемому игроку
 ghost-target-window-warp-to-random-tooltip = Телепорт к случайному игроку
 
 ghost-roles-window-title = Роли призраков

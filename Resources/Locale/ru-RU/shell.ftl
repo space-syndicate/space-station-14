@@ -60,7 +60,7 @@ shell-argument-number-must-be-between = Аргумент { $index } должен
 shell-argument-station-id-invalid = Аргумент { $index } должен быть валидным station id!
 shell-argument-map-id-invalid = Аргумент { $index } должен быть валидным map id!
 shell-argument-number-invalid = Аргумент { $index } должен быть валидным числом!
-shell-argument-chat-invalid = Аргмуент {$index} должен быть валидным чатом!
+shell-argument-chat-invalid = Аргумент {$index} должен быть существующим чатом!
 
 # Hints
 shell-argument-username-hint = <username>

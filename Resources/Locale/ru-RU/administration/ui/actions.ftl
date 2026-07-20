@@ -5,9 +5,9 @@ admin-player-actions-kick = Кикнуть
 admin-player-actions-ban = Забанить
 admin-player-actions-ahelp = АХелп
 admin-player-actions-respawn = Респаун
-admin-player-actions-respawn-message = Возвращает игрока в лобби, позволяя им появиться новым персонажем по желанию.
+admin-player-actions-respawn-message = Возвращает игрока в лобби, позволяя им появиться новым персонажем по их желанию.
 admin-player-actions-spawn = Заспавнить тут
-admin-player-actions-spawn-message = Создаёт новую копиб этого персонажа и немедлено переносит в него игрока.
+admin-player-actions-spawn-message = Создаёт новую копию этого персонажа и немедлено переносит в него игрока.
 admin-player-spawn-failed = Не удалось найти подходящие координаты
 admin-player-actions-player-panel = Открыть панель игрока
 

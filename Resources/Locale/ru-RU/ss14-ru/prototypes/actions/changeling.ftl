@@ -25,4 +25,4 @@ ent-ActionChangelingLastResort = "[color=red]Последний шанс[/color]
 ent-ActionChangelingTakeOverCorpse = Захватить тело
     .desc = Заразите труп, чтобы вернуться в свой истинный облик.
 ent-ActionChangelingNightVision = Переключить ночное зрение
-    .desc = Включает и выключает наше ночное зрение.
+    .desc = Включает или выключает наше ночное зрение.
