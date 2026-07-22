@@ -1,23 +1,23 @@
 borg-player-not-allowed = Мозг не помещается!
 borg-player-not-allowed-eject = Мозг был извлечён из корпуса!
 
-borg-panel-not-open = Панель киборга не открыта...
+borg-panel-not-open = Панель борга не открыта...
 
 borg-mind-added = { CAPITALIZE($name) } включается!
 borg-mind-removed = { CAPITALIZE($name) } выключается!
 
 borg-module-too-many = Для ещё одного модуля не хватает места...
-borg-module-duplicate = Этот модуль уже установлен в этого киборга...
-borg-module-whitelist-deny = Этот модуль не подходит для данного типа киборгов...
+borg-module-duplicate = Этот модуль уже установлен в этого борга...
+borg-module-whitelist-deny = Этот модуль не подходит для данного типа боргов...
 borg-module-incompatible = Этот модуль не совместим с { THE($existing) }.
 borg-module-prerequisite-unfulfilled = Для работы этого модуля необходим другой модуль...
 
 borg-module-action-name = Активировать { $moduleName }
 borg-module-action-description = Выбрать { $moduleName }, чтобы использовать предоставляемые им инструменты.
 
-borg-construction-guide-string = Конечности и туловище киборга должны быть прикреплены к эндоскелету.
+borg-construction-guide-string = Конечности и туловище борга должны быть прикреплены к эндоскелету.
 
-borg-ui-menu-title = Интерфейс киборга
+borg-ui-menu-title = Интерфейс борга
 borg-ui-charge-label = Заряд: { $charge }%
 borg-ui-no-brain = Мозг отсутствует
 borg-ui-remove-battery = Извлечь
@@ -44,24 +44,24 @@ borg-select-type-menu-guidebook = Руководство
 
 borg-type-generic-name = Универсал
 borg-type-generic-desc = Может всё, но одинаково не очень хорошо. Выполняйте различные случайные поручения на станции, или, быть может, окажите помощь научному отделу, который вас построил.
-borg-type-generic-transponder = обычный киборг
+borg-type-generic-transponder = обычный борг
 
 borg-type-engineering-name = Инженер
 borg-type-engineering-desc = Помогайте команде инженеров в строительстве станции, ликвидации повреждений или исправлении проблем с электричеством и атмосферой.
-borg-type-engineering-transponder = киборг-инженер
+borg-type-engineering-transponder = борг-инженер
 
 borg-type-mining-name = Утилизатор
 borg-type-mining-desc = Присоединитесь к утилизаторам и окажите им помощь в добыче ресурсов, исследованию обломков и борьбе с враждебной фауной космоса.
-borg-type-mining-transponder = киборг-шахтёр
+borg-type-mining-transponder = борг-шахтёр
 
 borg-type-janitor-name = Уборщик
 borg-type-janitor-desc = Поддерживайте порядок на станции, убирайте пролитую жидкость, собирайте и правильно утилизируйте мусор, оставленный ленивыми членами экипажа.
-borg-type-janitor-transponder = киборг-уборщик
+borg-type-janitor-transponder = борг-уборщик
 
 borg-type-medical-name = Медик
 borg-type-medical-desc = Оказывайте медицинскую помощь нуждающемуся экипажу в медотсеке или в опасных зонах, куда обычные парамедики не могут добраться.
-borg-type-medical-transponder = киборг-доктор
+borg-type-medical-transponder = борг-доктор
 
 borg-type-service-name = Сервисный
 borg-type-service-desc = Помогайте членам экипажа в самых разных ситуациях — от подачи закусок и напитков до занятий ботаникой и развлечений.
-borg-type-service-transponder = киборг-официант
+borg-type-service-transponder = борг-официант
