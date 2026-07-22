@@ -4,3 +4,6 @@ ent-HighSecVaultLocked = { ent-HighSecDoor }
 ent-HighSecSatelliteLocked = { ent-HighSecDoor }
     .desc = { ent-HighSecDoor.desc }
     .suffix = Спутник ИИ, Закрыт
+ent-HighSecChiefEngineerLocked = { ent-HighSecDoor }
+    .desc = { ent-HighSecDoor.desc }
+    .suffix = Старший инженер, Закрыт
