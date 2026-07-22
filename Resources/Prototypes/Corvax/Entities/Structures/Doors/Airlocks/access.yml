@@ -15,3 +15,12 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSatellite ]
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecChiefEngineerLocked
+  suffix: ChiefEngineer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChiefEngineer  ]
