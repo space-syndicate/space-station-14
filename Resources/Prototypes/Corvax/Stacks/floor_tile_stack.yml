@@ -1,91 +1,89 @@
-# локаль для поля name в этом случае не нужна
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodBlack
   spawn: FloorTileItemWoodBlack
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodDark
   spawn: FloorTileItemWoodDark
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodLight
   spawn: FloorTileItemWoodLight
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodRed
   spawn: FloorTileItemWoodRed
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodLargeBlack
   spawn: FloorTileItemWoodLargeBlack
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodLargeDark
   spawn: FloorTileItemWoodLargeDark
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodLargeLight
   spawn: FloorTileItemWoodLargeLight
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodLargeRed
   spawn: FloorTileItemWoodLargeRed
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodParquet
   spawn: FloorTileItemWoodParquet
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodParquetBlack
   spawn: FloorTileItemWoodParquetBlack
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodParquetDark
   spawn: FloorTileItemWoodParquetDark
 
 - type: stack
+  parent: FloorTileWood
   id: FloorTileItemWoodParquetLight
-  name: parquet-light-wood-floor
   spawn: FloorTileItemWoodParquetLight
-  maxCount: 30
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodParquetRed
   spawn: FloorTileItemWoodParquetRed
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodChess
   spawn: FloorTileItemWoodChess
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodChessBlack
   spawn: FloorTileItemWoodChessBlack
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodChessDark
   spawn: FloorTileItemWoodChessDark
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodChessLight
   spawn: FloorTileItemWoodChessLight
 
 - type: stack
-  parent: BaseTileStack
+  parent: FloorTileWood
   id: FloorTileItemWoodChessRed
   spawn: FloorTileItemWoodChessRed
