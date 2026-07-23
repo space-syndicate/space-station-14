@@ -138,7 +138,7 @@ entity-effect-guidebook-status-effect =
         [update]{ $chance ->
                 [1] Вызывает
                 *[other] вызывают
-            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { $time ->
+            } { $key } минимум на { NATURALFIXED($time, 3) } { $time ->
                 [one] секунду
                 [few] секунды
                 *[other] секунд
@@ -146,7 +146,7 @@ entity-effect-guidebook-status-effect =
         [add] { $chance ->
                 [1] Вызывает
                 *[other] вызывают
-            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { $time ->
+            } { $key } минимум на { NATURALFIXED($time, 3) } { $time ->
                 [one] секунду
                 [few] секунды
                 *[other] секунд
@@ -154,7 +154,7 @@ entity-effect-guidebook-status-effect =
         [set] { $chance ->
                 [1] Вызывает
                 *[other] вызывают
-            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { $time ->
+            } { $key } минимум на { NATURALFIXED($time, 3) } { $time ->
                 [one] секунду
                 [few] секунды
                 *[other] секунд
@@ -166,7 +166,7 @@ entity-effect-guidebook-status-effect =
                 [one] секунду
                 [few] секунды
                 *[other] секунд
-            } от { LOC($key) }
+            } от { $key }
     } { $delay ->
         [0] немедленно
         *[other] после { NATURALFIXED($delay, 3) } { $delay ->
@@ -181,19 +181,19 @@ entity-effect-guidebook-status-effect-indef =
         [update]{ $chance ->
                 [1] Вызывает
                 *[other] вызывает
-            } постоянный { LOC($key) }
+            } постоянный { $key }
         [add]   { $chance ->
                 [1] Вызывает
                 *[other] вызывают
-            } постоянный{ LOC($key) }
+            } постоянный{ $key }
         [set]  { $chance ->
                 [1] Вызывает
                 *[other] вызывают
-            } постоянный{ LOC($key) }
+            } постоянный{ $key }
         *[remove]{ $chance ->
                 [1] Убирает
                 *[other] убирают
-            } { LOC($key) }
+            } { $key }
     } { $delay ->
         [0] мгновенно
         *[other] после { NATURALFIXED($delay, 3) } { $delay ->
@@ -493,8 +493,8 @@ entity-effect-guidebook-plant-attribute =
         [1] Изменяет
         *[other] изменить
     } { $attribute } на { $positive ->
-        [true] [color=red]{ $amount }[/color]
-        *[false] [color=green]{ $amount }[/color]
+        [false] [color=red]{ $amount }[/color]
+        *[true] [color=green]{ $amount }[/color]
     }
 
 entity-effect-guidebook-plant-cryoxadone =
