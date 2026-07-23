@@ -36,10 +36,11 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "outerClothing" ] # Corvax-Shit-Fix
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
-    - map: [ "outerClothing" ]
+    # - map: [ "outerClothing" ] # Corvax-Shit-Fix
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "suitstorage" ]
