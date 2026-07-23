@@ -23,3 +23,9 @@ time = 180.0
 [hub]
 advertise = true
 tags = "lang:ru,rp:low,rp:med,region:eu_e,tts"
+
+[replay]
+max_compressed_size = 1048576
+max_uncompressed_size = 8388608
+split_compressed_size = 102400
+split_uncompressed_size = 819200
