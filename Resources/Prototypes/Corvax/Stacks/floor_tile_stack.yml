@@ -1,89 +1,107 @@
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodBlack
+  name: black-wood-floor
   spawn: FloorTileItemWoodBlack
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodDark
+  name: dark-wood-floor
   spawn: FloorTileItemWoodDark
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodLight
+  name: light-wood-floor
   spawn: FloorTileItemWoodLight
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodRed
+  name: red-wood-floor
   spawn: FloorTileItemWoodRed
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodLargeBlack
+  name: large-black-wood-floor
   spawn: FloorTileItemWoodLargeBlack
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodLargeDark
+  name: large-dark-wood-floor
   spawn: FloorTileItemWoodLargeDark
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodLargeLight
+  name: large-light-wood-floor
   spawn: FloorTileItemWoodLargeLight
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodLargeRed
+  name: large-red-wood-floor
   spawn: FloorTileItemWoodLargeRed
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodParquet
+  name: tiles-wood-parquet
   spawn: FloorTileItemWoodParquet
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodParquetBlack
+  name: name: parquet-black-wood-floor
   spawn: FloorTileItemWoodParquetBlack
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodParquetDark
+  name: parquet-dark-wood-floor
   spawn: FloorTileItemWoodParquetDark
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodParquetLight
+  name: parquet-light-wood-floor
   spawn: FloorTileItemWoodParquetLight
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodParquetRed
+  name: parquet-red-wood-floor
   spawn: FloorTileItemWoodParquetRed
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodChess
+  name: chess-wood-floor
   spawn: FloorTileItemWoodChess
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodChessBlack
+  name: chess-black-wood-floor
   spawn: FloorTileItemWoodChessBlack
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodChessDark
+  name: chess-dark-wood-floor
   spawn: FloorTileItemWoodChessDark
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodChessLight
+  name: chess-light-wood-floor
   spawn: FloorTileItemWoodChessLight
 
 - type: stack
-  parent: FloorTileWood
+  parent: BaseTileStack
   id: FloorTileItemWoodChessRed
+  name: chess-red-wood-floor
   spawn: FloorTileItemWoodChessRed
