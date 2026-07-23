@@ -33,13 +33,13 @@
   id: SyndicateFootsoldierGearRuin
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    head: ClothingHeadHelmetSwatSyndicate
-    mask: ClothingMaskGasSyndicate
+    head: ClothingHeadHelmetRiot # Corvax-Footsoldier
+    mask: ClothingMaskGasExplorer # Corvax-Footsoldier
     outerClothing: ClothingOuterArmorBasic
-    gloves: ClothingHandsGlovesCombat
+    gloves: ClothingHandsGlovesColorBlack # Corvax-Footsoldier
     back: ClothingBackpack
     shoes: ClothingShoesBootsCombat
-    id: SyndiPDA
+    # id: SyndiPDA # Corvax-Footsoldier
   storage:
     back:
     - BoxSurvival
