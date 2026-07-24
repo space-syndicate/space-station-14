@@ -7,7 +7,7 @@ using Content.Shared.Preferences;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using static Content.Client.Corvax.SponsorOnlyHelpers;
+using static Content.Client.Corvax.SponsorOnlyHelpers; // Corvax-Sponsors
 
 namespace Content.Client.Lobby.UI;
 
@@ -161,8 +161,10 @@ public sealed partial class HumanoidProfileEditor
         {
             var name = Loc.GetString(_species[i].Name);
 
-            if (_species[i].SponsorOnly) // Corvax-Sponsors
-                name += GetSponsorOnlySuffix();
+            // Corvax-Sponsors-start
+            if (_species[i].SponsorOnly)
+                name += GetSponsorOnlySuffix(_species[i].ID);
+            // Corvax-Sponsors-end
 
             SpeciesButton.AddItem(name, i);
 
