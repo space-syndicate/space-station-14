@@ -7,6 +7,7 @@ humanoid-profile-editor-voice-other = Прочие
 humanoid-profile-editor-voice-play = ▶
 humanoid-profile-editor-voice-tooltip-play = Прослушать
 humanoid-profile-editor-voice-tooltip-sponsoronly = Доступно только спонсорам
+humanoid-profile-editor-voice-tooltip-sponsoronly-tier = Доступно только по подписке {$tier}
 humanoid-profile-editor-voice-category-tooltip = Показать голоса из {$category}
 humanoid-profile-editor-voice-match = Найдено: {$filtered}/{$all}
 tts-rate-limited = Вы генерируете TTS слишком быстро!

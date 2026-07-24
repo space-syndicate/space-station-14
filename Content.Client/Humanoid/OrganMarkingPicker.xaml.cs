@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Corvax.Interfaces.Shared; // Corvax-Sponsors
 using Content.Shared.Body;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -16,7 +15,6 @@ public sealed partial class OrganMarkingPicker : Control
 {
     [Dependency] private MarkingManager _marking = default!;
     [Dependency] private IEntityManager _entity = default!;
-    private ISharedSponsorsManager? _sponsorsManager; // Corvax-Sponsors
 
     private readonly SpriteSystem _sprite;
 
@@ -29,7 +27,6 @@ public sealed partial class OrganMarkingPicker : Control
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-        IoCManager.Instance!.TryResolveType(out _sponsorsManager); // Corvax-Sponsors
 
         _markingsModel = markingsModel;
         _layers = layers;
@@ -76,16 +73,6 @@ public sealed partial class OrganMarkingPicker : Control
         {
             var allMarkings =
                 _markingsModel.EnforceGroupAndSexRestrictions ? _marking.MarkingsByLayerAndGroupAndSex(layer, _group, organProfileData.Sex) : _marking.MarkingsByLayer(layer);
-
-            // Corvax-Sponsors-Start
-            /*if (_sponsorsManager != null)
-            {
-                var sponsorPrototypes = _sponsorsManager.GetClientPrototypes();
-                allMarkings = allMarkings
-                    .Where(m => !m.Value.SponsorOnly || sponsorPrototypes.Contains(m.Key))
-                    .ToDictionary(m => m.Key, m => m.Value);
-            }*/
-            // Corvax-Sponsors-End
 
             if (allMarkings.Count == 0)
                 continue;
