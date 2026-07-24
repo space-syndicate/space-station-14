@@ -7,6 +7,7 @@ cargoproduct-category-name-engineering = Инженерия
 cargoproduct-category-name-food = Продукты питания
 cargoproduct-category-name-fun = Развлечения
 cargoproduct-category-name-hydroponics = Гидропоника
+cargoproduct-category-name-instruments = Инструменты
 cargoproduct-category-name-livestock = Животноводство
 cargoproduct-category-name-materials = Материалы
 cargoproduct-category-name-medical = Медицина

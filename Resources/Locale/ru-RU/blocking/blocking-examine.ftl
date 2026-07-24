@@ -1,9 +1,9 @@
 # Blocking examines
 blocking-examinable-verb-text = Защита
 blocking-examinable-verb-message = Изучить показатели защиты.
-blocking-fraction = Блокируется [color=lightblue]{ $value }%[/color] входящего урона и:
-blocking-coefficient-value = - Получает [color=lightblue]{ $value }%[/color] [color=yellow]{ $type }[/color] урона.
-blocking-reduction-value = - Получает на [color=lightblue]{ $value }[/color] меньше [color=yellow]{ $type }[/color] урона.
+blocking-fraction = Блокирует до [color=lightblue]{ $value }%[/color] входящего урона и:
+blocking-coefficient-value = - Блокирует до [color=lightblue]{ $value }%[/color] [color=yellow]{ $type }[/color] урона.
+blocking-reduction-value = - Блокирует до [color=lightblue]{ $value }[/color] [color=yellow]{ $type }[/color] урона.
 
 # Shown when examining the shield. Each entry represents the shield's health condition
 comp-shield-damaged-1 = Выглядит прямо с завода.
