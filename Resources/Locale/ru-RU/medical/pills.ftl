@@ -1,7 +1,7 @@
 pill-label-dexalin-20u = дексалин 20 ед
 pill-label-dylovene-20u = диловен 20 ед
 pill-label-hyronalin-20u = хироналин 20 ед
-pill-label-potassium-iodide-20u = иодит калия 20 ед
+pill-label-potassium-iodide-20u = иодид калия 20 ед
 pill-label-iron-20u = железо 20 ед
 pill-label-copper-20u = медь 20 ед
 pill-label-kelotane-20u = келотан 20 ед
