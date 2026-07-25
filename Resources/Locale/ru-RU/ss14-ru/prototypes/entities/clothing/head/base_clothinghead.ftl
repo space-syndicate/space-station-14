@@ -1,5 +1,5 @@
-ent-ClothingHeadBase = { ent-Clothing }
-    .desc = { ent-Clothing.desc }
+ent-ClothingHeadBase = { ent-SolutionFood }
+    .desc = { ent-SolutionFood.desc }
 ent-ClothingHeadBaseButcherable = { ent-ClothingHeadBase }
     .desc = { ent-ClothingHeadBase.desc }
 ent-ClothingHeadLightBase = базовый шлем с фонарём

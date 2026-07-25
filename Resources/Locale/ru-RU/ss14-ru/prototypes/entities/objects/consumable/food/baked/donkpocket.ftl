@@ -1,7 +1,9 @@
-ent-FoodDonkpocketBase = { ent-FoodInjectableBase }
-    .desc = { ent-FoodInjectableBase.desc }
+ent-FoodDonkpocketBase = { ent-SolutionTiny }
+    .desc = { ent-SolutionTiny.desc }
 ent-FoodDonkpocket = донк-покет
     .desc = Еда опытного предателя.
+ent-SolutionFoodDonkpocketWarm = { ent-SolutionFood }
+    .desc = { ent-SolutionFood.desc }
 ent-FoodDonkpocketWarm = тёплый донк-покет
     .desc = Разогретая еда опытного предателя.
 ent-FoodDonkpocketDank = данк-покет

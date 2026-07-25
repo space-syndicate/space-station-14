@@ -1,5 +1,9 @@
-ent-GasPipeSansLayers = газовая труба
+ent-GasPipeSansLayersIndestructible = газовая труба
     .desc = Удерживает газ.
+ent-GasPipeSansLayers = { ent-GasPipeSansLayersIndestructible }
+    .desc = { ent-GasPipeSansLayersIndestructible.desc }
+ent-BaseGasPipeLayers = { "" }
+    .desc = { "" }
 ent-GasPipeBase = { ent-GasPipeSansLayers }
     .desc = { ent-GasPipeSansLayers.desc }
 ent-GasPipeHalf = { ent-GasPipeBase }

@@ -107,6 +107,7 @@ ui-options-ambient-occlusion = Отображать окружающее зат�
 ui-options-fps-counter = Показать счётчик FPS
 ui-options-vp-width = Ширина окна игры:
 ui-options-hud-layout = Тип HUD:
+ui-options-sharpness = Sharpness:
 
 ## Controls menu
 

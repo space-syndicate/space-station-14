@@ -1,9 +1,6 @@
 ent-CrateSecurityArmor = ящик с бронёй
     .desc = Содержит три пуленепробиваемых жилета. Чтобы открыть, необходим уровень доступа Служба безопасности.
     .suffix = { ent-CrateSecgear.suffix }
-ent-CrateSecurityHelmet = ящик со шлемами
-    .desc = Содержит три стандартных ведра для мозгов. Чтобы открыть, необходим уровень доступа Служба безопасности.
-    .suffix = { ent-CrateSecgear.suffix }
 ent-CrateSecurityNonlethal = ящик нелетального снаряжения
     .desc = Содержит смесь станнеров, дубинок-шокеров и вспышек. Чтобы открыть, необходим уровень доступа Служба безопасности.
     .suffix = { ent-CrateSecgear.suffix }
@@ -21,4 +18,7 @@ ent-CrateSecurityTrackingMindshieldImplants = ящик имплантеров
     .suffix = { ent-CrateSecgear.suffix }
 ent-CrateSecNonlethalThrowables = ящик нелетального метательного снаряжения
     .desc = Содержит по одной коробке светошумовых, травматических и слезоточивых гранат, и четыре болы. Чтобы открыть, необходим уровень доступа Служба безопасности.
+    .suffix = { ent-CrateSecgear.suffix }
+ent-CrateSecurityHelmet = ящик со шлемами
+    .desc = Содержит три стандартных ведра для мозгов. Чтобы открыть, необходим уровень доступа Служба безопасности.
     .suffix = { ent-CrateSecgear.suffix }

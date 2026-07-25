@@ -50,6 +50,9 @@ spellbook-slip-desc = Изучите древние приёмы уборщик�
 spellbook-item-recall-name = Отозвать предмет
 spellbook-item-recall-description = Пометьте удерживаемый предмет и призывайте его обратно в любое время по щелчку пальцев.
 
+spellbook-guardian-deck-name = Tarot Deck
+spellbook-guardian-deck-description = A bizarre deck of card that grants you a spectral guardian when used.
+
 # Equipment
 
 spellbook-wand-polymorph-door-name = Волшебная палочка входа
