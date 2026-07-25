@@ -157,24 +157,21 @@ public static class FieldStoreId
             kind = EntityPrototypeSerializerKind.Single;
             return true;
         }
-
-        if ((def == typeof(PrototypeIdListSerializer<>) || def == typeof(AbstractPrototypeIdListSerializer<>)
-             || def == typeof(PrototypeIdHashSetSerializer<>) || def == typeof(AbstractPrototypeIdHashSetSerializer<>)
-             || def == typeof(PrototypeIdArraySerializer<>) || def == typeof(AbstractPrototypeIdArraySerializer<>)) &&
+        if ((def == typeof(PrototypeIdListSerializer<>)
+             || def == typeof(PrototypeIdHashSetSerializer<>)
+             || def == typeof(AbstractPrototypeIdArraySerializer<>)) &&
             args[0] == typeof(EntityPrototype))
         {
             kind = EntityPrototypeSerializerKind.Sequence;
             return true;
         }
-
-        if ((def == typeof(PrototypeIdDictionarySerializer<,>) || def == typeof(AbstractPrototypeIdDictionarySerializer<,>)) &&
+        if (def == typeof(PrototypeIdDictionarySerializer<,>) &&
             args[1] == typeof(EntityPrototype))
         {
             kind = EntityPrototypeSerializerKind.DictionaryKey;
             return true;
         }
-
-        if ((def == typeof(PrototypeIdValueDictionarySerializer<,>) || def == typeof(AbstractPrototypeIdValueDictionarySerializer<,>)) &&
+        if (def == typeof(PrototypeIdValueDictionarySerializer<,>) &&
             args[1] == typeof(EntityPrototype))
         {
             kind = EntityPrototypeSerializerKind.DictionaryValue;

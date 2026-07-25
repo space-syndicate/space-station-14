@@ -162,6 +162,7 @@
   - !type:BuyerJobCondition # We can't use BuyerDepartmentCondition here since Chef can also get this
     whitelist:
     - Scientist
+    - SeniorResearcher # Corvax-MentorRoles
     - ResearchDirector
     - Chef
 
