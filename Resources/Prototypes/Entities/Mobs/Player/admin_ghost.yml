@@ -126,10 +126,16 @@
   id: BaseAGhostAction
   components:
   - type: Action
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: { sprite: Structures/Machines/parts.rsi, state: box_2 }
     keywords: [ "AI", "console", "interface" ]
     priority: -10
+  - type: Sprite
+    sprite: Structures/Machines/parts.rsi
+    layers:
+    - state: box_0
+      map: ["enum.ActionVisuals.Icon"]
+    - state: box_2
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
 
 - type: entity
   parent: BaseAGhostAction
@@ -151,9 +157,12 @@
   components:
   - type: Action
     icon: { sprite: Corvax/Interface/adminactions.rsi, state: comms_console } # Corvax-Resprite
-    iconOn: { sprite: Corvax/Interface/adminactions.rsi, state: comms_console }
     keywords: [ "AI", "console", "interface" ]
     priority: -4
+  - type: Sprite
+    sprite: Interface/Actions/actions_ai.rsi
+    layers:
+    - state: comms_console
   - type: InstantAction
     event: !type:ToggleIntrinsicUIEvent { key: enum.CommunicationsConsoleUiKey.Key }
 
@@ -165,9 +174,16 @@
   components:
   - type: Action
     icon: { sprite: Corvax/Interface/adminactions.rsi, state: mass_scanner } # Corvax-Resprite
-    iconOn: { sprite: Corvax/Interface/adminactions.rsi, state: mass_scanner }
     keywords: [ "AI", "console", "interface" ]
     priority: -6
+  - type: Sprite
+    sprite: Interface/Actions/actions_ai.rsi
+    layers:
+    - state: mass_scanner
+      map: ["enum.ActionVisuals.Icon"]
+    - state: comms_console
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
   - type: InstantAction
     event: !type:ToggleIntrinsicUIEvent { key: enum.RadarConsoleUiKey.Key }
 
@@ -191,9 +207,12 @@
   components:
   - type: Action
     icon: { sprite: Corvax/Interface/adminactions.rsi, state: crew_monitor } # Corvax-Resprite
-    iconOn: { sprite: Corvax/Interface/adminactions.rsi, state: crew_monitor }
     keywords: [ "AI", "console", "interface" ]
     priority: -8
+  - type: Sprite
+    sprite: Interface/Actions/actions_ai.rsi
+    layers:
+    - state: crew_monitor
   - type: InstantAction
     event: !type:ToggleIntrinsicUIEvent { key: enum.CrewMonitoringUIKey.Key }
 
@@ -205,8 +224,11 @@
   components:
   - type: Action
     icon: { sprite: Corvax/Interface/adminactions.rsi, state: station_records } # Corvax-Resprite
-    iconOn: { sprite: Corvax/Interface/adminactions.rsi, state: station_records }
     keywords: [ "AI", "console", "interface" ]
     priority: -7
+  - type: Sprite
+    sprite: Interface/Actions/actions_ai.rsi
+    layers:
+    - state: station_records
   - type: InstantAction
     event: !type:ToggleIntrinsicUIEvent { key: enum.GeneralStationRecordConsoleKey.Key }

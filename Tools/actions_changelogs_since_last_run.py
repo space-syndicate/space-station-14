@@ -36,6 +36,9 @@ TYPES_TO_EMOJI = {
     "Tweak":  "⚒️"
 }
 
+EXPERIMENTAL_LABEL = "Intent: Experimental"
+EXPERIMENTAL_EMOJI = "🧪"
+
 ChangelogEntry = dict[str, Any]
 
 
@@ -239,6 +242,9 @@ def changelog_entries_to_message_lines(entries: Iterable[ChangelogEntry]) -> lis
             for change in entry["changes"]:
                 emoji = TYPES_TO_EMOJI.get(change["type"], "❓")
                 message = change["message"]
+
+                if EXPERIMENTAL_LABEL in entry["labels"]
+                emoji = f"{emoji}{EXPERIMENTAL_EMOJI}"
 
                 message_lines.append(create_change_line(emoji, message, url))
 
