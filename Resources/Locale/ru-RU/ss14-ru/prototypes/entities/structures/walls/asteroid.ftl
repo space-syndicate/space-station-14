@@ -1,5 +1,3 @@
-ent-BaseAsteroidRock = { ent-BaseWall }
-    .desc = { ent-BaseWall.desc }
 ent-AsteroidRock = астероидный камень
     .desc = Каменистый астероид.
 ent-BaseRockGibtonite = { "" }

@@ -1,7 +1,5 @@
 ent-BaseItem = предмет
     .desc = { "" }
-ent-BaseItemDestructible = { "" }
-    .desc = { "" }
 ent-BaseStorageItem = предмет хранения
     .desc = { ent-BaseItem.desc }
 ent-BaseBagOpenClose = { "" }
@@ -16,9 +14,5 @@ ent-PowerCellSlotMediumItem = { "" }
     .desc = { "" }
 ent-PowerCellSlotHighItem = { "" }
     .desc = { "" }
-ent-BaseSlicingRefinable = { "" }
-    .desc = { "" }
-ent-BaseSlicingRefinableFood = { ent-BaseSlicingRefinable }
-    .desc = { ent-BaseSlicingRefinable.desc }
 ent-BaseStash = { "" }
     .desc = { "" }

@@ -1,4 +1,4 @@
-ent-FoodNoodlesBase = { ent-SolutionSmall }
+ent-FoodNoodlesBase = { ent-FoodInjectableBase }
     .desc = Вот это отличная паста!
 ent-FoodNoodlesBoiled = отварные спагетти
     .desc = Простое блюдо из лапши, тут нужно больше ингредиентов.

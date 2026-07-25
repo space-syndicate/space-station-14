@@ -1,7 +1,5 @@
-ent-BaseStructureComputerIndestructible = { ent-BaseStructure }
+ent-BaseStructureComputer = { ent-BaseStructure }
     .desc = { ent-BaseStructure.desc }
-ent-BaseStructureComputer = { ent-BaseStructureComputerIndestructible }
-    .desc = { ent-BaseStructureComputerIndestructible.desc }
 ent-ComputerFrame = каркас консоли
     .desc = Строящаяся консоль.
 ent-ComputerBroken = сломанная консоль

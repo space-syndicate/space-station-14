@@ -1,4 +1,4 @@
-ent-IngotBase = { ent-MaterialBase }
+ent-IngotBase = { ent-BaseItem }
     .desc = Тяжёлый металлический слиток с выдавленным логотипом Nanotrasen.
 ent-IngotGold = золотой слиток
     .desc = { ent-IngotBase.desc }

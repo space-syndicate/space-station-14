@@ -1,7 +1,5 @@
 ent-BaseShield = базовый щит
     .desc = Щит!
-ent-BaseShieldDestructible = { "" }
-    .desc = { "" }
 ent-BaseRepairableShield = base repairable shield
     .desc = A repairable shield!
 ent-RiotShield = противоударный щит

@@ -265,7 +265,8 @@ entity-effect-guidebook-adjust-reagent-group =
                 [1] Добавляет
                 *[-1] Удаляет
             }
-        *[other] { $deltasign ->
+        *[other]
+            { $deltasign ->
                 [1] добавляет
                 *[-1] удаляет
             }
@@ -544,14 +545,9 @@ entity-effect-guidebook-plant-mutate-chemicals =
         *[other] мутируют
     } растение, чтобы то производило { $name }
 
+
 entity-effect-guidebook-add-reagent-to-bloodstream =
     { $chance ->
         [1] Вводит
         *[other] вводят
-    } { $quantity } { $reagent } напрямую в кровоток
-
-entity-effect-disarm =
-    { $chance ->
-        [1] Disarms
-        *[other] disarms
-    } the entity
+    } {$quantity} {$reagent} напрямую в кровоток

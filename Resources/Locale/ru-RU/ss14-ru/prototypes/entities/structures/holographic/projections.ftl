@@ -1,5 +1,3 @@
-ent-BaseHoloSign = { "" }
-    .desc = { "" }
 ent-HolosignWetFloor = знак "мокрый пол"
     .desc = Слова мерцают, как будто ничего не значат.
 ent-HoloFan = атмосферный барьер

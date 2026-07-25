@@ -1,5 +1,3 @@
-ent-BasePlasticExplosiveTrigger = { "" }
-    .desc = { "" }
 ent-BasePlasticExplosive = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-C4 = взрывчатка C-4

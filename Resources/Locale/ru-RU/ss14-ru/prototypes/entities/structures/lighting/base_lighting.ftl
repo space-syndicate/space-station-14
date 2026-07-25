@@ -1,5 +1,3 @@
-ent-BaseWallLight = { "" }
-    .desc = { "" }
 ent-AlwaysPoweredWallLight = светильник
     .desc = Всегда работающий светильник.
     .suffix = Всегда запитанный

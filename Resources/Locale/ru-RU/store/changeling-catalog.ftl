@@ -25,13 +25,11 @@ changeling-catalog-lethal-sting-desc = Со временем наносит ур
 changeling-catalog-hallucinogenic-sting-name = Галлюциногенное жало
 changeling-catalog-hallucinogenic-sting-desc = Вызывает у жертвы состояние эйфории и затруднения в речи. Вызывает растерянность среди экипажа. Может быть использовано на себе.
 
-changeling-catalog-screech-name = Screech [TEMPORARY]
-changeling-catalog-screech-desc = We let out a powerful screech that disarms people who hear it without adequate ear protection. THIS ACTION WILL BE MOVED TO THE HORROR FORM WHEN IT IS IMPLEMENTED.
 
 changeling-catalog-last-resort-name = Последний шанс
 changeling-catalog-last-resort-desc = Уничтожьте свою текущую оболочку и сбегите в виде слабого мозгового червя. Если вы заразите труп гуманоида, вы сможете вернуться к полноценному телу генокрада.
 
-                                      Внимание! Это обнулит ваш прогресс генокрада, удаляя ваши приобретённые способности и поглощенные личности!
+                                     Внимание! Это обнулит ваш прогресс генокрада, удаляя ваши приобретённые способности и поглощенные личности!
 
 changeling-catalog-night-vision-name = Ночное зрение
 changeling-catalog-night-vision-desc = Вы модифицируете свои фоторецепторы и обостряете свои чувства, чтобы обрести способность видеть в полной темноте.
