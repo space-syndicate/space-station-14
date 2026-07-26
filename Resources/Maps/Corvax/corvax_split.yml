@@ -190757,15 +190757,6 @@ entities:
       parent: 21326
       rot: 3.141592653589793 rad
       pos: -34.5,-14.5
-- proto: Gateway
-  entities:
-  - uid: 20232
-    components:
-    - type: Transform
-      parent: 10755
-      pos: 4.5,32.5
-    - type: Gateway
-      enabled: True
 - proto: Gauze
   entities:
   - uid: 46722

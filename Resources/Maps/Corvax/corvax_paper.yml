@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/24/2026 15:38:28
-  entityCount: 23037
+  time: 07/26/2026 15:02:35
+  entityCount: 23034
 maps:
 - 1
 grids:
@@ -9259,6 +9259,7 @@ entities:
             454: 33,34
             455: 27,34
             456: 27,32
+            560: 0,26
         - node:
             id: BrickTileSteelCornerNe
             color: '#9B0000FF'
@@ -74023,7 +74024,7 @@ entities:
       pos: 39.5,13.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -57316.7
+      secondsUntilStateChange: -57355.598
     - type: DeviceNetwork
       deviceLists:
       - 8551
@@ -97359,22 +97360,6 @@ entities:
       pos: 57.5,51.5
     - type: AtmosPipeColor
       color: '#4169E1FF'
-- proto: Gateway
-  entities:
-  - uid: 11437
-    components:
-    - type: Transform
-      parent: 2
-      pos: -5.5,22.5
-    - type: Gateway
-      enabled: True
-  - uid: 21210
-    components:
-    - type: Transform
-      parent: 18382
-      pos: 0.5,26.5
-    - type: Gateway
-      enabled: True
 - proto: Gauze
   entities:
   - uid: 21211
@@ -105421,6 +105406,16 @@ entities:
       pos: 27.5,28.5
 - proto: MachineFrameDestroyed
   entities:
+  - uid: 1273
+    components:
+    - type: Transform
+      parent: 2
+      pos: -5.5,22.5
+  - uid: 7074
+    components:
+    - type: Transform
+      parent: 18382
+      pos: 0.5,26.5
   - uid: 12615
     components:
     - type: Transform
@@ -131811,28 +131806,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 7.5664387,-12.446102
-- proto: VehicleJanicart
-  entities:
-  - uid: 7074
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 68.5,47.5
-- proto: VehicleKeyJanicart
-  entities:
-  - uid: 1273
-    components:
-    - type: Transform
-      parent: 2
-      pos: 65.5,47.5
-- proto: VehicleWheelchair
-  entities:
-  - uid: 9218
-    components:
-    - type: Transform
-      parent: 2
-      pos: 49.5,4.5
 - proto: VendingBarDrobe
   entities:
   - uid: 15745

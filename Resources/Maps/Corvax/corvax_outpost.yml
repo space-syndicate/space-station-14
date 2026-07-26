@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/24/2026 15:40:58
-  entityCount: 19644
+  time: 07/26/2026 15:01:45
+  entityCount: 19641
 maps:
 - 1
 grids:
@@ -74243,15 +74243,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 63
-- proto: Gateway
-  entities:
-  - uid: 10438
-    components:
-    - type: Transform
-      parent: 2
-      pos: -11.5,41.5
-    - type: Gateway
-      enabled: True
 - proto: Gauze1
   entities:
   - uid: 10439
@@ -80455,6 +80446,11 @@ entities:
       pos: 37.5,21.5
 - proto: MachineFrameDestroyed
   entities:
+  - uid: 10438
+    components:
+    - type: Transform
+      parent: 2
+      pos: -11.5,41.5
   - uid: 11464
     components:
     - type: Transform
@@ -98501,30 +98497,6 @@ entities:
       parent: 2
       rot: -6.283185307179586 rad
       pos: 33.522274,9.641938
-- proto: VehicleJanicart
-  entities:
-  - uid: 19642
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 1.5,-14.5
-- proto: VehicleKeyJanicart
-  entities:
-  - uid: 19643
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 1.3452992,-11.02775
-- proto: VehicleWheelchair
-  entities:
-  - uid: 19644
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 19.5,-37.5
 - proto: VendingBarDrobe
   entities:
   - uid: 14242

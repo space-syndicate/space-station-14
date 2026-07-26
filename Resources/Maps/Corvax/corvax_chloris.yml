@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/24/2026 15:52:41
-  entityCount: 51439
+  time: 07/26/2026 15:01:12
+  entityCount: 51436
 maps:
 - 1
 grids:
@@ -26006,7 +26006,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -194291.23
+      secondsUntilStateChange: -194369.56
     - type: Forensics
       residues: []
       fingerprints: []
@@ -26857,7 +26857,7 @@ entities:
       pos: 25.5,132.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -199291.16
+      secondsUntilStateChange: -199369.48
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -27040,7 +27040,7 @@ entities:
       pos: 99.5,50.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -116582.39
+      secondsUntilStateChange: -116660.72
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -28423,7 +28423,7 @@ entities:
       pos: 14.5,132.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -187372.23
+      secondsUntilStateChange: -187450.56
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -236708,15 +236708,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 27.5,99.5
-- proto: Gateway
-  entities:
-  - uid: 34474
-    components:
-    - type: Transform
-      parent: 2
-      pos: 106.5,151.5
-    - type: Gateway
-      enabled: True
 - proto: Gauze
   entities:
   - uid: 2605
@@ -249406,6 +249397,11 @@ entities:
       pos: 126.5,80.5
 - proto: MachineFrameDestroyed
   entities:
+  - uid: 14171
+    components:
+    - type: Transform
+      parent: 2
+      pos: 106.5,151.5
   - uid: 36240
     components:
     - type: Transform
@@ -263898,7 +263894,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -182325.4
+      secondsUntilStateChange: -182403.73
     - type: Airlock
       autoClose: False
     - type: Forensics
@@ -308387,29 +308383,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 18.5,140.5
-- proto: VehicleJanicart
-  entities:
-  - uid: 17312
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 80.5,62.5
-- proto: VehicleKeyJanicart
-  entities:
-  - uid: 41598
-    components:
-    - type: Transform
-      parent: 2
-      pos: 78.5,57.5
-- proto: VehicleWheelchair
-  entities:
-  - uid: 14171
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 61.5,128.5
 - proto: VendingBarDrobe
   entities:
   - uid: 43920
