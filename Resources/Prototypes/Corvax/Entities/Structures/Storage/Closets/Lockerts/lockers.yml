@@ -1,7 +1,7 @@
 # Pilot
 - type: entity
   id: LockerPilot
-  parent: LockerBaseSecure
+  parent: LockerBase
   name: pilot's locker
   components:
   - type: Appearance
