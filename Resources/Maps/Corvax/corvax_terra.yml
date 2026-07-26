@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.0
   forkId: ""
   forkVersion: ""
-  time: 07/24/2026 15:34:51
-  entityCount: 8886
+  time: 07/26/2026 15:06:28
+  entityCount: 8883
 maps:
 - 1
 grids:
@@ -44251,50 +44251,6 @@ entities:
     - type: Transform
       parent: 8707
       pos: 4.5,3.5
-- proto: Gateway
-  entities:
-  - uid: 4123
-    components:
-    - type: Transform
-      parent: 2
-      pos: 50.5,28.5
-    - type: Gateway
-      enabled: True
-      closeSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/Lightning/lightningbolt.ogg
-        params:
-          volume: 0
-          variation: null
-          rolloffFactor: 1
-          referenceDistance: 1
-          playOffsetSeconds: 0
-          pitch: 1
-          maxDistance: 10
-          loop: False
-      accessDeniedSound: !type:SoundPathSpecifier
-        path: /Audio/Machines/custom_deny.ogg
-        params:
-          volume: 0
-          variation: null
-          rolloffFactor: 1
-          referenceDistance: 1
-          playOffsetSeconds: 0
-          pitch: 1
-          maxDistance: 10
-          loop: False
-    - type: Portal
-      randomTeleport: False
-      departureSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/teleport_departure.ogg
-      canTeleportToOtherMaps: True
-      arrivalSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/teleport_arrival.ogg
-    - type: GatewayGenerator
-      unlockCooldown: 900
-      mobLayers:
-      - Carps
-      - Xenos
-      generated: []
 - proto: GeneratorBasic
   entities:
   - uid: 8168
@@ -46360,6 +46316,11 @@ entities:
       pos: 1.5,-5.5
 - proto: MachineFrameDestroyed
   entities:
+  - uid: 4123
+    components:
+    - type: Transform
+      parent: 2
+      pos: 50.5,28.5
   - uid: 8215
     components:
     - type: Transform
@@ -57649,29 +57610,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 37.466045,-16.326931
-- proto: VehicleJanicart
-  entities:
-  - uid: 5372
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 31.5,-4.5
-- proto: VehicleKeyJanicart
-  entities:
-  - uid: 5371
-    components:
-    - type: Transform
-      parent: 2
-      pos: 31.5,-5.5
-- proto: VehicleWheelchair
-  entities:
-  - uid: 6800
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 4.5,-7.5
 - proto: VendingBarDrobe
   entities:
   - uid: 5673
