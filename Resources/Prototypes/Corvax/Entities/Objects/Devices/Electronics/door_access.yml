@@ -5,4 +5,4 @@
   suffix: AI Satellite, Locked
   components:
   - type: AccessReader
-    access: [["Satellite"]]
+    access: [["ResearchDirector"], ["ChiefEngineer"], ["HeadOfSecurity"]]

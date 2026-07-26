@@ -317,7 +317,7 @@
   suffix: Vault, Locked
   components:
   - type: AccessReader
-    access: [["Vault"]] # Corvax-Vault-Access
+    access: [["HeadOfSecurity"], ["ResearchDirector"]] # Corvax-Vault-Door
 
 - type: entity
   parent: DoorElectronics
