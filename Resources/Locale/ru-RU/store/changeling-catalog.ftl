@@ -25,6 +25,8 @@ changeling-catalog-lethal-sting-desc = Со временем наносит ур
 changeling-catalog-hallucinogenic-sting-name = Галлюциногенное жало
 changeling-catalog-hallucinogenic-sting-desc = Вызывает у жертвы состояние эйфории и затруднения в речи. Вызывает растерянность среди экипажа. Может быть использовано на себе.
 
+changeling-catalog-screech-name = Визг ужаса [ВРЕМЕННЫЙ]
+changeling-catalog-screech-desc = Мы издаем пронзительный визг, обезоруживающий тех, кто слышит его без надлежащей защиты слуха. ПОСЛЕ РЕАЛИЗАЦИИ ДАННОЕ ДЕЙСТВИЕ БУДЕТ ПЕРЕВЕДЕНО В КАТЕГОРИЮ УЖАСА.
 
 changeling-catalog-last-resort-name = Последний шанс
 changeling-catalog-last-resort-desc = Уничтожьте свою текущую оболочку и сбегите в виде слабого мозгового червя. Если вы заразите труп гуманоида, вы сможете вернуться к полноценному телу генокрада.

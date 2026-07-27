@@ -551,3 +551,9 @@ entity-effect-guidebook-add-reagent-to-bloodstream =
         [1] Вводит
         *[other] вводят
     } {$quantity} {$reagent} напрямую в кровоток
+
+entity-effect-disarm =
+    { $chance ->
+        [1] Обезоруживает
+        *[other] обезоружить
+    } цель
