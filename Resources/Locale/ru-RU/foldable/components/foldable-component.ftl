@@ -15,5 +15,5 @@ fold-unzip-verb = Расстегнуть
 fold-verb-clothing-jacket = Снять куртку
 unfold-verb-clothing-jacket = Надеть куртку
 
-fold-lower-visor-verb = Опустить визор
-fold-raise-visor-verb = Поднять визор
+fold-lower-visor-verb = Опустить забрало
+fold-raise-visor-verb = Поднять забрало

@@ -10,6 +10,6 @@ location-mothership-core = Ядро материнского корабля
 location-tesla-ball = шаровая молния
 location-singularity = сингулярность
 location-powersink = поглотитель энергии
-location-immovable-rod = ytgjldb;ysq ;tpk
+location-immovable-rod = неподвижный жезл
 location-nuke-disk = ядерный диск
 location-nuclear-bomb = ядерная бомба
