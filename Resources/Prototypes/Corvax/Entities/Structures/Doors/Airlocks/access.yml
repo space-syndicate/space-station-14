@@ -5,7 +5,7 @@
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsVault ]
+      board: [ DoorElectronicsVaultCorvax ]
 
 - type: entity
   parent: HighSecDoor

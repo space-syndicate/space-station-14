@@ -6,3 +6,11 @@
   components:
   - type: AccessReader
     access: [["ResearchDirector"], ["ChiefEngineer"], ["HeadOfSecurity"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsVaultCorvax
+  suffix: Vault, Locked
+  components:
+  - type: AccessReader
+    access: [["ResearchDirector"], ["HeadOfSecurity"]]
