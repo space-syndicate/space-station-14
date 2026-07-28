@@ -97,7 +97,7 @@ holopad-cargo-bay = Снабжение — Грузовой отсек
 holopad-cargo-salvage-bay = Снабжение — Утилизаторский отсек
 holopad-cargo-breakroom  = Снабжение — Комната отдыха
 holopad-cargo-ats = Снабжение — АТС
-holopad-cargo-shuttle = Снабжение — Шаттл
+holopad-cargo-shuttle = Снабжение — Грузовой шаттл
 holopad-cargo-mailroom = Снабжение — Почта
 
 # Engineering

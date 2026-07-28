@@ -1,0 +1,26 @@
+- type: entity
+  parent: HighSecDoor
+  id: HighSecVaultLocked
+  suffix: Vault, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsVault ]
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecSatelliteLocked
+  suffix: AI Satellite, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSatellite ]
+
+- type: entity
+  parent: HighSecDoor
+  id: HighSecChiefEngineerLocked
+  suffix: ChiefEngineer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChiefEngineer  ]

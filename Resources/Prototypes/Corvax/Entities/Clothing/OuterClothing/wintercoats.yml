@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterWinterCoat
+  parent: [ ClothingOuterWinterCoat, AllowSuitStorageClothing ]
   id: ClothingOuterWinterPilot
   name: pilot armor winter coat
   description: Armored insulated jacket for security pilots.
