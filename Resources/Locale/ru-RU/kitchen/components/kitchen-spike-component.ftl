@@ -43,6 +43,8 @@ comp-kitchen-spike-butcher = { CAPITALIZE($user) } { GENDER($user) ->
     *[neuter] разделало
 } { $victim }!
 
+comp-kitchen-spike-butcher-empty = { CAPITALIZE(THE($victim)) } не имеет больше мяса для нарезки!
+
 comp-kitchen-spike-need-tool-quality = Инструмент с возможностью { $quality } необходим для разделки { THE($target) }.
 
 comp-kitchen-spike-unhook-verb = Снять с крюка

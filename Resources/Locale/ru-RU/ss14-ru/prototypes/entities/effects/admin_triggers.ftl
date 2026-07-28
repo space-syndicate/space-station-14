@@ -24,3 +24,6 @@ ent-AdminInstantEffectTearGas = { ent-AdminInstantEffectBase }
 ent-AdminInstantEffectGravityWell = { ent-AdminInstantEffectBase }
     .desc = { ent-AdminInstantEffectBase.desc }
     .suffix = Гравитационный колодец
+ent-AdminInstantEffectScreech = { ent-AdminInstantEffectBase }
+    .desc = { ent-AdminInstantEffectBase.desc }
+    .suffix = Крик ужаса

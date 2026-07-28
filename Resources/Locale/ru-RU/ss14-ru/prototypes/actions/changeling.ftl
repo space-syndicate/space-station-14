@@ -26,3 +26,5 @@ ent-ActionChangelingTakeOverCorpse = Захватить тело
     .desc = Заразите труп, чтобы вернуться в свой истинный облик.
 ent-ActionChangelingNightVision = Переключить ночное зрение
     .desc = Включает или выключает наше ночное зрение.
+ent-ActionChangelingScreech = Крик ужаса
+    .desc = Мы издаем оглушительный крик, который ослабляет окружающих.
