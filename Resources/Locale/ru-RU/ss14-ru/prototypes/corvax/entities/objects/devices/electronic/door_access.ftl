@@ -3,4 +3,4 @@ ent-DoorElectronicsSatellite = { ent-DoorElectronics }
     .suffix = Спутник ИИ, Закрыт
 ent-DoorElectronicsVaultCorvax = { ent-DoorElectronics }
     .desc = { ent-DoorElectronics.desc }
-    .suffix =  Правильное, Хранилище, Закрыт
+    .suffix = Corvax, Хранилище, Закрыт
