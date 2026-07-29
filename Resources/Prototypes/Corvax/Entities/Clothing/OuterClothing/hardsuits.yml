@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ TemperatureProtectionGreat, ClothingOuterHardsuitBase ]
   id: ClothingOuterHardsuitCBURNLeader
   name: CBURN commander exosuit
   description: A lightweight yet strong exosuit used for special cleanup operations.
@@ -14,9 +14,6 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
-  - type: TemperatureProtection
-    heatingCoefficient: 0.001
-    coolingCoefficient: 0.001
   - type: Armor
     modifiers:
       coefficients:

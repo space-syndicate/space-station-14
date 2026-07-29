@@ -445,6 +445,7 @@ public sealed partial class TelephoneSystem : SharedTelephoneSystem
         {
             var activeListener = AddComp<ActiveListenerComponent>(entity);
             activeListener.Range = entity.Comp.ListeningRange;
+            Dirty(entity, activeListener);
         }
 
         if (!microphoneOn && HasComp<ActiveListenerComponent>(entity))
