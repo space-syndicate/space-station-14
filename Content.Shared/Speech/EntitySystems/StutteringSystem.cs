@@ -18,7 +18,7 @@ public sealed partial class StutteringSystem : RelayAccentSystem<StutteringAccen
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
     // Regex of characters to stutter.
-    private static readonly Regex Stutter = new("[b-df-hj-np-tv-wxyz]",
+    private static readonly Regex Stutter = new(@"[b-df-hj-np-tv-wxyz-б-вд-к-лмн-прст]", // Corvax-Localization
         RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
     public override string Accentuate(string message, Entity<StutteringAccentComponent>? ent = null)

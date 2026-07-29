@@ -98,9 +98,9 @@
   instructions: alert-level-gamma-instructions
   selectable: false
   sound:
-    path: /Audio/Misc/gamma.ogg
+    path: /Audio/Corvax/Misc/siren.ogg # Corvax: Return of the old siren sound
     params:
-      volume: -2
+      volume: -5 # Corvax
   disableSelection: true
   color: PaleVioletRed
   emergencyLightColor: PaleVioletRed
