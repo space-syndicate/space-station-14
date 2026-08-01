@@ -152,6 +152,14 @@ public sealed partial class TTSSystem : EntitySystem
                 _entityQueues[sourceUid] = queue;
             }
 
+            if (queue.Count >= 6)
+            {
+                _sawmill.Verbose($"TTS queue for {sourceUid} is full, dropping old message");
+                queue.Dequeue();
+                queue.Enqueue(ev);
+                return;
+            }
+
             queue.Enqueue(ev);
             _sawmill.Verbose($"TTS added to queue for entity {sourceUid}. Queue size: {queue.Count}");
         }
@@ -211,7 +219,7 @@ public sealed partial class TTSSystem : EntitySystem
         var filePath = new ResPath($"{_fileIdx++}.ogg");
         _contentRoot.AddOrUpdateFile(filePath, ev.Data);
 
-        var audioResource = new AudioResource();
+        using var audioResource = new AudioResource();
         audioResource.Load(IoCManager.Instance!, Prefix / filePath);
 
         var audioParams = AudioParams.Default
@@ -222,47 +230,53 @@ public sealed partial class TTSSystem : EntitySystem
 
         (EntityUid Entity, AudioComponent Component)? audioResult = null;
 
-        if (ev.IsRadio)
+        try
         {
-            var pitch = GetRadioPitch();
-            var variation = GetRadioVariation();
-            var rolloff = GetRadioRolloff();
+            if (ev.IsRadio)
+            {
+                var pitch = GetRadioPitch();
+                var variation = GetRadioVariation();
+                var rolloff = GetRadioRolloff();
 
-            var radioParams = audioParams
-                .WithRolloffFactor(rolloff)
-                .WithVariation(variation)
-                .WithPitchScale(pitch);
+                var radioParams = audioParams
+                    .WithRolloffFactor(rolloff)
+                    .WithVariation(variation)
+                    .WithPitchScale(pitch);
 
-            PlayRadioWithEffectInternal(audioResource, soundSpecifier, radioParams, ev.SourceUid);
+                PlayRadioWithEffectInternal(audioResource, soundSpecifier, radioParams, ev.SourceUid);
+            }
+            else if (ev.SourceUid != null)
+            {
+                var sourceUid = GetEntity(ev.SourceUid.Value);
+                if (TerminatingOrDeleted(sourceUid))
+                {
+                    onComplete?.Invoke();
+                    return;
+                }
+
+                audioResult = _audio.PlayEntity(audioResource.AudioStream, sourceUid, soundSpecifier, audioParams);
+                if (audioResult != null && _voiceEffectPreset != 0)
+                {
+                    ApplyVoiceEffect(audioResult.Value, _voiceEffectPreset);
+                }
+            }
+            else
+            {
+                audioResult = _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, audioParams);
+                if (audioResult != null && _voiceEffectPreset != 0)
+                {
+                    ApplyVoiceEffect(audioResult.Value, _voiceEffectPreset);
+                }
+            }
         }
-        else if (ev.SourceUid != null)
+        finally
         {
-            var sourceUid = GetEntity(ev.SourceUid.Value);
-            if (TerminatingOrDeleted(sourceUid))
-            {
-                _contentRoot.RemoveFile(filePath);
-                onComplete?.Invoke();
-                return;
-            }
-
-            audioResult = _audio.PlayEntity(audioResource.AudioStream, sourceUid, soundSpecifier, audioParams);
-            if (audioResult != null && _voiceEffectPreset != 0)
-            {
-                ApplyVoiceEffect(audioResult.Value, _voiceEffectPreset);
-            }
-        }
-        else
-        {
-            audioResult = _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, audioParams);
-            if (audioResult != null && _voiceEffectPreset != 0)
-            {
-                ApplyVoiceEffect(audioResult.Value, _voiceEffectPreset);
-            }
+            _contentRoot.RemoveFile(filePath);
         }
 
-        _contentRoot.RemoveFile(filePath);
+        var duration = audioResource.AudioStream?.Length ?? TimeSpan.Zero;
+        var delay = duration + TimeSpan.FromSeconds(PlaybackDelay);
 
-        var delay = audioResource.AudioStream.Length + TimeSpan.FromSeconds(PlaybackDelay);
         Timer.Spawn(delay, () =>
         {
             onComplete?.Invoke();
