@@ -61,9 +61,9 @@ public sealed partial class TTSSystem : EntitySystem
         }
 
         _sawmill = Logger.GetSawmill("tts");
-        _cfg.OnValueChanged(CCCVars.TTSVoiceEffect, OnVoiceEffectChanged);
-        _cfg.OnValueChanged(CCCVars.TTSRadioVolume, OnRadioVolumeChanged);
-        _cfg.OnValueChanged(CCCVars.TTSVolume, OnVolumeChanged);
+        _cfg.OnValueChanged(CCCVars.TTSVoiceEffect, OnVoiceEffectChanged, true);
+        _cfg.OnValueChanged(CCCVars.TTSRadioVolume, OnRadioVolumeChanged, true);
+        _cfg.OnValueChanged(CCCVars.TTSVolume, OnVolumeChanged, true);
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
