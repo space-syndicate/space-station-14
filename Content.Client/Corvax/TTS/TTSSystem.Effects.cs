@@ -49,10 +49,13 @@ public sealed partial class TTSSystem
         if (_cachedVoiceEffectEntity == null)
             return;
 
+        EntityUid? aux = null;
+
         try
         {
             var (entity, comp) = audio;
             var (auxUid, auxComp) = _audio.CreateAuxiliary();
+            aux = auxUid;
 
             _audio.SetEffect(auxUid, auxComp, _cachedVoiceEffectEntity.Value);
             _audio.SetAuxiliary(entity, comp, auxUid);
@@ -62,6 +65,10 @@ public sealed partial class TTSSystem
         catch (Exception ex)
         {
             _sawmill.Debug($"Failed to apply voice effect: {ex.Message}");
+        }
+        finally
+        {
+            if (aux.HasValue) QueueDel(aux);
         }
     }
 
@@ -76,10 +83,13 @@ public sealed partial class TTSSystem
         if (_cachedRadioEffectEntity == null)
             return;
 
+        EntityUid? aux = null;
+
         try
         {
             var (entity, comp) = audio;
             var (auxUid, auxComp) = _audio.CreateAuxiliary();
+            aux = auxUid;
 
             _audio.SetEffect(auxUid, auxComp, _cachedRadioEffectEntity.Value);
             _audio.SetAuxiliary(entity, comp, auxUid);
@@ -89,6 +99,10 @@ public sealed partial class TTSSystem
         catch (Exception ex)
         {
             _sawmill.Debug($"Failed to apply radio EFX effect: {ex.Message}");
+        }
+        finally
+        {
+            if (aux.HasValue) QueueDel(aux);
         }
     }
 

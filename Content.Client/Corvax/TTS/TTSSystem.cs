@@ -40,7 +40,7 @@ public sealed partial class TTSSystem : EntitySystem
     private const float RadioVariationMax = 0.025f;
     private const float RadioRolloffMin = 1.5f;
     private const float RadioRolloffMax = 2.5f;
-    private const float PlaybackInterval = 2f;
+    private const float PlaybackDelay = 0.8f;
 
     private float _lastRadioPitch = 0.98f;
     private float _radioVolume = 1.2f;
@@ -62,8 +62,8 @@ public sealed partial class TTSSystem : EntitySystem
 
         _sawmill = Logger.GetSawmill("tts");
         _cfg.OnValueChanged(CCCVars.TTSVoiceEffect, OnVoiceEffectChanged);
-        _cfg.OnValueChanged(CCCVars.TTSRadioVolume, value => _radioVolume = value, true);
-        _cfg.OnValueChanged(CCCVars.TTSVolume, value => _volume = value, true);
+        _cfg.OnValueChanged(CCCVars.TTSRadioVolume, OnRadioVolumeChanged);
+        _cfg.OnValueChanged(CCCVars.TTSVolume, OnVolumeChanged);
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
@@ -74,8 +74,8 @@ public sealed partial class TTSSystem : EntitySystem
         base.Shutdown();
 
         _cfg.UnsubValueChanged(CCCVars.TTSVoiceEffect, OnVoiceEffectChanged);
-        _cfg.UnsubValueChanged(CCCVars.TTSRadioVolume, value => _radioVolume = value);
-        _cfg.UnsubValueChanged(CCCVars.TTSVolume, value => _volume = value);
+        _cfg.UnsubValueChanged(CCCVars.TTSRadioVolume, OnRadioVolumeChanged);
+        _cfg.UnsubValueChanged(CCCVars.TTSVolume, OnVolumeChanged);
 
         _entityQueues.Clear();
         _playingEntities.Clear();
@@ -97,6 +97,16 @@ public sealed partial class TTSSystem : EntitySystem
 
         if (_voiceEffectPreset != TTSVoiceEffectPreset.None)
             EnsureVoiceEffectInitialized();
+    }
+
+    private void OnVolumeChanged(float value)
+    {
+        _volume = value;
+    }
+
+    private void OnRadioVolumeChanged(float value)
+    {
+        _radioVolume = value;
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
@@ -252,7 +262,7 @@ public sealed partial class TTSSystem : EntitySystem
 
         _contentRoot.RemoveFile(filePath);
 
-        var delay = TimeSpan.FromSeconds(PlaybackInterval);
+        var delay = audioResource.AudioStream.Length + TimeSpan.FromSeconds(PlaybackDelay);
         Timer.Spawn(delay, () =>
         {
             onComplete?.Invoke();

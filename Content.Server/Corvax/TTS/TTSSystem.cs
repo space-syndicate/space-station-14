@@ -138,7 +138,7 @@ public sealed partial class TTSSystem : EntitySystem
         if (station == null)
             return;
 
-        if (!TryComp<StationDataComponent>(station, out var stationDataComp))
+        if (!HasComp<StationDataComponent>(station))
             return;
 
         TTSVoicePrototype? voicePrototype = null;
@@ -156,11 +156,11 @@ public sealed partial class TTSSystem : EntitySystem
                 return;
         }
 
-        HandleConsoleAnnouncement(ev.Text, voicePrototype.Speaker, ev.Component.Sound, stationDataComp);
+        HandleConsoleAnnouncement(ev.Text, voicePrototype.Speaker, ev.Component.Sound, station.Value);
     }
 
     private async void HandleConsoleAnnouncement(string text, string speaker,
-        SoundSpecifier sound, StationDataComponent stationData)
+        SoundSpecifier sound, EntityUid station)
     {
         var textSanitized = Sanitize(text);
         if (string.IsNullOrEmpty(textSanitized))
@@ -176,14 +176,25 @@ public sealed partial class TTSSystem : EntitySystem
         if (soundData is null)
             return;
 
-        var filter = _stationSystem.GetInStation(stationData);
         var timeDelay = (float)_audio.GetAudioLength(_audio.ResolveSound(sound)).TotalSeconds + AnnouncementDelay;
 
         Timer.Spawn(TimeSpan.FromSeconds(timeDelay), () =>
         {
+            var filter = GetStationFilter(station);
+            if (filter == null)
+                return;
+
             RaiseNetworkEvent(new PlayTTSEvent(soundData), filter,
                 recordReplay: false);
         });
+    }
+
+    private Filter? GetStationFilter(Entity<StationDataComponent?> station)
+    {
+        if (!Resolve(station, ref station.Comp, false))
+            return null;
+
+        return _stationSystem.GetInStation(station.Comp);
     }
 
     private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)

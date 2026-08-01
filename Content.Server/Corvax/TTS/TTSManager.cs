@@ -40,7 +40,6 @@ public sealed partial class TTSManager
     private readonly Dictionary<string, byte[]> _cache = new();
     private readonly List<string> _cacheKeysSeq = new();
     private int _maxCachedCount = 200;
-    private int _maxKeyLenght = 32;
     private string _apiUrl = string.Empty;
     private string _apiToken = string.Empty;
 
@@ -153,7 +152,7 @@ public sealed partial class TTSManager
     private string GenerateCacheKey(string speaker, string text)
     {
         var rawKey = $"{speaker}/{text.ToLowerInvariant()}";
-        if (rawKey.Length <= _maxKeyLenght)
+        if (rawKey.Length <= 32)
             return rawKey;
 
         var bytes = System.Security.Cryptography.MD5.HashData(Encoding.UTF8.GetBytes(rawKey));
