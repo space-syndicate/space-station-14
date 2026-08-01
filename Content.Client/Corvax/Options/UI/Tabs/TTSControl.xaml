@@ -1,0 +1,35 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:controls="clr-namespace:Robust.Client.UserInterface.Controls;assembly=Robust.Client"
+         xmlns:ui="clr-namespace:Content.Client.Options.UI">
+    <BoxContainer Orientation="Vertical" Margin="0 0 0 8">
+        <Label Text="{Loc 'ui-options-tts-label'}" StyleClasses="LabelKeyText" Margin="0 16 0 4" />
+
+        <!-- TTS Volume Slider -->
+        <ui:OptionSlider Name="SliderVolumeTts" Title="{Loc 'ui-options-tts-volume'}" Margin="0 3 0 3" />
+
+        <!-- TTS Radio Volume Slider -->
+        <ui:OptionSlider Name="SliderVolumeTtsRadio" Title="{Loc 'ui-options-tts-volume-radio'}" Margin="0 3 0 3" />
+
+        <!-- TTS EFX Effects -->
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc 'ui-options-tts-voice-effect'}" VerticalAlignment="Center" Margin="0 0 10 0" />
+            <Control HorizontalExpand="True" />
+            <OptionButton Name="VoiceEffectOption" MinWidth="360" HorizontalAlignment="Right" />
+        </BoxContainer>
+
+        <!-- Radio Filter Section -->
+        <BoxContainer Orientation="Vertical">
+            <Label Text="{Loc 'ui-options-tts-radio-filter-description'}" StyleClasses="LabelDefaultText" Margin="0 8" />
+
+            <BoxContainer Orientation="Horizontal" Margin="0 0 0 8">
+                <Button Name="AllRadioButton" Text="{Loc 'ui-options-tts-radio-filter-all'}" StyleClasses="OpenRight" HorizontalExpand="True" />
+                <Button Name="NoneRadioButton" Text="{Loc 'ui-options-tts-radio-filter-none'}" StyleClasses="OpenBoth" HorizontalExpand="True" />
+                <Button Name="ResetRadioButton" Text="{Loc 'ui-options-tts-radio-filter-reset'}" StyleClasses="OpenLeft" HorizontalExpand="True" />
+            </BoxContainer>
+
+            <ScrollContainer VerticalExpand="True" MinHeight="100">
+                <GridContainer Name="RadioFilterGrid" Columns="4" Margin="1" />
+            </ScrollContainer>
+        </BoxContainer>
+    </BoxContainer>
+</Control>
