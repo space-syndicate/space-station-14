@@ -243,7 +243,7 @@ public sealed partial class TTSSystem : EntitySystem
                     .WithVariation(variation)
                     .WithPitchScale(pitch);
 
-                PlayRadioWithEffectInternal(audioResource, soundSpecifier, radioParams, ev.SourceUid);
+                PlayRadioWithEffectInternal(audioResource, soundSpecifier, radioParams);
             }
             else if (ev.SourceUid != null)
             {
@@ -284,24 +284,9 @@ public sealed partial class TTSSystem : EntitySystem
     }
 
     private void PlayRadioWithEffectInternal(AudioResource audioResource, ResolvedPathSpecifier soundSpecifier,
-        AudioParams audioParams, NetEntity? sourceUid)
+        AudioParams audioParams)
     {
-        (EntityUid Entity, AudioComponent Component)? audioResult = null;
-
-        if (sourceUid != null)
-        {
-            var sourceEntity = GetEntity(sourceUid.Value);
-            if (!TerminatingOrDeleted(sourceEntity))
-            {
-                audioResult = _audio.PlayEntity(audioResource.AudioStream, sourceEntity, soundSpecifier, audioParams);
-            }
-        }
-
-        if (audioResult == null)
-        {
-            audioResult = _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, audioParams);
-        }
-
+        var audioResult = _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, audioParams);
         if (audioResult == null)
             return;
 
@@ -312,22 +297,7 @@ public sealed partial class TTSSystem : EntitySystem
             .WithVolume(audioParams.Volume - 4f)
             .WithVariation(0.04f);
 
-        if (sourceUid != null)
-        {
-            var sourceEntity = GetEntity(sourceUid.Value);
-            if (!TerminatingOrDeleted(sourceEntity))
-            {
-                _audio.PlayEntity(audioResource.AudioStream, sourceEntity, soundSpecifier, secondParams);
-            }
-            else
-            {
-                _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, secondParams);
-            }
-        }
-        else
-        {
-            _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, secondParams);
-        }
+        _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, secondParams);
     }
 
     #region Utility Methods

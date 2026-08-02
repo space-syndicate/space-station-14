@@ -7,7 +7,7 @@ namespace Content.Server.Corvax.TTS;
 public sealed partial class TTSSystem
 {
     private static readonly Regex UpperCaseWordRegex = new(@"\b([А-ЯЁ]{2,})\b",
-        RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        RegexOptions.Compiled);
 
     private static readonly Regex YesNoRegex = new(@"\b(НЕТ|ДА)\b",
         RegexOptions.Compiled | RegexOptions.IgnoreCase);

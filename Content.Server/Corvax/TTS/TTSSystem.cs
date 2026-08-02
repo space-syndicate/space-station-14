@@ -102,7 +102,7 @@ public sealed partial class TTSSystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeLocalEvent<CommunicationConsoleAnnouncementEvent>(OnConsoleAnnouncement);
         SubscribeLocalEvent<TTSComponent, EntitySpokeEvent>(OnEntitySpoke,
-            before: [typeof(HeadsetSystem)]); // Before the channel is cleared
+            before: [typeof(RadioSystem), typeof(HeadsetSystem)]); // Before the channel is cleared
 
         SubscribeNetworkEvent<RequestPreviewTTSEvent>(OnRequestPreviewTTS);
 
@@ -384,6 +384,7 @@ public sealed partial class TTSSystem : EntitySystem
             "Security" => RadioChannelFlag.Security,
             "Service" => RadioChannelFlag.Service,
             "Supply" => RadioChannelFlag.Supply,
+            "Legal" => RadioChannelFlag.Legal,
             "Syndicate" => RadioChannelFlag.Syndicate,
             "Binary" => RadioChannelFlag.Binary,
             "Handheld" => RadioChannelFlag.Handheld,

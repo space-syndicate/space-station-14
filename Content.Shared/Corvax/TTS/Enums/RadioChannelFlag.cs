@@ -12,18 +12,19 @@ public enum RadioChannelFlag : int
     Security = 1 << 5,
     Service = 1 << 6,
     Supply = 1 << 7,
-    Syndicate = 1 << 8,
-    Binary = 1 << 9,
-    Handheld = 1 << 10,
-    Freelance = 1 << 11,
-    CentCom = 1 << 12,
-    Xenoborg = 1 << 13,
-    Mothership = 1 << 14,
+    Legal = 1 << 8,
+    Syndicate = 1 << 9,
+    Binary = 1 << 10,
+    Handheld = 1 << 11,
+    Freelance = 1 << 12,
+    CentCom = 1 << 13,
+    Xenoborg = 1 << 14,
+    Mothership = 1 << 15,
 
     /// <summary>
     /// All channels except Common.
     /// </summary>
-    AllExceptCommon = Command | Engineering | Medical | Science | Security | Service | Supply | Syndicate | Binary | Handheld | Freelance | CentCom | Xenoborg | Mothership,
+    AllExceptCommon = Command | Engineering | Medical | Science | Security | Service | Supply | Legal | Syndicate | Binary | Handheld | Freelance | CentCom | Xenoborg | Mothership,
 
     /// <summary>
     /// All channels including Common.
