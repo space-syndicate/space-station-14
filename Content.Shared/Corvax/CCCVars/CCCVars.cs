@@ -127,14 +127,9 @@ public sealed class CCCVars
         CVarDef.Create("corvax.map_rotation.enabled", false, CVar.SERVERONLY);
 
     /// <summary>
-    /// Unique key used to separate map rotation statistics between servers.
-    /// </summary>
-    public static readonly CVarDef<string> MapRotationServerKey =
-        CVarDef.Create("corvax.map_rotation.server_key", string.Empty, CVar.SERVERONLY);
-
-    /// <summary>
     /// Every Nth successfully started round prefers the least recently started eligible map.
     /// </summary>
     public static readonly CVarDef<int> MapRotationRareMapInterval =
         CVarDef.Create("corvax.map_rotation.rare_map_interval", 5, CVar.SERVERONLY);
+
 }

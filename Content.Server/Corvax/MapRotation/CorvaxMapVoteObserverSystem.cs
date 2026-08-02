@@ -59,13 +59,13 @@ public sealed partial class CorvaxMapVoteObserverSystem : EntitySystem
         var rareRotationApplied = false;
 
         var mapRotation = EntityManager.System<CorvaxMapRotationSystem>();
-        if (mapRotation.TryGetRareMap(eligibleMaps, out var rareMap))
+        if (mapRotation.TryGetRareMap(eligibleMaps, votePicked, out var rareMap))
         {
             finalSelectedMap = rareMap;
             rareRotationApplied = finalSelectedMap != votePicked;
         }
 
-        EntityManager.System<CorvaxMapVoteStatsSystem>().RecordMapVoteResult(
+        mapRotation.RecordMapVoteResult(
             eligibleMaps,
             sender.VotesPerOption,
             votePicked,
