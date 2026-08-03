@@ -9,18 +9,25 @@ public sealed partial class TTSSystem
     private static readonly Regex UpperCaseWordRegex = new(@"\b([А-ЯЁ]{2,})\b",
         RegexOptions.Compiled);
 
-    private static readonly Regex YesNoRegex = new(@"\b(НЕТ|ДА)\b",
-        RegexOptions.Compiled | RegexOptions.IgnoreCase);
+    private static readonly Regex YesNoRegex = new(@"\b(НЕТ|ДА|нет|да)\b",
+        RegexOptions.Compiled);
 
-    private static readonly Regex NotRegex = new(@"\b(НЕ)\b",
-        RegexOptions.Compiled | RegexOptions.IgnoreCase);
+    private static readonly Regex NotRegex = new(@"\b(НЕ|не)\b",
+        RegexOptions.Compiled);
 
     private static readonly Regex ImportantWordRegex = new(
-        @"\b(внимание|опасность|срочно|важно|предупреждение|помогите|капитан|командир|разгерметизация|пожар|авария|эвакуация|всем|отсек|системы|доктор|инженеры)\b",
-        RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        @"\b(внимание|Внимание|ВНИМАНИЕ|" +
+        @"опасность|Опасность|ОПАСНОСТЬ|" +
+        @"срочно|Срочно|СРОЧНО|" +
+        @"важно|Важно|ВАЖНО|" +
+        @"предупреждение|Предупреждение|ПРЕДУПРЕЖДЕНИЕ|" +
+        @"помогите|Помогите|ПОМОГИТЕ|" +
+        @"капитан|Капитан|КАПИТАН|" +
+        @"командир|Командир|КОМАНДИР)\b",
+        RegexOptions.Compiled);
 
     private static readonly Regex ExclamationWordRegex = new(@"(!\s*)([А-ЯЁа-яё]+)",
-        RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        RegexOptions.Compiled);
 
     private static readonly Regex WhitespaceRegex = new(@"\s+",
         RegexOptions.Compiled);
@@ -53,14 +60,56 @@ public sealed partial class TTSSystem
     private string InsertPauses(string text)
     {
         var sb = new StringBuilder();
-        for (int i = 0; i < text.Length; i++)
+        int i = 0;
+
+        while (i < text.Length)
         {
             char c = text[i];
+
+            if (i + 1 < text.Length)
+            {
+                if (c == '!' && text[i + 1] == '!')
+                {
+                    sb.Append("!!");
+                    sb.Append(" <break time=\"400ms\"/> ");
+                    i += 2;
+                    continue;
+                }
+
+                if (c == '?' && text[i + 1] == '!')
+                {
+                    sb.Append("?!");
+                    sb.Append(" <break time=\"400ms\"/> ");
+                    i += 2;
+                    continue;
+                }
+
+                if (c == '!' && text[i + 1] == '?')
+                {
+                    sb.Append("!?");
+                    sb.Append(" <break time=\"400ms\"/> ");
+                    i += 2;
+                    continue;
+                }
+            }
+
+            if (i + 2 < text.Length && text[i] == '.' && text[i + 1] == '.' && text[i + 2] == '.')
+            {
+                sb.Append("...");
+                sb.Append(" <break time=\"500ms\"/> ");
+                i += 3;
+                continue;
+            }
+
             sb.Append(c);
 
             if (c == '.' || c == '?' || c == '!')
             {
-                if (i + 1 < text.Length && !char.IsLetter(text[i + 1]))
+                if (i + 1 < text.Length && !char.IsLetter(text[i + 1]) && text[i + 1] != ' ')
+                {
+                    sb.Append(" <break time=\"300ms\"/> ");
+                }
+                else if (i + 1 < text.Length && text[i + 1] == ' ')
                 {
                     sb.Append(" <break time=\"300ms\"/> ");
                 }
@@ -77,11 +126,8 @@ public sealed partial class TTSSystem
             {
                 sb.Append(" <break time=\"100ms\"/> ");
             }
-            else if (c == '.' && i + 2 < text.Length && text[i + 1] == '.' && text[i + 2] == '.')
-            {
-                sb.Append(" <break time=\"400ms\"/> ");
-                i += 2;
-            }
+
+            i++;
         }
 
         var result = sb.ToString();
