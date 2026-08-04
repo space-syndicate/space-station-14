@@ -81,8 +81,8 @@ public sealed class ChatHighlightTest : GameTest
         Assert.That(activeHighlights, Contains.Item("ling"));
         Assert.That(activeHighlights, Contains.Item("rev"));
         // Auto:
-        Assert.That(activeHighlights, Contains.Item("Captain"));
-        Assert.That(activeHighlights, Contains.Item("(?<!\\w)Cap(?!\\w)")); // "Cap" becomes regex-escaped and word-bounded
+        Assert.That(activeHighlights, Contains.Item("Капитан")); //Corvax-locale-fix
+        Assert.That(activeHighlights, Contains.Item("(?<!\\w)кеп(?!\\w)")); // "Cap" becomes regex-escaped and word-bounded //Corvax-locale-fix
 
         // 5. Disable auto-fill highlights and verify auto-filled highlights are removed
         _configManager.SetCVar(CCVars.ChatAutoFillHighlights, false);
@@ -90,7 +90,7 @@ public sealed class ChatHighlightTest : GameTest
         activeHighlights = (List<string>)highlightsField.GetValue(chatController)!;
         Assert.That(activeHighlights, Contains.Item("ling"));
         Assert.That(activeHighlights, Contains.Item("rev"));
-        Assert.That(activeHighlights, Is.Not.Contains("Captain"));
+        Assert.That(activeHighlights, Is.Not.Contains("Капитан"));
     }
 
     [Test]
@@ -155,7 +155,7 @@ public sealed class ChatHighlightTest : GameTest
         activeHighlights = (List<string>)highlightsField.GetValue(chatController)!;
         Assert.That(activeHighlights, Contains.Item("ling"));
         Assert.That(activeHighlights, Contains.Item("rev"));
-        Assert.That(activeHighlights, Contains.Item("Captain"));
-        Assert.That(activeHighlights, Contains.Item("(?<!\\w)Cap(?!\\w)"));
+        Assert.That(activeHighlights, Contains.Item("Капитан")); //Corvax-locale-fix
+        Assert.That(activeHighlights, Contains.Item("(?<!\\w)кеп(?!\\w)")); //Corvax-locale-fix
     }
 }
