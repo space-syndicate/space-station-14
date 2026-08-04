@@ -116,7 +116,7 @@ public sealed partial class TelephoneSystem : SharedTelephoneSystem
         var volume = entity.Comp.SpeakerVolume == TelephoneVolume.Speak ? InGameICChatType.Speak : InGameICChatType.Whisper;
         // Corvax-TTS-Start
         // If speaker entity has TTS, the telephone will speak with the same voice
-        if(TryComp<TTSComponent>(args.MessageSource, out var ttsSpeaker))
+        if (TryComp<TTSComponent>(args.MessageSource, out var ttsSpeaker))
         {
             var ttsTelephone = EnsureComp<TTSComponent>(speaker);
             ttsTelephone.VoicePrototypeId = ttsSpeaker.VoicePrototypeId;
