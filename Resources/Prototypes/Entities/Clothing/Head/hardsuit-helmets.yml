@@ -546,6 +546,8 @@
     sprite: Clothing/Head/Hardsuits/syndicate.rsi
   - type: PointLight
     color: green
+    radius: 5
+    energy: 2.5
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -573,6 +575,8 @@
     sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
   - type: PointLight
     color: green
+    radius: 5
+    energy: 2.5
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -597,6 +601,8 @@
     sprite: Clothing/Head/Hardsuits/syndieelite.rsi
   - type: PointLight
     color: red
+    radius: 5
+    energy: 2.5
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -626,6 +632,8 @@
     sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
   - type: PointLight
     color: green
+    radius: 5
+    energy: 2.5
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -642,7 +650,7 @@
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
-  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ] # Corvax-Resprite
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCybersun
   name: cybersun juggernaut helmet
   description: Made of compressed red matter, this helmet was designed in the Tau chromosphere facility.
@@ -651,8 +659,10 @@
     sprite: Clothing/Head/Hardsuits/cybersun.rsi
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/cybersun.rsi
-  - type: PointLight # Corvax-Resprite
+  - type: PointLight
     color: red
+    radius: 5
+    energy: 4
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000

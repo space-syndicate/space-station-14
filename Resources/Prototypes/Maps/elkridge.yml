@@ -2,8 +2,8 @@
   id: Elkridge
   mapName: 'Elkridge Depot'
   mapPath: /Maps/elkridge.yml
-  minPlayers: 15
-  maxPlayers: 45
+  minPlayers: 25
+  maxPlayers: 44
   stations:
     Elkridge:
       stationProto: StandardNanotrasenStation
@@ -24,7 +24,7 @@
             IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
-            Botanist: [ 1, 2 ]
+            Botanist: [ 2, 2 ]
             Chef: [ 1, 1 ]
             Janitor: [ 1, 2 ]
             Chaplain: [ 1, 1 ]

@@ -2,7 +2,8 @@
   id: Serpentcrest
   mapName: 'Serpentcrest'
   mapPath: /Maps/serpentcrest.yml
-  minPlayers: 50
+  minPlayers: 45
+  maxPlayers: 65
   stations:
     Serpentcrest:
       stationProto: StandardNanotrasenStation
@@ -30,11 +31,11 @@
             #service
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 2 ]
-            Chef: [ 2, 2 ]
-            Janitor: [ 4, 4 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
-            Librarian: [ 1, 1 ]
-            ServiceWorker: [ 2, 3 ]
+            Librarian: [ 0, 1 ]
+            ServiceWorker: [ 1, 2 ]
             Reporter: [ 1, 1 ]
             #engineering
             AtmosphericTechnician: [ 3, 3 ]
@@ -65,3 +66,4 @@
             #silicon
             Borg: [ 3, 3 ]
             StationAi: [ 1, 1 ]
+            Borg: [ 2, 2 ]

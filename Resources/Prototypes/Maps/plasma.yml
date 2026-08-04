@@ -2,8 +2,8 @@
   id: Plasma
   mapName: 'Plasma'
   mapPath: /Maps/plasma.yml
-  minPlayers: 30
-  maxPlayers: 80
+  minPlayers: 25
+  maxPlayers: 45
   stations:
     Plasma:
       stationProto: StandardNanotrasenStation
@@ -23,10 +23,10 @@
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
-            ChiefEngineer: [ 1, 1 ]
-            ChiefMedicalOfficer: [ 1, 1 ]
-            ResearchDirector: [ 1, 1 ]
             HeadOfSecurity: [ 1, 1 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            ChiefEngineer: [ 1, 1 ]
+            ResearchDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
             #service - 18-21
             Bartender: [ 2, 2 ]
