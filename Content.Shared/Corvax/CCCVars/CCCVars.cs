@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Configuration;
+﻿using Content.Shared.Corvax.TTS;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.Corvax.CCCVars;
 
@@ -14,6 +15,34 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool> PanicBunkerDenyVPN =
         CVarDef.Create("game.panic_bunker.deny_vpn", false, CVar.SERVERONLY);
+
+    /*
+     * AHelp Discord bot API
+     */
+
+    /// <summary>
+    /// Enables the external Discord AHelp bot HTTP API.
+    /// </summary>
+    public static readonly CVarDef<bool> AHelpApiEnabled =
+        CVarDef.Create("ahelp.api_enabled", false, CVar.SERVERONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// URL of the Discord AHelp bot HTTP event endpoint.
+    /// </summary>
+    public static readonly CVarDef<string> AHelpApiUrl =
+        CVarDef.Create("ahelp.api_url", "", CVar.SERVERONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Auth token used by this game server to authenticate with the Discord AHelp bot.
+    /// </summary>
+    public static readonly CVarDef<string> AHelpApiToken =
+        CVarDef.Create("ahelp.api_token", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// Amount of seconds before timeout for AHelp bot API requests.
+    /// </summary>
+    public static readonly CVarDef<int> AHelpApiTimeout =
+        CVarDef.Create("ahelp.api_timeout", 5, CVar.SERVERONLY | CVar.ARCHIVE);
 
     /**
      * TTS (Text-To-Speech)
@@ -44,10 +73,28 @@ public sealed class CCCVars
         CVarDef.Create("tts.api_timeout", 5, CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
+    /// Volume of TTS radio messages
+    /// </summary>
+    public static readonly CVarDef<float> TTSRadioVolume =
+        CVarDef.Create("tts.radio_volume", 1.2f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
     /// Default volume setting of TTS sound
     /// </summary>
     public static readonly CVarDef<float> TTSVolume =
-        CVarDef.Create("tts.volume", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("tts.volume", 1.2f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// TTS voice effect preset. 0 = None.
+    /// </summary>
+    public static readonly CVarDef<int> TTSVoiceEffect =
+        CVarDef.Create("tts.voice_effect", 0, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Bitmask of enabled radio channels for TTS. <see cref="RadioChannelFlag"/>
+    /// </summary>
+    public static readonly CVarDef<int> TTSRadioFilter =
+        CVarDef.Create("tts.radio_filter", (int)RadioChannelFlag.AllExceptCommon, CVar.CLIENT | CVar.REPLICATED | CVar.ARCHIVE);
 
     /// <summary>
     /// Count of in-memory cached tts voice lines.

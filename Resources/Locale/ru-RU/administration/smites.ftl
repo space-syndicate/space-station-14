@@ -64,6 +64,7 @@ admin-smite-crawler-name = Ползун
 admin-smite-homing-rod-name = Самонаводящийся жезл
 admin-smite-homing-rod-slow-name = Медленный самонаводящийся жезл
 admin-smite-silicon-laws-bound-name = Сделать синтетиком
+admin-smite-make-stinky-name = Сделать вонючкой
 
 ## Smite descriptions
 
@@ -113,6 +114,7 @@ admin-smite-crawler-description = Заставляет цель упасть и 
 admin-smite-homing-rod-description = Запускает самонаводящийся неподвижный жезл, двигающийся прямо к цели.
 admin-smite-homing-rod-slow-description = Запускает самонаводящийся неподвижный жезл, медленно двигающийся прямо к цели.
 admin-smite-silicon-laws-bound-description = Заставляет цель соблюдать законы синтетиков. Закон 2, выпрыгни с окна.
+admin-smite-make-stinky-description = Делает цель вонючкой, заставляя её выпускать аммиак. Фу!
 
 ## Tricks descriptions
 

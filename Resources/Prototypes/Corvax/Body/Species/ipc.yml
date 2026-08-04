@@ -104,10 +104,7 @@
     speechSounds: Alto
   - type: ZombieImmune
   - type: Vocal
-    sounds:
-      Male: MaleIpc
-      Female: FemaleIpc
-      Unsexed: MaleIpc
+    emoteSounds: UnisexIpc
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -240,11 +237,9 @@
     - Ipc
 ###
   - type: Temperature
-    currentTemperature: 310.15
-    specificHeat: 42
   - type: TemperatureDamage
     heatDamageThreshold: 325
-    coldDamageThreshold: 260
+    coldDamageThreshold: 273.15
     coldDamage:
       types:
         Cold: 0 #per second, scales with temperature & other constants
@@ -339,7 +334,9 @@
       map: ["base"]
 
 - type: entity
-  parent: [ OrganBase ]
+  parent:
+  - OrganBase
+  - OrganBaseChildInternal
   id: OrganIPCEyes
   components:
   - type: Sprite

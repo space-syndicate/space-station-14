@@ -45,6 +45,7 @@ shell-invalid-grid-id = Недопустимый ID сетки.
 shell-invalid-map-id = Недопустимый ID карты.
 shell-invalid-entity-uid = { $uid } не является допустимым идентификатором uid.
 shell-invalid-bool = Неверный boolean.
+shell-invalid-bool-value = Неверный boolean: '{$value}'
 shell-entity-uid-must-be-number = EntityUid должен быть числом.
 shell-could-not-find-entity = Не удалось найти сущность { $entity }.
 shell-could-not-find-entity-with-uid = Не удалось найти сущность с uid { $uid }.
@@ -59,6 +60,7 @@ shell-argument-number-must-be-between = Аргумент { $index } должен
 shell-argument-station-id-invalid = Аргумент { $index } должен быть валидным station id!
 shell-argument-map-id-invalid = Аргумент { $index } должен быть валидным map id!
 shell-argument-number-invalid = Аргумент { $index } должен быть валидным числом!
+shell-argument-chat-invalid = Аргумент {$index} должен быть существующим чатом!
 
 # Hints
 shell-argument-username-hint = <username>

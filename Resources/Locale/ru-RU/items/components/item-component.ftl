@@ -14,3 +14,4 @@ item-component-size-Normal = средний
 item-component-size-Large = большой
 item-component-size-Huge = огромный
 item-component-size-Ginormous = гигантский
+item-component-size-Colossal = колоссальный

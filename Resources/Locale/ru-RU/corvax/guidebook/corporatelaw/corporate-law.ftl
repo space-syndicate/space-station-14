@@ -15,3 +15,4 @@ guide-entry-cl-chapter-32 = 32X
 guide-entry-cl-chapter-41 = 41X
 guide-entry-cl-chapter-42 = 42X
 guide-entry-cl-chapter-43 = 43X
+guide-entry-cl-chapter-44 = 44X
