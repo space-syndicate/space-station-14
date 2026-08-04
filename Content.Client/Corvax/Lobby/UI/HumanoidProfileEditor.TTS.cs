@@ -48,9 +48,10 @@ public sealed partial class HumanoidProfileEditor
         if (Profile is null || _ttsTab is null)
             return;
 
-        _ttsTab.UpdateControls(Profile, Profile.Sex);
+        _ttsTab.UpdateControls(Profile, Profile.Voice);
         _ttsTab.SetSelectedVoice(Profile.TTSVoice);
     }
+
     private void SetVoice(string newVoice)
     {
         Profile = Profile?.WithVoice(newVoice);
