@@ -36,6 +36,7 @@
   - JobIconStationEngineer
   - JobIconTechnicalAssistant
   - JobIconAtmosphericTechnician
+  - JobIconSeniorEngineer # Corvax-mentor
 
 - type: jobIconGroup
   id: MedicalIconGroup
@@ -52,6 +53,7 @@
   - JobIconParamedic
   - JobIconPsychologist
   - JobIconVirologist
+  - JobIconSeniorPhysician # Corvax-mentor
 
 - type: jobIconGroup
   id: ResearchIconGroup
@@ -64,6 +66,7 @@
   - JobIconScientist
   - JobIconResearchAssistant
   - JobIconRoboticist
+  - JobIconSeniorResearcher # Corvax-mentor
 
 - type: jobIconGroup
   id: SecurityIconGroup
@@ -78,6 +81,7 @@
   - JobIconBrigmedic
   - JobIconDetective
   - JobIconWarden
+  - JobIconSeniorOfficer # Corvax-mentor
 
 - type: jobIconGroup
   id: ServiceIconGroup
@@ -186,7 +190,7 @@
   icons:
   - JobIconAdmin
   - JobIconZombie
-  - JobIconSeniorEngineer
-  - JobIconSeniorPhysician
-  - JobIconSeniorResearcher
-  - JobIconSeniorOfficer
+  #- JobIconSeniorEngineer # Corvax-mentor
+  #- JobIconSeniorPhysician # Corvax-mentor
+  #- JobIconSeniorResearcher # Corvax-mentor
+  #- JobIconSeniorOfficer # Corvax-mentor
