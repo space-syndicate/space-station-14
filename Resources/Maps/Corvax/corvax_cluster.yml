@@ -35620,8 +35620,6 @@ entities:
       pos: -26.5,10.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 3822
   - uid: 793
@@ -35949,8 +35947,6 @@ entities:
       pos: -20.5,10.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 3822
       - 11633
@@ -50063,8 +50059,6 @@ entities:
       pos: -24.5,9.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 197
     - type: AtmosPipeColor
@@ -50890,8 +50884,6 @@ entities:
       pos: -26.5,9.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 197
     - type: AtmosPipeColor
@@ -81058,8 +81050,6 @@ entities:
       pos: 33.5,22.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9316
   - uid: 6310
@@ -81068,8 +81058,6 @@ entities:
       pos: 31.5,22.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 9316
 - proto: WeaponEnergyTurretSecurityControlPanel
