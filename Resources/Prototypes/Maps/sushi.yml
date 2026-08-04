@@ -19,6 +19,7 @@
           availableJobs:
             # Command (7)
             Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
             HeadOfSecurity: [ 1, 1 ]
             ChiefMedicalOfficer: [ 1, 1 ]
@@ -52,7 +53,7 @@
             SecurityOfficer: [ 5, 5 ]
             Detective: [ 1, 1 ]
             SecurityCadet: [ 2, 2 ]
-            Lawyer: [ 2, 2 ]
+            #Lawyer: [ 2, 2 ] # Corvax-IAA
             # Supply (6)
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]

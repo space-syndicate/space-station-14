@@ -20,6 +20,7 @@
           availableJobs:
             #service 13-15
             Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 2, 2 ]
@@ -51,7 +52,7 @@
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 3, 3 ]
             SecurityCadet: [ 2, 2 ]
-            Lawyer: [ 1, 2 ]
+            #Lawyer: [ 1, 2 ] #Corvax-IAA
             #supply 6
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 2 ]
