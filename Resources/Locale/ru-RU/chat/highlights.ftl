@@ -2,9 +2,9 @@
 highlights-captain = Капитан, "кеп", "кэп", "мостик", "командование"
 highlights-headofpersonnel = глава персонала, "гп", сервис, мостик, "командование"
 highlights-chiefengineer = старший инженер, "си", инженер, "инж", "мостик", "командование"
-highlights-chiefmedicalofficer = главный врач, главврач "гв", медблок, медбей, "мед", "мостик", "командование"
+highlights-chiefmedicalofficer = главный врач, главврач, "гв", медблок, медбей, "мед", "мостик", "командование"
 highlights-headofsecurity = глава службы безопасности, "гсб", служба безопасности, "сб", "мостик", "командование"
-highlights-quartermaster = квартирмейстер, "км" "кма", карго, снабжени, "мостик", "командование"
+highlights-quartermaster = квартирмейстер, "км", "кма", карго, снабжени, "мостик", "командование"
 highlights-researchdirector = научный руководитель, научрук, "нр", наука, "рнд", "нио", "мостик", "командование"
 
 # Security
@@ -25,12 +25,12 @@ highlights-technicalassistant = технический ассистент, те�
 # Medical
 highlights-chemist = химик, химия, медблок, медбей, "мед"
 highlights-medicaldoctor = врач, доктор, "док", медблок, медбей, "мед"
-highlights-medicalintern = интерн "док", медблок, медбей, "мед"
+highlights-medicalintern = интерн, "док", медблок, медбей, "мед"
 highlights-paramedic = парамед, медблок, медбей, "мед"
 
 # Science
 highlights-scientist = учёный, наука, "рнд", "нио"
-highlights-researchassistant = научный ассистент, наука, "рнд", "нио"
+highlights-researchassistant = научный ассистент, наука, "рнд", "нио", "асист"
 
 # Civilian
 highlights-bartender = бармен, "бар"
@@ -39,7 +39,7 @@ highlights-chaplain = священник, свят, церковь
 highlights-chef = шеф, повар, кухн
 highlights-clown = клоун, клун
 highlights-janitor = уборщик
-highlights-lawyer = адвокат, юрист
+highlights-lawyer = адвокат, юрист, "юд"
 highlights-librarian = библиотекар, библиотека
 highlights-mime = мим
 highlights-musician = музыкант, театрал, артист, сервисный работник, сервисник
