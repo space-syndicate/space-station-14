@@ -13,7 +13,6 @@ using Content.Shared.Ghost;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
-using Content.Shared.Speech.Muting;
 using Content.Shared.Station.Components;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
@@ -23,6 +22,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Speech.Muting;
 
 namespace Content.Server.Corvax.TTS;
 
@@ -142,7 +142,7 @@ public sealed partial class TTSSystem : EntitySystem
             return;
 
         TTSVoicePrototype? voicePrototype = null;
-        if (TryComp<TTSComponent>(ev.Sender, out var ttsComp) && !HasComp<MutedComponent>(ev.Sender))
+        if (TryComp<TTSComponent>(ev.Sender, out var ttsComp) && !HasComp<MutedStatusEffectComponent>(ev.Sender))
         {
             if (!string.IsNullOrEmpty(ttsComp.VoicePrototypeId))
             {
