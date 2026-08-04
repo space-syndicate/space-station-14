@@ -27,6 +27,7 @@
             ChiefEngineer: [ 1, 1 ]
             ResearchDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
+            IAA: [1, 1]
             #service (16)
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 2 ]
@@ -51,7 +52,6 @@
             #security (7)
             SecurityOfficer: [ 4, 4 ]
             Warden: [ 1, 1 ]
-            Lawyer: [ 1, 1 ]
             SecurityCadet: [ 1, 1 ] #intern, not counted
             Detective: [ 1, 1 ]
             #supply (5)
