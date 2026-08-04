@@ -1,8 +1,9 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from Paradise SS13 at commit https://github.com/ParadiseSS13/Paradise/commit/a67c929b7394f78e7787114457ba42f4df6cc3a1. Vox state by Flareguy for SS14. monkey state made by MercerBray for Ss14. Reptilian state by TiniestShark (Github)",
-  "copyright": "Created by discord:IAmRasputin#5242. Vox state by Flareguy for SS14",
+    "copyright": "Taken from Paradise SS13 at commit https://github.com/ParadiseSS13/Paradise/commit/a67c929b7394f78e7787114457ba42f4df6cc3a1. Vox state by Flareguy for SS14. monkey state made by MercerBray for Ss14. Reptilian state by TiniestShark (Github). icon-flash modified from icon; made by PAFFhassoocks (GitHub) for ss14, on-equipped-HELMET and species variations made by PAFFhassoocks (Github) for sS14",
+    "copyright": "Created by discord:IAmRasputin#5242. Vox state by Flareguy for SS14",
+
     "size": {
         "x": 32,
         "y": 32
@@ -15,40 +16,44 @@
             "name": "icon-flash"
         },
         {
-            "name": "equipped-HELMET-monkey",
+            "name": "off-equipped-HELMET",
             "directions": 4
         },
         {
-        "name": "off-equipped-HELMET",
-        "directions": 4
+            "name": "off-equipped-HELMET-vox",
+            "directions": 4
         },
         {
-        "name": "on-equipped-HELMET",
-        "directions": 4
+            "name": "off-equipped-HELMET-reptilian",
+            "directions": 4
         },
         {
-        "name": "off-equipped-HELMET-vox",
-        "directions": 4
+            "name": "off-equipped-HELMET-monkey",
+            "directions": 4
         },
         {
-        "name": "on-equipped-HELMET-vox",
-        "directions": 4
+            "name": "on-equipped-HELMET",
+            "directions": 4
         },
         {
-        "name": "off-equipped-HELMET-reptilian",
-        "directions": 4
+            "name": "on-equipped-HELMET-vox",
+            "directions": 4
         },
         {
-        "name": "on-equipped-HELMET-reptilian",
-        "directions": 4
+            "name": "on-equipped-HELMET-reptilian",
+            "directions": 4
         },
         {
-        "name": "off-equipped-HELMET-vulpkanin",
-        "directions": 4
+            "name": "on-equipped-HELMET-monkey",
+            "directions": 4
         },
         {
-        "name": "on-equipped-HELMET-vulpkanin",
-        "directions": 4
+            "name": "off-equipped-HELMET-vulpkanin",
+            "directions": 4
+        },
+        {
+            "name": "on-equipped-HELMET-vulpkanin",
+            "directions": 4
         }
     ]
 }
