@@ -1,5 +1,5 @@
 robotics-console-window-title = Роботехническая консоль
-robotics-console-no-cyborgs = борги отсутствуют!
+robotics-console-no-cyborgs = Борги отсутствуют!
 
 robotics-console-select-cyborg = Выберите борга из списка выше.
 robotics-console-model = [color=gray]Модель:[/color] { $name }
