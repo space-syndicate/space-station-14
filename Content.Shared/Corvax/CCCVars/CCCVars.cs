@@ -121,15 +121,21 @@ public sealed class CCCVars
      */
 
     /// <summary>
-    /// Enables Corvax least-recently-started map priority.
+    /// Enables Corvax configurable map rotation.
     /// </summary>
     public static readonly CVarDef<bool> MapRotationEnabled =
         CVarDef.Create("corvax.map_rotation.enabled", false, CVar.SERVERONLY);
 
     /// <summary>
-    /// Every Nth successfully started round prefers the least recently started eligible map.
+    /// Map rotation strategy: periodic_rare, recent_exclusion, or cumulative_votes.
     /// </summary>
-    public static readonly CVarDef<int> MapRotationRareMapInterval =
-        CVarDef.Create("corvax.map_rotation.rare_map_interval", 5, CVar.SERVERONLY);
+    public static readonly CVarDef<string> MapRotationStrategy =
+        CVarDef.Create("corvax.map_rotation.strategy", "periodic_rare", CVar.SERVERONLY);
+
+    /// <summary>
+    /// Period between rare rotations, or the number of subsequent votes for which a started map is excluded.
+    /// </summary>
+    public static readonly CVarDef<int> MapRotationRoundInterval =
+        CVarDef.Create("corvax.map_rotation.round_interval", 5, CVar.SERVERONLY);
 
 }

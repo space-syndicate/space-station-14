@@ -9,6 +9,18 @@ namespace Content.Server.Voting.Managers
     /// </summary>
     public interface IVoteManager
     {
+        // Corvax-MapRotation-Start
+        /// <summary>
+        /// Invoked immediately before a vote is created, allowing systems to adjust its options.
+        /// </summary>
+        event Action<VoteOptions> VoteCreating;
+
+        /// <summary>
+        /// Invoked after a vote has been fully registered.
+        /// </summary>
+        event Action<IVoteHandle> VoteCreated;
+        // Corvax-MapRotation-End
+
         /// <summary>
         /// All votes that are currently active and can be voted on by players.
         /// </summary>

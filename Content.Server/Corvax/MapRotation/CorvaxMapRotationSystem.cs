@@ -31,13 +31,16 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
     private RotationServerStats? _stats;
     private string _apiUrl = string.Empty;
     private string _apiToken = string.Empty;
-    private int _rareMapInterval = 5;
+    private int _roundInterval = 5;
+    private MapRotationStrategy _strategy = MapRotationStrategy.PeriodicRare;
     private int _apiTimeout = 5;
     private bool _enabled;
     private bool _ahelpApiEnabled;
     private bool _nextMapForcedByAdmin;
     private string? _firstLoadedRoundMap;
     private int? _lastRecordedRound;
+
+    public bool UsesPeriodicRareStrategy => _strategy == MapRotationStrategy.PeriodicRare;
 
     public override void Initialize()
     {
@@ -48,7 +51,8 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
         SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => _firstLoadedRoundMap = null);
         Subs.CVar(_cfg, CCCVars.MapRotationEnabled, value => _enabled = value, true);
-        Subs.CVar(_cfg, CCCVars.MapRotationRareMapInterval, value => _rareMapInterval = value, true);
+        Subs.CVar(_cfg, CCCVars.MapRotationStrategy, OnStrategyChanged, true);
+        Subs.CVar(_cfg, CCCVars.MapRotationRoundInterval, value => _roundInterval = value, true);
         Subs.CVar(_cfg, CCCVars.AHelpApiEnabled, value => _ahelpApiEnabled = value, true);
         Subs.CVar(_cfg, CCCVars.AHelpApiUrl, OnAHelpApiUrlChanged, true);
         Subs.CVar(_cfg, CCCVars.AHelpApiToken, value => _apiToken = value.Trim(), true);
@@ -76,7 +80,8 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
         out GameMapPrototype map)
     {
         map = default!;
-        if (!IsConfigured() || _stats == null || !IsRareRotationRound(_stats.RotationRound, _rareMapInterval))
+        if (!IsConfigured() || _strategy != MapRotationStrategy.PeriodicRare || _stats == null ||
+            !IsRareRotationRound(_stats.RotationRound, _roundInterval))
             return false;
 
         map = eligibleMaps
@@ -89,6 +94,70 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
             .ThenBy(item => item.Proto.ID)
             .First().Proto;
         return true;
+    }
+
+    public IEnumerable<GameMapPrototype> FilterVoteMaps(IEnumerable<GameMapPrototype> maps)
+    {
+        var candidates = maps.ToArray();
+        if (!IsConfigured() || _strategy != MapRotationStrategy.RecentExclusion || _stats == null)
+            return candidates;
+
+        var allowed = candidates
+            .Where(map => !IsOnCooldown(_stats.RotationRound, _stats.Maps.GetValueOrDefault(map.ID)?.LastStartedRound,
+                _roundInterval))
+            .ToArray();
+        if (allowed.Length > 0)
+            return allowed;
+
+        // A small pool must never produce an empty vote. If every map is on
+        // cooldown, expose the one that was started least recently.
+        return candidates
+            .OrderBy(map => _stats.Maps.GetValueOrDefault(map.ID)?.LastStartedRound ?? int.MinValue)
+            .ThenBy(map => map.ID)
+            .Take(1)
+            .ToArray();
+    }
+
+    public int GetDisplayedVoteCount(string mapId, int currentVotes)
+    {
+        if (!IsConfigured() || _strategy != MapRotationStrategy.CumulativeVotes || _stats == null)
+            return currentVotes;
+
+        return GetVoteScore(mapId, currentVotes, _stats.CumulativeVotes, true);
+    }
+
+    public bool TryGetRotationMap(
+        IReadOnlyCollection<GameMapPrototype> eligibleMaps,
+        IReadOnlyDictionary<object, int> votesPerOption,
+        GameMapPrototype voteWinner,
+        out GameMapPrototype map)
+    {
+        map = default!;
+        if (!IsConfigured() || _stats == null)
+            return false;
+
+        if (_strategy == MapRotationStrategy.PeriodicRare)
+            return TryGetRareMap(eligibleMaps, voteWinner, out map);
+
+        IEnumerable<GameMapPrototype> candidates = eligibleMaps;
+        if (_strategy == MapRotationStrategy.RecentExclusion)
+            candidates = FilterVoteMaps(candidates);
+
+        map = candidates
+            .Select(proto => (
+                Proto: proto,
+                Votes: GetVoteScore(
+                    proto.ID,
+                    votesPerOption.GetValueOrDefault(proto),
+                    _stats.CumulativeVotes,
+                    _strategy == MapRotationStrategy.CumulativeVotes)))
+            .OrderByDescending(item => item.Votes)
+            .ThenBy(item => item.Proto.ID != voteWinner.ID)
+            .ThenBy(item => item.Proto.ID)
+            .Select(item => item.Proto)
+            .FirstOrDefault()!;
+
+        return map != null;
     }
 
     public void RecordMapVoteResult(
@@ -108,12 +177,28 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
             voteWinner = voteWinner.ID,
             finalSelectedMap = finalSelectedMap.ID,
             rareRotationApplied,
+            accumulateVotes = _strategy == MapRotationStrategy.CumulativeVotes,
         });
     }
 
     internal static bool IsRareRotationRound(int completedRotationRounds, int rareMapInterval)
     {
         return rareMapInterval > 0 && (completedRotationRounds + 1) % rareMapInterval == 0;
+    }
+
+    internal static bool IsOnCooldown(int completedRotationRounds, int? lastStartedRound, int roundInterval)
+    {
+        return lastStartedRound != null && roundInterval > 0 &&
+            completedRotationRounds - lastStartedRound.Value < roundInterval;
+    }
+
+    internal static int GetVoteScore(
+        string mapId,
+        int currentVotes,
+        IReadOnlyDictionary<string, int> cumulativeVotes,
+        bool accumulateVotes)
+    {
+        return currentVotes + (accumulateVotes ? cumulativeVotes.GetValueOrDefault(mapId) : 0);
     }
 
     private void OnGameMapCVarChanged(string mapId)
@@ -142,12 +227,27 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
     {
         if (!_enabled || !_ahelpApiEnabled)
             return false;
-        if (_rareMapInterval <= 0 || _apiTimeout <= 0 || string.IsNullOrWhiteSpace(_apiUrl) ||
+        if ((_strategy != MapRotationStrategy.CumulativeVotes && _roundInterval <= 0) ||
+            _apiTimeout <= 0 || string.IsNullOrWhiteSpace(_apiUrl) ||
             string.IsNullOrWhiteSpace(_apiToken))
         {
             return false;
         }
         return true;
+    }
+
+    private void OnStrategyChanged(string value)
+    {
+        _strategy = value.Trim().ToLowerInvariant() switch
+        {
+            "periodic_rare" => MapRotationStrategy.PeriodicRare,
+            "recent_exclusion" => MapRotationStrategy.RecentExclusion,
+            "cumulative_votes" => MapRotationStrategy.CumulativeVotes,
+            _ => MapRotationStrategy.Invalid,
+        };
+
+        if (_strategy == MapRotationStrategy.Invalid)
+            _log.Error($"Unknown Corvax map rotation strategy: {value}");
     }
 
     private void OnAHelpApiUrlChanged(string value)
@@ -174,6 +274,7 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
         }
         catch (Exception e)
         {
+            _stats = null;
             _log.Warning($"Could not load map rotation state from AHelp bot: {e.Message}");
         }
     }
@@ -189,6 +290,7 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
         }
         catch (Exception e)
         {
+            _stats = null;
             _log.Warning($"Could not store map rotation round start in AHelp bot: {e.Message}");
         }
     }
@@ -200,9 +302,11 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
             using var request = CreateRequest(HttpMethod.Post, "/map-rotation/v1/vote-result", payload);
             using var response = await _httpClient.SendAsync(request, CreateCancellationToken());
             response.EnsureSuccessStatusCode();
+            _stats = await response.Content.ReadFromJsonAsync<RotationServerStats>(_jsonOptions);
         }
         catch (Exception e)
         {
+            _stats = null;
             _log.Warning($"Could not store map vote result in AHelp bot: {e.Message}");
         }
     }
@@ -225,11 +329,21 @@ public sealed partial class CorvaxMapRotationSystem : EntitySystem
     {
         public int RotationRound { get; set; }
         public Dictionary<string, MapRotationMapStats> Maps { get; set; } = new();
+        public Dictionary<string, int> CumulativeVotes { get; set; } = new();
     }
 
     private sealed class MapRotationMapStats
     {
         public DateTime? LastStartedAt { get; set; }
+        public int? LastStartedRound { get; set; }
         public int StartCount { get; set; }
+    }
+
+    private enum MapRotationStrategy
+    {
+        Invalid,
+        PeriodicRare,
+        RecentExclusion,
+        CumulativeVotes,
     }
 }

@@ -52,7 +52,9 @@ public sealed record AHelpApiCommand(
     [property: JsonPropertyName("authorName")]
     string? AuthorName,
     [property: JsonPropertyName("text")]
-    string? Text);
+    string? Text,
+    [property: JsonPropertyName("adminOnly")]
+    bool AdminOnly = false);
 
 public sealed record AHelpApiCommandResponse(
     [property: JsonPropertyName("commandId")]

@@ -49,6 +49,14 @@ namespace Content.Server.Voting
         /// </summary>
         public bool DisplayVotes = true;
 
+        // Corvax-MapRotation-Start
+        /// <summary>
+        ///     Optional transformation applied to an option's current vote count for display,
+        ///     winner selection, and the final tally. Defaults to the unmodified count.
+        /// </summary>
+        public Func<object, int, int>? VoteCountModifier { get; set; }
+        // Corvax-MapRotation-End
+
         /// <summary>
         ///     Whether the vote should have an entity attached to it, to be used for things like letting ghosts follow it. 
         /// </summary>

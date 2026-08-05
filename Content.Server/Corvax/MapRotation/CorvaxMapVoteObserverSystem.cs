@@ -7,6 +7,7 @@ using Content.Server.Voting;
 using Content.Server.Voting.Managers;
 using Content.Shared.Database;
 using Content.Shared.Maps;
+using Robust.Shared.Asynchronous;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Corvax.MapRotation;
@@ -17,26 +18,75 @@ public sealed partial class CorvaxMapVoteObserverSystem : EntitySystem
     [Dependency] private IChatManager _chatManager = default!;
     [Dependency] private IGameMapManager _gameMapManager = default!;
     [Dependency] private GameTicker _gameTicker = default!;
+    [Dependency] private ITaskManager _taskManager = default!;
     [Dependency] private IVoteManager _voteManager = default!;
 
     private readonly HashSet<int> _subscribedVotes = new();
 
-    public override void Update(float frameTime)
+    public override void Initialize()
     {
-        base.Update(frameTime);
+        base.Initialize();
+
+        _voteManager.VoteCreating += OnVoteCreating;
+        _voteManager.VoteCreated += OnVoteCreated;
+
+        foreach (var vote in _voteManager.ActiveVotes)
+            OnVoteCreated(vote);
+    }
+
+    public override void Shutdown()
+    {
+        _voteManager.VoteCreating -= OnVoteCreating;
+        _voteManager.VoteCreated -= OnVoteCreated;
 
         foreach (var vote in _voteManager.ActiveVotes)
         {
-            if (_subscribedVotes.Contains(vote.Id))
+            if (!_subscribedVotes.Contains(vote.Id))
                 continue;
 
-            if (!TryGetMapVoteOptions(vote, out _))
-                continue;
-
-            _subscribedVotes.Add(vote.Id);
-            vote.OnFinished += OnMapVoteFinished;
-            vote.OnCancelled += OnMapVoteCancelled;
+            vote.OnFinished -= OnMapVoteFinished;
+            vote.OnCancelled -= OnMapVoteCancelled;
         }
+
+        _subscribedVotes.Clear();
+        base.Shutdown();
+    }
+
+    private void OnVoteCreating(VoteOptions options)
+    {
+        var maps = options.Options
+            .Select(option => option.data)
+            .OfType<GameMapPrototype>()
+            .ToArray();
+
+        if (maps.Length == 0 || maps.Length != options.Options.Count)
+            return;
+
+        var mapRotation = EntityManager.System<CorvaxMapRotationSystem>();
+        var allowedMaps = mapRotation.FilterVoteMaps(maps)
+            .Select(map => map.ID)
+            .ToHashSet();
+        options.Options.RemoveAll(option =>
+            option.data is GameMapPrototype map && !allowedMaps.Contains(map.ID));
+
+        var previousModifier = options.VoteCountModifier;
+        options.VoteCountModifier = (option, currentVotes) =>
+        {
+            var votes = previousModifier?.Invoke(option, currentVotes) ?? currentVotes;
+            return option is GameMapPrototype map
+                ? mapRotation.GetDisplayedVoteCount(map.ID, votes)
+                : votes;
+        };
+    }
+
+    private void OnVoteCreated(IVoteHandle vote)
+    {
+        if (_subscribedVotes.Contains(vote.Id) || !TryGetMapVoteOptions(vote, out _))
+            return;
+
+        _subscribedVotes.Add(vote.Id);
+        vote.OnFinished += OnMapVoteFinished;
+        vote.OnCancelled += OnMapVoteCancelled;
     }
 
     private void OnMapVoteCancelled(IVoteHandle sender)
@@ -56,14 +106,13 @@ public sealed partial class CorvaxMapVoteObserverSystem : EntitySystem
             return;
 
         var finalSelectedMap = votePicked;
-        var rareRotationApplied = false;
 
         var mapRotation = EntityManager.System<CorvaxMapRotationSystem>();
-        if (mapRotation.TryGetRareMap(eligibleMaps, votePicked, out var rareMap))
-        {
-            finalSelectedMap = rareMap;
-            rareRotationApplied = finalSelectedMap != votePicked;
-        }
+        if (mapRotation.TryGetRotationMap(eligibleMaps, sender.VotesPerOption, votePicked, out var rotationMap))
+            finalSelectedMap = rotationMap;
+
+        var selectionOverridden = finalSelectedMap != votePicked;
+        var rareRotationApplied = selectionOverridden && mapRotation.UsesPeriodicRareStrategy;
 
         mapRotation.RecordMapVoteResult(
             eligibleMaps,
@@ -72,24 +121,33 @@ public sealed partial class CorvaxMapVoteObserverSystem : EntitySystem
             finalSelectedMap,
             rareRotationApplied);
 
-        if (!rareRotationApplied)
+        if (!selectionOverridden)
             return;
 
+        // VoteCreated fires before the standard map vote attaches its completion callback.
+        // Apply the override after all synchronous vote handlers have selected the regular winner.
+        _taskManager.RunOnMainThread(() => ApplyRotationOverride(votePicked, finalSelectedMap, rareRotationApplied));
+    }
+
+    private void ApplyRotationOverride(
+        GameMapPrototype votePicked,
+        GameMapPrototype finalSelectedMap,
+        bool rareRotationApplied)
+    {
         if (_gameTicker.CanUpdateMap() && _gameMapManager.CheckMapExists(finalSelectedMap.ID))
         {
             _gameMapManager.SelectMap(finalSelectedMap.ID);
             _gameTicker.UpdateInfoText();
         }
 
-        _chatManager.DispatchServerAnnouncement(
-            Loc.GetString(
-                "ui-vote-map-rare-rotation",
-                ("winner", votePicked.MapName),
-                ("picked", finalSelectedMap.MapName)));
+        _chatManager.DispatchServerAnnouncement(Loc.GetString(
+            "ui-vote-map-rare-rotation",
+            ("picked", finalSelectedMap.MapName)));
+        var reason = rareRotationApplied ? " using periodic rare rotation" : string.Empty;
         _adminLogger.Add(
             LogType.Vote,
             LogImpact.Medium,
-            $"Corvax rare map rotation overrode map vote result {votePicked.ID} with {finalSelectedMap.ID}");
+            $"Corvax map rotation overrode map vote result {votePicked.ID} with {finalSelectedMap.ID}{reason}");
     }
 
     private bool TryGetMapVoteOptions(IVoteHandle vote, out GameMapPrototype[] maps)
