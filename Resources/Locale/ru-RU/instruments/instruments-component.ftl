@@ -29,7 +29,7 @@ instruments-component-menu-files-rename-dialog-prompt = Новое имя
 instruments-component-menu-files-filter = Фильтр...
 instruments-component-menu-files-error = Операция не удалась из-за непредвиденной ошибки.
 instruments-component-menu-input-notice-label = Подключите MIDI устройство к вашему ПК
-                                                и играйте музыку.
+                                                и играйте на нём.
 instruments-component-band-title-label = Группы
 instruments-component-band-refresh = Обновить
 instruments-component-channels-menu = Выбор MIDI-канала
