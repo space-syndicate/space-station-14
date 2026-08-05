@@ -28,3 +28,5 @@ ent-ActionChangelingNightVision = Переключить ночное зрени
     .desc = Включает или выключает наше ночное зрение.
 ent-ActionChangelingScreech = Крик ужаса
     .desc = Мы издаем оглушительный крик, который ослабляет окружающих.
+ent-ActionChangelingFakeMindshieldToggle = Переключить фальшивый щит разума
+    .desc = Включите или выключите видимость нашего "щита разума".

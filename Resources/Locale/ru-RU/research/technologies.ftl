@@ -44,6 +44,7 @@ research-technology-dual-wielding-technology = Технология двойно
 research-technology-basic-robotics = Основы робототехники
 research-technology-basic-anomalous-research = Основы исследования аномалий
 research-technology-basic-xenoarcheology = Основы ксеноархеологии
+research-technology-telesci = Телепортационные системы
 research-technology-alternative-research = Альтернативные исследования
 research-technology-magnets-tech = Локализованный магнетизм
 research-technology-advanced-parts = Продвинутые компоненты

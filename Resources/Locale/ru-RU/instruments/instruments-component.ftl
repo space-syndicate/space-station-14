@@ -43,8 +43,8 @@ instruments-component-channels-name-display-selector-instrument-button = Инс�
 instruments-component-midi-file-collection-label = MIDI Коллекция
 instruments-component-midi-file-collection-size-label = {$count} MIDI файлы загружены
 instruments-component-midi-file-collection-open-dir-button = Открыть папку
-instruments-component-midi-file-collection-reload-button = Перезагрузить коллекцию
-instruments-component-midi-file-collection-delete-all-button = Очистить коллекцию
+instruments-component-midi-file-collection-reload-button = Перезагрузить
+instruments-component-midi-file-collection-delete-all-button = Очистить
 instruments-component-menu-midi-min-volume-slider-label = Минимальная громкость MIDI-входа
 
 # SwappableInstrumentComponent
