@@ -19,8 +19,8 @@ teleporter-console-user-interface-flavor-left = Компания-произво�
 teleporter-console-user-interface-flavor-right = v0.666
 
 teleporter-name-unknown = Неизвестная локация
-teleporter-name-rd-first = Красный портативный портал НР
-teleporter-name-rd-second = Синий портативный портал НР
+teleporter-name-rd-first = Красный портал НР
+teleporter-name-rd-second = Синий портал НР
 
 teleporter-name-center = Ангар телепортации
 teleporter-name-salvage = Утилизаторский
