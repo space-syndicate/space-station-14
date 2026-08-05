@@ -35,4 +35,4 @@ reagent-name-grey-matter = серое вещество
 reagent-desc-grey-matter = Сок мыслей, вытекающий из ушей.
 
 reagent-name-living-tissue = живая плоть
-reagent-desc-living-tissue = Смесь внутренностей инопланетной расы. Вы чувствуете, как она смотрит на вас.
+reagent-desc-living-tissue = Смесь внутренностей инопланетной расы. Вы чувствуете, что она смотрит на вас.

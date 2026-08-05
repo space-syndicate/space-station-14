@@ -26,4 +26,4 @@ ent-ClothingOuterHardsuitCarp = { ent-ClothingOuterSuitCarp }
     .desc = { ent-ClothingOuterSuitCarp.desc }
     .suffix = Скафандр, НЕ МАППИТЬ
 ent-ClothingOuterSuitTramDriver = костюм водителя трамвая
-    .desc = Защищает от всего, что может вас отвлечь. То есть, вообще ни от чего
+    .desc = Защищает от всего, что может вас отвлечь. То есть, вообще ни от чего.

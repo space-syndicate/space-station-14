@@ -10,11 +10,11 @@ command-description-xenoartifact-unlockallNodes =
     Разблокирует все узлы артефакта.
 
 command-description-xenoartifact-createnode =
-    Создать узел в артефакте (новый на глубине 0 или присоеденить к существующеу).
+    Создать узел в артефакте (новый на глубине 0 или присоединить к существующему).
 command-description-xenoartifact-createnodeatdepth =
-    Добавить новый узел выбраному артефакту.
+    Добавить новый узел выбранному артефакту.
 command-description-xenoartifact-spawnartwithnode =
-    Спаунит новый артефакт с единственым узлом с выбранным стимулятором и эффектом.
+    Спавнит артефакт с единственным узлом и заданными стимулятором и эффектом.
 command-description-xenoartifact-unlocknode =
     Маркирует узел как разблокированый.
 command-description-xenoartifact-removenode =

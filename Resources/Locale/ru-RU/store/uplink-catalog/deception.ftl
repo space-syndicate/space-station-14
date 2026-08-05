@@ -37,4 +37,4 @@ uplink-smuggler-satchel-name = Сумка контрабандиста
 uplink-smuggler-satchel-desc = Удобная, подозрительная на вид сумка. Достаточно плоская, чтобы поместиться под напольной плиткой.
 
 uplink-weighted-coin-name = Взвешенная монета
-uplink-weighted-coin-desc = Специальная монета, которая всегда выпадает решкой, имитирует орла и решку на станциях Nanotrasen.
+uplink-weighted-coin-desc = Специальная монета, которая всегда выпадает решкой, имитирует монеты со станций Nanotrasen.
