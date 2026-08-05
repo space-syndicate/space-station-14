@@ -16,7 +16,7 @@ command-description-xenoartifact-createnodeatdepth =
 command-description-xenoartifact-spawnartwithnode =
     Спавнит артефакт с единственным узлом и заданными стимулятором и эффектом.
 command-description-xenoartifact-unlocknode =
-    Маркирует узел как разблокированый.
+    Разблокирует указанный узел.
 command-description-xenoartifact-removenode =
     Удаляет узел из артефакта.
 command-description-xenoartifact-addedge =
