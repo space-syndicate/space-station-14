@@ -1,5 +1,5 @@
-ent-StationTeleporter = телепортер
-    .desc = Вершина блюспейс технологий. Гигантский телепортер, позволяющий перемещаться на огромные расстояния в мгновение ока.
+ent-StationTeleporter = телепортатор
+    .desc = Вершина блюспейс технологий. Гигантский телепорт, позволяющий перемещаться на огромные расстояния в мгновение ока.
     .suffix = Неизвестные координаты, Без автоподключения
 ent-StationTeleporterNanotrasen = { ent-StationTeleporter }
     .desc = { ent-StationTeleporter.desc }
