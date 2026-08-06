@@ -46,6 +46,7 @@ job-name-security = офицер СБ
 job-name-serviceworker = сервисный работник
 job-name-station-ai = станционный ИИ
 job-name-technical-assistant = технический ассистент
+job-name-tram-driver = водитель трамвая
 job-name-visitor = посетитель
 job-name-warden = смотритель
 
@@ -58,6 +59,7 @@ job-name-no-id = нет ID
 job-name-prisoner = заключённый
 job-name-roboticist = робототехник
 job-name-unknown = неизвестно
+job-name-sus = Sus
 job-name-virologist = вирусолог
 job-name-zookeeper = зоотехник
 

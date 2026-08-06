@@ -7,22 +7,45 @@ instruments-component-menu-no-midi-support = Поддержка MIDI в наст
                                              Если вы на Linux, вам может потребоваться установить
                                              FluidSynth или пакет разработки
                                              для FluidSynth.
-instruments-component-menu-input-button = MIDI-ввод
-instruments-component-menu-band-button = Присоединиться к группе
-instruments-component-menu-play-button = Воспроизвести MIDI-файл
+instruments-component-menu-play-tab-title = Играть
+instruments-component-menu-config-tab-title = Конфигурация
+instruments-component-menu-midi-source-button = Источник MIDI
+instruments-component-menu-unknown-midi-source-button = Неизвестно
+instruments-component-menu-input-midi-source-button = Ввод
+instruments-component-menu-band-midi-source-button = Группа
+instruments-component-menu-file-midi-source-button = Файлы
+instruments-component-menu-play-stop-button = Играть
 instruments-component-menu-loop-button = Повтор
-instruments-component-menu-channels-button = Каналы
-instruments-component-menu-stop-button = Стоп
-instruments-component-band-menu = Выбрать лидера группы
-instrument-component-band-refresh = Обновить
+instruments-component-menu-shuffle-button = Случайно
+instruments-component-menu-channels-label = Каналы [italic](обновляются при воспроизведении)[/italic]
+instruments-component-menu-files-track-playtime-seconds-minutes = {$currentMinutes}:{$currentSeconds}/{$totalMinutes}:{$totalSeconds}
+instruments-component-menu-files-track-playtime-seconds-minutes-hours = {$currentHours}:{$currentMinutes}:{$currentSeconds}/{$totalHours}:{$totalMinutes}:{$totalSeconds}
+instruments-component-menu-files-file-remove-disabled-info = Остановите воспроизведение и выберите трек, чтобы удалить его.
+instruments-component-menu-files-add-button = Добавить
+instruments-component-menu-files-remove-button = Удалить
+instruments-component-menu-files-rename-button = Переименовать
+instruments-component-menu-files-rename-dialog-title = Переименовать файл
+instruments-component-menu-files-rename-dialog-prompt = Новое имя
+instruments-component-menu-files-filter = Фильтр...
+instruments-component-menu-files-error = Операция не удалась из-за непредвиденной ошибки.
+instruments-component-menu-input-notice-label = Подключите MIDI устройство к вашему ПК
+                                                и играйте на нём.
+instruments-component-band-title-label = Группы
+instruments-component-band-refresh = Обновить
 instruments-component-channels-menu = Выбор MIDI-канала
-instrument-component-channel-name = MIDI-канал { $number }
-instruments-component-channels-all-button = Все
-instruments-component-channels-clear-button = Очистить
-instruments-component-channels-track-names-toggle = Отображать имена треков
-instruments-component-channels-single = { $channel } { $name }
-instruments-component-channels-multi = { $channel } { $name } ({ $other })
-
+instruments-component-channels-all-button = Вкл
+instruments-component-channels-clear-button = Выкл
+instruments-component-channels-all-channels-label = Все каналы
+instruments-component-channels-name-display-selector-label = Название канала
+instruments-component-channels-name-display-selector-track-button = Трек
+instruments-component-channels-name-display-selector-program-button = Программа
+instruments-component-channels-name-display-selector-instrument-button = Инструмент
+instruments-component-midi-file-collection-label = Коллекция MIDI
+instruments-component-midi-file-collection-size-label = Загружены MIDI-файлы: {$count}
+instruments-component-midi-file-collection-open-dir-button = Открыть папку
+instruments-component-midi-file-collection-reload-button = Перезагрузить
+instruments-component-midi-file-collection-delete-all-button = Очистить
+instruments-component-menu-midi-min-volume-slider-label = Минимальная громкость MIDI-входа
 
 # SwappableInstrumentComponent
 swappable-instrument-component-style-set = Установить стиль "{ $style }"

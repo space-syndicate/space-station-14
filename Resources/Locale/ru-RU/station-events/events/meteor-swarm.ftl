@@ -8,3 +8,4 @@ station-event-meteor-clown-start-announcement = Станция столкнул�
 station-event-meteor-potato-start-announcement = Станция столкнулась с неидентифицированным облаком обломков. Обнаружен высокое содержание крахмала.
 station-event-fun-swarm-start-announcement = Станция столкнулась с неидентифицированным облаком обломков. Пожалуйста, паникуйте соответствующе.
 station-event-bio-swarm-start-announcement = Обнаружен рой метеоритов прямо по курсу станции. Присутствует биологическая опасность.
+## bio-swarm-start ревертнут до обновления движка, запись оставлена до декабря, либо возвращения ##

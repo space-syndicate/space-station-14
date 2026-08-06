@@ -1,2 +1,2 @@
 ent-LockerPilot = шкаф пилота
-    .desc = { ent-LockerBaseSecure.desc }
+    .desc = { ent-LockerBase.desc }
