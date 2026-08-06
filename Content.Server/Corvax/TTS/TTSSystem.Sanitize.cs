@@ -156,6 +156,10 @@ public sealed partial class TTSSystem
         {"uwu", "У Ву"},
         {"оwо", "Оу Воу"}, // cyrillic
         {"уwу", "У Ву"}, // cyrillic
+        {"втф", "Вэ Тэ Фэ"},
+        {"исб", "И Эс Бэ"},
+        {"мми", "М М И"},
+        {"эми", "Э Ми"},
     };
 
     private static readonly IReadOnlyDictionary<string, string> ReverseTranslit = new Dictionary<string, string>()

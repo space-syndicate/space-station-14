@@ -52,5 +52,9 @@ changeling-takeover-success-self = Мы успешно заразили тело
 # stings
 changeling-sting-success = Мы незаметно жалим {THE($target)}!
 
+# mindshield
+changeling-fake-mindshield-enabled = Мы излучаем сигналы, имитирующие защиту разума.
+changeling-fake-mindshield-disabled = Мы прекращаем излучать сигналы, имитирующие защиту разума.
+
 # other
 changeling-paused-map-name = Карта хранения личностей генокрада
