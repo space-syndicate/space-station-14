@@ -50,6 +50,19 @@
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
   - TowelColorWhite
+  # Corvax-Loadouts-Start
+  - ClothingNeckAtharaPin
+  - ClothingNeckCorvaxPin
+  - ClothingNeckEchoPin
+  - ClothingNeckElysiumPin
+  - ClothingNeckMainPin
+  - ClothingNeckNebulaPin
+  - ClothingNeckNovaPin
+  - ClothingNeckSolarisPin
+  - ClothingNeckLumenPin
+  - ClothingNeckVoidPin
+  - ClothingNeckWhiteListPin
+  # Corvax-Loadouts-End
 
 - type: loadoutGroup
   id: AssistiveItems
@@ -63,19 +76,6 @@
   - OffsetCaneMime
   - OffsetCaneNT
   - Cane
-   # Corvax-Loadouts-Start
-  - ClothingNeckAtharaPin
-  - ClothingNeckCorvaxPin
-  - ClothingNeckEchoPin
-  - ClothingNeckElysiumPin
-  - ClothingNeckMainPin
-  - ClothingNeckNebulaPin
-  - ClothingNeckNovaPin
-  - ClothingNeckSolarisPin
-  - ClothingNeckLumenPin
-  - ClothingNeckVoidPin
-  - ClothingNeckWhiteListPin
-  # Corvax-Loadouts-End
 
 - type: loadoutGroup
   id: GroupTankHarness
