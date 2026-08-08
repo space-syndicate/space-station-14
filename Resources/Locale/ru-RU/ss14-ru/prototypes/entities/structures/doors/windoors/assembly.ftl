@@ -1,7 +1,7 @@
 ent-BaseWindoorAssembly = каркас раздвижного окна
     .desc = Оно открывается, оно закрывается, и вы можете смотреть сквозь него!
 ent-WindoorAssembly = { ent-BaseWindoorAssembly }
-    .desc = { ent-BaseWindoorAssembly.desc}
+    .desc = { ent-BaseWindoorAssembly.desc }
 ent-WindoorAssemblySecure = каркас раздвижного бронеокна
     .desc = Оно открывается, оно закрывается, и вы можете смотреть сквозь него! Оно выглядит крепким.
 ent-WindoorAssemblyClockwork = каркас раздвижного заводного окна

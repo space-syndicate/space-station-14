@@ -1,8 +1,10 @@
-ent-EdibleBase = { ent-BaseItem }
+ent-FoodBase = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-FoodBase = { ent-EdibleBase }
-    .desc = { ent-EdibleBase.desc }
-ent-FoodInjectableBase = { ent-FoodBase }
+ent-FoodBaseTrash = { ent-FoodBase }
     .desc = { ent-FoodBase.desc }
+ent-FoodInjectableBase = { ent-FoodBaseTrash }
+    .desc = { ent-FoodBaseTrash.desc }
 ent-FoodOpenableBase = { "" }
     .desc = { "" }
+ent-EdibleBase = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }

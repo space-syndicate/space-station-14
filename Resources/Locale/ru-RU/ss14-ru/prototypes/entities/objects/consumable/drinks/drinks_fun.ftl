@@ -1,4 +1,4 @@
-ent-BaseSqueezeBottle = { ent-DrinkBase }
+ent-BaseSqueezeBottle = { ent-SolutionSmall }
     .desc = { ent-DrinkBaseMaterialPlastic.desc }
 ent-DrinkSpaceGlue = тюбик космического клея
     .desc = Высокоэффективный клей, предназначенный для обслуживания чрезвычайно сложного механического оборудования. НЕ ПИТЬ!

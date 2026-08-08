@@ -1,5 +1,5 @@
-ent-FoodPieBase = { ent-FoodInjectableBase }
-    .desc = { ent-FoodInjectableBase.desc }
+ent-FoodPieBase = { ent-SolutionNormal }
+    .desc = { ent-SolutionNormal.desc }
 ent-FoodPieSliceBase = { ent-FoodInjectableBase }
     .desc = Кусочек пирога. Объедение!
 ent-FoodPieApple = яблочный пирог
@@ -45,7 +45,7 @@ ent-FoodTartMimeSlice = кусок мимского тарта
 ent-FoodPieAmanita = пирог из мухоморов
     .desc = Сладкий и вкусный ядовитый пирог.
 ent-FoodPieAmanitaSlice = кусок мухоморного пирога
-    .desc = { ent-FoodPieSliceBase.desc}
+    .desc = { ent-FoodPieSliceBase.desc }
 ent-FoodPiePlump = пирог из толстошлемника
     .desc = Уверен, вам понравится блюдо, сделанное из толстошлемника!
 ent-FoodPiePlumpSlice = кусок толстошлемникового пирога

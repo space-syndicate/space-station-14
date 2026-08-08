@@ -1,4 +1,4 @@
-ent-FoodBagelBase = { ent-FoodInjectableBase }
+ent-FoodBagelBase = { ent-SolutionVeryTiny }
     .desc = Вкуснейший бублик.
 ent-FoodBagel = бублик
     .desc = { ent-FoodBagelBase.desc }
