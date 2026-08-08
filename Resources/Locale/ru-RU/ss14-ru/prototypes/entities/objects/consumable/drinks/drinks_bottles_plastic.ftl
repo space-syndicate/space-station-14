@@ -1,8 +1,8 @@
-ent-DrinkBottlePlasticBaseFull = { ent-DrinkBase }
+ent-DrinkBottlePlasticBaseFull = { ent-SolutionNormal }
     .desc = { ent-DrinkBaseMaterialPlastic.desc }
     .suffix = Полный
-ent-DrinkBottlePlasticSmallBaseFull = { ent-DrinkBottlePlasticBaseFull }
-    .desc = { ent-DrinkBottlePlasticBaseFull.desc }
+ent-DrinkBottlePlasticSmallBaseFull = { ent-SolutionSmall }
+    .desc = { ent-SolutionSmall.desc }
     .suffix = { ent-DrinkBottlePlasticBaseFull.suffix }
 ent-CustomDrinkJug = кувшин для напитков
     .desc = Кувшин для хранения нестандартных напитков.
