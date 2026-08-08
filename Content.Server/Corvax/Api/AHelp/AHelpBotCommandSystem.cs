@@ -54,7 +54,7 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
         if (!TryGetSessionByCkey(command.Ckey, out var target))
             return new AHelpApiCommandResponse(command.CommandId, false, $"Player '{command.Ckey}' not found");
 
-        RelayExternalMessageToAHelp(target.UserId, GetAuthorName(command), command.Text);
+        RelayExternalMessageToAHelp(target.UserId, GetAuthorName(command), command.Text, command.AdminOnly);
         return new AHelpApiCommandResponse(
             command.CommandId,
             true,
@@ -78,7 +78,7 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
             return new AHelpApiCommandResponse(command.CommandId, false, "AHelp conversation is not active");
         }
 
-        RelayExternalMessageToAHelp(userId, GetAuthorName(command), command.Text);
+        RelayExternalMessageToAHelp(userId, GetAuthorName(command), command.Text, command.AdminOnly);
         return new AHelpApiCommandResponse(command.CommandId, true);
     }
 
@@ -170,10 +170,14 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
         return session != null;
     }
 
-    private void RelayExternalMessageToAHelp(NetUserId userId, string authorName, string text)
+    private void RelayExternalMessageToAHelp(NetUserId userId, string authorName, string text, bool adminOnly)
     {
         var plainText = text.ReplaceLineEndings(" ");
-        _bwoinkSystem.CorvaxSendAHelpToGame(userId, BuildExternalBwoinkText(authorName, plainText));
+        var bwoinkText = BuildExternalBwoinkText(authorName, plainText);
+        if (adminOnly)
+            bwoinkText = $"{Loc.GetString("bwoink-message-admin-only")} {bwoinkText}";
+
+        _bwoinkSystem.CorvaxSendAHelpToGame(userId, bwoinkText, adminOnly);
         _bwoinkSystem.CorvaxQueueAHelpWebhookMessage(userId, new AHelpMessageParams(
             $"{authorName}[D]",
             plainText,
@@ -182,7 +186,8 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
                 ? _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss")
                 : string.Empty,
             _gameTicker.RunLevel,
-            playedSound: true));
+            playedSound: !adminOnly,
+            adminOnly: adminOnly));
     }
 
     private static string GetAuthorName(AHelpApiCommand command)

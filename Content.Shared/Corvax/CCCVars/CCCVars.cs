@@ -134,4 +134,27 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool> StationGoal =
         CVarDef.Create("game.station_goal", true, CVar.SERVERONLY);
+
+    /*
+     * Map rotation
+     */
+
+    /// <summary>
+    /// Enables Corvax configurable map rotation.
+    /// </summary>
+    public static readonly CVarDef<bool> MapRotationEnabled =
+        CVarDef.Create("corvax.map_rotation.enabled", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Map rotation strategy: periodic_rare, recent_exclusion, or cumulative_votes.
+    /// </summary>
+    public static readonly CVarDef<string> MapRotationStrategy =
+        CVarDef.Create("corvax.map_rotation.strategy", "periodic_rare", CVar.SERVERONLY);
+
+    /// <summary>
+    /// Period between rare rotations, or the number of subsequent votes for which a started map is excluded.
+    /// </summary>
+    public static readonly CVarDef<int> MapRotationRoundInterval =
+        CVarDef.Create("corvax.map_rotation.round_interval", 5, CVar.SERVERONLY);
+
 }
