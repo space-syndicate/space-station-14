@@ -1,4 +1,4 @@
-ent-FlaskBase = { ent-DrinkBase }
+ent-FlaskBase = { ent-SolutionSmall }
     .desc = { ent-DrinkBaseMaterialStrongMetal.desc }
 ent-DrinkFlaskOld = старая фляга
     .desc = Старая потрёпанная фляга, у которой, похоже, отсутствует крышка.

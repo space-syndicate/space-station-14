@@ -1,3 +1,5 @@
+ent-BaseDeskBell = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-EmptyDeskBell = недоделанный настольный звонок
     .desc = Звонок, у которого отсутствует колокольчик.
 ent-DeskBell = настольный звонок

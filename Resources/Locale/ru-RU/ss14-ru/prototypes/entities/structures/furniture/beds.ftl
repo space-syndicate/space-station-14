@@ -1,3 +1,5 @@
+ent-BaseBed = { ent-BaseStructure }
+    .desc = { ent-BaseStructure.desc }
 ent-Bed = кровать
     .desc = На ней можно лежать, спать или быть пристёгнутым. Отдых на ней обеспечивает максимально медленное исцеление.
 ent-MedicalBed = больничная койка

@@ -1,7 +1,7 @@
 teleporter-console-slot-name = Диск
 teleporter-console-chip-record = Координаты сохранены!
 
-teleporter-console-chip-examine-recorded = [color=#f5b942]Записанные координаты: {$portal}[/color]
+teleporter-console-chip-examine-recorded = [color=#f5b942]Записанные координаты: { $portal }[/color]
 teleporter-console-chip-examine-null = [color=#f5b942]Записанные координаты: отсутствуют[/color]
 
 # UI
