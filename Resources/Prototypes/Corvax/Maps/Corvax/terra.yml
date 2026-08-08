@@ -76,11 +76,3 @@
             Passenger: [ -1, -1 ]
             # silicon
             Borg: [ 1, 1 ]
-        - type: StationGoal
-          goals:
-          - SolarPanels
-          - Artifacts
-          - Bank
-          - Zoo
-          - MiningOutpost
-          - Tesla
