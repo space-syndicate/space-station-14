@@ -1,5 +1,5 @@
-ent-ClothingHandsBase = { ent-Clothing }
-    .desc = { ent-Clothing.desc }
+ent-ClothingHandsBase = { ent-SolutionFood }
+    .desc = { ent-SolutionFood.desc }
 ent-ClothingHandsButcherable = { ent-ClothingHandsBase }
     .desc = { ent-ClothingHandsBase.desc }
 ent-ClothingHandsGlovesSyntheticBase = { ent-ClothingHandsButcherable }

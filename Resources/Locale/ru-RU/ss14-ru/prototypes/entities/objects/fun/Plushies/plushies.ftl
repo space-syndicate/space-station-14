@@ -1,5 +1,5 @@
-ent-BasePlushie = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-BasePlushie = { ent-SolutionFood }
+    .desc = { ent-SolutionFood.desc }
 ent-PlushieThrongler = плюшевый Нагибатор
     .desc = Мягкая игрушка, напоминающая грузчикам о том, чего они больше не могут иметь.
 ent-PlushieGhost = плюшевый призрак
