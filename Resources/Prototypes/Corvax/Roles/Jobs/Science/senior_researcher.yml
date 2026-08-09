@@ -7,7 +7,6 @@
     - !type:DepartmentTimeRequirement
       department: Science
       time: 60h
-  weight: 9
   startingGear: SeniorResearcherGear
   icon: "JobIconSeniorResearcher"
   supervisors: job-supervisors-rd
