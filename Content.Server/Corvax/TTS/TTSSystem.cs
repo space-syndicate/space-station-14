@@ -23,6 +23,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Speech.Muting;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Server.Corvax.TTS;
 
