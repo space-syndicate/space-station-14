@@ -52,5 +52,5 @@ highlights-psychologist = психолог
 
 # Silicon
 highlights-personal-ai = персональный ии, "пии"
-highlights-borg = киборг, борг
+highlights-borg = киборг, борг, юнит, синтетик
 highlights-stationai = станционный ии, "ии", "сии"
