@@ -1,7 +1,7 @@
-ent-FoodPizzaBase = { ent-FoodInjectableBase }
-    .desc = { ent-FoodInjectableBase.desc }
-ent-FoodPizzaSliceBase = { ent-FoodInjectableBase }
-    .desc = { ent-FoodInjectableBase.desc }
+ent-FoodPizzaBase = { ent-SolutionNormal }
+    .desc = { ent-SolutionNormal.desc }
+ent-FoodPizzaSliceBase = { ent-SolutionVeryTiny }
+    .desc = { ent-SolutionVeryTiny.desc }
 ent-FoodPizzaMargherita = пицца маргарита
     .desc = Самая сырная пицца в галактике.
 ent-FoodPizzaMargheritaSlice = кусок пиццы маргарита
