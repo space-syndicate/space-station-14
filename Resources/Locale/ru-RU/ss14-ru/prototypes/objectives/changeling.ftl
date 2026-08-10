@@ -6,3 +6,5 @@ ent-ChangelingEscapeIdentityObjective = { ent-BaseObjective }
     .desc = Мы должны скрыться, используя личность этой жертвы с её ID-картой.
 ent-ChangelingKillRandomPersonObjective = { ent-BaseObjective }
     .desc = Данная личность наша добыча. Мы должны убедиться, что она останется мертвой на станции.
+ent-ChangelingDevourMostObjective = Поглотите как можно больше гуманоидов.
+    .desc = Мы должны поглотить больше уникальных гуманоидов из всех остальных генокрадов.
