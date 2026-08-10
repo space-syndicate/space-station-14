@@ -54,7 +54,9 @@ public sealed record AHelpApiCommand(
     [property: JsonPropertyName("text")]
     string? Text,
     [property: JsonPropertyName("adminOnly")]
-    bool AdminOnly = false);
+    bool AdminOnly = false,
+    [property: JsonPropertyName("playSound")]
+    bool PlaySound = true);
 
 public sealed record AHelpApiCommandResponse(
     [property: JsonPropertyName("commandId")]

@@ -54,7 +54,12 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
         if (!TryGetSessionByCkey(command.Ckey, out var target))
             return new AHelpApiCommandResponse(command.CommandId, false, $"Player '{command.Ckey}' not found");
 
-        RelayExternalMessageToAHelp(target.UserId, GetAuthorName(command), command.Text, command.AdminOnly);
+        RelayExternalMessageToAHelp(
+            target.UserId,
+            GetAuthorName(command),
+            command.Text,
+            command.PlaySound,
+            command.AdminOnly);
         return new AHelpApiCommandResponse(
             command.CommandId,
             true,
@@ -78,7 +83,12 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
             return new AHelpApiCommandResponse(command.CommandId, false, "AHelp conversation is not active");
         }
 
-        RelayExternalMessageToAHelp(userId, GetAuthorName(command), command.Text, command.AdminOnly);
+        RelayExternalMessageToAHelp(
+            userId,
+            GetAuthorName(command),
+            command.Text,
+            command.PlaySound,
+            command.AdminOnly);
         return new AHelpApiCommandResponse(command.CommandId, true);
     }
 
@@ -170,14 +180,21 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
         return session != null;
     }
 
-    private void RelayExternalMessageToAHelp(NetUserId userId, string authorName, string text, bool adminOnly)
+    private void RelayExternalMessageToAHelp(
+        NetUserId userId,
+        string authorName,
+        string text,
+        bool playSound,
+        bool adminOnly)
     {
         var plainText = text.ReplaceLineEndings(" ");
         var bwoinkText = BuildExternalBwoinkText(authorName, plainText);
         if (adminOnly)
             bwoinkText = $"{Loc.GetString("bwoink-message-admin-only")} {bwoinkText}";
+        else if (!playSound)
+            bwoinkText = $"{Loc.GetString("bwoink-message-silent")} {bwoinkText}";
 
-        _bwoinkSystem.CorvaxSendAHelpToGame(userId, bwoinkText, adminOnly);
+        _bwoinkSystem.CorvaxSendAHelpToGame(userId, bwoinkText, playSound, adminOnly);
         _bwoinkSystem.CorvaxQueueAHelpWebhookMessage(userId, new AHelpMessageParams(
             $"{authorName}[D]",
             plainText,
@@ -186,7 +203,7 @@ public sealed partial class AHelpBotCommandSystem : EntitySystem
                 ? _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss")
                 : string.Empty,
             _gameTicker.RunLevel,
-            playedSound: !adminOnly,
+            playedSound: playSound && !adminOnly,
             adminOnly: adminOnly));
     }
 

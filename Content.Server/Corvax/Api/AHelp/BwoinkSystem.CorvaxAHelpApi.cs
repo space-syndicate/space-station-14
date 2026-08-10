@@ -25,10 +25,14 @@ public sealed partial class BwoinkSystem
             .ToArray();
     }
 
-    internal void CorvaxSendAHelpToGame(NetUserId userId, string text, bool adminOnly = false)
+    internal void CorvaxSendAHelpToGame(
+        NetUserId userId,
+        string text,
+        bool playSound = true,
+        bool adminOnly = false)
     {
         var admins = GetTargetAdmins();
-        var bwoinkMessage = BuildCorvaxAHelpMessage(userId, text, adminOnly);
+        var bwoinkMessage = BuildCorvaxAHelpMessage(userId, text, playSound, adminOnly);
 
         foreach (var admin in admins)
         {
@@ -43,14 +47,18 @@ public sealed partial class BwoinkSystem
         }
     }
 
-    internal static BwoinkTextMessage BuildCorvaxAHelpMessage(NetUserId userId, string text, bool adminOnly)
+    internal static BwoinkTextMessage BuildCorvaxAHelpMessage(
+        NetUserId userId,
+        string text,
+        bool playSound,
+        bool adminOnly)
     {
         return new BwoinkTextMessage(
             userId,
             SystemUserId,
             text,
             sentAt: DateTime.Now,
-            playSound: !adminOnly,
+            playSound: playSound && !adminOnly,
             adminOnly: adminOnly);
     }
 
