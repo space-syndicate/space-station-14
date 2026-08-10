@@ -33,6 +33,3 @@ ent-CrateEngineeringTeslaCoil = ящик с катушкой Теслы
 ent-CrateEngineeringTeslaGroundingRod = ящик с заземляющим стержнем Теслы
     .desc = Заземляющий стержень, идеален для защиты от молний.
     .suffix = { ent-CrateEngineeringSecure.suffix }
-ent-CrateEngineeringGenerator = ящик с генератором
-    .desc = { ent-CrateEngineering.desc }
-    .suffix = DEBUG
