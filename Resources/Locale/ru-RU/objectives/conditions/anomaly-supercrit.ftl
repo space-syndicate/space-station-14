@@ -1,1 +1,1 @@
-objective-condition-supercrit-anomalies-title = Коллапсируйте {$count} аномалии
+objective-condition-supercrit-anomalies-title = Коллапсируйте { $count } аномалии

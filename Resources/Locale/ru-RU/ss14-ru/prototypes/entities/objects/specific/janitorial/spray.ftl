@@ -1,4 +1,4 @@
-ent-SprayBottleBase = { ent-DrinkBase }
+ent-SprayBottleBase = { ent-SolutionSmall }
     .desc = { ent-DrinkBaseMaterialPlastic.desc }
 ent-SprayBottle = распылитель
     .desc = Распылитель с отвинчивающимся верхом.
@@ -22,7 +22,7 @@ ent-BorgMegaSprayBottle = продвинутый внутренний пульв
     .desc = Усовершенствованная версия встроенного распылителя, установленного непосредственно в уборочного киборга. Обычно заполняется космическим очистителем для устранения неприятных луж.
     .suffix = Заполненный
 ent-Vapor = пар
-    .desc = { "" }
+    .desc = { ent-SolutionSmall.desc }
 ent-BigVapor = { ent-Vapor }
     .desc = { ent-Vapor.desc }
 ent-FlowerVapor = { ent-Vapor }
