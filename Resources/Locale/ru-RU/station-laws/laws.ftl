@@ -142,4 +142,4 @@ laws-update-notify = Ваши законы были обновлены. Озна
 laws-notify-subverted = Законы этого шасси изменены. Обязательно ознакомьтесь с ними.
 
 laws-window-footer-left = Помните: Вы должны следовать интерпретации своих законов!
-laws-window-footer-right = V{$version}
+laws-window-footer-right = V{ $version }

@@ -1,3 +1,5 @@
+ent-BaseWeaponGravityGun = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-WeaponTetherGun = гравипушка
     .desc = Манипулирует гравитацией вокруг объектов, чтобы бросать их с высокой скоростью.
 ent-WeaponTetherGunEmpty = { ent-WeaponTetherGun }

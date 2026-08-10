@@ -1,6 +1,14 @@
-ent-BaseWeaponTurret = турель
+ent-BaseWeaponTurretIndestructible = турель
     .desc = { ent-BaseStructure.desc }
-ent-BaseWeaponBallisticTurret = баллистическая турель
+ent-BaseTurretDestructible = { "" }
+    .desc = { "" }
+ent-BaseWeaponTurret = { ent-BaseWeaponTurretIndestructible }
+    .desc = { ent-BaseWeaponTurretIndestructible.desc }
+ent-BaseWeaponBallisticTurretIndestructible = баллистическая турель
     .desc = Автоматическая турель с баллистическим пулемётом.
-ent-BaseWeaponEnergyTurret = лазерная турель
+ent-BaseWeaponBallisticTurret = { ent-BaseWeaponBallisticTurretIndestructible }
+    .desc = { ent-BaseWeaponBallisticTurretIndestructible.desc }
+ent-BaseWeaponEnergyTurretIndestructible = лазерная турель
     .desc = Автоматическая турель, вооружённая тяжёлым лазером. Её оружие перезаряжается при подключении к активной энергосети.
+ent-BaseWeaponEnergyTurret = { ent-BaseWeaponEnergyTurretIndestructible }
+    .desc = { ent-BaseWeaponEnergyTurretIndestructible.desc }

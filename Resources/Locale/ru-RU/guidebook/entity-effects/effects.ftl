@@ -119,34 +119,34 @@ entity-effect-guidebook-status-effect-old =
                 [1] Вызывает
                 *[other] вызвать
             } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { $time ->
-                                            [one] секунду
-                                            [few] секунды
-                                            *[other] секунд
-                                        } без накопления эффекта
+                [one] секунду
+                [few] секунды
+                *[other] секунд
+            } без накопления эффекта
         [add]   { $chance ->
                 [1] Вызывает
                 *[other] вызвать
             } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { $time ->
-                                            [one] секунду
-                                            [few] секунды
-                                            *[other] секунд
-                                        } с накоплением эффекта
+                [one] секунду
+                [few] секунды
+                *[other] секунд
+            } с накоплением эффекта
         [set]  { $chance ->
                 [1] Вызывает
                 *[other] вызвать
             } { LOC($key) } на { NATURALFIXED($time, 3) } { $time ->
-                                    [one] секунду
-                                    [few] секунды
-                                    *[other] секунд
-                                } без накопления эффекта
+                [one] секунду
+                [few] секунды
+                *[other] секунд
+            } без накопления эффекта
         *[remove]{ $chance ->
                 [1] Удаляет
                 *[other] удалить
             } { NATURALFIXED($time, 3) } { $time ->
-                    [one] секунду
-                    [few] секунды
-                    *[other] секунд
-                } { LOC($key) }
+                [one] секунду
+                [few] секунды
+                *[other] секунд
+            } { LOC($key) }
     }
 
 entity-effect-guidebook-status-effect =
@@ -225,34 +225,34 @@ entity-effect-guidebook-knockdown =
                 [1] Вызывает
                 *[other] вызвать
             } { LOC($key) } минимум на { NATURALFIXED($time, 3) } { $time ->
-    [one] секунду
-    [few] секунды
-    *[other] секунд
-} без накопления эффекта
+                [one] секунду
+                [few] секунды
+                *[other] секунд
+            } без накопления эффекта
         [add]   { $chance ->
                 [1] Вызывает
                 *[other] вызвать
             } нокаут миниум { NATURALFIXED($time, 3) } { $time ->
-    [one] секунду
-    [few] секунды
-    *[other] секунд
-} с накоплением эффекта
+                [one] секунду
+                [few] секунды
+                *[other] секунд
+            } с накоплением эффекта
         *[set]  { $chance ->
                 [1] Вызывает
                 *[other] вызвать
             } нокаут миниум { NATURALFIXED($time, 3) } { $time ->
-    [one] секунду
-    [few] секунды
-    *[other] секунд
-} без накопления эффекта
+                [one] секунду
+                [few] секунды
+                *[other] секунд
+            } без накопления эффекта
         [remove]{ $chance ->
                 [1] Удаляет
                 *[other] удалить
             } { NATURALFIXED($time, 3) } { $time ->
-    [one] секунду
-    [few] секунды
-    *[other] секунд
-} нокаута
+                [one] секунду
+                [few] секунды
+                *[other] секунд
+            } нокаута
     }
 
 entity-effect-guidebook-set-solution-temperature-effect =
@@ -297,8 +297,7 @@ entity-effect-guidebook-adjust-reagent-group =
                 [1] Добавляет
                 *[-1] Удаляет
             }
-        *[other]
-            { $deltasign ->
+        *[other] { $deltasign ->
                 [1] добавляет
                 *[-1] удаляет
             }
@@ -390,10 +389,10 @@ entity-effect-guidebook-electrocute =
         [1] Поражает электрическим током
         *[other] поразить электрическим током
     } на { NATURALFIXED($time, 3) } { $time ->
-    [one] секунду
-    [few] секунды
-    *[other] секунд
-}
+        [one] секунду
+        [few] секунды
+        *[other] секунд
+    }
 
 entity-effect-guidebook-emote =
     { $chance ->
@@ -460,20 +459,20 @@ entity-effect-guidebook-paralyze =
         [1] Парализует
         *[other] парализовать
     } минимум на { NATURALFIXED($time, 3) } { $time ->
-    [one] секунду
-    [few] секунды
-    *[other] секунд
-}
+        [one] секунду
+        [few] секунды
+        *[other] секунд
+    }
 
 entity-effect-guidebook-movespeed-modifier =
     { $chance ->
         [1] Изменяет
         *[other] изменить
     } скорость бега на { NATURALFIXED($sprintspeed, 3) }х минимум на { NATURALFIXED($time, 3) } { $time ->
-    [one] секунду
-    [few] секунды
-    *[other] секунд
-}
+        [one] секунду
+        [few] секунды
+        *[other] секунд
+    }
 
 entity-effect-guidebook-reset-narcolepsy =
     { $chance ->
@@ -510,10 +509,10 @@ entity-effect-guidebook-reduce-rotting =
         [1] Регенерирует
         *[other] регенерировать
     } { NATURALFIXED($time, 3) } { $time ->
-    [one] секунду
-    [few] секунды
-    *[other] секунд
-} гниения
+        [one] секунду
+        [few] секунды
+        *[other] секунд
+    } гниения
 
 entity-effect-guidebook-area-reaction =
     { $chance ->
@@ -593,12 +592,11 @@ entity-effect-guidebook-plant-mutate-chemicals =
         *[other] мутируют
     } растение, чтобы то производило { $name }
 
-
 entity-effect-guidebook-add-reagent-to-bloodstream =
     { $chance ->
         [1] Вводит
         *[other] вводят
-    } {$quantity} {$reagent} напрямую в кровоток
+    } { $quantity } { $reagent } напрямую в кровоток
 
 entity-effect-disarm =
     { $chance ->

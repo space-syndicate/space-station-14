@@ -1,5 +1,5 @@
-ent-FoodFrozenBase = { ent-FoodInjectableBase }
-    .desc = { ent-FoodInjectableBase.desc }
+ent-FoodFrozenBase = { ent-SolutionVeryTiny }
+    .desc = { ent-SolutionVeryTiny.desc }
 ent-FoodFrozenSandwich = мороженое-сэндвич
     .desc = Мороженое в собственной упаковке.
 ent-FoodFrozenSandwichStrawberry = клубничное мороженое-сэндвич
