@@ -1,2 +1,2 @@
-ent-BaseMobMothroach = ""
-    .desc = ""
+ent-BaseMobMothroach = { "" }
+    .desc = { "" }
