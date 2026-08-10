@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Configuration;
+﻿using Content.Shared.Corvax.TTS;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.Corvax.CCCVars;
 
@@ -72,10 +73,28 @@ public sealed class CCCVars
         CVarDef.Create("tts.api_timeout", 5, CVar.SERVERONLY | CVar.ARCHIVE);
 
     /// <summary>
+    /// Volume of TTS radio messages
+    /// </summary>
+    public static readonly CVarDef<float> TTSRadioVolume =
+        CVarDef.Create("tts.radio_volume", 1.2f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
     /// Default volume setting of TTS sound
     /// </summary>
     public static readonly CVarDef<float> TTSVolume =
-        CVarDef.Create("tts.volume", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("tts.volume", 1.2f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// TTS voice effect preset. 0 = None.
+    /// </summary>
+    public static readonly CVarDef<int> TTSVoiceEffect =
+        CVarDef.Create("tts.voice_effect", 0, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Bitmask of enabled radio channels for TTS. <see cref="RadioChannelFlag"/>
+    /// </summary>
+    public static readonly CVarDef<int> TTSRadioFilter =
+        CVarDef.Create("tts.radio_filter", (int)RadioChannelFlag.AllExceptCommon, CVar.CLIENT | CVar.REPLICATED | CVar.ARCHIVE);
 
     /// <summary>
     /// Count of in-memory cached tts voice lines.

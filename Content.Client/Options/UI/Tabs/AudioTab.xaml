@@ -5,10 +5,9 @@
         <BoxContainer Orientation="Vertical" Margin="8 8 8 8" VerticalExpand="True">
             <Label Text="{Loc 'ui-options-volume-label'}"
                    StyleClasses="LabelKeyText"/>
-            <BoxContainer Orientation="Vertical" Margin="0 3 0 0">
+            <BoxContainer Name="AudioBox" Orientation="Vertical" Margin="0 3 0 0"> <!-- Corvax-TTS-Edit -->
                 <ui:OptionSlider Name="SliderVolumeMaster" Title="{Loc 'ui-options-master-volume'}"
                                  Margin="0 0 0 8" />
-                <!-- Corvax-TTS-Start --><ui:OptionSlider Name="SliderVolumeTts" Title="{Loc 'ui-options-tts-volume'}" /><!-- Corvax-TTS-End -->
                 <ui:OptionSlider Name="SliderVolumeMidi" Title="{Loc 'ui-options-midi-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeAmbientMusic" Title="{Loc 'ui-options-ambient-music-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeAmbience" Title="{Loc 'ui-options-ambience-volume'}" />

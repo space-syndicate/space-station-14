@@ -28,3 +28,7 @@ time = 180.0
 [hub]
 advertise = true
 tags = "lang:ru,rp:low,rp:med,region:eu_e,tts"
+
+[afk]
+time = 1800
+confirm_timeout = 300

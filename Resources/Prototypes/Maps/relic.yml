@@ -33,7 +33,6 @@
             #command (6)
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA
-            #service
             HeadOfPersonnel: [ 1, 1 ]
             HeadOfSecurity: [ 1, 1 ]
             ChiefMedicalOfficer: [ 1, 1 ]
@@ -44,8 +43,8 @@
             #engineering (4)
             AtmosphericTechnician: [ 2, 2 ]
             StationEngineer: [ 2, 2 ]
-            TechnicalAssistant: [ 2, 2 ]
-            #medical
+            TechnicalAssistant: [ 2, 2 ] #intern, not counted
+            #medical (4)
             Chemist: [ 1, 1 ]
             MedicalDoctor: [ 2, 2 ]
             Paramedic: [ 1, 1 ]

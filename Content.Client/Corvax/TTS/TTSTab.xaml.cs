@@ -8,7 +8,6 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 using Content.Client.Stylesheets;
-using Content.Shared.Humanoid;
 using System.Text.RegularExpressions;
 
 namespace Content.Client.Corvax.TTS;
@@ -95,9 +94,8 @@ public sealed partial class TTSTab : Control
         {
             var name = Loc.GetString(voice.Name).ToLowerInvariant();
 
-            if (string.IsNullOrEmpty(searchText) ||
-                name.Contains(searchText) ||
-                voice.ID.ToLowerInvariant().Contains(searchText))
+            if (string.IsNullOrEmpty(searchText) || name.Contains(searchText)
+                || voice.ID.ToLowerInvariant().Contains(searchText))
             {
                 _filteredVoices.Add(voice);
             }
@@ -124,11 +122,6 @@ public sealed partial class TTSTab : Control
                 StyleClasses = { StyleClass.ButtonOpenRight }
             };
 
-            if (voice.ID == _selectedVoiceId)
-            {
-                selectButton.AddStyleClass(StyleClass.Negative);
-            }
-
             selectButton.OnPressed += _ =>
             {
                 if (canSelectVoice)
@@ -149,6 +142,12 @@ public sealed partial class TTSTab : Control
             {
                 OnPreviewRequested?.Invoke(voice.ID);
             };
+
+            if (voice.ID == _selectedVoiceId)
+            {
+                selectButton.AddStyleClass(StyleClass.Negative);
+                previewButton.AddStyleClass(StyleClass.Negative);
+            }
 
             voiceContainer.AddChild(selectButton);
             voiceContainer.AddChild(previewButton);
@@ -180,7 +179,7 @@ public sealed partial class TTSTab : Control
         return sponsorsManager?.GetClientPrototypes().Contains(voice.ID) == true;
     }
 
-    public void UpdateControls(HumanoidCharacterProfile? profile, Sex sex)
+    public void UpdateControls(HumanoidCharacterProfile? profile, string voicePrototype)
     {
         if (profile == null)
             return;
@@ -189,7 +188,7 @@ public sealed partial class TTSTab : Control
 
         _allVoices = _prototypeManager
             .EnumeratePrototypes<TTSVoicePrototype>()
-            .Where(o => o.RoundStart && HumanoidCharacterProfile.CanHaveVoice(o, sex))
+            .Where(o => o.RoundStart && HumanoidCharacterProfile.CanHaveVoice(o, voicePrototype))
             .OrderBy(o => Loc.GetString(o.Name))
             .ToList();
 

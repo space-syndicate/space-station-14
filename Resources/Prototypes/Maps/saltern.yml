@@ -2,10 +2,8 @@
   id: Saltern
   mapName: 'Saltern'
   mapPath: /Maps/saltern.yml
-  # Corvax-start
   minPlayers: 0
-  maxPlayers: 25
-  # Corvax-end
+  maxPlayers: 35
   fallback: true
   stations:
     Saltern:
@@ -16,8 +14,6 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
-        - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
         - type: StationJobs
           availableJobs: # 45 jobs total w/o latejoins & interns, 62 jobs total w/ latejoins & interns
             #command (7)

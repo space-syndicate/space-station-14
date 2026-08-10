@@ -178,3 +178,5 @@ ent-ClothingHeadPropellerHat = кепка с пропеллером
     .desc = Ты самый лучший мальчик.
 ent-ClothingHeadHatMitreClown = митра Хонкоматери
     .desc = Прихожанам трудно разглядеть банановую кожуру на полу, когда они смотрят на вашу великолепную шляпу.
+ent-ClothingHeadHatTramDriver = шляпа водителя трамвая
+    .desc = Пахнет уверенностью.
