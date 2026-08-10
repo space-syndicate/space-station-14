@@ -2,9 +2,9 @@ plant-hoe-component-already-seeded-popup = Вы пропалываете { $name
 plant-hoe-component-remove-weeds-others-popup = { $otherName } начинает пропалывать сорняки.
 plant-hoe-component-no-weeds-popup = На этом участке нет сорняков! Его не нужно пропалывать.
 
-plant-shovel-component-remove-plant-popup = Вы удаляете растение из { $name }.
-plant-shovel-component-remove-plant-others-popup = { $name } удаляет растение.
-plant-shovel-component-no-plant-popup = Отсутствует растение для удаления.
+plant-shovel-component-remove-plant-popup = Вы выкапываете растение из { $name }.
+plant-shovel-component-remove-plant-others-popup = { $name } выкапывает растение.
+plant-shovel-component-no-plant-popup = Здесь нет растения.
 
 plant-sample-component-early-sample-popup = Растение ещё не выросло настолько, чтобы извлечь семена.
 plant-sample-component-already-sampled-popup = Из этого растения уже извлекли семена.

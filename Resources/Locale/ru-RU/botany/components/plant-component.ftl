@@ -7,8 +7,8 @@ plant-component-plant-old-adjective = [color=red]старым и увядшим[
 plant-component-plant-unhealthy-adjective = [color=red]нездоровым[/color]
 plant-component-dead-plant-matter-message = Он заполнен [color=red]мёртвыми растениями[/color].
 
-plant-component-light-improper-warning = Мигает [color=yellow]предупреждение о неподходящем уровне освещения[/color].
-plant-component-heat-improper-warning = Мигает [color=orange]предупреждение о неподходящем уровне температуры[/color].
+plant-component-light-improper-warning = Мигает [color=yellow]предупреждение о неподходящем освещении[/color].
+plant-component-heat-improper-warning = Мигает [color=orange]предупреждение о неподходящей температуре[/color].
 plant-component-pressure-improper-warning = Мигает [color=lightblue]предупреждение о неподходящем атмосферном давлении[/color].
-plant-component-gas-missing-warning = Мигает [color=cyan]предупреждение о неподходящем атмосферном составе[/color].
+plant-component-gas-missing-warning = Мигает [color=cyan]предупреждение о неподходящем составе атмосферы[/color].
 plant-component-ligneous-cant-harvest-message = Растение слишком прочное, чтобы собрать его голыми руками.
