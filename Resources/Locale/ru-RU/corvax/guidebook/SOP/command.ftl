@@ -229,7 +229,6 @@ guidebook-SOP-command-procedure-accesses =
 
 ## Причины отстранения от должности
 guidebook-SOP-command-procedure-reasons-for-removal =
-    1. Совершение преступления особо тяжкого уровня и выше.
     1. Многочисленные незначительные нарушения СРП.
     1. Серьёзное нарушение СРП.
     1. Нахождение на рабочем месте в пьяном виде.
@@ -240,6 +239,7 @@ guidebook-SOP-command-procedure-reasons-for-removal =
     1. [tooltip="guidebook-SOP-command-tooltip-toxic-environment" text="Создание токсичной среды на рабочем месте"].
     1. [tooltip="guidebook-SOP-command-tooltip-abuse-of-power" text="Злоупотребление полномочиями"].
     1. Уход с должности по собственному желанию.
+    1. Иные причины, предусмотренные пунктами СРП.
 
 ## Протокол эвакуации
 guidebook-SOP-command-protocol-evacuation =
