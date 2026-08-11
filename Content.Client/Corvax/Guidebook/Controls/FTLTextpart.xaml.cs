@@ -14,9 +14,9 @@ namespace Content.Client.Corvax.Guidebook.Controls;
 [GenerateTypedNameReferences]
 public sealed partial class FTLTextpart : RichTextLabel, IDocumentTag
 {
-    [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly ILocalizationManager _loc = default!;
-    [Dependency] private readonly DocumentParsingManager _documentParsingManager = default!;
+    [Dependency] private ILogManager _logManager = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
+    [Dependency] private DocumentParsingManager _documentParsingManager = default!;
 
     private readonly ISawmill _sawmill;
 

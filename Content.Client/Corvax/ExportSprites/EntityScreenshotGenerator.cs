@@ -22,21 +22,20 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Corvax.ExportSprites;
 
-public sealed class EntityScreenshotGenerator
+public sealed partial class EntityScreenshotGenerator
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IBaseClient _baseClient = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
-    [Dependency] private readonly EntityScreenshotRenderService _renderService = default!;
-    [Dependency] private readonly IGameController _gameController = default!;
-    [Dependency] private readonly IClientGameTiming _gameTiming = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IResourceManager _resourceManager = default!;
-    [Dependency] private readonly ISerializationManager _serialization = default!;
-    [Dependency] private readonly IStateManager _stateManager = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IBaseClient _baseClient = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IEntitySystemManager _entitySystemManager = default!;
+    [Dependency] private EntityScreenshotRenderService _renderService = default!;
+    [Dependency] private IGameController _gameController = default!;
+    [Dependency] private IClientGameTiming _gameTiming = default!;
+    [Dependency] private ILogManager _logManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IResourceManager _resourceManager = default!;
+    [Dependency] private ISerializationManager _serialization = default!;
+    [Dependency] private IStateManager _stateManager = default!;
 
     private ISawmill _sawmill = default!;
     private bool _started;
@@ -132,7 +131,7 @@ public sealed class EntityScreenshotGenerator
                 .OrderBy(proto => proto.ID)
                 .ToList();
             var previewMap = mapSystem.CreateMap(out var mapId);
-            var previewGrid = _mapManager.CreateGridEntity(mapId);
+            var previewGrid = mapSystem.CreateGridEntity(mapId);
 
             if (!_resourceManager.UserData.IsDir(outputDir))
                 _resourceManager.UserData.CreateDir(outputDir);
@@ -288,10 +287,10 @@ public sealed class EntityScreenshotGenerator
     {
         icon = null;
 
-        foreach (var (_, entry) in prototype.Components)
+        if (prototype.TryGetComponent(out IconComponent? iconComp, _entityManager.ComponentFactory))
         {
-            if (TryExtractSpriteSpecifier(entry.Component.GetType(), entry.Mapping, out icon))
-                return true;
+            icon = iconComp.Icon;
+            return true;
         }
 
         return false;

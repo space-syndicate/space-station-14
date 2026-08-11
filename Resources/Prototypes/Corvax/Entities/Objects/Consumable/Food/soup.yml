@@ -18,9 +18,8 @@
       layers:
         - state: bowl
         - state: pelmeni
-    - type: SolutionContainerManager
-      solutions:
-        food:
+    - type: Solution
+      solution:
           maxVol: 30
           reagents:
             - ReagentId: Nutriment

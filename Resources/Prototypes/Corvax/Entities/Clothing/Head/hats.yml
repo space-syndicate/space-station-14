@@ -96,3 +96,14 @@
     sprite: Corvax/Clothing/Head/Hats/beret_pilot.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Head/Hats/beret_pilot.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatPwigFancy
+  name: fancy pwig
+  description: To be honest, those look ridiculous.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/Hats/true_wig.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/Hats/true_wig.rsi

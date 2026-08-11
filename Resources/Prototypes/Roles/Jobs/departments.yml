@@ -30,6 +30,7 @@
   - Reporter
   - Visitor
   - ServiceWorker
+  - TramDriver
 
 - type: department
   id: CentralCommand
@@ -56,7 +57,6 @@
   color: "#334E6D"
   roles:
   - Captain
-  - IAA # Corvax-IAA
   - ChiefEngineer
   - ChiefMedicalOfficer
   - HeadOfPersonnel
@@ -146,5 +146,6 @@
   roles:
   - Reporter
   - Psychologist
+  - TramDriver
   - Pilot # Corvax-Pilot
   primary: false

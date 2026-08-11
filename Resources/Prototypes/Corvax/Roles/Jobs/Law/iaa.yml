@@ -1,0 +1,56 @@
+- type: job
+  id: IAA
+  name: job-name-iaa
+  description: job-description-iaa
+  playTimeTracker: JobIAA
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 20h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 10h
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Muted
+  startingGear: IAAGear
+  icon: "JobIconIAA"
+  supervisors: job-supervisors-centcom
+  access:
+  - Service
+  - Brig
+  - Maintenance
+  - Command
+  - External
+  - Lawyer
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: IAAGear
+  equipment:
+    shoes: ClothingShoesColorBlack
+    id: IAAPDA
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetIAA
+    pocket1: RubberStampIAA
+    pocket2: BookSpaceLaw
+  storage:
+    back:
+    - Flash
+  inhand:
+    - BriefcaseIAAFilled
+
+- type: chameleonOutfit
+  id: IAAChameleonOutfit
+  job: IAA
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBowlerHat
+    eyes: ClothingEyesGlassesSunglasses
+    outerClothing: ClothingUniformJumpsuitLawyerBlack
+    neck: ClothingNeckScarfStripedBlue
+    gloves: ClothingHandsGlovesColorWhite
+    mask: ClothingMaskBreath

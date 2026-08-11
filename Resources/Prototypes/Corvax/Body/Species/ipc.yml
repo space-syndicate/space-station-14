@@ -86,8 +86,9 @@
   name: Urist McHands
   components:
   - type: Damageable
-    damageContainer: SiliconIpc
     damageModifierSet: Ipc
+  - type: Injurable
+    damageContainer: SiliconIpc
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
@@ -103,10 +104,7 @@
     speechSounds: Alto
   - type: ZombieImmune
   - type: Vocal
-    sounds:
-      Male: MaleIpc
-      Female: FemaleIpc
-      Unsexed: MaleIpc
+    emoteSounds: UnisexIpc
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -146,7 +144,7 @@
     messagePerceivedByOthers: hugging-success-generic-others
   - type: BodyEmotes
     soundsId: IpcEmotes
-    ############################# это работает?
+###
   - type: ItemTogglePointLight
   - type: ToggleableVisuals
     spriteLayer: light
@@ -177,7 +175,7 @@
       startValue: 0.1
       endValue: 2.0
       isLooped: true
-    #############################
+###
   - type: TypingIndicator
     proto: robot
   - type: PowerCellSlot
@@ -217,7 +215,6 @@
     interval: 30
     popUp: sleep-ipc
   - type: Butcherable
-    butcheringType: Spike
     spawned:
       - id: OrganIpcHead
         amount: 1
@@ -231,7 +228,6 @@
       Critical: BorgCrit
       Dead: BorgDead
   - type: Fingerprint
-  - type: Blindable
   - type: Tag
     tags:
     - CanPilot
@@ -239,13 +235,11 @@
     - DoorBumpOpener
     - AnomalyHost
     - Ipc
-  ############ хз зачем было
+###
   - type: Temperature
-    currentTemperature: 310.15
-    specificHeat: 42
   - type: TemperatureDamage
     heatDamageThreshold: 325
-    coldDamageThreshold: 260
+    coldDamageThreshold: 273.15
     coldDamage:
       types:
         Cold: 0 #per second, scales with temperature & other constants
@@ -340,7 +334,9 @@
       map: ["base"]
 
 - type: entity
-  parent: [ OrganBase ]
+  parent:
+  - OrganBase
+  - OrganBaseChildInternal
   id: OrganIPCEyes
   components:
   - type: Sprite

@@ -145,3 +145,5 @@ ent-SpawnPointBoxer = боксёр
     .desc = { ent-SpawnPointJobBase.desc }
 ent-SpawnPointZookeeper = зоотехник
     .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointTramDriver = водитель трамвая
+    .desc = { ent-SpawnPointJobBase.desc }

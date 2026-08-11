@@ -24,7 +24,6 @@
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - HeadOfSecurity
   - Command
@@ -62,5 +61,6 @@
   job: HeadOfSecurity
   hasMindShield: true
   equipment:
+    head: ClothingHeadHatBeretHoS
     mask: ClothingMaskGasSecurity
     neck: ClothingNeckCloakHos

@@ -1,60 +1,60 @@
 ﻿<Document>
-  # Inspecting Power
-  Engineers can inspect a power network to see useful statistics about it.
-  This can help engineers diagnose power issues and find root causes to problems.
+  # Проверка электропитания
+  Инженеры могут осмотреть энергосеть, чтобы получить полезную статистику о ней.
+  Это может помочь инженерам диагностировать проблемы с электропитанием и выявлять первопричины неполадок.
 
-  ## Power Monitoring Computer
-  The Power Monitoring Computer is a device that can be used to inspect all the power networks on the station.
+  ## Консоль контроля питания
+  Консоль контроля питания, это устройство, которое можно использовать для проверки всех электросетей на станции.
 
   <Box>
     <GuideEntityEmbed Entity="ComputerPowerMonitoring"/>
   </Box>
 
-  The Power Monitoring Computer has two major sections, a station map and the power statistics.
+  Консоль контроля питания состоит из двух основных разделов: карты станции и статистики потребления электроэнергии.
 
-  The station map shows:
-  - The station layout, with [color=green]low[/color], [color=yellow]medium[/color], and [color=orange]high[/color] [textlink="voltage networks" link="VoltageNetworks"] highlighted.
-  - [textlink="All APCs, SMES, and substations." link="VoltageNetworks"]
-  - All power [textlink="producers" link="Generators"] connected to the station (note that they don't have to be connected to a power network to be shown).
+  Карта станции показывает:
+  - Схему станции с выделеными сетями [color=green]низкого[/color], [color=yellow]среднего[/color], и [color=orange]высокого[/color] [textlink="напряжения" link="VoltageNetworks"].
+  - [textlink="Все ЛКП, СМЭСы и подстанции." link="VoltageNetworks"]
+  - Все [textlink="генераторы" link="Generators"], подключенные к станции (обратите внимание, что для отображения они не обязательно должны быть подключены к электросети).
 
-  The power statistics show:
-  - The total [textlink="generator" link="Generators"] output, which is what the generators are currently producing to match grid demand.
-  - The total [textlink="battery" link="PowerStorage"] usage, which is the amount of power being drawn from batteries. Grids completely powered by generators will show low battery usage.
-  - The total network loads, which is the amount of power being requested by the station.
+  Статистика потребления электроэнергии показывает:
+  - Общая выработка [textlink="генераторов" link="Generators"], то есть то, что генераторы производят в настоящий момент для удовлетворения спроса в сети.
+  - Общее использование [textlink="батарей" link="PowerStorage"], то есть количество энергии, потребляемой от батарей. В сетях, полностью работающих на генераторах, будет наблюдаться низкое потребление энергии от батарей.
+  - Общая нагрузка сети, то есть количество электроэнергии, запрашиваемое станцией.
 
-  In an ideal situation, the total generator output should match the total network load, and the total battery usage should be low.
-  Using these three statistics, engineers can get an accurate picture of the station's power situation.
-  For example:
-  - If the total generator output is lower than the total network load, the station is in a power deficit.
-  - If the total battery usage is high, the station is drawing power from batteries to make up the difference.
-  - If it is zero with the generator load below the total network load, then the station is actively in a brownout, as the batteries are fully discharged.
-  - If the total generator output is higher than the total network load, the SMESes are charging.
+  В идеальной ситуации суммарная выработка генераторов должна соответствовать общей нагрузке сети, а общее потребление энергии от батареи должно быть низким.
+  Используя эти три статистических показателя, инженеры могут получить точное представление о ситуации с электроснабжением станции
+  Например:
+  - Если суммарная выработка генератора ниже суммарной нагрузки сети, станция испытывает дефицит мощности.
+  - Если общее потребление энергии батареями велико, станция использует энергию батарей для компенсации разницы.
+  - Если значение равно нулю, а нагрузка генератора ниже общей нагрузки сети, то станция находится в режиме активного пониженного напряжения, поскольку батареи полностью разряжены.
+  - Если суммарная выработка генераторами превышает суммарную нагрузку сети, происходит зарядка СМЭСов.
 
-  ## Device Tabs
-  The Power Monitoring Computer has tabs for each device category on the station.
-  Navigating these power tabs will show the power statistics for each device category.
-  For example:
-  - Clicking on a source will show what that source is supplying the power to, and how much power it is supplying. It will also highlight the devices that are connected to that source.
-  - Clicking on an SMES, Substation, or APC will show the two power grids it is connected to, how much power it is receiving, and how much power it is distributing, as well as the exact devices that are making an exchange with the target device.
+  ## Вкладки устройств
+  Консоль контроля питания имеет вкладки для каждой категории устройств на станции.
+  При переходе по этим вкладкам, отобразится статистика энергопотребления для каждой категории устройств.
+  Например:
+  - При нажатии на источник питания отобразится, чему именно он подает питание и какую мощность. Также будут выделены устройства, подключенные к этому источнику.
+  - При нажатии на СМЖС, подстанцию ​​или ЛКП отобразятся две энергосети, к которым она подключена, объем получаемой и распределяемой электроэнергии, а также точные устройства, осуществляющие обмен с целевым устройством.
 
-  ## Inspecting via Multitool
-  The Multitool can be used to inspect power cables to see their power statistics.
+  ## Проверка с помощью мультитула
+  Мультитул можно использовать для осмотра силовых кабелей, чтобы узнать их характеристики мощности.
 
   <Box>
     <GuideEntityEmbed Entity="Multitool"/>
   </Box>
 
-  When you click on a cable with the Multitool, it will show the cable's power statistics. This includes:
-  - The current supply, which is the amount of power the source is providing.
-  - The current supply from batteries, which is the amount of power being drawn from batteries.
-  - The theoretical supply, which is the maximum amount of power the source could provide if demanded.
-  - The ideal consumption, which is the current demand on the cable.
-  - The input storage, which is the capacity of batteries that are currently charging.
-  - The output storage, which is the capacity of batteries that are currently discharging.
+  При нажатии на кабель с помощью мультитула отобразятся статистические данные о его питании. В частности, это включает в себя:
+  - Источник тока, то есть количество энергии, которое выдает источник.
+  - От батарей, то есть количество энергии, извлекаемой из батарей.
+  - Теоретическое снабжение, то есть максимальное количество энергии, которое источник может обеспечить при наличии спроса.
+  - Идеальное потребление, то есть текущая потребность в кабеле.
+  - Входной запас, который представляет собой емкость батарей источников.
+  - Выходной запас, который представляет собой емкость батарей потребителей.
 
-  Note that this information is relevant only to the voltage network you inspected.
-  A [color=green]low voltage[/color] cable (which likely only services a few rooms) will not show the same statistics as a [color=orange]high voltage[/color] cable (which services the entire station).
+  Обратите внимание, что эта информация относится только к той сети напряжения, которую вы осматривали.
+  [color=green]Низковольтный[/color] кабель (который, вероятно, обслуживает лишь несколько помещений) не покажет тех же статистических данных, что и [color=orange]высоковольтный[/color] кабель (который обслуживает всю станцию).
 
-  This is useful information to keep in mind, as it can help you troubleshoot why "this room is powered, but this one isn't!"
+  Эту информацию полезно иметь в виду, так как она может помочь вам разобраться, почему "в этой комнате есть электричество, а в этой нет!".
 
 </Document>

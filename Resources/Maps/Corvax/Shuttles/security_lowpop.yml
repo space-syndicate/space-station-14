@@ -437,19 +437,16 @@ entities:
   - uid: 29
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 0.5,4.5
       parent: 1
   - uid: 30
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 1.5,3.5
       parent: 1
   - uid: 31
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -0.5,3.5
       parent: 1
   - uid: 32

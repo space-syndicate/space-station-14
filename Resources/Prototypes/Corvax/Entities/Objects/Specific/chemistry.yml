@@ -4,11 +4,9 @@
   id: OpporozidoneBeakerSmall
   components:
   - type: Label
-    currentLabel: reagent-name-opporozidone
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        maxVol: 50
+    localizedLabel: reagent-name-opporozidone
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: Opporozidone
-          Quantity: 50
+          Quantity: 60

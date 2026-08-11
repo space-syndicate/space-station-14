@@ -162,6 +162,10 @@ stack-artifact-fragment = { $amount ->
     [few] фрагмента
     *[other] фрагментов
 } артефакта
+stack-conveyor-belt = { $amount ->
+    [1] конвейерная лента
+    *[other] конвейерные ленты
+}
 
 # best materials
 stack-ground-tobacco = { $amount ->

@@ -25,7 +25,6 @@
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - Medical
   - Command

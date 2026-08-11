@@ -39,6 +39,7 @@ ui-options-restart-sounds = Звуки перезапуска раунда
 ui-options-event-music = Музыка событий
 ui-options-admin-sounds = Музыка админов
 ui-options-bwoink-sound = Звук уведомления Ахелпа
+ui-options-audio-hrtf = Включить HRTF (пространственный звук, требуется перезапуск)
 ui-options-volume-label = Громкость
 
 ## Graphics menu
@@ -59,6 +60,7 @@ ui-options-show-ooc-patron-color = Цветной ник в OOC для патр�
 ui-options-show-looc-on-head = Показывать LOOC-чат над головами персонажей
 ui-options-fancy-speech = Показывать имена в облачках с текстом
 ui-options-fancy-name-background = Добавить фон облачкам с текстом
+ui-options-chat-follow-button = Будучи призраком, показывать кнопку наблюдения рядом с сообщениями чата
 ui-options-vsync = Вертикальная синхронизация
 ui-options-fullscreen = Полный экран
 ui-options-lighting-label = Качество освещения:
@@ -105,6 +107,7 @@ ui-options-ambient-occlusion = Отображать окружающее зат�
 ui-options-fps-counter = Показать счётчик FPS
 ui-options-vp-width = Ширина окна игры:
 ui-options-hud-layout = Тип HUD:
+ui-options-sharpness = Резкость:
 
 ## Controls menu
 
@@ -360,12 +363,35 @@ cmd-options-help = Использование: options [tab]
 
 ## Accessibility menu
 
-ui-options-accessability-header-visuals = Изображение
-ui-options-accessability-header-content = Содержимое
+ui-options-accessibility-header-reduced-motion = Уменьшенное движение
+ui-options-accessibility-header-visuals = Изображение
+ui-options-accessibility-header-content = Содержимое
 
 ui-options-enable-color-name = Цветные имена персонажей
 ui-options-colorblind-friendly = Режим для дальтоников
+
 ui-options-reduced-motion = Снижение интенсивности визуальных эффектов
+ui-options-reduced-motion-tooltip = Включите эту опцию, чтобы отображать альтернативные текстуры с уменьшенным движением для некоторых предметов.
+
+# accessibility option tooltips taken from CVar summary blocks.
+
+ui-options-disable-ai-static = Статический эффект на ИИ
+ui-options-disable-ai-static-tooltip = Заменяет эффект статического шума ИИ на простой градиент.
+ui-options-disable-blurry-vision = Нечеткое зрение
+ui-options-disable-blurry-vision-tooltip = Заменяет движение в размытом шейдере статическим эффектом.
+ui-options-disable-drunk-overlay = Опьянение
+ui-options-disable-drunk-overlay-tooltip = Заменяет движение пьяного состояния статическим смещением.
+ui-options-disable-flash-effect = Вспышка
+ui-options-disable-flash-effect-tooltip = Заменяет эффект вспышки на эквивалент с меньшим движением.
+ui-options-disable-heat-distortion = Тепловая деформация
+ui-options-disable-heat-distortion-tooltip = Уменьшает движение эффекта тепловой деформации.
+ui-options-disable-nv-noise = Ночное зрение
+ui-options-disable-nv-noise-tooltip = Отключает эффект шума на фильтре ночного видения.
+ui-options-disable-rainbow-overlay = Радужное наложение
+ui-options-disable-rainbow-overlay-tooltip = Заменяет движение в шейдере радужного фильтра статическим смещением.
+ui-options-disable-singulo-warp = Сингулярность
+ui-options-disable-singulo-warp-tooltip = Отключает эффект искажения изображения от сингулярности.
+
 ui-options-screen-shake-intensity = Интенсивность дрожания экрана
 
 ui-options-chat-window-opacity = Непрозрачность окна чата
@@ -379,37 +405,40 @@ ui-options-censor-nudity = Цензура обнажённых персонаж�
 
 ui-options-admin-player-panel = Список персонажей в админ меню
 
-ui-options-admin-player-tab-symbol-setting = Character column antag symbols
-ui-options-admin-player-tab-symbol-setting-off = No antag symbol
-ui-options-admin-player-tab-symbol-setting-basic = Show standard antag symbol
-ui-options-admin-player-tab-symbol-setting-specific = Show specific antag symbol
+ui-options-admin-player-tab-symbol-setting = Символ антага в колонке персонажей
+ui-options-admin-player-tab-symbol-setting-off = Без антаг символов
+ui-options-admin-player-tab-symbol-setting-basic = Показывать стандартные символы антагов
+ui-options-admin-player-tab-symbol-setting-specific = Показывать определённые символы антагов
 
-ui-options-admin-player-tab-role-setting = Role display settings
-ui-options-admin-player-tab-role-setting-roletype = Show role type
-ui-options-admin-player-tab-role-setting-subtype = Show subtype
-ui-options-admin-player-tab-role-setting-roletypesubtype = Show role type and subtype
-ui-options-admin-player-tab-role-setting-subtyperoletype = Show subtype and role type
+ui-options-admin-player-tab-role-setting = Настройки отображения ролей
+ui-options-admin-player-tab-role-setting-roletype = Показывать тип роли
+ui-options-admin-player-tab-role-setting-subtype = Показывать подтип
+ui-options-admin-player-tab-role-setting-roletypesubtype = Показывать тип роли и подтип
+ui-options-admin-player-tab-role-setting-subtyperoletype = Показывать подтип и тип роли
 
-ui-options-admin-player-tab-color-setting = Color settings
-ui-options-admin-player-tab-color-setting-off = I hate colors
-ui-options-admin-player-tab-color-setting-character = Colorize antag character names
-ui-options-admin-player-tab-color-setting-roletype = Colorize all role types
-ui-options-admin-player-tab-color-setting-both = Colorize both
+ui-options-admin-player-tab-color-setting = Настройки цвета
+ui-options-admin-player-tab-color-setting-off = Я ненавижу цвета (отключить)
+ui-options-admin-player-tab-color-setting-character = Окрашивать имена персонажей антагов
+ui-options-admin-player-tab-color-setting-roletype = Окрашивать все типы ролей
+ui-options-admin-player-tab-color-setting-both = Окрашивать типы ролей и антагов
 
 ui-options-admin-overlay-title = Админ оверлей
 
-ui-options-admin-overlay-antag-format = Antag label style
-ui-options-admin-overlay-antag-format-binary = Show antag status
-ui-options-admin-overlay-antag-format-roletype = Show role type
-ui-options-admin-overlay-antag-format-subtype = Show subtype
+ui-options-admin-overlay-antag-format = Стиль надписи антагов
+ui-options-admin-overlay-antag-format-binary = Отображать антагов
+ui-options-admin-overlay-antag-format-roletype = Отображать тип роли
+ui-options-admin-overlay-antag-format-subtype = Отображать подтип
 
-ui-options-admin-overlay-antag-symbol = Antag symbol style
-ui-options-admin-overlay-antag-symbol-off = No antag symbol
-ui-options-admin-overlay-antag-symbol-basic = Show standard antag symbol
-ui-options-admin-overlay-antag-symbol-specific = Show specific antag symbol
+ui-options-admin-overlay-antag-symbol = Стиль символа антагов
+ui-options-admin-overlay-antag-symbol-off = Без антаг символов
+ui-options-admin-overlay-antag-symbol-basic = Отображать стандартные символы антагов
+ui-options-admin-overlay-antag-symbol-specific = Отображать определённые символы антагов
 
-ui-options-admin-enable-overlay-playtime = Show playtime
-ui-options-admin-enable-overlay-starting-job = Show starting job
-ui-options-admin-overlay-merge-distance = Stack merge distance
-ui-options-admin-overlay-ghost-fade-distance = Ghost overlay fade range from mouse
-ui-options-admin-overlay-ghost-hide-distance = Ghost overlay hide range from mouse
+ui-options-admin-enable-overlay-playtime = Отображать игровое время
+ui-options-admin-enable-overlay-starting-job = Отображать стартовую должность
+ui-options-admin-overlay-merge-distance = Дистанция группировки оверлеев
+ui-options-admin-overlay-ghost-fade-distance = Расстояние от курсора до плавного исчезновения админ оверлея.
+ui-options-admin-overlay-ghost-hide-distance = Расстояние от курсора до скрытия админ оверлея.
+
+ui-options-admin-strip-overlay-title = Оверлей обыска
+ui-options-admin-strip-overlay-setting = Показывать админ-вид обыска по умолчанию

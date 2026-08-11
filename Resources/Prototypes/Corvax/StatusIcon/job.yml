@@ -1,0 +1,23 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconIAA
+  icon:
+    sprite: /Textures/Corvax/Interface/Misc/job_icons.rsi
+    state: IAA
+  jobName: job-name-iaa
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconPilot
+  icon:
+    sprite: /Textures/Corvax/Interface/Misc/job_icons.rsi
+    state: Pilot
+  jobName: job-name-pilot
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMagistrate
+  icon:
+    sprite: /Textures/Corvax/Interface/Misc/job_icons.rsi
+    state: Magistrate
+  jobName: job-name-magistrate

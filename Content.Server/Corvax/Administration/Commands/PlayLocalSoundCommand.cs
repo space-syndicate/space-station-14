@@ -11,11 +11,11 @@ using Robust.Shared.Prototypes;
 namespace Content.Server.Corvax.Administration.Commands;
 
 [AdminCommand(AdminFlags.Fun)]
-public sealed class PlayLocalSoundCommand : IConsoleCommand
+public sealed partial class PlayLocalSoundCommand : IConsoleCommand
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly IResourceManager _res = default!;
+    [Dependency] private IEntityManager _entManager = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
+    [Dependency] private IResourceManager _res = default!;
 
     public string Command => "playlocalsound";
     public string Description => Loc.GetString("play-local-sound-command-description");

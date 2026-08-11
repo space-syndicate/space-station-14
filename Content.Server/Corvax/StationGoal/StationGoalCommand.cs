@@ -8,10 +8,10 @@ using Robust.Shared.Prototypes;
 namespace Content.Server.Corvax.StationGoal
 {
     [AdminCommand(AdminFlags.Fun)]
-    public sealed class StationGoalCommand : IConsoleCommand
+    public sealed partial class StationGoalCommand : IConsoleCommand
     {
-        [Dependency] private readonly IEntityManager _entManager = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private IEntityManager _entManager = default!;
+        [Dependency] private IPrototypeManager _prototypeManager = default!;
 
         public string Command => "sendstationgoal";
         public string Description => Loc.GetString("send-station-goal-command-description");

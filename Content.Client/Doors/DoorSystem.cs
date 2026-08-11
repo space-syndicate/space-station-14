@@ -3,16 +3,13 @@ using Content.Shared.Doors.Systems;
 using Content.Shared.SprayPainter.Prototypes;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
-using Robust.Shared.Prototypes;
 
 namespace Content.Client.Doors;
 
-public sealed class DoorSystem : SharedDoorSystem
+public sealed partial class DoorSystem : SharedDoorSystem
 {
-    [Dependency] private readonly AnimationPlayerSystem _animationSystem = default!;
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private AnimationPlayerSystem _animationSystem = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -81,7 +78,10 @@ public sealed class DoorSystem : SharedDoorSystem
 
     private void OnAnimationCompleted(Entity<DoorComponent> ent, ref AnimationCompletedEvent args)
     {
-        if (args.Key != DoorComponent.OpenCloseKey || !TryComp<SpriteComponent>(ent, out var sprite))
+        if (args.Key != DoorComponent.OpenKey && args.Key != DoorComponent.CloseKey)
+            return;
+
+        if (!TryComp<SpriteComponent>(ent, out var sprite))
             return;
 
         switch (ent.Comp.State)
@@ -130,8 +130,14 @@ public sealed class DoorSystem : SharedDoorSystem
         switch (state)
         {
             case DoorState.Open:
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenCloseKey))
+                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenKey))
                     return;
+
+                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.CloseKey))
+                {
+                    _animationSystem.Stop(entity, null, DoorComponent.CloseKey);
+                    _animationSystem.Play(entity, (Animation)entity.Comp.OpeningAnimation, DoorComponent.OpenKey);
+                }
 
                 foreach (var (layer, layerState) in entity.Comp.OpenSpriteStates)
                 {
@@ -143,8 +149,14 @@ public sealed class DoorSystem : SharedDoorSystem
 
                 return;
             case DoorState.Closed:
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenCloseKey))
+                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.CloseKey))
                     return;
+
+                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenKey))
+                {
+                    _animationSystem.Stop(entity, null, DoorComponent.OpenKey);
+                    _animationSystem.Play(entity, (Animation)entity.Comp.OpeningAnimation, DoorComponent.CloseKey);
+                }
 
                 foreach (var (layer, layerState) in entity.Comp.ClosedSpriteStates)
                 {
@@ -157,20 +169,20 @@ public sealed class DoorSystem : SharedDoorSystem
                 if (entity.Comp.OpeningAnimationTime == TimeSpan.Zero)
                     return;
 
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenCloseKey))
+                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenKey))
                     return;
 
-                _animationSystem.Play(entity, (Animation)entity.Comp.OpeningAnimation, DoorComponent.OpenCloseKey);
+                _animationSystem.Play(entity, (Animation)entity.Comp.OpeningAnimation, DoorComponent.OpenKey);
 
                 return;
             case DoorState.Closing:
                 if (entity.Comp.ClosingAnimationTime == TimeSpan.Zero)
                     return;
 
-                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenCloseKey))
+                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.CloseKey))
                     return;
 
-                _animationSystem.Play(entity, (Animation)entity.Comp.ClosingAnimation, DoorComponent.OpenCloseKey);
+                _animationSystem.Play(entity, (Animation)entity.Comp.ClosingAnimation, DoorComponent.CloseKey);
 
                 return;
             case DoorState.Denying:
@@ -194,10 +206,10 @@ public sealed class DoorSystem : SharedDoorSystem
 
     private void UpdateSpriteLayers(Entity<SpriteComponent> sprite, string targetProto)
     {
-        if (!_prototypeManager.Resolve(targetProto, out var target))
+        if (!ProtoMan.Resolve(targetProto, out var target))
             return;
 
-        if (!target.TryGetComponent(out SpriteComponent? targetSprite, _componentFactory))
+        if (!target.TryComp(out SpriteComponent? targetSprite, Factory))
             return;
 
         _sprite.SetBaseRsi(sprite.AsNullable(), targetSprite.BaseRSI);

@@ -1,23 +1,18 @@
-using System;
 using System.Numerics;
 using Content.Shared.Corvax.Ipc;
 using Content.Shared.Humanoid.Markings;
 using Content.Client.UserInterface.Controls;
 using Robust.Client.GameObjects;
-using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Corvax.Ipc;
 
-public sealed class IpcFaceMenu : FancyWindow
+public sealed partial class IpcFaceMenu : FancyWindow
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IEntityManager _entMan = default!;
     private readonly SpriteSystem _sprite;
 
     private readonly ItemList _list;

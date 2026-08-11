@@ -9,10 +9,9 @@
     state: hypo
   - type: Item
     sprite: Corvax/Objects/Specific/Medical/brigmedichypo.rsi
-  - type: SolutionContainerManager
-    solutions:
-      hypospray:
-        maxVol: 5
+  - type: Solution
+    solution:
+        maxVol: 10
   - type: UseDelay
     delay: 2.5
   - type: StaticPrice

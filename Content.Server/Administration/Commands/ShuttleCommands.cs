@@ -6,30 +6,48 @@ using Robust.Shared.Console;
 namespace Content.Server.Administration.Commands
 {
     [AdminCommand(AdminFlags.Round)]
-    public sealed class CallShuttleCommand : LocalizedEntityCommands
+    public sealed partial class CallShuttleCommand : LocalizedEntityCommands
     {
-        [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
+        [Dependency] private RoundEndSystem _roundEndSystem = default!;
 
         public override string Command => "callshuttle";
 
         public override void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            // ReSharper disable once ConvertIfStatementToSwitchStatement
-            if (args.Length == 1 && TimeSpan.TryParseExact(args[0], ContentLocalizationManager.TimeSpanMinutesFormats, LocalizationManager.DefaultCulture, out var timeSpan))
-                _roundEndSystem.RequestRoundEnd(timeSpan, shell.Player?.AttachedEntity, checkCooldown: false);
+            bool cantRecall = false; //Corvax-Start
 
-            else if (args.Length == 1)
+            // ReSharper disable once ConvertIfStatementToSwitchStatement
+            if (args.Length >= 1 && TimeSpan.TryParseExact(args[0], ContentLocalizationManager.TimeSpanMinutesFormats, LocalizationManager.DefaultCulture, out var timeSpan))
+            {
+                if (args.Length >= 2 && !bool.TryParse(args[1], out cantRecall))
+                    return;
+            
+                _roundEndSystem.RequestRoundEnd(timeSpan, shell.Player?.AttachedEntity, checkCooldown: false, cantRecall: cantRecall);
+            }
+
+            else if (args.Length >= 1) // Corvax-End
                 shell.WriteLine(Loc.GetString("shell-timespan-minutes-must-be-correct"));
 
             else
                 _roundEndSystem.RequestRoundEnd(shell.Player?.AttachedEntity, checkCooldown: false);
         }
+
+        // Corvax-Start
+        public override CompletionResult GetCompletion(IConsoleShell shell, string[] args) 
+        {
+            return args.Length switch
+            {
+                2 => CompletionResult.FromHintOptions(["false", "true"], Loc.GetString("[bool]")),
+                _ => CompletionResult.Empty,
+            };
+        }
+        // Corvax-End
     }
 
     [AdminCommand(AdminFlags.Round)]
-    public sealed class RecallShuttleCommand : LocalizedEntityCommands
+    public sealed partial class RecallShuttleCommand : LocalizedEntityCommands
     {
-        [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
+        [Dependency] private RoundEndSystem _roundEndSystem = default!;
 
         public override string Command => "recallshuttle";
 

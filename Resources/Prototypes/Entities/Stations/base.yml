@@ -40,12 +40,6 @@
     - type: StationArrivals
 
 - type: entity
-  id: BaseStationGateway
-  abstract: true
-  components:
-    - type: GatewayGenerator
-
-- type: entity
   id: BaseStationShuttles
   abstract: true
   components:
@@ -119,7 +113,7 @@
         # Corvax-Mapping-Start
         mining: !type:GridSpawnGroup
           paths:
-          - /Maps/Corvax/Shuttles/Venture.yml
+          - /Maps/Corvax/Shuttles/Tara NT-KA.yml
         # Corvax-Mapping-End
 
 - type: entity
@@ -134,13 +128,6 @@
   abstract: true
   components:
     - type: StationEmergencyShuttle
-
-- type: entity
-  id: BaseStationAlertLevels
-  abstract: true
-  components:
-    - type: AlertLevel
-      alertLevelPrototype: stationAlerts
 
 - type: entity
   id: BaseStationExpeditions

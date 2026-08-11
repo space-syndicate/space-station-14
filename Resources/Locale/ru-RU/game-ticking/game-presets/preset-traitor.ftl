@@ -4,7 +4,7 @@ traitor-round-end-codewords = Кодовыми словами были: [color=W
 traitor-round-end-agent-name = предатель
 
 objective-issuer-syndicate = [color=crimson]Синдикат[/color]
-objective-issuer-unknown = Неизвестно
+objective-issuer-unknown = [color=white]Неизвестно[/color]
 
 # Shown at the end of a round of Traitor
 

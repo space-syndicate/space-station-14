@@ -12,13 +12,14 @@ using Robust.Shared.Input;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Corvax.Interfaces.Shared; // Corvax-Sponsors
+using static Content.Client.Corvax.SponsorOnlyHelpers; // Corvax-Sponsors
 
 namespace Content.Client.Humanoid;
 
 [GenerateTypedNameReferences]
 public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
 {
-    [Dependency] private readonly IEntityManager _entity = default!;
+    [Dependency] private IEntityManager _entity = default!;
     private ISharedSponsorsManager? _sponsorsManager; // Corvax-Sponsors
 
     private readonly SpriteSystem _sprite;
@@ -96,7 +97,12 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
         // Corvax-Sponsors-Start
         if (_markingPrototype.SponsorOnly && _sponsorsManager != null && _interactive)
         {
-            SelectButton.Disabled = !_sponsorsManager.GetClientPrototypes().Contains(_markingPrototype.ID);
+            var hasAccess = _sponsorsManager?.GetClientPrototypes().Contains(_markingPrototype.ID) ?? false;
+            if (!hasAccess)
+            {
+                SelectButton.Disabled = true;
+                SelectButton.Text += GetSponsorOnlySuffix(_markingPrototype.ID);
+            }
         }
         // Corvax-Sponsors-End
     }

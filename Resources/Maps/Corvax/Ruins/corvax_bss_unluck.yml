@@ -1942,43 +1942,36 @@ entities:
   - uid: 168
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 15.5,-3.5
       parent: 1
   - uid: 169
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 14.5,-3.5
       parent: 1
   - uid: 170
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 7.5,2.5
       parent: 1
   - uid: 171
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 14.5,2.5
       parent: 1
   - uid: 173
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 7.5,-3.5
       parent: 1
   - uid: 174
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -0.5,-1.5
       parent: 1
   - uid: 175
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 1.5,0.5
       parent: 1
 - proto: GrilleBroken

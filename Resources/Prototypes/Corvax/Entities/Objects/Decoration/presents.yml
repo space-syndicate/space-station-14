@@ -10,6 +10,9 @@
   - type: Physics
     bodyType: Static
   - type: Damageable
+    damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

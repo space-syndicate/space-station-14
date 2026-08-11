@@ -22,3 +22,7 @@ strip-all-verb-get-data-text = Снять всё
 
 strippable-bound-user-interface-stripping-menu-title = Инвентарь { $ownerName }
 strippable-bound-user-interface-stripping-menu-ensnare-button = Ограничители ног
+strippable-bound-user-interface-stripping-menu-admin-button = Переключить Админ вид
+strippable-bound-user-interface-stripping-menu-admin-button-tooltip = Переключает Админ отображение контрабанды и хамелеон
+    Замок -> Контрабанда
+    "C" -> Хамелеон

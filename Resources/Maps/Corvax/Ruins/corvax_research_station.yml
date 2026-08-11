@@ -4632,19 +4632,16 @@ entities:
   - uid: 767
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 22.5,0.5
       parent: 1
   - uid: 768
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 21.5,-0.5
       parent: 1
   - uid: 769
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 22.5,-0.5
       parent: 1
 - proto: ClockworkGrilleBroken
@@ -6083,13 +6080,11 @@ entities:
   - uid: 991
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 22.5,-35.5
       parent: 1
   - uid: 992
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 24.5,-35.5
       parent: 1
   - uid: 993
@@ -6125,7 +6120,6 @@ entities:
   - uid: 999
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 19.5,-35.5
       parent: 1
   - uid: 1000
@@ -6141,7 +6135,6 @@ entities:
   - uid: 1002
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 10.5,-34.5
       parent: 1
   - uid: 1003

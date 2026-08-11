@@ -399,31 +399,26 @@ entities:
   - uid: 30
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -0.5,7.5
       parent: 1
   - uid: 31
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 0.5,8.5
       parent: 1
   - uid: 32
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -0.5,6.5
       parent: 1
   - uid: 33
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 1.5,6.5
       parent: 1
   - uid: 34
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 1.5,7.5
       parent: 1
 - proto: ClockworkGrilleDiagonal

@@ -19,6 +19,9 @@
     state: base
   - type: SpriteFade
   - type: Damageable
+    damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
