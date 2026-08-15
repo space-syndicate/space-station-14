@@ -33,7 +33,7 @@
   icon:
     sprite: /Textures/Interface/Misc/security_icons.rsi
     state: hud_suspected
-  
+
 - type: securityIcon
   parent: SecurityIcon
   id: SecurityIconHostile
@@ -69,8 +69,8 @@
   id: CrewBorderIcon
   priority: 2
   offset: -4
-  offsetHorizontal: 4
-  locationPreference: Right
+  offsetHorizontal: -4 # Corvax-TypingIndicator
+  locationPreference: Left # Corvax-TypingIndicator
   layer: Mod
   isShaded: true
   icon:
@@ -81,8 +81,8 @@
   id: CrewUncertainBorderIcon
   priority: 2
   offset: -4
-  offsetHorizontal: 4
-  locationPreference: Right
+  offsetHorizontal: -4 # Corvax-TypingIndicator
+  locationPreference: Left # Corvax-TypingIndicator
   layer: Mod
   isShaded: true
   icon:

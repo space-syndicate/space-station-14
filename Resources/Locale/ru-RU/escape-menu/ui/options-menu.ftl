@@ -39,6 +39,9 @@ ui-options-restart-sounds = Звуки перезапуска раунда
 ui-options-event-music = Музыка событий
 ui-options-admin-sounds = Музыка админов
 ui-options-bwoink-sound = Звук уведомления Ахелпа
+ui-options-mute-unfocused = Отключить звук при неактивном окне игры
+ui-options-audio-device = Устройство вывода:
+ui-options-audio-device-default = Устройство по умолчанию
 ui-options-audio-hrtf = Включить HRTF (пространственный звук, требуется перезапуск)
 ui-options-volume-label = Громкость
 
