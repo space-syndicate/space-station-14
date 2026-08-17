@@ -1,46 +1,47 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "By AftrLite (GitHub). Based on the anywall format by 20nypercent and rye-rice (GitHub).",
+    "copyright": "Created by TheShuEd for Space Station 14",
     "size": {
-        "x": 32,
-        "y": 32
+      "x": 32,
+      "y": 32
     },
     "states": [
-        {
-            "name": "full"
-        },
-        {
-            "name": "stone0",
-            "directions": 4
-        },
-        {
-            "name": "stone1",
-            "directions": 4
-        },
-        {
-            "name": "stone2",
-            "directions": 4
-        },
-        {
-            "name": "stone3",
-            "directions": 4
-        },
-        {
-            "name": "stone4",
-            "directions": 4
-        },
-        {
-            "name": "stone5",
-            "directions": 4
-        },
-        {
-            "name": "stone6",
-            "directions": 4
-        },
-        {
-            "name": "stone7",
-            "directions": 4
-        }
+      {
+        "name": "full"
+      },
+      {
+        "name": "cobblebrick0",
+        "directions": 4
+      },
+      {
+        "name": "cobblebrick1",
+        "directions": 4
+      },
+      {
+        "name": "cobblebrick2",
+        "directions": 4
+      },
+      {
+        "name": "cobblebrick3",
+        "directions": 4
+      },
+      {
+        "name": "cobblebrick4",
+        "directions": 4
+      },
+      {
+        "name": "cobblebrick5",
+        "directions": 4
+      },
+      {
+        "name": "cobblebrick6",
+        "directions": 4
+      },
+      {
+        "name": "cobblebrick7",
+        "directions": 4
+      }
     ]
-}
+  }
+  
