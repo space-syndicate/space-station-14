@@ -15,9 +15,11 @@
 
   ## Задачи
 
-  Ваша главная задача — убить и собрать все мозги разумных существ на станции и доставить их к ядру ​​материнского корабля. Это могут быть как органические мозги, так и позитронные.
-  Собирайте материалы для создания новых тел ксеноборгов.
-  Защитите материнский корабль любой ценой.
+  Your main objective is to kill and harvest all sentient brains in the station and bring them to the mothership core. These can be both real brains, and positronic brains.
+  
+  Steal power from the station using xenoborg extractors to produce xenoborg crystals to create more xenoborg bodies.
+  
+  Protect the Mothership at all costs.
 
   ## Ядро материнского корабля
   <Box>
@@ -75,7 +77,12 @@
     <GuideEntityEmbed Entity="BorgModuleCable" Caption="кабельный модуль киборга"/>
   </Box>
 
-  ### Тяжёлый Ксеноборг
+  [bold]Upgrade exclusive modules:[/bold]
+  <Box>
+    <GuideEntityEmbed Entity="XenoborgModuleDoorControl" Caption="door control xenoborg module"/>
+  </Box>
+
+  ### The Heavy Xenoborg
   <Box>
     <GuideEntityEmbed Entity="XenoborgHeavy" Caption=""/>
   </Box>
@@ -129,8 +136,29 @@
     <GuideEntityEmbed Entity="XenoborgModuleSuperCloakDevice" Caption="модуль ксеноборга с устройством невидимости"/>
   </Box>
 
-  ## Подготовка
-  Перед началом атаки каждый ксеноборг должен помочь материнскому кораблю в сборе материалов для создания оболочек ксеноборгов. Перед прыжком в сектор станции убедитесь, что система «свой-чужой» отключена. Это можно сделать любым способом, но для обеспечения скорости потребуется командная работа. Самый безопасный способ сбора материалов — из космических обломков, где можно собрать металлолом и очищенные материалы и передать их ядру материнского корабля. После сбора достаточного количества материалов ксеноборги должны попытаться собрать мозги, оставаясь незамеченными. Чем дольше угроза остается неизвестной, тем опаснее становятся ксеноборги.
+  ## Xenoborg extractors
+  <Box>
+    <GuideEntityEmbed Entity="XenoborgExtractor" Caption="xenoborg extractor"/>
+    <GuideEntityEmbed Entity="MaterialXenoborgCrystal" Caption="xenoborg crystal"/>
+  </Box>
+  The extractor is a machine necessary for the xenoborgs to grow their army. It steals power from cables connected to it in order to produce xenoborg crystals.
+
+  The mothership core can produce a xenoborg extractor flatpack for 10 steel.
+
+  When anchored it will start draining power from the high voltage cable under it.
+
+  It will produce a xenoborg crystal everytime its internal battery fills up.
+
+  It consumes 240kW and it takes 15 seconds to produce one xenoborg crystal.
+
+  [bold]Attention![/bold] It will trigger the rogue power consuming device alert! Anyone using the power monitor device will know something is wrong.
+
+  ## Preparation and Tactics
+  Before FTLing near the station, make sure the IFF is off.
+
+  Before launching an attack, xenoborgs should discuss strategy and decide which targets to strike first.
+
+  Xenoborgs should try to collect sentient brains without being detected. The longer the threat is unknown, the more dangerous the xenoborgs become.
 
   ## Наборы законов Материнского ядра и Ксеноборгов
   Ядро материнского корабля и Ксеноборги обладают уникальными законами, определяющими их предназначение — самовоспроизводство и защита Материнского корабля.
