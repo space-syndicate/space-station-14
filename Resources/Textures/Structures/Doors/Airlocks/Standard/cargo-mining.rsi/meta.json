@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken at https://github.com/ParadiseSS13/Paradise/commit/9312f1fb7dcdf1c195e255a528f31092613fb60d. Modified by Ko4erga (discord)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+    {
+            "name": "assembly"
+        },
+        {
+        "name": "closed"
+        },
+        {
+        "name": "open"
+        },
+        {
+        "name": "closing",
+        "delays": [
+            [
+            0.1,
+            0.1,
+            0.07,
+            0.07,
+            0.07,
+            0.2
+            ]
+        ]
+        },
+        {
+        "name": "opening",
+        "delays": [
+            [
+            0.1,
+            0.1,
+            0.07,
+            0.07,
+            0.07,
+            0.2
+            ]
+        ]
+    }
+]
+}

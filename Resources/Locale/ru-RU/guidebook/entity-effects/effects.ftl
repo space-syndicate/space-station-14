@@ -67,6 +67,15 @@ entity-effect-guidebook-smoke-area =
         *[other] вызывать
     } большое количество дыма
 
+entity-effect-guidebook-satiate =
+    { $chance ->
+        [1] Утоляет
+        *[other] утолить
+    } { $relative ->
+        [1] {$type} averagely
+        *[other] {$type} at {NATURALFIXED($relative, 3)}x эффективностью
+    }
+
 entity-effect-guidebook-satiate-thirst =
     { $chance ->
         [1] Утоляет

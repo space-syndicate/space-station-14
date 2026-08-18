@@ -1,0 +1,77 @@
+{
+    "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from CEV-Eris at commit https://github.com/discordia-space/CEV-Eris/commit/14517938186858388656a6aee14bf47af9e9649f - then modified by brainfood1183 (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+    {
+        "name": "bolted_unlit"
+    },
+    {
+        "name": "closed_unlit"
+    },
+    {
+        "name": "welded"
+    },
+    {
+        "name": "open_unlit"
+    },
+    {
+      "name": "closing_unlit",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+      ]
+    ]
+    },
+    {
+      "name": "deny_unlit",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+      ]
+    ]
+    },
+    {
+      "name": "opening_unlit",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+      ]
+    ]
+    },
+    {
+      "name": "emergency_unlit",
+      "delays": [
+        [
+          0.4,
+          0.4
+        ]
+      ]
+    }
+    ]
+}

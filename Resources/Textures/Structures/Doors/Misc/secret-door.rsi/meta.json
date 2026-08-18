@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by Nimfar11 (GitHub) for Space Station 14 & edited by github:Morb0",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+        "name": "assembly"
+        },
+        {
+        "name": "closed"
+        },
+        {
+        "name": "open"
+        },
+        {
+        "name": "closing",
+        "delays": [
+            [
+            0.1,
+            0.1,
+            0.07,
+            0.07,
+            0.07,
+            0.07
+            ]
+        ]
+        },
+        {
+        "name": "opening",
+        "delays": [
+            [
+            0.1,
+            0.1,
+            0.07,
+            0.07,
+            0.07,
+            0.07
+            ]
+        ]
+    }
+]
+}
