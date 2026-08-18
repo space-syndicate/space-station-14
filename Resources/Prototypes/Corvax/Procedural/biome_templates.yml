@@ -156,7 +156,7 @@
         cellularDistanceFunction: Euclidean
         cellularReturnType: Distance2
       entities:
-        - WallRockBasalt
+        - WallRock
     # Water
     - !type:BiomeEntityLayer
       allowedTiles:
@@ -194,7 +194,7 @@
       allowedTiles:
         - FloorCaveDrought
       entities:
-        - WallRockBasaltTin
+        - WallRockTin
     - !type:BiomeEntityLayer
       threshold: 0.5
       noise:
@@ -227,7 +227,7 @@
       allowedTiles:
         - FloorCaveDrought
       entities:
-        - WallRockBasaltGold
+        - WallRockGold
     - !type:BiomeEntityLayer
       threshold: 0.77
       noise:
@@ -238,7 +238,7 @@
       allowedTiles:
         - FloorCaveDrought
       entities:
-        - WallRockBasaltSilver
+        - WallRockSilver
     - !type:BiomeEntityLayer
       threshold: 0.79
       noise:
@@ -249,7 +249,7 @@
       allowedTiles:
         - FloorCaveDrought
       entities:
-        - WallRockBasaltPlasma
+        - WallRockPlasma
     - !type:BiomeEntityLayer
       threshold: 0.8
       noise:
@@ -260,7 +260,7 @@
       allowedTiles:
         - FloorCaveDrought
       entities:
-        - WallRockBasaltUranium
+        - WallRockUranium
 
 # GlacierPlanet
 - type: biomeTemplate
@@ -528,7 +528,7 @@
         cellularDistanceFunction: Euclidean
         cellularReturnType: Distance2
       entities:
-        - WallRockSnowBananium
+        - WallRockSnow
     # Ice tiles lakes
     - !type:BiomeTileLayer
       tile: FloorIce
