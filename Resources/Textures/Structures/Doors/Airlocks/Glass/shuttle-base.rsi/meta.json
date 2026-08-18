@@ -11,52 +11,10 @@
       "name": "assembly"
     },
     {
-      "name": "bolted_unlit"
-    },
-    {
-      "name": "bolted_open_unlit"
-    },
-    {
       "name": "closed"
     },
     {
-      "name": "closed_unlit"
-    },
-    {
-      "name": "open_unlit"
-    },
-    {
       "name": "closing",
-      "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
-      ]
-    ]
-    },
-    {
-      "name": "closing_unlit",
-      "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
-      ]
-    ]
-    },
-    {
-      "name": "deny_unlit",
       "delays": [
         [
           0.2,
@@ -87,72 +45,6 @@
           0.2
       ]
     ]
-    },
-    {
-      "name": "opening_unlit",
-      "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
-      ]
-    ]
-    },
-    {
-      "name": "panel_closed"
-    },
-    {
-      "name": "panel_closing",
-      "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
-      ]
-    ]
-    },
-    {
-      "name": "panel_open"
-    },
-    {
-      "name": "panel_opening",
-      "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
-      ]
-    ]
-    },
-    {
-      "name": "welded"
-    },
-    {
-      "name": "emergency_unlit",
-      "delays": [
-        [
-          0.4,
-          0.4
-        ]
-      ]
-    },
-    {
-      "name": "emergency_open_unlit"
     }
   ]
 }
