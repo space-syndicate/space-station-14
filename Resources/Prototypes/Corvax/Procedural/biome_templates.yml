@@ -5,7 +5,7 @@
     # FLOOR VARIATION.
     - !type:BiomeTileLayer
       threshold: -1.0
-      tile: FloorCaveDrought
+      tile: FloorCave
     - !type:BiomeTileLayer
       threshold: -0.60
       tile: FloorAsteroidSand
@@ -74,13 +74,13 @@
         fractalType: FBm
         frequency: 2
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       entities:
         - FloraStalagmite
         - CrystalOrange
     - !type:BiomeEntityLayer
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       noise:
         seed: 183
         noiseType: OpenSimplex2
@@ -116,7 +116,7 @@
         - CrystalBlue
     # WALLS
     - !type:BiomeTileLayer
-      tile: FloorCaveDrought
+      tile: FloorCave
       threshold: -0.25
       noise:
         seed: 0
@@ -129,7 +129,7 @@
         cellularReturnType: Distance2
     - !type:BiomeEntityLayer
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       threshold: -0.30
       noise:
         seed: 0
@@ -144,7 +144,7 @@
         - WallRock
     - !type:BiomeEntityLayer
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       threshold: -0.30
       noise:
         seed: 123
@@ -161,7 +161,7 @@
     - !type:BiomeEntityLayer
       allowedTiles:
         - FloorPlanetGrass
-        - FloorCaveDrought
+        - FloorCave
         - FloorAsteroidSand
       threshold: 0.95
       noise:
@@ -192,7 +192,7 @@
         fractalType: FBm
         frequency: 3
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       entities:
         - WallRockTin
     - !type:BiomeEntityLayer
@@ -203,7 +203,7 @@
         fractalType: FBm
         frequency: 3
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       entities:
         - WallRockCoal
     - !type:BiomeEntityLayer
@@ -214,7 +214,7 @@
         fractalType: FBm
         frequency: 0.09
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       entities:
         - WallRockSalt
     - !type:BiomeEntityLayer
@@ -225,7 +225,7 @@
         fractalType: FBm
         frequency: 0.08
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       entities:
         - WallRockGold
     - !type:BiomeEntityLayer
@@ -236,7 +236,7 @@
         fractalType: FBm
         frequency: 0.07
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       entities:
         - WallRockSilver
     - !type:BiomeEntityLayer
@@ -247,7 +247,7 @@
         fractalType: FBm
         frequency: 0.06
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       entities:
         - WallRockPlasma
     - !type:BiomeEntityLayer
@@ -258,7 +258,7 @@
         fractalType: FBm
         frequency: 0.05
       allowedTiles:
-        - FloorCaveDrought
+        - FloorCave
       entities:
         - WallRockUranium
 
