@@ -1,0 +1,46 @@
+{
+    "version": 1,
+     "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from TauCetiClassic at commit https://github.com/TauCetiStation/TauCetiClassic/commit/fd5cfd76acdf5bda9e46413c11006a6e825d51a9",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+    {
+        "name": "assembly"
+    },
+    {
+      "name": "closed"
+    },
+    {
+      "name": "open"
+    },
+    {
+      "name": "closing",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "opening",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
+          0.2
+        ]
+      ]
+    }
+    ]
+}

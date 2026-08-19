@@ -1,0 +1,80 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from TauCetiClassic at commit https://github.com/TauCetiStation/TauCetiClassic/commit/b7ac5798ae0d411b0cdeaf7efbc4ac86d24b4634, fire_emagged.png edited by github:Morb0, updated by SonicHDC",
+    "source": "https://github.com/TauCetiStation/TauCetiClassic/commit/b7ac5798ae0d411b0cdeaf7efbc4ac86d24b4634",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+      "name": "alarm0",
+	  "directions": 1,
+      "delays": [
+        [
+          2.8,
+          2.8
+        ]
+      ]
+    },
+    {
+      "name": "alarm1",
+	  "directions": 1,
+      "delays": [
+        [
+          0.6,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.6,
+          0.6,
+          0.6
+        ]
+      ]
+    },
+    {
+      "name": "alarm2",
+      "directions": 1,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ]
+      ]
+    },
+    {
+      "name": "panel",
+      "directions": 1
+    },
+    {
+      "name": "base",
+      "directions": 1
+    }
+    ]
+}

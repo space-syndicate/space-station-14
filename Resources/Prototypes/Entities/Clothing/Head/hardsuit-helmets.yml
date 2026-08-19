@@ -30,33 +30,12 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-light-reptilian
-      #  shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-reptilian
-      #- state: equipped-head-unshaded-reptilian
-      #  shader: unshaded
   - type: PointLight
     color: "#adffe6"
   - type: PressureProtection
@@ -93,33 +72,12 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-light-reptilian
-      #  shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-reptilian
-      #- state: equipped-head-unshaded-reptilian
-      #  shader: unshaded
   - type: PointLight
     color: "#ffdbad"
   - type: PressureProtection
@@ -153,33 +111,12 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-light-reptilian
-      #  shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-reptilian
-      #- state: equipped-head-unshaded-reptilian
-      #  shader: unshaded
   - type: PointLight
     radius: 6
   - type: PressureProtection
@@ -234,26 +171,12 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-light-reptilian
-      #  shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-reptilian
-      #- state: equipped-head-unshaded-reptilian
-      #  shader: unshaded
   - type: PointLight
     radius: 6
   - type: PressureProtection
@@ -411,35 +334,14 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-light-reptilian
-      #  shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-reptilian
-      #- state: equipped-head-unshaded-reptilian
-      #  shader: unshaded
-  - type: PointLight # Corvax-Resprite
-    color: "#e6aa5c"
+  - type: PointLight
+    color: "#daffad"
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -750,12 +652,6 @@
       head:
       - state: equipped-HELMET-light
         shader: unshaded
-      head-vox:
-      - state: equipped-HELMET-light-vox
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-HELMET-light-reptilian
-      #  shader: unshaded
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/piratecaptainhelm.rsi
     clothingVisuals:
@@ -763,14 +659,6 @@
       - state: equipped-HELMET
       - state: equipped-HELMET-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-HELMET-vox
-      - state: equipped-HELMET-unshaded-vox
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-HELMET-reptilian
-      #- state: equipped-HELMET-unshaded-reptilian
-      #  shader: unshaded
   - type: PointLight # Color matches visor colors, radius/energy same as mining hardsuit for the big captain.
     color: "#f3ea9c"
     radius: 7
@@ -917,14 +805,6 @@
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      #head-reptilian: # Corvax resprite
-      #- state: equipped-head-reptilian
-      #- state: equipped-head-unshaded-reptilian
-      #  shader: unshaded
   - type: PointLight
     color: orange # Corvax-Resprite
   - type: PressureProtection
