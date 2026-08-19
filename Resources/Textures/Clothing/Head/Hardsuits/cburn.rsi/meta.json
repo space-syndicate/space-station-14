@@ -2,7 +2,7 @@
     "version": 1,
     "license": "CC-BY-SA-3.0",
     "copyright": "Made by EmoGarbage404. Vox states by Flareguy for SS14. Reptilian and Light states by TiniestShark (Github)",
-  "copyright": "Made by belay5(discord 677967153139548202)",
+    "copyright": "Made by belay5(discord 677967153139548202)",
     "size": {
         "x": 32,
         "y": 32
@@ -51,6 +51,10 @@
         },
         {
             "name": "equipped-head-unshaded-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-vulpkanin",
             "directions": 4
         }
     ]

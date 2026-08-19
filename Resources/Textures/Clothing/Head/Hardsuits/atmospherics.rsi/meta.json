@@ -7,10 +7,6 @@
     "y": 32
   },
   "states": [
-    {
-      "name": "icon"
-    },
-    "states": [
         {
             "name": "icon"
         },
@@ -62,10 +58,6 @@
         },
         {
             "name": "equipped-head-light-reptilian",
-            "directions": 4
-        },
-        {
-            "name": "equipped-head-unshaded-reptilian",
             "directions": 4
         }
     ]
