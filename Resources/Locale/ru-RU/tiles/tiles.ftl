@@ -99,7 +99,7 @@ tiles-silver-tile = серебряный пол
 tiles-glass-floor = стеклянный пол
 tiles-reinforced-glass-floor = бронестеклянный пол
 tiles-uranium-glass-floor = урановый стеклянный пол
-tiles-plasma-glass-floor = плазменный стекляный пол
+tiles-plasma-glass-floor = плазменный стеклянный пол
 tiles-plastitanium-glass-floor = пластитановый стеклянный пол
 tiles-metal-foam = пенометаллический пол
 tiles-green-circuit-floor = зелёный микросхемный пол
@@ -159,7 +159,7 @@ tiles-uranium-marble = урановая мраморная плитка
 
 tiles-exo-viscera = экзодермический органический пол
 tiles-exo-hull = экзодермический пол
-tiles-exo-techmaint = экзодермический техничекий пол
+tiles-exo-techmaint = экзодермический технический пол
 tiles-exo-horizontal = экзодермический горизонтальный пол
 tiles-exo-vertical = экзодермический вертикальный пол
 tiles-exo-corner-ne = экзодермический угловой пол Северо-восток

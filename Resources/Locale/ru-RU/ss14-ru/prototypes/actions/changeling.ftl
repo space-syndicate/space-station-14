@@ -7,7 +7,7 @@ ent-ActionChangelingDevour = [color=red]Поглотить[/color]
 ent-ActionChangelingTransform = [color=red]Трансформация[/color]
     .desc = Трансформируйтесь и обретайте личности тех, кого вы поглотили.
 ent-ActionChangelingStasis = "[color=red]Впасть в стазис[/color]"
-    .desc = Впасть в состояние регенеративного стазиса, имитируя смерть и исцеляясь.
+    .desc = Впасть в состояние регенеративного стазиса, имитируя смерть.
 ent-ActionChangelingStore = Магазин ДНК
     .desc = Открывает магазин способностей.
 ent-ActionChangelingVoiceMimic = Подражание голоса
