@@ -76,6 +76,10 @@ xenoarch-trigger-tip-meat = Употребление протеинов
 xenoarch-trigger-tip-produce = Употребление здоровых продуктов
 xenoarch-trigger-tip-stamp = Бюрократическое одобрение
 xenoarch-trigger-tip-shock = Электрический шок
+xenoarch-trigger-tip-particle = Воздействие частиц
+xenoarch-trigger-tip-anomparticle = Воздействие аномальных частиц
+xenoarch-trigger-tip-stamina-damage = Органическое истощение
+xenoarch-trigger-tip-laser = Воздействие фотонов высокой интенсивности
 
 ### Description hints
 xenoarch-trigger-examine-wrenching = Вокруг него свободно крутится частичка.
