@@ -15,11 +15,11 @@
 
   ## Задачи
 
-  Your main objective is to kill and harvest all sentient brains in the station and bring them to the mothership core. These can be both real brains, and positronic brains.
-  
-  Steal power from the station using xenoborg extractors to produce xenoborg crystals to create more xenoborg bodies.
-  
-  Protect the Mothership at all costs.
+  Ваша главная задача — убить и собрать все мозги разумных существ на станции и доставить их к ядру ​​материнского корабля. Это могут быть как органические мозги, так и позитронные.
+
+  Украдите энергию со станции, используя экстракторы ксеноборгов, чтобы производить кристаллы ксеноборгов и создавать больше оболочек ксеноборгов.
+
+  Защитите материнский корабль любой ценой.
 
   ## Ядро материнского корабля
   <Box>
@@ -77,7 +77,7 @@
     <GuideEntityEmbed Entity="XenoborgModuleDoorControl" Caption="door control xenoborg module"/>
   </Box>
 
-  ### The Heavy Xenoborg
+  ### Тяжёлый Ксеноборг
   <Box>
     <GuideEntityEmbed Entity="XenoborgHeavy" Caption=""/>
   </Box>
@@ -131,29 +131,29 @@
     <GuideEntityEmbed Entity="XenoborgModuleSuperCloakDevice" Caption="модуль ксеноборга с устройством невидимости"/>
   </Box>
 
-  ## Xenoborg extractors
+  ## Экстраторы ксенборгов
   <Box>
-    <GuideEntityEmbed Entity="XenoborgExtractor" Caption="xenoborg extractor"/>
-    <GuideEntityEmbed Entity="MaterialXenoborgCrystal" Caption="xenoborg crystal"/>
+    <GuideEntityEmbed Entity="XenoborgExtractor"/>
+    <GuideEntityEmbed Entity="MaterialXenoborgCrystal"/>
   </Box>
-  The extractor is a machine necessary for the xenoborgs to grow their army. It steals power from cables connected to it in order to produce xenoborg crystals.
+  Экстрактор ксенборгов, это машина, необходимая ксеноборгам для пополнения своей армии. Он крадет энергию из подключенных к нему кабелей для производства кристаллов ксеноборгов.
 
-  The mothership core can produce a xenoborg extractor flatpack for 10 steel.
+  Ядро материнского корабля может производить упаковку экстрактора ксеноборгов за 10 единиц стали.
 
-  When anchored it will start draining power from the high voltage cable under it.
+  После закрепления он начнет потреблять энергию от высоковольтного кабеля, расположенного под ним.
 
-  It will produce a xenoborg crystal everytime its internal battery fills up.
+  При каждом заполнении внутренней батареи, устройство будет производить кристалл ксеноборга.
 
-  It consumes 240kW and it takes 15 seconds to produce one xenoborg crystal.
+  Он потребляет 240 кВт, и для получения одного кристалла ксеноборга требуется 15 секунд.
 
-  [bold]Attention![/bold] It will trigger the rogue power consuming device alert! Anyone using the power monitor device will know something is wrong.
+  [bold]Внимание![/bold] Это вызовет срабатывание предупреждения о несанкционированном потреблении электроэнергии! Любой использующий консоль контроля питания узнает, что что-то не так.
 
-  ## Preparation and Tactics
-  Before FTLing near the station, make sure the IFF is off.
+  ## Подготовка и тактика
+  Прежде чем прыгать в сектор станции, убедитесь, что система опознавания отключена
 
-  Before launching an attack, xenoborgs should discuss strategy and decide which targets to strike first.
+  Перед началом атаки ксеноборгам следует обсудить стратегию и решить, какие цели следует атаковать в первую очередь.
 
-  Xenoborgs should try to collect sentient brains without being detected. The longer the threat is unknown, the more dangerous the xenoborgs become.
+  Ксеноборгам следует стремиться собирать мозги незаметно, оставаясь незамеченными. Чем дольше угроза остается неизвестной, тем опаснее становятся ксеноборги.
 
   ## Наборы законов Материнского ядра и Ксеноборгов
   Ядро материнского корабля и Ксеноборги обладают уникальными законами, определяющими их предназначение — самовоспроизводство и защита Материнского корабля.
