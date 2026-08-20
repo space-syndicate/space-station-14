@@ -1,3 +1,5 @@
+ent-BaseMeteorRockDestructible = { "" }
+    .desc = { "" }
 ent-MeteorRock = метеоритный камень
     .desc = Остатки метеорита.
 ent-MeteorRockCoal = { ent-MeteorRock }

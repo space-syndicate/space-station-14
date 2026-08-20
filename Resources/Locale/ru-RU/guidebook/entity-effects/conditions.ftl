@@ -27,19 +27,10 @@ entity-condition-guidebook-group-damage =
 
 entity-condition-guidebook-total-satiation =
     { $max ->
-        [2147483648] the target has at least {NATURALFIXED($min, 2)} total {$type}
+        [2147483648] цель имеет по крайней мере { NATURALFIXED($min, 2) } общего { $type }
         *[other] { $min ->
-                    [0] the target has at most {NATURALFIXED($max, 2)} total {$type}
-                    *[other] the target has between {NATURALFIXED($min, 2)} and {NATURALFIXED($max, 2)} total {$type}
-                 }
-    }
-
-entity-condition-guidebook-total-hunger =
-    { $max ->
-        [2147483648] цель имеет по крайней мере { NATURALFIXED($min, 2) } общего голода
-        *[other] { $min ->
-                [0] цель имеет не более { NATURALFIXED($max, 2) } общего голода
-                *[other] цель имеет между  { NATURALFIXED($min, 2) } и { NATURALFIXED($max, 2) } общего голода
+                [0] цель имеет не более { NATURALFIXED($max, 2) } общего { $type }
+                *[other] цель имеет между { NATURALFIXED($min, 2) } и { NATURALFIXED($max, 2) } общего { $type }
             }
     }
 
