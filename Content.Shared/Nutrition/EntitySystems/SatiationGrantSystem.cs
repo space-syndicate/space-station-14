@@ -14,6 +14,8 @@ public sealed partial class SatiationGrantSystem : EntitySystem
     {
         foreach (var satiation in ent.Comp.Satiation)
         {
+            if (!HasComp<SatiationComponent>(ent.Owner))
+                continue; //Corvax IPC-fix
             _satiation.AddSatiation(ent.Owner, satiation.Key, satiation.Value);
         }
     }
