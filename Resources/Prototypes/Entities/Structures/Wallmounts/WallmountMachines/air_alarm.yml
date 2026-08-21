@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseWallmountMachine
+  parent: [ BaseWallmountMachine, StructureHealthMachineWeak ]
   id: AirAlarm
   name: air alarm
   description: An air alarm. Alarms... air?
@@ -39,10 +39,9 @@
     layerMap: "airAlarmState"
     alarmStates:
       Normal: alarm0
-      Warning: alarm1  # Corvax-Resprite
-      Danger: alarm2 # Corvax-Resprite
-    setOnDepowered:
-      airAlarmBase: alarmp
+      Warning: alarm1
+      Danger: alarm2
+    hideOnDepowered: [ "airAlarmState" ]
   - type: Tag
     tags:
       - AirAlarm
@@ -85,18 +84,12 @@
   - type: Construction
     graph: AirAlarm
     node: air_alarm
-  - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
-    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
         damage: 100
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak
@@ -108,7 +101,7 @@
     - DeviceMonitoringAndControl
 
 - type: entity
-  parent: BaseWallmountMetallic
+  parent: [ BaseWallmountMetallic, StructureHealthMachineFlimsy ]
   id: AirAlarmAssembly
   name: air alarm assembly
   description: An air alarm. Doesn't look like it'll be alarming air any time soon.
@@ -134,10 +127,8 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 15
+        damage: 50
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak
