@@ -64,17 +64,12 @@
   [bold]Стартовые уникальные модули:[/bold]
   <Box>
     <GuideEntityEmbed Entity="XenoborgModuleAccessBreaker" Caption="модуль ксеноборга с взломщиком доступа"/>
-    <GuideEntityEmbed Entity="XenoborgModuleFireExtinguisher" Caption="огнетушащий модуль ксеноборга"/>
   </Box>
 
   [bold]Инженерный Ксеноборг также появляется с некоторыми инженерными модулями, например:[/bold]
   <Box>
     <GuideEntityEmbed Entity="BorgModuleAdvancedTool" Caption="продвинутый инструментальный модуль киборга"/>
     <GuideEntityEmbed Entity="BorgModuleConstruction" Caption="строительный модуль киборга"/>
-  </Box>
-  <Box>
-    <GuideEntityEmbed Entity="BorgModuleRCD" Caption="инженерный модуль киборга"/>
-    <GuideEntityEmbed Entity="BorgModuleCable" Caption="кабельный модуль киборга"/>
   </Box>
 
   [bold]Upgrade exclusive modules:[/bold]

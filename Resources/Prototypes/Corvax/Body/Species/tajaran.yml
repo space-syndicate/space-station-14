@@ -121,12 +121,12 @@
 - type: satiation
   id: TajaranHunger
   parent: NormalSatiationHunger
-  baseDecayRate: 0.02
+  baseChangeRate: -0.02
 
 - type: satiation
   id: TajaranThirst
   parent: NormalSatiationThirst
-  baseDecayRate: 0.15
+  baseChangeRate: -0.15
 
 - type: entity
   save: false
