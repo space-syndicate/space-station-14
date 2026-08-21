@@ -1,2 +1,2 @@
-ent-FloorLiquidPlasmaEntity = жидкая плазма
+ent-FloorLiquidPlasmaEntity = жидкий форон
     .desc = Сладкий, дорогой нектар. Не употреблять.
