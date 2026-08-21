@@ -1,17 +1,19 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from https://github.com/tgstation/tgstation at commit  17c603f1d037f22081d446b9a3f3ae8d41f52e86",
+    "copyright": "By AftrLite (GitHub). Based on the anywall format by 20nypercent and rye-rice (GitHub).",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
         {
-            "name": "state0"
+            "name": "state0",
+            "directions": 4
         },
         {
-            "name": "state1"
+            "name": "state1",
+            "directions": 4
         }
     ]
 }
