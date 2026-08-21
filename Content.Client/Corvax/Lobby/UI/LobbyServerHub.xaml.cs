@@ -177,7 +177,6 @@ public sealed partial class LobbyServerHub : BoxContainer
                     map,
                     preset,
                     status);
-                UpdatePresetLayout(serverRow, PresetNeedsSeparateLine(serverRow));
                 _rows.Add(serverRow);
             }
 
@@ -283,9 +282,26 @@ public sealed partial class LobbyServerHub : BoxContainer
         return requiredWidth > availableWidth - DetailsSafetyMargin;
     }
 
+    private static void RefreshPresetLayout(ServerRow row)
+    {
+        var width = row.ServerInfo.Width;
+        if (width <= 0 || (!row.PresetLayoutDirty && row.LastPresetLayoutWidth == width))
+            return;
+
+        UpdatePresetLayout(row, PresetNeedsSeparateLine(row));
+        row.LastPresetLayoutWidth = width;
+        row.PresetLayoutDirty = false;
+    }
+
     protected override void FrameUpdate(FrameEventArgs args)
     {
         base.FrameUpdate(args);
+
+        // Controls have no usable width while they are being constructed.
+        // Recalculate after the first layout pass and whenever the panel width
+        // changes instead of waiting for the next Hub status update.
+        foreach (var row in _rows)
+            RefreshPresetLayout(row);
 
         if (!Visible || _addresses.Length == 0)
             return;
@@ -319,7 +335,10 @@ public sealed partial class LobbyServerHub : BoxContainer
             // Hub can briefly omit the map while a server is restarting. Keep
             // the last known value instead of flashing an empty map field.
             if (!string.IsNullOrWhiteSpace(status.Map))
+            {
                 row.Map.Text = Loc.GetString("corvax-lobby-server-hub-map", ("map", status.Map));
+                row.PresetLayoutDirty = true;
+            }
             if (!string.IsNullOrWhiteSpace(status.Preset))
             {
                 var localizedPreset = LocalizePreset(status.Preset);
@@ -327,8 +346,9 @@ public sealed partial class LobbyServerHub : BoxContainer
                     "corvax-lobby-server-hub-preset",
                     ("preset", localizedPreset));
                 row.Preset.ToolTip = localizedPreset;
-                UpdatePresetLayout(row, PresetNeedsSeparateLine(row));
+                row.PresetLayoutDirty = true;
             }
+            RefreshPresetLayout(row);
             row.Status.Text = status.SoftMaxPlayers is { } softMax
                 ? $"{status.Players}/{softMax}"
                 : status.Players.ToString();
@@ -483,5 +503,7 @@ public sealed partial class LobbyServerHub : BoxContainer
         public Label Status { get; } = status;
         public int? Players { get; set; }
         public bool IsCurrent { get; set; }
+        public bool PresetLayoutDirty { get; set; } = true;
+        public float LastPresetLayoutWidth { get; set; } = -1;
     }
 }
