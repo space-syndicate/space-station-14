@@ -28,6 +28,9 @@ signal-port-description-doorbolt = Меняет статус болтирова�
 signal-port-name-trigger-receiver = Триггер
 signal-port-description-trigger-receiver = Запускает определённый механизм на устройстве.
 
+signal-port-name-timer = Таймер
+signal-port-description-timer = Запускает обратный отчет устройства.
+
 signal-port-name-order-sender = Отправитель заказа
 signal-port-description-order-sender = Отправляет заказ на консоль заказа грузов
 

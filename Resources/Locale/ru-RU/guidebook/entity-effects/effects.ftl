@@ -72,26 +72,8 @@ entity-effect-guidebook-satiate =
         [1] Утоляет
         *[other] утолить
     } { $relative ->
-        [1] {$type} averagely
-        *[other] {$type} at {NATURALFIXED($relative, 3)}x эффективностью
-    }
-
-entity-effect-guidebook-satiate-thirst =
-    { $chance ->
-        [1] Утоляет
-        *[other] утолить
-    } { $relative ->
-        [1] жажду
-        *[other] жажду с { NATURALFIXED($relative, 3) }х эффективностью
-    }
-
-entity-effect-guidebook-satiate-hunger =
-    { $chance ->
-        [1] Утоляет
-        *[other] утолить
-    } { $relative ->
-        [1] голод
-        *[other] голод с { NATURALFIXED($relative, 3) }х эффективностью
+        [1] {$type}
+        *[other] {$type} с { NATURALFIXED($relative, 3) }х эффективностью
     }
 
 entity-effect-guidebook-health-change =
