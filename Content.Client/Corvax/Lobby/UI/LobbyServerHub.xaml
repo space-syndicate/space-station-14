@@ -52,8 +52,6 @@
                                Margin="0 0 14 0"
                                HorizontalExpand="True" />
             </ScrollContainer>
-            <!-- Keep the final row away from the panel edge. -->
-            <Control MinHeight="18" />
         </BoxContainer>
         <TextureButton Name="CollapseButton"
                        TexturePath="filled_left_arrow.svg.192dpi"

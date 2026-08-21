@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,6 +22,7 @@ namespace Content.Server.Corvax.Lobby;
 /// </summary>
 public sealed partial class LobbyServerHubSystem : EntitySystem
 {
+    private const int MaxRequestedServers = 32;
     private const string HubServersUrl = "https://hub.playss14.com/api/servers";
     // Must remain shorter than the client's 30-second refresh interval.
     // Equal intervals can make every second client request hit the old cache.
@@ -51,6 +52,7 @@ public sealed partial class LobbyServerHubSystem : EntitySystem
         var requested = request.Addresses
             .Where(address => !string.IsNullOrWhiteSpace(address))
             .Distinct(StringComparer.OrdinalIgnoreCase)
+            .Take(MaxRequestedServers)
             .ToArray();
 
         var statuses = await GetStatuses();
@@ -82,12 +84,9 @@ public sealed partial class LobbyServerHubSystem : EntitySystem
         try
         {
             using var timeout = new CancellationTokenSource(RequestTimeout);
-            using var response = await _httpClientHolder.Client.GetAsync(HubServersUrl, timeout.Token);
-            response.EnsureSuccessStatusCode();
-
-            await using var stream = await response.Content.ReadAsStreamAsync(timeout.Token);
-            var servers = await JsonSerializer.DeserializeAsync<HubServer[]>(stream, cancellationToken: timeout.Token)
-                ?? Array.Empty<HubServer>();
+            var servers = await _httpClientHolder.Client.GetFromJsonAsync<HubServer[]>(
+                HubServersUrl,
+                timeout.Token) ?? [];
 
             result = servers
                 .Where(server => !string.IsNullOrWhiteSpace(server.Address) && server.StatusData != null)
@@ -124,61 +123,23 @@ public sealed partial class LobbyServerHubSystem : EntitySystem
 
     private static string SanitizeServerName(string name)
     {
-        var result = new StringBuilder(name.Length);
-        var lastWasSpace = true;
-
-        foreach (var rune in name.EnumerateRunes())
-        {
-            var category = Rune.GetUnicodeCategory(rune);
-            if (category is UnicodeCategory.OtherSymbol
+        var filtered = string.Concat(name.EnumerateRunes().Where(rune =>
+            Rune.GetUnicodeCategory(rune) is not (UnicodeCategory.OtherSymbol
                 or UnicodeCategory.ModifierSymbol
                 or UnicodeCategory.NonSpacingMark
                 or UnicodeCategory.EnclosingMark
-                or UnicodeCategory.Format)
-            {
-                continue;
-            }
-
-            if (Rune.IsWhiteSpace(rune))
-            {
-                if (!lastWasSpace)
-                    result.Append(' ');
-
-                lastWasSpace = true;
-                continue;
-            }
-
-            result.Append(rune.ToString());
-            lastWasSpace = false;
-        }
-
-        return result.ToString().Trim();
+                or UnicodeCategory.Format)));
+        return string.Join(' ', filtered.Split((char[]?) null, StringSplitOptions.RemoveEmptyEntries));
     }
 
-    private sealed class HubServer
-    {
-        [JsonPropertyName("address")]
-        public string Address { get; init; } = string.Empty;
+    private sealed record HubServer(
+        [property: JsonPropertyName("address")] string Address,
+        [property: JsonPropertyName("statusData")] HubStatusData? StatusData);
 
-        [JsonPropertyName("statusData")]
-        public HubStatusData? StatusData { get; init; }
-    }
-
-    private sealed class HubStatusData
-    {
-        [JsonPropertyName("name")]
-        public string Name { get; init; } = string.Empty;
-
-        [JsonPropertyName("preset")]
-        public string Preset { get; init; } = string.Empty;
-
-        [JsonPropertyName("map")]
-        public string? Map { get; init; }
-
-        [JsonPropertyName("players")]
-        public int Players { get; init; }
-
-        [JsonPropertyName("soft_max_players")]
-        public int? SoftMaxPlayers { get; init; }
-    }
+    private sealed record HubStatusData(
+        [property: JsonPropertyName("name")] string Name,
+        [property: JsonPropertyName("preset")] string Preset,
+        [property: JsonPropertyName("map")] string? Map,
+        [property: JsonPropertyName("players")] int Players,
+        [property: JsonPropertyName("soft_max_players")] int? SoftMaxPlayers);
 }

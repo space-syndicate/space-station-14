@@ -16,9 +16,6 @@ public sealed partial class LobbyServerHubConfig
     [DataField]
     public List<LobbyServerEntry> Subprojects { get; private set; } = new();
 
-    public IEnumerable<LobbyServerEntry> AllServers => Primary.Concat(Subprojects);
-
-    public int ServerCount => Primary.Count + Subprojects.Count;
 }
 
 public enum LobbyServerSection : byte
@@ -39,26 +36,16 @@ public sealed partial class LobbyServerEntry
     public bool TryGetAddress(out string address)
     {
         address = Address.Trim();
-
         var authorityStart = address.StartsWith("ss14://", StringComparison.OrdinalIgnoreCase)
             ? "ss14://".Length
             : address.StartsWith("ss14s://", StringComparison.OrdinalIgnoreCase)
                 ? "ss14s://".Length
                 : -1;
-
         if (authorityStart < 0)
             return false;
 
         var authorityEnd = address.IndexOf('/', authorityStart);
-        if (authorityEnd < 0)
-            authorityEnd = address.Length;
-
-        if (authorityEnd == authorityStart ||
-            string.IsNullOrWhiteSpace(address[authorityStart..authorityEnd]))
-        {
-            return false;
-        }
-
-        return true;
+        var authority = address[authorityStart..(authorityEnd < 0 ? address.Length : authorityEnd)];
+        return authority.Length > 0 && authority.All(character => !char.IsWhiteSpace(character));
     }
 }

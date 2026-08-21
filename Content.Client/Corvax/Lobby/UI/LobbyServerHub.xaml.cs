@@ -12,6 +12,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.ContentPack;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
+using Robust.Shared.Localization;
 using Robust.Shared.Log;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
@@ -30,11 +31,9 @@ namespace Content.Client.Corvax.Lobby.UI;
 public sealed partial class LobbyServerHub : BoxContainer
 {
     private static readonly ResPath ConfigPath = new("/ServerInfo/Corvax/lobby-servers.yml");
-    private const int DetailsSeparation = 6;
-    private const float DetailsSafetyMargin = 4;
-
     [Dependency] private IGameController _gameController = default!;
     [Dependency] private IEntitySystemManager _entitySystemManager = default!;
+    [Dependency] private ILocalizationManager _localization = default!;
     [Dependency] private ILogManager _logManager = default!;
     [Dependency] private IResourceManager _resourceManager = default!;
     [Dependency] private ISerializationManager _serialization = default!;
@@ -131,11 +130,12 @@ public sealed partial class LobbyServerHub : BoxContainer
                     Align = Label.AlignMode.Right,
                     StyleClasses = { "LabelSubText" },
                 };
-                var details = new BoxContainer
+                var details = new WrapContainer
                 {
-                    Orientation = LayoutOrientation.Horizontal,
+                    LayoutAxis = Axis.Horizontal,
                     HorizontalExpand = true,
-                    SeparationOverride = DetailsSeparation,
+                    SeparationOverride = 6,
+                    CrossSeparationOverride = 1,
                     Children =
                     {
                         map,
@@ -169,8 +169,6 @@ public sealed partial class LobbyServerHub : BoxContainer
                     section,
                     server.Adult,
                     row,
-                    serverInfo,
-                    details,
                     button,
                     map,
                     preset,
@@ -214,96 +212,12 @@ public sealed partial class LobbyServerHub : BoxContainer
         if (detailsStart >= 0)
             trimmed = trimmed[..detailsStart].TrimEnd();
 
-        var localeKey = trimmed.ToLowerInvariant() switch
-        {
-            "secret" => "secret-title",
-            "extended" => "extended-title",
-            "greenshift" => "greenshift-title",
-            "sandbox" => "sandbox-title",
-            "deathmatch" or "death match" => "death-match-title",
-            "nuclear operatives" => "nukeops-title",
-            "survival" => "survival-title",
-            "all at once" => "all-at-once-title",
-            "zombies" => "zombie-title",
-            "xenoborgs" => "xenoborgs-title",
-            "suspicion" => "suspicion-title",
-            _ => null,
-        };
-
-        return localeKey == null ? trimmed : Loc.GetString(localeKey);
-    }
-
-    private static void UpdatePresetLayout(ServerRow row, bool separateLine)
-    {
-        if (separateLine)
-        {
-            if (row.Preset.Parent != row.ServerInfo)
-            {
-                row.Preset.Parent?.RemoveChild(row.Preset);
-                row.ServerInfo.AddChild(row.Preset);
-            }
-
-            row.Preset.MinWidth = 0;
-            row.Preset.MaxWidth = float.PositiveInfinity;
-            row.Preset.HorizontalExpand = true;
-            row.Preset.Align = Label.AlignMode.Left;
-            row.Preset.ClipText = false;
-        }
-        else
-        {
-            if (row.Preset.Parent != row.Details)
-            {
-                row.Preset.Parent?.RemoveChild(row.Preset);
-                row.Details.AddChild(row.Preset);
-            }
-
-            row.Preset.MinWidth = 0;
-            row.Preset.MaxWidth = float.PositiveInfinity;
-            row.Preset.HorizontalExpand = false;
-            row.Preset.Align = Label.AlignMode.Right;
-            row.Preset.ClipText = false;
-        }
-    }
-
-    private static bool PresetNeedsSeparateLine(ServerRow row)
-    {
-        row.Map.InvalidateMeasure();
-        row.Map.Measure(new(10000, 10000));
-
-        row.Preset.MinWidth = 0;
-        row.Preset.MaxWidth = float.PositiveInfinity;
-        row.Preset.ClipText = false;
-        row.Preset.InvalidateMeasure();
-        row.Preset.Measure(new(10000, 10000));
-
-        var availableWidth = row.ServerInfo.Width;
-        if (availableWidth <= 0)
-            return true;
-
-        var requiredWidth = row.Map.DesiredSize.X + DetailsSeparation + row.Preset.DesiredSize.X;
-        return requiredWidth > availableWidth - DetailsSafetyMargin;
-    }
-
-    private static void RefreshPresetLayout(ServerRow row)
-    {
-        var width = row.ServerInfo.Width;
-        if (width <= 0 || (!row.PresetLayoutDirty && row.LastPresetLayoutWidth == width))
-            return;
-
-        UpdatePresetLayout(row, PresetNeedsSeparateLine(row));
-        row.LastPresetLayoutWidth = width;
-        row.PresetLayoutDirty = false;
+        return _localization.TryGetString(trimmed, out var localized) ? localized : trimmed;
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
     {
         base.FrameUpdate(args);
-
-        // Controls have no usable width while they are being constructed.
-        // Recalculate after the first layout pass and whenever the panel width
-        // changes instead of waiting for the next Hub status update.
-        foreach (var row in _rows)
-            RefreshPresetLayout(row);
 
         if (!Visible || _addresses.Length == 0)
             return;
@@ -313,10 +227,7 @@ public sealed partial class LobbyServerHub : BoxContainer
             return;
 
         _statusSystem.RequestUpdate(_addresses);
-        if (_statusSystem.Revision == 0)
-            return;
-
-        if (_statusRevision == _statusSystem.Revision)
+        if (_statusSystem.Revision == 0 || _statusRevision == _statusSystem.Revision)
             return;
 
         _statusRevision = _statusSystem.Revision;
@@ -339,7 +250,6 @@ public sealed partial class LobbyServerHub : BoxContainer
             if (!string.IsNullOrWhiteSpace(status.Map))
             {
                 row.Map.Text = Loc.GetString("corvax-lobby-server-hub-map", ("map", status.Map));
-                row.PresetLayoutDirty = true;
             }
             if (!string.IsNullOrWhiteSpace(status.Preset))
             {
@@ -348,9 +258,7 @@ public sealed partial class LobbyServerHub : BoxContainer
                     "corvax-lobby-server-hub-preset",
                     ("preset", localizedPreset));
                 row.Preset.ToolTip = localizedPreset;
-                row.PresetLayoutDirty = true;
             }
-            RefreshPresetLayout(row);
             row.Status.Text = status.SoftMaxPlayers is { } softMax
                 ? $"{status.Players}/{softMax}"
                 : status.Players.ToString();
@@ -366,15 +274,10 @@ public sealed partial class LobbyServerHub : BoxContainer
 
         ServerGrid.RemoveAllChildren();
 
-        var sections = new[]
-        {
-            LobbyServerSection.Primary,
-            LobbyServerSection.Subprojects,
-        };
         var currentServerIsAdult = _rows.Any(row => row.Adult && row.IsCurrent);
 
         var columnHeaderAdded = false;
-        foreach (var section in sections)
+        foreach (var section in Enum.GetValues<LobbyServerSection>())
         {
             var sectionRows = _rows
                 .Where(row => row.Section == section && !row.IsCurrent)
@@ -506,8 +409,6 @@ public sealed partial class LobbyServerHub : BoxContainer
         LobbyServerSection section,
         bool adult,
         BoxContainer control,
-        BoxContainer serverInfo,
-        BoxContainer details,
         Button button,
         Label map,
         Label preset,
@@ -518,15 +419,11 @@ public sealed partial class LobbyServerHub : BoxContainer
         public LobbyServerSection Section { get; } = section;
         public bool Adult { get; } = adult;
         public BoxContainer Control { get; } = control;
-        public BoxContainer ServerInfo { get; } = serverInfo;
-        public BoxContainer Details { get; } = details;
         public Button Button { get; } = button;
         public Label Map { get; } = map;
         public Label Preset { get; } = preset;
         public Label Status { get; } = status;
         public int? Players { get; set; }
         public bool IsCurrent { get; set; }
-        public bool PresetLayoutDirty { get; set; } = true;
-        public float LastPresetLayoutWidth { get; set; } = -1;
     }
 }

@@ -5,7 +5,7 @@ primary:
   - address: ss14s://game1.station14.ru/elysium/server
   - address: ss14s://game1.station14.ru/main/server
   - address: ss14s://game1.station14.ru/lumen/server
- # - address: ss14s://game1.station14.ru/void/server
+  - address: ss14s://game1.station14.ru/void/server
 
 subprojects:
   - address: ss14s://corvaxforge.ru/server/frontier
