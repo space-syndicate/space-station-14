@@ -369,6 +369,7 @@ public sealed partial class LobbyServerHub : BoxContainer
             LobbyServerSection.Primary,
             LobbyServerSection.Subprojects,
         };
+        var currentServerIsAdult = _rows.Any(row => row.Adult && row.IsCurrent);
 
         var columnHeaderAdded = false;
         foreach (var section in sections)
@@ -423,6 +424,12 @@ public sealed partial class LobbyServerHub : BoxContainer
             var adultRows = sectionRows.Where(row => row.Adult).ToArray();
             if (adultRows.Length == 0)
                 continue;
+
+            if (currentServerIsAdult)
+            {
+                AddSortedRows(adultRows);
+                continue;
+            }
 
             var adultToggle = new Button
             {
