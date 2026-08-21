@@ -46,6 +46,7 @@ public sealed partial class LobbyServerHub : BoxContainer
     private string[] _addresses = Array.Empty<string>();
     private int _statusRevision = -1;
     private bool _showAdult;
+    private bool _scrollAdultToEnd;
 
     public LobbyServerHub()
     {
@@ -54,6 +55,7 @@ public sealed partial class LobbyServerHub : BoxContainer
         _sawmill = _logManager.GetSawmill("corvax.lobby-server-hub");
         CollapseButton.OnPressed += _ => SetCollapsed(true);
         ExpandButton.OnPressed += _ => SetCollapsed(false);
+        ServerGrid.OnResized += ScrollAdultToEnd;
         LoadServers();
     }
 
@@ -75,16 +77,12 @@ public sealed partial class LobbyServerHub : BoxContainer
             }
 
             var config = _serialization.Read<LobbyServerHubConfig>(root, notNullableOverride: true);
-            if (config.ServerCount > LobbyServerHubConfig.MaxServers)
-                _sawmill.Warning($"Lobby server hub supports at most {LobbyServerHubConfig.MaxServers} servers; extra entries are ignored.");
-
             var configuredServers = config.Primary
                 .Select(server => (Server: server, Section: LobbyServerSection.Primary))
                 .Concat(config.Subprojects.Select(server =>
                     (Server: server, Section: LobbyServerSection.Subprojects)));
 
             foreach (var (configured, index) in configuredServers
-                         .Take(LobbyServerHubConfig.MaxServers)
                          .Select((configured, index) => (configured, index)))
             {
                 var (server, section) = configured;
@@ -445,6 +443,7 @@ public sealed partial class LobbyServerHub : BoxContainer
             adultToggle.OnPressed += _ =>
             {
                 _showAdult = !_showAdult;
+                _scrollAdultToEnd = _showAdult;
                 SortByOnline();
             };
             ServerGrid.AddChild(adultToggle);
@@ -452,6 +451,19 @@ public sealed partial class LobbyServerHub : BoxContainer
             if (_showAdult)
                 AddSortedRows(adultRows);
         }
+
+        // This spacer belongs to the scrollable content so the final row or
+        // the 18+ toggle can be scrolled fully clear of the panel edge.
+        ServerGrid.AddChild(new Control { MinHeight = 18 });
+    }
+
+    private void ScrollAdultToEnd()
+    {
+        if (!_scrollAdultToEnd)
+            return;
+
+        _scrollAdultToEnd = false;
+        ServerScroll.VScrollTarget = float.MaxValue;
     }
 
     private void AddSortedRows(IEnumerable<ServerRow> rows)

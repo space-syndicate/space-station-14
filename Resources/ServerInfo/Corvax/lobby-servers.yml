@@ -1,11 +1,11 @@
-# Up to 10 entries are displayed in the lobby, in this order.
+# Entries are displayed in the lobby and sorted by current online count.
 # The launcher requires an ss14:// or ss14s:// address and will load the target fork's build.
 
 primary:
   - address: ss14s://game1.station14.ru/elysium/server
   - address: ss14s://game1.station14.ru/main/server
   - address: ss14s://game1.station14.ru/lumen/server
-  - address: ss14s://game1.station14.ru/void/server
+ # - address: ss14s://game1.station14.ru/void/server
 
 subprojects:
   - address: ss14s://corvaxforge.ru/server/frontier

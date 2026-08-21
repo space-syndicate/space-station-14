@@ -22,7 +22,6 @@ namespace Content.Server.Corvax.Lobby;
 /// </summary>
 public sealed partial class LobbyServerHubSystem : EntitySystem
 {
-    private const int MaxRequestedServers = 10;
     private const string HubServersUrl = "https://hub.playss14.com/api/servers";
     // Must remain shorter than the client's 30-second refresh interval.
     // Equal intervals can make every second client request hit the old cache.
@@ -52,7 +51,6 @@ public sealed partial class LobbyServerHubSystem : EntitySystem
         var requested = request.Addresses
             .Where(address => !string.IsNullOrWhiteSpace(address))
             .Distinct(StringComparer.OrdinalIgnoreCase)
-            .Take(MaxRequestedServers)
             .ToArray();
 
         var statuses = await GetStatuses();

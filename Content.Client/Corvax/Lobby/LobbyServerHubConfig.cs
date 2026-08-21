@@ -10,8 +10,6 @@ namespace Content.Client.Corvax.Lobby;
 [DataDefinition]
 public sealed partial class LobbyServerHubConfig
 {
-    public const int MaxServers = 10;
-
     [DataField]
     public List<LobbyServerEntry> Primary { get; private set; } = new();
 
