@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Content.Shared.Corvax.Lobby;
 using Robust.Shared;
 using Robust.Shared.Configuration;
+using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
@@ -62,6 +63,9 @@ public sealed partial class LobbyServerHubSystem : EntitySystem
             .ToArray();
 
         var currentServerAddress = _configuration.GetCVar(CVars.HubServerUrl);
+        if (args.SenderSession.Status is not (SessionStatus.Connected or SessionStatus.InGame))
+            return;
+
         RaiseNetworkEvent(
             new LobbyServerHubStatusResponseEvent(response, currentServerAddress),
             args.SenderSession.Channel);
