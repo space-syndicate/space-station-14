@@ -212,6 +212,10 @@ public sealed partial class LobbyServerHub : BoxContainer
     private string LocalizePreset(string preset)
     {
         var trimmed = preset.Trim();
+        var detailsStart = trimmed.IndexOf('(');
+        if (detailsStart >= 0)
+            trimmed = trimmed[..detailsStart].TrimEnd();
+
         var localeKey = trimmed.ToLowerInvariant() switch
         {
             "secret" => "secret-title",
