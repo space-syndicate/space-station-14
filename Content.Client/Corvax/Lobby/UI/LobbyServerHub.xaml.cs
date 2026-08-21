@@ -280,7 +280,9 @@ public sealed partial class LobbyServerHub : BoxContainer
         foreach (var section in Enum.GetValues<LobbyServerSection>())
         {
             var sectionRows = _rows
-                .Where(row => row.Section == section && !row.IsCurrent)
+                .Where(row => row.Section == section &&
+                    !row.IsCurrent &&
+                    (_statusRevision < 0 || row.Players != null))
                 .ToArray();
             if (sectionRows.Length == 0)
                 continue;
