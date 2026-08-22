@@ -24,9 +24,6 @@
     cost: 4
     delay: 6
     fx: EffectRCDDeconstruct6
-  - type: Tag
-    tags:
-    - ForceFixRotations # Allow fixrotations to target these
   - type: Damageable
     damageModifierSet: PlasteelMod
   - type: Destructible
@@ -94,10 +91,12 @@
         - AirlockLayer
   - type: Door
     openDrawDepth: WallTops
-    closeTimeOne: 0.1
-    closeTimeTwo: 0.6
-    openTimeOne: 0.1
-    openTimeTwo: 0.6
+    # Corvax-Firelock-Start
+    closeTimeOne: 0.3
+    closeTimeTwo: 1.5
+    openTimeOne: 0.3
+    openTimeTwo: 1.5
+    # Corvax-Firelock-End
     state: Open
     bumpOpen: false
     clickOpen: true
@@ -110,8 +109,10 @@
       path: /Audio/Machines/airlock_close.ogg
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
-    openingAnimationTime: 0.6
-    closingAnimationTime: 0.6
+    # Corvax-Firelock-Start
+    openingAnimationTime: 1.8
+    closingAnimationTime: 1.8
+    # Corvax-Firelock-End
   - type: Weldable
     fuel: 5
     time: 3
@@ -156,12 +157,18 @@
   - type: SyncSprite
   - type: PlacementReplacement
     key: firelocks
+  - type: StationAiWhitelist
+  - type: StructureAligner
+    alignerType:
+    - Firelock
+  - type: StructureAlignerPylon
+    pylons:
+    - Firelock
 
 - type: entity
   id: Firelock
   parent: BaseFirelock
   components:
-  - type: StationAiWhitelist
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -179,7 +186,6 @@
   parent: Firelock
   name: glass firelock
   components:
-    - type: StationAiWhitelist
     - type: Sprite
       sprite: Structures/Doors/Airlocks/Glass/firelock-base.rsi
     - type: Occluder
@@ -205,7 +211,6 @@
   parent: Firelock
   name: firelock
   components:
-    - type: StationAiWhitelist
     - type: Sprite
       sprite: Structures/Doors/Misc/edge_door_hazard.rsi
       snapCardinals: false
@@ -256,9 +261,6 @@
           - GlassAirlockLayer
     - type: Occluder
       enabled: false
-    - type: Tag
-      tags:
-      - ForceNoFixRotations # Prevent fixrotations from targeting these, since the base Firelock is targeted
     - type: Door
       occludes: false
     - type: Physics
@@ -266,3 +268,6 @@
     - type: Construction
       graph: Firelock
       node: FirelockEdge
+    - type: StructureAligner
+      alignerType:
+      - DoNotAlign
