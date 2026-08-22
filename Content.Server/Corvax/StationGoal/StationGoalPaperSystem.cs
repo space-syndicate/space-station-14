@@ -1,6 +1,7 @@
 using Content.Server.Fax;
 using Content.Server.MassMedia.Systems;
 using Content.Server.Station.Systems;
+using System.Linq;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Fax.Components;
 using Content.Shared.GameTicking;
@@ -40,29 +41,33 @@ namespace Content.Server.Corvax.StationGoal
             while (query.MoveNext(out var uid, out var station))
             {
                 var tempGoals = new List<ProtoId<StationGoalPrototype>>(station.Goals);
-                StationGoalPrototype? selGoal = null;
-                while (tempGoals.Count > 0)
+                var selGoals = new List<ProtoId<StationGoalPrototype>>();
+
+                tempGoals.RemoveAll(goalId => 
                 {
-                    var goalId = _random.Pick(tempGoals);
                     var goalProto = _proto.Index(goalId);
+                    return playerCount > goalProto.MaxPlayers || playerCount < goalProto.MinPlayers;
+                });
 
-                    if (playerCount > goalProto.MaxPlayers ||
-                        playerCount < goalProto.MinPlayers)
+                foreach (GoalTypes type in Enum.GetValues(typeof(GoalTypes)))
+                {
+                    var typeGoals = tempGoals.Where(g => _proto.Index(g).GoalType == type).ToList();
+
+                    if (typeGoals.Count > 0)
                     {
-                        tempGoals.Remove(goalId);
-                        continue;
+                        selGoals.Add(_random.Pick(typeGoals));
                     }
-
-                    selGoal = goalProto;
-                    break;
                 }
 
-                if (selGoal is null)
+                if (selGoals is null)
                     return;
 
-                if (SendStationGoal(uid, selGoal))
+                foreach (var selGoal in selGoals)
                 {
-                    Log.Info($"Goal {selGoal.ID} has been sent to station {MetaData(uid).EntityName}");
+                    if (SendStationGoal(uid, selGoal))
+                    {
+                        Log.Info($"Goal {selGoal} has been sent to station {MetaData(uid).EntityName}");
+                    }
                 }
             }
         }
