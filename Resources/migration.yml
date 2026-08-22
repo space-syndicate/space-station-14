@@ -997,21 +997,24 @@ BlastDoorXenoborgOpen: BlastDoorXenoOpen
 
 # Dark
 FloorTileItemDarkDiagonalMini: FloorTileItemDark
-FloorTileItemDarkDiagonal: FloorTileItemDark
-FloorTileItemDarkOffset: FloorTileItemDark
+# Corvax-Sprites
+# FloorTileItemDarkDiagonal: FloorTileItemDark
+# FloorTileItemDarkOffset: FloorTileItemDark
 FloorTileItemDarkSlatsContinuous: FloorTileItemDark
 
 # Steel
 FloorTileItemSteelDiagonalMini: FloorTileItemSteel
-FloorTileItemSteelDiagonal: FloorTileItemSteel
-FloorTileItemSteelOffset: FloorTileItemSteel
+# Corvax-Sprites
+# FloorTileItemSteelDiagonal: FloorTileItemSteel
+# FloorTileItemSteelOffset: FloorTileItemSteel
 FloorTileItemShowroom: FloorTileItemSteel
 FloorTileItemSteelSlatsContinuous: FloorTileItemSteel
 
 # White
 FloorTileItemWhiteDiagonalMini: FloorTileItemWhite
-FloorTileItemWhiteDiagonal: FloorTileItemWhite
-FloorTileItemWhiteOffset: FloorTileItemWhite
+# Corvax-Sprites
+# FloorTileItemWhiteDiagonal: FloorTileItemWhite
+# FloorTileItemWhiteOffset: FloorTileItemWhite
 FloorTileItemWhiteSlatsContinuous: FloorTileItemWhite
 
 # Misc
@@ -1019,11 +1022,12 @@ FloorTileItemUraniumMarble: FloorTileItemDarkMarble
 FloorTileItemPlasmaMarble: FloorTileItemWhiteMarble
 FloorTileItemEighties: FloorTileItemArcadeBlue
 FloorTileItemArcadeBlue2: FloorTileItemArcadeBlue
-FloorTileItemElevatorShaft: null
-FloorTileItemMining: null
-FloorTileItemMiningLight: null
-FloorTileItemMiningDark: null
-FloorTileItemRockVault: null
+# Corvax-Sprites
+# FloorTileItemElevatorShaft: null
+# FloorTileItemMining: null
+# FloorTileItemMiningLight: null
+# FloorTileItemMiningDark: null
+# FloorTileItemRockVault: null
 FloorTileItemBrassReebe: null
 FloorTileItemBrassFilled: null
 FloorBananiumEntity: null
@@ -1105,7 +1109,8 @@ FloorDesertChasm: FloorChasmEntity
 FloorChromiteChasm: FloorChasmEntity
 
 # 2026-08-06
-FloorTileItemHydro: null
+# Corvax-Sprites
+# FloorTileItemHydro: null
 WallRiveted: WallMarble
 WallSpawnAsteroidBananium: null
 WallSpawnAsteroidBananiumCrab: null

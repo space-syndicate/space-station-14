@@ -94,10 +94,12 @@
         - AirlockLayer
   - type: Door
     openDrawDepth: WallTops
-    closeTimeOne: 0.1
-    closeTimeTwo: 0.6
-    openTimeOne: 0.1
-    openTimeTwo: 0.6
+    # Corvax-Firelock-Start
+    closeTimeOne: 0.3
+    closeTimeTwo: 1.5
+    openTimeOne: 0.3
+    openTimeTwo: 1.5
+    # Corvax-Firelock-End
     state: Open
     bumpOpen: false
     clickOpen: true
@@ -110,8 +112,10 @@
       path: /Audio/Machines/airlock_close.ogg
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
-    openingAnimationTime: 0.6
-    closingAnimationTime: 0.6
+    # Corvax-Firelock-Start
+    openingAnimationTime: 1.8
+    closingAnimationTime: 1.8
+    # Corvax-Firelock-End
   - type: Weldable
     fuel: 5
     time: 3
