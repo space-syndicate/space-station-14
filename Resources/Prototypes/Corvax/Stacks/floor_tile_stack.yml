@@ -105,3 +105,75 @@
   id: FloorTileItemWoodChessRed
   name: chess-red-wood-floor
   spawn: FloorTileItemWoodChessRed
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemDarkDiagonal
+  name: тёмная диагональная стальная плитка
+  spawn: FloorTileItemDarkDiagonal
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemDarkOffset
+  name: тёмная смещённая стальная плитка
+  spawn: FloorTileItemDarkOffset
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemSteelDiagonal
+  name: диагональная стальная плитка
+  spawn: FloorTileItemSteelDiagonal
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemSteelOffset
+  name: смещённая стальная плитка
+  spawn: FloorTileItemSteelOffset
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemWhiteDiagonal
+  name: светлая диагональная стальная плитка
+  spawn: FloorTileItemWhiteDiagonal
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemWhiteOffset
+  name: светлая смещённая стальная плитка
+  spawn: FloorTileItemWhiteOffset
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemElevatorShaft
+  name: плитка шахты лифта
+  spawn: FloorTileItemElevatorShaft
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemHydro
+  name: гидро плитка
+  spawn: FloorTileItemHydro
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemMining
+  name: шахтёрская плитка
+  spawn: FloorTileItemMining
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemMiningDark
+  name: тёмная шахтёрская плитка
+  spawn: FloorTileItemMiningDark
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemMiningLight
+  name: светлая шахтёрская плитка
+  spawn: FloorTileItemMiningLight
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemRockVault
+  name: каменная плитка хранилища
+  spawn: FloorTileItemRockVault
