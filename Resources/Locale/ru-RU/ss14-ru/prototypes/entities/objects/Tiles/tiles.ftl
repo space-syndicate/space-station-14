@@ -22,6 +22,8 @@ ent-FloorTileItemDarkHorizontalSlatsBordered = тёмная горизонтал
     .desc = { ent-FloorTileItemDark.desc }
 ent-FloorTileItemSteel = стальная плитка
     .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemSteelMono = стальная плита
+    .desc = { ent-FloorTileItemSteel.desc }
 ent-FloorTileItemSteelVerticalSlatsBordered = стальная вертикальная реечная плитка с бордюром
     .desc = { ent-FloorTileItemSteel.desc }
 ent-FloorTileItemSteelHorizontalSlatsBordered = стальная горизонтальная реечная плитка с бордюром
@@ -114,9 +116,3 @@ ent-FloorTileItemGratingMaint = решётчатый технический по
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemWeb = паутинный пол
     .desc = { ent-FloorTileItemBase.desc }
-
-# Marble
-ent-FloorTileItemWhiteMarble = белая мраморная плитка
-    .desc = Резной полированный квадрат из лучшего космического мрамора. Лучше его не потерять.
-ent-FloorTileItemDarkMarble = чёрная мраморная плитка
-    .desc = Резной полированный квадрат из лучшего космического мрамора. Лучше его не потерять.

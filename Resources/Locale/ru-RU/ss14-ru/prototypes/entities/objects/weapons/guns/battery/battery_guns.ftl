@@ -1,5 +1,7 @@
-ent-BaseWeaponBattery = { ent-BaseItem }
+ent-BaseWeaponBatteryNoAmmoCounter = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+ent-BaseWeaponBattery = { ent-BaseWeaponBatteryNoAmmoCounter }
+    .desc = { ent-BaseWeaponBatteryNoAmmoCounter.desc }
 ent-BaseLaserRifle = { ent-BaseWeaponBattery }
     .desc = { ent-BaseWeaponBattery.desc }
 ent-BaseWeaponPowerCell = { ent-BaseItem }
@@ -66,3 +68,5 @@ ent-WeaponLaserCannonXenoborg = тяжёлая лазерная пушка кс�
     .desc = { ent-WeaponLaserCannon.desc }
 ent-WeaponBurstFireLaserXenoborg = импульсный лазер ксеноборгов
     .desc = Инопланетное оружие, пропускающее импульсный лазерный луч через призму, поджигая поражённые цели.
+ent-WeaponRangeFinderXenoborg = целеуказатель ксеноборга
+    .desc = { ent-BaseWeaponBatteryNoAmmoCounter.desc }

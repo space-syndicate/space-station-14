@@ -55,5 +55,8 @@ changeling-sting-success = Мы незаметно жалим { THE($target) }!
 changeling-fake-mindshield-enabled = Мы излучаем сигналы, имитирующие защиту разума.
 changeling-fake-mindshield-disabled = Мы прекращаем излучать сигналы, имитирующие защиту разума.
 
+# chemicals
+changeling-not-enough-chemicals = У нас недостаточно химикатов.
+
 # other
 changeling-paused-map-name = Карта хранения личностей генокрада
