@@ -330,7 +330,7 @@
     stackType: FloorTileItemWoodChessRed
 
 - type: entity
-  name: dark diagonal floor
+  name: тёмная диагональная стальная плитка
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemDarkDiagonal
   components:
@@ -343,12 +343,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileDarkDiagonal
+      - FloorDarkDiagonal
   - type: Stack
     stackType: FloorTileItemDarkDiagonal
 
 - type: entity
-  name: dark offset floor
+  name: тёмная смещённая стальная плитка
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemDarkOffset
   components:
@@ -361,12 +361,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileDarkOffset
+      - FloorDarkOffset
   - type: Stack
     stackType: FloorTileItemDarkOffset
 
 - type: entity
-  name: steel diagonal floor
+  name: диагональная стальная плитка
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemSteelDiagonal
   components:
@@ -379,12 +379,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileSteelDiagonal
+      - FloorSteelDiagonal
   - type: Stack
     stackType: FloorTileItemSteelDiagonal
 
 - type: entity
-  name: steel offset floor
+  name: смещённая стальная плитка
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemSteelOffset
   components:
@@ -397,12 +397,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileSteelOffset
+      - FloorSteelOffset
   - type: Stack
     stackType: FloorTileItemSteelOffset
 
 - type: entity
-  name: white diagonal floor
+  name: светлая диагональная стальная плитка
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemWhiteDiagonal
   components:
@@ -415,12 +415,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileWhiteDiagonal
+      - FloorWhiteDiagonal
   - type: Stack
     stackType: FloorTileItemWhiteDiagonal
 
 - type: entity
-  name: white offset floor
+  name: светлая смещённая стальная плитка
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemWhiteOffset
   components:
@@ -433,12 +433,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileWhiteOffset
+      - FloorWhiteOffset
   - type: Stack
     stackType: FloorTileItemWhiteOffset
 
 - type: entity
-  name: elevator shaft floor
+  name: плитка шахты лифта
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemElevatorShaft
   components:
@@ -451,12 +451,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileElevatorShaft
+      - FloorElevatorShaft
   - type: Stack
     stackType: FloorTileItemElevatorShaft
 
 - type: entity
-  name: hydro floor
+  name: гидро плитка
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemHydro
   components:
@@ -469,12 +469,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileHydro
+      - FloorHydro
   - type: Stack
     stackType: FloorTileItemHydro
 
 - type: entity
-  name: mining floor
+  name: шахтёрская плитка
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemMining
   components:
@@ -487,12 +487,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileMining
+      - FloorMining
   - type: Stack
     stackType: FloorTileItemMining
 
 - type: entity
-  name: mining dark floor
+  name: тёмная шахтёрская плитка
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemMiningDark
   components:
@@ -505,12 +505,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileMiningDark
+      - FloorMiningDark
   - type: Stack
     stackType: FloorTileItemMiningDark
 
 - type: entity
-  name: mining light floor
+  name: светлая шахтёрская плитка
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemMiningLight
   components:
@@ -523,12 +523,12 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileMiningLight
+      - FloorMiningLight
   - type: Stack
     stackType: FloorTileItemMiningLight
 
 - type: entity
-  name: rock vault floor
+  name: каменная плитка хранилища
   parent: FloorTileItemBaseCorvax
   id: FloorTileItemRockVault
   components:
@@ -541,6 +541,6 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorTileRockVault
+      - FloorRockVault
   - type: Stack
     stackType: FloorTileItemRockVault
