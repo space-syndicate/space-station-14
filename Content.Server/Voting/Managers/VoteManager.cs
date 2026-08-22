@@ -51,6 +51,11 @@ namespace Content.Server.Voting.Managers
         private readonly HashSet<ICommonSession> _playerCanCallVoteDirty = new();
         private readonly StandardVoteType[] _standardVoteTypeValues = Enum.GetValues<StandardVoteType>();
 
+        // Corvax-MapRotation-Start
+        public event Action<VoteOptions>? VoteCreating;
+        public event Action<IVoteHandle>? VoteCreated;
+        // Corvax-MapRotation-End
+
         public void Initialize()
         {
             _netManager.RegisterNetMessage<MsgVoteData>();
@@ -138,6 +143,13 @@ namespace Content.Server.Voting.Managers
             return option == null || option >= 0 && option < voteReg.Entries.Length;
         }
 
+        // Corvax-MapRotation-Start
+        private static int GetEffectiveVoteCount(VoteReg vote, VoteEntry entry)
+        {
+            return vote.VoteCountModifier?.Invoke(entry.Data, entry.Votes) ?? entry.Votes;
+        }
+        // Corvax-MapRotation-End
+
         public void Update()
         {
             // Handle active votes.
@@ -204,14 +216,20 @@ namespace Content.Server.Voting.Managers
 
         public IVoteHandle CreateVote(VoteOptions options)
         {
+            // Corvax-MapRotation
+            VoteCreating?.Invoke(options);
+
             var id = _nextVoteId++;
 
             var entries = options.Options.Select(o => new VoteEntry(o.data, o.text)).ToArray();
 
             var start = _timing.RealTime;
             var end = start + options.Duration;
+            // Corvax-MapRotation-Start
             var reg = new VoteReg(id, entries, options.Title, options.InitiatorText,
-                options.InitiatorPlayer, start, end, options.VoterEligibility, options.DisplayVotes, options.TargetEntity);
+                options.InitiatorPlayer, start, end, options.VoterEligibility, options.DisplayVotes,
+                options.VoteCountModifier, options.TargetEntity);
+            // Corvax-MapRotation-End
 
             var handle = new VoteHandle(this, reg);
 
@@ -225,6 +243,8 @@ namespace Content.Server.Voting.Managers
             }
 
             DirtyCanCallVoteAll();
+
+            VoteCreated?.Invoke(handle); // Corvax-MapRotation
 
             return handle;
         }
@@ -290,7 +310,13 @@ namespace Content.Server.Voting.Managers
             for (var i = 0; i < msg.Options.Length; i++)
             {
                 ref var entry = ref v.Entries[i];
-                msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Text);
+                // Corvax-MapRotation-Start
+                var displayedVotes = Math.Clamp(
+                    GetEffectiveVoteCount(v, entry),
+                    0,
+                    ushort.MaxValue);
+                msg.Options[i] = (msg.DisplayVotes ? (ushort) displayedVotes : (ushort) 0, entry.Text);
+                // Corvax-MapRotation-End
             }
 
             player.Channel.SendMessage(msg);
@@ -392,19 +418,21 @@ namespace Content.Server.Voting.Managers
                 }
             }
 
-            // Find winner or stalemate.
+            // Corvax-MapRotation-Start
+            // Find winner or stalemate using the effective vote count.
             var winners = v.Entries
-                .GroupBy(e => e.Votes)
+                .GroupBy(e => GetEffectiveVoteCount(v, e))
                 .OrderByDescending(g => g.Key)
                 .First()
                 .Select(e => e.Data)
                 .ToImmutableArray();
-            // Store all votes in order for webhooks
+            // Store all effective votes in order for webhooks.
             var voteTally = new List<int>();
             foreach(var entry in v.Entries)
             {
-                voteTally.Add(entry.Votes);
+                voteTally.Add(GetEffectiveVoteCount(v, entry));
             }
+            // Corvax-MapRotation-End
 
             v.Finished = true;
             v.Dirty = true;
@@ -505,6 +533,7 @@ namespace Content.Server.Voting.Managers
             public readonly HashSet<ICommonSession> VotesDirty = new();
             public readonly VoterEligibility VoterEligibility;
             public readonly bool DisplayVotes;
+            public readonly Func<object, int, int>? VoteCountModifier; // Corvax-MapRotation
             public readonly NetEntity? TargetEntity;
 
             public bool Cancelled;
@@ -516,7 +545,9 @@ namespace Content.Server.Voting.Managers
             public ICommonSession? Initiator { get; }
 
             public VoteReg(int id, VoteEntry[] entries, string title, string initiatorText,
-                ICommonSession? initiator, TimeSpan start, TimeSpan end, VoterEligibility voterEligibility, bool displayVotes, NetEntity? targetEntity)
+                ICommonSession? initiator, TimeSpan start, TimeSpan end, VoterEligibility voterEligibility,
+                bool displayVotes, Func<object, int, int>? voteCountModifier, // Corvax-MapRotation
+                NetEntity? targetEntity)
             {
                 Id = id;
                 Entries = entries;
@@ -527,6 +558,7 @@ namespace Content.Server.Voting.Managers
                 EndTime = end;
                 VoterEligibility = voterEligibility;
                 DisplayVotes = displayVotes;
+                VoteCountModifier = voteCountModifier; // Corvax-MapRotation
                 TargetEntity = targetEntity;
             }
         }
