@@ -63,7 +63,20 @@
     },
         {
             "name": "temperature_unlit",
+            "directions": 4,
             "delays": [
+        [
+          0.8,
+          0.4
+        ],
+        [
+          0.8,
+          0.4
+        ],
+        [
+          0.8,
+          0.4
+        ],
         [
           0.8,
           0.4
@@ -71,8 +84,21 @@
       ]
         },
         {
-            "name": "pressure_unlit",
+          "name": "pressure_unlit",
+           "directions": 4,
            "delays": [
+        [
+          0.8,
+          0.4
+        ],
+        [
+          0.8,
+          0.4
+        ],
+        [
+          0.8,
+          0.4
+        ],
         [
           0.8,
           0.4

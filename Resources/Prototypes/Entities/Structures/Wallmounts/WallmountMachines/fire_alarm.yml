@@ -34,7 +34,7 @@
     alarmStates:
       Normal: fire_0
       Warning: fire_0 # shouldn't be alarming at a warning
-      Danger: fire_2
+      Danger: alarm # Corvax-Fire-Alarm
       Emagged: fire_emagged
     hideOnDepowered: [ "fireAlarmState" ]
   - type: Tag
@@ -56,10 +56,12 @@
       Green: fire_0
       Blue: fire_1
       Red: fire_2
-      Violet: fire_1
-      Yellow: fire_1
+      # Corvax-Fire-Alarm-Start
+      Violet: fire_5
+      Yellow: fire_4
       DeltaNuke: fire_3
-      # TODO: add missing alarm states
+      Gamma: fire_6
+      # Corvax-Fire-Alarm-End
   - type: UserInterface
     interfaces:
       enum.WiresUiKey.Key:
