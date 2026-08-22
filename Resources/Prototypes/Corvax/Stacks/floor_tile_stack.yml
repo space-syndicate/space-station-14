@@ -109,71 +109,71 @@
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemDarkDiagonal
-  name: тёмная диагональная стальная плитка
+  name: dark-diagonal-steel-floor
   spawn: FloorTileItemDarkDiagonal
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemDarkOffset
-  name: тёмная смещённая стальная плитка
+  name: dark-offset-steel-floor
   spawn: FloorTileItemDarkOffset
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemSteelDiagonal
-  name: диагональная стальная плитка
+  name: diagonal-steel-floor
   spawn: FloorTileItemSteelDiagonal
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemSteelOffset
-  name: смещённая стальная плитка
+  name: offset-steel-floor
   spawn: FloorTileItemSteelOffset
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemWhiteDiagonal
-  name: светлая диагональная стальная плитка
+  name: light-diagonal-steel-floor
   spawn: FloorTileItemWhiteDiagonal
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemWhiteOffset
-  name: светлая смещённая стальная плитка
+  name: light-offset-steel-floor
   spawn: FloorTileItemWhiteOffset
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemElevatorShaft
-  name: плитка шахты лифта
+  name: elevator-shaft-floor
   spawn: FloorTileItemElevatorShaft
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemHydro
-  name: гидро плитка
+  name: hydro-floor
   spawn: FloorTileItemHydro
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemMining
-  name: шахтёрская плитка
+  name: mining-floor
   spawn: FloorTileItemMining
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemMiningDark
-  name: тёмная шахтёрская плитка
+  name: mining-dark-floor
   spawn: FloorTileItemMiningDark
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemMiningLight
-  name: светлая шахтёрская плитка
+  name: mining-light-floor
   spawn: FloorTileItemMiningLight
 
 - type: stack
   parent: BaseTileStack
   id: FloorTileItemRockVault
-  name: каменная плитка хранилища
+  name: rock-vault-floor
   spawn: FloorTileItemRockVault
