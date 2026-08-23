@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 288.1.0
+  engineVersion: 289.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/19/2026 20:56:23
+  time: 08/22/2026 21:17:42
   entityCount: 362
 maps: []
 grids:
@@ -164,7 +164,6 @@ entities:
     components:
     - type: Transform
       parent: 1
-      rot: -1.5707963267948966 rad
       pos: 5.5,-3.5
 - proto: APCBasic
   entities:
