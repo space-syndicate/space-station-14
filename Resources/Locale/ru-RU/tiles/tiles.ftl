@@ -153,7 +153,9 @@ tiles-astro-ironsand-borderless = безграничный астро-желез
 tiles-desert-astro-sand = пустынный астро-песок
 tiles-wood-large = большой деревянный пол
 tiles-white-marble = белая мраморная плитка
+tiles-white-marble-mono = белая мраморная плита
 tiles-dark-marble = чёрная мраморная плитка
+tiles-dark-marble-mono = чёрная мраморная плита
 tiles-plasma-marble = плазменная мраморная плитка
 tiles-uranium-marble = урановая мраморная плитка
 

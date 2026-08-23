@@ -1,3 +1,5 @@
+ent-BaseGirder = { ent-BaseStructureDynamic }
+    .desc = { ent-BaseStructureDynamic.desc }
 ent-Girder = каркас
     .desc = Большой каркас из металла. Его необходимо покрыть листами металла, чтобы он считался стеной.
 ent-ReinforcedGirder = укреплённый каркас
