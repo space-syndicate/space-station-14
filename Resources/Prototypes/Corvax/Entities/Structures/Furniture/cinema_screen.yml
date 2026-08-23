@@ -1,0 +1,54 @@
+- type: entity
+  id: CinemaScreen
+  parent: BaseStructureDynamic
+  name: cinema screen
+  description: A wall screen that streams an external HTTPS video. Click it to open the controls.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["screenVideo"]
+      texture: Corvax/Structures/Furniture/cinema_screen_off.png
+      scale: 0.5, 0.5
+    - map: ["screenFrame"]
+      texture: Corvax/Structures/Furniture/cinema_screen_frame.png
+      scale: 0.5, 0.5
+  - type: CinemaScreen
+  - type: ActivatableUI
+    key: enum.CinemaScreenUiKey.Key
+    requiresComplex: false
+    blockSpectators: false
+  - type: UserInterface
+    interfaces:
+      enum.CinemaScreenUiKey.Key:
+        type: CinemaScreenBoundUserInterface
+  - type: Damageable
+    damageModifierSet: StructuralMetallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+
+- type: entity
+  id: CinemaScreenMini
+  parent: CinemaScreen
+  name: cinema screen
+  description: A wall screen that streams an external HTTPS video. Click it to open the controls.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["screenVideo"]
+      texture: Corvax/Structures/Furniture/cinema_screen_off.png
+      scale: 0.2, 0.2
+    - map: ["screenFrame"]
+      texture: Corvax/Structures/Furniture/cinema_screen_frame.png
+      scale: 0.2, 0.2
