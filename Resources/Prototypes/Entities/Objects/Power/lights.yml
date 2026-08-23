@@ -220,7 +220,7 @@
   components:
   - type: LightBulb
     color: "#FFE4CE" # 5000K color temp
-    lightEnergy: 1.6
+    lightEnergy: 0.9 # Corvax после офф фулл респрайта стало с 0.8 на 1.6 - спорно
     lightRadius: 10
     lightSoftness: 1
     PowerUse: 25
