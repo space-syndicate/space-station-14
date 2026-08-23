@@ -14,7 +14,7 @@ status-effect-examine-seeing-rainbow = [color=lightgreen]{ CAPITALIZE(SUBJECT($t
 status-effect-examine-stunned = [color=yellow]{ CAPITALIZE(POSS-ADJ($target)) } { GENDER($target) ->
     [male]выглядит изможденным и неспособным
     [female]выглядит изможденным и неспособным
-    [epicence]выглядмт изможденным и неспособным
-    *[neuter]выглядитят изможденными и неспособными
+    [epicence]выглядит изможденным и неспособным
+    *[neuter]выглядят изможденными и неспособными
 } двигаться.[/color]
 status-effect-examine-temporary-blindness = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } взгляд расфокусировался. Похоже на проблемы со зрением.[/color]

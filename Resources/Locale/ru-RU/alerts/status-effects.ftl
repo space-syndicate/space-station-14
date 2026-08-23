@@ -1,10 +1,10 @@
 alerts-adrenaline-name = [color=red]Адреналин[/color]
-alerts-adrenaline-desc = Вас переполняет адреналин: боль не будет замедлять вас.
+alerts-adrenaline-desc = Вы наполнены адреналином: боль не замедляет вас.
 
 alerts-drunk-name = [color=yellow]Опьянение[/color]
 alerts-drunk-desc = Употребление рекреационных наркотиков усложнило вам жизнь.
 
-alerts-muted-name = Заглушены
+alerts-muted-name = Безмолвие
 alerts-muted-desc = Вы потеряли способность говорить.
 
 alerts-stunned-name = [color=yellow]Оглушены[/color]

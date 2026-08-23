@@ -5,4 +5,4 @@ ent-AccessBreaker = { ent-AccessBreakerUnlimited }
     .desc = { ent-AccessBreakerUnlimited.desc }
     .suffix = Ограниченный
 ent-XenoborgAccessBreaker = разрушитель аутентификации ксеноборгов
-    .desc = Разрушитель аутентификации, разработанный ксеноборгами для для взлома электронных замков.
+    .desc = Разрушитель аутентификации, разработанный ксеноборгами для взлома электронных замков.

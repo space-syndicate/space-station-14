@@ -3,4 +3,4 @@ comp-entity-provider-cannot-receive = { CAPITALIZE($refillTarget) } не мож�
 comp-entity-provider-cannot-transfer = { CAPITALIZE($provider) } не может быть использован для пополнения!
 
 # Ejection Messages
-comp-entity-provider-no-ejected = Нечего извлекать!
+comp-entity-provider-no-ejected = Здесь нечего извлекать!

@@ -3,4 +3,4 @@ ent-BaseWallmountBoard = { ent-BaseWallmount }
 ent-NoticeBoard = информационная доска
     .desc = Есть ли работа для ведьмака?
 ent-PostBoard = почтовая доска
-    .desc = Приложите бумагу непосредственно к зажиму.
+    .desc = Прикрепите бумагу прямо к зажиму.
