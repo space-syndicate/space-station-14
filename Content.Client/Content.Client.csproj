@@ -17,6 +17,9 @@
   <Import Project="..\RobustToolbox\Imports\Lidgren.props" />
   <Import Project="..\RobustToolbox\Imports\Client.props" />
   <Import Project="..\RobustToolbox\Imports\Shared.props" />
+  <!-- Corvax-start: CinemaScreen needs Robust.Client.WebView (WebViewControl). -->
+  <Import Project="..\RobustToolbox\Imports\WebView.props" />
+  <!-- Corvax-end -->
 
   <ItemGroup>
     <ProjectReference Include="..\Content.Shared\Content.Shared.csproj" />

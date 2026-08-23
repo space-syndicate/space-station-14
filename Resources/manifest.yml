@@ -2,4 +2,9 @@ defaultWindowTitle: Space Station 14 - Corvax Station [RU]
 windowIconSet: /Textures/Logo/icon-ru # Corvax-Theme
 splashLogo: /Textures/Logo/logo-ru.png # Corvax-Theme
 
+# Corvax-start: CinemaScreen uses the client-side Robust.Client.WebView engine module (WebViewControl).
+modules:
+- Robust.Client.WebView
+# Corvax-end
+
 # PJB PLEASE
