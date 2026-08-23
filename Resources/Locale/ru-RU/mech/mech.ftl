@@ -14,3 +14,4 @@ mech-energy-missing = Энергия: ОТСУТСТВУЕТ
 mech-slot-display = Доступно слотов: { $amount }
 
 mech-construction-guide-string = Все механические детали должны быть прикреплены к каркасу.
+mech-construction-guide-string-vim = Две ноги киборга и ВКД шлем должны быть прикреплены к каркасу.

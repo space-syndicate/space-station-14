@@ -25,6 +25,9 @@ changeling-catalog-lethal-sting-desc = Со временем наносит ур
 changeling-catalog-hallucinogenic-sting-name = Галлюциногенное жало
 changeling-catalog-hallucinogenic-sting-desc = Вызывает у жертвы состояние эйфории и затруднения в речи. Вызывает растерянность среди экипажа. Может быть использовано на себе.
 
+changeling-catalog-mute-sting-name = Жало немоты
+changeling-catalog-mute-sting-desc = Приводит к тому, что цель теряет способность говорить. Незаметно, пока цель не попытается заговорить. Может быть использовано на себе.
+
 changeling-catalog-screech-name = Крик ужаса [ВРЕМЕННЫЙ]
 changeling-catalog-screech-desc = Мы издаем пронзительный крик, обезоруживающий тех, кто слышит его без надлежащей защиты слуха. ПОСЛЕ РЕАЛИЗАЦИИ ДАННОЕ ДЕЙСТВИЕ БУДЕТ ПЕРЕВЕДЕНО В ФОРМУ УЖАСА.
 
