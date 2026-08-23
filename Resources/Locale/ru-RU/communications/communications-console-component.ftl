@@ -45,8 +45,8 @@ comms-console-level-Violet-flavour-label = Соблюдайте социальн
 comms-console-level-Yellow-flavour-label = Приготовьтесь задержать дыхание
 comms-console-level-Red-flavour-label = Сохраняйте бдительность
 comms-console-level-Gamma-flavour-label = Рекомендуется проявлять крайнюю осторожность
-comms-console-level-Delta-flavour-label = Удачи
-comms-console-level-Epsilon-flavour-label = Вы уволены
+comms-console-level-Delta-flavour-label = Удачи :)
+comms-console-level-Epsilon-flavour-label = Контракты расторгнуты
 
 #CorvaxFix There no Delta code in Ban-Sing-Se
-comms-console-level-DeltaNuke-flavour-label = Удачи
+comms-console-level-DeltaNuke-flavour-label = Удачи :)
