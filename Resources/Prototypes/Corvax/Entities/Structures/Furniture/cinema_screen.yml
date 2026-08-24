@@ -52,3 +52,18 @@
     - map: ["screenFrame"]
       texture: Corvax/Structures/Furniture/cinema_screen_frame.png
       scale: 0.2, 0.2
+
+- type: entity
+  id: CinemaScreenMini2
+  parent: CinemaScreen
+  name: cinema screen
+  description: A wall screen that streams an external HTTPS video. Click it to open the controls.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["screenVideo"]
+      texture: Corvax/Structures/Furniture/cinema_screen_off.png
+      scale: 0.1, 0.1
+    - map: ["screenFrame"]
+      texture: Corvax/Structures/Furniture/cinema_screen_frame.png
+      scale: 0.1, 0.1

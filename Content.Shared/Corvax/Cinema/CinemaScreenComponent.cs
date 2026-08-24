@@ -40,6 +40,26 @@ public sealed partial class CinemaScreenComponent : Component
     [DataField, AutoNetworkedField]
     public float Volume = 1f;
 
+    /// <summary>Cache key of the server-generated segmented OGG audio track.</summary>
+    [AutoNetworkedField]
+    public string? AudioCacheKey;
+
+    /// <summary>Number of generated OGG segments available through the server status endpoint.</summary>
+    [AutoNetworkedField]
+    public int AudioSegmentCount;
+
+    /// <summary>Nominal duration of each generated segment in seconds.</summary>
+    [AutoNetworkedField]
+    public float AudioSegmentDuration = 30f;
+
+    /// <summary>Distance at which positional cinema audio becomes completely silent.</summary>
+    [DataField]
+    public float AudioMaxDistance = 20f;
+
+    /// <summary>Distance inside which positional cinema audio plays at full configured volume.</summary>
+    [DataField]
+    public float AudioFullVolumeDistance = 2f;
+
     /// <summary>
     /// True once the screen has been broken. Clients stop playback, release the WebView/render target,
     /// and show the broken sprite.
@@ -60,9 +80,9 @@ public sealed partial class CinemaScreenComponent : Component
     public float BreakDamage = 100f;
 
     /// <summary>
-    /// Drift threshold in seconds. The JS player resyncs <c>video.currentTime</c> whenever it drifts
-    /// further than this from the server-derived position (roughly the requested 0.3–0.5s).
+    /// Drift threshold in seconds. Video and generated positional audio are corrected whenever they drift
+    /// further than this from the shared server-derived playback position.
     /// </summary>
     [DataField]
-    public float ResyncThreshold = 0.35f;
+    public float ResyncThreshold = 0.12f;
 }

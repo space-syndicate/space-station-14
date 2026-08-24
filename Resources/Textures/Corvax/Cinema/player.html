@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-<video id="video" playsinline></video>
+<video id="video" playsinline muted></video>
 <div id="yt"></div>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
@@ -40,11 +40,15 @@
 
     var videoSrc = null;
     var pendingSeek = null;
+    var playStarting = false;
+    var playbackRejected = false;
     var isYoutube = false;
 
     var ytPlayer = null;
     var ytReady = false;
     var ytVideoId = null;
+    var ytDesiredVolume = 1;
+    var ytPlayRequested = false;
 
     // ---------------- diagnostics (JS->C# via resource fetch) ----------------
     function reportState(tag) {
@@ -65,21 +69,10 @@
 
     // ---------------- plain <video> (webm/mp4) ----------------
     v.addEventListener('loadedmetadata', function () {
-        // JS->C# bridge: report native video size so the render target can match it.
-        try {
-            var img = new Image();
-            img.src = 'res://localhost/cinema-video-size?w=' + v.videoWidth + '&h=' + v.videoHeight;
-        } catch (e) {}
-
         if (pendingSeek !== null) {
             try { v.currentTime = pendingSeek; } catch (e) { /* retried next sync */ }
             pendingSeek = null;
         }
-    });
-
-    // Once playback starts, make sure the autoplay-muted fallback does not leave us muted.
-    v.addEventListener('playing', function () {
-        v.muted = false;
     });
 
     function setTime(t) {
@@ -91,31 +84,26 @@
     }
 
     function videoStartPlayback() {
+        if (playStarting || playbackRejected) return;
+
+        // WebView owns video only. Keeping the element permanently muted makes Chromium's autoplay path stable
+        // on Linux; audible cinema sound is generated and played by the game's positional AudioSystem.
+        playStarting = true;
+        v.muted = true;
+        v.volume = 0;
         var p = v.play();
         if (p && typeof p.then === 'function') {
             p.then(function () {
-                v.muted = false;
-                reportState('playing-unmuted');
+                playStarting = false;
+                reportState('playing-muted');
             }).catch(function () {
-                // Autoplay-with-sound blocked. volume=0 keeps the audio pipeline producing real
-                // samples (unlike muted, which can leave the stream silent); applyState restores volume.
-                v.volume = 0;
-                var p2 = v.play();
-                if (p2 && typeof p2.then === 'function') {
-                    p2.then(function () {
-                        reportState('volume-fallback-playing');
-                    }).catch(function () {
-                        v.muted = true;
-                        var p3 = v.play();
-                        if (p3 && typeof p3.then === 'function') {
-                            p3.then(function () {
-                                v.muted = false;
-                                reportState('muted-fallback-playing');
-                            }).catch(function () { reportState('fallback-failed'); });
-                        }
-                    });
-                }
+                // Do not repeat a rejected request every synchronization tick. A new URL resets the latch.
+                playbackRejected = true;
+                playStarting = false;
+                reportState('muted-autoplay-failed');
             });
+        } else {
+            playStarting = false;
         }
     }
 
@@ -124,6 +112,7 @@
 
         if (url !== videoSrc) {
             videoSrc = url;
+            playbackRejected = false;
             if (url) {
                 // The URL is ONLY ever assigned to video.src.
                 v.src = url;
@@ -136,9 +125,8 @@
             }
         }
 
-        if (Math.abs(v.volume - volume) > 0.0005) {
-            v.volume = Math.max(0, Math.min(1, volume));
-        }
+        v.muted = true;
+        v.volume = 0;
 
         if (url) {
             var drift = Math.abs(v.currentTime - time);
@@ -176,12 +164,15 @@
         }
 
         ytVideoId = id;
+        ytPlayRequested = false;
         ytPlayer = new YT.Player('yt', {
             videoId: id,
             playerVars: { autoplay: 0, controls: 0, rel: 0, modestbranding: 1, playsinline: 1 },
             events: {
                 onReady: function () { reportState('yt-ready'); },
-                onStateChange: function (e) { reportState('yt-state'); },
+                onStateChange: function (e) {
+                    reportState('yt-state');
+                },
                 onError: function (e) { reportState('yt-error-' + (e && e.data != null ? e.data : 'unknown')); }
             }
         });
@@ -195,7 +186,10 @@
     function ytApplyState(playing, time, volume, threshold) {
         if (!ytPlayer || typeof ytPlayer.playVideo !== 'function') return;
 
-        try { ytPlayer.setVolume(Math.round(Math.max(0, Math.min(1, volume)) * 100)); } catch (e) {}
+        ytDesiredVolume = Math.max(0, Math.min(1, volume));
+        try {
+            ytPlayer.setVolume(Math.round(ytDesiredVolume * 100));
+        } catch (e) {}
 
         try {
             var cur = ytPlayer.getCurrentTime();
@@ -206,8 +200,15 @@
 
         try {
             var st = ytPlayer.getPlayerState();
-            if (playing && st !== 1 /* PLAYING */) ytPlayer.playVideo();
-            else if (!playing && st === 1) ytPlayer.pauseVideo();
+            if (playing && st !== 1 /* PLAYING */ && !ytPlayRequested) {
+                // Make only one autoplay request. Retrying on every 100 ms sync tick visibly toggles play/pause.
+                ytPlayRequested = true;
+                ytPlayer.mute();
+                ytPlayer.playVideo();
+            } else if (!playing) {
+                ytPlayRequested = false;
+                if (st === 1) ytPlayer.pauseVideo();
+            }
         } catch (e) {}
     }
 

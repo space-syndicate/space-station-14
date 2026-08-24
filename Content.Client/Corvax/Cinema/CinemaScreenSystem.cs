@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Numerics;
 using Content.Shared.Corvax.Cinema;
+using Content.Shared.GameTicking;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -27,6 +28,8 @@ public sealed partial class CinemaScreenSystem : EntitySystem
     private const string VideoLayerKey = "screenVideo";
     private const string FrameLayerKey = "screenFrame";
     private const float SyncInterval = 0.1f;
+    private const int MinRenderDimension = 64;
+    private const int MaxRenderDimension = 4096;
 
     [Dependency] private IOverlayManager _overlayManager = default!;
     [Dependency] private IUserInterfaceManager _uiManager = default!;
@@ -45,14 +48,23 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         _overlay = new CinemaScreenOverlay();
         _overlayManager.AddOverlay(_overlay);
 
+        SubscribeNetworkEvent<CinemaAudioChunkEvent>(OnAudioSegment);
+
         SubscribeLocalEvent<CinemaScreenComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<CinemaScreenComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
     }
 
     public override void Shutdown()
     {
+        ClearAudioCache();
         base.Shutdown();
         _overlayManager.RemoveOverlay(_overlay);
+    }
+
+    private void OnRoundRestartCleanup(RoundRestartCleanupEvent args)
+    {
+        ClearAudioCache();
     }
 
     public override void FrameUpdate(float frameTime)
@@ -72,37 +84,49 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         if (webView == null)
             return;
 
+        UpdateAudio(uid, comp, player);
+
         // Re-attach if the WebView was created before the UI root was ready.
-        if (webView.Parent == null)
+        if (!webView.IsInsideTree)
         {
-            var host = new LayoutContainer();
-            LayoutContainer.SetPosition(webView, new Vector2(-10000, -10000));
-            host.AddChild(webView);
-            _uiManager.RootControl?.AddChild(host);
+            var host = webView.Parent;
+            if (host == null)
+            {
+                host = new LayoutContainer();
+                LayoutContainer.SetPosition(webView, new Vector2(-10000, -10000));
+                host.AddChild(webView);
+            }
+
+            if (host.Parent == null)
+                _uiManager.RootControl?.AddChild(host);
         }
 
-        // Auto-match the source video resolution (no downscale) unless a manual override is set.
-        if (string.IsNullOrWhiteSpace(_cfg.GetCVar(CinemaCVars.RenderResolution)) &&
-            player.SourceVideoSize is { } source &&
-            ((int) webView.SetSize.X != source.Width || (int) webView.SetSize.Y != source.Height))
+        // WebViewControl sizes are expressed in UI pixels, but CEF and the render target use physical pixels.
+        // Counter-scale the control so changing display/UI scale never resizes CEF or recreates a huge chain of
+        // intermediate render targets. The small physical-pixel bias avoids float truncation to size - 1.
+        var (width, height) = GetRenderResolution(comp);
+        var desiredSize = new Vector2i(width, height);
+        if (webView.PixelSize != desiredSize)
         {
-            webView.SetSize = new Vector2(source.Width, source.Height);
+            var uiScale = MathF.Max(webView.UIScale, 0.01f);
+            webView.SetSize = new Vector2(width + 0.25f, height + 0.25f) / uiScale;
         }
 
-        // Ensure the render target matches the WebView's physical size (which may depend on UI scale).
-        var size = webView.PixelSize;
-        if (size.X > 0 && size.Y > 0 && (player.RenderTexture == null || player.RenderTexture.Size != size))
+        // Wait for the UI layout pass to apply the requested physical size before allocating the target. This
+        // prevents transient 0px/old-size targets while the window or UI scale is changing.
+        if (webView.PixelSize == desiredSize &&
+            (player.RenderTexture == null || player.RenderTexture.Size != desiredSize))
         {
             player.RenderTexture?.Dispose();
             player.RenderTexture = _clyde.CreateRenderTarget(
-                size,
+                desiredSize,
                 new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb),
                 new TextureSampleParameters { Filter = true },
                 "cinema-screen");
 
             ApplyVideoTexture(uid, comp, player);
             player.SyncAccumulator = SyncInterval; // sync immediately on (re)creation.
-            Log.Info($"Cinema render target created: {size} (entity {ToPrettyString(uid)})");
+            Log.Info($"Cinema render target created: {desiredSize} (entity {ToPrettyString(uid)})");
         }
 
         // Broken: stop playback, free the WebView/render target and show the broken sprite.
@@ -122,19 +146,25 @@ public sealed partial class CinemaScreenSystem : EntitySystem
             return;
 
         player.SyncAccumulator = 0f;
-        SyncPlayback(comp, player);
+        SyncPlayback(uid, comp, player);
     }
 
-    private void SyncPlayback(CinemaScreenComponent comp, CinemaScreenPlayerComponent player)
+    private void SyncPlayback(EntityUid uid, CinemaScreenComponent comp, CinemaScreenPlayerComponent player)
     {
         var webView = player.WebView;
         if (webView == null)
             return;
 
         var url = comp.VideoUrl;
-        var playing = comp.Playing;
+        // CEF audio is not a game AudioComponent, so it does not automatically follow entity PVS. Actually pause
+        // the browser player outside PVS (instead of merely muting it); on re-entry the server clock seeks it to
+        // the current position before playback resumes.
+        var inPvs = IsInPvs(uid);
+        var playing = comp.Playing && inPvs;
         var time = CurrentPosition(comp);
-        var volume = comp.Volume;
+        // Browser audio is permanently disabled. Direct-media audio is extracted server-side and played through
+        // the normal positional game AudioSystem instead, which owns attenuation and PVS behavior.
+        const float volume = 0f;
 
         // player.html compares the values and only acts on meaningful changes (src swap, drift > threshold,
         // play/pause, volume). The URL is only ever assigned to video.src inside player.html.
@@ -190,7 +220,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
     private void OnShutdown(EntityUid uid, CinemaScreenComponent comp, ComponentShutdown args)
     {
         if (TryComp<CinemaScreenPlayerComponent>(uid, out var player))
-            ReleaseWebView(player);
+            ReleaseWebView(player, EntityManager.ShuttingDown);
     }
 
     private void CreateWebView(EntityUid uid, CinemaScreenComponent comp, CinemaScreenPlayerComponent player)
@@ -212,54 +242,15 @@ public sealed partial class CinemaScreenSystem : EntitySystem
 
         webView.Url = PlayerHtmlUrl;
 
-        // JS->C# bridge: player.html reports the native video size through a resource request so the
-        // render target can match the source resolution (no downscale). `AddResourceRequestHandler` is
-        // part of the public Robust.Client.WebView API.
-        webView.AddResourceRequestHandler(ctx => OnBridgeRequest(player, ctx));
-
         player.WebView = webView;
         player.RenderTexture = null;
         player.SyncAccumulator = 0f;
 
         _uiManager.RootControl?.AddChild(host);
+        // The CEF manager closes every active browser before the entity manager flushes entities during client
+        // shutdown. Keeping this set prevents the later UI-tree exit from trying to close the same browser again.
+        webView.AlwaysActive = true;
         Log.Info($"Cinema WebView created for {ToPrettyString(uid)} (set size {width}x{height})");
-    }
-
-    private void OnBridgeRequest(CinemaScreenPlayerComponent player, IRequestHandlerContext ctx)
-    {
-        const string marker = "res://localhost/cinema-video-size";
-        if (string.IsNullOrEmpty(ctx.Url) ||
-            !ctx.Url.StartsWith(marker, StringComparison.OrdinalIgnoreCase))
-        {
-            return;
-        }
-
-        if (TryParseQueryInt(ctx.Url, "w", out var width) &&
-            TryParseQueryInt(ctx.Url, "h", out var height) &&
-            width > 0 && height > 0)
-        {
-            player.SourceVideoSize = (width, height);
-        }
-
-        // It is a control signal, not a real resource.
-        ctx.DoCancel();
-    }
-
-    private static bool TryParseQueryInt(string url, string key, out int value)
-    {
-        value = 0;
-
-        var marker = key + "=";
-        var idx = url.IndexOf(marker, StringComparison.OrdinalIgnoreCase);
-        if (idx < 0)
-            return false;
-
-        var start = idx + marker.Length;
-        var end = start;
-        while (end < url.Length && char.IsDigit(url[end]))
-            end++;
-
-        return end > start && int.TryParse(url.Substring(start, end - start), out value);
     }
 
     private (int Width, int Height) GetRenderResolution(CinemaScreenComponent comp)
@@ -271,28 +262,40 @@ public sealed partial class CinemaScreenSystem : EntitySystem
             if (parts.Length == 2 &&
                 int.TryParse(parts[0], out var width) &&
                 int.TryParse(parts[1], out var height) &&
-                width > 0 && height > 0)
+                width is >= MinRenderDimension and <= MaxRenderDimension &&
+                height is >= MinRenderDimension and <= MaxRenderDimension)
             {
                 return (width, height);
             }
         }
 
-        return (comp.Width, comp.Height);
+        return (Math.Clamp(comp.Width, MinRenderDimension, MaxRenderDimension),
+            Math.Clamp(comp.Height, MinRenderDimension, MaxRenderDimension));
     }
 
-    private void ReleaseWebView(CinemaScreenPlayerComponent player)
+    private void ReleaseWebView(CinemaScreenPlayerComponent player, bool clientShuttingDown = false)
     {
         var webView = player.WebView;
+        player.WebView = null;
+
         if (webView != null)
         {
-            var host = webView.Parent;
-            webView.Orphan(); // ExitedTree closes the browser.
-            host?.Orphan();
-            player.WebView = null;
+            if (!clientShuttingDown)
+            {
+                var host = webView.Parent;
+                // AlwaysActive=false does not close while the control is in the tree. Orphan then invokes
+                // ExitedTree and closes the browser exactly once.
+                webView.AlwaysActive = false;
+                webView.Orphan();
+                host?.Orphan();
+            }
+            // During full client shutdown WebViewManagerCef has already closed active browsers. Leave the control
+            // in the root tree with AlwaysActive=true so the subsequent tree teardown does not call CloseBrowser.
         }
 
         player.RenderTexture?.Dispose();
         player.RenderTexture = null;
+        ReleaseAudio(player);
     }
 
     private void ApplyVideoTexture(EntityUid uid, CinemaScreenComponent comp, CinemaScreenPlayerComponent player)
@@ -304,6 +307,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
             return;
 
         _sprite.LayerSetTexture((uid, sprite), VideoLayerKey, player.RenderTexture.Texture);
+        sprite.LayerSetShader(VideoLayerKey, "unshaded");
 
         // The frame layer's scale (set in the prototype YAML) defines the screen's world size.
         // Scale the video layer so its (possibly larger) render texture maps to the same world width.
@@ -339,4 +343,11 @@ public sealed partial class CinemaScreenSystem : EntitySystem
             .Replace("\r", "")
             .Replace("\n", " ") + "\"";
     }
+
+    private bool IsInPvs(EntityUid uid)
+    {
+        return TryComp(uid, out MetaDataComponent? metadata) &&
+               (metadata.Flags & MetaDataFlags.Detached) == 0;
+    }
+
 }

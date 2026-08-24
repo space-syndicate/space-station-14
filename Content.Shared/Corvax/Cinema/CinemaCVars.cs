@@ -28,11 +28,39 @@ public static class CinemaCVars
         CVarDef.Create("cinema.allow_http", false, CVar.SERVERONLY);
 
     /// <summary>
-    /// Optional client-side override for the WebView/render-target resolution, formatted "WIDTHxHEIGHT"
-    /// (e.g. "854x480" or "1280x720"). Empty (default) uses the per-entity <c>Width</c>/<c>Height</c>
-    /// (640x360). Set it to the source video resolution to avoid downscaling (better quality, more CPU
-    /// for CEF's software rendering).
+    /// Optional client-side override for the fixed physical WebView/render-target resolution, formatted
+    /// "WIDTHxHEIGHT" (e.g. "854x480" or "1280x720"). Empty (default) uses the per-entity
+    /// <c>Width</c>/<c>Height</c> (640x360). It intentionally does not follow UI scale or source video size.
     /// </summary>
     public static readonly CVarDef<string> RenderResolution =
         CVarDef.Create("cinema.render_resolution", "", CVar.CLIENTONLY);
+
+    /// <summary>Whether direct MP4/WebM URLs are converted to a positional OGG audio track.</summary>
+    public static readonly CVarDef<bool> AudioExtractionEnabled =
+        CVarDef.Create("cinema.audio_extraction_enabled", true, CVar.SERVERONLY);
+
+    /// <summary>ffmpeg executable used by the server for cinema audio extraction.</summary>
+    public static readonly CVarDef<string> AudioFfmpegPath =
+        CVarDef.Create("cinema.audio_ffmpeg_path", "ffmpeg", CVar.SERVERONLY);
+
+    /// <summary>Maximum direct video download size accepted by the extraction worker, in MiB.</summary>
+    public static readonly CVarDef<int> AudioMaxInputMiB =
+        CVarDef.Create("cinema.audio_max_input_mib", 2048, CVar.SERVERONLY);
+
+    /// <summary>Maximum time allowed for download and ffmpeg extraction.</summary>
+    public static readonly CVarDef<int> AudioExtractionTimeoutSeconds =
+        CVarDef.Create("cinema.audio_extraction_timeout_seconds", 1800, CVar.SERVERONLY);
+
+    /// <summary>Length of generated OGG/Vorbis chunks. Short chunks keep client decoded-audio memory bounded.</summary>
+    public static readonly CVarDef<int> AudioSegmentSeconds =
+        CVarDef.Create("cinema.audio_segment_seconds", 30, CVar.SERVERONLY);
+
+    /// <summary>Maximum number of generated movie audio tracks retained on the server between uses.</summary>
+    public static readonly CVarDef<int> AudioMaxCachedTracks =
+        CVarDef.Create("cinema.audio_max_cached_tracks", 4, CVar.SERVERONLY);
+
+    /// <summary>Maximum number of compressed cinema segments retained in a client's memory.</summary>
+    public static readonly CVarDef<int> AudioClientCacheSegments =
+        CVarDef.Create("cinema.audio_client_cache_segments", 8, CVar.CLIENTONLY);
+
 }

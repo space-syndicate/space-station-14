@@ -1,5 +1,7 @@
 using Robust.Client.Graphics;
+using Robust.Client.Audio;
 using Robust.Client.WebView;
+using System.Threading;
 
 namespace Content.Client.Corvax.Cinema;
 
@@ -28,6 +30,25 @@ public sealed partial class CinemaScreenPlayerComponent : Component
     /// <summary>Diagnostic: last playing flag passed to JS.</summary>
     public bool LastSyncedPlaying;
 
-    /// <summary>Native video resolution reported by player.html via the resource-request bridge.</summary>
-    public (int Width, int Height)? SourceVideoSize;
+    /// <summary>Client-side positional audio entity for the currently active generated segment.</summary>
+    public EntityUid? AudioEntity;
+
+    /// <summary>Decoded OpenAL stream owned by <see cref="AudioEntity"/>.</summary>
+    public AudioStream? AudioStream;
+
+    /// <summary>Generated audio cache key currently associated with this runtime player.</summary>
+    public string? AudioCacheKey;
+
+    /// <summary>Segment currently playing, or -1 while none is loaded.</summary>
+    public int AudioSegment = -1;
+
+    /// <summary>Segment currently being downloaded, or -1 while idle.</summary>
+    public int LoadingAudioSegment = -1;
+
+    /// <summary>Cancels an obsolete segment request after URL/PVS changes.</summary>
+    public CancellationTokenSource? AudioCancellation;
+
+    /// <summary>Do not hammer the status endpoint when extraction/download failed.</summary>
+    public TimeSpan AudioRetryAt;
+
 }
