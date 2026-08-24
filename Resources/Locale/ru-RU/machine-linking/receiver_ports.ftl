@@ -92,3 +92,9 @@ signal-port-description-logic-enable = Входной сигнал загруж�
 
 signal-port-name-logic-random-input = Входной сигнал
 signal-port-description-logic-random-input = Получает любой сигнал для события случайного вывода.
+
+signal-port-name-target-receiver = Целевой приемник
+signal-port-description-target-receiver = Получает информацию о цели от устройства обнаружения цели.
+
+signal-port-name-target-source = Целевой отправитель
+signal-port-description-target-source = Отправляет целевую информацию целевому приемнику.

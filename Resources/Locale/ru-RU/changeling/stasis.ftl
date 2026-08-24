@@ -4,3 +4,5 @@ changeling-stasis-active-desc = Выйдите из стазиса, восста
 changeling-stasis-enter = Мы впадаем в стазис, чтобы накопить энергию и подняться вновь.
 changeling-stasis-exit = Мы восстаем из мертвых, исцеляя все раны.
 changeling-stasis-exit-others = { CAPITALIZE(THE($user)) } восстает из мертвых, а раны заживают.
+
+suicide-regen-action-popup = Это действие убьет вас, пока вы не исцелитесь. Используйте ещё раз для подтверждения.

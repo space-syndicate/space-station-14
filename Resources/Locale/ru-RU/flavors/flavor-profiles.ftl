@@ -318,7 +318,6 @@ flavor-complex-manhattan-project = как будто теперь я стал С
 flavor-complex-margarita = как очень сильное похмелье
 flavor-complex-martini = как шпионский фильм
 flavor-complex-mojito = как уход в тень после пребывания на жарком солнце
-flavor-complex-neurotoxin = как подземный испытательный комплекс
 flavor-complex-patron = как будто мариачи поют серенады
 flavor-complex-radler = как шипучий лимонад
 flavor-complex-red-mead = как битва викингов
