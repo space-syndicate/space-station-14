@@ -214,7 +214,7 @@ namespace Content.Client.Chat.UI
             var label = new RichTextLabel
             {
                 MaxWidth = SpeechMaxWidth,
-                OutlineColorOverride = TextOutline.Default.Color,
+                OutlineColorOverride = Color.Transparent, // Corvax-SpeechBubble убрал обводку текста
             };
 
             label.SetMessage(FormatSpeech(message.WrappedMessage, fontColor));
@@ -245,7 +245,7 @@ namespace Content.Client.Chat.UI
                 var label = new RichTextLabel
                 {
                     MaxWidth = SpeechMaxWidth,
-                    OutlineColorOverride = TextOutline.Default.Color,
+                    OutlineColorOverride = Color.Transparent, // Corvax-SpeechBubble
                 };
 
                 label.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor));
@@ -263,7 +263,7 @@ namespace Content.Client.Chat.UI
             {
                 ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleSpeakerOpacity)),
                 Margin = new Thickness(2, 0, 2, 0),
-                OutlineColorOverride = TextOutline.Default.Color,
+                OutlineColorOverride = Color.Transparent, // Corvax-SpeechBubble
             };
 
             var bubbleContent = new RichTextLabel
@@ -272,7 +272,7 @@ namespace Content.Client.Chat.UI
                 MaxWidth = SpeechMaxWidth,
                 Margin = new Thickness(2, 0, 2, 0),
                 StyleClasses = { "bubbleContent" },
-                OutlineColorOverride = TextOutline.Default.Color,
+                OutlineColorOverride = Color.Transparent, // Corvax-SpeechBubble
             };
 
             //We'll be honest. *Yes* this is hacky. Doing this in a cleaner way would require a bottom-up refactor of how saycode handles sending chat messages. -Myr
