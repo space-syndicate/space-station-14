@@ -1,6 +1,7 @@
 using Content.Server.Administration.Managers;
 using Content.Shared.Corvax.Cinema;
 using Content.Shared.Damage.Systems;
+using Content.Shared.GameTicking;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
@@ -29,7 +30,29 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         base.Initialize();
 
         _net.RegisterNetMessage<MsgCinemaScreenControl>(OnControlMessage);
+        SubscribeNetworkEvent<CinemaAudioChunkRequestEvent>(OnAudioRequest);
         SubscribeLocalEvent<CinemaScreenComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<CinemaScreenComponent, ComponentStartup>(OnCinemaStartup);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+        InitializeAudioExtraction();
+    }
+
+    private void OnCinemaStartup(EntityUid uid, CinemaScreenComponent comp, ComponentStartup args)
+    {
+        // Screens restored with an existing URL must regenerate their audio manifest after a server restart.
+        ResetAudioMetadata(comp);
+        PrepareAudio(uid, comp);
+    }
+
+    private void OnRoundRestartCleanup(RoundRestartCleanupEvent args)
+    {
+        ResetAudioExtractionCache();
+    }
+
+    public override void Shutdown()
+    {
+        ShutdownAudioExtraction();
+        base.Shutdown();
     }
 
     private void OnControlMessage(MsgCinemaScreenControl msg)
@@ -93,7 +116,9 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         comp.Playing = false;
         comp.PausePosition = 0;
         comp.ServerStartTime = default;
+        ResetAudioMetadata(comp);
         Dirty(uid, comp);
+        PrepareAudio(uid, comp);
         Log.Info($"Cinema SetUrl OK: '{url}'");
     }
 
@@ -110,6 +135,8 @@ public sealed partial class CinemaScreenSystem : EntitySystem
 
             comp.VideoUrl = url;
             comp.PausePosition = 0;
+            ResetAudioMetadata(comp);
+            PrepareAudio(uid, comp);
         }
 
         if (string.IsNullOrWhiteSpace(comp.VideoUrl))
@@ -124,6 +151,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         comp.ServerStartTime = _timing.RealTime;
         comp.Playing = true;
         Dirty(uid, comp);
+        PrepareAudio(uid, comp);
         Log.Info($"Cinema Play OK: '{comp.VideoUrl}'");
     }
 
