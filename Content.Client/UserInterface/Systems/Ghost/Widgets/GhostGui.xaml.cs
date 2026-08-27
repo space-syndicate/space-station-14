@@ -14,6 +14,7 @@ public sealed partial class GhostGui : UIWidget
     public event Action? RequestWarpsPressed;
     public event Action? ReturnToBodyPressed;
     public event Action? GhostRolesPressed;
+    public event Action? GhostGoLobbyPressed; // Corvax-GoLobby
     private int _prevNumberRoles;
 
     public GhostGui()
@@ -28,6 +29,7 @@ public sealed partial class GhostGui : UIWidget
         ReturnToBodyButton.OnPressed += _ => ReturnToBodyPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleClass.Negative);
+        GhostGoLobbyButton.OnPressed += _ => GhostGoLobbyPressed?.Invoke(); // Corvax-GoLobby
     }
 
     public void Hide()
@@ -36,9 +38,10 @@ public sealed partial class GhostGui : UIWidget
         Visible = false;
     }
 
-    public void Update(int? roles, bool? canReturnToBody)
+    public void Update(int? roles, bool? canReturnToBody, bool? canGoLobby = true) // Corvax-GoLobby edit
     {
         ReturnToBodyButton.Disabled = !canReturnToBody ?? true;
+        GhostGoLobbyButton.Disabled = !canGoLobby ?? true; // Corvax-GoLobby
 
         if (roles != null)
         {

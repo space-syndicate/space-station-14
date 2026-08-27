@@ -8,6 +8,7 @@ using Robust.Client.Console;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Player;
+using Content.Shared.Corvax.Events;
 
 namespace Content.Client.Ghost
 {
@@ -185,6 +186,11 @@ namespace Content.Client.Ghost
         public void RequestWarps()
         {
             RaiseNetworkEvent(new GhostWarpsRequestEvent());
+        }
+
+        public void GhostGoLobby() // CorvaxGoob-Golobby
+        {
+            RaiseNetworkEvent(new GhostGoLobbyEvent());
         }
 
         public void ReturnToBody()

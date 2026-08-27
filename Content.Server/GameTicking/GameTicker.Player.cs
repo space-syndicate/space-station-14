@@ -215,7 +215,7 @@ namespace Content.Server.GameTicking
             RaiseNetworkEvent(new TickerJoinGameEvent(), session.Channel);
         }
 
-        private void PlayerJoinLobby(ICommonSession session)
+        public void PlayerJoinLobby(ICommonSession session) // Corvax-edit: made public for GoLobbySystem 
         {
             _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
             _db.AddRoundPlayers(RoundId, session.UserId);
