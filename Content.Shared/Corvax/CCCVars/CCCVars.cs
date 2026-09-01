@@ -134,4 +134,5 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool> StationGoal =
         CVarDef.Create("game.station_goal", true, CVar.SERVERONLY);
+
 }

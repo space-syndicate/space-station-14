@@ -1,92 +1,125 @@
-# General goals
-- type: stationGoal
-  id: Singularity
-  text: station-goal-singularity
-  minPlayers: 15
-
-- type: stationGoal
-  id: SolarPanels
-  text: station-goal-solar-panels
-
-- type: stationGoal
-  id: Artifacts
-  text: station-goal-artifacts
-  minPlayers: 15
-
-- type: stationGoal
-  id: Bank
-  text: station-goal-bank
-  minPlayers: 15
+#First goals
 
 - type: stationGoal
   id: Zoo
   text: station-goal-zoo
+  goalType: First
 
 - type: stationGoal
-  id: MiningOutpost
-  text: station-goal-mining-outpost
-  minPlayers: 15
+  id: Dorms
+  text: station-goal-dorms
+  goalType: First
 
 - type: stationGoal
-  id: Tesla
-  text: station-goal-tesla
-  minPlayers: 15
+  id: SolarPanels
+  text: station-goal-solar-panels
+  goalType: First
 
 - type: stationGoal
-  id: SecurityTraining
-  text: station-goal-security
-  minPlayers: 15
+  id: ShuttleCargo
+  text: station-goal-shuttle-cargo
+  goalType: First
 
 - type: stationGoal
   id: ShuttleMed
   text: station-goal-shuttle-med
   minPlayers: 10
-
-- type: stationGoal
-  id: ShuttleSec
-  text: station-goal-shuttle-sec
-  minPlayers: 10
+  goalType: First
 
 - type: stationGoal
   id: ShuttleRnd
   text: station-goal-shuttle-rnd
   minPlayers: 10
-
-- type: stationGoal
-  id: ShuttleSrv
-  text: station-goal-shuttle-srv
-  minPlayers: 10
+  goalType: First
 
 - type: stationGoal
   id: ShuttleEmergency
   text: station-goal-shuttle-emergency
   minPlayers: 10
+  goalType: First
 
 - type: stationGoal
-  id: Theatre
-  text: station-goal-theatre
+  id: LivingOutpost
+  text: station-goal-living-outpost
+  minPlayers: 10
+  goalType: First
+
+- type: stationGoal
+  id: Bank
+  text: station-goal-bank
+  minPlayers: 15
+  goalType: First
 
 - type: stationGoal
   id: CellAI
   text: station-goal-ai
+  minPlayers: 20
+  goalType: First
+
+#Second goals
+
+- type: stationGoal
+  id: Modification
+  text: station-goal-modification
+  goalType: Second
+
+- type: stationGoal
+  id: Anomalies
+  text: station-goal-anomalies
+  goalType: Second
+
+- type: stationGoal
+  id: Borgs
+  text: station-goal-borgs
+  minPlayers: 10
+  goalType: Second
+
+- type: stationGoal
+  id: Artifacts
+  text: station-goal-artifacts
+  minPlayers: 10
+  goalType: Second
+
+#Third goals
+
+- type: stationGoal
+  id: Theatre
+  text: station-goal-theatre
+  goalType: Third
+
+- type: stationGoal
+  id: Celebration
+  text: station-goal-selebration
+  goalType: Third
+
+- type: stationGoal
+  id: Exposition
+  text: station-goal-exposition
+  goalType: Third
+
+- type: stationGoal
+  id: DefenceEvent
+  text: station-goal-defence-event
   minPlayers: 15
+  goalType: Third
 
 - type: stationGoal
-  id: Botany
-  text: station-goal-botany
-
-- type: stationGoal
-  id: Bunker
-  text: station-goal-bunker
+  id: PsychologicalSurvey
+  text: station-goal-psychological-survey
+  minPlayers: 25
+  goalType: Third
 
 # Special goals
-- type: stationGoal
-  id: FrameRepair
-  text: station-goal-frame-repair
 
 - type: stationGoal
   id: XenobiologyRepair
   text: station-goal-delta-xeno-repair
+  goalType: First
+
+- type: stationGoal
+  id: AstraRepair
+  text: station-goal-astra-repair
+  goalType: First
 
 - type: stationGoal
   id: VirusologyAmbusol
@@ -95,11 +128,9 @@
   - PillRomerol
   - PillRomerol
   - PillRomerol
+  goalType: Third
 
 - type: stationGoal
   id: SectorSecurity
   text: station-goal-split-secure
-
-- type: stationGoal
-  id: AstraRepair
-  text: station-goal-astra-repair
+  goalType: Third
