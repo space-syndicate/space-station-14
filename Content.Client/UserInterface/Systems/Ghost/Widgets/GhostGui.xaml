@@ -5,7 +5,7 @@
         <Button Name="ReturnToBodyButton" Text="{Loc ghost-gui-return-to-body-button}" />
         <Button Name="GhostWarpButton" Text="{Loc ghost-gui-ghost-warp-button}" />
         <Button Name="GhostRolesButton" />
-        <!-- Corvax - Возвращение в лобби -->
+        <!-- Corvax-Changes: Added GhostGoLobbyButton -->
         <Button Name="GhostGoLobbyButton" Text="{Loc ghost-go-lobby-button}" />
     </BoxContainer>
 </widgets:GhostGui>
