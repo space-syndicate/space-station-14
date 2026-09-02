@@ -41,7 +41,7 @@ public sealed partial class GhostGui : UIWidget
     public void Update(int? roles, bool? canReturnToBody, bool? canGoLobby = true) // Corvax-GoLobby edit
     {
         ReturnToBodyButton.Disabled = !canReturnToBody ?? true;
-        GhostGoLobbyButton.Disabled = !canGoLobby ?? true; // Corvax-GoLobby
+        GhostGoLobbyButton.Visible = canGoLobby ?? true; // Corvax-GoLobby
 
         if (roles != null)
         {
