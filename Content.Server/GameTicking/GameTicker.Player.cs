@@ -1,3 +1,4 @@
+using Content.Server._Corvax.Events;
 using Content.Corvax.Interfaces.Server;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -24,6 +25,7 @@ namespace Content.Server.GameTicking
         private void InitializePlayer()
         {
             _playerManager.PlayerStatusChanged += PlayerStatusChanged;
+            SubscribeLocalEvent<GhostJoinLobbyRequestEvent>(OnGhostJoinLobbyRequest); // CorvaxGoob-GoLobby
         }
 
         private async void PlayerStatusChanged(object? sender, SessionStatusEventArgs args)
@@ -215,7 +217,7 @@ namespace Content.Server.GameTicking
             RaiseNetworkEvent(new TickerJoinGameEvent(), session.Channel);
         }
 
-        public void PlayerJoinLobby(ICommonSession session) // Corvax-edit: made public for GoLobbySystem 
+        private void PlayerJoinLobby(ICommonSession session)
         {
             _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
             _db.AddRoundPlayers(RoundId, session.UserId);
@@ -225,6 +227,11 @@ namespace Content.Server.GameTicking
             RaiseNetworkEvent(GetStatusMsg(session), client);
             RaiseNetworkEvent(GetInfoMsg(), client);
             RaiseLocalEvent(new PlayerJoinedLobbyEvent(session));
+        }
+
+        private void OnGhostJoinLobbyRequest(GhostJoinLobbyRequestEvent ev) // Corvax-GoLobby
+        {
+            PlayerJoinLobby(ev.Session);
         }
 
         private void ReqWindowAttentionAll()

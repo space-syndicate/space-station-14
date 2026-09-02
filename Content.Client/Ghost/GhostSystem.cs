@@ -1,4 +1,5 @@
 using Content.Client.Movement.Systems;
+using Content.Shared.Corvax.Events;
 using Content.Shared.Actions;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Ghost.Systems;
@@ -8,7 +9,6 @@ using Robust.Client.Console;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Player;
-using Content.Shared.Corvax.Events;
 
 namespace Content.Client.Ghost
 {
@@ -188,7 +188,7 @@ namespace Content.Client.Ghost
             RaiseNetworkEvent(new GhostWarpsRequestEvent());
         }
 
-        public void GhostGoLobby() // CorvaxGoob-Golobby
+        public void GhostGoLobby() // Corvax-GoLobby
         {
             RaiseNetworkEvent(new GhostGoLobbyEvent());
         }

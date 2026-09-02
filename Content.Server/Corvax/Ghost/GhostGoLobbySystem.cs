@@ -1,3 +1,4 @@
+using Content.Server._Corvax.Events;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Mind;
@@ -20,7 +21,6 @@ namespace Content.Server.Corvax.Ghost;
 public sealed partial class GhostGoLobbySystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
-    [Dependency] private GameTicker _ticker = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private MindSystem _mind = default!;
     [Dependency] private PlayTimeTrackingManager _playTime = default!;
@@ -28,6 +28,7 @@ public sealed partial class GhostGoLobbySystem : EntitySystem
     [Dependency] private IChatManager _chatManager = default!;
     [Dependency] private IServerPreferencesManager _prefsManager = default!;
 
+    private bool _enabled;
     private TimeSpan _requiredPlaytime;
     private TimeSpan _deathTime;
 
@@ -48,6 +49,7 @@ public sealed partial class GhostGoLobbySystem : EntitySystem
         SubscribeNetworkEvent<GhostGoLobbyEvent>(OnGhostGoLobby);
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
 
+        Subs.CVar(_cfg, CCCVars.GhostGoLobbyEnabled, value => _enabled = value, true);
         Subs.CVar(_cfg, CCCVars.GhostGoLobbyTimeHours, value => _requiredPlaytime = TimeSpan.FromHours(value), true);
         Subs.CVar(_cfg, CCCVars.GhostGoLobbyDeathTimeMinutes, value => _deathTime = TimeSpan.FromMinutes(value), true);
     }
@@ -68,10 +70,8 @@ public sealed partial class GhostGoLobbySystem : EntitySystem
 
     private void TryGhostGoLobby(EntityUid uid, ICommonSession session)
     {
-        if (!_cfg.GetCVar(CCCVars.GhostGoLobbyEnabled))
-        {
+        if (!_enabled)
             return;
-        }
 
         var all = _playTime.GetOverallPlaytime(session);
         if (all < _requiredPlaytime)
@@ -100,6 +100,6 @@ public sealed partial class GhostGoLobbySystem : EntitySystem
 
         _mind.WipeMind(session);
 
-        _ticker.PlayerJoinLobby(session);
+        RaiseLocalEvent(new GhostJoinLobbyRequestEvent(session));
     }
 }
