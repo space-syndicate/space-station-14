@@ -64,7 +64,7 @@
   layers:
     - texture:
         !type:ImageParallaxTextureSource
-        path: "/Textures/Tiles/Planet/Snow/ice.png"
+        path: "/Textures/Tiles/Ice/ice.png"
       slowness: 0
       scrolling: "0, 0"
       tiled: true
@@ -72,7 +72,7 @@
   layersLQ:
     - texture:
         !type:ImageParallaxTextureSource
-        path: "/Textures/Tiles/Planet/Snow/ice.png"
+        path: "/Textures/Tiles/Ice/ice.png"
       slowness: 0
       scrolling: "-0, 0"
       tiled: true

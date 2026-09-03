@@ -9,7 +9,6 @@ using Content.Shared.Chat;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
-using Content.Shared.Ghost;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
@@ -23,6 +22,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Speech.Muting;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Server.Corvax.TTS;
 

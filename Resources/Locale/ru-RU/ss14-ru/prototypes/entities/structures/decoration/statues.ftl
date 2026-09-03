@@ -1,12 +1,14 @@
+ent-BaseStatue = { ent-BaseStructure }
+    .desc = { ent-BaseStructure.des }
 ent-StatueVenusRed = статуя непорочной девы
     .desc = Древняя мраморная статуя. Она изображена с косой до пола и с красным ящиком для инструментов.
     .suffix = Красный
 ent-StatueVenusBlue = статуя непорочной девы
     .desc = Древняя мраморная статуя. Она изображена с косой до пола и с синим ящиком для инструментов.
     .suffix = Синий
-ent-StatueBananiumClown = бананиумовая статуя спасителя
-    .desc = Бананиумовая статуя. Она символизирует пришествие спасителя, который восстанет и поведёт клоунов к великому хонку.
-ent-BaseIronsandStatue = { ent-BaseStructure }
+ent-StatueOrnateClown = богато украшенная статуя спасителя
+    .desc = Позолоченная статуя. Она символизирует пришествие спасителя, который восстанет и поведёт клоунов к великому хонку.
+ent-BaseIronsandStatue = { ent-BaseStatue }
     .desc = Загадочная статуя, найденная в пустыне из железного песка.
 ent-StatueIronsandSmall = статуя из железного песка
     .desc = { ent-BaseIronsandStatue.desc }

@@ -118,6 +118,16 @@
             sprite: Corvax/Mobs/Species/displacement.rsi
             state: outerclothing
 
+- type: satiation
+  id: TajaranHunger
+  parent: NormalSatiationHunger
+  baseChangeRate: -0.02
+
+- type: satiation
+  id: TajaranThirst
+  parent: NormalSatiationThirst
+  baseChangeRate: -0.15
+
 - type: entity
   save: false
   name: Urist McTajar
@@ -126,10 +136,12 @@
   - BaseSpeciesMobOrganic
   id: MobTajaran
   components:
-  - type: Hunger
-    baseDecayRate: 0.02
-  - type: Thirst
-    baseDecayRate: 0.15
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: TajaranHunger
+      Thirst:
+        prototype: TajaranThirst
   - type: ContentEye
   - type: Speech
     allowedEmotes: ['Purr']

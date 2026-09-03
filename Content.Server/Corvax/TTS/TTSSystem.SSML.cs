@@ -26,9 +26,6 @@ public sealed partial class TTSSystem
         @"командир|Командир|КОМАНДИР)\b",
         RegexOptions.Compiled);
 
-    private static readonly Regex ExclamationWordRegex = new(@"(!\s*)([А-ЯЁа-яё]+)",
-        RegexOptions.Compiled);
-
     private static readonly Regex WhitespaceRegex = new(@"\s+",
         RegexOptions.Compiled);
 
@@ -66,65 +63,98 @@ public sealed partial class TTSSystem
         {
             char c = text[i];
 
-            if (i + 1 < text.Length)
+            if (c == '!')
             {
-                if (c == '!' && text[i + 1] == '!')
+                int count = 0;
+                while (i < text.Length && text[i] == '!')
                 {
-                    sb.Append("!!");
-                    sb.Append(" <break time=\"400ms\"/> ");
-                    i += 2;
-                    continue;
+                    count++;
+                    i++;
                 }
+                sb.Append(new string('!', count));
 
-                if (c == '?' && text[i + 1] == '!')
-                {
-                    sb.Append("?!");
+                if (i < text.Length && text[i] == ' ' && i + 1 < text.Length && !char.IsWhiteSpace(text[i + 1]))
                     sb.Append(" <break time=\"400ms\"/> ");
-                    i += 2;
-                    continue;
-                }
 
-                if (c == '!' && text[i + 1] == '?')
-                {
-                    sb.Append("!?");
-                    sb.Append(" <break time=\"400ms\"/> ");
-                    i += 2;
-                    continue;
-                }
+                continue;
             }
 
-            if (i + 2 < text.Length && text[i] == '.' && text[i + 1] == '.' && text[i + 2] == '.')
+            if (c == '?')
+            {
+                int count = 0;
+                while (i < text.Length && text[i] == '?')
+                {
+                    count++;
+                    i++;
+                }
+                sb.Append(new string('?', count));
+
+                if (i < text.Length && text[i] == ' ' && i + 1 < text.Length && !char.IsWhiteSpace(text[i + 1]))
+                    sb.Append(" <break time=\"400ms\"/> ");
+
+                continue;
+            }
+
+            if (c == '?' && i + 1 < text.Length && text[i + 1] == '!')
+            {
+                sb.Append("?!");
+                i += 2;
+
+                if (i < text.Length && text[i] == ' ' && i + 1 < text.Length && !char.IsWhiteSpace(text[i + 1]))
+                    sb.Append(" <break time=\"400ms\"/> ");
+
+                continue;
+            }
+
+            if (c == '!' && i + 1 < text.Length && text[i + 1] == '?')
+            {
+                sb.Append("!?");
+                i += 2;
+
+                if (i < text.Length && text[i] == ' ' && i + 1 < text.Length && !char.IsWhiteSpace(text[i + 1]))
+                    sb.Append(" <break time=\"400ms\"/> ");
+
+                continue;
+            }
+
+            if (c == '.' && i + 2 < text.Length && text[i + 1] == '.' && text[i + 2] == '.')
             {
                 sb.Append("...");
-                sb.Append(" <break time=\"500ms\"/> ");
                 i += 3;
+
+                if (i < text.Length && text[i] == ' ' && i + 1 < text.Length && !char.IsWhiteSpace(text[i + 1]))
+                    sb.Append(" <break time=\"500ms\"/> ");
+
                 continue;
             }
 
             sb.Append(c);
 
-            if (c == '.' || c == '?' || c == '!')
+            if (c == '.')
             {
-                if (i + 1 < text.Length && !char.IsLetter(text[i + 1]) && text[i + 1] != ' ')
+                if (i + 1 < text.Length && char.IsLetter(text[i + 1]))
                 {
-                    sb.Append(" <break time=\"300ms\"/> ");
+                    // Nothing
                 }
-                else if (i + 1 < text.Length && text[i + 1] == ' ')
+                else if (i + 1 < text.Length && text[i + 1] == ' ' && i + 2 < text.Length && !char.IsWhiteSpace(text[i + 2]))
                 {
                     sb.Append(" <break time=\"300ms\"/> ");
                 }
             }
             else if (c == ',')
             {
-                sb.Append(" <break time=\"80ms\"/> ");
+                if (i + 1 < text.Length && text[i + 1] == ' ')
+                    sb.Append(" <break time=\"80ms\"/> ");
             }
             else if (c == ';')
             {
-                sb.Append(" <break time=\"120ms\"/> ");
+                if (i + 1 < text.Length && text[i + 1] == ' ')
+                    sb.Append(" <break time=\"120ms\"/> ");
             }
             else if (c == ':')
             {
-                sb.Append(" <break time=\"100ms\"/> ");
+                if (i + 1 < text.Length && text[i + 1] == ' ')
+                    sb.Append(" <break time=\"100ms\"/> ");
             }
 
             i++;
@@ -159,13 +189,6 @@ public sealed partial class TTSSystem
         {
             var word = m.Value.ToLowerInvariant();
             return $"<prosody pitch=\"+10%\">{word}</prosody>";
-        });
-
-        text = ExclamationWordRegex.Replace(text, m =>
-        {
-            var punct = m.Groups[1].Value; // "! " and " "
-            var word = m.Groups[2].Value.ToLowerInvariant();
-            return $"{punct}<prosody pitch=\"+20%\">{word}</prosody>";
         });
 
         return text;

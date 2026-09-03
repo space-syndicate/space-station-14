@@ -67,7 +67,7 @@ public static class EntityNameDuplicatesJsonGenerator
             {
                 var name = TextTools.CapitalizeString(TextTools.GetDisplayName(p, prototypeManager, loc));
 
-                if (p.TryGetComponent<ActionComponent>(out _, compFactory))
+                if (p.TryComp<ActionComponent>(out _, compFactory))
                     name = $"{name} {AbilitySuffix}";
 
                 var label = GetLabel(p);

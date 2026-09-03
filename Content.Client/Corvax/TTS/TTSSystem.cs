@@ -33,7 +33,7 @@ public sealed partial class TTSSystem : EntitySystem
 
     private const float WhisperFade = 4f;
     private const float MinimalVolume = -10f;
-    private const float GlobalVolumeBonus = 4f;
+    private const float GlobalVolumeBonus = 1.5f;
     private const float RadioPitchMin = 0.95f;
     private const float RadioPitchMax = 1.02f;
     private const float RadioVariationMin = 0.005f;
@@ -308,11 +308,11 @@ public sealed partial class TTSSystem : EntitySystem
             ? MinimalVolume + SharedAudioSystem.GainToVolume(_radioVolume)
             : MinimalVolume + SharedAudioSystem.GainToVolume(_volume);
 
-        if (isGlobal) return volume + GlobalVolumeBonus;
+        if (isGlobal) return volume + SharedAudioSystem.GainToVolume(GlobalVolumeBonus);
 
         if (isWhisper)
         {
-            var fade = isRadio ? WhisperFade / 2 : WhisperFade;
+            var fade = isRadio ? WhisperFade * 0.15f : WhisperFade;
             volume -= SharedAudioSystem.GainToVolume(fade);
         }
 

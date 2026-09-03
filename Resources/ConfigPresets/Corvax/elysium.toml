@@ -25,7 +25,5 @@ advertise = true
 tags = "lang:ru,rp:low,rp:med,region:eu_e,tts"
 
 [afk]
-time = 0
-
-[admin]
-afk_time = 0
+time = 1800
+confirm_timeout = 300

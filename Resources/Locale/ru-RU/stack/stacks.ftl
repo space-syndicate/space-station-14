@@ -162,6 +162,10 @@ stack-artifact-fragment = { $amount ->
     [few] фрагмента
     *[other] фрагментов
 } артефакта
+stack-xenoborg-crystal = {$amount ->
+    [1] кристалл ксеноборгов
+    *[other] кристаллы ксенобргов
+}
 stack-conveyor-belt = { $amount ->
     [1] конвейерная лента
     *[other] конвейерные ленты
@@ -289,6 +293,9 @@ stack-white-steel-slats-tile-continuous = белая сплошная реечн
 stack-steel-dark-checker-tile = тёмная стальная плитка шашечками
 stack-steel-light-checker-tile = светлая стальная плитка шашечками
 stack-steel-tile = стальная плитка
+stack-plastic-tile = пластиковая плитка
+stack-plastic-dark-tile = тёмная пластиковая плитка
+stack-plastic-white-tile = белая пластиковая плитка
 stack-wood-floor = деревянный пол
 stack-techmaint-floor = технический пол
 stack-techmaint-floor-dark = тёмная техническая плитка
@@ -378,8 +385,20 @@ stack-xenoborg = ксеноборг-плитка
 stack-xeno-maint = технический ксенопол
 stack-dark-squiggly = тёмная волнистая стальная плитка
 stack-white-marble-floor = белый мраморный пол
+stack-white-marble-mono-floor = белая мраморная плита
 stack-dark-marble-floor = чёрный мраморный пол
+stack-dark-marble-mono-floor = чёрная мраморная плита
 stack-plasma-marble-floor = плазменный мраморный пол
 stack-uranium-marble-floor = урановый мраморный пол
 stack-astro-ironsand-floor = астро-железный песок
 stack-astro-ironsand-floor-borderless = безграничный астро-железный песок
+stack-exo-hull-floor = экзодермический пол
+stack-exo-viscera-floor = экзодермический органический пол
+stack-exo-techmaint-floor = экзодермический техничекий пол
+stack-exo-horizontal-floor = экзодермический горизонтальный пол
+stack-exo-vertical-floor = экзодермический вертикальный пол
+stack-exo-corner-ne-floor = экзодермический угловой пол Северо-восток
+stack-exo-corner-nw-floor = экзодермический угловой пол Северо-запад
+stack-exo-corner-se-floor = экзодермический угловой пол Юго-восток
+stack-exo-corner-sw-floor = экзодермический угловой пол Юго-запад
+stack-exo-borg-floor = мехадермический пол

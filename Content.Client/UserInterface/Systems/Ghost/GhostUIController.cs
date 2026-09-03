@@ -1,10 +1,14 @@
-﻿using Content.Client.Gameplay;
+using Content.Client.Corvax.Ghost;
+using Content.Client.Gameplay;
 using Content.Client.Ghost;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;
-using Content.Shared.Ghost;
+using Content.Shared.Corvax.CCCVars;
+using Content.Shared.Ghost.Components;
+using Content.Shared.Ghost.Systems;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
+using Robust.Shared.Configuration;
 
 namespace Content.Client.UserInterface.Systems.Ghost;
 
@@ -12,10 +16,14 @@ namespace Content.Client.UserInterface.Systems.Ghost;
 public sealed partial class GhostUIController : UIController, IOnSystemChanged<GhostSystem>
 {
     [Dependency] private IEntityNetworkManager _net = default!;
+    [Dependency] private IConfigurationManager _cfg = default!; // Corvax-GoLobby
 
     [UISystemDependency] private readonly GhostSystem? _system = default;
 
     private GhostGui? Gui => UIManager.GetActiveUIWidgetOrNull<GhostGui>();
+
+    private GhostGoLobbyConfirmWindow? _goLobbyConfirmWindow; // Corvax-GoLobby
+    private bool _goLobbyEnabled = true; // Corvax-GoLobby
 
     public override void Initialize()
     {
@@ -24,6 +32,15 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         var gameplayStateLoad = UIManager.GetUIController<GameplayStateLoadController>();
         gameplayStateLoad.OnScreenLoad += OnScreenLoad;
         gameplayStateLoad.OnScreenUnload += OnScreenUnload;
+
+        // Corvax-GoLobby
+        _cfg.OnValueChanged(CCCVars.GhostGoLobbyEnabled, OnGoLobbyEnabledChanged, true);
+    }
+
+    private void OnGoLobbyEnabledChanged(bool enabled) // Corvax-GoLobby
+    {
+        _goLobbyEnabled = enabled;
+        UpdateGui();
     }
 
     private void OnScreenLoad()
@@ -64,7 +81,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         }
 
         Gui.Visible = _system?.IsGhost ?? false;
-        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody);
+        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody, _goLobbyEnabled); // Corvax-GoLobby edit
     }
 
     private void OnPlayerRemoved(GhostComponent component)
@@ -141,6 +158,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
         Gui.TargetWindow.OnWarpToRandomFollowedClicked += OnWarpToRandomFollowedClicked;
         Gui.TargetWindow.OnWarpToRandomClicked += OnWarpToRandomClicked;
+        Gui.GhostGoLobbyPressed += GhostGoLobby; // Corvax-GoLobby
 
         UpdateGui();
     }
@@ -154,6 +172,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.ReturnToBodyPressed -= ReturnToBody;
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
+        Gui.GhostGoLobbyPressed -= GhostGoLobby; // Corvax-GoLobby
 
         Gui.Hide();
     }
@@ -162,6 +181,22 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     {
         _system?.ReturnToBody();
     }
+
+    // Corvax-Changes-Start
+    private void GhostGoLobby()
+    {
+        if (_goLobbyConfirmWindow is { Disposed: false })
+        {
+            _goLobbyConfirmWindow.MoveToFront();
+            return;
+        }
+
+        _goLobbyConfirmWindow = new GhostGoLobbyConfirmWindow();
+        _goLobbyConfirmWindow.ContinuePressed += () => _system?.GhostGoLobby();
+        _goLobbyConfirmWindow.OnClose += () => _goLobbyConfirmWindow = null;
+        _goLobbyConfirmWindow.OpenCentered();
+    }
+    // Corvax-Changes-End
 
     private void RequestWarps()
     {

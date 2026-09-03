@@ -1,0 +1,14 @@
+ent-StatusEffectClumsyAll = неуклюжость
+    .desc = { ent-StatusEffectBase.desc }
+ent-StatusEffectClumsyClown = { ent-StatusEffectClumsyAll }
+    .desc = { ent-StatusEffectClumsyAll.desc }
+ent-StatusEffectClumsyMonkey = { ent-StatusEffectClumsyAll }
+    .desc = { ent-StatusEffectClumsyAll.desc }
+ent-StatusEffectClumsyKobold = { ent-StatusEffectClumsyAll }
+    .desc = { ent-StatusEffectClumsyAll.desc }
+ent-StatusEffectClumsyCluwne = { ent-StatusEffectClumsyAll }
+    .desc = { ent-StatusEffectClumsyAll.desc }
+ent-StatusEffectClumsyGuaranteed = { ent-StatusEffectClumsyAll }
+    .desc = { ent-StatusEffectClumsyAll.desc }
+ent-StatusEffectClumsyMaid = { ent-StatusEffectClumsyAll }
+    .desc = { ent-StatusEffectClumsyAll.desc }
