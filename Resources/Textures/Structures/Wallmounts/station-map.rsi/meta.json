@@ -1,37 +1,134 @@
 {
     "version": 1,
     "license": "CC0-1.0",
-    "copyright": "Made by brainfood1183 (github) for ss14 and modified by Flareguy for ss14. station_map_broken based on broken state in Cryogenic2.dmi from vgstation13 at https://github.com/vgstation-coders/vgstation13/blob/96246eed6e19899971a6d18e849fa6fe0b8ab52a/icons/obj/Cryogenic2.dmi",
-    "copyright": "unshaded changed by lzk228",
+    "copyright": "By AftrLite (GitHub)",
+    "copyright": "unshaded changed by _Svist_. (Discord)",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
         {
-            "name": "base"
+            "name": "base",
+            "directions": 4
         },
         {
-            "name": "broken"
+            "name": "broken",
+            "directions": 4
         },
         {
-            "name": "frame0"
+            "name": "frame0",
+            "directions": 4
         },
         {
-            "name": "frame1"
+            "name": "frame1",
+            "directions": 4
         },
         {
-            "name": "frame2"
+            "name": "frame2",
+            "directions": 4
         },
         {
             "name": "unshaded",
+            "directions": 4,
             "delays": [
         [
           2.0,
-          1.0,
-          1.0,
-          1.0
-        ]]
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.3
+        ],
+        [
+          2.0,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.3
+        ],
+        [
+          2.0,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.3
+        ],
+        [
+          2.0,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.3
+        ]
+        ]
         }
     ]
 }

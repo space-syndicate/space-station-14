@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseWallmountMachine
+  parent: [ BaseWallmountMachine, StructureHealthMachineFlimsy ]
   id: FireAlarm
   name: fire alarm
   description: A fire alarm. Spicy!
@@ -34,7 +34,7 @@
     alarmStates:
       Normal: fire_0
       Warning: fire_0 # shouldn't be alarming at a warning
-      Danger: fire_2
+      Danger: alarm # Corvax-Fire-Alarm
       Emagged: fire_emagged
     hideOnDepowered: [ "fireAlarmState" ]
   - type: Tag
@@ -56,10 +56,12 @@
       Green: fire_0
       Blue: fire_1
       Red: fire_2
-      Violet: fire_1
-      Yellow: fire_1
+      # Corvax-Fire-Alarm-Start
+      Violet: fire_5
+      Yellow: fire_4
       DeltaNuke: fire_3
-      # TODO: add missing alarm states
+      Gamma: fire_6
+      # Corvax-Fire-Alarm-End
   - type: UserInterface
     interfaces:
       enum.WiresUiKey.Key:
@@ -84,21 +86,17 @@
     graph: FireAlarm
     node: fire_alarm
   - type: Damageable
-    damageModifierSet: Metallic
-  - type: Injurable
-    damageContainer: StructuralInorganic
+    damageModifierSet: PlasticMod
   - type: GuideHelp
     guides:
     - Networking
   - type: Destructible
     thresholds:
-    - trigger:
+    - trigger: &DamageMachineFlimsy
         !type:DamageTrigger
-        damage: 80
+        damage: 50
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:PlaySoundBehavior
+      - &SoundMetalGlassBreak !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak
           params:
@@ -106,7 +104,7 @@
   - type: StationAiWhitelist
 
 - type: entity
-  parent: BaseWallmountMetallic
+  parent: [ BaseWallmountMetallic, StructureHealthMachineFlimsy ]
   id: FireAlarmAssembly
   name: fire alarm assembly
   description: A fire alarm assembly. Very mild.
@@ -126,16 +124,10 @@
   - type: Construction
     graph: FireAlarm
     node: assembly
+  - type: Damageable
+    damageModifierSet: PlasticMod
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 15
+    - trigger: *DamageMachineFlimsy
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalGlassBreak
-          params:
-            volume: -4
+      - *SoundMetalGlassBreak

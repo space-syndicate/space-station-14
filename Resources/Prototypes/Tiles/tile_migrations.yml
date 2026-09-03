@@ -124,45 +124,51 @@
   id: PlatingBrass
   target: Plating
 
-- type: tileAlias
-  id: FloorDarkDiagonal
-  target: FloorDark
+# Corvax-Sprites
+# - type: tileAlias
+#   id: FloorDarkDiagonal
+#   target: FloorDark
 
 - type: tileAlias
   id: FloorDarkDiagonalMini
   target: FloorDark
 
-- type: tileAlias
-  id: FloorDarkOffset
-  target: FloorDark
+# Corvax-Sprites-Start
+# - type: tileAlias
+#   id: FloorDarkOffset
+#   target: FloorDark
 
-- type: tileAlias
-  id: FloorSteelDiagonal
-  target: FloorSteel
+# - type: tileAlias
+#   id: FloorSteelDiagonal
+#   target: FloorSteel
+# Corvax-Sprites-End
 
 - type: tileAlias
   id: FloorSteelDiagonalMini
   target: FloorSteel
 
-- type: tileAlias
-  id: FloorSteelOffset
-  target: FloorSteel
+# Corvax-Sprites
+# - type: tileAlias
+#   id: FloorSteelOffset
+#   target: FloorSteel
 
 - type: tileAlias
   id: FloorSteelDirty
   target: FloorSteel
 
-- type: tileAlias
-  id: FloorWhiteDiagonal
-  target: FloorWhite
+# Corvax-Sprites
+# - type: tileAlias
+#   id: FloorWhiteDiagonal
+#   target: FloorWhite
 
 - type: tileAlias
   id: FloorWhiteDiagonalMini
   target: FloorWhite
 
-- type: tileAlias
-  id: FloorWhiteOffset
-  target: FloorWhite
+# Corvax-Sprites
+# - type: tileAlias
+#   id: FloorWhiteOffset
+#   target: FloorWhite
 
 - type: tileAlias
   id: FloorUraniumMarble
@@ -184,29 +190,35 @@
   id: FloorSteelMono
   target: FloorSteel
 
-- type: tileAlias
-  id: FloorHydro
-  target: FloorSteel
+# Corvax-Sprites-Start
+# - type: tileAlias
+#   id: FloorHydro
+#   target: FloorSteel
 
-- type: tileAlias
-  id: FloorElevatorShaft
-  target: FloorSteel
+# Corvax-Sprites
+# - type: tileAlias
+#   id: FloorElevatorShaft
+#   target: FloorSteel
 
-- type: tileAlias
-  id: FloorMining
-  target: FloorSteel
+# Corvax-Sprites
+# - type: tileAlias
+#   id: FloorMining
+#   target: FloorSteel
 
-- type: tileAlias
-  id: FloorMiningLight
-  target: FloorSteel
+# Corvax-Sprites
+# - type: tileAlias
+#   id: FloorMiningLight
+#   target: FloorSteel
 
-- type: tileAlias
-  id: FloorMiningDark
-  target: FloorSteel
+# Corvax-Sprites
+# - type: tileAlias
+#   id: FloorMiningDark
+#   target: FloorSteel
 
-- type: tileAlias
-  id: FloorRockVault
-  target: FloorSteel
+# - type: tileAlias
+#   id: FloorRockVault
+#   target: FloorSteel
+# Corvax-Sprites-End
 
 - type: tileAlias
   id: FloorShowroom
@@ -214,15 +226,15 @@
 
 - type: tileAlias
   id: FloorSteelSlatsContinuous
-  target: FloorSteel
+  target: FloorSteelVerticalSlatsBordered
 
 - type: tileAlias
   id: FloorDarkSlatsContinuous
-  target: FloorDark
+  target: FloorDarkVerticalSlatsBordered
 
 - type: tileAlias
   id: FloorWhiteSlatsContinuous
-  target: FloorWhite
+  target: FloorWhiteVerticalSlatsBordered
 
 - type: tileAlias
   id: FloorMono
@@ -316,7 +328,7 @@
 
 - type: tileAlias
   id: FloorLowDesert
-  target: FloorDesertAstroSand
+  target: FloorDesert
 
 - type: tileAlias
   id: FloorAsteroidSandUnvariantizedBorderless
