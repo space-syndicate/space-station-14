@@ -1,5 +1,3 @@
-using System.IO;
-using System.Linq;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
@@ -80,7 +78,7 @@ public static class ComponentJsonGenerator
             if (entProto.Components.ContainsKey(compName))
                 continue;
 
-            components[compName] = FieldEntry.DataNodeToObject(node);
+            components[compName] = FieldEntry.ConvertNode(node);
         }
 
         return components;

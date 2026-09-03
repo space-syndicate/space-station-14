@@ -3,8 +3,6 @@ using System.Reflection;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
-using Robust.Shared.Serialization.Manager.Attributes;
-using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.GuideGenerator;
@@ -33,7 +31,7 @@ public static class PrototypeJsonGenerator
                 if (!FieldEntry.TryWriteValueAsMapping(serializationManager, kind, prototype, out var node))
                     continue;
 
-                node.Remove("id");
+                node.Remove(FieldEntry.PrototypeId);
                 var fields = FieldEntry.ProcessNode(prototype, node);
                 if (isEntityPrototype && prototype is EntityPrototype entityPrototype)
                     fields = ProcessEntityPrototype(entityPrototype, prototypeManager, serializationManager, componentFactory, fields);
@@ -61,7 +59,7 @@ public static class PrototypeJsonGenerator
 
             var entityRoot = destinationRoot / directoryName;
             res.UserData.CreateDir(entityRoot);
-            var entityPrototypes = output.TryGetValue("id", out var idValue) && idValue is Dictionary<string, object?> em
+            var entityPrototypes = output.TryGetValue(FieldEntry.PrototypeId, out var idValue) && idValue is Dictionary<string, object?> em
                 ? em
                 : output;
 
@@ -93,7 +91,8 @@ public static class PrototypeJsonGenerator
         if (!visited.Add(type))
             return false;
 
-        return type.GetFields(flags).Cast<MemberInfo>()
+        return type.GetFields(flags)
+            .Cast<MemberInfo>()
             .Concat(type.GetProperties(flags))
             .Any(m => HasDataField(m) && IsUnsafeSerializedType(FieldEntry.GetMemberType(m), visited));
     }

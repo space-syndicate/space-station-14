@@ -1,6 +1,5 @@
 using System.IO;
 using System.Text.Json;
-using Robust.Shared.Log;
 
 namespace Content.Server.Corvax.GuideGenerator;
 
@@ -39,9 +38,9 @@ public static class MetaLicenseGenerator
                         { "copyright", copyright }
                     };
             }
-            catch (JsonException e)
+            catch
             {
-                Logger.WarningS("guide", $"Skipping malformed meta.json: {metaPath} - {e.Message}");
+                // Ignore
             }
         }
 

@@ -1,5 +1,4 @@
 using System.IO;
-using System.Text.Json;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Corvax.GuideGenerator;

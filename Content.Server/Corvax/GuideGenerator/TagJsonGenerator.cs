@@ -41,7 +41,9 @@ public static class TagJsonGenerator
                 if (tagEntry.Component is TagComponent tagComp)
                 {
                     foreach (var tag in tagComp.Tags)
+                    {
                         tags.Add(tag.Id);
+                    }
                 }
             }
 
