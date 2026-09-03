@@ -229,10 +229,12 @@ namespace Content.Server.GameTicking
             RaiseLocalEvent(new PlayerJoinedLobbyEvent(session));
         }
 
-        private void OnGhostJoinLobbyRequest(GhostJoinLobbyRequestEvent ev) // Corvax-GoLobby
+        // Corvax-Changes-Start
+        private void OnGhostJoinLobbyRequest(GhostJoinLobbyRequestEvent ev) 
         {
             PlayerJoinLobby(ev.Session);
         }
+        // Corvax-Changes-End
 
         private void ReqWindowAttentionAll()
         {

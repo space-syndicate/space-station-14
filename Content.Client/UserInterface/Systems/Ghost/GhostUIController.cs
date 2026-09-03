@@ -8,7 +8,7 @@ using Content.Shared.Ghost.Components;
 using Content.Shared.Ghost.Systems;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
-using Robust.Shared.Configuration; // Corvax-GoLobby
+using Robust.Shared.Configuration;
 
 namespace Content.Client.UserInterface.Systems.Ghost;
 
@@ -182,7 +182,8 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         _system?.ReturnToBody();
     }
 
-    private void GhostGoLobby() // Corvax-GoLobby
+    // Corvax-Changes-Start
+    private void GhostGoLobby()
     {
         if (_goLobbyConfirmWindow is { Disposed: false })
         {
@@ -195,6 +196,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         _goLobbyConfirmWindow.OnClose += () => _goLobbyConfirmWindow = null;
         _goLobbyConfirmWindow.OpenCentered();
     }
+    // Corvax-Changes-End
 
     private void RequestWarps()
     {
