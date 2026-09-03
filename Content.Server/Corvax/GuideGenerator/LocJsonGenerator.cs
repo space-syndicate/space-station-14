@@ -106,7 +106,9 @@ public static class LocJsonGenerator
                 };
                 foreach (var attr in attrs.OrderBy(a => a))
                 {
-                    obj[attr] = GetStringSafe($"{id}.{attr}");
+                    var value = GetStringSafe($"{id}.{attr}");
+                    if (!string.IsNullOrEmpty(value))
+                        obj[attr] = value;
                 }
                 output[id] = obj;
             }
