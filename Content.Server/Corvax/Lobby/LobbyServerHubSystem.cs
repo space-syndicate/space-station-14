@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.Lobby;
 using Robust.Shared;
 using Robust.Shared.Configuration;
@@ -50,6 +51,12 @@ public sealed partial class LobbyServerHubSystem : EntitySystem
 
     private async void OnStatusRequest(LobbyServerHubStatusRequestEvent request, EntitySessionEventArgs args)
     {
+        if (!_configuration.GetCVar(CCCVars.LobbyServerHubEnabled) ||
+            args.SenderSession.Status is not (SessionStatus.Connected or SessionStatus.InGame))
+        {
+            return;
+        }
+
         var requested = request.Addresses
             .Where(address => !string.IsNullOrWhiteSpace(address))
             .Distinct(StringComparer.OrdinalIgnoreCase)
@@ -57,15 +64,16 @@ public sealed partial class LobbyServerHubSystem : EntitySystem
             .ToArray();
 
         var statuses = await GetStatuses();
+
+        if (args.SenderSession.Status is not (SessionStatus.Connected or SessionStatus.InGame))
+            return;
+
         var response = requested
             .Where(statuses.ContainsKey)
             .Select(address => statuses[address])
             .ToArray();
 
         var currentServerAddress = _configuration.GetCVar(CVars.HubServerUrl);
-        if (args.SenderSession.Status is not (SessionStatus.Connected or SessionStatus.InGame))
-            return;
-
         RaiseNetworkEvent(
             new LobbyServerHubStatusResponseEvent(response, currentServerAddress),
             args.SenderSession.Channel);
