@@ -17,13 +17,13 @@ public sealed partial class CCVars
         CVarDef.Create("autogen.entity_screenshot.output_path", "/Textures/Entities", CVar.CLIENTONLY);
 
     /// <summary>
-    /// Prefix for prototype folders included in entity_project generation.
+    /// Prefixes for prototype folders included in entity_project generation. Comma-separated.
     /// </summary>
     public static readonly CVarDef<string> EntityProjectFolderPrefix =
         CVarDef.Create("autogen.entity_project.folder_prefix", string.Empty, CVar.ARCHIVE);
 
     /// <summary>
-    /// Prototype folder name to exclude from entity_project generation.
+    /// Prototype folder names to exclude from entity_project generation. Comma-separated.
     /// </summary>
     public static readonly CVarDef<string> EntityProjectExcludedCoreProjectFolder =
         CVarDef.Create("autogen.entity_project.excluded_core_project_folder", string.Empty, CVar.ARCHIVE);
