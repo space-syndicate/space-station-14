@@ -11,6 +11,9 @@
     department: Security
     time: 5h # Corvax-RoleTime
   guides: [ NuclearOperatives ]
+  tags:
+  - OffStation
+  - Roundstart
 
 - type: antag
   id: NukeopsMedic
@@ -28,6 +31,9 @@
     department: Security
     time: 10h # Corvax-RoleTime
   guides: [ NuclearOperatives ]
+  tags:
+  - OffStation
+  - Roundstart
 
 - type: antag
   id: NukeopsCommander
@@ -43,6 +49,9 @@
     time: 15h # Corvax-RoleTime 5
   # should be changed to nukie playtime when thats tracked (wyci)
   guides: [ NuclearOperatives ]
+  tags:
+  - OffStation
+  - Roundstart
 
 - type: antagSpecifier
   abstract: true
