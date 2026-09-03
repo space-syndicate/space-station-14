@@ -1,6 +1,4 @@
 using System.IO;
-using System.Text.Encodings.Web;
-using System.Text.Json;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
@@ -12,12 +10,6 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public static class TagJsonGenerator
 {
-    private static readonly JsonSerializerOptions SerializeOptions = new()
-    {
-        WriteIndented = true,
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-    };
-
     public static void PublishJson(Stream stream)
     {
         var proto = IoCManager.Resolve<IPrototypeManager>();
@@ -64,7 +56,7 @@ public static class TagJsonGenerator
             ids.Sort();
         }
 
-        JsonSerializer.Serialize(stream, output, SerializeOptions);
+        GuideJson.Write(stream, output);
     }
 
     private static List<string> GetOrCreateEntry(Dictionary<string, List<string>> output, string key)
