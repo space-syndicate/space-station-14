@@ -14,6 +14,12 @@
         - id: ClothingHandsGlovesCaptain
         - id: ClothingOuterWinterCap
         - id: ClothingNeckCloakCap
+        # Corvax-Clothing-Start
+        - id: ClothingHeadHatCaptainBeret
+        - id: ClothingHeadCaptainHat
+        - id: ClothingUniformJumpsuitCaptain
+        - id: ClothingUniformJumpskirtCaptain
+        # Corvax-Clothing-End
 
 - type: entity
   id: DresserChiefEngineerFilled
@@ -29,6 +35,10 @@
         - id: ClothingHeadHatBeretEngineering
         - id: ClothingOuterWinterCE
         - id: ClothingNeckCloakCe
+        # Corvax-Clothing-Start
+        - id: ClothingUniformJumpsuitChiefEngineer
+        - id: ClothingUniformJumpskirtChiefEngineer
+        # Corvax-Clothing-End
 
 - type: entity
   id: DresserChiefMedicalOfficerFilled
@@ -47,6 +57,10 @@
         - id: ClothingEyesGlasses
         - id: ClothingOuterWinterCMO
         - id: ClothingCloakCmo
+        # Corvax-Clothing-Start
+        - id: ClothingUniformJumpsuitCMO
+        - id: ClothingUniformJumpskirtCMO
+        # Corvax-Clothing-End
 
 - type: entity
   id: DresserHeadOfPersonnelFilled
@@ -61,6 +75,12 @@
         - id: ClothingOuterWinterHoP
         - id: ClothingEyesGlasses
         - id: ClothingNeckCloakHop
+        # Corvax-Clothing-Start
+        - id: ClothingUniformJumpsuitHoP
+        - id: ClothingUniformJumpskirtHoP
+        - id: ClothingUniformJumpsuitHoPTurtleneck
+        - id: ClothingUniformJumpskirtHoPTurtleneck
+        # Corvax-Clothing-End
 
 - type: entity
   id: DresserHeadOfSecurityFilled
@@ -80,6 +100,7 @@
         - id: ClothingUniformJumpsuitHosFormal
         - id: ClothingOuterWinterHoS
         - id: ClothingNeckCloakHos
+        - id: ClothingHeadHatCapHoS # Corvax-Clothing
 
 - type: entity
   id: DresserQuarterMasterFilled
@@ -113,6 +134,12 @@
         - id: ClothingOuterWinterRD
         - id: ClothingOuterCoatRD
         - id: ClothingNeckCloakRd
+        # Corvax-Clothing-Start
+        - id: ClothingUniformJumpsuitRDClassical
+        - id: ClothingUniformJumpskirtRDClassical
+        - id: ClothingUniformJumpsuitResearchDirector
+        - id: ClothingUniformJumpskirtResearchDirector
+        # Corvax-Clothing-End
 
 - type: entity
   id: DresserWardenFilled

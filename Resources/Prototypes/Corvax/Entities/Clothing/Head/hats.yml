@@ -107,3 +107,26 @@
     sprite: Corvax/Clothing/Head/Hats/true_wig.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Head/Hats/true_wig.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCaptainBicorn
+  name: двууголка капитана
+  description: Зачем быть королём, если можно быть императором?
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/Hats/captain_royal_hat.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/Hats/captain_royal_hat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCaptainBeret
+  name: берет капитана
+  description: Синий берет из дюраткани со значком из золота, обозначающим его владельца как гражданского капитана.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/Hats/captain_beret.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/Hats/captain_beret.rsi
+
