@@ -135,6 +135,13 @@ public sealed class CCCVars
     public static readonly CVarDef<bool> StationGoal =
         CVarDef.Create("game.station_goal", true, CVar.SERVERONLY);
 
+    /// <summary>
+    /// Whether the Corvax server list is shown in the lobby.
+    /// Disabled by default so downstream forks opt in explicitly.
+    /// </summary>
+    public static readonly CVarDef<bool> LobbyServerHubEnabled =
+        CVarDef.Create("lobby.server_hub_enabled", false, CVar.SERVER | CVar.REPLICATED);
+
     public static readonly CVarDef<bool> GhostGoLobbyEnabled =
         CVarDef.Create("ghost.go_lobby.enabled", false, CVar.SERVER | CVar.REPLICATED);
 
