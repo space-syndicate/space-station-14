@@ -118,3 +118,14 @@
     sprite: Corvax/Clothing/Uniforms/Jumpsuit/magistrateformal.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Uniforms/Jumpsuit/magistrateformal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCaptainRoyal
+  name: роскошный мундир капитана
+  description: По королевски роскошная униформа. Идеально подходит для руководства станцией во время вторжения ядерных оперативников.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/captain_royal.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/captain_royal.rsi

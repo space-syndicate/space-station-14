@@ -54,11 +54,7 @@
         max: 15
     - id: PlushieLizardJobCaptain
       prob: 0.02
-    # Corvax-Start
-    - id: PrinterDocFlatpack
-    - id: ClothingHeadCaptainHat
-    - id: ClothingOuterCoatCaptain
-    # Corvax-End
+    - id: PrinterDocFlatpack # Corvax-Printer
 
 # No laser table + Laser table
 - type: entityTable
@@ -348,9 +344,6 @@
     - id: PlushieLizardJobHeadofsecurity
       prob: 0.02
     # Corvax-Start
-    - id: ClothingHeadHatCapHoS
-      prob: 0.5
-    - id: ClothingOuterCoatHoSGreatcoat
     - id: BookBusido
     - id: SecApartmentTablet
     - id: PrinterDocFlatpack
