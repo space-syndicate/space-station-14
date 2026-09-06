@@ -37,7 +37,7 @@ public sealed partial class CinemaScreenSystem
 
     private void UpdateAudio(EntityUid uid, CinemaScreenComponent comp, CinemaScreenPlayerComponent player)
     {
-        if (comp.Broken ||
+        if (comp.Broken || !comp.AudioPlaybackEnabled ||
             !IsInPvs(uid) ||
             string.IsNullOrEmpty(comp.AudioCacheKey) ||
             comp.AudioSegmentCount <= 0 ||
@@ -62,6 +62,14 @@ public sealed partial class CinemaScreenSystem
         }
 
         var segmentOffset = (float) (absolutePosition - segment * comp.AudioSegmentDuration);
+
+        if (comp.HasVideoSegments && player.ReadyVideoSegmentId != SegmentCacheId(comp.AudioCacheKey!, segment))
+        {
+            // Download in parallel, but do not emit positional sound until CEF has decoded the matching picture.
+            _ = GetAudioSegment(uid, comp.AudioCacheKey!, segment);
+            StopAudioStream(player);
+            return;
+        }
 
         if (!comp.Playing)
         {
@@ -191,7 +199,8 @@ public sealed partial class CinemaScreenSystem
 
         var position = Math.Max(0, CurrentPosition(comp));
         var currentSegment = (int) Math.Floor(position / comp.AudioSegmentDuration);
-        if (currentSegment != segment)
+        if (currentSegment != segment ||
+            comp.HasVideoSegments && player.ReadyVideoSegmentId != SegmentCacheId(key, segment))
             return;
 
         var offset = (float) (position - currentSegment * comp.AudioSegmentDuration);

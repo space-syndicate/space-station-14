@@ -21,6 +21,10 @@ public sealed partial class CinemaScreenPlayerComponent : Component
     /// <summary>Accumulates frame time until the next periodic JavaScript sync.</summary>
     public float SyncAccumulator;
 
+    public string? VideoSegmentId;
+    public string? ReadyVideoSegmentId;
+    public TimeSpan VideoLoadSentAt;
+
     /// <summary>Client-side positional audio entity for the currently active generated segment.</summary>
     public EntityUid? AudioEntity;
 

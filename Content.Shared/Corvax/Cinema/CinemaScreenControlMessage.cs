@@ -14,10 +14,12 @@ public sealed class CinemaScreenControlMessage : BoundUserInterfaceMessage
 }
 
 [Serializable, NetSerializable]
-public sealed class CinemaScreenState(string? url, float volume, string status, string[] films) : BoundUserInterfaceState
+public sealed class CinemaScreenState(string? url, float volume, string status, string[] films, string? preparationStage = null, int preparationPercent = -1) : BoundUserInterfaceState
 {
     public string? Url = url;
     public float Volume = volume;
     public string Status = status;
     public string[] Films = films;
+    public string? PreparationStage = preparationStage;
+    public int PreparationPercent = preparationPercent;
 }

@@ -14,9 +14,12 @@ public sealed partial class CinemaScreenControlWindow : DefaultWindow
 {
     public event Action<CinemaScreenControlMessage>? OnControl;
     private readonly RichTextLabel _status = new();
+    private readonly ProgressBar _progress = new() { MinValue = 0, MaxValue = 100, Visible = false };
     private string? _currentUrl;
     private bool _updating;
     private bool _isAdmin;
+    private bool _loading;
+    private readonly Button[] _actionButtons;
     private readonly BoxContainer _customUrl = new() { Orientation = BoxContainer.LayoutOrientation.Vertical };
     private readonly OptionButton _films = new() { HorizontalExpand = true };
     private readonly Button _selectFilm = new() { Text = Loc.GetString("cinema-watch") };
@@ -46,6 +49,7 @@ public sealed partial class CinemaScreenControlWindow : DefaultWindow
         help.SetMessage(Loc.GetString("cinema-help"));
         root.AddChild(help);
         root.AddChild(_status);
+        root.AddChild(_progress);
 
         root.AddChild(new Label { Text = Loc.GetString("cinema-films") });
         var filmRow = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
@@ -121,6 +125,7 @@ public sealed partial class CinemaScreenControlWindow : DefaultWindow
         volumeRow.AddChild(_volumeSlider);
         root.AddChild(volumeRow);
 
+        _actionButtons = [setUrl, play, pause, stop, seek];
         Contents.AddChild(root);
     }
 
@@ -141,7 +146,14 @@ public sealed partial class CinemaScreenControlWindow : DefaultWindow
             if (_filmIds.Length > 0)
                 _films.SelectId(0);
         }
-        _selectFilm.Disabled = _filmIds.Length == 0;
+        _loading = state.Status is "cinema-status-loading" or "cinema-status-resolving" or "cinema-status-buffering";
+        foreach (var button in _actionButtons)
+            button.Disabled = _loading;
+        _selectFilm.Disabled = _loading || _filmIds.Length == 0;
+        _films.Disabled = _loading || _filmIds.Length == 0;
+        _urlEdit.Editable = !_loading;
+        _seekEdit.Editable = !_loading;
+        _volumeSlider.Disabled = _loading;
         if (_currentUrl != state.Url)
         {
             _currentUrl = state.Url;
@@ -150,12 +162,24 @@ public sealed partial class CinemaScreenControlWindow : DefaultWindow
         _updating = true;
         _volumeSlider.Value = state.Volume;
         _updating = false;
-        _status.SetMessage(Loc.GetString(state.Status));
+        _progress.Visible = state.PreparationStage != null && state.PreparationPercent >= 0;
+        _progress.Value = Math.Clamp(state.PreparationPercent, 0, 100);
+        if (state.PreparationStage is { } stage)
+        {
+            var progress = state.PreparationPercent >= 0
+                ? Loc.GetString("cinema-preparation-progress", ("stage", Loc.GetString(stage)), ("percent", state.PreparationPercent))
+                : Loc.GetString(stage);
+            _status.SetMessage(Loc.GetString(state.Status) + "\n" + progress);
+        }
+        else
+        {
+            _status.SetMessage(Loc.GetString(state.Status));
+        }
     }
 
     private void Send(CinemaScreenAction action, string? url = null, double seek = 0, float volume = 1f, string film = "")
     {
-        if (_updating)
+        if (_updating || _loading)
             return;
 
         OnControl?.Invoke(new CinemaScreenControlMessage

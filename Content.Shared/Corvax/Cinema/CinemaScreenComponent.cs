@@ -14,19 +14,32 @@ namespace Content.Shared.Corvax.Cinema;
 public sealed partial class CinemaScreenComponent : Component
 {
     /// <summary>
-    /// HTTPS URL of the WebM video. It is only ever assigned to <c>video.src</c> inside player.html;
+    /// URL of direct MP4/WebM media or an AniLiberty episode. Episode pages are resolved server-side;
     /// the WebView itself always navigates to a local player.html resource.
     /// </summary>
     [DataField, AutoNetworkedField]
     public string? VideoUrl;
 
-    /// <summary>Films selectable by players. Keys are localized titles; values are direct media URLs.</summary>
+    /// <summary>Resolved HLS stream for an AniLiberty episode.</summary>
+    [AutoNetworkedField]
+    public string? ResolvedVideoUrl;
+
+    /// <summary>Films selectable by players. Keys are localized titles; values are media or AniLiberty episode URLs.</summary>
     [DataField]
     public Dictionary<string, string> Films = new();
 
     /// <summary>Whether playback is currently active.</summary>
     [DataField, AutoNetworkedField]
     public bool Playing;
+
+    /// <summary>Server-side intent to start after media preparation finishes.</summary>
+    public bool PlayWhenPrepared;
+
+    // Server-side state of an incrementally prepared stream.
+    public bool StreamPreparing;
+    public bool StreamFailed;
+    public bool Buffering;
+    public double StreamDuration;
 
     /// <summary>
     /// Server <see cref="Robust.Shared.Timing.IGameTiming.RealTime"/> at the moment the current play
@@ -47,9 +60,20 @@ public sealed partial class CinemaScreenComponent : Component
     /// <summary>Localized preparation status displayed by the control panel.</summary>
     public string AudioStatus = "cinema-status-empty";
 
+    // Server-only preparation details, sent only to viewers of the control panel.
+    public string? PreparationStage;
+    public int PreparationPercent = -1;
+
     /// <summary>Cache key of the server-generated segmented OGG audio track.</summary>
     [AutoNetworkedField]
     public string? AudioCacheKey;
+
+    /// <summary>Whether the cache also contains browser-compatible VP8 video segments.</summary>
+    [AutoNetworkedField]
+    public bool HasVideoSegments;
+
+    [AutoNetworkedField]
+    public bool AudioPlaybackEnabled = true;
 
     /// <summary>Number of generated OGG segments available through network events.</summary>
     [AutoNetworkedField]

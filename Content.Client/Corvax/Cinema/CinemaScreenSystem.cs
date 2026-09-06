@@ -49,6 +49,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         _overlayManager.AddOverlay(_overlay);
 
         SubscribeNetworkEvent<CinemaAudioChunkEvent>(OnAudioSegment);
+        SubscribeNetworkEvent<CinemaVideoChunkEvent>(OnVideoSegment);
 
         SubscribeLocalEvent<CinemaScreenComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<CinemaScreenComponent, ComponentShutdown>(OnShutdown);
@@ -58,6 +59,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
     public override void Shutdown()
     {
         ClearAudioCache();
+        ClearVideoCache();
         base.Shutdown();
         _overlayManager.RemoveOverlay(_overlay);
     }
@@ -65,6 +67,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent args)
     {
         ClearAudioCache();
+        ClearVideoCache();
     }
 
     public override void FrameUpdate(float frameTime)
@@ -155,18 +158,31 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         if (webView == null)
             return;
 
-        var url = comp.VideoUrl;
+        // Only direct MP4/WebM sources reach the browser; episode pages and playlists are prepared server-side.
+        string? url = null;
+        // The server validates URLs. Client-side classification uses strings because UriKind is not sandbox-allowed.
+        var path = comp.VideoUrl?.Split('?', '#')[0];
+        if (path != null &&
+            (path.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase) ||
+             path.EndsWith(".webm", StringComparison.OrdinalIgnoreCase)))
+            url = comp.VideoUrl;
         // CEF audio is not a game AudioComponent, so it does not automatically follow entity PVS. Actually pause
         // the browser player outside PVS (instead of merely muting it); on re-entry the server clock seeks it to
         // the current position before playback resumes.
         var inPvs = IsInPvs(uid);
         var playing = comp.Playing && inPvs;
         var time = CurrentPosition(comp);
+        // The server has prepared the track, but this client may still be downloading/decoding its first segment.
+        if (comp.AudioPlaybackEnabled && comp.AudioCacheKey != null)
+            playing &= player.AudioEntity != null &&
+                       player.AudioSegment == (int) Math.Floor(time / comp.AudioSegmentDuration);
+        if (comp.ResolvedVideoUrl != null || comp.HasVideoSegments)
+            url = GetVideoSource(uid, comp, player, ref time);
         // Browser audio is permanently disabled. Direct-media audio is extracted server-side and played through
         // the normal positional game AudioSystem instead, which owns attenuation and PVS behavior.
 
         // player.html compares the values and only acts on meaningful changes (src swap, drift > threshold,
-        // play/pause). The URL is only ever assigned to video.src inside player.html.
+        // play/pause). The URL is only used as a media source inside player.html.
         // Note: build with invariant-formatted values + concatenation; `string.Create(IFormatProvider, ...)`
         // (i.e. culture-formatted interpolation) is not sandbox-whitelisted.
         var js = "cinema.applyState(" +
@@ -189,7 +205,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
     /// <summary>The position (seconds) the video should currently be at, derived from server time.</summary>
     private double CurrentPosition(CinemaScreenComponent comp)
     {
-        if (!comp.Playing)
+        if (!comp.Playing || comp.ResolvedVideoUrl != null && !comp.HasVideoSegments)
             return comp.PausePosition;
 
         var elapsed = (_timing.ServerTime - comp.ServerStartTime).TotalSeconds;
@@ -225,6 +241,21 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         LayoutContainer.SetPosition(webView, new Vector2(-10000, -10000));
         host.AddChild(webView);
 
+        webView.AddResourceRequestHandler(context =>
+        {
+            const string prefix = "res://localhost/cinema-ready/";
+            if (!context.Url.StartsWith(prefix, StringComparison.Ordinal))
+                return;
+            var id = context.Url[prefix.Length..];
+            context.DoCancel();
+            _taskManager.RunOnMainThread(() =>
+            {
+                if (player.WebView != webView || player.VideoSegmentId != id)
+                    return;
+                player.ReadyVideoSegmentId = id;
+                Log.Debug($"Cinema video frame ready: {id}");
+            });
+        });
         webView.Url = PlayerHtmlUrl;
 
         player.WebView = webView;
@@ -262,6 +293,8 @@ public sealed partial class CinemaScreenSystem : EntitySystem
     {
         var webView = player.WebView;
         player.WebView = null;
+        player.VideoSegmentId = null;
+        player.ReadyVideoSegmentId = null;
 
         if (webView != null)
         {

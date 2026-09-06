@@ -11,7 +11,7 @@ public static class CinemaCVars
     /// HTTPS is required unless AllowHttp is enabled.
     /// </summary>
     public static readonly CVarDef<string> UrlWhitelist =
-        CVarDef.Create("cinema.whitelist", "media.w3.org,storage.googleapis.com,archive.org,upload.wikimedia.org", CVar.SERVERONLY);
+        CVarDef.Create("cinema.whitelist", "media.w3.org,storage.googleapis.com,archive.org,upload.wikimedia.org,aniliberty.top,libria.fun", CVar.SERVERONLY);
 
     /// <summary>
     /// Whether the <see cref="UrlWhitelist"/> domain filter is enforced. Disable this (false) to allow
@@ -35,7 +35,7 @@ public static class CinemaCVars
     public static readonly CVarDef<string> RenderResolution =
         CVarDef.Create("cinema.render_resolution", "", CVar.CLIENTONLY);
 
-    /// <summary>Whether direct MP4/WebM URLs are converted to a positional OGG audio track.</summary>
+    /// <summary>Whether direct MP4/WebM URLs use server-prepared video and positional audio segments.</summary>
     public static readonly CVarDef<bool> AudioExtractionEnabled =
         CVarDef.Create("cinema.audio_extraction_enabled", true, CVar.SERVERONLY);
 
@@ -54,6 +54,10 @@ public static class CinemaCVars
     /// <summary>Length of generated OGG/Vorbis chunks. Short chunks keep client decoded-audio memory bounded.</summary>
     public static readonly CVarDef<int> AudioSegmentSeconds =
         CVarDef.Create("cinema.audio_segment_seconds", 30, CVar.SERVERONLY);
+
+    /// <summary>Prepared media buffered before starting or resuming a cinema stream.</summary>
+    public static readonly CVarDef<int> StreamingBufferSeconds =
+        CVarDef.Create("cinema.streaming_buffer_seconds", 30, CVar.SERVERONLY);
 
     /// <summary>Maximum number of generated movie audio tracks retained on the server between uses.</summary>
     public static readonly CVarDef<int> AudioMaxCachedTracks =

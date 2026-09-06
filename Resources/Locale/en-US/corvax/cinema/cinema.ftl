@@ -1,6 +1,6 @@
 cinema-title = Cinema screen
 cinema-help = Select a film from the list and press Watch.
-cinema-url = Direct MP4/WebM URL:
+cinema-url = MP4/WebM or AniLiberty episode URL:
 cinema-set = Load
 cinema-play = Play / resume
 cinema-pause = Pause
@@ -9,10 +9,10 @@ cinema-seek-label = Position (seconds):
 cinema-seek = Seek
 cinema-volume = Volume:
 cinema-admin-only = Only administrators can enter custom URLs.
-cinema-invalid-url = Use a direct MP4/WebM URL from an allowed host.
+cinema-invalid-url = Use an MP4/WebM or AniLiberty episode URL from an allowed host.
 cinema-status-empty = Select a film and press Play.
-cinema-status-loading = Preparing sound. Playback may initially be silent.
-cinema-status-error = Sound could not be prepared. Check the URL or contact an administrator; Play retries.
+cinema-status-loading = Preparing video and sound. Please wait for loading to finish.
+cinema-status-error = Video or sound could not be prepared. Check the URL or contact an administrator; Play retries.
 cinema-status-disabled = Sound extraction is disabled by the server.
 cinema-status-playing = Playing. Sound comes from the screen.
 cinema-status-paused = Ready / paused.
@@ -31,3 +31,16 @@ cinema-film-magic-mill = The Magic Mill (1950)
 cinema-film-taiga = A Taiga Tale (1951)
 cinema-film-new-year = New Year's Eve (1948)
 cinema-film-fox-builder = The Fox Builder (1950)
+
+cinema-status-resolving = Loading AniLiberty video…
+cinema-status-resolve-error = Could not load AniLiberty video. Press Play to retry.
+
+cinema-preparation-progress = { $stage }: { $percent }%
+cinema-stage-queued = Waiting for processing
+cinema-stage-downloading = Downloading film
+cinema-stage-audio = Preparing audio
+cinema-stage-video = Encoding video
+cinema-stage-finalizing = Finalizing
+
+cinema-status-buffering = Buffering. Playback will resume automatically.
+cinema-stage-streaming = Video and audio prepared

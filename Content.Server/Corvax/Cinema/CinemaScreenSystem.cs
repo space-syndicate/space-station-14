@@ -39,8 +39,10 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         SubscribeLocalEvent<CinemaScreenComponent, CinemaScreenControlMessage>(OnControlMessage);
         SubscribeLocalEvent<CinemaScreenComponent, BoundUIOpenedEvent>(OnUiOpened);
         SubscribeNetworkEvent<CinemaAudioChunkRequestEvent>(OnAudioRequest);
+        SubscribeNetworkEvent<CinemaVideoChunkRequestEvent>(OnVideoRequest);
         SubscribeLocalEvent<CinemaScreenComponent, DamageChangedEvent>(OnDamageChanged);
         SubscribeLocalEvent<CinemaScreenComponent, ComponentStartup>(OnCinemaStartup);
+        SubscribeLocalEvent<CinemaScreenComponent, ComponentShutdown>(OnCinemaShutdown);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         InitializeAudioExtraction();
     }
@@ -50,6 +52,12 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         // Screens restored with an existing URL must regenerate their audio manifest after a server restart.
         ResetAudioMetadata(comp);
         PrepareAudio(uid, comp);
+    }
+
+    private void OnCinemaShutdown(EntityUid uid, CinemaScreenComponent comp, ComponentShutdown args)
+    {
+        _episodeRequests.Remove(uid);
+        ReleaseAudioRequest(uid);
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent args)
@@ -71,10 +79,15 @@ public sealed partial class CinemaScreenSystem : EntitySystem
     private void UpdateScreen(EntityUid uid, CinemaScreenComponent comp)
     {
         Dirty(uid, comp);
+        UpdateScreenUi(uid, comp);
+    }
+
+    private void UpdateScreenUi(EntityUid uid, CinemaScreenComponent comp)
+    {
         var status = comp.Broken ? "cinema-status-broken" : comp.AudioStatus;
-        if (!comp.Broken && comp.AudioCacheKey != null)
+        if (!comp.Broken && comp.AudioCacheKey != null && !comp.Buffering && !comp.StreamFailed)
             status = comp.Playing ? "cinema-status-playing" : "cinema-status-paused";
-        _ui.SetUiState(uid, CinemaScreenUiKey.Key, new CinemaScreenState(comp.VideoUrl, comp.Volume, status, comp.Films.Keys.ToArray()));
+        _ui.SetUiState(uid, CinemaScreenUiKey.Key, new CinemaScreenState(comp.VideoUrl, comp.Volume, status, comp.Films.Keys.ToArray(), comp.PreparationStage, comp.PreparationPercent));
     }
 
     private void OnControlMessage(Entity<CinemaScreenComponent> ent, ref CinemaScreenControlMessage msg)
@@ -100,7 +113,8 @@ public sealed partial class CinemaScreenSystem : EntitySystem
             }
         }
 
-        if (comp.Broken)
+        // Loading is shared by all viewers; reject controls from stale or already-open panels too.
+        if (comp.Broken || comp.AudioStatus is "cinema-status-loading" or "cinema-status-resolving" or "cinema-status-buffering")
             return;
 
         msg.Url = msg.Url.Trim();
@@ -150,13 +164,17 @@ public sealed partial class CinemaScreenSystem : EntitySystem
             return;
         }
 
+        _episodeRequests.Remove(uid);
+        ReleaseAudioRequest(uid);
         comp.VideoUrl = url;
+        comp.ResolvedVideoUrl = null;
         comp.Playing = false;
         comp.PausePosition = 0;
         comp.ServerStartTime = default;
         ResetAudioMetadata(comp);
         UpdateScreen(uid, comp);
         PrepareAudio(uid, comp);
+        StartPlaybackWhenReady(uid, comp);
         Log.Debug($"Cinema SetUrl OK: '{url}'");
     }
 
@@ -175,6 +193,28 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         }
 
         PrepareAudio(uid, comp);
+        StartPlaybackWhenReady(uid, comp);
+    }
+
+    internal void StartPlaybackWhenReady(EntityUid uid, CinemaScreenComponent comp)
+    {
+        if (comp.StreamPreparing)
+        {
+            if (comp.Playing)
+                return;
+            comp.PlayWhenPrepared = true;
+            UpdateStreamingPlayback(uid, comp);
+            return;
+        }
+        if (comp.AudioStatus is "cinema-status-loading" or "cinema-status-resolving")
+        {
+            comp.PlayWhenPrepared = true;
+            comp.Playing = false;
+            UpdateScreen(uid, comp);
+            return;
+        }
+
+        comp.PlayWhenPrepared = false;
         if (comp.Playing)
             return;
 
@@ -186,6 +226,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
 
     private void Pause(EntityUid uid, CinemaScreenComponent comp)
     {
+        comp.PlayWhenPrepared = false;
         if (!comp.Playing)
             return;
 
@@ -196,6 +237,8 @@ public sealed partial class CinemaScreenSystem : EntitySystem
 
     private void Stop(EntityUid uid, CinemaScreenComponent comp)
     {
+        comp.PlayWhenPrepared = false;
+        comp.Buffering = false;
         comp.Playing = false;
         comp.PausePosition = 0;
         comp.ServerStartTime = default;
@@ -208,10 +251,23 @@ public sealed partial class CinemaScreenSystem : EntitySystem
             return;
 
         comp.PausePosition = Math.Clamp(seconds, 0, TimeSpan.MaxValue.TotalSeconds / 2);
+        if (comp.StreamDuration > 0)
+            comp.PausePosition = Math.Min(comp.PausePosition, Math.Max(0, comp.StreamDuration - 0.05));
 
         // Re-anchor the play clock so the seek takes effect immediately for every client.
         if (comp.Playing)
             comp.ServerStartTime = _timing.RealTime;
+        if (comp.StreamPreparing)
+        {
+            if (comp.PausePosition >= PreparedStreamEnd(comp))
+            {
+                comp.PlayWhenPrepared |= comp.Playing;
+                comp.Playing = false;
+                comp.Buffering = true;
+                comp.AudioStatus = "cinema-status-buffering";
+            }
+            UpdateStreamingPlayback(uid, comp);
+        }
 
         UpdateScreen(uid, comp);
     }
@@ -228,7 +284,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
     /// <summary>The position (seconds) the video should currently be at, derived from server time.</summary>
     private double CurrentPosition(CinemaScreenComponent comp)
     {
-        if (!comp.Playing)
+        if (!comp.Playing || comp.ResolvedVideoUrl != null && !comp.HasVideoSegments)
             return comp.PausePosition;
 
         var elapsed = (_timing.RealTime - comp.ServerStartTime).TotalSeconds;
@@ -243,6 +299,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         if (_damageable.GetTotalDamage(entity.Owner).Float() < entity.Comp.BreakDamage)
             return;
 
+        ReleaseAudioRequest(entity.Owner);
         entity.Comp.Broken = true;
         entity.Comp.Playing = false;
         UpdateScreen(entity.Owner, entity.Comp);
@@ -260,9 +317,15 @@ public sealed partial class CinemaScreenSystem : EntitySystem
             !(uri.Scheme == Uri.UriSchemeHttp && _cfg.GetCVar(CinemaCVars.AllowHttp)))
             return false;
 
-        if (uri.Host.Length == 0 || uri.UserInfo.Length != 0 || !IsDirectMediaUrl(url))
+        if (uri.Host.Length == 0 || uri.UserInfo.Length != 0 ||
+            !(IsDirectMediaUrl(url) || TryGetAniLibertyEpisode(url, out _) || IsAniLibertyMedia(uri, ".m3u8")))
             return false;
 
+        return IsHostAllowed(uri);
+    }
+
+    private bool IsHostAllowed(Uri uri)
+    {
         // Domain whitelist can be turned off for local/dev media servers.
         if (!_cfg.GetCVar(CinemaCVars.WhitelistEnabled))
             return true;

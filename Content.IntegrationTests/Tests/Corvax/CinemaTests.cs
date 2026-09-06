@@ -1,5 +1,7 @@
 using System.Linq;
 using System.Numerics;
+using System.Threading;
+using System.Threading.Tasks;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Physics;
@@ -24,6 +26,10 @@ public sealed class CinemaTests
         var entities = server.ResolveDependency<IEntityManager>();
         var config = server.ResolveDependency<IConfigurationManager>();
         var admins = server.ResolveDependency<IAdminManager>();
+        Task<Content.Server.Corvax.Cinema.CinemaScreenSystem.AudioManifest?> abandoned = null!;
+        Task<Content.Server.Corvax.Cinema.CinemaScreenSystem.AudioManifest?> replacement = null!;
+        using var worker = new SemaphoreSlim(1);
+        using var deadline = new CancellationTokenSource(TimeSpan.FromSeconds(30));
 
         await server.WaitAssertion(() =>
         {
@@ -80,17 +86,134 @@ public sealed class CinemaTests
                 Assert.That(comp.VideoUrl, Is.EqualTo(second), url);
             }
 
+            foreach (var status in new[] { "cinema-status-loading", "cinema-status-resolving" })
+            {
+                comp.AudioStatus = status;
+                Send(CinemaScreenAction.SetUrl, first);
+                Send(CinemaScreenAction.Play, first);
+                Send(CinemaScreenAction.Pause);
+                Send(CinemaScreenAction.Stop);
+                Send(CinemaScreenAction.Seek, seek: 100);
+                Send(CinemaScreenAction.SetVolume, volume: 0.2f);
+                Send(CinemaScreenAction.SelectFilm, film: comp.Films.First().Key);
+                Assert.That(comp.VideoUrl, Is.EqualTo(second), status);
+                Assert.That(comp.Playing, Is.True, status);
+                Assert.That(comp.PausePosition, Is.Zero, status);
+                Assert.That(comp.Volume, Is.EqualTo(1), status);
+            }
+            foreach (var status in new[] { "cinema-status-error", "cinema-status-resolve-error", "cinema-status-paused" })
+            {
+                comp.AudioStatus = status;
+                Send(CinemaScreenAction.Pause);
+                Assert.That(comp.Playing, Is.False, status);
+                Send(CinemaScreenAction.Play);
+                Assert.That(comp.Playing, Is.True, status);
+            }
+
+            // A completed job must release the server-side lock, not just change the displayed UI status.
+            comp.AudioStatus = "cinema-status-loading";
+            var cinema = entities.System<Content.Server.Corvax.Cinema.CinemaScreenSystem>();
+            comp.Playing = false;
+            comp.PausePosition = 0;
+            comp.ServerStartTime = default;
+            cinema.StartPlaybackWhenReady(screen, comp);
+            Assert.That(comp.Playing, Is.False, "Watch must wait for audio preparation.");
+            Assert.That(comp.PlayWhenPrepared, Is.True);
+            Assert.That(comp.ServerStartTime, Is.EqualTo(TimeSpan.Zero));
+            cinema.ApplyPreparedMedia(screen, comp,
+                new Content.Server.Corvax.Cinema.CinemaScreenSystem.AudioManifest("test-cache", 1, 30));
+            Assert.That(comp.Playing, Is.True, "Watch must start automatically after audio preparation.");
+            Assert.That(comp.PlayWhenPrepared, Is.False);
+            Assert.That(comp.PausePosition, Is.Zero, "Preparation must not skip the beginning.");
+            Send(CinemaScreenAction.Pause);
+            Assert.That(comp.Playing, Is.False, "Preparation completion must unlock controls.");
+            Send(CinemaScreenAction.Play);
+            Assert.That(comp.Playing, Is.True);
+            comp.AudioCacheKey = null;
+            comp.AudioSegmentCount = 0;
+
+            // Partial preparation starts only with a buffer of paired video/audio segments.
+            var buffer = config.GetCVar(CinemaCVars.StreamingBufferSeconds);
+            config.SetCVar(CinemaCVars.StreamingBufferSeconds, 30);
+            comp.Playing = false;
+            comp.PlayWhenPrepared = true;
+            comp.PausePosition = 0;
+            void Prepared(int count) => cinema.ApplyStreamingProgress(screen, comp, "stream-cache",
+                new Content.Server.Corvax.Cinema.CinemaScreenSystem.StreamingProgress(count, 10, 200));
+            Prepared(1);
+            Assert.That(comp.Playing, Is.False);
+            Assert.That(comp.Buffering, Is.True);
+            Prepared(2);
+            Assert.That(comp.AudioStatus, Is.EqualTo("cinema-status-buffering"));
+            Prepared(3);
+            Assert.That(comp.Playing, Is.True);
+            Assert.That(comp.Buffering, Is.False);
+            var timing = server.ResolveDependency<Robust.Shared.Timing.IGameTiming>();
+            comp.ServerStartTime = timing.RealTime - TimeSpan.FromSeconds(29.8);
+            cinema.UpdateStreamingPlayback(screen, comp);
+            Assert.That(comp.Playing, Is.False, "Running out of paired segments must pause the shared clock.");
+            Assert.That(comp.PausePosition, Is.EqualTo(29.75).Within(0.01));
+            Prepared(6);
+            Assert.That(comp.Playing, Is.True);
+            Send(CinemaScreenAction.Seek, seek: 95);
+            Assert.That(comp.Playing, Is.False);
+            Assert.That(comp.PausePosition, Is.EqualTo(95));
+            Prepared(10);
+            Assert.That(comp.Playing, Is.False, "A forward seek waits for its own buffer.");
+            Assert.That(comp.AudioStatus, Is.EqualTo("cinema-status-buffering"));
+            Prepared(13);
+            Assert.That(comp.Playing, Is.True);
+            Assert.That(comp.PausePosition, Is.EqualTo(95), "Buffering must retain the seek target.");
+            Send(CinemaScreenAction.Pause);
+            Prepared(14);
+            Assert.That(comp.Playing, Is.False, "Background preparation must respect pause.");
+            Send(CinemaScreenAction.Stop);
+            Prepared(15);
+            Assert.That(comp.Playing, Is.False, "Background preparation must respect stop.");
+            Assert.That(comp.PausePosition, Is.Zero);
+            cinema.ApplyPreparedMedia(screen, comp,
+                new Content.Server.Corvax.Cinema.CinemaScreenSystem.AudioManifest("stream-cache", 20, 10, true, 200));
+            Assert.That(comp.Playing, Is.False);
+            Assert.That(comp.StreamPreparing, Is.False);
+            config.SetCVar(CinemaCVars.StreamingBufferSeconds, buffer);
+
             config.SetCVar(CinemaCVars.AllowHttp, true);
             config.SetCVar(CinemaCVars.WhitelistEnabled, false);
             Send(CinemaScreenAction.SetUrl, "ftp://example.org/film.webm");
             Assert.That(comp.VideoUrl, Is.EqualTo(second), "AllowHttp must not allow other schemes.");
             Send(CinemaScreenAction.SetUrl, "http://example.org/film.webm");
             Assert.That(comp.VideoUrl, Is.EqualTo("http://example.org/film.webm"));
+            Assert.That(comp.Playing, Is.True, "Loading a URL must also request playback.");
             Send(CinemaScreenAction.Play);
             Send(CinemaScreenAction.Stop);
             Assert.That(comp.Playing, Is.False);
             Assert.That(comp.PausePosition, Is.Zero);
 
+            // Switching away must release the single preparation worker, unless another screen still needs it.
+            CancellationToken abandonedToken = default;
+            abandoned = cinema.GetOrStartAudioJob(screen, "unfinished-film", async token =>
+            {
+                abandonedToken = token;
+                await worker.WaitAsync(token);
+                try { await Task.Delay(Timeout.Infinite, token).ConfigureAwait(false); return null; }
+                finally { worker.Release(); }
+            });
+            var otherScreen = entities.SpawnEntity("CinemaScreen", MapCoordinates.Nullspace);
+            var sharedJob = cinema.GetOrStartAudioJob(otherScreen, "unfinished-film", _ =>
+                throw new InvalidOperationException("Two screens must share the existing job"));
+            Assert.That(sharedJob, Is.SameAs(abandoned));
+            Send(CinemaScreenAction.SelectFilm, film: comp.Films.First().Key);
+            Assert.That(abandonedToken.IsCancellationRequested, Is.False,
+                "Switching one screen must not interrupt another screen's film.");
+            entities.DeleteEntity(otherScreen);
+            Assert.That(abandonedToken.IsCancellationRequested, Is.True,
+                "The last screen leaving must cancel background preparation.");
+            replacement = cinema.GetOrStartAudioJob(screen, "unfinished-film", _ =>
+                Task.FromResult<Content.Server.Corvax.Cinema.CinemaScreenSystem.AudioManifest?>(
+                    new Content.Server.Corvax.Cinema.CinemaScreenSystem.AudioManifest("unfinished-film", 1, 30)));
+            Assert.That(replacement, Is.Not.SameAs(abandoned), "Returning to a cancelled film must create a fresh job.");
+
+            Send(CinemaScreenAction.Stop);
             admins.DeAdmin(pair.Player!);
             Send(CinemaScreenAction.Play, first);
             Assert.That(comp.Playing, Is.False, "Non-admins must not control playback.");
@@ -117,6 +240,13 @@ public sealed class CinemaTests
             entities.DeleteEntity(actor);
             entities.DeleteEntity(screen);
         });
+        try { await abandoned.WaitAsync(deadline.Token); }
+        catch (OperationCanceledException) { }
+        Assert.That(abandoned.IsCanceled, Is.True, "The abandoned job itself must terminate, not just the test timeout.");
+        await worker.WaitAsync(deadline.Token);
+        worker.Release();
+        Assert.That(await replacement.WaitAsync(deadline.Token), Is.Not.Null,
+            "The replacement job must acquire the worker without waiting for the entire abandoned film.");
         await pair.CleanReturnAsync();
     }
     [Test]
