@@ -17,10 +17,12 @@ public static class EntityProjectHelper
     {
         var cfg = IoCManager.Resolve<IConfigurationManager>();
         var res = IoCManager.Resolve<IResourceManager>();
-        var projectFolderPrefix = cfg.GetCVar(CCVars.EntityProjectFolderPrefix);
-        var excludedCoreProjectFolder = cfg.GetCVar(CCVars.EntityProjectExcludedCoreProjectFolder);
+        var projectFolderPrefixes = cfg.GetCVar(CCVars.EntityProjectFolderPrefix)
+            .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        var excludedCoreProjectFolders = cfg.GetCVar(CCVars.EntityProjectExcludedCoreProjectFolder)
+            .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
-        if (string.IsNullOrWhiteSpace(projectFolderPrefix))
+        if (projectFolderPrefixes.Length == 0)
             return [];
 
         var ids = new HashSet<string>();
@@ -30,7 +32,7 @@ public static class EntityProjectHelper
             if (!IsPrototypeFile(path))
                 continue;
 
-            if (!IsInIncludedProjectFolder(path, projectFolderPrefix, excludedCoreProjectFolder))
+            if (!IsInIncludedProjectFolder(path, projectFolderPrefixes, excludedCoreProjectFolders))
                 continue;
 
             ExtractIdsFromYaml(res, path, ids);
@@ -52,23 +54,27 @@ public static class EntityProjectHelper
 
     private static bool IsInIncludedProjectFolder(
         ResPath path,
-        string projectFolderPrefix,
-        string excludedCoreProjectFolder)
+        string[] projectFolderPrefixes,
+        string[] excludedCoreProjectFolders)
     {
-        var normalizedExcluded = excludedCoreProjectFolder.Trim();
-
         foreach (var part in GetPathParts(path))
         {
-            if (!part.StartsWith(projectFolderPrefix, StringComparison.Ordinal))
-                continue;
-
-            if (!string.IsNullOrWhiteSpace(normalizedExcluded) &&
-                part.Equals(normalizedExcluded, StringComparison.Ordinal))
+            foreach (var prefix in projectFolderPrefixes)
             {
-                return false;
-            }
+                if (!part.StartsWith(prefix, StringComparison.Ordinal))
+                    continue;
 
-            return true;
+                foreach (var excluded in excludedCoreProjectFolders)
+                {
+                    if (!string.IsNullOrWhiteSpace(excluded) &&
+                        part.Equals(excluded, StringComparison.Ordinal))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
         }
 
         return false;

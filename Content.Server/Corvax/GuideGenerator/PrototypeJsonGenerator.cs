@@ -1,96 +1,87 @@
 using System.Linq;
 using System.Reflection;
-using System.Text.Encodings.Web;
-using System.Text.Json;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
-using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.GuideGenerator;
 
 public static class PrototypeJsonGenerator
 {
-    private static readonly JsonSerializerOptions SerializeOptions = new()
+    public static void PublishAll(IResourceManager res, ResPath destination)
     {
-        WriteIndented = true,
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-    };
+        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var serializationManager = IoCManager.Resolve<ISerializationManager>();
+        var componentFactory = IoCManager.Resolve<IComponentFactory>();
+        var destinationRoot = new ResPath("prototype").ToRootedPath();
 
-    public static void PublishAll(IResourceManager res, ResPath destRoot)
-    {
-        var proto = IoCManager.Resolve<IPrototypeManager>();
-        var ser = IoCManager.Resolve<ISerializationManager>();
-
-        foreach (var kind in proto.EnumeratePrototypeKinds().OrderBy(t => t.Name))
+        foreach (var kind in prototypeManager.EnumeratePrototypeKinds().OrderBy(type => type.Name))
         {
             // The entity prototype has its own generator due to its size <see cref="EntityJsonGenerator"/>.
-            if (kind == typeof(EntityPrototype))
-                continue;
+            var isEntityPrototype = kind == typeof(EntityPrototype);
 
-            if (HasUnsafeSerializedDataField(kind))
+            if (HasUnsafeSerializedDataField(kind, new HashSet<Type>()))
                 continue;
 
             // Map: entity id -> prototype fields
             var map = new Dictionary<string, object?>();
-
-            foreach (var p in proto.EnumeratePrototypes(kind))
+            foreach (var prototype in prototypeManager.EnumeratePrototypes(kind))
             {
-                var node = ser.WriteValueAs<MappingDataNode>(kind, p);
-                node.Remove("id");
-                map[p.ID] = FieldEntry.DataNodeToObject(node);
+                if (!FieldEntry.TryWriteValueAsMapping(serializationManager, kind, prototype, out var node))
+                    continue;
+
+                node.Remove(FieldEntry.PrototypeId);
+                var fields = FieldEntry.ProcessNode(prototype, node);
+                if (isEntityPrototype && prototype is EntityPrototype entityPrototype)
+                    fields = ProcessEntityPrototype(entityPrototype, prototypeManager, serializationManager, componentFactory, fields);
+
+                map[prototype.ID] = fields;
             }
 
             if (map.Count == 0)
                 continue;
 
-            // Determine default field for this prototype.
-            object? defaultObj = null;
-            try
-            {
-                var instance = Activator.CreateInstance(kind);
-                if (instance != null)
-                {
-                    try
-                    {
-                        FieldEntry.EnsureFieldsCollectionsInitialized(instance);
-                        var defaultNode = ser.WriteValueAs<MappingDataNode>(kind, instance, true);
-                        defaultNode.Remove("id");
-                        FieldEntry.NormalizeFlagsToSequences(instance, defaultNode);
-                        defaultObj = FieldEntry.DataNodeToObject(defaultNode);
-                    }
-                    finally
-                    {
-                        if (instance is IDisposable disposable)
-                            disposable.Dispose();
-                    }
-                }
-            }
-            catch
-            {
-                defaultObj = new Dictionary<string, object?>();
-            }
+            var defaultObject = FieldEntry.ComputePrototypeDefault(kind, serializationManager);
+            var output = FieldEntry.DeduplicateAgainstDefault(defaultObject, map);
+            res.UserData.CreateDir(destinationRoot);
 
-            var outObj = new Dictionary<string, object?>
-            {
-                ["default"] = defaultObj,
-                ["id"] = map
-            };
-
-            res.UserData.CreateDir(destRoot);
-            var kindName = proto.TryGetKindFrom(kind, out var actualKindName)
+            var kindName = prototypeManager.TryGetKindFrom(kind, out var actualKindName)
                 ? actualKindName
                 : kind.Name;
-            var fileName = TextTools.DecapitalizeString(kindName) + ".json";
-            using var stream = res.UserData.OpenWrite(destRoot / fileName);
-            JsonSerializer.Serialize(stream, outObj, SerializeOptions);
+            var directoryName = TextTools.CapitalizeString(kindName);
+
+            if (!isEntityPrototype)
+            {
+                GuideJson.WriteFile(res, destinationRoot / $"{directoryName}.json", output);
+                continue;
+            }
+
+            var entityRoot = destinationRoot / directoryName;
+            res.UserData.CreateDir(entityRoot);
+            var entityPrototypes = output.TryGetValue(FieldEntry.PrototypeId, out var idValue) && idValue is Dictionary<string, object?> em
+                ? em
+                : output;
+
+            foreach (var (id, fields) in entityPrototypes)
+            {
+                GuideJson.WriteFile(res, entityRoot / $"{id}.json", fields);
+            }
         }
     }
 
-    private static bool HasUnsafeSerializedDataField(Type type)
+    private static object? ProcessEntityPrototype(EntityPrototype entProto, IPrototypeManager proto, ISerializationManager ser, IComponentFactory compFactory, object? fields)
     {
-        return HasUnsafeSerializedDataField(type, new HashSet<Type>());
+        if (fields is not Dictionary<string, object?> fieldMap)
+            return fields;
+
+        var componentMap = ComponentJsonGenerator.BuildEntityComponentMap(entProto, proto, ser, compFactory);
+        if (componentMap.Count == 0)
+            fieldMap.Remove("components");
+        else
+            fieldMap["components"] = componentMap;
+
+        return fieldMap;
     }
 
     private static bool HasUnsafeSerializedDataField(Type type, HashSet<Type> visited)
@@ -100,25 +91,10 @@ public static class PrototypeJsonGenerator
         if (!visited.Add(type))
             return false;
 
-        foreach (var field in type.GetFields(flags))
-        {
-            if (!HasDataField(field))
-                continue;
-
-            if (IsUnsafeSerializedType(field.FieldType, visited))
-                return true;
-        }
-
-        foreach (var property in type.GetProperties(flags))
-        {
-            if (!HasDataField(property))
-                continue;
-
-            if (IsUnsafeSerializedType(property.PropertyType, visited))
-                return true;
-        }
-
-        return false;
+        return type.GetFields(flags)
+            .Cast<MemberInfo>()
+            .Concat(type.GetProperties(flags))
+            .Any(m => HasDataField(m) && IsUnsafeSerializedType(FieldEntry.GetMemberType(m), visited));
     }
 
     private static bool HasDataField(MemberInfo member)
@@ -131,37 +107,20 @@ public static class PrototypeJsonGenerator
     {
         type = Nullable.GetUnderlyingType(type) ?? type;
 
-        if (type == typeof(object) ||
-            type == typeof(EntityUid) ||
-            type == typeof(NetEntity))
-        {
+        if (type == typeof(EntityUid) || type == typeof(NetEntity))
             return true;
-        }
 
-        if (type.IsPrimitive ||
-            type.IsEnum ||
-            type == typeof(string) ||
-            type == typeof(decimal) ||
-            type == typeof(TimeSpan))
-        {
+        if (type.IsPrimitive || type.IsEnum || type == typeof(string) || type == typeof(decimal) || type == typeof(TimeSpan))
             return false;
-        }
 
         if (type.IsArray)
             return IsUnsafeSerializedType(type.GetElementType()!, visited);
 
         if (type.IsGenericType)
-        {
-            foreach (var argument in type.GetGenericArguments())
-            {
-                if (IsUnsafeSerializedType(argument, visited))
-                    return true;
-            }
-        }
+            return type.GetGenericArguments().Any(arg => IsUnsafeSerializedType(arg, visited));
 
         return type.GetCustomAttributes(inherit: true)
-                   .Any(attr =>
-                   attr.GetType().Name is nameof(DataDefinitionAttribute) or nameof(SerializableAttribute))
-                && HasUnsafeSerializedDataField(type, visited);
+                   .Any(attr => attr.GetType().Name is nameof(DataDefinitionAttribute) or nameof(SerializableAttribute))
+               && HasUnsafeSerializedDataField(type, visited);
     }
 }

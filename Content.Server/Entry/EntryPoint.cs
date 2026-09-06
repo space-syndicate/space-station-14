@@ -151,25 +151,7 @@ namespace Content.Server.Entry
             {
                 var resPath = new ResPath(dest).ToRootedPath();
                 // Corvax-Wiki-Start
-                void WriteFile(string name, Action<Stream> write)
-                {
-                    using var stream = _res.UserData.OpenWrite(resPath.WithName(name));
-                    write(stream);
-                }
-                WriteFile("entity_prototypes.json", EntityJsonGenerator.PublishJson);
-                WriteFile("entity_parent.json", EntityParentJsonGenerator.PublishJson);
-                WriteFile("loc.json", LocJsonGenerator.PublishJson);
-                WriteFile("meta_license.json", MetaLicenseGenerator.PublishJson);
-                WriteFile("prototype.json", PrototypeListGenerator.PublishJson);
-                WriteFile("component.json", ComponentListGenerator.PublishJson);
-                WriteFile("prototype_store.json", PrototypeStoreGenerator.PublishJson);
-                WriteFile("component_store.json", ComponentStoreGenerator.PublishJson);
-                WriteFile("entity_project.json", EntityProjectGenerator.PublishJson);
-                WriteFile("entity_name.json", EntityNameDuplicatesJsonGenerator.PublishNameJson);
-                WriteFile("entity_name_wiki.json", file => WikiEntityNameGenerator.PublishJson(file, _res, resPath));
-                WriteFile("entity_name_duplicates.json", EntityNameDuplicatesJsonGenerator.PublishDuplicatesJson);
-                PrototypeJsonGenerator.PublishAll(_res, new ResPath("prototype").ToRootedPath());
-                ComponentJsonGenerator.PublishAll(_res, new ResPath("component").ToRootedPath());
+                GuideDataGenerator.Generate(_res, resPath);
                 // Corvax-Wiki-End
                 Dependencies.Resolve<IBaseServer>().Shutdown("Data generation done");
                 return;

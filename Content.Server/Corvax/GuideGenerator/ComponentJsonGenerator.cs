@@ -1,110 +1,86 @@
-using System.Text.Encodings.Web;
-using System.Text.Json;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
-using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.GuideGenerator;
 
 public static class ComponentJsonGenerator
 {
-    private static readonly JsonSerializerOptions SerializeOptions = new()
+    public static void PublishAll(IResourceManager res, ResPath destination)
     {
-        WriteIndented = true,
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-    };
-
-    public static void PublishAll(IResourceManager res, ResPath destRoot)
-    {
-        var proto = IoCManager.Resolve<IPrototypeManager>();
-        var ser = IoCManager.Resolve<ISerializationManager>();
-        var compFactory = IoCManager.Resolve<IComponentFactory>();
-        var entMan = IoCManager.Resolve<IEntityManager>();
+        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var serializationManager = IoCManager.Resolve<ISerializationManager>();
+        var componentFactory = IoCManager.Resolve<IComponentFactory>();
+        var destinationRoot = new ResPath("component").ToRootedPath();
 
         // Map: component name -> (entity id -> component fields)
         var output = new Dictionary<string, Dictionary<string, object?>>();
-
-        foreach (var p in proto.EnumeratePrototypes(typeof(EntityPrototype)))
+        foreach (var entityPrototype in prototypeManager.EnumeratePrototypes<EntityPrototype>())
         {
-            if (p is not EntityPrototype entProto)
-                continue;
-
-            var composedComponents = YAMLEntry.GetComposedComponentMappings(entProto, proto, ser, compFactory);
-
-            foreach (var (compName, entry) in entProto.Components)
+            foreach (var (componentName, componentFields) in BuildEntityComponentMap(
+                         entityPrototype,
+                         prototypeManager,
+                         serializationManager,
+                         componentFactory))
             {
-                var node = ser.WriteValueAs<MappingDataNode>(entry.Component.GetType(), entry.Component);
-                FieldEntry.NormalizeFlagsToSequences(entry.Component, node);
-
-                var compFields = FieldEntry.DataNodeToObject(node);
-
-                if (!output.TryGetValue(compName, out var map))
-                {
-                    map = new Dictionary<string, object?>();
-                    output[compName] = map;
-                }
-
-                map[entProto.ID] = compFields;
-            }
-
-            foreach (var (compName, node) in composedComponents)
-            {
-                if (entProto.Components.ContainsKey(compName))
-                    continue;
-
-                var compFields = FieldEntry.DataNodeToObject(node);
-
-                if (!output.TryGetValue(compName, out var map))
-                {
-                    map = new Dictionary<string, object?>();
-                    output[compName] = map;
-                }
-
-                map[entProto.ID] = compFields;
+                GetOrCreateEntry(output, componentName)[entityPrototype.ID] = componentFields;
             }
         }
 
         if (output.Count == 0)
             return;
 
-        foreach (var (compName, map) in output)
+        res.UserData.CreateDir(destinationRoot);
+        foreach (var (componentName, fieldsByEntity) in output)
         {
-            // Determine default field for this component.
-            object? defaultObj = null;
-            if (compFactory.TryGetRegistration(compName, out var registration))
-            {
-                var uid = entMan.CreateEntityUninitialized(null);
-                try
-                {
-                    var compInstance = compFactory.GetComponent(registration.Type);
-                    FieldEntry.EnsureFieldsCollectionsInitialized(compInstance);
-                    entMan.AddComponent(uid, compInstance);
-                    var node = ser.WriteValueAs<MappingDataNode>(compInstance.GetType(), compInstance, true);
-                    FieldEntry.NormalizeFlagsToSequences(compInstance, node);
-                    defaultObj = FieldEntry.DataNodeToObject(node);
-                }
-                catch
-                {
-                    defaultObj = new Dictionary<string, object?>();
-                }
-                finally
-                {
-                    entMan.DeleteEntity(uid);
-                }
-            }
+            var defaultObject = FieldEntry.ComputeComponentDefault(
+                componentName,
+                componentFactory,
+                serializationManager);
+            var componentOutput = FieldEntry.DeduplicateAgainstDefault(defaultObject, fieldsByEntity);
+            var directoryName = TextTools.CapitalizeString(componentName);
+            var componentRoot = destinationRoot / directoryName;
 
-            var outObj = new Dictionary<string, object?>
-            {
-                ["default"] = defaultObj,
-                ["id"] = map
-            };
-
-            res.UserData.CreateDir(destRoot);
-            var fileName = TextTools.DecapitalizeString(compName) + ".json";
-            using var stream = res.UserData.OpenWrite(destRoot / fileName);
-            JsonSerializer.Serialize(stream, outObj, SerializeOptions);
+            res.UserData.CreateDir(componentRoot);
+            GuideJson.WriteFile(res, destinationRoot / $"{directoryName}.json", componentOutput);
+            GuideJson.WriteFile(res, componentRoot / "defaultFields.json", defaultObject);
         }
+    }
+
+    private static Dictionary<string, object?> GetOrCreateEntry(Dictionary<string, Dictionary<string, object?>> output, string key)
+    {
+        if (!output.TryGetValue(key, out var map))
+        {
+            map = new Dictionary<string, object?>();
+            output[key] = map;
+        }
+
+        return map;
+    }
+
+    public static Dictionary<string, object?> BuildEntityComponentMap(EntityPrototype entProto, IPrototypeManager proto, ISerializationManager ser, IComponentFactory compFactory)
+    {
+        var components = new Dictionary<string, object?>(StringComparer.Ordinal);
+        var composedComponents = YAMLEntry.GetComposedComponentMappings(entProto, proto, ser, compFactory);
+
+        foreach (var (compName, entry) in entProto.Components)
+        {
+            if (!FieldEntry.TryWriteValueAsMapping(ser, entry.Component.GetType(), entry.Component, out var node))
+                continue;
+
+            composedComponents.TryGetValue(compName, out var composedNode);
+            components[compName] = FieldEntry.ProcessNode(entry.Component, node, composedNode);
+        }
+
+        foreach (var (compName, node) in composedComponents)
+        {
+            if (entProto.Components.ContainsKey(compName))
+                continue;
+
+            components[compName] = FieldEntry.ConvertNode(node);
+        }
+
+        return components;
     }
 }
