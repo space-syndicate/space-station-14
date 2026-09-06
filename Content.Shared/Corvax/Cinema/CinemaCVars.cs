@@ -8,10 +8,10 @@ public static class CinemaCVars
     /// <summary>
     /// Comma-separated list of allowed video hosts for cinema screens.
     /// Entries may be exact hosts ("media.w3.org") or suffixes ("archive.org" also allows "*.archive.org").
-    /// The URL scheme is always forced to https by the server-side validator.
+    /// HTTPS is required unless AllowHttp is enabled.
     /// </summary>
     public static readonly CVarDef<string> UrlWhitelist =
-        CVarDef.Create("cinema.whitelist", "media.w3.org,storage.googleapis.com,archive.org,youtube.com,youtu.be", CVar.SERVERONLY);
+        CVarDef.Create("cinema.whitelist", "media.w3.org,storage.googleapis.com,archive.org,upload.wikimedia.org", CVar.SERVERONLY);
 
     /// <summary>
     /// Whether the <see cref="UrlWhitelist"/> domain filter is enforced. Disable this (false) to allow

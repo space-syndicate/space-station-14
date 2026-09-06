@@ -21,15 +21,6 @@ public sealed partial class CinemaScreenPlayerComponent : Component
     /// <summary>Accumulates frame time until the next periodic JavaScript sync.</summary>
     public float SyncAccumulator;
 
-    /// <summary>Diagnostic: whether the first JS sync has been logged.</summary>
-    public bool FirstSyncLogged;
-
-    /// <summary>Diagnostic: last URL passed to JS (to log meaningful state changes).</summary>
-    public string? LastSyncedUrl;
-
-    /// <summary>Diagnostic: last playing flag passed to JS.</summary>
-    public bool LastSyncedPlaying;
-
     /// <summary>Client-side positional audio entity for the currently active generated segment.</summary>
     public EntityUid? AudioEntity;
 
@@ -48,7 +39,7 @@ public sealed partial class CinemaScreenPlayerComponent : Component
     /// <summary>Cancels an obsolete segment request after URL/PVS changes.</summary>
     public CancellationTokenSource? AudioCancellation;
 
-    /// <summary>Do not hammer the status endpoint when extraction/download failed.</summary>
+    /// <summary>Do not hammer the server when extraction/download failed.</summary>
     public TimeSpan AudioRetryAt;
 
 }

@@ -20,6 +20,10 @@ public sealed partial class CinemaScreenComponent : Component
     [DataField, AutoNetworkedField]
     public string? VideoUrl;
 
+    /// <summary>Films selectable by players. Keys are localized titles; values are direct media URLs.</summary>
+    [DataField]
+    public Dictionary<string, string> Films = new();
+
     /// <summary>Whether playback is currently active.</summary>
     [DataField, AutoNetworkedField]
     public bool Playing;
@@ -40,11 +44,14 @@ public sealed partial class CinemaScreenComponent : Component
     [DataField, AutoNetworkedField]
     public float Volume = 1f;
 
+    /// <summary>Localized preparation status displayed by the control panel.</summary>
+    public string AudioStatus = "cinema-status-empty";
+
     /// <summary>Cache key of the server-generated segmented OGG audio track.</summary>
     [AutoNetworkedField]
     public string? AudioCacheKey;
 
-    /// <summary>Number of generated OGG segments available through the server status endpoint.</summary>
+    /// <summary>Number of generated OGG segments available through network events.</summary>
     [AutoNetworkedField]
     public int AudioSegmentCount;
 

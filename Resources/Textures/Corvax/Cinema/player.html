@@ -18,56 +18,18 @@
             display: block;
             object-fit: contain;
         }
-        #yt {
-            width: 100%;
-            height: 100%;
-            display: none;
-        }
-        #yt iframe {
-            width: 100%;
-            height: 100%;
-        }
     </style>
 </head>
 <body>
 <video id="video" playsinline muted></video>
-<div id="yt"></div>
-<script src="https://www.youtube.com/iframe_api"></script>
 <script>
 (function () {
     var v = document.getElementById('video');
-    var yt = document.getElementById('yt');
 
     var videoSrc = null;
     var pendingSeek = null;
     var playStarting = false;
     var playbackRejected = false;
-    var isYoutube = false;
-
-    var ytPlayer = null;
-    var ytReady = false;
-    var ytVideoId = null;
-    var ytDesiredVolume = 1;
-    var ytPlayRequested = false;
-
-    // ---------------- diagnostics (JS->C# via resource fetch) ----------------
-    function reportState(tag) {
-        try {
-            var extra;
-            if (isYoutube && ytPlayer && typeof ytPlayer.getPlayerState === 'function') {
-                extra = '&ytState=' + ytPlayer.getPlayerState();
-            } else {
-                extra = '&muted=' + v.muted + '&paused=' + v.paused + '&volume=' + v.volume +
-                        '&readyState=' + v.readyState +
-                        '&audioTracks=' + (v.audioTracks ? v.audioTracks.length : -1) +
-                        '&audioBytes=' + (v.webkitAudioDecodedByteCount || 0);
-            }
-            var img = new Image();
-            img.src = 'res://localhost/cinema-diag-' + tag + '?yt=' + (isYoutube ? 1 : 0) + extra;
-        } catch (e) {}
-    }
-
-    // ---------------- plain <video> (webm/mp4) ----------------
     v.addEventListener('loadedmetadata', function () {
         if (pendingSeek !== null) {
             try { v.currentTime = pendingSeek; } catch (e) { /* retried next sync */ }
@@ -95,19 +57,17 @@
         if (p && typeof p.then === 'function') {
             p.then(function () {
                 playStarting = false;
-                reportState('playing-muted');
             }).catch(function () {
                 // Do not repeat a rejected request every synchronization tick. A new URL resets the latch.
                 playbackRejected = true;
                 playStarting = false;
-                reportState('muted-autoplay-failed');
             });
         } else {
             playStarting = false;
         }
     }
 
-    function videoApplyState(url, playing, time, volume, threshold) {
+    function applyState(url, playing, time, threshold) {
         if (!v) return;
 
         if (url !== videoSrc) {
@@ -140,104 +100,6 @@
             videoStartPlayback();
         } else if (!playing && !v.paused) {
             v.pause();
-        }
-    }
-
-    // ---------------- YouTube (official IFrame API) ----------------
-    function parseYouTubeId(url) {
-        if (!url) return null;
-        var m;
-        m = url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/); if (m) return m[1];
-        m = url.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/); if (m) return m[1];
-        m = url.match(/youtube\.com\/embed\/([A-Za-z0-9_-]{6,})/); if (m) return m[1];
-        m = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/); if (m) return m[1];
-        return null;
-    }
-
-    function ensureYtPlayer(id) {
-        if (!ytReady || !window.YT || !YT.Player) return;
-        if (ytPlayer && ytVideoId === id) return;
-
-        if (ytPlayer) {
-            try { ytPlayer.destroy(); } catch (e) {}
-            ytPlayer = null;
-        }
-
-        ytVideoId = id;
-        ytPlayRequested = false;
-        ytPlayer = new YT.Player('yt', {
-            videoId: id,
-            playerVars: { autoplay: 0, controls: 0, rel: 0, modestbranding: 1, playsinline: 1 },
-            events: {
-                onReady: function () { reportState('yt-ready'); },
-                onStateChange: function (e) {
-                    reportState('yt-state');
-                },
-                onError: function (e) { reportState('yt-error-' + (e && e.data != null ? e.data : 'unknown')); }
-            }
-        });
-    }
-
-    window.onYouTubeIframeAPIReady = function () {
-        ytReady = true;
-        if (ytVideoId) ensureYtPlayer(ytVideoId);
-    };
-
-    function ytApplyState(playing, time, volume, threshold) {
-        if (!ytPlayer || typeof ytPlayer.playVideo !== 'function') return;
-
-        ytDesiredVolume = Math.max(0, Math.min(1, volume));
-        try {
-            ytPlayer.setVolume(Math.round(ytDesiredVolume * 100));
-        } catch (e) {}
-
-        try {
-            var cur = ytPlayer.getCurrentTime();
-            var drift = Math.abs(cur - time);
-            var t = playing ? (threshold || 0.35) : 0.05;
-            if (drift > t) ytPlayer.seekTo(time, true);
-        } catch (e) {}
-
-        try {
-            var st = ytPlayer.getPlayerState();
-            if (playing && st !== 1 /* PLAYING */ && !ytPlayRequested) {
-                // Make only one autoplay request. Retrying on every 100 ms sync tick visibly toggles play/pause.
-                ytPlayRequested = true;
-                ytPlayer.mute();
-                ytPlayer.playVideo();
-            } else if (!playing) {
-                ytPlayRequested = false;
-                if (st === 1) ytPlayer.pauseVideo();
-            }
-        } catch (e) {}
-    }
-
-    // ---------------- unified applyState ----------------
-    function applyState(url, playing, time, volume, threshold) {
-        var ytId = parseYouTubeId(url);
-
-        if (ytId) {
-            if (!isYoutube) {
-                isYoutube = true;
-                videoSrc = null;
-                v.style.display = 'none';
-                yt.style.display = 'block';
-            }
-            if (ytVideoId !== ytId) ensureYtPlayer(ytId);
-            ytApplyState(playing, time, volume, threshold);
-        } else {
-            if (isYoutube) {
-                isYoutube = false;
-                videoSrc = null;
-                yt.style.display = 'none';
-                v.style.display = 'block';
-                if (ytPlayer) {
-                    try { ytPlayer.destroy(); } catch (e) {}
-                    ytPlayer = null;
-                    ytVideoId = null;
-                }
-            }
-            videoApplyState(url, playing, time, volume, threshold);
         }
     }
 

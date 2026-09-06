@@ -12,4 +12,5 @@ public enum CinemaScreenAction : byte
     Stop,
     Seek,
     SetVolume,
+    SelectFilm,
 }

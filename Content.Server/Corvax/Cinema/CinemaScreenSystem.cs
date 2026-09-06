@@ -1,10 +1,14 @@
+using System.Linq;
+using Content.Shared.ActionBlocker;
+using Content.Shared.Interaction;
 using Content.Server.Administration.Managers;
+using Content.Server.Popups;
+using Robust.Server.GameObjects;
 using Content.Shared.Corvax.Cinema;
 using Content.Shared.Damage.Systems;
 using Content.Shared.GameTicking;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
-using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Corvax.Cinema;
@@ -18,7 +22,10 @@ namespace Content.Server.Corvax.Cinema;
 /// </summary>
 public sealed partial class CinemaScreenSystem : EntitySystem
 {
-    [Dependency] private IServerNetManager _net = default!;
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private PopupSystem _popup = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IAdminManager _admin = default!;
@@ -29,7 +36,8 @@ public sealed partial class CinemaScreenSystem : EntitySystem
     {
         base.Initialize();
 
-        _net.RegisterNetMessage<MsgCinemaScreenControl>(OnControlMessage);
+        SubscribeLocalEvent<CinemaScreenComponent, CinemaScreenControlMessage>(OnControlMessage);
+        SubscribeLocalEvent<CinemaScreenComponent, BoundUIOpenedEvent>(OnUiOpened);
         SubscribeNetworkEvent<CinemaAudioChunkRequestEvent>(OnAudioRequest);
         SubscribeLocalEvent<CinemaScreenComponent, DamageChangedEvent>(OnDamageChanged);
         SubscribeLocalEvent<CinemaScreenComponent, ComponentStartup>(OnCinemaStartup);
@@ -55,34 +63,64 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         base.Shutdown();
     }
 
-    private void OnControlMessage(MsgCinemaScreenControl msg)
+    private void OnUiOpened(Entity<CinemaScreenComponent> ent, ref BoundUIOpenedEvent args)
     {
-        var session = _players.GetSessionByChannel(msg.MsgChannel);
+        UpdateScreen(ent, ent.Comp);
+    }
 
-        Log.Info($"Cinema control: session={session.Name}, action={msg.Action}, entity={msg.Entity}, url='{msg.Url}', seek={msg.SeekSeconds}, volume={msg.Volume}");
+    private void UpdateScreen(EntityUid uid, CinemaScreenComponent comp)
+    {
+        Dirty(uid, comp);
+        var status = comp.Broken ? "cinema-status-broken" : comp.AudioStatus;
+        if (!comp.Broken && comp.AudioCacheKey != null)
+            status = comp.Playing ? "cinema-status-playing" : "cinema-status-paused";
+        _ui.SetUiState(uid, CinemaScreenUiKey.Key, new CinemaScreenState(comp.VideoUrl, comp.Volume, status, comp.Films.Keys.ToArray()));
+    }
 
-        // Only admins may change playback state.
-        if (!_admin.IsAdmin(session))
-        {
-            Log.Info($"Cinema control REJECTED: {session.Name} is not an admin");
+    private void OnControlMessage(Entity<CinemaScreenComponent> ent, ref CinemaScreenControlMessage msg)
+    {
+        var screenUid = ent.Owner;
+        var comp = ent.Comp;
+        if (!_players.TryGetSessionByEntity(msg.Actor, out var session))
             return;
-        }
 
-        if (!TryGetEntity(msg.Entity, out var uid) || uid is not { } screenUid ||
-            !TryComp<CinemaScreenComponent>(screenUid, out var comp))
+        var isAdmin = _admin.IsAdmin(session);
+        if (!isAdmin)
         {
-            Log.Info($"Cinema control REJECTED: entity {msg.Entity} not found / not a CinemaScreen");
-            return;
+            // Input validation is disabled on the BUI to support admin ghosts. Apply ordinary interaction
+            // checks here for players, and never accept a custom URL from them.
+            if (!_actionBlocker.CanInteract(msg.Actor, screenUid) ||
+                !_interaction.InRangeUnobstructed(msg.Actor, screenUid))
+                return;
+
+            if (msg.Action == CinemaScreenAction.SetUrl || !string.IsNullOrEmpty(msg.Url))
+            {
+                _popup.PopupEntity(Loc.GetString("cinema-admin-only"), screenUid, msg.Actor);
+                return;
+            }
         }
 
         if (comp.Broken)
+            return;
+
+        msg.Url = msg.Url.Trim();
+        if ((msg.Action == CinemaScreenAction.SetUrl ||
+             msg.Action == CinemaScreenAction.Play && msg.Url.Length > 0) && !IsUrlAllowed(msg.Url))
         {
-            Log.Info($"Cinema control REJECTED: screen {ToPrettyString(screenUid)} is broken");
+            _popup.PopupEntity(Loc.GetString("cinema-invalid-url"), screenUid, msg.Actor);
             return;
         }
 
         switch (msg.Action)
         {
+            case CinemaScreenAction.SelectFilm:
+                if (!comp.Films.TryGetValue(msg.Film, out var filmUrl) || !IsUrlAllowed(filmUrl))
+                {
+                    _popup.PopupEntity(Loc.GetString("cinema-invalid-film"), screenUid, msg.Actor);
+                    return;
+                }
+                Play(screenUid, comp, filmUrl);
+                break;
             case CinemaScreenAction.SetUrl:
                 SetUrl(screenUid, comp, msg.Url);
                 break;
@@ -108,7 +146,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
     {
         if (!IsUrlAllowed(url))
         {
-            Log.Info($"Cinema SetUrl REJECTED: url='{url}' (must be HTTPS and whitelisted)");
+            Log.Debug($"Cinema SetUrl REJECTED: url='{url}' (must be HTTPS and whitelisted)");
             return;
         }
 
@@ -117,42 +155,33 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         comp.PausePosition = 0;
         comp.ServerStartTime = default;
         ResetAudioMetadata(comp);
-        Dirty(uid, comp);
+        UpdateScreen(uid, comp);
         PrepareAudio(uid, comp);
-        Log.Info($"Cinema SetUrl OK: '{url}'");
+        Log.Debug($"Cinema SetUrl OK: '{url}'");
     }
 
     private void Play(EntityUid uid, CinemaScreenComponent comp, string? url)
     {
         // Allow the client to pass a URL along with Play (paste URL + Play in one step).
-        if (!string.IsNullOrWhiteSpace(url))
+        if (!string.IsNullOrWhiteSpace(url) && url != comp.VideoUrl)
         {
-            if (!IsUrlAllowed(url))
-            {
-                Log.Info($"Cinema Play REJECTED: url='{url}' (must be HTTPS and whitelisted)");
-                return;
-            }
-
-            comp.VideoUrl = url;
-            comp.PausePosition = 0;
-            ResetAudioMetadata(comp);
-            PrepareAudio(uid, comp);
+            SetUrl(uid, comp, url);
         }
 
         if (string.IsNullOrWhiteSpace(comp.VideoUrl))
         {
-            Log.Info($"Cinema Play REJECTED: no video URL set");
+            Log.Debug($"Cinema Play REJECTED: no video URL set");
             return;
         }
 
+        PrepareAudio(uid, comp);
         if (comp.Playing)
             return;
 
         comp.ServerStartTime = _timing.RealTime;
         comp.Playing = true;
-        Dirty(uid, comp);
-        PrepareAudio(uid, comp);
-        Log.Info($"Cinema Play OK: '{comp.VideoUrl}'");
+        UpdateScreen(uid, comp);
+        Log.Debug($"Cinema Play OK: '{comp.VideoUrl}'");
     }
 
     private void Pause(EntityUid uid, CinemaScreenComponent comp)
@@ -162,7 +191,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
 
         comp.PausePosition = CurrentPosition(comp);
         comp.Playing = false;
-        Dirty(uid, comp);
+        UpdateScreen(uid, comp);
     }
 
     private void Stop(EntityUid uid, CinemaScreenComponent comp)
@@ -170,24 +199,30 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         comp.Playing = false;
         comp.PausePosition = 0;
         comp.ServerStartTime = default;
-        Dirty(uid, comp);
+        UpdateScreen(uid, comp);
     }
 
     private void Seek(EntityUid uid, CinemaScreenComponent comp, double seconds)
     {
-        comp.PausePosition = Math.Max(0, seconds);
+        if (!double.IsFinite(seconds))
+            return;
+
+        comp.PausePosition = Math.Clamp(seconds, 0, TimeSpan.MaxValue.TotalSeconds / 2);
 
         // Re-anchor the play clock so the seek takes effect immediately for every client.
         if (comp.Playing)
             comp.ServerStartTime = _timing.RealTime;
 
-        Dirty(uid, comp);
+        UpdateScreen(uid, comp);
     }
 
     private void SetVolume(EntityUid uid, CinemaScreenComponent comp, float volume)
     {
+        if (!float.IsFinite(volume))
+            return;
+
         comp.Volume = Math.Clamp(volume, 0f, 1f);
-        Dirty(uid, comp);
+        UpdateScreen(uid, comp);
     }
 
     /// <summary>The position (seconds) the video should currently be at, derived from server time.</summary>
@@ -210,7 +245,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
 
         entity.Comp.Broken = true;
         entity.Comp.Playing = false;
-        Dirty(entity.Owner, entity.Comp);
+        UpdateScreen(entity.Owner, entity.Comp);
     }
 
     private bool IsUrlAllowed(string? url)
@@ -221,12 +256,11 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         if (!Uri.TryCreate(url, UriKind.Absolute, out var uri))
             return false;
 
-        // HTTPS by default; http is opt-in for local/dev media servers.
-        if (!_cfg.GetCVar(CinemaCVars.AllowHttp) &&
-            !string.Equals(uri.Scheme, "https", StringComparison.OrdinalIgnoreCase))
+        if (uri.Scheme != Uri.UriSchemeHttps &&
+            !(uri.Scheme == Uri.UriSchemeHttp && _cfg.GetCVar(CinemaCVars.AllowHttp)))
             return false;
 
-        if (uri.Host.Length == 0)
+        if (uri.Host.Length == 0 || uri.UserInfo.Length != 0 || !IsDirectMediaUrl(url))
             return false;
 
         // Domain whitelist can be turned off for local/dev media servers.

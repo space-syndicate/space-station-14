@@ -141,7 +141,11 @@ public sealed partial class CinemaScreenSystem
         try
         {
             var data = await GetAudioSegment(uid, key, segment).WaitAsync(cancellationToken);
-            _taskManager.RunOnMainThread(() => FinishLoadAudioSegment(uid, key, segment, requestedOffset, data));
+            _taskManager.RunOnMainThread(() =>
+            {
+                if (!cancellationToken.IsCancellationRequested)
+                    FinishLoadAudioSegment(uid, key, segment, requestedOffset, data);
+            });
         }
         catch (OperationCanceledException)
         {
@@ -151,7 +155,8 @@ public sealed partial class CinemaScreenSystem
             _audioSegmentDownloads.TryRemove(SegmentCacheId(key, segment), out _);
             _taskManager.RunOnMainThread(() =>
             {
-                if (!TryComp<CinemaScreenPlayerComponent>(uid, out var player) || player.AudioCacheKey != key)
+                if (cancellationToken.IsCancellationRequested ||
+                    !TryComp<CinemaScreenPlayerComponent>(uid, out var player) || player.AudioCacheKey != key)
                     return;
 
                 player.LoadingAudioSegment = -1;
@@ -225,7 +230,7 @@ public sealed partial class CinemaScreenSystem
         player.AudioStream = stream;
         player.AudioEntity = result.Value.Entity;
         player.AudioSegment = segment;
-        Log.Info($"Cinema audio playing: entity={ToPrettyString(uid)}, segment={segment}, offset={offset:F2}s");
+        Log.Debug($"Cinema audio playing: entity={ToPrettyString(uid)}, segment={segment}, offset={offset:F2}s");
     }
 
     private Task<byte[]> GetAudioSegment(EntityUid uid, string key, int segment)
@@ -246,9 +251,10 @@ public sealed partial class CinemaScreenSystem
 
         Robust.Shared.Timing.Timer.Spawn(TimeSpan.FromSeconds(30), () =>
         {
-            if (!_pendingAudioSegments.TryRemove(id, out var pending))
+            if (!_pendingAudioSegments.TryGetValue(id, out var current) || current != pending)
                 return;
 
+            _pendingAudioSegments.TryRemove(id, out _);
             _audioSegmentDownloads.TryRemove(id, out _);
             pending.Completion.TrySetException(new InvalidOperationException("Cinema audio segment request timed out"));
         });
@@ -266,6 +272,7 @@ public sealed partial class CinemaScreenSystem
                         CinemaAudioChunkEvent.MaxChunkBytes;
         if (message.TotalLength is <= 0 or > CinemaAudioChunkEvent.MaxDataBytes ||
             message.ChunkCount is <= 0 || message.ChunkCount > maxChunks ||
+            message.ChunkCount != (message.TotalLength + CinemaAudioChunkEvent.MaxChunkBytes - 1) / CinemaAudioChunkEvent.MaxChunkBytes ||
             message.ChunkIndex < 0 || message.ChunkIndex >= message.ChunkCount)
         {
             _pendingAudioSegments.TryRemove(id, out _);
@@ -316,7 +323,7 @@ public sealed partial class CinemaScreenSystem
 
         _audioSegmentCacheOrder.Enqueue(id);
         TrimAudioSegmentCache();
-        Log.Info($"Cinema audio segment assembled: segment={message.Segment}, bytes={data.Length}, chunks={message.ChunkCount}");
+        Log.Debug($"Cinema audio segment assembled: segment={message.Segment}, bytes={data.Length}, chunks={message.ChunkCount}");
         pending.Completion.TrySetResult(data);
     }
 
@@ -352,6 +359,7 @@ public sealed partial class CinemaScreenSystem
         player.AudioCancellation = null;
         player.LoadingAudioSegment = -1;
         player.AudioCacheKey = null;
+        player.AudioRetryAt = default;
         StopAudioStream(player);
     }
 

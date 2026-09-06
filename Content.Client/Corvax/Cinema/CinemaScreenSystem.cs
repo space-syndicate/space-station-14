@@ -126,7 +126,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
 
             ApplyVideoTexture(uid, comp, player);
             player.SyncAccumulator = SyncInterval; // sync immediately on (re)creation.
-            Log.Info($"Cinema render target created: {desiredSize} (entity {ToPrettyString(uid)})");
+            Log.Debug($"Cinema render target created: {desiredSize} (entity {ToPrettyString(uid)})");
         }
 
         // Broken: stop playback, free the WebView/render target and show the broken sprite.
@@ -164,32 +164,17 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         var time = CurrentPosition(comp);
         // Browser audio is permanently disabled. Direct-media audio is extracted server-side and played through
         // the normal positional game AudioSystem instead, which owns attenuation and PVS behavior.
-        const float volume = 0f;
 
         // player.html compares the values and only acts on meaningful changes (src swap, drift > threshold,
-        // play/pause, volume). The URL is only ever assigned to video.src inside player.html.
+        // play/pause). The URL is only ever assigned to video.src inside player.html.
         // Note: build with invariant-formatted values + concatenation; `string.Create(IFormatProvider, ...)`
         // (i.e. culture-formatted interpolation) is not sandbox-whitelisted.
         var js = "cinema.applyState(" +
                  JsString(url) + ", " +
                  (playing ? "true" : "false") + ", " +
                  time.ToString("R", CultureInfo.InvariantCulture) + ", " +
-                 volume.ToString("R", CultureInfo.InvariantCulture) + ", " +
                  comp.ResyncThreshold.ToString("R", CultureInfo.InvariantCulture) +
                  ");";
-
-        if (!player.FirstSyncLogged)
-        {
-            player.FirstSyncLogged = true;
-            Log.Info($"Cinema first sync: url='{url}', playing={playing}, time={time:F2}, volume={volume:F2}");
-        }
-
-        if (url != player.LastSyncedUrl || playing != player.LastSyncedPlaying)
-        {
-            Log.Info($"Cinema sync state change: url='{url}', playing={playing}, time={time:F2}");
-            player.LastSyncedUrl = url;
-            player.LastSyncedPlaying = playing;
-        }
 
         try
         {
@@ -250,7 +235,7 @@ public sealed partial class CinemaScreenSystem : EntitySystem
         // The CEF manager closes every active browser before the entity manager flushes entities during client
         // shutdown. Keeping this set prevents the later UI-tree exit from trying to close the same browser again.
         webView.AlwaysActive = true;
-        Log.Info($"Cinema WebView created for {ToPrettyString(uid)} (set size {width}x{height})");
+        Log.Debug($"Cinema WebView created for {ToPrettyString(uid)} (set size {width}x{height})");
     }
 
     private (int Width, int Height) GetRenderResolution(CinemaScreenComponent comp)

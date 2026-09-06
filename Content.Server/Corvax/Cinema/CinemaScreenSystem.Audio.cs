@@ -33,7 +33,10 @@ public sealed partial class CinemaScreenSystem
     private CancellationTokenSource _audioCancellation = new();
     private readonly List<string> _audioCacheKeys = new();
     private int _audioCacheGeneration;
-    private readonly string _audioCacheRoot = Path.Combine(Path.GetTempPath(), "covax-cinema-audio");
+    private string _audioCacheRoot = NewAudioCacheDirectory();
+
+    private static string NewAudioCacheDirectory() =>
+        Path.Combine(Path.GetTempPath(), $"covax-cinema-audio-{Guid.NewGuid():N}");
 
     private sealed record AudioManifest(string Key, int SegmentCount, float SegmentDuration);
 
@@ -48,7 +51,7 @@ public sealed partial class CinemaScreenSystem
         _audioCancellation.Cancel();
         _audioCancellation.Dispose();
         _audioHttp.Dispose();
-        DeleteAudioCacheDirectory();
+        _ = DeleteAudioCacheAfterJobsAsync(_audioCacheRoot, _audioJobs.Values.ToArray());
     }
 
     private void ResetAudioExtractionCache()
@@ -57,17 +60,20 @@ public sealed partial class CinemaScreenSystem
         _audioCancellation.Cancel();
         _audioCancellation.Dispose();
         _audioCancellation = new CancellationTokenSource();
+        var oldJobs = _audioJobs.Values.ToArray();
         _audioJobs.Clear();
         _entityAudioRequests.Clear();
         _audioCacheKeys.Clear();
-        DeleteAudioCacheDirectory();
+        var oldRoot = _audioCacheRoot;
+        _ = DeleteAudioCacheAfterJobsAsync(oldRoot, oldJobs);
+        _audioCacheRoot = NewAudioCacheDirectory();
         Directory.CreateDirectory(_audioCacheRoot);
 
         var query = EntityQueryEnumerator<CinemaScreenComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
             ResetAudioMetadata(comp);
-            Dirty(uid, comp);
+            UpdateScreen(uid, comp);
         }
     }
 
@@ -75,14 +81,18 @@ public sealed partial class CinemaScreenSystem
     {
         comp.AudioCacheKey = null;
         comp.AudioSegmentCount = 0;
+        comp.AudioStatus = "cinema-status-empty";
     }
 
     private void PrepareAudio(EntityUid uid, CinemaScreenComponent comp)
     {
-        if (!_cfg.GetCVar(CinemaCVars.AudioExtractionEnabled) ||
-            comp.VideoUrl is not { } url ||
-            !IsDirectMediaUrl(url))
+        if (comp.Broken || comp.VideoUrl is not { } url || !IsUrlAllowed(url))
+            return;
+
+        if (!_cfg.GetCVar(CinemaCVars.AudioExtractionEnabled))
         {
+            comp.AudioStatus = "cinema-status-disabled";
+            UpdateScreen(uid, comp);
             return;
         }
 
@@ -96,9 +106,11 @@ public sealed partial class CinemaScreenSystem
             return;
 
         _entityAudioRequests[uid] = key;
+        comp.AudioStatus = "cinema-status-loading";
+        UpdateScreen(uid, comp);
         var generation = _audioCacheGeneration;
-        Log.Info($"Cinema audio queued: key={key}, source='{url}'");
-        var job = _audioJobs.GetOrAdd(key, _ => ExtractAudioAsync(key, url, segmentSeconds, _audioCancellation.Token));
+        Log.Debug($"Cinema audio queued: key={key}, source='{url}'");
+        var job = _audioJobs.GetOrAdd(key, _ => ExtractAudioAsync(key, url, segmentSeconds, _audioCacheRoot, _audioCancellation.Token));
         _ = FinishAudioPreparation(uid, url, key, generation, job);
     }
 
@@ -116,35 +128,49 @@ public sealed partial class CinemaScreenSystem
         }
         catch (OperationCanceledException)
         {
-            return;
+            // Shutdown/round changes are ignored below; a worker timeout is reported to the controls.
         }
         catch (Exception e)
         {
             Log.Error($"Cinema audio extraction failed for '{url}': {e}");
-            _audioJobs.TryRemove(key, out _);
         }
 
         _taskManager.RunOnMainThread(() =>
         {
-            if (_entityAudioRequests.TryGetValue(uid, out var requested) && requested == key)
-                _entityAudioRequests.Remove(uid);
+            if (generation != _audioCacheGeneration || EntityManager.ShuttingDown)
+                return;
 
-            if (manifest == null ||
-                generation != _audioCacheGeneration ||
-                EntityManager.ShuttingDown ||
-                !TryComp<CinemaScreenComponent>(uid, out var current) ||
-                current.Broken ||
-                current.VideoUrl != url)
+            if (manifest == null)
             {
+                if (_audioJobs.TryGetValue(key, out var currentJob) && currentJob == job)
+                    _audioJobs.TryRemove(key, out _);
+            }
+            else
+            {
+                // Include completed jobs even when their screen has since selected another film.
+                TrackAndTrimAudioCache(manifest.Key);
+            }
+
+            if (!_entityAudioRequests.TryGetValue(uid, out var requested) || requested != key)
+                return;
+
+            _entityAudioRequests.Remove(uid);
+            if (!TryComp<CinemaScreenComponent>(uid, out var current) ||
+                current.Broken || current.VideoUrl != url)
+                return;
+
+            if (manifest == null)
+            {
+                current.AudioStatus = "cinema-status-error";
+                UpdateScreen(uid, current);
                 return;
             }
 
             current.AudioCacheKey = manifest.Key;
             current.AudioSegmentCount = manifest.SegmentCount;
             current.AudioSegmentDuration = manifest.SegmentDuration;
-            Dirty(uid, current);
-            TrackAndTrimAudioCache(manifest.Key);
-            Log.Info($"Cinema audio ready: key={manifest.Key}, segments={manifest.SegmentCount}, source='{url}'");
+            UpdateScreen(uid, current);
+            Log.Debug($"Cinema audio ready: key={manifest.Key}, segments={manifest.SegmentCount}, source='{url}'");
         });
     }
 
@@ -152,13 +178,14 @@ public sealed partial class CinemaScreenSystem
         string key,
         string url,
         int segmentSeconds,
+        string cacheRoot,
         CancellationToken shutdownToken)
     {
         // Keep download, disk and CPU pressure bounded even if several admins set different films at once.
         await _audioExtractionGate.WaitAsync(shutdownToken).ConfigureAwait(false);
         try
         {
-            return await ExtractAudioCoreAsync(key, url, segmentSeconds, shutdownToken).ConfigureAwait(false);
+            return await ExtractAudioCoreAsync(key, url, segmentSeconds, cacheRoot, shutdownToken).ConfigureAwait(false);
         }
         finally
         {
@@ -170,9 +197,10 @@ public sealed partial class CinemaScreenSystem
         string key,
         string url,
         int segmentSeconds,
+        string cacheRoot,
         CancellationToken shutdownToken)
     {
-        var finalDir = Path.Combine(_audioCacheRoot, key);
+        var finalDir = Path.Combine(cacheRoot, key);
         var cachedCount = CountSegments(finalDir);
         if (cachedCount > 0)
             return new AudioManifest(key, cachedCount, segmentSeconds);
@@ -183,14 +211,14 @@ public sealed partial class CinemaScreenSystem
         timeoutCts.CancelAfter(timeout);
         var cancellationToken = timeoutCts.Token;
 
-        var workDir = Path.Combine(_audioCacheRoot, $".{key}.{Guid.NewGuid():N}");
+        var workDir = Path.Combine(cacheRoot, $".{key}.{Guid.NewGuid():N}");
         Directory.CreateDirectory(workDir);
         var inputPath = Path.Combine(workDir, "source.media");
 
         try
         {
             var maxBytes = Math.Max(1, _cfg.GetCVar(CinemaCVars.AudioMaxInputMiB)) * 1024L * 1024L;
-            Log.Info($"Cinema audio download started: source='{url}'");
+            Log.Debug($"Cinema audio download started: source='{url}'");
             await DownloadMediaAsync(new Uri(url), inputPath, maxBytes, cancellationToken).ConfigureAwait(false);
 
             var outputPattern = Path.Combine(workDir, "raw-segment-%06d.ogg");
@@ -230,7 +258,7 @@ public sealed partial class CinemaScreenSystem
             startInfo.ArgumentList.Add(outputPattern);
 
             using var process = new Process { StartInfo = startInfo };
-            Log.Info($"Cinema audio ffmpeg started: key={key}");
+            Log.Debug($"Cinema audio ffmpeg started: key={key}");
             if (!process.Start())
                 throw new InvalidOperationException($"Unable to start ffmpeg at '{ffmpegPath}'");
 
@@ -454,7 +482,7 @@ public sealed partial class CinemaScreenSystem
         }
 
         if (message.ChunkIndex == 0)
-            Log.Info($"Cinema audio sending: segment={message.Segment}, bytes={totalLength}, chunks={chunkCount}, paced=true");
+            Log.Debug($"Cinema audio sending: segment={message.Segment}, bytes={totalLength}, chunks={chunkCount}, paced=true");
 
         // Send only one chunk per request. The client asks for the next chunk after receiving this one,
         // which keeps large OGG segments from flooding the game channel and starving its heartbeat.
@@ -506,7 +534,7 @@ public sealed partial class CinemaScreenSystem
         if (_audioCacheKeys.Count <= maxTracks)
             return;
 
-        var activeKeys = new HashSet<string>();
+        var activeKeys = new HashSet<string>(_entityAudioRequests.Values);
         var query = EntityQueryEnumerator<CinemaScreenComponent>();
         while (query.MoveNext(out var screen))
         {
@@ -531,14 +559,28 @@ public sealed partial class CinemaScreenSystem
         }
     }
 
-    private void DeleteAudioCacheDirectory()
+    private async Task DeleteAudioCacheAfterJobsAsync(string directory, Task<AudioManifest?>[] jobs)
     {
-        if (!Directory.Exists(_audioCacheRoot))
+        try
+        {
+            await Task.WhenAll(jobs).ConfigureAwait(false);
+        }
+        catch (Exception)
+        {
+            // Worker failures are reported by FinishAudioPreparation.
+        }
+        DeleteAudioCacheDirectory(directory);
+    }
+
+    private void DeleteAudioCacheDirectory(string? directory = null)
+    {
+        directory ??= _audioCacheRoot;
+        if (!Directory.Exists(directory))
             return;
 
         try
         {
-            Directory.Delete(_audioCacheRoot, recursive: true);
+            Directory.Delete(directory, recursive: true);
         }
         catch (IOException e)
         {
