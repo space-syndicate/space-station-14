@@ -1,3 +1,63 @@
+- type: Tag
+  id: AquariumFish1
+
+- type: Tag
+  id: AquariumFish2
+
+- type: Tag
+  id: AquariumFish3
+
+- type: entity
+  abstract: true
+  parent: [ BaseItem, FoodMeatBase ]
+  id: BaseAquariumFish
+  name: пакет с рыбкой
+  description: Вы же хотите чтобы она выжила? Ну так держите её в пакете!
+  suffix: Корвакс
+  components:
+  - type: Sprite
+    sprite: Corvax/Structures/Decoration/aquarium.rsi
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 3
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 1
+      - ReagentId: Fat
+        Quantity: 1
+  - type: Tag
+
+- type: entity
+  parent: BaseAquariumFish
+  id: AquariumFish1
+  components:
+  - type: Sprite
+    state: item_fish1
+  - type: Tag
+    tags:
+    - AquariumFish1
+
+- type: entity
+  parent: BaseAquariumFish
+  id: AquariumFish2
+  components:
+  - type: Sprite
+    state: item_fish2
+  - type: Tag
+    tags:
+    - AquariumFish2
+
+- type: entity
+  parent: BaseAquariumFish
+  id: AquariumFish3
+  components:
+  - type: Sprite
+    state: item_fish3
+  - type: Tag
+    tags:
+    - AquariumFish3
+
 - type: entity
   parent: [ BaseStructure, StructureHealthBarrier, BaseDeltaPressureGlass ]
   id: Aquarium
@@ -14,9 +74,52 @@
     layers:
     - state: base
     - state: fish1
+      map: [ fish1 ]
+      visible: false
     - state: fish2
+      map: [ fish2 ]
+      visible: false
     - state: fish3
+      map: [ fish3 ]
+      visible: false
     - state: glass
+  - type: ItemMapper
+    spriteLayers:
+    - fish1
+    - fish2
+    - fish3
+    mapLayers:
+      fish1:
+        whitelist:
+          tags:
+          - AquariumFish1
+      fish2:
+        whitelist:
+          tags:
+          - AquariumFish2
+      fish3:
+        whitelist:
+          tags:
+          - AquariumFish3
+  - type: ItemSlots
+    slots:
+      Fish1:
+        whitelist:
+          tags:
+          - AquariumFish1
+      Fish2:
+        whitelist:
+          tags:
+          - AquariumFish2
+      Fish3:
+        whitelist:
+          tags:
+          - AquariumFish3
+  - type: ContainerContainer
+    containers:
+      Fish1: !type:ContainerSlot
+      Fish2: !type:ContainerSlot
+      Fish3: !type:ContainerSlot
   - type: Rotatable
   - type: MeleeSound
     soundGroups:
@@ -61,3 +164,17 @@
           SheetSteel1:
             min: 1
             max: 2
+
+- type: entity
+  parent: Aquarium
+  id: AquariumFilled
+  suffix: Заполненный, Корвакс
+  components:
+  - type: ContainerFill
+    containers:
+      Fish1:
+      - AquariumFish1
+      Fish2:
+      - AquariumFish2
+      Fish3: 
+      - AquariumFish3
