@@ -1,0 +1,63 @@
+- type: entity
+  parent: [ BaseStructure, StructureHealthBarrier, BaseDeltaPressureGlass ]
+  id: Aquarium
+  name: аквариум
+  description: Стеклянная коробка с искусственным песком в которй что-то плавает. Одна из попыток корпорации улучшить моральное состояние сотрудников.
+  suffix: Корвакс
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Corvax/Structures/Decoration/aquarium.rsi
+    snapCardinals: true
+    layers:
+    - state: base
+    - state: fish1
+    - state: fish2
+    - state: fish3
+    - state: glass
+  - type: Rotatable
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+  - type: Anchorable
+  - type: Pullable
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Water
+        Quantity: 500
+  - type: ExaminableSolution
+    solution: solution
+  - type: Damageable
+    damageModifierSet: GlassMod
+  - type: Repairable
+  - type: ExaminableDamage
+    messages: WindowMessages
+  - type: DamageVisuals
+    thresholds: [5, 10, 20]
+    damageDivisor: 2
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
+  - type: Destructible
+    thresholds:
+    - trigger: &DamageBarrierNormal
+        !type:DamageTrigger
+        damage: 80
+      behaviors:
+      - !type:SpillBehavior
+        solution: solution
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 2
+          SheetSteel1:
+            min: 1
+            max: 2
