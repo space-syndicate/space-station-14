@@ -12,7 +12,7 @@
   parent: [ BaseItem, FoodMeatBase ]
   id: BaseAquariumFish
   name: пакет с рыбкой
-  description: Вы же хотите чтобы она выжила? Ну так держите её в пакете!
+  description: Вы же хотите, чтобы она выжила? Ну так держите её в пакете!
   suffix: Корвакс
   components:
   - type: Sprite
@@ -62,7 +62,7 @@
   parent: [ BaseStructure, StructureHealthBarrier, BaseDeltaPressureGlass ]
   id: Aquarium
   name: аквариум
-  description: Стеклянная коробка с искусственным песком в которой что-то плавает. Одна из попыток корпорации улучшить моральное состояние сотрудников.
+  description: Стеклянная коробка с искусственным песком, в которой что-то плавает. Одна из попыток корпорации улучшить моральное состояние сотрудников.
   suffix: Корвакс
   placement:
     mode: SnapgridCenter
