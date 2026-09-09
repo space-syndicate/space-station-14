@@ -121,7 +121,7 @@
       revolver-ammo: !type:Container
 
 - type: entity
-  parent: [RevolverCapGun]
+  parent: RevolverCapGun
   id: RevolverCapGunFake
   suffix: Fake
   components:

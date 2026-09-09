@@ -547,12 +547,6 @@
   name: QM's golden knuckle dusters
   description: "24karat gold infused with plasteel and branded with the Nanotrasen logo. A true symbol of the Quartermaster's might."
   components:
-  # Corvax-Contraband-start
-  - type: Contraband
-    severity: Corvax433
-    allowedDepartments: []
-    allowedJobs: [Quartermaster]
-  # Corvax-Contraband-end
   - type: Sprite
     sprite: Clothing/Hands/Gloves/KnuckleDusters/goldenknuckleduster.rsi
     state: goldenknuckleduster

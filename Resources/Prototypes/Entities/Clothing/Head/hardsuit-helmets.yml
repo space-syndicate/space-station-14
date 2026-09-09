@@ -69,7 +69,7 @@
 
 #Salvage Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsCargoSecurity, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSalvage
   name: mining hardsuit helmet
   description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
@@ -88,7 +88,7 @@
 
 #Goliath Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsCargoSecurity, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitGoliath
   name: goliath hardsuit helmet
   description: A sturdy hardsuit helmet, infused with a goliath's hide and an eerie, unblinking eye cut from its mass.
@@ -129,7 +129,7 @@
 
 #Security Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSecurity
   name: security hardsuit helmet
   description: Armored hardsuit helmet for security needs.
@@ -154,7 +154,7 @@
 
 #Brigmedic Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitBrigmedic
   name: brigmedic hardsuit helmet
   description: The lightweight helmet of the brigmedic hardsuit. Protects against viruses, and clowns.
@@ -178,7 +178,7 @@
 
 #Warden's Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitWarden
   name: warden's hardsuit helmet
   description: A modified riot helmet. Oddly comfortable.
@@ -258,7 +258,7 @@
 
 #Research Director's Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband431JobsResearchDirector, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitRd
   name: experimental research hardsuit helmet
   description: Lightweight hardsuit helmet that doesn't restrict your head movements.
@@ -276,7 +276,7 @@
 
 #Head of Security's hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsCommandSecurity, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSecurityRed
   name: head of security's hardsuit helmet
   description: Security hardsuit helmet with the latest top secret NT-HUD software. Belongs to the HoS.
@@ -316,7 +316,7 @@
 #ANTAG HARDSUITS
 #Blood-red Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband435, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSyndie
   name: blood-red hardsuit helmet
   description: A heavily armored helmet designed for work in special operations. Property of Gorlex Marauders.
@@ -343,7 +343,7 @@
 
 #Blood-red Medic Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband435, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSyndieMedic
   name: blood-red medic hardsuit helmet
   description: An advanced red hardsuit helmet specifically designed for field medic operations.
@@ -367,7 +367,7 @@
 
 #Syndicate Elite Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband435, ClothingHeadHardsuitInsulatedBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitInsulatedBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSyndieElite
   name: syndicate elite helmet
   description: An elite version of the blood-red hardsuit's helmet, with improved radiation resistance and fireproofing. Property of Gorlex Marauders.
@@ -396,7 +396,7 @@
 
 #Syndicate Commander Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband435, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSyndieCommander
   name: syndicate commander helmet
   description: A bulked up version of the blood-red hardsuit's helmet, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
@@ -423,7 +423,7 @@
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband435, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase] # Corvax-Contraband
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCybersun
   name: cybersun juggernaut helmet
   description: Made of compressed red matter, this helmet was designed in the Tau chromosphere facility.
@@ -528,7 +528,7 @@
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsCentralCommand, BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieCommander] # Corvax-Contraband
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieCommander ]
   id: ClothingHeadHelmetHardsuitERTLeader
   name: ERT leader hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -547,7 +547,7 @@
 
 #ERT Chaplain Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsCentralCommand, BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie] # Corvax-Contraband
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
   id: ClothingHeadHelmetHardsuitERTChaplain
   name: ERT chaplain hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -559,7 +559,7 @@
 
 #ERT Engineer Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsCentralCommand, BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie] # Corvax-Contraband
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
   id: ClothingHeadHelmetHardsuitERTEngineer
   name: ERT engineer hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -580,7 +580,7 @@
 
 #ERT Medical Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsCentralCommand, BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieElite] # Corvax-Contraband
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieElite ]
   id: ClothingHeadHelmetHardsuitERTMedical
   name: ERT medic hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -592,7 +592,7 @@
 
 #ERT Security Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsCentralCommand, BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie] # Corvax-Contraband
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
   id: ClothingHeadHelmetHardsuitERTSecurity
   name: ERT security hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -611,7 +611,7 @@
 
 #ERT Janitor Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsCentralCommand, BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie] # Corvax-Contraband
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
   id: ClothingHeadHelmetHardsuitERTJanitor
   name: ERT janitor hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -647,7 +647,7 @@
 
 #Deathsquad Hardsuit
 - type: entity
-  parent: [BaseCorvaxContraband432DepartmentsCentralCommand, BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie] # Corvax-Contraband; Corvax-Resprite
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ] # Corvax-Resprite
   id: ClothingHeadHelmetHardsuitDeathsquad
   name: deathsquad hardsuit helmet
   description: A robust helmet for special operations.

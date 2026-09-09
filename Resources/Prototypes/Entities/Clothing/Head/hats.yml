@@ -518,7 +518,7 @@
     relayAccent: true
 
 - type: entity
-  parent: [BaseCorvaxContraband431JobsChaplain, ClothingHeadBase] # Corvax-Contraband
+  parent: [ClothingHeadBase]
   id: ClothingHeadHatPlaguedoctor
   name: plague doctor hat
   description: These were once used by plague doctors.

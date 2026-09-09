@@ -231,7 +231,7 @@
     - id: SheetSteel1
 
 - type: entity
-  parent: [BaseCorvaxContraband432JobsBotanist, ProduceBaseRuminant] # Corvax-Contraband
+  parent: [ProduceBaseRuminant]
   id: Nettle
   name: nettle
   description: Stingy little prick.
@@ -1739,7 +1739,7 @@
 
 - type: entity
   name: glasstle
-  parent: [BaseCorvaxContraband432JobsBotanist, SolutionSmall, FoodProduceBase] # Corvax-Contraband
+  parent: [SolutionSmall, FoodProduceBase]
   id: FoodGlasstle
   description: A fragile crystal plant with lot of spiky thorns.
   components:
@@ -2014,7 +2014,7 @@
   name: koibean
   description: These beans seem a little bit fishy.
   id: FoodKoibean
-  parent: [BaseCorvaxContraband432JobsBotanist, ProduceBaseRuminant] # Corvax-Contraband
+  parent: [ProduceBaseRuminant]
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/koibean.rsi

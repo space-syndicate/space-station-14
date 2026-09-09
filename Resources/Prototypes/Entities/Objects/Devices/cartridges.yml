@@ -94,7 +94,7 @@
     - type: NetProbeCartridge
 
 - type: entity
-  parent: [BaseCorvaxContraband431DepartmentsEngineeringSecurity, BasePDACartridge] # Corvax-Contraband
+  parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, BasePDACartridge] # Corvax-Contraband
   id: LogProbeCartridge
   name: LogProbe cartridge
   description: A program for getting access logs from devices.
