@@ -1,6 +1,6 @@
 - type: entity
   id: PowerSink
-  parent: [BaseMachine, BaseSyndicateContraband, BaseMachineDestructible]
+  parent: [BaseCorvaxContraband436, BaseMachine, BaseSyndicateContraband, BaseMachineDestructible] # Corvax-Contraband
   name: power sink
   description: Drains immense amounts of electricity from the grid.
   components:

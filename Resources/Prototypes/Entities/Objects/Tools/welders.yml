@@ -158,7 +158,7 @@
 
 - type: entity
   name: experimental welding tool
-  parent: [SolutionToolWelderExperimental, BaseWelder]
+  parent: [BaseCorvaxContraband431DepartmentsEngineering, SolutionToolWelderExperimental, BaseWelder] # Corvax-Contraband
   id: WelderExperimental
   description: "An experimental welder capable of self-fuel generation and less harmful to the eyes."
   components:

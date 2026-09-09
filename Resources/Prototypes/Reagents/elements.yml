@@ -22,6 +22,7 @@
 
 - type: reagent
   id: Chlorine
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-chlorine
   group: Elements
   desc: reagent-desc-chlorine
@@ -49,6 +50,7 @@
 
 - type: reagent
   id: Copper
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-copper
   group: Elements
   desc: reagent-desc-copper
@@ -77,6 +79,7 @@
 
 - type: reagent
   id: Fluorine
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-fluorine
   group: Elements
   desc: reagent-desc-fluorine
@@ -137,6 +140,7 @@
 
 - type: reagent
   id: Iron
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-iron
   group: Elements
   desc: reagent-desc-iron
@@ -165,6 +169,7 @@
 
 - type: reagent
   id: Lithium
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-lithium
   group: Elements
   desc: reagent-desc-lithium
@@ -192,6 +197,7 @@
 
 - type: reagent
   id: Mercury
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-mercury
   group: Elements
   desc: reagent-desc-mercury
@@ -242,6 +248,7 @@
 
 - type: reagent
   id: Radium
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-radium
   group: Elements
   parent: Uranium
@@ -254,6 +261,7 @@
 
 - type: reagent
   id: Silicon
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-silicon
   group: Elements
   desc: reagent-desc-silicon
@@ -283,6 +291,7 @@
 
 - type: reagent
   id: Sulfur
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-sulfur
   group: Elements
   desc: reagent-desc-sulfur
@@ -312,6 +321,7 @@
 
 - type: reagent
   id: Uranium
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-uranium
   group: Elements
   desc: reagent-desc-uranium

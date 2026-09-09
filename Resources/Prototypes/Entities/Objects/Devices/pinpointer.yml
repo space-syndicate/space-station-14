@@ -55,7 +55,7 @@
 - type: entity
   name: pinpointer
   id: PinpointerNuclear
-  parent: [ PinpointerBase, BaseCommandContraband ]
+  parent: [BaseCorvaxContraband433DepartmentsCommand, PinpointerBase, BaseCommandContraband] # Corvax-Contraband
   components:
   - type: Pinpointer
     component: NukeDisk

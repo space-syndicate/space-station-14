@@ -231,7 +231,7 @@
     - id: SheetSteel1
 
 - type: entity
-  parent: ProduceBaseRuminant
+  parent: [BaseCorvaxContraband432JobsBotanist, ProduceBaseRuminant] # Corvax-Contraband
   id: Nettle
   name: nettle
   description: Stingy little prick.
@@ -262,7 +262,7 @@
     grindableSolutionName: food
 
 - type: entity
-  parent: [ ProduceBase, BaseMajorContraband ]
+  parent: [BaseCorvaxContraband432JobsBotanist, ProduceBase, BaseMajorContraband] # Corvax-Contraband
   id: DeathNettle
   name: death nettle
   description: This nettle's out for blood.
@@ -1739,7 +1739,7 @@
 
 - type: entity
   name: glasstle
-  parent: [SolutionSmall, FoodProduceBase]
+  parent: [BaseCorvaxContraband432JobsBotanist, SolutionSmall, FoodProduceBase] # Corvax-Contraband
   id: FoodGlasstle
   description: A fragile crystal plant with lot of spiky thorns.
   components:
@@ -1808,7 +1808,7 @@
 
 - type: entity
   name: fly amanita
-  parent: FoodProduceBase
+  parent: [BaseCorvaxContraband432JobsBotanist, FoodProduceBase] # Corvax-Contraband
   id: FoodFlyAmanita
   description: A delicious-looking mushroom like you see in those cartoons.
   components:
@@ -1841,7 +1841,7 @@
 
 - type: entity
   name: gatfruit
-  parent: [ FoodProduceBase, BaseSyndicateContraband, BaseSlicingRefinable ]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, FoodProduceBase, BaseSyndicateContraband, BaseSlicingRefinable] # Corvax-Contraband
   id: FoodGatfruit
   description: A delicious, gun-shaped fruit with a thick wooden stem.
   components:
@@ -2014,7 +2014,7 @@
   name: koibean
   description: These beans seem a little bit fishy.
   id: FoodKoibean
-  parent: ProduceBaseRuminant
+  parent: [BaseCorvaxContraband432JobsBotanist, ProduceBaseRuminant] # Corvax-Contraband
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/koibean.rsi
@@ -2419,7 +2419,7 @@
       Burger: Pea
 
 - type: entity
-  parent: FoodProduceBase
+  parent: [BaseCorvaxContraband432JobsBotanist, FoodProduceBase] # Corvax-Contraband
   id: FoodWorldPeas
   name: cluster of world peas
   description: It's rumored to bring peace to any who consume it.

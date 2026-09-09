@@ -42,7 +42,7 @@
   name: blue bandana
 
 - type: entity
-  parent: [ClothingHeadBandBase, ClothingMaskBandBotany]
+  parent: [BaseCorvaxContraband431JobsBotanist, ClothingHeadBandBase, ClothingMaskBandBotany] # Corvax-Contraband
   id: ClothingHeadBandBotany
   name: botany bandana
 

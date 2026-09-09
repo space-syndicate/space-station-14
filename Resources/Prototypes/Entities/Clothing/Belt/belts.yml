@@ -111,7 +111,7 @@
 ## Holsters
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: [BaseCorvaxContraband431DepartmentsSecurity, ClothingBeltStorageBase] # Corvax-Contraband
   id: ClothingBeltHolster
   name: shoulder holster
   description: 'A holster to carry a handgun and ammo. WARNING: Badasses only.'
@@ -129,7 +129,7 @@
     - 0,0,4,1
 
 - type: entity
-  parent: [ClothingBeltStorageBase, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband431DepartmentsSecurity, ClothingBeltStorageBase, BaseSyndicateContraband] # Corvax-Contraband
   id: ClothingBeltSyndieHolster
   name: syndicate shoulder holster
   description: A deep shoulder holster capable of holding many types of ballistics.

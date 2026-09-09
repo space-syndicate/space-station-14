@@ -29,7 +29,7 @@
 
 #Security Helmet
 - type: entity
-  parent: [ClothingHeadHelmetArmoredBase, BaseFoldable, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHelmetArmoredBase, BaseFoldable, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingHeadHelmetBasic
   name: security helmet
   description: Standard security gear. Protects the head from impacts, and comes with a visor which can be lowered to protect the eyes.
@@ -61,7 +61,7 @@
 
 #Mercenary Helmet
 - type: entity
-  parent: [ ClothingHeadHelmetArmoredBase, BaseMajorContraband ]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHelmetArmoredBase, BaseMajorContraband] # Corvax-Contraband
   id: ClothingHeadHelmetMerc
   name: mercenary helmet
   description: The combat helmet is commonly used by mercenaries, is strong, light and smells like gunpowder and the jungle.
@@ -76,7 +76,7 @@
 
 #SWAT Helmet
 - type: entity
-  parent: [ClothingHeadHelmetBase, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHelmetBase, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingHeadHelmetSwat
   name: SWAT helmet
   description: An extremely robust helmet, commonly used by paramilitary forces. This one has the Nanotrasen logo emblazoned on the top.
@@ -118,7 +118,7 @@
 
 #Light Riot Helmet
 - type: entity
-  parent: [ClothingHeadHelmetBase, BaseFoldable, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHelmetBase, BaseFoldable, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingHeadHelmetRiot
   name: light riot helmet
   description: It's a helmet specifically designed to protect against close range attacks, it has a foldable visor.
@@ -198,7 +198,7 @@
 
 #Cult Helmet
 - type: entity
-  parent: [ClothingHeadHelmetBase, BaseMajorContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHelmetBase, BaseMajorContraband] # Corvax-Contraband
   id: ClothingHeadHelmetCult
   name: cult helmet
   description: A robust, evil-looking cult helmet.
@@ -379,7 +379,7 @@
 
 #Chitinous Helmet
 - type: entity
-  parent: [ ClothingHeadHelmetBase, BaseMajorContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHelmetBase, BaseMajorContraband] # Corvax-Contraband
   id: ClothingHeadHelmetLing
   name: chitinous helmet
   description: An all-consuming chitinous mass of armor.
@@ -402,7 +402,7 @@
 #ERT HELMETS
 #ERT Leader Helmet
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetArmoredBase ]
+  parent: [BaseCorvaxContraband432DepartmentsCentralCommand, BaseCentcommContraband, ClothingHeadHelmetArmoredBase] # Corvax-Contraband
   id: ClothingHeadHelmetERTLeader
   name: ERT leader helmet
   description: An in-atmosphere helmet worn by the leader of a Nanotrasen Emergency Response Team. Has blue highlights.
@@ -476,7 +476,7 @@
       Hair: HEAD
 
 - type: entity
-  parent: [ BaseSyndicateContraband, ClothingHeadHelmetBase ]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, BaseSyndicateContraband, ClothingHeadHelmetBase] # Corvax-Contraband
   id: ClothingHeadHelmetRaid
   name: syndicate raid helmet
   description: An armored helmet for use with the syndicate raid suit. Very stylish.
@@ -499,7 +499,7 @@
 #Bone Helmet
 #No need to hide the hair on this one
 - type: entity
-  parent: [ ClothingHeadHelmetArmoredBase, BaseMinorContraband ]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHelmetArmoredBase, BaseMinorContraband] # Corvax-Contraband
   id: ClothingHeadHelmetBone
   name: bone helmet
   description: Cool-looking helmet made of skull of your enemies.
@@ -514,7 +514,7 @@
 
 #Ironclad II Helmet
 - type: entity
-  parent: [ ClothingHeadHelmetArmoredBase, BaseMinorContraband ]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHelmetArmoredBase, BaseMinorContraband] # Corvax-Contraband
   id: ClothingHeadHelmetPodWars
   name: ironclad II helmet
   description: An ironclad II helmet, a relic of the pod wars.
@@ -529,7 +529,7 @@
 
 #Justice Helmet
 - type: entity
-  parent: [ClothingHeadHelmetArmoredBase, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingHeadHelmetArmoredBase, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingHeadHelmetJustice
   name: justice helm
   description: Advanced security gear. Protects the station from ne'er-do-wells.

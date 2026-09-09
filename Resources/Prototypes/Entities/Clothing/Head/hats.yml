@@ -49,7 +49,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsSecurityOfficerSeniorOfficer, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatBeretSecurity
   name: security beret
   description: A beret with the security department's insignia. For officers that are more inclined towards style than safety.
@@ -68,7 +68,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsSecurityOfficer, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatSecurityTrooper
   name: trooper hat
   description: A campaign hat for the Nanotrasen Troopers. It's supposed to come with a case, too...
@@ -122,6 +122,12 @@
   name: engineering beret
   description: A beret with the engineering department's insignia. For engineers that are more inclined towards style than safety.
   components:
+  # Corvax-Contraband-start
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [ChiefEngineer, SeniorEngineer, StationEngineer]
+  # Corvax-Contraband-end
   - type: Sprite
     sprite: Clothing/Head/Hats/beret_engineering.rsi
   - type: Clothing
@@ -136,7 +142,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsQuartermaster, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatBeretQM
   name: quartermaster's beret
   description: A beret with the cargo department's insignia.
@@ -155,7 +161,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsHeadOfSecurity, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatBeretHoS
   name: head of security's beret
   description: A black beret with a commander's rank emblem. For officers that are more inclined towards style than safety.
@@ -174,7 +180,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsWarden, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatBeretWarden
   name: warden's beret
   description: A corporate-blue beret with a warden's rank emblem. For officers that are more inclined towards style than safety.
@@ -206,7 +212,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsBrigmedic, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatBeretBrigmedic
   name: brigmedical beret
   description: A white beret for brigmedics.
@@ -270,7 +276,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingHeadBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsCaptain, ClothingHeadBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingHeadHatCaptain
   name: captain's hardhat
   description: Feels good being the king.
@@ -304,7 +310,7 @@
   - type: IngestionBlocker
 
 - type: entity
-  parent: [ ClothingHeadBase, BaseCentcommContraband ]
+  parent: [BaseCorvaxContraband431DepartmentsCentralCommandJobsCentralCommandOfficial, ClothingHeadBase, BaseCentcommContraband] # Corvax-Contraband
   id: ClothingHeadHatCentcom
   name: CentComm brand hat
   description: Feels good being the king's boss.
@@ -320,7 +326,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsChef, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatChef
   name: chef's hat
   description: A hat used by chefs to keep their hair out of your food. Judging by the food in the mess, they don't work.
@@ -428,7 +434,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingHeadBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsHeadOfSecurity, ClothingHeadBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingHeadHatHoshat
   name: head of security cap
   description: A stylish cap worn by the Head of Security. Shows the officers who's in charge.
@@ -512,7 +518,7 @@
     relayAccent: true
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsChaplain, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatPlaguedoctor
   name: plague doctor hat
   description: These were once used by plague doctors.
@@ -751,7 +757,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsWarden, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatWarden
   name: warden's cap
   description: This hat emphasizes that you are THE LAW.
@@ -1027,7 +1033,7 @@
         HeadSide : HEAD
 
 - type: entity
-  parent: [ClothingHeadBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsChiefMedicalOfficer, ClothingHeadBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingHeadHatBeretCmo
   name: chief medical officer's beret
   description: A turquoise beret with a cross on the front. The sight of it calms you down and makes it clear that you will be cured.
@@ -1474,7 +1480,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsMedicalDoctor, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatBeretMedic
   name: medical beret
   description: A sterile white beret.

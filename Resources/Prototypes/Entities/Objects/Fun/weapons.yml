@@ -121,7 +121,7 @@
       revolver-ammo: !type:Container
 
 - type: entity
-  parent: RevolverCapGun
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, RevolverCapGun] # Corvax-Contraband
   id: RevolverCapGunFake
   suffix: Fake
   components:

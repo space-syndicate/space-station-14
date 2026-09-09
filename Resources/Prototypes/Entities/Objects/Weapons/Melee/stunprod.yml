@@ -1,6 +1,6 @@
 - type: entity
   name: stun prod
-  parent: [BaseItem, BaseMinorContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, BaseItem, BaseMinorContraband] # Corvax-Contraband
   id: Stunprod
   description: A stun prod for illegal incapacitation.
   components:

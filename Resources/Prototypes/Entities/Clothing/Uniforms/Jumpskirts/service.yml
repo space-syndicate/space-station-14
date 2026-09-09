@@ -10,7 +10,7 @@
     sprite: Clothing/Uniforms/Jumpskirts/Service/bartender.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [BaseCorvaxContraband431JobsChaplain, ClothingUniformSkirtBase] # Corvax-Contraband
   id: ClothingUniformJumpskirtChaplain
   name: chaplain's jumpskirt
   description: It's a black jumpskirt, often worn by religious folk.
@@ -21,7 +21,7 @@
     sprite: Clothing/Uniforms/Jumpskirts/Service/chaplain.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [BaseCorvaxContraband431JobsChef, ClothingUniformSkirtBase] # Corvax-Contraband
   id: ClothingUniformJumpskirtChef
   name: chef uniform
   description: Can't cook without this.
@@ -43,7 +43,7 @@
     sprite: Clothing/Uniforms/Jumpskirts/Service/hydro.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [BaseCorvaxContraband431JobsJanitor, ClothingUniformSkirtBase] # Corvax-Contraband
   id: ClothingUniformJumpskirtJanitor
   name: janitor jumpskirt
   description: The jumpskirt for the poor sop with a mop.

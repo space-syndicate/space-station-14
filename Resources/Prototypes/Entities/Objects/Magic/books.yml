@@ -1,6 +1,6 @@
 ﻿- type: entity
   abstract: true
-  parent: [ BaseItem, BaseMagicalContraband ]
+  parent: BaseItem # Corvax-Contraband: do not inherit a marker for hidden properties.
   id: BaseSpellbook
   name: spellbook
   components:
@@ -22,7 +22,7 @@
 # For the Wizard antagonist
 # Do not add discounts or price inflation
 - type: entity
-  parent: [ BaseItem, StorePresetSpellbook, BaseMagicalContraband ]
+  parent: [BaseItem, StorePresetSpellbook] # Corvax-Contraband: do not inherit a marker for hidden properties.
   id: WizardsGrimoire
   name: wizard's grimoire
   suffix: Wizard

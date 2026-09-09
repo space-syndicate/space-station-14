@@ -21,7 +21,7 @@
     hideOnToggle: true
 
 - type: entity
-  parent: [ClothingMaskGas, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingMaskGas, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingMaskGasSecurity
   name: security gas mask
   description: A standard issue Security gas mask.
@@ -41,7 +41,7 @@
         Heat: 0.95
 
 - type: entity
-  parent: [ClothingMaskGas, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingMaskGas, BaseSyndicateContraband] # Corvax-Contraband
   id: ClothingMaskGasSyndicate
   name: syndicate gas mask
   description: A close-fitting tactical mask that can be connected to an air supply.
@@ -398,7 +398,7 @@
     relayAccent: true
 
 - type: entity
-  parent: [ ClothingMaskGas, BaseSecurityContraband ]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, ClothingMaskGas, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingMaskGasSwat
   name: swat gas mask
   description: A elite issue Security gas mask.

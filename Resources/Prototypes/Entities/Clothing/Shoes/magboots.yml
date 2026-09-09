@@ -40,11 +40,11 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase]
+  parent: [BaseCorvaxContraband431DepartmentsEngineering, ClothingShoesBootsMagBase] # Corvax-Contraband
   id: ClothingShoesBootsMag
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase, BaseGrandTheftContraband]
+  parent: [BaseCorvaxContraband431JobsChiefEngineer, ClothingShoesBootsMagBase, BaseGrandTheftContraband] # Corvax-Contraband
   id: ClothingShoesBootsMagAdv
   name: advanced magboots
   description: State-of-the-art magnetic boots that do not slow down their wearer.
@@ -67,7 +67,7 @@
     stealGroup: ClothingShoesBootsMagAdv
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase]
+  parent: [BaseCorvaxContraband431DepartmentsScience, ClothingShoesBootsMagBase] # Corvax-Contraband
   id: ClothingShoesBootsMagSci
   components:
   - type: Sprite

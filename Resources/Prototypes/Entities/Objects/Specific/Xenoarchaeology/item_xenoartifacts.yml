@@ -71,7 +71,7 @@
     isGenerationRequired: false
 
 - type: entity
-  parent: BaseXenoArtifactItem
+  parent: [BaseCorvaxContraband434DepartmentsScience, BaseXenoArtifactItem] # Corvax-Contraband
   id: ComplexXenoArtifactItem
   suffix: Hand-Sized
   components:

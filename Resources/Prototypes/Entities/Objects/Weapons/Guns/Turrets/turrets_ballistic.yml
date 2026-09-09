@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseWeaponBallisticTurret, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BaseWeaponBallisticTurret, BaseSyndicateContraband] # Corvax-Contraband
   id: WeaponTurretSyndicate
   suffix: Syndicate
   components:

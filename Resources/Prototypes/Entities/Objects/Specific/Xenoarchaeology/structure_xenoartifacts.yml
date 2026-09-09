@@ -50,7 +50,7 @@
     isGenerationRequired: false
 
 - type: entity
-  parent: BaseXenoArtifactStructure
+  parent: [BaseCorvaxContraband434DepartmentsScience, BaseXenoArtifactStructure] # Corvax-Contraband
   id: ComplexXenoArtifact
   components:
   - type: XenoArtifact
