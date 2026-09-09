@@ -122,7 +122,7 @@
 
 - type: entity
   id: AnomalyLocator
-  parent: [ AnomalyLocatorUnpowered, PowerCellSlotSmallItem ]
+  parent: [BaseCorvaxContraband432DepartmentsScience, AnomalyLocatorUnpowered, PowerCellSlotSmallItem] # Corvax-Contraband
   suffix: ""
   components:
   - type: PowerCellDraw
@@ -157,7 +157,7 @@
 
 - type: entity
   id: AnomalyLocatorWide
-  parent: [ AnomalyLocatorWideUnpowered, PowerCellSlotSmallItem ]
+  parent: [BaseCorvaxContraband432DepartmentsScience, AnomalyLocatorWideUnpowered, PowerCellSlotSmallItem] # Corvax-Contraband
   suffix: ""
   components:
   - type: PowerCellDraw

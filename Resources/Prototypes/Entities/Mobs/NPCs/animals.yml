@@ -3413,7 +3413,7 @@
 - type: entity
   name: syndicat
   id: MobCatSyndy
-  parent: MobCatSpace
+  parent: [BaseCorvaxContraband435, MobCatSpace] # Corvax-Contraband
   description: Explosive kitten.
   components:
   - type: Sprite

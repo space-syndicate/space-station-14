@@ -85,7 +85,7 @@
 
 - type: entity
   id: BorgChassisSyndicateAssault
-  parent: BaseBorgChassisSyndicate
+  parent: [BaseCorvaxContraband436, BaseBorgChassisSyndicate] # Corvax-Contraband
   name: syndicate assault cyborg
   description: A lean, mean killing machine with access to a variety of deadly modules.
   components:

@@ -71,7 +71,7 @@
 
 ## Plastic Explosives used in game
 - type: entity
-  parent: [BasePlasticExplosive, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BasePlasticExplosive, BaseSyndicateContraband] # Corvax-Contraband
   id: C4
   name: composition C-4
   description: Used to put holes in specific areas without too much extra hole. A saboteur's favorite.

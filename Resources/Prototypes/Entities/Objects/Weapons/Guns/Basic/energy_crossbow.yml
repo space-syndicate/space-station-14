@@ -35,7 +35,7 @@
     count: 1
 
 - type: entity
-  parent: [WeaponEnergyCrossbowBase, BaseSyndicateContraband]
+  parent: WeaponEnergyCrossbowBase # Corvax-Contraband: do not inherit a marker for hidden properties.
   id: WeaponEnergyCrossbow
   name: mini energy crossbow
   description: Launches renewable toxic arrows capable of flooring targets instantly.

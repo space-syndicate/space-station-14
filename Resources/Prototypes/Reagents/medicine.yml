@@ -1,5 +1,6 @@
 - type: reagent
   id: Cryptobiolin
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-cryptobiolin
   group: Medicine
   desc: reagent-desc-cryptobiolin
@@ -204,6 +205,7 @@
 
 - type: reagent
   id: Doxarubixadone
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-doxarubixadone
   group: Medicine
   desc: reagent-desc-doxarubixadone
@@ -976,6 +978,7 @@
 
 - type: reagent
   id: Ethyloxyephedrine
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-ethyloxyephedrine
   desc: reagent-desc-ethyloxyephedrine
   group: Medicine
@@ -1215,6 +1218,7 @@
 
 - type: reagent
   id: Pyrazine
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-pyrazine
   group: Medicine
   desc: reagent-desc-pyrazine
@@ -1255,6 +1259,7 @@
 
 - type: reagent
   id: Insuzine
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-insuzine
   group: Medicine
   desc: reagent-desc-insuzine
@@ -1302,6 +1307,7 @@
 
 - type: reagent
   id: Opporozidone #Name based of an altered version of the startreck chem "Opporozine"
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-opporozidone
   group: Medicine
   desc: reagent-desc-opporozidone
@@ -1385,6 +1391,7 @@
 
 - type: reagent
   id: Psicodine
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-psicodine
   group: Medicine
   desc: reagent-desc-psicodine

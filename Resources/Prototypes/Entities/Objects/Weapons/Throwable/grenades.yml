@@ -1,7 +1,7 @@
 - type: entity
   name: explosive grenade
   description: Grenade that creates a small but devastating explosion.
-  parent: [VolatileGrenadeBase, TimerGrenadeBase, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, VolatileGrenadeBase, TimerGrenadeBase, BaseSyndicateContraband] # Corvax-Contraband
   id: ExGrenade
   components:
   - type: ExplodeOnTrigger
@@ -24,7 +24,7 @@
 - type: entity
   name: flashbang
   description: Eeeeeeeeeeeeeeeeeeeeee.
-  parent: [ FragileGrenadeBase, TimerGrenadeBase, BaseSecurityContraband ]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, FragileGrenadeBase, TimerGrenadeBase, BaseSecurityContraband] # Corvax-Contraband
   id: GrenadeFlashBang
   components:
   - type: Sprite
@@ -307,7 +307,7 @@
       path: /Audio/Effects/countdown.ogg
 
 - type: entity
-  parent: [ BaseItem, BaseItemDestructible ]
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseItem, BaseItemDestructible] # Corvax-Contraband
   id: ModularGrenade
   name: modular grenade
   description: A grenade casing. Requires a trigger and a payload.
@@ -353,7 +353,7 @@
 - type: entity
   name: EMP grenade
   description: A grenade designed to wreak havoc on electronic systems.
-  parent: [ImpactGrenadeBase, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, ImpactGrenadeBase, BaseSyndicateContraband] # Corvax-Contraband
   id: EmpGrenade
   components:
   - type: Sprite

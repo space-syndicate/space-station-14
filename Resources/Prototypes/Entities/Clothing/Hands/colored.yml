@@ -319,7 +319,7 @@
 # Insulated Gloves (Yellow Gloves)
 # Currently can not be greyscaled without looking like shit.
 - type: entity
-  parent: [ClothingHandsBase, BaseSlicingRefinable]
+  parent: [BaseCorvaxContraband431DepartmentsEngineering, ClothingHandsBase, BaseSlicingRefinable] # Corvax-Contraband
   id: ClothingHandsGlovesColorYellow
   name: insulated gloves
   description: These gloves will protect the wearer from electric shocks.

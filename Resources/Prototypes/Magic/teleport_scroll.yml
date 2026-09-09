@@ -2,7 +2,7 @@
   id: WizardTeleportScroll
   name: teleport scroll
   suffix: Wizard
-  parent: [ BaseItem, BaseMagicalContraband ]
+  parent: BaseItem # Corvax-Contraband: do not inherit a marker for hidden properties.
   components:
   - type: UserInterface
     interfaces:

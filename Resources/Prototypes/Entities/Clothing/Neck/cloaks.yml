@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingNeckBase
+  parent: [BaseCorvaxContraband431DepartmentsCentralCommand, ClothingNeckBase] # Corvax-Contraband
   id: ClothingNeckCloakCentcom
   name: central commander's cloak
   description: A pompous and elite green cloak with a nice gold trim, tailored specifically to the Central Commander. It's so heavy, the gold trim might be real.
@@ -10,7 +10,7 @@
     stealGroup: HeadCloak # leaving this here because I suppose it might be interesting?
 
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsCaptain, ClothingNeckBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingNeckCloakCap
   name: captain's cloak
   description: A pompous and comfy blue cloak with a nice gold trim, while not particularly valuable as your other possessions, it sure is fancy.
@@ -21,7 +21,7 @@
     stealGroup: HeadCloak
 
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsHeadOfSecurity, ClothingNeckBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingNeckCloakHos
   name: head of security's cloak
   description: An exquisite dark and red cloak fitting for those who can assert dominance over wrongdoers. Take a stab at being civil in prosecution!
@@ -32,7 +32,7 @@
     stealGroup: HeadCloak
 
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsChiefEngineer, ClothingNeckBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingNeckCloakCe
   name: chief engineer's cloak
   description: A dark green cloak with light blue ornaments, given to those who proved themselves to master the precise art of engineering.
@@ -43,7 +43,7 @@
     stealGroup: HeadCloak
 
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsChiefMedicalOfficer, ClothingNeckBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingCloakCmo
   name: chief medical officer's cloak
   description: A sterile blue cloak with a green cross, radiating with a sense of duty and willingness to help others.
@@ -54,7 +54,7 @@
     stealGroup: HeadCloak
 
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsResearchDirector, ClothingNeckBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingNeckCloakRd
   name: research director's cloak
   description: A white cloak with violet stripes, showing your status as the arbiter of cutting-edge technology.
@@ -65,7 +65,7 @@
     stealGroup: HeadCloak
 
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsQuartermaster, ClothingNeckBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingNeckCloakQm
   name: quartermaster's cloak
   description: A strong brown cloak with a reflective stripe, while not as fancy as others, it does show your managing skills.
@@ -76,7 +76,7 @@
     stealGroup: HeadCloak
 
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsHeadOfPersonnel, ClothingNeckBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingNeckCloakHop
   name: head of personnel's cloak
   description: A blue cloak with red shoulders and gold buttons, proving you are the gatekeeper to any airlock on the station.
@@ -105,7 +105,7 @@
     sprite: Clothing/Neck/Cloaks/nanotrasen.rsi
 
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsCaptain, ClothingNeckBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingNeckCloakCapFormal
   name: captain's formal cloak
   description: A lavish and decorated cloak for special occasions.

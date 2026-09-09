@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingUniformSkirtBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsCaptain, ClothingUniformSkirtBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingUniformJumpskirtCaptain
   name: captain's jumpskirt
   description: It's a blue jumpskirt with some gold markings denoting the rank of "Captain".
@@ -10,7 +10,7 @@
     sprite: Clothing/Uniforms/Jumpskirts/Command/captain.rsi
 
 - type: entity
-  parent: [ClothingUniformSkirtBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsHeadOfPersonnel, ClothingUniformSkirtBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingUniformJumpskirtHoP
   name: head of personnel's jumpskirt
   description: Rather bland and inoffensive. Perfect for vanishing off the face of the universe.
@@ -32,7 +32,7 @@
     sprite: Clothing/Uniforms/Jumpskirts/Command/commandgeneric.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [BaseCorvaxContraband431JobsCaptain, ClothingUniformSkirtBase] # Corvax-Contraband
   id: ClothingUniformJumpskirtCapFormalDress
   name: captain's formal dress
   description: A dress for special occasions.

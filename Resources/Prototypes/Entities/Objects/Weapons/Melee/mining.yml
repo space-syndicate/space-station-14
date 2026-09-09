@@ -41,7 +41,7 @@
 
 - type: entity
   name: mining drill
-  parent: BaseItem
+  parent: [BaseCorvaxContraband432DepartmentsCargo, BaseItem] # Corvax-Contraband
   id: MiningDrill
   description: Powerful tool used to quickly drill through rocks.
   components:
@@ -100,7 +100,7 @@
 
 # Very high burst damage if you land a mark, while also providing a small amount of healing.
 - type: entity
-  parent: [BaseWeaponCrusher, BaseSecurityCargoContraband]
+  parent: [BaseCorvaxContraband432DepartmentsCargo, BaseWeaponCrusher, BaseSecurityCargoContraband] # Corvax-Contraband
   id: WeaponCrusher
   components:
   - type: Tag
@@ -165,7 +165,7 @@
 
 # No mark ability in exchange for wideswing, autoattack, and being one-handed
 - type: entity
-  parent: [ BaseKnife, BaseWeaponCrusher, BaseSecurityCargoContraband]
+  parent: [BaseCorvaxContraband432DepartmentsCargo, BaseKnife, BaseWeaponCrusher, BaseSecurityCargoContraband] # Corvax-Contraband
   id: WeaponCrusherDagger
   name: crusher dagger
   description: A scaled down version of a proto-kinetic crusher. Uses kinetic energy to vibrate the blade at high speeds.

@@ -127,7 +127,7 @@
     residueColor: residue-brown
 
 - type: entity
-  parent: [Soap, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband131, Soap, BaseSyndicateContraband] # Corvax-Contraband
   id: SoapSyndie
   description: An untrustworthy bar of soap. Smells of fear.
   components:
