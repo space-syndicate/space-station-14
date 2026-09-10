@@ -219,7 +219,7 @@
     relayAccent: true
 
 - type: entity
-  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
+  parent: [ ClothingHeadBase ] # Corvax-Contraband BaseSyndicateContraband
   id: ClothingHeadHatCatEars
   name: cat ears
   description: "NYAH!"

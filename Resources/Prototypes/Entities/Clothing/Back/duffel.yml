@@ -163,7 +163,7 @@
       sprite: Clothing/Back/Duffels/salvage.rsi
 
 - type: entity
-  parent: [ClothingBackpackDuffel, BaseSyndicateContraband]
+  parent: [ClothingBackpackDuffel] # Corvax-Contraband BaseSyndicateContraband
   id: ClothingBackpackDuffelSyndicate
   name: syndicate duffel bag
   description: A large duffel bag for holding various traitor goods.
@@ -177,7 +177,7 @@
     - 0,0,8,4
 
 - type: entity
-  parent: [ ClothingBackpackDuffelSyndicate, BaseSyndicateContraband ]
+  parent: [ ClothingBackpackDuffelSyndicate ] # Corvax-Contraband BaseSyndicateContraband
   id: ClothingBackpackDuffelSyndicateBundle
   abstract: true
   components:

@@ -83,7 +83,7 @@
 - type: entity
   id: StealthBox
   suffix: stealth
-  parent: [BaseCorvaxContraband435, BaseBigBox] # Corvax-Contraband
+  parent: BaseBigBox
   description: Kept ya waiting, huh?
   components:
     - type: Damageable
