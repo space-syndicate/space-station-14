@@ -25,7 +25,7 @@
     - Snout
 
 - type: entity
-  parent: WeldingMaskBase
+  parent: [BaseCorvaxContraband431DepartmentsEngineering, WeldingMaskBase] # Corvax-Contraband
   id: ClothingHeadHatWelding
   name: welding mask
   description: A head-mounted face cover designed to protect the wearer completely from space-arc eye.

@@ -1,6 +1,6 @@
 - type: entity
   name: stun baton
-  parent: [BaseItem, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, BaseItem, BaseSecurityContraband] # Corvax-Contraband
   id: Stunbaton
   description: A stun baton for incapacitating people with. Actively harming with this is considered bad tone.
   components:
@@ -139,7 +139,7 @@
 
 - type: entity
   name: flash
-  parent: [BaseItem, BaseSecurityScienceCommandContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, BaseItem, BaseSecurityScienceCommandContraband] # Corvax-Contraband
   id: Flash
   description: An ultrabright flashbulb with a trigger, which causes the victim to be dazed and lose their eyesight for a moment. Useless when burnt out.
   components:

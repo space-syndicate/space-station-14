@@ -1,0 +1,633 @@
+# Corvax-Contraband: reusable article and permission combinations.
+# Put these before functional parents so their explicit permissions take precedence.
+# Keep empty permission lists: another parent must not add unintended exemptions.
+
+- type: entity
+  id: BaseCorvaxContraband131
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax131
+    allowedDepartments: []
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband431JobsAtmosphericTechnician
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [AtmosphericTechnician]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsAtmosphericTechnicianSeniorEngineer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [AtmosphericTechnician, SeniorEngineer]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsBartender
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Bartender]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsBotanist
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Botanist]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsBrigmedic
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Brigmedic]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsCaptain
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Captain]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsCargoTechnician
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [CargoTechnician]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsChaplain
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Chaplain]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsChef
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Chef]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsChemist
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Chemist]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsChiefEngineer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [ChiefEngineer]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsChiefMedicalOfficer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [ChiefMedicalOfficer]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsDetective
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Detective]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsHeadOfPersonnel
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [HeadOfPersonnel]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsHeadOfSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [HeadOfSecurity]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsJanitor
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Janitor]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsMedicalDoctor
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [MedicalDoctor]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsParamedic
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Paramedic]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsPilot
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Pilot]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsQuartermaster
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Quartermaster]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsResearchDirector
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [ResearchDirector]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsSalvageSpecialist
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [SalvageSpecialist]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsScientist
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Scientist]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsScientistSeniorResearcher
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Scientist, SeniorResearcher]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsSecurityOfficer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [SecurityOfficer]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsSecurityOfficerSeniorOfficer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [SecurityOfficer, SeniorOfficer]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsSeniorEngineerStationEngineer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [SeniorEngineer, StationEngineer]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsStationEngineer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [StationEngineer]
+
+- type: entity
+  id: BaseCorvaxContraband431JobsWarden
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Warden]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsCentralCommand
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [CentralCommand]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsCentralCommandJobsCentralCommandOfficial
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [CentralCommand]
+    allowedJobs: [CentralCommandOfficial]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsCommandJobsCaptain
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Command]
+    allowedJobs: [Captain]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsCommandJobsChiefEngineer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Command]
+    allowedJobs: [ChiefEngineer]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsCommandJobsChiefMedicalOfficer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Command]
+    allowedJobs: [ChiefMedicalOfficer]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsCommandJobsHeadOfPersonnel
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Command]
+    allowedJobs: [HeadOfPersonnel]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsCommandJobsHeadOfSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Command]
+    allowedJobs: [HeadOfSecurity]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsCommandJobsQuartermaster
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Command]
+    allowedJobs: [Quartermaster]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsCommandJobsResearchDirector
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Command]
+    allowedJobs: [ResearchDirector]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsCommandSecurityJobsHeadOfSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Command, Security]
+    allowedJobs: [HeadOfSecurity]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsEngineering
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Engineering]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsEngineeringSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Engineering, Security]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsMedical
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Medical]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsScience
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Science]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Security]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsSecurityJobsBrigmedicDetectiveSecurityOfficerSeniorOfficer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Security]
+    allowedJobs: [Brigmedic, Detective, SecurityOfficer, SeniorOfficer]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsSecurityJobsDetective
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Security]
+    allowedJobs: [Detective]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsSecurityJobsSecurityCadetSecurityOfficer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Security]
+    allowedJobs: [SecurityCadet, SecurityOfficer]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsSecurityJobsSecurityOfficer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Security]
+    allowedJobs: [SecurityOfficer]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsSecurityJobsSecurityOfficerSeniorOfficer
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Security]
+    allowedJobs: [SecurityOfficer, SeniorOfficer]
+
+- type: entity
+  id: BaseCorvaxContraband431DepartmentsSecurityJobsWarden
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [Security]
+    allowedJobs: [Warden]
+
+- type: entity
+  id: BaseCorvaxContraband432JobsBotanist
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: []
+    allowedJobs: [Botanist]
+
+- type: entity
+  id: BaseCorvaxContraband432JobsChef
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: []
+    allowedJobs: [Chef]
+
+- type: entity
+  id: BaseCorvaxContraband432DepartmentsCargo
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [Cargo]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband432DepartmentsCargoSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [Cargo, Security]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband432DepartmentsCentralCommand
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [CentralCommand]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband432DepartmentsCommandSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [Command, Security]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband432DepartmentsMedical
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [Medical]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband432DepartmentsScience
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [Science]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband432DepartmentsSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [Security]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband433DepartmentsCommand
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax433
+    allowedDepartments: [Command]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband433DepartmentsCommandSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax433
+    allowedDepartments: [Command, Security]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband433DepartmentsSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax433
+    allowedDepartments: [Security]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband434DepartmentsCentralCommand
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax434
+    allowedDepartments: [CentralCommand]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband434DepartmentsCommand
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax434
+    allowedDepartments: [Command]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband434DepartmentsScience
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax434
+    allowedDepartments: [Science]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband434DepartmentsSecurity
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax434
+    allowedDepartments: [Security]
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband434DepartmentsSecurityJobsBartender
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax434
+    allowedDepartments: [Security]
+    allowedJobs: [Bartender]
+
+- type: entity
+  id: BaseCorvaxContraband435
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax435
+    allowedDepartments: []
+    allowedJobs: []
+
+- type: entity
+  id: BaseCorvaxContraband436
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Corvax436
+    allowedDepartments: []
+    allowedJobs: []

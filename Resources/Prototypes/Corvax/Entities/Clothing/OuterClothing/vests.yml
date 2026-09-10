@@ -15,13 +15,17 @@
   name: security medic armor vest
   description: A security medic's armor vest, with little pockets for little things.
   components:
+    - type: Contraband
+      severity: Corvax431
+      allowedDepartments: [Security]
+      allowedJobs: [Brigmedic]
     - type: Sprite
       sprite: Corvax/Clothing/OuterClothing/Vests/armor_sec_med.rsi
     - type: Clothing
       sprite: Corvax/Clothing/OuterClothing/Vests/armor_sec_med.rsi
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: [BaseCorvaxContraband431JobsBrigmedic, ClothingOuterBase] # Corvax-Contraband
   id: ClothingOuterVestSecurityMedic
   name: security medic vest
   description: A lightweight vest worn by the Security Medic.

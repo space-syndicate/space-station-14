@@ -111,7 +111,7 @@
       - state: base-inhand-right
 
 - type: entity
-  parent: [ PersonalAI, BaseSyndicateContraband]
+  parent: PersonalAI # Corvax-Contraband: do not inherit a marker for hidden properties.
   id: SyndicatePersonalAI
   name: syndicate personal ai device
   description: Your Syndicate pal who's fun to be with!

@@ -1,5 +1,5 @@
 ﻿- type: entity
-  parent: BaseItem
+  parent: [BaseCorvaxContraband431DepartmentsScience, BaseItem] # Corvax-Contraband
   id: NodeScanner
   name: node scanner
   description: The archeologist's friend, able to identify the node of an artifact with only a single scan.
