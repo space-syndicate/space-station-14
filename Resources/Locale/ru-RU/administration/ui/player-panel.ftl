@@ -6,8 +6,8 @@ player-panel-rolebans = Всего банов ролей: { $totalRoleBans }
 player-panel-notes = Всего заметок: { $totalNotes }
 player-panel-playtime = Наиграно времени: { $days }д:{ $hours }ч:{ $minutes }м
 player-panel-shared-connections = Общие соединения: { $sharedConnections }
-player-panel-trust-score = Рейтинг доверия: {TOSTRING($trustScore, "P0")}
-player-panel-account-creation = Аккаунт создан: {TOSTRING($date, "yyyy-MM-dd")}
+player-panel-trust-score = Рейтинг доверия: { TOSTRING($trustScore, "P0") }
+player-panel-account-creation = Аккаунт создан: { TOSTRING($date, "yyyy-MM-dd") }
 
 player-panel-copy-username = Копировать
 player-panel-show-notes = Заметки

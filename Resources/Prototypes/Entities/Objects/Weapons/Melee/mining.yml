@@ -25,7 +25,7 @@
     damage:
       types:
         Piercing: 10
-        Structural: 30
+        Structural: 9
   - type: Item
     size: Normal
     shape:
@@ -41,7 +41,7 @@
 
 - type: entity
   name: mining drill
-  parent: BaseItem
+  parent: [BaseCorvaxContraband432DepartmentsCargo, BaseItem] # Corvax-Contraband
   id: MiningDrill
   description: Powerful tool used to quickly drill through rocks.
   components:
@@ -63,7 +63,7 @@
     damage:
       types:
         Piercing: 3
-        Structural: 15
+        Structural: 6
 
 - type: entity
   name: diamond tipped mining drill
@@ -75,17 +75,10 @@
     sprite: Objects/Tools/handdrilldiamond.rsi
     state: handdrill
   - type: MeleeWeapon
-    autoAttack: true
-    angle: 0
-    wideAnimationRotation: -90
-    soundHit:
-      path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 4
     damage:
       types:
-        Piercing: 6
-        Structural: 30
-
+        Piercing: 5
+        Structural: 12
 
 - type: entity
   abstract: true
@@ -107,7 +100,7 @@
 
 # Very high burst damage if you land a mark, while also providing a small amount of healing.
 - type: entity
-  parent: [BaseWeaponCrusher, BaseSecurityCargoContraband]
+  parent: [BaseCorvaxContraband432DepartmentsCargo, BaseWeaponCrusher, BaseSecurityCargoContraband] # Corvax-Contraband
   id: WeaponCrusher
   components:
   - type: Tag
@@ -165,14 +158,14 @@
       types:
         Blunt: 6
         Slash: 2
-        Structural: 30
+        Structural: 12
   - type: GunRequiresWield
   - type: DisarmMalus
   - type: Prying
 
 # No mark ability in exchange for wideswing, autoattack, and being one-handed
 - type: entity
-  parent: [ BaseKnife, BaseWeaponCrusher, BaseSecurityCargoContraband]
+  parent: [BaseCorvaxContraband432DepartmentsCargo, BaseKnife, BaseWeaponCrusher, BaseSecurityCargoContraband] # Corvax-Contraband
   id: WeaponCrusherDagger
   name: crusher dagger
   description: A scaled down version of a proto-kinetic crusher. Uses kinetic energy to vibrate the blade at high speeds.
@@ -264,4 +257,4 @@
       types:
         Blunt: 2
         Slash: 6
-        Structural: 20
+        Structural: 12

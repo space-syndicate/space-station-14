@@ -134,7 +134,7 @@
 - type: entity
   id: TowelColorSyndicate
   name: syndicate towel
-  parent: [ BaseTowel, BaseSyndicateContraband ]
+  parent: [BaseCorvaxContraband131, BaseTowel, BaseSyndicateContraband] # Corvax-Contraband
   components:
   - type: Sprite
     layers:

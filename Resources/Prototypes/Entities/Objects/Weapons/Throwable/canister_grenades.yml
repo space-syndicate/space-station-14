@@ -46,7 +46,7 @@
     - CleanerGrenade
 
 - type: entity
-  parent: SmokeGrenade
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, SmokeGrenade] # Corvax-Contraband
   id: TearGasGrenade
   name: tear gas grenade
   description: A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.

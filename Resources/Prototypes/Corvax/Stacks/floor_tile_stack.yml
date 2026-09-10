@@ -105,3 +105,75 @@
   id: FloorTileItemWoodChessRed
   name: chess-red-wood-floor
   spawn: FloorTileItemWoodChessRed
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemDarkDiagonal
+  name: dark-diagonal-steel-floor
+  spawn: FloorTileItemDarkDiagonal
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemDarkOffset
+  name: dark-offset-steel-floor
+  spawn: FloorTileItemDarkOffset
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemSteelDiagonal
+  name: diagonal-steel-floor
+  spawn: FloorTileItemSteelDiagonal
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemSteelOffset
+  name: offset-steel-floor
+  spawn: FloorTileItemSteelOffset
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemWhiteDiagonal
+  name: light-diagonal-steel-floor
+  spawn: FloorTileItemWhiteDiagonal
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemWhiteOffset
+  name: light-offset-steel-floor
+  spawn: FloorTileItemWhiteOffset
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemElevatorShaft
+  name: elevator-shaft-floor
+  spawn: FloorTileItemElevatorShaft
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemHydro
+  name: hydro-floor
+  spawn: FloorTileItemHydro
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemMining
+  name: mining-floor
+  spawn: FloorTileItemMining
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemMiningDark
+  name: mining-dark-floor
+  spawn: FloorTileItemMiningDark
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemMiningLight
+  name: mining-light-floor
+  spawn: FloorTileItemMiningLight
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorTileItemRockVault
+  name: rock-vault-floor
+  spawn: FloorTileItemRockVault

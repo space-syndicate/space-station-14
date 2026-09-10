@@ -71,7 +71,7 @@ marking-HumanFacialHairPencilstache = Усы (Карандаш)
 marking-HumanFacialHairPencilstache-pencilstache = Усы (Карандаш)
 
 marking-HumanFacialHairSmallstache = Усы (Малюсенькие)
-marking-HumanFacialHairSmallstache-smallstache =Усы (Малюсенькие)
+marking-HumanFacialHairSmallstache-smallstache = Усы (Малюсенькие)
 
 marking-HumanFacialHairWalrus = Усы (Моржовые)
 marking-HumanFacialHairWalrus-walrus = Усы (Моржовые)

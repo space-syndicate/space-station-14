@@ -65,7 +65,7 @@
       sprite: Corvax/Clothing/Head/Hats/warden_alt.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsBrigmedic, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatBeretSecurityMedic
   name: security medic beret
   description: A robust beret with the medical insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.
@@ -87,7 +87,7 @@
     sprite: Corvax/Clothing/Head/Hats/caphat.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [BaseCorvaxContraband431JobsPilot, ClothingHeadBase] # Corvax-Contraband
   id: ClothingHeadHatBeretSecurityPilot
   name: pilot beret
   description: Black beret with a silver badge.

@@ -1,63 +1,63 @@
 ﻿# generic "highly illegal" contraband; Syndicate/magical contraband are already considered highly illegal under Space Law,
 # so this is mostly for stuff that should be equally illegal but doesn't need its own unique contraband tier added
 - type: entity
+  parent: BaseCorvaxContraband435 # Corvax-Contraband
   id: BaseHighlyIllegalContraband
   abstract: true
-  components:
-  - type: Contraband
-    severity: HighlyIllegal
 
 # used by the unique items of xenoborgs (like modules and stuff)
 - type: entity
+  parent: BaseCorvaxContraband435 # Corvax-Contraband
   id: BaseXenoborgContraband
   abstract: true
-  components:
-  - type: Contraband
-    severity: HighlyIllegal
 
 # any type of magical items used by wizards and similiar
 - type: entity
+  parent: BaseCorvaxContraband436 # Corvax-Contraband
   id: BaseMagicalContraband
   abstract: true
-  components:
-  - type: Contraband
-    severity: Magical
 
 # non-stealth syndicate stuff
 - type: entity
+  parent: BaseCorvaxContraband435 # Corvax-Contraband
   id: BaseSyndicateContraband
   abstract: true
-  components:
-  - type: Contraband
-    severity: Syndicate
-    allowedDepartments: [  ]
-    allowedJobs: [  ]
 
 # minor contraband not departmentally restricted -- improvised weapons etc
 - type: entity
   id: BaseMinorContraband
   abstract: true
   components:
+  # Corvax-Contraband-start
   - type: Contraband
-    severity: Minor
+    severity: Corvax433
+    allowedDepartments: []
+    allowedJobs: []
+  # Corvax-Contraband-end
 
 # major contraband, for things like guns or weaponry that don't belong to any department and aren't syndicate specific
 - type: entity
   id: BaseMajorContraband
   abstract: true
   components:
+  # Corvax-Contraband-start
   - type: Contraband
-    severity: Major
+    severity: Corvax434
+    allowedDepartments: []
+    allowedJobs: []
+  # Corvax-Contraband-end
 
 # base department restricted contraband, this should only be used as a parent for other contraband prototypes, not the restricted items themselves.
 - type: entity
   id: BaseRestrictedContraband
   abstract: true
   components:
+  # Corvax-Contraband-start
   - type: Contraband
-    severity: Restricted
-    allowedDepartments: [  ]
-    allowedJobs: [  ]
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: []
+  # Corvax-Contraband-end
 
 # one department restricted contraband
 - type: entity

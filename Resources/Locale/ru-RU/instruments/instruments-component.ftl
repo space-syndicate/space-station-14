@@ -18,8 +18,8 @@ instruments-component-menu-play-stop-button = Играть
 instruments-component-menu-loop-button = Повтор
 instruments-component-menu-shuffle-button = Случайно
 instruments-component-menu-channels-label = Каналы [italic](обновляются при воспроизведении)[/italic]
-instruments-component-menu-files-track-playtime-seconds-minutes = {$currentMinutes}:{$currentSeconds}/{$totalMinutes}:{$totalSeconds}
-instruments-component-menu-files-track-playtime-seconds-minutes-hours = {$currentHours}:{$currentMinutes}:{$currentSeconds}/{$totalHours}:{$totalMinutes}:{$totalSeconds}
+instruments-component-menu-files-track-playtime-seconds-minutes = { $currentMinutes }:{ $currentSeconds }/{ $totalMinutes }:{ $totalSeconds }
+instruments-component-menu-files-track-playtime-seconds-minutes-hours = { $currentHours }:{ $currentMinutes }:{ $currentSeconds }/{ $totalHours }:{ $totalMinutes }:{ $totalSeconds }
 instruments-component-menu-files-file-remove-disabled-info = Остановите воспроизведение и выберите трек, чтобы удалить его.
 instruments-component-menu-files-add-button = Добавить
 instruments-component-menu-files-remove-button = Удалить
@@ -36,16 +36,18 @@ instruments-component-channels-menu = Выбор MIDI-канала
 instruments-component-channels-all-button = Вкл
 instruments-component-channels-clear-button = Выкл
 instruments-component-channels-all-channels-label = Все каналы
+instruments-component-channels-percussion-channel-name = [Перкуссия]
 instruments-component-channels-name-display-selector-label = Название канала
 instruments-component-channels-name-display-selector-track-button = Трек
 instruments-component-channels-name-display-selector-program-button = Программа
 instruments-component-channels-name-display-selector-instrument-button = Инструмент
 instruments-component-midi-file-collection-label = Коллекция MIDI
-instruments-component-midi-file-collection-size-label = Загружены MIDI-файлы: {$count}
+instruments-component-midi-file-collection-size-label = Загружены MIDI-файлы: { $count }
 instruments-component-midi-file-collection-open-dir-button = Открыть папку
 instruments-component-midi-file-collection-reload-button = Перезагрузить
 instruments-component-midi-file-collection-delete-all-button = Очистить
 instruments-component-menu-midi-min-volume-slider-label = Минимальная громкость MIDI-входа
+
 
 # SwappableInstrumentComponent
 swappable-instrument-component-style-set = Установить стиль "{ $style }"

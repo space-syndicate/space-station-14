@@ -1,0 +1,115 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from TauCetiClassic at commit https://github.com/TauCetiStation/TauCetiClassic/commit/b7ac5798ae0d411b0cdeaf7efbc4ac86d24b4634, fire_emagged.png edited by github:Morb0, updated by SonicHDC, alert level states and changes by _Svist_. (Discord)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "base",
+            "directions": 4
+        },
+        {
+            "name": "panel",
+            "directions": 4
+        },
+        {
+            "name": "frame1",
+            "directions": 4
+        },
+        {
+            "name": "frame2",
+            "directions": 4
+        },
+        {
+            "name": "fire_on",
+            "directions": 4
+        },
+        {
+            "name": "fire_emagged",
+            "directions": 4,
+            "delays": [
+                [
+                    0.33,
+                    0.33,
+                    0.33
+                ],
+                [
+                    0.33,
+                    0.33,
+                    0.33
+                ],
+                [
+                    0.33,
+                    0.33,
+                    0.33
+                ],
+                [
+                    0.33,
+                    0.33,
+                    0.33
+                ]
+            ]
+        },
+        {
+            "name": "fire_0",
+            "directions": 4
+        },
+        {
+            "name": "fire_1",
+            "directions": 4
+        },
+        {
+            "name": "fire_2",
+            "directions": 4
+        },
+        {
+            "name": "fire_3",
+            "directions": 4
+        },
+        {
+            "name": "fire_4",
+            "directions": 4
+        },
+        {
+            "name": "fire_5",
+            "directions": 4
+        },
+        {
+            "name": "fire_6",
+            "directions": 4
+        },
+                {
+            "name": "alarm",
+            "directions": 4,
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ],
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ],
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ],
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        }
+    ]
+}

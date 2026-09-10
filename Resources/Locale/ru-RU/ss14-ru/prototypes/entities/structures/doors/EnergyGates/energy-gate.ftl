@@ -1,0 +1,11 @@
+ent-EnergyGate = энергетические врата
+    .desc = Продвинутые врата, обеспечивающие односторонний проход и препятствующие проникновению посторонних.
+ent-EnergyGateGenpopEnter = { ent-EnergyGate }
+    .desc = { ent-EnergyGate.desc }
+    .suffix = Общий блок вход
+ent-EnergyGateGenpopLeave = { ent-EnergyGate }
+    .desc = { ent-EnergyGate.desc }
+    .suffix = Общий блок выход
+ent-EnergyGateAirtight = герметичные энергетические врата
+    .desc = { ent-EnergyGate.desc }
+    .suffix = Герметичный

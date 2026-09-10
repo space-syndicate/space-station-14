@@ -32,6 +32,7 @@ anomaly-scanner-particle-unstable-unknown = - [color=plum]Нестабильны
 anomaly-scanner-particle-containment-unknown = - [color=goldenrod]Сдерживающий тип:[/color] [color=red]ОШИБКА[/color]
 anomaly-scanner-particle-transformation-unknown = - [color=#6b75fa]Трансформирующий тип:[/color] [color=red]ОШИБКА[/color]
 anomaly-scanner-pulse-timer = Время до следующего импульса: [color=gray]{ $time }[/color]
+anomaly-scanner-doafter-examine = { CAPITALIZE(SUBJECT($user)) } [color=plum]сканирует аномалию[/color].
 
 anomaly-gorilla-core-slot-name = Ядро аномалии
 anomaly-gorilla-charge-none = Внутри нет [bold]ядра аномалии[/bold].

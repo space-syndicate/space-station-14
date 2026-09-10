@@ -3,11 +3,6 @@
   name: tiles-wood-parquet
   sprite: /Textures/Corvax/Tiles/wood_parquet.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -23,11 +18,6 @@
   name: tiles-wood-chess
   sprite: /Textures/Corvax/Tiles/wood_chess.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -43,11 +33,6 @@
   name: tiles-wood-black
   sprite: /Textures/Corvax/Tiles/wood_black.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -63,11 +48,6 @@
   name: tiles-wood-large-black
   sprite: /Textures/Corvax/Tiles/wood_large_black.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -83,11 +63,6 @@
   name: tiles-wood-parquet-black
   sprite: /Textures/Corvax/Tiles/wood_parquet_black.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -103,11 +78,6 @@
   name: tiles-wood-chess-black
   sprite: /Textures/Corvax/Tiles/wood_chess_black.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -123,11 +93,6 @@
   name: tiles-wood-dark
   sprite: /Textures/Corvax/Tiles/wood_dark.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -143,11 +108,6 @@
   name: tiles-wood-large-dark
   sprite: /Textures/Corvax/Tiles/wood_large_dark.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -163,11 +123,6 @@
   name: tiles-wood-parquet-dark
   sprite: /Textures/Corvax/Tiles/wood_parquet_dark.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -183,11 +138,6 @@
   name: tiles-wood-chess-dark
   sprite: /Textures/Corvax/Tiles/wood_chess_dark.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -203,11 +153,6 @@
   name: tiles-wood-light
   sprite: /Textures/Corvax/Tiles/wood_light.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -223,11 +168,6 @@
   name: tiles-wood-large-light
   sprite: /Textures/Corvax/Tiles/wood_large_light.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -243,11 +183,6 @@
   name: tiles-wood-parquet-light
   sprite: /Textures/Corvax/Tiles/wood_parquet_light.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -263,11 +198,6 @@
   name: tiles-wood-chess-light
   sprite: /Textures/Corvax/Tiles/wood_chess_light.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -283,11 +213,6 @@
   name: tiles-wood-red
   sprite: /Textures/Corvax/Tiles/wood_red.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -303,11 +228,6 @@
   name: tiles-wood-large-red
   sprite: /Textures/Corvax/Tiles/wood_large_red.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -323,11 +243,6 @@
   name: tiles-wood-parquet-red
   sprite: /Textures/Corvax/Tiles/wood_parquet_red.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -343,11 +258,6 @@
   name: tiles-wood-chess-red
   sprite: /Textures/Corvax/Tiles/wood_chess_red.png
   variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -356,4 +266,175 @@
   barestepSounds:
     collection: BarestepWood
   itemDrop: FloorTileItemWoodRed
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorDarkDiagonal
+  name: тёмная диагональная стальная плитка
+  sprite: /Textures/Corvax/Tiles/dark_diagonal.png
+  variants: 4
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemDarkDiagonal
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorDarkOffset
+  name: тёмная смещённая стальная плитка
+  sprite: /Textures/Corvax/Tiles/dark_offset.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemDarkOffset
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSteelDiagonal
+  name: диагональная стальная плитка
+  sprite: /Textures/Corvax/Tiles/steel_diagonal.png
+  variants: 4
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSteelDiagonal
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorSteelOffset
+  name: смещённая стальная плитка
+  sprite: /Textures/Corvax/Tiles/steel_offset.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemSteelOffset
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorWhiteDiagonal
+  name: светлая диагональная стальная плитка
+  sprite: /Textures/Corvax/Tiles/white_diagonal.png
+  variants: 4
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemWhiteDiagonal
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorWhiteOffset
+  name: светлая смещённая стальная плитка
+  sprite: /Textures/Corvax/Tiles/white_offset.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemWhiteOffset
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorElevatorShaft
+  name: плитка шахты лифта
+  sprite: /Textures/Corvax/Tiles/elevator_shaft.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemElevatorShaft
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorHydro
+  name: гидро плитка
+  sprite: /Textures/Corvax/Tiles/hydro.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepFloor
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemHydro
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMining
+  name: шахтёрская плитка
+  sprite: /Textures/Corvax/Tiles/mining_floor.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemMining
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMiningDark
+  name: тёмная шахтёрская плитка
+  sprite: /Textures/Corvax/Tiles/mining_floor_dark.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemMiningDark
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorMiningLight
+  name: светлая шахтёрская плитка
+  sprite: /Textures/Corvax/Tiles/mining_floor_light.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepTile
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemMiningLight
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorRockVault
+  name: каменная плитка хранилища
+  sprite: /Textures/Corvax/Tiles/rock_vault.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepAsteroid
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: FloorTileItemRockVault
   heatCapacity: 10000

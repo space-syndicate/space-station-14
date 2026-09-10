@@ -5,6 +5,8 @@ agent-id-new = { CAPITALIZE($card) } { $number ->
     *[other] дала { $number } новых доступов
 }.
 
+agent-id-open-ui-verb = Настроить
+
 agent-id-ui-menu-title = ID карта агента
 agent-id-ui-tab-settings = Настройки
 agent-id-ui-tab-job-icons = Иконка должности
@@ -17,5 +19,3 @@ agent-id-ui-os-flavor = Когда возникают сомнения, никт
 # Get your mind out of the gutter.
 agent-id-ui-footer-flavor-left = Просто обычная ID карта, тут не на что смотреть
 agent-id-ui-footer-flavor-right = v2.0
-
-agent-id-open-ui-verb = Настроить

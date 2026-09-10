@@ -2,7 +2,7 @@ clumsy-vaulting-fail-forced-message = { CAPITALIZE($bonker) } стукает { $
 clumsy-vaulting-fail-message-user = Вы стукаетесь своей головой о { $bonkable }!
 clumsy-vaulting-fail-message-others = { $victim } стукается своей головой о { $bonkable }!
 
-clumsy-gun-fail-message = Оружие взрывается вам в лицо!
+clumsy-gun-fail-message = { CAPITALIZE(THE($gun)) } взрывается вам в лицо!
 
 clumsy-hypospray-fail-message = Ой! Вы сделали инъекцию себе.
 

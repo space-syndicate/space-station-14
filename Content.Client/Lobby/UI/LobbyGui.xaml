@@ -7,6 +7,7 @@
     xmlns:vote="clr-namespace:Content.Client.Voting.UI"
     xmlns:style="clr-namespace:Content.Client.Stylesheets"
     xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
+    xmlns:corvaxLobby="clr-namespace:Content.Client.Corvax.Lobby.UI"
     xmlns:info="clr-namespace:Content.Client.Info"
     xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets">
     <!-- Background -->
@@ -47,6 +48,8 @@
                         <!-- Voting Popups -->
                         <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="VoteContainer"
                                       Access="Public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 8" />
+                        <!-- Corvax lobby server hub. Kept on the wide left side so names and online fit. -->
+                        <corvaxLobby:LobbyServerHub />
                     </BoxContainer>
                     <!-- Vertical Padding-->
                     <Control VerticalExpand="True" />

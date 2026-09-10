@@ -145,6 +145,7 @@ guide-entry-space-ninja = Космический ниндзя
 guide-entry-thieves = Воры
 guide-entry-wizard = Волшебник
 guide-entry-xenoborgs = Ксеноборги
+guide-entry-changelings = Генокрады
 
 guide-entry-rules = Правила сервера
 guide-entry-rules-core-only = Только основные правила

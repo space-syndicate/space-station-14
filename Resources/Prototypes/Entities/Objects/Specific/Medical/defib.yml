@@ -24,6 +24,7 @@
       size: Large
     - type: Speech
       speechVerb: Robotic
+    - type: ItemToggleExaminableStatus
     - type: ItemToggle
       soundActivate:
         path: /Audio/Items/Defib/defib_safety_on.ogg
@@ -97,7 +98,7 @@
 
 - type: entity
   id: DefibrillatorSyndicate
-  parent: [ DefibrillatorCompact, BaseSyndicateContraband ]
+  parent: [BaseCorvaxContraband131, DefibrillatorCompact, BaseSyndicateContraband] # Corvax-Contraband
   name: interdyne defibrillator
   description: Doubles as a self-defense weapon against war-crime inclined tiders.
   components:

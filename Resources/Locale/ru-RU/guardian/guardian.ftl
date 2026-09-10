@@ -9,8 +9,8 @@ guardian-available = У вашего стража теперь есть душа
 guardian-inside-container = Здесь не хватает места, чтобы высвободить стража!
 
 ## Injector specific
-guardian-activator-empty-invalid-creation = Инъектор израсходован.
-guardian-activator-empty-examine = [color=#ba1919]Инъектор израсходован.[/color].
+guardian-injector-empty-invalid-creation = Инъектор израсходован.
+guardian-injector-empty-examine = [color=#ba1919]Инъектор израсходован.[/color].
 
 ## Guardian deck specific
 

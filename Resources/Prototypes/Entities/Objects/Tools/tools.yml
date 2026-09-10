@@ -9,7 +9,6 @@
       path: /Audio/Items/wirecutter_drop.ogg
   - type: Tag
     tags:
-    - PlantSampleTaker
     - Wirecutter
   - type: Sprite
     sprite: Objects/Tools/wirecutters.rsi
@@ -44,6 +43,7 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: BotanySampleTaker
 
 - type: entity
   name: screwdriver
@@ -240,7 +240,7 @@
 #Later on these should switch probably switch damage when changing the tool behavior.
 - type: entity
   name: power drill
-  parent: BaseItem
+  parent: [BaseCorvaxContraband431DepartmentsEngineering, BaseItem] # Corvax-Contraband
   id: PowerDrill
   description: A simple powered hand drill.
   components:
@@ -264,7 +264,7 @@
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-      - behavior: Screwing
+      - behavior: [ Screwing ]
         sprite:
           sprite: Objects/Tools/drill.rsi
           state: drill_screw
@@ -276,7 +276,7 @@
           path: /Audio/Items/change_drill.ogg
           params:
             volume: -5
-      - behavior: Anchoring
+      - behavior: [ Anchoring ]
         sprite:
           sprite: Objects/Tools/drill.rsi
           state: drill_bolt
@@ -309,6 +309,12 @@
   name: RCD
   description: The rapid construction device can be used to quickly place and remove various station structures and fixtures. Requires compressed matter to function.
   components:
+  # Corvax-Contraband-start
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [Engineering]
+    allowedJobs: []
+  # Corvax-Contraband-end
   - type: RCD
     availablePrototypes:
     - WallSolid
@@ -432,7 +438,7 @@
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-      - behavior: Screwing
+      - behavior: [ Screwing ]
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-screwing
@@ -440,7 +446,7 @@
           path: /Audio/Items/drill_use.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: Prying
+      - behavior: [ Prying ]
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-prying
@@ -448,7 +454,7 @@
           path: /Audio/Items/jaws_pry.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: Anchoring
+      - behavior: [ Anchoring ]
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-wrenching
@@ -456,7 +462,7 @@
           path: /Audio/Items/ratchet.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: Cutting
+      - behavior: [ Cutting ]
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-snipping
@@ -464,7 +470,7 @@
           path: /Audio/Items/jaws_cut.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: Pulsing
+      - behavior: [ Pulsing ]
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-pulsing

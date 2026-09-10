@@ -23,8 +23,11 @@ shuttle-console-iff-label = { $name } ({ $distance } м)
 shuttle-console-exclusion = Зона отчуждения
 
 shuttle-console-nav-settings = Настройки
+shuttle-console-nav-legend = Обозначения
+shuttle-console-nav-other-dock = Стыковочные порты
+shuttle-console-nav-cargo-dock = Стыковка снабжения
+shuttle-console-nav-arrivals-dock = Стыковка прибытия
 shuttle-console-iff-toggle = Показ системы опознавания
-shuttle-console-dock-toggle = Показ стыковочных портов
 
 # MAP
 

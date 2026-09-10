@@ -13,7 +13,6 @@
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 60h
-  weight: 9
   startingGear: SeniorEngineerGear
   icon: "JobIconSeniorEngineer"
   supervisors: job-supervisors-ce

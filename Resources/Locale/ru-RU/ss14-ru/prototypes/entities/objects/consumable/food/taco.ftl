@@ -1,7 +1,7 @@
 ent-FoodTacoShell = лепёшка тако
     .desc = Оболочка для тако, которую удобно держать. Падает на бок, если положить.
-ent-FoodTacoBase = { ent-FoodInjectableBase }
-    .desc = { ent-FoodInjectableBase.desc }
+ent-FoodTacoBase = { ent-SolutionSmall }
+    .desc = { ent-SolutionSmall.desc }
 ent-FoodTacoBeef = говяжье тако
     .desc = Самое обычное и привычное тако с говядиной, теперь и с сыром!
 ent-FoodTacoChicken = куриное тако

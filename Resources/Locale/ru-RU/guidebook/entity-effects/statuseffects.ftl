@@ -5,7 +5,6 @@ entity-effect-status-effect-SeeingRainbows = галлюцинации
 entity-effect-status-effect-Stutter = заикание
 entity-effect-status-effect-ForcedSleep = принудительный сон
 entity-effect-status-effect-Drunk = опьянение
-entity-effect-status-effect-PressureImmunity = иммунитет к давлению
 entity-effect-status-effect-Pacified = пацифизм
 entity-effect-status-effect-StaminaModifier = изменённая выносливость
 entity-effect-status-effect-RadiationProtection = защита от радиации

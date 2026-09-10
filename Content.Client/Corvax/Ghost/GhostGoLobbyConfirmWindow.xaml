@@ -1,0 +1,15 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc 'ghost-go-lobby-confirm-title'}"
+                      Resizable="False">
+    <BoxContainer Orientation="Vertical" VerticalExpand="True" SetWidth="420">
+        <RichTextLabel Name="WarningLabel" Margin="20 10 20 10"/>
+        <BoxContainer HorizontalExpand="True" HorizontalAlignment="Center">
+            <Button Name="ContinueButton"
+                    Text="{Loc 'ghost-go-lobby-confirm-continue'}"
+                    SetWidth="150"
+                    Margin="0 10 0 10"/>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

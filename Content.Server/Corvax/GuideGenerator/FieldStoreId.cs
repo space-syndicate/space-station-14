@@ -6,11 +6,7 @@ using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Serialization.Markdown.Value;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 
 namespace Content.Server.Corvax.GuideGenerator;
 
@@ -54,9 +50,9 @@ public static class FieldStoreId
     {
         var underlying = ResolveConcreteType(Nullable.GetUnderlyingType(memberType) ?? memberType, node);
 
-        if (TryGetEntityPrototypeSerializerKind(customTypeSerializer, out var serializerKind))
+        if (customTypeSerializer != null && IsAbstractPrototypeIdArraySerializer(customTypeSerializer))
         {
-            ExtractIdsFromCustomSerializer(serializerKind, node, outIds, underlying);
+            ExtractIdsFromArraySerializer(node, outIds);
             return;
         }
 
@@ -134,103 +130,30 @@ public static class FieldStoreId
         }
     }
 
-    private enum EntityPrototypeSerializerKind
+    private static bool IsAbstractPrototypeIdArraySerializer(Type? serializerType)
     {
-        Single,
-        Sequence,
-        DictionaryKey,
-        DictionaryValue
-    }
-
-    private static bool TryGetEntityPrototypeSerializerKind(Type? serializerType, out EntityPrototypeSerializerKind kind)
-    {
-        kind = default;
         if (serializerType == null || !serializerType.IsGenericType)
             return false;
 
-        var def = serializerType.GetGenericTypeDefinition();
+        if (serializerType.GetGenericTypeDefinition() != typeof(AbstractPrototypeIdArraySerializer<>))
+            return false;
+
         var args = serializerType.GetGenericArguments();
-
-        if ((def == typeof(PrototypeIdSerializer<>) || def == typeof(AbstractPrototypeIdSerializer<>)) &&
-            args[0] == typeof(EntityPrototype))
-        {
-            kind = EntityPrototypeSerializerKind.Single;
-            return true;
-        }
-        if ((def == typeof(PrototypeIdListSerializer<>)
-             || def == typeof(PrototypeIdHashSetSerializer<>)
-             || def == typeof(AbstractPrototypeIdArraySerializer<>)) &&
-            args[0] == typeof(EntityPrototype))
-        {
-            kind = EntityPrototypeSerializerKind.Sequence;
-            return true;
-        }
-        if (def == typeof(PrototypeIdDictionarySerializer<,>) &&
-            args[1] == typeof(EntityPrototype))
-        {
-            kind = EntityPrototypeSerializerKind.DictionaryKey;
-            return true;
-        }
-        if (def == typeof(PrototypeIdValueDictionarySerializer<,>) &&
-            args[1] == typeof(EntityPrototype))
-        {
-            kind = EntityPrototypeSerializerKind.DictionaryValue;
-            return true;
-        }
-
-        return false;
+        return args.Length == 1 && args[0] == typeof(EntityPrototype);
     }
 
-    private static void ExtractIdsFromCustomSerializer(EntityPrototypeSerializerKind kind, DataNode node, HashSet<string> outIds, Type declaredType)
+    private static void ExtractIdsFromArraySerializer(DataNode node, HashSet<string> outIds)
     {
-        switch (kind)
+        if (node is SequenceDataNode seq)
         {
-            case EntityPrototypeSerializerKind.Single:
-                ExtractIdFromNode(node, outIds);
-                return;
-            case EntityPrototypeSerializerKind.Sequence:
-                if (node is SequenceDataNode seq)
-                {
-                    foreach (var child in seq.Sequence)
-                    {
-                        ExtractIdFromNode(child, outIds);
-                    }
-                }
-                return;
-            case EntityPrototypeSerializerKind.DictionaryKey:
+            foreach (var child in seq.Sequence)
             {
-                if (node is MappingDataNode mapKeys)
-                {
-                    foreach (var key in mapKeys.Keys)
-                    {
-                        if (!string.IsNullOrWhiteSpace(key))
-                            outIds.Add(key);
-                    }
-                }
-
-                if (TryGetDictionaryValueType(declaredType, out var valueType) && node is MappingDataNode mapVals)
-                {
-                    foreach (var (_, childNode) in mapVals)
-                    {
-                        ExtractIdsFromNode(valueType, childNode, outIds);
-                    }
-                }
-                return;
+                ExtractIdFromNode(child, outIds);
             }
-            case EntityPrototypeSerializerKind.DictionaryValue:
-            {
-                if (node is MappingDataNode mapVals)
-                {
-                    foreach (var (_, child) in mapVals)
-                    {
-                        ExtractIdFromNode(child, outIds);
-                    }
-                }
-                return;
-            }
-            default:
-                return;
+            return;
         }
+
+        ExtractIdFromNode(node, outIds);
     }
 
     private static void ExtractIdFromNode(DataNode node, HashSet<string> outIds)
@@ -417,20 +340,6 @@ public static class FieldStoreId
 
         DataFieldTagsCache[type] = tags;
         return tags;
-    }
-
-    private static bool TryGetDictionaryValueType(Type t, out Type valueType)
-    {
-        valueType = null!;
-        if (!typeof(IDictionary).IsAssignableFrom(t) || !t.IsGenericType)
-            return false;
-
-        var args = t.GetGenericArguments();
-        if (args.Length != 2)
-            return false;
-
-        valueType = args[1];
-        return true;
     }
 
     private static Type? GetElementType(Type t)

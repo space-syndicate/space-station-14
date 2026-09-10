@@ -1,5 +1,7 @@
 ent-BasePowerCell = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+ent-SolutionRiggable = { ent-Solution }
+    .desc = { ent-Solution.desc }
 ent-PowerCellPotato = картофельная батарея
     .desc = Кто-то воткнул два гвоздя и несколько проводов в большую картофелину. Каким-то образом это обеспечивает небольшой заряд. Вы можете запихнуть его в слот среднего размера.
 ent-PowerCellSmall = батарея малой ёмкости
@@ -39,6 +41,8 @@ ent-PowerCellAntiqueProto = прототип древней батареи
     .desc = Маленький самозаряжающийся элемент питания. Использовался в старых разработках лазерного оружия.
 ent-BasePowerCage = { ent-BasePowerCell }
     .desc = { ent-BasePowerCell.desc }
+ent-SolutionRiggableLarge = { ent-SolutionRiggable }
+    .desc = { ent-SolutionRiggable.desc }
 ent-PowerCageSmall = энергоячейка малой ёмкости
     .desc = Перезаряжаемая энергетическая ячейка для больших устройств. Это самая дешёвая разновидность, которую вы можете найти.
 ent-PowerCageMedium = энергоячейка средней ёмкости

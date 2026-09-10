@@ -1,4 +1,4 @@
-﻿using Content.Shared.Corvax.TTS;
+using Content.Shared.Corvax.TTS;
 using Robust.Shared.Configuration;
 
 namespace Content.Shared.Corvax.CCCVars;
@@ -134,5 +134,21 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool> StationGoal =
         CVarDef.Create("game.station_goal", true, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Whether the Corvax server list is shown in the lobby.
+    /// Disabled by default so downstream forks opt in explicitly.
+    /// </summary>
+    public static readonly CVarDef<bool> LobbyServerHubEnabled =
+        CVarDef.Create("lobby.server_hub_enabled", false, CVar.SERVER | CVar.REPLICATED);
+
+    public static readonly CVarDef<bool> GhostGoLobbyEnabled =
+        CVarDef.Create("ghost.go_lobby.enabled", false, CVar.SERVER | CVar.REPLICATED);
+
+    public static readonly CVarDef<float> GhostGoLobbyTimeHours =
+        CVarDef.Create("ghost.go_lobby.require_time", 25f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<float> GhostGoLobbyDeathTimeMinutes =
+        CVarDef.Create("ghost.go_lobby.death_time", 15f, CVar.SERVERONLY);
 
 }

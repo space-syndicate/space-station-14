@@ -40,7 +40,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase]
+  parent: [BaseCorvaxContraband431DepartmentsEngineering, ClothingShoesBootsMagBase] # Corvax-Contraband
   id: ClothingShoesBootsMag
 
 - type: entity
@@ -67,7 +67,7 @@
     stealGroup: ClothingShoesBootsMagAdv
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase]
+  parent: [BaseCorvaxContraband431DepartmentsScience, ClothingShoesBootsMagBase] # Corvax-Contraband
   id: ClothingShoesBootsMagSci
   components:
   - type: Sprite

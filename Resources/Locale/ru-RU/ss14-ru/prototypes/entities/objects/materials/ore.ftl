@@ -1,4 +1,4 @@
-ent-OreBase = { ent-BaseItem }
+ent-OreBase = { ent-MaterialBase }
     .desc = Кусок неочищенной руды.
 ent-GoldOre = золотоносная руда
     .desc = { ent-OreBase.desc }

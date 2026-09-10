@@ -1,6 +1,13 @@
 - type: entity
-  name: деревянный паркет
+  abstract: true
   parent: FloorTileItemBase
+  id: FloorTileItemBaseCorvax
+  description: Может послужить неплохим метательным оружием.
+  suffix: Корвакс
+
+- type: entity
+  name: деревянный паркет
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodParquet
   components:
   - type: Sprite
@@ -18,7 +25,7 @@
 
 - type: entity
   name: деревянный чёрный пол
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodBlack
   components:
   - type: Sprite
@@ -36,7 +43,7 @@
 
 - type: entity
   name: деревянный тёмный пол
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodDark
   components:
   - type: Sprite
@@ -54,7 +61,7 @@
 
 - type: entity
   name: деревянный светлый пол
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodLight
   components:
   - type: Sprite
@@ -72,7 +79,7 @@
 
 - type: entity
   name: деревянный красный пол
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodRed
   components:
   - type: Sprite
@@ -90,7 +97,7 @@
 
 - type: entity
   name: large black wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodLargeBlack
   components:
   - type: Sprite
@@ -108,7 +115,7 @@
 
 - type: entity
   name: large dark wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodLargeDark
   components:
   - type: Sprite
@@ -126,7 +133,7 @@
 
 - type: entity
   name: large light wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodLargeLight
   components:
   - type: Sprite
@@ -144,7 +151,7 @@
 
 - type: entity
   name: large red wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodLargeRed
   components:
   - type: Sprite
@@ -162,7 +169,7 @@
 
 - type: entity
   name: parquet black wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodParquetBlack
   components:
   - type: Sprite
@@ -180,7 +187,7 @@
 
 - type: entity
   name: parquet dark wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodParquetDark
   components:
   - type: Sprite
@@ -198,7 +205,7 @@
 
 - type: entity
   name: parquet light wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodParquetLight
   components:
   - type: Sprite
@@ -216,7 +223,7 @@
 
 - type: entity
   name: parquet red wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodParquetRed
   components:
   - type: Sprite
@@ -234,7 +241,7 @@
 
 - type: entity
   name: chess wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodChess
   components:
   - type: Sprite
@@ -252,7 +259,7 @@
 
 - type: entity
   name: chess black wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodChessBlack
   components:
   - type: Sprite
@@ -270,7 +277,7 @@
 
 - type: entity
   name: chess dark wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodChessDark
   components:
   - type: Sprite
@@ -288,7 +295,7 @@
 
 - type: entity
   name: chess light wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodChessLight
   components:
   - type: Sprite
@@ -306,7 +313,7 @@
 
 - type: entity
   name: chess red wood floor
-  parent: FloorTileItemBase
+  parent: FloorTileItemBaseCorvax
   id: FloorTileItemWoodChessRed
   components:
   - type: Sprite
@@ -321,3 +328,219 @@
       - FloorWoodChessRed
   - type: Stack
     stackType: FloorTileItemWoodChessRed
+
+- type: entity
+  name: тёмная диагональная стальная плитка
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemDarkDiagonal
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: dark-diagonal
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorDarkDiagonal
+  - type: Stack
+    stackType: FloorTileItemDarkDiagonal
+
+- type: entity
+  name: тёмная смещённая стальная плитка
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemDarkOffset
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: dark-offset
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorDarkOffset
+  - type: Stack
+    stackType: FloorTileItemDarkOffset
+
+- type: entity
+  name: диагональная стальная плитка
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemSteelDiagonal
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: steel-diagonal
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSteelDiagonal
+  - type: Stack
+    stackType: FloorTileItemSteelDiagonal
+
+- type: entity
+  name: смещённая стальная плитка
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemSteelOffset
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: steel-offset
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSteelOffset
+  - type: Stack
+    stackType: FloorTileItemSteelOffset
+
+- type: entity
+  name: светлая диагональная стальная плитка
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemWhiteDiagonal
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: white-diagonal
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: white
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorWhiteDiagonal
+  - type: Stack
+    stackType: FloorTileItemWhiteDiagonal
+
+- type: entity
+  name: светлая смещённая стальная плитка
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemWhiteOffset
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: white-offset
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: white
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorWhiteOffset
+  - type: Stack
+    stackType: FloorTileItemWhiteOffset
+
+- type: entity
+  name: плитка шахты лифта
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemElevatorShaft
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: dark
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: dark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorElevatorShaft
+  - type: Stack
+    stackType: FloorTileItemElevatorShaft
+
+- type: entity
+  name: гидро плитка
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemHydro
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: hydro
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: hydro
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorHydro
+  - type: Stack
+    stackType: FloorTileItemHydro
+
+- type: entity
+  name: шахтёрская плитка
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemMining
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: mining
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: mining
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorMining
+  - type: Stack
+    stackType: FloorTileItemMining
+
+- type: entity
+  name: тёмная шахтёрская плитка
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemMiningDark
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: miningdark
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: miningdark
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorMiningDark
+  - type: Stack
+    stackType: FloorTileItemMiningDark
+
+- type: entity
+  name: светлая шахтёрская плитка
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemMiningLight
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: mininglight
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: mininglight
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorMiningLight
+  - type: Stack
+    stackType: FloorTileItemMiningLight
+
+- type: entity
+  name: каменная плитка хранилища
+  parent: FloorTileItemBaseCorvax
+  id: FloorTileItemRockVault
+  components:
+  - type: Sprite
+    sprite: Objects/Tiles/tile.rsi
+    state: rockvault
+  - type: Item
+    sprite: Objects/Tiles/tile.rsi
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorRockVault
+  - type: Stack
+    stackType: FloorTileItemRockVault

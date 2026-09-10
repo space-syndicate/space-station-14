@@ -229,9 +229,6 @@ reagent-desc-monkey-business = Задумайтесь, как обезьяны �
 reagent-name-moonshine = самогон
 reagent-desc-moonshine = Самодельный напиток, изготавливаемый в домашних условиях. Что может пойти не так?
 
-reagent-name-neurotoxin = нейротоксин
-reagent-desc-neurotoxin = Сильный нейротоксин, который вводит субъекта в состояние, напоминающее смерть.
-
 reagent-name-painkiller = болеутоляющее
 reagent-desc-painkiller = Лекарство от всех бед.
 

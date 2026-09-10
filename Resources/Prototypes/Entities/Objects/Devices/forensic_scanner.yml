@@ -1,6 +1,6 @@
 - type: entity
   name: forensic scanner
-  parent: [ BaseItem, BaseSecurityContraband ]
+  parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, BaseItem, BaseSecurityContraband] # Corvax-Contraband
   id: ForensicScanner
   description: A handheld device that can scan objects for fingerprints and fibers.
   components:
@@ -49,7 +49,7 @@
   - type: PaperVisuals
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_perforated.svg.96dpi.png"
     headerImagePath: "/Textures/Interface/Paper/paper_heading_forensic_scanner.svg.96dpi.png"
-    headerMargin: 0.0, 0.0, 0.0, 4.0
+    headerMargin: 0.0, 4.0, 0.0, 0.0
     backgroundImageTile: true
     backgroundPatchMargin: 6.0, 0.0, 6.0, 0.0
     contentMargin: 12.0, 0.0, 6.0, 0.0

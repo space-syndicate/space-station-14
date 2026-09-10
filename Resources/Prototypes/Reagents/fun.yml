@@ -37,7 +37,8 @@
   metabolisms:
     Digestion:
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Moth ]
@@ -48,7 +49,7 @@
   group: Toxins
   desc: reagent-desc-buzzochloric-bees
   physicalDesc: reagent-physical-desc-buzzy
-  contrabandSeverity: Minor
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   flavor: bee
   color: "#FFD35D"
   tileReactions:
@@ -172,6 +173,7 @@
 
 - type: reagent
   id: Razorium
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   name: reagent-name-razorium
   group: Toxins
   slipData:
@@ -340,7 +342,7 @@
       effects:
       - !type:Emote
         emote: Weh
-        showInChat: true
+        showInChat: false
         showInGuidebook: true
         force: true
         probability: 0.5
@@ -375,7 +377,7 @@
       effects:
       - !type:Emote
         emote: Hew
-        showInChat: true
+        showInChat: false
         showInGuidebook: true
         force: true
         probability: 0.5
@@ -398,6 +400,7 @@
 
 - type: reagent
   id: Felinase
+  contrabandSeverity: Corvax445 # Corvax-Contraband
   name: reagent-name-catessence
   group: Toxins
   desc: reagent-desc-catessence
@@ -437,7 +440,6 @@
           reagent: Felinase
           min: 10
         emote: Cough
-        showInChat: true
         showInGuidebook: true
         force: true
         probability: 0.05
@@ -488,7 +490,6 @@
           reagent: Caninase
           min: 10
         emote: Cough
-        showInChat: true
         showInGuidebook: true
         force: true
         probability: 0.05

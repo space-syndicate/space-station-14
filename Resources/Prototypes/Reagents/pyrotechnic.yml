@@ -19,7 +19,7 @@
   parent: BasePyrotechnic
   desc: reagent-desc-thermite
   physicalDesc: reagent-physical-desc-grainy
-  contrabandSeverity: Minor
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   flavor: bitter
   color: "#757245"
   boilingPoint: 2977.0 # Aluminum oxide
@@ -42,7 +42,7 @@
   parent: BasePyrotechnic
   desc: reagent-desc-napalm
   physicalDesc: reagent-physical-desc-soapy
-  contrabandSeverity: Major
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   flavor: bitter
   color: "#FA00AF"
   tileReactions:
@@ -72,7 +72,7 @@
   parent: BasePyrotechnic
   desc: reagent-desc-phlogiston
   physicalDesc: reagent-physical-desc-burning
-  contrabandSeverity: Major
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   flavor: bitter
   color: "#D4872A"
   metabolisms:
@@ -102,7 +102,7 @@
   parent: BasePyrotechnic
   desc: reagent-desc-chlorine-trifluoride
   physicalDesc: reagent-physical-desc-blazing
-  contrabandSeverity: Major
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   flavor: bitter
   color: "#FFC8C8"
   tileReactions:
@@ -167,7 +167,51 @@
   metabolisms:
     Bloodstream:
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
+        factor: 1
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+          inverted: true
+        damage:
+          types:
+            Poison: 1
+      - !type:Flammable
+        multiplier: 0.4
+
+- type: reagent
+  parent: BasePyrotechnic
+  id: XenoborgOil
+  name: reagent-name-xenoborg-oil
+  desc: reagent-desc-xenoborg-oil
+  physicalDesc: reagent-physical-desc-oily
+  evaporationSpeed: 0.2
+  slipData:
+    requiredSlipSpeed: 3.5
+  flavor: bitter
+  flavorMinimum: 0.01
+  color: "#3d5cff"
+  boilingPoint: -84.7 # Acetylene. Close enough.
+  meltingPoint: -80.7
+  friction: 0.4
+  tileReactions:
+  - !type:FlammableTileReaction {}
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+      - !type:Flammable
+        multiplier: 0.2
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:Satiate
+        satiationType: Thirst
         factor: 1
         conditions:
         - !type:MetabolizerTypeCondition

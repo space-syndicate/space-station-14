@@ -1,0 +1,28 @@
+- files:
+  - asteroid.png
+  - double_edge_E.png
+  - double_edge_N.png
+  - double_edge_S.png
+  - double_edge_W.png
+  - single_edge_NE.png
+  - single_edge_NW.png
+  - single_edge_SE.png
+  - single_edge_SW.png
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by Spooky @ Shiptest, modified by AftrLite (GitHub)"
+  source: "https://github.com/shiptest-ss13/Shiptest/blob/0074e283f49378cf125131d873069e2366a7e459/icons/turf/floors/beachsand.dmi"
+
+- files:
+  - asteroid-tile.png
+  license: "CC0-1.0"
+  copyright: "By AftrLite (GitHub)"
+
+- files: "asteroid.png" #Corvax-Resprite
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from /tg/station at commit 6665eec76c98a4f3f89bebcd10b34b47dcc0b8ae."
+  source: "https://github.com/tgstation/tgstation/"
+
+- files: "asteroid_plating.png" #Corvax-Resprite
+  license: "CC-BY-SA-3.0"
+  copyright: "Modified from plating.png by github user SonicHDC"
+  source: "https://github.com/space-wizards/space-station-14/"

@@ -183,10 +183,10 @@ ghost-role-information-ert-medical-name = ОБР Медик
 ghost-role-information-ert-medical-description = Оказывайте содействие в медицинской помощи для решения проблем станции.
 
 ghost-role-information-cburn-agent-name = РХБЗЗ Оперативник
-ghost-role-information-cburn-agent-description = Высококвалифицированный агент Центком, способный справиться с любыми угрозами.
+ghost-role-information-cburn-agent-description = Высококвалифицированный специалист, способный справиться с любыми угрозами.
 
-ghost-role-information-centcom-official-name = Представитель Центком
-ghost-role-information-centcom-official-description = Выполняйте обязанности, связанные с Центком, такие как инспекция станции, составление служебных характеристик на руководителей и работа с факсом.
+ghost-role-information-centcom-official-name = Представитель ЦК
+ghost-role-information-centcom-official-description = Выполняйте обязанности, связанные с работой Центрального командования, такие как инспекция станции, составление служебных характеристик на руководителей и работа с факсом.
 
 ghost-role-information-nukeop-rules = Вы [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color], в команде с другими Ядерными оперативниками. Помощь агентов на станции не гарантируется.
 
@@ -201,7 +201,7 @@ ghost-role-information-hellspawn-name = Адское отродье
 ghost-role-information-hellspawn-description = Несите смерть всем, кто не повинуется великой богине Нар'Си.
 
 ghost-role-information-Death-Squad-name = Оперативник Эскадрона смерти
-ghost-role-information-Death-Squad-description = Один из лучших агентов внутренних дел Nanotrasen. Ожидайте приказов от Центкома или представителя Центкома.
+ghost-role-information-Death-Squad-description = Один из лучших агентов Nanotrasen. Выполните поставленную задачу любой (почти) ценой!
 ghost-role-information-Death-Squad-rules = Вы обязаны подчиняться приказам своего командира, вы фактически его [color={ role-type-familiar-color }][bold]{ role-type-familiar-name }[/bold][/color].
 
 ghost-role-information-SyndiCat-name = СиндиКот
@@ -285,8 +285,8 @@ ghost-role-information-science-description = Вы являетесь часть�
 
 ghost-role-information-civilian-name = Гражданский
 ghost-role-information-civilian-description = Вы просто гуляли, но, похоже, попали в странную ситуацию...
-ghost-role-information-civilian-centcom-lawyer-name = Адвокат Центкома
-ghost-role-information-civilian-centcom-lawyer-description = Адвокат, прямо из Центрального юридического отдела.
+ghost-role-information-civilian-centcom-lawyer-name = Адвокат ЦК
+ghost-role-information-civilian-centcom-lawyer-description = Адвокат, прямо из Юридического отдела Центрального командования.
 
 ghost-role-information-command-name = Коммандир
 ghost-role-information-command-description = Вы являетесь членом командования, но, похоже, попали в странную ситуацию...

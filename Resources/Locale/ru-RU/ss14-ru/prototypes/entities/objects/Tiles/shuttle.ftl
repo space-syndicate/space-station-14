@@ -1,0 +1,14 @@
+ent-FloorTileItemShuttleWhite = белый пол шаттла
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleBlue = синий пол шаттла
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleOrange = оранжевый пол шаттла
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttlePurple = фиолетовый пол шаттла
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleRed = красный пол шаттла
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleGrey = серый пол шаттла
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleBlack = чёрный пол шаттла
+    .desc = { ent-FloorTileItemBase.desc }

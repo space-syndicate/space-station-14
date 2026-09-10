@@ -6,5 +6,5 @@ encryption-keys-are-locked = Ячейка ключей шифрования за
 encryption-keys-panel-locked = Сначала откройте техническую панель.
 
 examine-encryption-channels-prefix = Доступные частоты:
-examine-encryption-channel = [color={ $color }]{ $key } для канала { $id } ({ NATURALFIXED($freq, 1) })[/color]
+examine-encryption-channel = [color={ $color }]{ $key } для канала {$id} ({$freq})[/color]
 examine-encryption-default-channel = Каналом по умолчанию является [color={ $color }]{ $channel }[/color].

@@ -28,7 +28,7 @@
       path: /Audio/Items/Culinary/chop.ogg
 
 - type: entity
-  parent: BaseKnife
+  parent: [BaseCorvaxContraband432JobsChef, BaseKnife] # Corvax-Contraband
   id: KitchenKnife
   name: kitchen knife
   description: A general purpose Chef's Knife made by Asters Merchant Guild. Guaranteed to stay sharp for years to come..
@@ -65,7 +65,7 @@
 
 - type: entity
   name: butcher's cleaver
-  parent: BaseKnife
+  parent: [BaseCorvaxContraband432JobsChef, BaseKnife] # Corvax-Contraband
   id: ButchCleaver
   description: A huge blade used for chopping and chopping up meat. This includes clowns and clown-by-products.
   components:
@@ -106,7 +106,7 @@
 
 - type: entity
   name: combat knife
-  parent: [BaseKnife, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseKnife, BaseSecurityContraband] # Corvax-Contraband
   id: CombatKnife
   description: A deadly knife intended for melee confrontations.
   components:
@@ -157,7 +157,7 @@
 
 - type: entity
   name: survival knife
-  parent: [BaseSecurityCargoContraband, CombatKnife]
+  parent: [BaseCorvaxContraband432DepartmentsCargo, BaseSecurityCargoContraband, CombatKnife] # Corvax-Contraband
   id: SurvivalKnife
   description: Weapon of first and last resort for combatting space carp.
   components:
@@ -187,6 +187,34 @@
   - type: Item
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
     storedSprite: null
+
+- type: entity
+  parent: [ CombatKnife, BaseXenoborgContraband ]
+  id: XenoborgBioKnife
+  name: bio knife
+  description: Melds itself to specific metabolizers and will deal extra damage to those targets!
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/bioknife.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.0
+    damage:
+      types:
+        Slash: 10
+  - type: Item
+    sprite: Objects/Weapons/Melee/bioknife.rsi
+  - type: BonusDamageOnMetabolism
+    selectedMetabolizer: Human
+    excludedMetabolizers:
+    - Vox # Their biology is resistant to this!
+    # The rest of these are just so we don't clog up the menu with useless items.
+    - Bloodsucker
+    - Dragon
+    - Changeling
+    damage:
+      types:
+        Poison: 10
 
 - type: entity
   parent: [ClothingHeadHatGreyFlatcap, BaseMinorContraband]
@@ -328,8 +356,9 @@
 
 - type: entity
   name: throwing knife
-  parent: [BaseKnife, BaseSyndicateContraband]
-  id: ThrowingKnife
+  parent: BaseKnife # Corvax-Contraband: shared behavior without a legality marker.
+  id: BaseThrowingKnife # Corvax-Contraband: also used by the disguised croissant.
+  abstract: true
   description: This blood-red knife is very aerodynamic and easy to throw, but good luck trying to fight someone hand-to-hand.
   components:
   - type: Tag
@@ -378,6 +407,12 @@
         restitution: 0.3
         friction: 0.2
 
+# Corvax-Contraband-start: keep the visible knife classified separately.
+- type: entity
+  parent: [BaseThrowingKnife, BaseSyndicateContraband]
+  id: ThrowingKnife
+# Corvax-Contraband-end
+
 - type: entity
   name: utility knife
   parent: BaseItem
@@ -400,6 +435,9 @@
   - type: Item
     size: Tiny
     sprite: Objects/Weapons/Melee/utility_knife.rsi
+  - type: ItemToggleExaminableStatus
+    onText: item-toggle-examined-active
+    offText: item-toggle-examined-not-active
   - type: ItemToggle
     soundActivate:
       path: /Audio/Weapons/utilityknifeopen.ogg

@@ -358,7 +358,7 @@
   - type: AmbientMusicMarkerMedical
 
 - type: entity
-  parent: BaseComputerAiAccess
+  parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, BaseComputerAiAccess] # Corvax-Contraband
   id: ComputerCriminalRecords
   name: criminal records computer
   description: This can be used to check criminal records. Only security can modify them.
@@ -663,7 +663,7 @@
     - AnalysisConsole
 
 - type: entity
-  parent: BaseComputerAiAccess
+  parent: [BaseCorvaxContraband433DepartmentsCommand, BaseComputerAiAccess] # Corvax-Contraband
   id: ComputerId
   name: ID card computer
   description: Terminal for programming Nanotrasen employee ID cards to access parts of the station.
@@ -740,7 +740,7 @@
   - type: AmbientMusicMarkerMedical
 
 - type: entity
-  parent: BaseComputerAiAccess
+  parent: [BaseCorvaxContraband433DepartmentsCommand, BaseComputerAiAccess] # Corvax-Contraband
   id: ComputerComms
   name: communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
@@ -778,10 +778,6 @@
     radius: 1.5
     energy: 4.0
     color: "#3c5eb5"
-  - type: Damageable
-    damageModifierSet: StructuralMetallicStrong
-  - type: Injurable
-    damageContainer: StructuralInorganic
 
 - type: entity
   parent: ComputerComms
@@ -1296,10 +1292,6 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: Pai
-  - type: Damageable
-    damageModifierSet: StructuralMetallicStrong
-  - type: Injurable
-    damageContainer: StructuralInorganic
   - type: GuideHelp
     guides:
     - Cloning
@@ -1392,7 +1384,7 @@
 # Corvax-StealTarget-end
 
 - type: entity
-  parent: BaseComputer
+  parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, BaseComputer] # Corvax-Contraband
   id: ComputerSurveillanceCameraMonitor
   name: camera monitor
   description: A surveillance camera monitor. You're watching them. Maybe.

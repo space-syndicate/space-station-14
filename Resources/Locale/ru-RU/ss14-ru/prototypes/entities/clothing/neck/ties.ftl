@@ -1,3 +1,5 @@
+ent-ClothingNeckTieBase = галстук
+    .desc = Галстук из нео-шёлка с зажимом.
 ent-ClothingNeckTieRed = красный галстук
     .desc = Красный галстук из нео-шёлка с зажимом.
 ent-ClothingNeckTieDet = галстук детектива

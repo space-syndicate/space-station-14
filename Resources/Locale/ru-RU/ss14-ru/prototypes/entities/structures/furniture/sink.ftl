@@ -1,7 +1,7 @@
 ent-SinkEmpty = раковина
     .desc = Краны были затянуты с максимальной силой, но, как видно, с них всё равно капает.
     .suffix = Пустой
-ent-Sink = раковина
+ent-Sink = { ent-SinkEmpty }
     .desc = { ent-SinkEmpty.desc }
     .suffix = Вода
 ent-SinkWide = широкая раковина

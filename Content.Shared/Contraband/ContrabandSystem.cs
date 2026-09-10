@@ -9,6 +9,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
+using Robust.Shared.Containers;
 
 namespace Content.Shared.Contraband;
 
@@ -67,17 +68,15 @@ public sealed partial class ContrabandSystem : EntitySystem
         // one, the actual informative 'this is restricted'
         // then, the 'you can/shouldn't carry this around' based on the ID the user is wearing
         var severity = ProtoMan.Index(component.Severity);
-        String departmentExamineMessage;
+        // Corvax start: show the article before the allowed departments and jobs.
+        var departmentExamineMessage = Loc.GetString(severity.ExamineText,
+            ("type", ContrabandItemType.Item), ("color", severity.Color.ToHex()));
         if (severity.ShowDepartmentsAndJobs)
         {
-            // department restricted text
-            departmentExamineMessage =
+            departmentExamineMessage += "\n" +
                 GenerateDepartmentExamineMessage(component.AllowedDepartments, component.AllowedJobs, severity.Color);
         }
-        else
-        {
-            departmentExamineMessage = Loc.GetString(severity.ExamineText, ("type", ContrabandItemType.Item), ("color", severity.Color.ToHex()));
-        }
+        // Corvax end
 
         // if it is fully restricted, you're department-less, or your department isn't in the allowed list, you cannot carry it. Otherwise, you can.
         var carryingMessage = Loc.GetString("contraband-examine-text-in-the-clear");
@@ -170,6 +169,35 @@ public sealed partial class ContrabandSystem : EntitySystem
             return false;
 
         return true;
+    }
+
+    /// <summary>
+    /// Checks if a storage has contraband.
+    /// </summary>
+    /// <param name="contraband">The entity that we are checking for contraband.</param>
+    /// <param name="player">The player that we are checking if they are allowed to have certain contraband.</param>
+    /// <param name="contrabandList">All contraband prototypes present in storage.</param>
+    public bool ContainerHasContraband(Entity<ContainerManagerComponent?> contraband, EntityUid? player, out List<ProtoId<ContrabandSeverityPrototype>> contrabandList)
+    {
+        contrabandList = [];
+
+        if (!Resolve(contraband.Owner, ref contraband.Comp, false))
+            return false;
+
+        foreach (var container in contraband.Comp.Containers.Values)
+        {
+            foreach (var ent in container.ContainedEntities)
+            {
+                if (IsContraband(ent, player, out var itemContraId))
+                    contrabandList.Add((ProtoId<ContrabandSeverityPrototype>)itemContraId);
+
+                ContainerHasContraband(ent, player, out var itemContraList);
+
+                contrabandList = contrabandList.Concat(itemContraList).ToList();
+            }
+        }
+
+        return contrabandList.Any();
     }
 }
 

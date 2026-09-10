@@ -1,5 +1,6 @@
 - type: reagent
   id: Cryptobiolin
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-cryptobiolin
   group: Medicine
   desc: reagent-desc-cryptobiolin
@@ -204,6 +205,7 @@
 
 - type: reagent
   id: Doxarubixadone
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-doxarubixadone
   group: Medicine
   desc: reagent-desc-doxarubixadone
@@ -484,7 +486,8 @@
             Heat: -0.33
             Shock: -0.33
             Cold: -0.33
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -10
         conditions:
         - !type:ReagentCondition
@@ -566,9 +569,9 @@
           - !type:ReagentCondition
             reagent: Barozine
             min: 30
-      - !type:GenericStatusEffect
-        key: PressureImmunity
-        component: PressureImmunity
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectPressureImmunity
+        type: Add
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
@@ -663,14 +666,14 @@
           conditions:
             - !type:ReagentCondition
               reagent: Ambuzol
-              min: 10
+              min: 15
     Digestion:
       effects:
         - !type:CureZombieInfection
           conditions:
             - !type:ReagentCondition
               reagent: Ambuzol
-              min: 10
+              min: 15
 
 - type: reagent
   id: AmbuzolPlus
@@ -723,7 +726,8 @@
   metabolisms:
     Bloodstream:
       effects:
-        - !type:SatiateThirst
+        - !type:Satiate
+          satiationType: Thirst
           factor: 6
         - !type:ModifyBloodLevel
           amount: 6
@@ -861,7 +865,8 @@
     Bloodstream:
       effects:
       # what the hell, this isn't satiating at all!!
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: -1
 
   # Should heal quite literally everything, use in very small amounts
@@ -973,6 +978,7 @@
 
 - type: reagent
   id: Ethyloxyephedrine
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-ethyloxyephedrine
   desc: reagent-desc-ethyloxyephedrine
   group: Medicine
@@ -1155,7 +1161,8 @@
         damage:
           types:
             Blunt: -2.25 # 9 per u
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: -1
       - !type:HealthChange
         conditions:
@@ -1178,7 +1185,8 @@
   metabolisms:
     Digestion:
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 3
       - !type:HealthChange
         conditions:
@@ -1210,6 +1218,7 @@
 
 - type: reagent
   id: Pyrazine
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-pyrazine
   group: Medicine
   desc: reagent-desc-pyrazine
@@ -1250,6 +1259,7 @@
 
 - type: reagent
   id: Insuzine
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-insuzine
   group: Medicine
   desc: reagent-desc-insuzine
@@ -1297,6 +1307,7 @@
 
 - type: reagent
   id: Opporozidone #Name based of an altered version of the startreck chem "Opporozine"
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-opporozidone
   group: Medicine
   desc: reagent-desc-opporozidone
@@ -1380,6 +1391,7 @@
 
 - type: reagent
   id: Psicodine
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-psicodine
   group: Medicine
   desc: reagent-desc-psicodine
@@ -1431,7 +1443,7 @@
   flavor: medicine
   color: "#baa15d"
   metabolisms:
-    Bloodstream:
+    Digestion:
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectRadiationProtection
@@ -1459,7 +1471,6 @@
       effects:
       - !type:Emote
         emote: Yawn
-        showInChat: true
         probability: 0.1
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness

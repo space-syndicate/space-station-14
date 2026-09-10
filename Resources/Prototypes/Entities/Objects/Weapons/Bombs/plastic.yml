@@ -57,7 +57,7 @@
   - type: Explosive # Powerful explosion in a very small radius. Doesn't break underplating.
     explosionType: DemolitionCharge
     totalIntensity: 60
-    intensitySlope: 5
+    intensitySlope: 3
     maxIntensity: 30
     canCreateVacuum: false
   - type: StickyVisualizer
@@ -71,7 +71,7 @@
 
 ## Plastic Explosives used in game
 - type: entity
-  parent: [BasePlasticExplosive, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BasePlasticExplosive, BaseSyndicateContraband] # Corvax-Contraband
   id: C4
   name: composition C-4
   description: Used to put holes in specific areas without too much extra hole. A saboteur's favorite.
@@ -121,6 +121,5 @@
   - type: Explosive
     explosionType: Cryo
     totalIntensity: 120
-    intensitySlope: 2
     maxIntensity: 30
     canCreateVacuum: false

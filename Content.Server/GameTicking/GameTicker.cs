@@ -5,6 +5,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Database;
 using Content.Server.Ghost;
+using Content.Server.Corvax.Ghost; // Corvax-GoLobby
 using Content.Server.Maps;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
@@ -50,6 +51,7 @@ namespace Content.Server.GameTicking
         [Dependency] private MapLoaderSystem _loader = default!;
         [Dependency] private SharedMapSystem _map = default!;
         [Dependency] private GhostSystem _ghost = default!;
+        [Dependency] private GhostGoLobbySystem _ghostGoLobby = default!; // Corvax-GoLobby
         [Dependency] private SharedMindSystem _mind = default!;
         [Dependency] private PlayTimeTrackingSystem _playTimeTrackings = default!;
         [Dependency] private PvsOverrideSystem _pvsOverride = default!;

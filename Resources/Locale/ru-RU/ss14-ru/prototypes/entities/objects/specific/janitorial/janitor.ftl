@@ -1,5 +1,11 @@
 ent-MopItem = швабра
     .desc = Швабра, которую невозможно остановить, viscera cleanup detail ждёт вас.
+ent-SolutionMopSmall = { ent-SolutionMop }
+    .desc = { ent-SolutionMop.desc }
+ent-SolutionMopNormal = { ent-SolutionMop }
+    .desc = { ent-SolutionMop.desc }
+ent-SolutionMopLarge = { ent-SolutionMop }
+    .desc = { ent-SolutionMop.desc }
 ent-AdvMopItem = продвинутая швабра
     .desc = Моторизованная швабра с увеличенным резервуаром и возможностью уборки нескольких луж одновременно. Система автоматического противодействия клоунам в комплект не входит.
 ent-WetFloorSign = знак "мокрый пол"
