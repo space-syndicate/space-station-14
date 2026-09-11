@@ -12,6 +12,9 @@ namespace Content.Server.Corvax.StationGoal
         public string Text { get; set; } = string.Empty;
 
         [DataField]
+        public GoalTypes GoalType;
+
+        [DataField]
         public int? MinPlayers;
 
         [DataField]
@@ -24,4 +27,11 @@ namespace Content.Server.Corvax.StationGoal
         [DataField]
         public List<EntProtoId> Spawns = new();
     }
+}
+
+public enum GoalTypes : byte
+{
+    First,
+    Second,
+    Third
 }
