@@ -9,7 +9,13 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtHoSBlack
 
-    #Shoulder Mantle
+# Outer clothing
+- type: loadout
+  id: HeadofSecurityGreatcoat
+  equipment:
+    outerClothing: ClothingOuterCoatHoSGreatcoat
+
+#Shoulder Mantle
 - type: loadout
   id: HeadofSecurityShoulderMantle
   equipment:
