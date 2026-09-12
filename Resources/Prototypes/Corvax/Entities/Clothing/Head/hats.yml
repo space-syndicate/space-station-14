@@ -12,24 +12,24 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadCapCentcomNaval
-  name: naval cap
-  description: A cap worn by those in the Nanotrasen Navy.
+  name: centcom representatinve cap
+  description: An alternative cap worn by those in the Central Command.
   components:
     - type: Sprite
-      sprite: Corvax/Clothing/Head/Hats/centcom_naval_cap.rsi
+      sprite: Corvax/Clothing/Head/Hats/centcom_cap.rsi
     - type: Clothing
-      sprite: Corvax/Clothing/Head/Hats/centcom_naval_cap.rsi
+      sprite: Corvax/Clothing/Head/Hats/centcom_cap.rsi
 
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretCentcomNaval
-  name: naval beret
-  description: A beret worn by those in the Nanotrasen Navy.
+  name: centcom beret
+  description: A beret worn by those in the Central Command.
   components:
     - type: Sprite
-      sprite: Corvax/Clothing/Head/Hats/centcom_naval_beret.rsi
+      sprite: Corvax/Clothing/Head/Hats/centcom_beret.rsi
     - type: Clothing
-      sprite: Corvax/Clothing/Head/Hats/centcom_naval_beret.rsi
+      sprite: Corvax/Clothing/Head/Hats/centcom_beret.rsi
 
 - type: entity
   parent: ClothingHeadBase

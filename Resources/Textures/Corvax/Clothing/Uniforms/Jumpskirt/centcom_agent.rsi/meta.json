@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from Skyrat-tg at commit https://github.com/Skyrat-SS13/Skyrat-tg/commit/42bb106e0e78142cad7e6239549b60b18da960ec",
+  "copyright": "Recolor of lawyerblack.rsi by _Svist_.(Discord)",
   "size": {
     "x": 32,
     "y": 32
@@ -11,7 +11,11 @@
       "name": "icon"
     },
     {
-      "name": "equipped-HAND",
+      "name": "equipped-INNERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "equipped-INNERCLOTHING-monkey",
       "directions": 4
     },
     {
