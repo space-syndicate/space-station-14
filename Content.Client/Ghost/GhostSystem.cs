@@ -1,5 +1,4 @@
 using Content.Client.Movement.Systems;
-using Content.Shared.Corvax.Events;
 using Content.Shared.Actions;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Ghost.Systems;
