@@ -166,13 +166,12 @@ namespace Content.Server.GameTicking
                 return;
 
             // Corvax-GoLobby-start
-            var selectedSlot = _ghostGoLobby.GetSelectedSlot(player.UserId);
-            if (!_ghostGoLobby.CanUseCharacter(player.UserId, selectedSlot))
+            if (!_ghostGoLobby.TryTakeCharacter(character))
             {
                 _chatManager.DispatchServerMessage(player, Loc.GetString("ghost-go-lobby-used"));
                 return;
             }
-            // Corvax-GoLobby-end 
+            // Corvax-GoLobby-end
 
             if (station == EntityUid.Invalid)
             {

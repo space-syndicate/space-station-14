@@ -188,11 +188,6 @@ namespace Content.Client.Ghost
             RaiseNetworkEvent(new GhostWarpsRequestEvent());
         }
 
-        public void GhostGoLobby() // Corvax-GoLobby
-        {
-            RaiseNetworkEvent(new GhostGoLobbyEvent());
-        }
-
         public void ReturnToBody()
         {
             var msg = new GhostReturnToBodyRequest();

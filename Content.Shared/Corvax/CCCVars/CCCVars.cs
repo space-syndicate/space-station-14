@@ -143,7 +143,7 @@ public sealed class CCCVars
         CVarDef.Create("lobby.server_hub_enabled", false, CVar.SERVER | CVar.REPLICATED);
 
     public static readonly CVarDef<bool> GhostGoLobbyEnabled =
-        CVarDef.Create("ghost.go_lobby.enabled", false, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("ghost.go_lobby.enabled", false, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
 
     public static readonly CVarDef<float> GhostGoLobbyTimeHours =
         CVarDef.Create("ghost.go_lobby.require_time", 25f, CVar.SERVERONLY);

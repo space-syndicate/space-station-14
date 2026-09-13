@@ -1,4 +1,5 @@
 ghost-go-lobby-button = Return to lobby
+ghost-go-lobby-button-waiting = To lobby in { $time }
 
 ghost-go-lobby-deathtime = You can return to the lobby in {$minutes} minutes.
 ghost-go-lobby-playtime = You need to play for another {$hours} hours.
@@ -10,3 +11,6 @@ ghost-go-lobby-confirm = Are you sure you want to return to the lobby?
                                  You are allowed to remember general knowledge about the game e.g., how to cook, use items, etc.
                                  You are [color=red]NOT[/color] allowed to remember or mention the name, appearance, etc., of your previous character.
 ghost-go-lobby-confirm-continue = Continue
+
+cmd-ghost_golobby-desc = Toggles the ghost "return to lobby" button (ghost.go_lobby.enabled).
+cmd-ghost_golobby-help = ghost_golobby <true|false>
