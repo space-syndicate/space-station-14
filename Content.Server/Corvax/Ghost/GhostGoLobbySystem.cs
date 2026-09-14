@@ -46,7 +46,23 @@ public sealed partial class GhostGoLobbySystem : EntitySystem
 
         Subs.CVar(_cfg, CCCVars.GhostGoLobbyEnabled, value => _enabled = value, true);
         Subs.CVar(_cfg, CCCVars.GhostGoLobbyTimeHours, value => _requiredPlaytime = TimeSpan.FromHours(value), true);
-        Subs.CVar(_cfg, CCCVars.GhostGoLobbyDeathTimeMinutes, value => _deathTime = TimeSpan.FromMinutes(value), true);
+        Subs.CVar(_cfg, CCCVars.GhostGoLobbyDeathTimeMinutes, OnDeathTimeChanged, true);
+    }
+
+    private void OnDeathTimeChanged(float minutes)
+    {
+        _deathTime = TimeSpan.FromMinutes(minutes);
+
+        var clampTo = _timing.CurTime + _deathTime;
+        var query = EntityQueryEnumerator<GhostGoLobbyComponent>();
+        while (query.MoveNext(out var uid, out var lobby))
+        {
+            if (lobby.AvailableAt <= clampTo)
+                continue;
+
+            lobby.AvailableAt = clampTo;
+            Dirty(uid, lobby);
+        }
     }
 
     private void OnRunLevelChanged(GameRunLevelChangedEvent ev)

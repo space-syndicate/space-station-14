@@ -14,3 +14,6 @@ ghost-go-lobby-confirm-continue = Continue
 
 cmd-ghost_golobby-desc = Toggles the ghost "return to lobby" button (ghost.go_lobby.enabled).
 cmd-ghost_golobby-help = ghost_golobby <true|false>
+
+cmd-ghost_golobby_deathtime-desc = Sets the return-to-lobby delay in minutes (ghost.go_lobby.death_time). Shortens the timer for ghosts already waiting.
+cmd-ghost_golobby_deathtime-help = ghost_golobby_deathtime <minutes>

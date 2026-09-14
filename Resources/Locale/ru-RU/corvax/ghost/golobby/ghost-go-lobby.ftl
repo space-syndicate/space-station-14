@@ -14,3 +14,6 @@ ghost-go-lobby-confirm-continue = Продолжить
 
 cmd-ghost_golobby-desc = Переключает кнопку призрака "Вернуться в лобби" (ghost.go_lobby.enabled).
 cmd-ghost_golobby-help = ghost_golobby <true|false>
+
+cmd-ghost_golobby_deathtime-desc = Задаёт задержку возврата в лобби в минутах (ghost.go_lobby.death_time). Укорачивает таймер у уже ждущих призраков.
+cmd-ghost_golobby_deathtime-help = ghost_golobby_deathtime <минуты>
