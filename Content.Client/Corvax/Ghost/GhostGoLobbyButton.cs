@@ -8,7 +8,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client.Corvax.Ghost;
 
-public sealed class GhostGoLobbyButton : Button
+public sealed partial class GhostGoLobbyButton : Button
 {
     [Dependency] private IEntityManager _entMan = default!;
     [Dependency] private IPlayerManager _players = default!;
