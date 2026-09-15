@@ -155,7 +155,7 @@ namespace Content.Server.Voting.Managers
             };
 
             if (alone)
-                options.InitiatorTimeout = TimeSpan.FromSeconds(10);
+                options.InitiatorTimeout = TimeSpan.FromSeconds(90);
 
             WirePresetVoteInitiator(options, initiator);
 
@@ -229,7 +229,7 @@ namespace Content.Server.Voting.Managers
             };
 
             if (alone)
-                options.InitiatorTimeout = TimeSpan.FromSeconds(10);
+                options.InitiatorTimeout = TimeSpan.FromSeconds(90);
 
             foreach (var (k, v) in presets)
             {
@@ -275,7 +275,7 @@ namespace Content.Server.Voting.Managers
             };
 
             if (alone)
-                options.InitiatorTimeout = TimeSpan.FromSeconds(10);
+                options.InitiatorTimeout = TimeSpan.FromSeconds(90);
 
             foreach (var (k, v) in maps)
             {

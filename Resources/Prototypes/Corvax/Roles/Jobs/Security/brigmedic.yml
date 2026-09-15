@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Medical
-    time: 15h
+    time: 10h
   - !type:DepartmentTimeRequirement
     department: Security
     time: 5h

@@ -6,13 +6,13 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 6h
+      time: 5h
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 6h
+      time: 10h
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 60h
+      time: 20h
   startingGear: SeniorPhysicianGear
   icon: "JobIconSeniorPhysician"
   supervisors: job-supervisors-cmo

@@ -2,7 +2,7 @@
   id: Marathon
   mapName: 'Marathon Station'
   mapPath: /Maps/marathon.yml
-  minPlayers: 35 # Corvax
+  minPlayers: 1 # Corvax
   stations:
     Marathon:
       stationProto: StandardNanotrasenStation

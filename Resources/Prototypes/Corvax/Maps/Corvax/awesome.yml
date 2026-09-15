@@ -2,8 +2,8 @@
   id: CorvaxAwesome
   mapName: 'Awesome Station'
   mapPath: /Maps/Corvax/corvax_awesome.yml 
-  minPlayers: 25
-  maxPlayers: 55
+  minPlayers: 125
+  maxPlayers: 155
   stations:
     Awesome:
       stationProto: StandardNanotrasenStation

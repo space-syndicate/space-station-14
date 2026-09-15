@@ -6,7 +6,10 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 20h # Corvax-RoleTime
+      time: 10h # Corvax-RoleTime
+    - !type:RoleTimeRequirement
+       role: JobSecurityOfficer
+       time: 5h
     - !type:TraitsRequirement #Corvax-TraitsRequirement
       inverted: true
       traits:

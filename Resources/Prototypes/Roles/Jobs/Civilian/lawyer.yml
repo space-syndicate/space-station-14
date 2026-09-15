@@ -5,7 +5,10 @@
   playTimeTracker: JobLawyer
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 2.5h
+      time: 5h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 5h
   startingGear: LawyerGear
   setPreference: false # Corvax-IAA
   icon: "JobIconLawyer"

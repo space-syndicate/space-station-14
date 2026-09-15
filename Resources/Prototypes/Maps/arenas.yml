@@ -2,7 +2,7 @@
   id: MeteorArena
   mapName: Meteor Arena
   mapPath: /Maps/Nonstations/meteor-arena.yml
-  minPlayers: 0
+  minPlayers: 110
   stations:
     Arena:
       stationProto: StandardStationArena
