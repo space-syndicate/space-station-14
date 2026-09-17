@@ -217,7 +217,6 @@ public sealed partial class MusicPlayerEui : BaseEui
     {
         _window.TargetsGrid.RemoveAllChildren();
 
-        // Категория 0 = Карты
         if (_localCategory == 0)
         {
             foreach (var mapId in _mapIdCache)

@@ -6,10 +6,6 @@ using Content.Server.Administration;
 
 namespace Content.Server.Corvax.Administration.MusicPlayer;
 
-/// <summary>
-/// Handles the console command to invoke the admin music player EUI window.
-/// Enforces permissions on the core engine architecture level.
-/// </summary>
 [AdminCommand(AdminFlags.Spawn)]
 public sealed partial class OpenMusicCommand : LocalizedEntityCommands
 {

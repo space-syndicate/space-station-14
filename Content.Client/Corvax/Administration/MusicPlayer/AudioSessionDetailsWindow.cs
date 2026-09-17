@@ -68,6 +68,7 @@ public sealed class AudioSessionDetailsWindow : DefaultWindow
         leftLayout.AddChild(new Label { Text = Loc.GetString("admin-music-player-header-listeners"), Margin = new Thickness(0, 0, 0, 6), FontColorOverride = Color.FromHex("#A0DBF5") });
         var leftScroll = new ScrollContainer { VerticalExpand = true, HorizontalExpand = true };
         _listenersList = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical, HorizontalExpand = true };
+
         leftScroll.AddChild(_listenersList);
         leftLayout.AddChild(leftScroll);
         

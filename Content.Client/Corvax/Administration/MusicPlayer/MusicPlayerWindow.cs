@@ -319,6 +319,3 @@ public sealed class MusicPlayerWindow : DefaultWindow
         return string.Empty;
     }
 }
-
-
-

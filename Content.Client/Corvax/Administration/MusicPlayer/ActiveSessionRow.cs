@@ -196,7 +196,6 @@ public sealed class ActiveSessionRow : BoxContainer
     {
         string targetTypeStr;
         
-        // Проверяем сетевые коллекции напрямую в обход старого текстового свойства
         if (_session.Players != null && _session.Players.Count > 0)
             targetTypeStr = Loc.GetString("admin-music-player-target-type-players");
         else if (_session.Maps != null && _session.Maps.Count > 0)
