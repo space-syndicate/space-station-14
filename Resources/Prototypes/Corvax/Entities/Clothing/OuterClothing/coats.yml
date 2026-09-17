@@ -53,7 +53,7 @@
           Heat: 0.8
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [BaseCorvaxContraband431JobsSecurityOfficer, ClothingOuterStorageBase] # Corvax-Contraband
   id: ClothingOuterCoatSecurityOvercoat
   name: security overcoat
   description: Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security.
@@ -71,7 +71,7 @@
           Heat: 0.9
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [BaseCorvaxContraband431JobsBrigmedic, ClothingOuterStorageBase] # Corvax-Contraband
   id: ClothingOuterCoatLabSecurityMedic
   name: security medic labcoat
   description: A suit that protects against minor chemical spills.

@@ -43,7 +43,7 @@
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [BaseCorvaxContraband431JobsCaptain, ClothingUniformBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitCapTurtleneck
   name: captain's turtleneck
   description: True captain's turtleneck.
@@ -54,7 +54,7 @@
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/cap_turtleneck.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [BaseCorvaxContraband431JobsHeadOfPersonnel, ClothingUniformBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitHoPTurtleneck
   name: head of personal's turtleneck
   description: It's Head of Personal's turtleneck.
@@ -65,7 +65,7 @@
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/hop_turtleneck.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [BaseCorvaxContraband431JobsHeadOfSecurity, ClothingUniformBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitHoSBlack
   name: head of security's black suit
   description: It's Head of Security's black suit.
@@ -76,7 +76,7 @@
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/hos_black.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [BaseCorvaxContraband431JobsResearchDirector, ClothingUniformBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitRDClassical
   name: research director's classical suit
   description: It's Research Director's сlassical suit.

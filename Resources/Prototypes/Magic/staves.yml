@@ -39,7 +39,7 @@
 
 - type: entity
   id: AnimationStaff
-  parent: [ BaseItem, BaseMagicalContraband ]
+  parent: BaseItem # Corvax-Contraband: do not inherit a marker for hidden properties.
   name: staff of animation
   description: Brings inanimate objects to life!
   components:

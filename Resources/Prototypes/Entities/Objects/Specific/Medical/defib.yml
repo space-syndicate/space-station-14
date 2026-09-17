@@ -98,7 +98,7 @@
 
 - type: entity
   id: DefibrillatorSyndicate
-  parent: [ DefibrillatorCompact, BaseSyndicateContraband ]
+  parent: [BaseCorvaxContraband131, DefibrillatorCompact, BaseSyndicateContraband] # Corvax-Contraband
   name: interdyne defibrillator
   description: Doubles as a self-defense weapon against war-crime inclined tiders.
   components:

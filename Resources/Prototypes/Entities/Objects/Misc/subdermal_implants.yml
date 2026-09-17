@@ -94,7 +94,7 @@
 #Traitor implants
 
 - type: entity
-  parent: BaseSubdermalImplant
+  parent: [BaseCorvaxContraband435, BaseSubdermalImplant] # Corvax-Contraband
   id: StorageImplant
   name: storage implant
   description: This implant grants hidden storage within a person's body using bluespace technology.
@@ -122,7 +122,7 @@
           type: StorageBoundUserInterface
 
 - type: entity
-  parent: BaseSubdermalImplant
+  parent: [BaseCorvaxContraband435, BaseSubdermalImplant] # Corvax-Contraband
   id: FreedomImplant
   name: freedom implant
   description: This implant lets the user break out of hand restraints up to three times before ceasing to function anymore.
@@ -138,7 +138,7 @@
     targetUser: true
 
 - type: entity
-  parent: BaseSubdermalImplant
+  parent: [BaseCorvaxContraband435, BaseSubdermalImplant] # Corvax-Contraband
   id: RadioImplant
   name: radio implant
   description: This implant grants access to the Syndicate channel without a headset.
@@ -150,7 +150,7 @@
     - Syndicate
 
 - type: entity
-  parent: BaseSubdermalImplant
+  parent: [BaseCorvaxContraband436, BaseSubdermalImplant] # Corvax-Contraband
   id: UplinkImplant
   name: uplink implant
   description: This implant lets the user access a hidden Syndicate uplink at will.
@@ -168,7 +168,7 @@
         type: StoreBoundUserInterface
 
 - type: entity
-  parent: BaseSubdermalImplant
+  parent: [BaseCorvaxContraband435, BaseSubdermalImplant] # Corvax-Contraband
   id: EmpImplant
   name: EMP implant
   description: This implant creates an electromagnetic pulse when activated.
@@ -183,7 +183,7 @@
     disableDuration: 10
 
 - type: entity
-  parent: BaseSubdermalImplant
+  parent: [BaseCorvaxContraband435, BaseSubdermalImplant] # Corvax-Contraband
   id: ScramImplant
   name: scram implant
   description: This implant randomly teleports the user within a large radius when activated.
@@ -196,7 +196,7 @@
     targetUser: true
 
 - type: entity
-  parent: BaseSubdermalImplant
+  parent: [BaseCorvaxContraband435, BaseSubdermalImplant] # Corvax-Contraband
   id: DnaScramblerImplant
   name: DNA scrambler implant
   description: This implant lets the user randomly change their appearance and name once.
@@ -249,7 +249,7 @@
 #Nuclear Operative/Special Exclusive implants
 
 - type: entity
-  parent: BaseSubdermalImplant
+  parent: [BaseCorvaxContraband435, BaseSubdermalImplant] # Corvax-Contraband
   id: MicroBombImplant
   name: micro-bomb implant
   description: This implant detonates the user upon activation or upon death.
@@ -358,7 +358,7 @@
       targetUser: true
 
 - type: entity
-  parent: BaseSubdermalImplant
+  parent: [BaseCorvaxContraband435, BaseSubdermalImplant] # Corvax-Contraband
   id: FakeMindShieldImplant
   name: fake mindshield implant
   description: This implant allows the implanter to produce a fake signal that NT security huds use to identify individuals implanted with a mindshield.

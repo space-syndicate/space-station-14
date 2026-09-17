@@ -10,7 +10,7 @@
   - type: ScatteringGrenade
 
 - type: entity
-  parent: [FragileGrenadeBase, ScatteringGrenadeBase, TimerGrenadeBase, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, FragileGrenadeBase, ScatteringGrenadeBase, TimerGrenadeBase, BaseSecurityContraband] # Corvax-Contraband
   id: ClusterBang
   name: clusterbang
   description: Can be used only with flashbangs. Explodes several times.
@@ -63,7 +63,7 @@
     positional: true
 
 - type: entity
-  parent: [VolatileGrenadeBase, ScatteringGrenadeBase, TimerGrenadeBase, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, VolatileGrenadeBase, ScatteringGrenadeBase, TimerGrenadeBase, BaseSyndicateContraband] # Corvax-Contraband
   id: ClusterGrenade
   name: clustergrenade
   description: Why use one grenade when you can use three at once!

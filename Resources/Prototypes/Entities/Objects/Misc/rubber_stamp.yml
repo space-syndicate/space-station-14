@@ -347,7 +347,7 @@
 
 - type: entity
   name: syndicate rubber stamp
-  parent: [RubberStampBase, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband131, RubberStampBase, BaseSyndicateContraband] # Corvax-Contraband
   id: RubberStampSyndicate
   categories: [ DoNotMap ]
   components:

@@ -21,7 +21,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Centcomm/centcom_agent.rsi
 
 - type: entity
-  parent: [ ClothingUniformBase, BaseCentcommContraband ]
+  parent: [BaseCorvaxContraband431DepartmentsCentralCommandJobsCentralCommandOfficial, ClothingUniformBase, BaseCentcommContraband] # Corvax-Contraband
   id: ClothingUniformJumpsuitCentcomOfficial
   name: CentComm official's jumpsuit
   description: It's a jumpsuit worn by CentComm's officials.
@@ -70,6 +70,12 @@
   name: ERT engineering uniform
   description: A special suit made for the elite engineers under CentComm.
   components:
+  # Corvax-Contraband-start
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [CentralCommand]
+    allowedJobs: [ERTEngineer]
+  # Corvax-Contraband-end
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuits/Centcomm/ert_engineer.rsi
   - type: Clothing
@@ -81,6 +87,12 @@
   name: ERT janitorial uniform
   description: A special suit made for the elite janitors under CentComm.
   components:
+  # Corvax-Contraband-start
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [CentralCommand]
+    allowedJobs: [ERTJanitor]
+  # Corvax-Contraband-end
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuits/Centcomm/ert_janitor.rsi
   - type: Clothing
@@ -103,6 +115,12 @@
   name: ERT medical uniform
   description: A special suit made for the elite medics under CentComm.
   components:
+  # Corvax-Contraband-start
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [CentralCommand]
+    allowedJobs: [ERTMedical]
+  # Corvax-Contraband-end
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuits/Centcomm/ert_medic.rsi
   - type: Clothing
@@ -114,6 +132,12 @@
   name: ERT security uniform
   description: A special suit made for the elite security under CentComm.
   components:
+  # Corvax-Contraband-start
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [CentralCommand]
+    allowedJobs: [ERTSecurity]
+  # Corvax-Contraband-end
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuits/Centcomm/ert_security.rsi
   - type: Clothing

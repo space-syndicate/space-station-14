@@ -30,7 +30,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [BaseCorvaxContraband431JobsBotanist, ClothingOuterStorageBase] # Corvax-Contraband
   id: ClothingOuterApronBotanist
   name: apron
   suffix: Botanical
@@ -46,7 +46,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [BaseCorvaxContraband431JobsChef, ClothingOuterStorageBase] # Corvax-Contraband
   id: ClothingOuterApronChef
   name: apron
   suffix: Chef
@@ -62,7 +62,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [BaseCorvaxContraband431JobsChef, ClothingOuterStorageBase] # Corvax-Contraband
   id: ClothingOuterJacketChef
   name: chef jacket
   description: An apron-jacket used by a high class chef.
@@ -111,7 +111,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingOuterBaseToggleable
+  parent: [BaseCorvaxContraband431JobsChaplain, ClothingOuterBaseToggleable] # Corvax-Contraband
   id: ClothingOuterHoodieChaplain
   name: chaplain's hoodie
   description: Black and strict chaplain hoodie.

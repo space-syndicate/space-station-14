@@ -66,7 +66,7 @@
     fireRate: 0.67
 
 - type: entity
-  parent: [ BaseWeaponLauncher, BaseMajorContraband ]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BaseWeaponLauncher, BaseMajorContraband] # Corvax-Contraband
   id: WeaponLauncherHydra
   name: hydra
   description: PLOOP... FSSSSSS...
@@ -110,7 +110,7 @@
     proto: GrenadeFrag
 
 - type: entity
-  parent: [ BaseWeaponLauncher, BaseMajorContraband ]
+  parent: [BaseCorvaxContraband435, BaseWeaponLauncher, BaseMajorContraband] # Corvax-Contraband
   id: WeaponLauncherRocket
   name: RPG-7
   description: A modified ancient rocket-propelled grenade launcher.
@@ -184,7 +184,7 @@
     channel: XenoborgGuidedMissileLauncher
 
 - type: entity
-  parent: BaseWeaponLauncher
+  parent: [BaseCorvaxContraband435, BaseWeaponLauncher] # Corvax-Contraband
   id: WeaponLauncherMultipleRocket
   name: multiple rocket launcher
   description: A modified ancient rocket-propelled grenade launcher.
@@ -262,7 +262,7 @@
   - type: Appearance
 
 - type: entity
-  parent: BaseWeaponLauncher
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BaseWeaponLauncher] # Corvax-Contraband
   id: WeaponLauncherPirateCannon
   name: pirate cannon
   description: Kaboom!

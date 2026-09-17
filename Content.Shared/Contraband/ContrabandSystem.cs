@@ -68,17 +68,15 @@ public sealed partial class ContrabandSystem : EntitySystem
         // one, the actual informative 'this is restricted'
         // then, the 'you can/shouldn't carry this around' based on the ID the user is wearing
         var severity = ProtoMan.Index(component.Severity);
-        String departmentExamineMessage;
+        // Corvax start: show the article before the allowed departments and jobs.
+        var departmentExamineMessage = Loc.GetString(severity.ExamineText,
+            ("type", ContrabandItemType.Item), ("color", severity.Color.ToHex()));
         if (severity.ShowDepartmentsAndJobs)
         {
-            // department restricted text
-            departmentExamineMessage =
+            departmentExamineMessage += "\n" +
                 GenerateDepartmentExamineMessage(component.AllowedDepartments, component.AllowedJobs, severity.Color);
         }
-        else
-        {
-            departmentExamineMessage = Loc.GetString(severity.ExamineText, ("type", ContrabandItemType.Item), ("color", severity.Color.ToHex()));
-        }
+        // Corvax end
 
         // if it is fully restricted, you're department-less, or your department isn't in the allowed list, you cannot carry it. Otherwise, you can.
         var carryingMessage = Loc.GetString("contraband-examine-text-in-the-clear");

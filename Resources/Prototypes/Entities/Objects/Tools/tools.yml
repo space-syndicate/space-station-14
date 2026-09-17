@@ -240,7 +240,7 @@
 #Later on these should switch probably switch damage when changing the tool behavior.
 - type: entity
   name: power drill
-  parent: BaseItem
+  parent: [BaseCorvaxContraband431DepartmentsEngineering, BaseItem] # Corvax-Contraband
   id: PowerDrill
   description: A simple powered hand drill.
   components:
@@ -309,6 +309,12 @@
   name: RCD
   description: The rapid construction device can be used to quickly place and remove various station structures and fixtures. Requires compressed matter to function.
   components:
+  # Corvax-Contraband-start
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [Engineering]
+    allowedJobs: []
+  # Corvax-Contraband-end
   - type: RCD
     availablePrototypes:
     - WallSolid

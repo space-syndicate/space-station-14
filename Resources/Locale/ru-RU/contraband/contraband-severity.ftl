@@ -46,8 +46,8 @@ contraband-examine-text-Magical =
         [reagent] [color={ $color }]Этот реагент является крайне незаконной магической контрабандой![/color]
     }
 
-contraband-examine-text-avoid-carrying-around = [color=red][italic]Вам, вероятно, не стоит носить его с собой без веской причины.[/italic][/color]
-contraband-examine-text-in-the-clear = [color=green][italic]Вы должны быть чисты, чтобы носить этот предмет на виду.[/italic][/color]
+contraband-examine-text-avoid-carrying-around = [color=orange][italic]Вам, вероятно, не стоит носить его с собой без причины.(см. КЗ контрабанды)[/italic][/color]
+contraband-examine-text-in-the-clear = [color=green][italic]Вам ничто не мешает носить это на виду.[/italic][/color]
 
 contraband-examinable-verb-text = Легальность
 contraband-examinable-verb-message = Проверить легальность этого предмета.

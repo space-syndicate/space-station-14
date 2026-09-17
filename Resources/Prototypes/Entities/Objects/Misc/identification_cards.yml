@@ -1013,7 +1013,7 @@
     - NuclearOperative
 
 - type: entity
-  parent: [ IDCardStandard, BaseSyndicateContraband ]
+  parent: IDCardStandard # Corvax-Contraband
   id: SyndicateIDCard
   name: syndicate ID card
   components:

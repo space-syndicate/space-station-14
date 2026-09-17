@@ -34,7 +34,7 @@
 
 #Syndicate EVA Helmet
 - type: entity
-  parent: [ ClothingHeadEVAHelmetBase, BaseSyndicateContraband ]
+  parent: [ ClothingHeadEVAHelmetBase ] # Corvax-Contraband deleted - BaseSyndicateContraband
   id: ClothingHeadHelmetSyndicate
   name: syndicate EVA helmet
   description: A simple, stylish EVA helmet. Designed for maximum humble space-badassery.

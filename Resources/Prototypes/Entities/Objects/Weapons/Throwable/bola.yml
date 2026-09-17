@@ -53,7 +53,7 @@
         friction: 0.2
 
 - type: entity
-  parent: BaseBola
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, BaseBola] # Corvax-Contraband
   id: Bola
   name: makeshift bola
   description: A makeshift bola, cobbled together with some spare cuffs and metal. It doesn't look like it's going to stay together for very long.

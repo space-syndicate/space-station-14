@@ -51,7 +51,7 @@
 
 # The armor itself
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseMajorContraband]
+  parent: [BaseCorvaxContraband432DepartmentsCargoSecurity, ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseMajorContraband] # Corvax-Contraband
   id: ClothingOuterArmorScrap
   name: scrap armor
   description: A tider's gleaming plate mail. Bail up, or you're a dead man.

@@ -539,7 +539,7 @@
 
 - type: entity
   abstract: true
-  parent: [SolutionToolSmall, ChemicalMedipen, BaseSyndicateContraband]
+  parent: [SolutionToolSmall, ChemicalMedipen] # Corvax-Contraband BaseSyndicateContraband
   id: SyndicateMedipen # Interdyne gets more capacity
 
 - type: entity

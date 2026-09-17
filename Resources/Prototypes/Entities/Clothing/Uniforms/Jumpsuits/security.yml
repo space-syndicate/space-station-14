@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingUniformBase
+  parent: [BaseCorvaxContraband431JobsDetective, ClothingUniformBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitDetective
   name: hard-worn suit
   description: Someone who wears this means business.
@@ -10,7 +10,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Security/detective.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [BaseCorvaxContraband431JobsDetective, ClothingUniformBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitDetectiveGrey
   name: noir suit
   description: A hard-boiled private investigator's grey suit, complete with tie clip.
@@ -21,7 +21,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Security/detective_grey.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsHeadOfSecurity, ClothingUniformBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingUniformJumpsuitHoS
   name: head of security's jumpsuit
   description: It's bright red and rather crisp, much like security's victims tend to be.
@@ -44,7 +44,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Security/hos.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsHeadOfSecurity, ClothingUniformBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingUniformJumpsuitHoSAlt
   name: head of security's turtleneck
   description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
@@ -88,7 +88,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Security/hos_parade.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [BaseCorvaxContraband431JobsBrigmedic, ClothingUniformBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitBrigmedic
   name: brigmedic jumpsuit
   description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
@@ -139,7 +139,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingUniformBase, BaseSecurityContraband, ClothingUniformFoldableBase]
+  parent: [BaseCorvaxContraband431DepartmentsSecurityJobsSecurityOfficer, ClothingUniformBase, BaseSecurityContraband, ClothingUniformFoldableBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitSec
   name: security jumpsuit
   description: A jumpsuit made of strong material, providing robust protection.
@@ -171,7 +171,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Security/security_blue.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband431DepartmentsSecurityJobsSecurityCadetSecurityOfficer, ClothingUniformBase, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingUniformJumpsuitSecGrey
   name: grey security jumpsuit
   description: A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood.
@@ -182,7 +182,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Security/security_grey.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband431DepartmentsSecurityJobsSecurityOfficer, ClothingUniformBase, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingUniformSecurityTrooper
   name: trooper uniform
   description: A formal uniform issued to the Nanotrasen Troopers, usually it comes with a car.
@@ -193,7 +193,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Security/security_trooper.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband431DepartmentsSecurityJobsWarden, ClothingUniformBase, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingUniformJumpsuitWarden
   name: warden's uniform
   description: A formal security suit for officers complete with Nanotrasen belt buckle.
@@ -216,7 +216,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Security/warden.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsHeadOfSecurity, ClothingUniformBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingUniformJumpsuitHosFormal
   name: hos's formal suit
   description: A suit for special occasions.
@@ -227,7 +227,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Security/hosformal.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband431DepartmentsSecurityJobsSecurityOfficerSeniorOfficer, ClothingUniformBase, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingUniformJumpsuitSeniorOfficer
   name: senior officer jumpsuit
   description: A sign of skill and prestige within the security department.

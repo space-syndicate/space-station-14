@@ -4,7 +4,7 @@
   group: Narcotics
   desc: reagent-desc-desoxyephedrine
   physicalDesc: reagent-physical-desc-translucent
-  contrabandSeverity: Minor
+  contrabandSeverity: Corvax445 # Corvax-Contraband
   flavor: bitter
   color: "#FAFAFA"
   boilingPoint: 212.0  # Dexosyephedrine vape when?
@@ -66,6 +66,7 @@
 
 - type: reagent
   id: Ephedrine
+  contrabandSeverity: Corvax443 # Corvax-Contraband
   name: reagent-name-ephedrine
   group: Narcotics
   desc: reagent-desc-ephedrine
@@ -123,6 +124,7 @@
 
 - type: reagent
   id: Pax
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   name: reagent-name-pax
   group: Narcotics
   desc: reagent-desc-pax
@@ -145,7 +147,7 @@
   group: Narcotics
   desc: reagent-desc-stimulants
   physicalDesc: reagent-physical-desc-energizing
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Corvax445 # Corvax-Contraband
   flavor: sharp
   color: "#9A040E"
   boilingPoint: 212.0
@@ -229,6 +231,7 @@
 
 - type: reagent
   id: THC
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-thc
   group: Narcotics
   desc: reagent-desc-thc
@@ -268,7 +271,7 @@
   group: Narcotics
   desc: reagent-desc-impedrezene
   physicalDesc: reagent-physical-desc-acrid
-  contrabandSeverity: Minor
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   flavor: bitter
   color: "#215263"
   metabolisms:
@@ -292,6 +295,7 @@
 
 - type: reagent
   id: SpaceDrugs
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-space-drugs
   group: Narcotics
   desc: reagent-desc-space-drugs
@@ -308,6 +312,7 @@
 
 - type: reagent
   id: Bananadine
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-bananadine
   group: Narcotics
   desc: reagent-desc-bananadine
@@ -329,7 +334,7 @@
   group: Narcotics
   desc: reagent-desc-nocturine
   physicalDesc: reagent-physical-desc-powdery
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   color: "#128e80"
   boilingPoint: 444.0
   meltingPoint: 128.0
@@ -390,7 +395,7 @@
   group: Narcotics
   desc: reagent-desc-norepinephric-acid
   physicalDesc: reagent-physical-desc-milky
-  contrabandSeverity: Minor
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   flavor: salty
   color: "#96a8b5"
   boilingPoint: 255.0
@@ -601,6 +606,7 @@
 
 - type: reagent
   id: Happiness
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-happiness
   group: Narcotics
   desc: reagent-desc-happiness

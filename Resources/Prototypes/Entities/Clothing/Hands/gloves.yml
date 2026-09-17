@@ -496,7 +496,7 @@
 
 #Knuckledusters
 - type: entity
-  parent: [ClothingHandsBase, BaseMinorContraband]
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, ClothingHandsBase, BaseMinorContraband] # Corvax-Contraband
   id: ClothingHandsKnuckleDusters
   name: knuckle dusters
   description: "Cold plasteel knuckle dusters, makes your punches hit much harder."
@@ -571,7 +571,7 @@
     stealGroup: ClothingHandsKnuckleDustersQM
 
 - type: entity
-  parent: [ClothingHandsBase, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, ClothingHandsBase, BaseSyndicateContraband] # Corvax-Contraband
   id: ClothingHandsKnuckleDustersSyndicate
   name: syndicate knuckle dusters
   description: "Plastitanium knuckle dusters branded with the blood-red S. A real man beats someone to death with these."

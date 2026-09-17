@@ -56,7 +56,7 @@
   name: blue cap
 
 - type: entity
-  parent: ClothingHeadHeadHatBaseFlippable
+  parent: [BaseCorvaxContraband431JobsCargoTechnician, ClothingHeadHeadHatBaseFlippable] # Corvax-Contraband
   id: ClothingHeadHatCargosoft
   name: cargo cap
   description: A baseball cap colored to match cargo's uniforms.
@@ -85,7 +85,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadHeadHatBaseFlippable
+  parent: [BaseCorvaxContraband431JobsQuartermaster, ClothingHeadHeadHatBaseFlippable] # Corvax-Contraband
   id: ClothingHeadHatQMsoft
   name: quartermaster's cap
   description: A baseball cap colored to match the Quartermaster's uniform.
@@ -258,7 +258,7 @@
   name: red cap
 
 - type: entity
-  parent: ClothingHeadHeadHatBaseFlippable
+  parent: [BaseCorvaxContraband431JobsSecurityOfficerSeniorOfficer, ClothingHeadHeadHatBaseFlippable] # Corvax-Contraband
   id: ClothingHeadHatSecsoft
   name: security cap
   description: A baseball cap colored to match security's uniforms.
@@ -306,7 +306,7 @@
   name: troublemaker's cap
 
 - type: entity
-  parent: ClothingHeadHeadHatBaseFlippable
+  parent: [BaseCorvaxContraband431JobsParamedic, ClothingHeadHeadHatBaseFlippable] # Corvax-Contraband
   id: ClothingHeadHatParamedicsoft
   name: paramedic cap
   description: A blue baseball cap with a cross on the front.

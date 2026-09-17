@@ -1855,7 +1855,7 @@
     access: [["Research"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: [BaseCorvaxContraband131, VendingMachine] # Corvax-Contraband
   id: VendingMachineSyndieDrobe
   name: SyndieDrobe
   description: Wardrobe machine encoded by the syndicate, contains elite outfits for various operations.

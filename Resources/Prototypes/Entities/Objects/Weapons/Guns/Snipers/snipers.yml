@@ -40,7 +40,7 @@
 
 - type: entity
   name: Kardashev-Mosin
-  parent: [BaseWeaponSniper, BaseGunWieldable, SolutionDart, BaseMajorContraband]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BaseWeaponSniper, BaseGunWieldable, SolutionDart, BaseMajorContraband] # Corvax-Contraband
   id: WeaponSniperMosin
   description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of .30 rifle.
   components:
@@ -88,7 +88,7 @@
 
 - type: entity
   name: Hristov
-  parent: [BaseWeaponSniper, BaseGunWieldable, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BaseWeaponSniper, BaseGunWieldable, BaseSyndicateContraband] # Corvax-Contraband
   id: WeaponSniperHristov
   description: For when you absolutely, positively need to make someone regret their life choices from a safe distance. Uses .60 anti-materiel ammo.
   components:
@@ -129,7 +129,7 @@
 
 - type: entity
   name: musket
-  parent: [ BaseWeaponSniper, BaseGunWieldable, BaseMajorContraband ]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BaseWeaponSniper, BaseGunWieldable, BaseMajorContraband] # Corvax-Contraband
   id: Musket
   description: This should've been in a museum long before you were born. Uses .60 anti-materiel ammo.
   components:
@@ -170,7 +170,7 @@
 
 - type: entity
   name: flintlock pistol
-  parent: [BaseWeaponSniper, BaseMajorContraband]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BaseWeaponSniper, BaseMajorContraband] # Corvax-Contraband
   id: WeaponPistolFlintlock
   description: A pirate's companion. Yarrr! Uses .45 magnum ammo.
   components:

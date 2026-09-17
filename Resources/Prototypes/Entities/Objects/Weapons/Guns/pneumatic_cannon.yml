@@ -1,6 +1,6 @@
 - type: entity
   name: improvised pneumatic cannon
-  parent: [BaseStorageItem, BaseMinorContraband]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BaseStorageItem, BaseMinorContraband] # Corvax-Contraband
   id: WeaponImprovisedPneumaticCannon
   description: Improvised using nothing but a pipe, some zipties, and a pneumatic cannon. Doesn't accept tanks without enough gas.
   components:
@@ -140,7 +140,7 @@
 
 - type: entity
   name: syringe gun
-  parent: BaseStorageItem
+  parent: [BaseCorvaxContraband432DepartmentsMedical, BaseStorageItem] # Corvax-Contraband
   id: LauncherSyringe
   description: Load full of poisoned syringes for optimal fun.
   components:

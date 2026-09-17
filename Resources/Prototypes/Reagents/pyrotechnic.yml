@@ -19,7 +19,7 @@
   parent: BasePyrotechnic
   desc: reagent-desc-thermite
   physicalDesc: reagent-physical-desc-grainy
-  contrabandSeverity: Minor
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   flavor: bitter
   color: "#757245"
   boilingPoint: 2977.0 # Aluminum oxide
@@ -42,7 +42,7 @@
   parent: BasePyrotechnic
   desc: reagent-desc-napalm
   physicalDesc: reagent-physical-desc-soapy
-  contrabandSeverity: Major
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   flavor: bitter
   color: "#FA00AF"
   tileReactions:
@@ -72,7 +72,7 @@
   parent: BasePyrotechnic
   desc: reagent-desc-phlogiston
   physicalDesc: reagent-physical-desc-burning
-  contrabandSeverity: Major
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   flavor: bitter
   color: "#D4872A"
   metabolisms:
@@ -102,7 +102,7 @@
   parent: BasePyrotechnic
   desc: reagent-desc-chlorine-trifluoride
   physicalDesc: reagent-physical-desc-blazing
-  contrabandSeverity: Major
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   flavor: bitter
   color: "#FFC8C8"
   tileReactions:

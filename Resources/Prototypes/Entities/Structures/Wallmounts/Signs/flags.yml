@@ -27,7 +27,7 @@
     state: NT_flag
 
 - type: entity
-  parent: BaseFlag
+  parent: [BaseCorvaxContraband131, BaseFlag] # Corvax-Contraband
   id: SyndieFlag
   name: syndicate flag
   description: Smells bloody. Death to NT!

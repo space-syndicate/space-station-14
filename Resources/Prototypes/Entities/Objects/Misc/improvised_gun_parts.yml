@@ -1,7 +1,7 @@
 #The entire game mysteriously shits itself and dies if you uncomment the item size. I have no idea why.
 #TODO: Assimilate these into the same RSI.
 - type: entity
-  parent: BaseItem
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseItem] # Corvax-Contraband
   id: ModularReceiver
   name: modular receiver
   description: A vital part used in the creation of firearms. #Could use a better description, but I'm not a gun nut so I can't really do that.
@@ -18,7 +18,7 @@
       - Metal
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseItem] # Corvax-Contraband
   id: RifleStock
   name: rifle stock
   description: A robust wooden stock, used in the creation of firearms. #Same as above

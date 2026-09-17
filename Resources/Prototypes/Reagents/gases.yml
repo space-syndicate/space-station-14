@@ -76,6 +76,7 @@
 
 - type: reagent
   id: Plasma
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-plasma
   desc: reagent-desc-plasma
   physicalDesc: reagent-physical-desc-gaseous
@@ -218,6 +219,7 @@
 
 - type: reagent
   id: Nitrogen
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-nitrogen
   desc: reagent-desc-nitrogen
   physicalDesc: reagent-physical-desc-gaseous
@@ -329,6 +331,7 @@
 
 - type: reagent
   id: Frezon
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   name: reagent-name-frezon
   desc: reagent-desc-frezon
   physicalDesc: reagent-physical-desc-gaseous

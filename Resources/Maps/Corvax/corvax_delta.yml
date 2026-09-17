@@ -4,7 +4,7 @@ meta:
   engineVersion: 289.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/23/2026 09:41:35
+  time: 09/14/2026 11:02:03
   entityCount: 41191
 maps:
 - 1
@@ -13,15 +13,15 @@ grids:
 - 38569
 orphans: []
 nullspace:
-- 25416
-- 25417
 - 25418
 - 25603
 - 25604
 - 25605
 - 26761
 - 27386
+- 27492
 - 27494
+- 27764
 - 29716
 - 29718
 - 29721
@@ -4484,15 +4484,15 @@ entities:
     - type: GridSplitNode
     - type: ChunkContainer
       chunkEntities:
-      - 25416
-      - 25417
       - 25418
       - 25603
       - 25604
       - 25605
       - 26761
       - 27386
+      - 27492
       - 27494
+      - 27764
       - 29716
       - 29718
       - 29721
@@ -83746,7 +83746,7 @@ entities:
       pos: 63.66099,-25.833206
 - proto: ChunkEntity
   entities:
-  - uid: 25416
+  - uid: 25418
     components:
     - type: ChunkEntity
       root: 2
@@ -84259,7 +84259,7 @@ entities:
           decals:
             7095: 33,0
             7125: 34,0
-  - uid: 25417
+  - uid: 25603
     components:
     - type: ChunkEntity
       root: 2
@@ -84992,7 +84992,7 @@ entities:
             20848: 5,24
             20849: 7,24
             20850: 8,24
-  - uid: 25418
+  - uid: 25604
     components:
     - type: ChunkEntity
       root: 2
@@ -85151,7 +85151,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             438: 0,-84
-  - uid: 25603
+  - uid: 25605
     components:
     - type: ChunkEntity
       root: 2
@@ -85797,7 +85797,7 @@ entities:
             11782: -16,-80
             14444: -8,-78
             14446: -3,-78
-  - uid: 25604
+  - uid: 26761
     components:
     - type: ChunkEntity
       root: 2
@@ -86032,7 +86032,7 @@ entities:
             color: '#DABC8BFF'
           decals:
             11783: -16,-81
-  - uid: 25605
+  - uid: 27386
     components:
     - type: ChunkEntity
       root: 2
@@ -86723,7 +86723,7 @@ entities:
             5692: -13,-4
             5738: -10,-2
             6084: -4,-12
-  - uid: 26761
+  - uid: 27492
     components:
     - type: ChunkEntity
       root: 2
@@ -87354,7 +87354,7 @@ entities:
             3977: -27,22
             3981: -29,20
             4014: -21,20
-  - uid: 27386
+  - uid: 27494
     components:
     - type: ChunkEntity
       root: 2
@@ -87864,7 +87864,7 @@ entities:
             5765: -16,9
             5766: -16,10
             5792: -3,13
-  - uid: 27494
+  - uid: 27764
     components:
     - type: ChunkEntity
       root: 2
@@ -225603,14 +225603,6 @@ entities:
       pos: -50.5,37.5
     - type: ApcPowerReceiver
       powerLoad: 0
-  - uid: 27492
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: -17.5,5.5
-    - type: ApcPowerReceiver
-      powerLoad: 0
   - uid: 27493
     components:
     - type: Transform
@@ -228713,6 +228705,11 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -63.5,-35.5
+  - uid: 25417
+    components:
+    - type: Transform
+      parent: 2
+      pos: -15.5,5.5
   - uid: 27734
     components:
     - type: Transform
@@ -228866,13 +228863,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -59.5,61.5
-  - uid: 27764
-    components:
-    - type: Transform
-      parent: 2
-      pos: -15.5,5.5
-    - type: ApcPowerReceiver
-      powerLoad: 0
   - uid: 27765
     components:
     - type: Transform
@@ -245118,6 +245108,15 @@ entities:
     - type: Transform
       parent: 2
       pos: 17.5,-22.5
+- proto: SignPlaque
+  entities:
+  - uid: 25416
+    components:
+    - type: MetaData
+      desc: Старая доска почета, жаль, что доска слишком изношена, чтобы можно было её прочитать, кроме нескольких слов "no_mad" "Aurora" "Bollo" "DanTheSynth", вот только что означают эти слова, вы никогда не узнаете.
+    - type: Transform
+      parent: 2
+      pos: -16.5,5.5
 - proto: SignPrison
   entities:
   - uid: 30362

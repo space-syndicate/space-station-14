@@ -34,7 +34,7 @@
     size: Huge
 
 - type: entity
-  parent: [BriefcaseBase, BaseSyndicateContraband]
+  parent: [BriefcaseBase] # Corvax-Contraband BaseSyndicateContraband
   id: BriefcaseWeapon
   name: secure weapon case
   suffix: Gun, Empty

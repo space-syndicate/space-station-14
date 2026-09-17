@@ -220,7 +220,7 @@
 - type: entity
   id: UplinkImplanter
   name: uplink implanter
-  parent: BaseImplantOnlyImplanterSyndi
+  parent: [BaseCorvaxContraband436, BaseImplantOnlyImplanterSyndi] # Corvax-Contraband
   components:
   - type: Implanter
     implant: UplinkImplant

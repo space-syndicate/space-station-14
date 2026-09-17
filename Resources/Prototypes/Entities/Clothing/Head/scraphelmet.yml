@@ -51,7 +51,7 @@
 
 # The helmet itself
 - type: entity
-  parent: [ClothingHeadHelmetBase, BaseMajorContraband]
+  parent: [BaseCorvaxContraband432DepartmentsCargoSecurity, ClothingHeadHelmetBase, BaseMajorContraband] # Corvax-Contraband
   id: ClothingHeadHelmetScrap
   name: scrap helmet
   description: A cobbled-together helmet made from cabling, steel, and a bucket.
