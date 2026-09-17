@@ -37,7 +37,7 @@ public sealed partial class ServerGameTicker
                 ? joinQueueManager.ActualPlayersCount
                 : _playerManager.PlayerCount;
 
-            players = _cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
+            players = Cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
                     ? players
                     : players - _adminManager.ActiveAdmins.Count();
             // Corvax-Queue-End
