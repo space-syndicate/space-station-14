@@ -29,6 +29,7 @@
   id: CentcomRepresentativeGear
   equipment:
     head: ClothingHeadHatCentcomcap
+    neck: ClothingNeckCloakCentcom
     jumpsuit: ClothingUniformJumpsuitCentcomOfficer
     back: ClothingBackpackSatchelCorporate
     shoes: ClothingShoesBootsLaceup
@@ -37,7 +38,7 @@
     outerClothing: ClothingOuterArmorCentcommCarapace
     id: CentcomRepresentativePDA
     ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltSheathFilled # Поменять на ЦК вариант
+    belt: ClothingBeltSheathFilled
     pocket1: BoxFolderCentComClipboard
     pocket2: WeaponDisabler
     suitstorage: WeaponPistolN1984
