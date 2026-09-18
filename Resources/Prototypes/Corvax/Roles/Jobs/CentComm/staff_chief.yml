@@ -2,7 +2,7 @@
   id: CentcomStaffChief
   name: job-name-centcom-staff-chief
   description: job-description-staff-chief
-  playTimeTracker: JobCentcomStaffChief # Трекер формально есть, но он не зарегистрирован. Срать в БД не должен. Отслеживать время на такой роли думаю не надо )
+  playTimeTracker: JobCentcomStaffChief
   requirements:
   - !type:DepartmentTimeRequirement
     department: Command

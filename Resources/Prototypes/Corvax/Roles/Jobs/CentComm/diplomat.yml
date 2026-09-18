@@ -2,7 +2,7 @@
   id: NanoTrasenDiplomat
   name: job-name-nanotrasen-diplomat
   description: job-description-nanotrasen-diplomat
-  playTimeTracker: JobNanoTrasenDiplomat # Трекер формально есть, но он не зарегистрирован. Срать в БД не должен. Отслеживать время на такой роли думаю не надо )
+  playTimeTracker: JobNanoTrasenDiplomat
   requirements:
   - !type:DepartmentTimeRequirement
     department: Command

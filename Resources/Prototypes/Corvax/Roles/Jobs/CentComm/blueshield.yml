@@ -4,7 +4,7 @@
   id: BlueshieldOfficer
   name: job-name-blueshield-officer
   description: job-description-blueshield
-  playTimeTracker: JobBlueshieldOfficer # Трекер формально есть, но он не зарегистрирован. Срать в БД не должен. Отслеживать время на такой роли думаю не надо )
+  playTimeTracker: JobBlueshieldOfficer
   requirements:
   - !type:DepartmentTimeRequirement
     department: Command

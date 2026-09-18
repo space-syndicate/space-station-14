@@ -2,7 +2,7 @@
   id: CentcomRepresentative
   name: job-name-centcom-representative
   description: job-description-representative
-  playTimeTracker: JobCentcomRepresentative # Трекер формально есть, но он не зарегистрирован. Срать в БД не должен. Отслеживать время на такой роли думаю не надо )
+  playTimeTracker: JobCentcomRepresentative
   requirements:
   - !type:DepartmentTimeRequirement
     department: Command
