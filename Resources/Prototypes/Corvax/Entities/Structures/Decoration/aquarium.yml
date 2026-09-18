@@ -11,9 +11,9 @@
   abstract: true
   parent: [ BaseItem, FoodMeatBase ]
   id: BaseAquariumFish
-  name: пакет с рыбкой
-  description: Вы же хотите, чтобы она выжила? Ну так держите её в пакете!
-  suffix: Корвакс
+  name: bag with a fish
+  description: Do yoy want it to survive, don't you? Well then, keep it in the bag with water!
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Structures/Decoration/aquarium.rsi
@@ -33,7 +33,9 @@
   id: AquariumFish1
   components:
   - type: Sprite
-    state: item_fish1
+    layers:
+    - state: item_fish1
+    - state: bag
   - type: Tag
     tags:
     - AquariumFish1
@@ -43,7 +45,9 @@
   id: AquariumFish2
   components:
   - type: Sprite
-    state: item_fish2
+    layers:
+    - state: item_fish2
+    - state: bag
   - type: Tag
     tags:
     - AquariumFish2
@@ -53,7 +57,9 @@
   id: AquariumFish3
   components:
   - type: Sprite
-    state: item_fish3
+    layers:
+    - state: item_fish3
+    - state: bag
   - type: Tag
     tags:
     - AquariumFish3
@@ -61,9 +67,9 @@
 - type: entity
   parent: [ BaseStructure, StructureHealthBarrier, BaseDeltaPressureGlass ]
   id: Aquarium
-  name: аквариум
-  description: Стеклянная коробка с искусственным песком, в которой что-то плавает. Одна из попыток корпорации улучшить моральное состояние сотрудников.
-  suffix: Корвакс
+  name: aquarium
+  description: A glass box filled with synthetic sand, with something swimming inside. One of the corporation's attempts to boost morale.
+  suffix: Corvax
   placement:
     mode: SnapgridCenter
   components:
@@ -147,7 +153,7 @@
       sprite: Structures/Windows/cracks.rsi
   - type: Destructible
     thresholds:
-    - trigger: &DamageBarrierNormal
+    - trigger:
         !type:DamageTrigger
         damage: 80
       behaviors:
@@ -168,7 +174,7 @@
 - type: entity
   parent: Aquarium
   id: AquariumFilled
-  suffix: Заполненный, Корвакс
+  suffix: Filled, Corvax
   components:
   - type: ContainerFill
     containers:
