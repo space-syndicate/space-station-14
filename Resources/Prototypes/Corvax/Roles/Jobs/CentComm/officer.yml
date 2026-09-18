@@ -1,0 +1,53 @@
+- type: job
+  id: CentcomOfficer
+  name: job-name-centcom-officer
+  description: job-description-centcom-officer
+  playTimeTracker: JobCentcomOfficer # Трекер формально есть, но он не зарегистрирован. Срать в БД не должен. Отслеживать время на такой роли думаю не надо )
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 40h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 10h
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Muted
+  startingGear: CentcomOfficerGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom-staff-chief
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CentcomOfficerGear
+  equipment:
+    head: ClothingHeadHatBeretCentcomNaval
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    back: ClothingBackpackSatchelCorporate
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCentcomNaval
+    id: CentcomOfficerPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: WeaponPistolN1984
+    pocket1: WeaponDisabler
+    pocket2: FlippoEngravedLighter
+  storage:
+    back:
+    - Flash
+    - CigarGoldCase
+    - MagazineMagnum
+    - MagazineMagnum
+    - Handcuffs
+    - BoxFolderCentComThreePapers
+    - RubberStampCentcom
+    - RubberStampApproved
+    - RubberStampDenied
+    - DoorRemoteCustom

@@ -3,6 +3,7 @@
   id: ClothingHeadCapCentcomBlack
   name: special operations officer cap
   description: The NanoTrasen gold-engraved special cap of the higher ranks, which has long gone through more than one blitzkrieg...
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Head/Hats/centcom_officer_black.rsi
@@ -14,6 +15,7 @@
   id: ClothingHeadCapCentcomNaval
   name: centcom representatinve cap
   description: An alternative cap worn by those in the Central Command.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Head/Hats/centcom_cap.rsi
@@ -25,17 +27,19 @@
   id: ClothingHeadHatBeretCentcomNaval
   name: centcom beret
   description: A beret worn by those in the Central Command.
+  suffix: Corvax
   components:
     - type: Sprite
-      sprite: Corvax/Clothing/Head/Hats/centcom_beret.rsi
+      sprite: Corvax/Clothing/Head/Hats/beret_centcom.rsi
     - type: Clothing
-      sprite: Corvax/Clothing/Head/Hats/centcom_beret.rsi
+      sprite: Corvax/Clothing/Head/Hats/beret_centcom.rsi
 
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatERTLeaderBeret
   name: leader beret
   description: A blue beret made of durathread with a genuine golden badge, denoting its owner as a Leader of ERT.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Head/Hats/ERT_leader_beret.rsi
@@ -47,6 +51,7 @@
   id: ClothingHeadHatCapHoS
   name: head of security cap
   description: The robust standard-issue cap of the Head of Security. For showing the officers who's in charge.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Head/Hats/hoshat.rsi
@@ -58,6 +63,7 @@
   id: ClothingHeadHatCapWardenAlt
   name: warden's police hat
   description: It's a special blue hat issued to the Warden of a security force.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Head/Hats/warden_alt.rsi
@@ -69,6 +75,7 @@
   id: ClothingHeadHatBeretSecurityMedic
   name: security medic beret
   description: A robust beret with the medical insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Head/Hats/beret_security_medic.rsi
@@ -80,6 +87,7 @@
   id: ClothingHeadCaptainHat
   name: captain's hat
   description: A special hat made to order for the captain.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Head/Hats/caphat.rsi
@@ -91,6 +99,7 @@
   id: ClothingHeadHatBeretSecurityPilot
   name: pilot beret
   description: Black beret with a silver badge.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Head/Hats/beret_pilot.rsi
@@ -102,8 +111,33 @@
   id: ClothingHeadHatPwigFancy
   name: fancy pwig
   description: To be honest, those look ridiculous.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Head/Hats/true_wig.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Head/Hats/true_wig.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretCentcomWhite
+  name: white centcom beret
+  description: White version of Central Command beret.
+  suffix: Corvax
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Head/Hats/beret_centcom_white.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Head/Hats/beret_centcom_white.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretBlueshieldOfficer
+  name: blueshied officer's beret
+  description: A beret that singles out the bodyguard.
+  suffix: Corvax
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Head/Hats/beret_blueshield.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Head/Hats/beret_blueshield.rsi

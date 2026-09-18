@@ -3,6 +3,7 @@
   id: IAAPDA
   name: internal affairs agent PDA
   description: Corporation and profit are best friends.
+  suffix: Corvax
   components:
   - type: Pda
     id: IAAIDCard
@@ -23,6 +24,7 @@
   id: PilotPDA
   name: pilot PDA
   description: Нas protection from cosmic radiation.
+  suffix: Corvax
   components:
   - type: Pda
     id: PilotIDCard
@@ -52,6 +54,7 @@
   id: MagistratePDA
   name: magistrate's PDA
   description: Corporation and profit are best friends.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Objects/Devices/pda.rsi
@@ -73,3 +76,83 @@
   - type: Icon
     sprite: Corvax/Objects/Devices/pda.rsi
     state: pda-magistrate
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomOfficerPDA
+  name: CentComm officer's PDA
+  description: Light green sign of walking bureaucracy.
+  suffix: Corvax
+  components:
+  - type: Pda
+    id: CentcomOfficerIDCard
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomRepresentativePDA
+  name: CentComm representative's PDA
+  description: Light green sign of walking bureaucracy.
+  suffix: Corvax
+  components:
+  - type: Pda
+    id: CentcomRepresentativeIDCard
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomStaffChiefPDA
+  name: CentComm staff chief's PDA
+  description: Light green sign of walking bureaucracy.
+  suffix: Corvax
+  components:
+  - type: Pda
+    id: CentcomStaffChiefIDCard
+
+- type: entity
+  parent: CentcomPDA
+  id: NanoTrasenDiplomatPDA
+  name: NanoTrasen diplomat's PDA
+  description: Despite the name Central Command diplomat also deals with everything concerning the corporation's reputation.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Devices/pda.rsi
+    state: pda-centcom-white
+  - type: PdaBorderColor
+    borderColor: "#eeeeee"
+  - type: Pda
+    id: NanoTrasenDiplomatIDCard
+    penSlot:
+      startingItem: PenCentcom
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-centcom-white
+
+- type: entity
+  parent: CentcomPDA
+  id: BlueshieldOfficerPDA
+  name: blueshied officer's PDA
+  description: For bodyguards only.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Devices/pda.rsi
+    state: pda-blueshield
+  - type: PdaBorderColor
+    borderColor: "#3f6e9e"
+  - type: Pda
+    id: BlueshieldOfficerIDCard
+    penSlot:
+      startingItem: Pen
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-blueshield

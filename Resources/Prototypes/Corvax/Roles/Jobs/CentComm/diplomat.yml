@@ -1,0 +1,46 @@
+- type: job
+  id: NanoTrasenDiplomat
+  name: job-name-nanotrasen-diplomat
+  description: job-description-nanotrasen-diplomat
+  playTimeTracker: JobNanoTrasenDiplomat # Трекер формально есть, но он не зарегистрирован. Срать в БД не должен. Отслеживать время на такой роли думаю не надо )
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 40h
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Muted
+  startingGear: NanoTrasenDiplomatGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom-staff-chief
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: NanoTrasenDiplomatGear
+  equipment:
+    head: ClothingHeadHatBeretCentcomWhite
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerWhite
+    back: ClothingBackpackSatchelCorporate
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesCommand
+    gloves: ClothingHandsGlovesCentcomWhite
+    id: NanoTrasenDiplomatPDA
+    ears: ClothingHeadsetCentCom
+    pocket1: Flash
+    pocket2: NanotrasenFlippo
+  inhand:
+  - BriefcaseBrown
+  storage:
+    back:
+    - CigarGoldCase
+    - BoxFolderCentComThreePapers
+    - DrinkWaterBottleFull
+    - SpaceCash30000
+    - RubberStampCentcom

@@ -3,6 +3,7 @@
   id: ClothingUniformJumpsuitSuperstarCop
   name: superstar cop uniform
   description: Flare cut trousers and a dirty shirt that might have been classy before someone took a piss in the armpits. It's the dress of a superstar.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/disco.rsi
@@ -14,6 +15,7 @@
   id: ClothingUniformJumpsuitAerostatic
   name: aerostatic suit
   description: A crisp and well-pressed suit; professional, comfortable and curiously authoritative.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/kim.rsi
@@ -25,6 +27,7 @@
   id: ClothingUniformJumpsuitCentcomOfficerBlack
   name: special operations officer uniform
   description: Special Operations Officer uniform, nothing like that. Although... If you have time to read this, it's too late...
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_officer_black.rsi
@@ -34,19 +37,21 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomAdmiral
-  name: admiral's uniform
-  description: A uniform worn by those with the rank Admiral in the Nanotrasen Navy.
+  name: Centcom staff chief's suit
+  description: Someone in corporation considered that Centcom highest rank officers must shine.
+  suffix: Corvax
   components:
     - type: Sprite
-      sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_staff_chief.rsi
     - type: Clothing
-      sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_admiral.rsi
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_staff_chief.rsi
 
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCapTurtleneck
   name: captain's turtleneck
   description: True captain's turtleneck.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/cap_turtleneck.rsi
@@ -58,6 +63,7 @@
   id: ClothingUniformJumpsuitHoPTurtleneck
   name: head of personal's turtleneck
   description: It's Head of Personal's turtleneck.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/hop_turtleneck.rsi
@@ -69,6 +75,7 @@
   id: ClothingUniformJumpsuitHoSBlack
   name: head of security's black suit
   description: It's Head of Security's black suit.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/hos_black.rsi
@@ -80,6 +87,7 @@
   id: ClothingUniformJumpsuitRDClassical
   name: research director's classical suit
   description: It's Research Director's сlassical suit.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/rd_classical.rsi
@@ -91,6 +99,7 @@
   id: ClothingUniformJumpsuitPilot
   name: pilot suit
   description: Security pilot suit.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpsuit/pilot.rsi
@@ -102,6 +111,7 @@
   id: ClothingUniformJumpsuitMagistrate
   name: magistrate's jumpsuit
   description: Judge of space law.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Uniforms/Jumpsuit/magistrate.rsi
@@ -113,8 +123,57 @@
   id: ClothingUniformJumpsuitMagistrateFormal
   name: magistrate's formal suit
   description: Fancy judge of space law.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Uniforms/Jumpsuit/magistrateformal.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Uniforms/Jumpsuit/magistrateformal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomOfficerWhite
+  name: white centcom offcers's suit
+  description: Suit worn by some Central Command officers and NanoTrasen diplomats. The corporation wants them to shine.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_white.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_white.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomOfficerShirt
+  name: centcom offcers's suit with shirt
+  description: Suit worn by some Central Command HR officers.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_shirt.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_shirt.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBluesheildOfficer
+  name: blueshield officer's jumpsuit
+  description: Truly blue.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/blueshield.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/blueshield.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBluesheildOfficerFormal
+  name: blueshield officer's jumpsuit
+  description: Not so blue suit for important persons shield.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/blueshield_formal.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/blueshield_formal.rsi

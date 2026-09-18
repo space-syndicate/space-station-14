@@ -18,3 +18,7 @@ ent-ClothingHeadHatBeretSecurityPilot = берет пилота
     .desc = Черный берет с серебряным значком.
 ent-ClothingHeadHatPwigFancy = шикарный парик
     .desc = Честно говоря, они выглядят нелепо.
+ent-ClothingHeadHatBeretCentcomWhite = белый берет офицера ЦК
+    .desc = Белая версия берета Центрального командования.
+ent-ClothingHeadHatBeretBlueshieldOfficer = берет офицера "Синий Щит"
+    .desc = Берет, выделяющий телохранителя.

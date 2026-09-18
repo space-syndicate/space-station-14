@@ -3,6 +3,7 @@
   id: ClothingMilitaryBackpack
   name: army backpack
   description: A spacious backpack with lots of pockets, worn by military structures.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Back/Backpacks/military.rsi
@@ -15,6 +16,7 @@
   id: ClothingDeathSquadronBackpack
   name: death squadron backpack
   description: A spacious backpack using bluespace technology.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Back/Backpacks/deathsquad-backpack.rsi
@@ -28,6 +30,7 @@
   id: ClothingBackpackCE
   name: chief engineer backpack
   description: Technicially progressive backpack.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Back/Backpacks/ce.rsi
@@ -37,6 +40,22 @@
   id: ClothingBackpackWarden
   name: warden backpack
   description: It's a very robust blue backpack.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Back/Backpacks/warden.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackBlueshieldOfficer
+  name: blueshield offcier's backpack
+  description: A spacious backpack with lots of pockets, worn by live shiels.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Back/Backpacks/blueshield.rsi
+  - type: Storage
+    grid:
+    - 0,0,8,3
+  - type: ExplosionResistance
+    damageCoefficient: 0.1

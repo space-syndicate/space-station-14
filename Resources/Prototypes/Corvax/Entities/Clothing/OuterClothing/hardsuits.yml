@@ -3,6 +3,7 @@
   id: ClothingOuterHardsuitCBURNLeader
   name: CBURN commander exosuit
   description: A lightweight yet strong exosuit used for special cleanup operations.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/OuterClothing/hardsuits/cburncommander.rsi
@@ -34,6 +35,7 @@
   id: ClothingOuterHardsuitSecurityPilot
   name: security pilot hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/OuterClothing/hardsuits/security-pilot.rsi
@@ -52,3 +54,17 @@
     sprintModifier: 0.8
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurityPilot
+
+- type: entity
+  parent: ClothingOuterHardsuitERTSecurity
+  id: ClothingOuterHardsuitBlueshieldOfficer
+  name: blueshied officer's hardsuit
+  description: Reinforced hardsuit, which provides mobility and passable protection.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/hardsuits/blueshield.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/hardsuits/blueshield.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitBlueshieldOfficer

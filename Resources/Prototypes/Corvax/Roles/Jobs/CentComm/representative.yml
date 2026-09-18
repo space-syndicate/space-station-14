@@ -1,0 +1,56 @@
+- type: job
+  id: CentcomRepresentative
+  name: job-name-centcom-representative
+  description: job-description-representative
+  playTimeTracker: JobCentcomRepresentative # Трекер формально есть, но он не зарегистрирован. Срать в БД не должен. Отслеживать время на такой роли думаю не надо )
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 40h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 10h
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Muted
+  startingGear: CentcomRepresentativeGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom-staff-chief
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CentcomRepresentativeGear
+  equipment:
+    head: ClothingHeadHatCentcomcap
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    back: ClothingBackpackSatchelCorporate
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCentcomNaval
+    outerClothing: ClothingOuterArmorCentcommCarapace
+    id: CentcomRepresentativePDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSheathFilled # Поменять на ЦК вариант
+    pocket1: BoxFolderCentComClipboard
+    pocket2: WeaponDisabler
+    suitstorage: WeaponPistolN1984
+  storage:
+    back:
+    - Flash
+    - CigarGoldCase
+    - MagazineMagnum
+    - MagazineMagnum
+    - Handcuffs
+    - BoxFolderCentComThreePapers
+    - RubberStampCentcom
+    - RubberStampApproved
+    - RubberStampDenied
+    - DoorRemoteCustom
+    - FlippoEngravedLighter

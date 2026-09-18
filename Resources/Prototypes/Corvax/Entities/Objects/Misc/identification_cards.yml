@@ -2,6 +2,7 @@
   parent: IDCardStandard
   id: IAAIDCard
   name: internal affairs agent ID card
+  suffix: Corvax
   components:
   - type: Sprite
     layers:
@@ -20,6 +21,7 @@
   parent: IDCardStandard
   id: PilotIDCard
   name: pilot ID card
+  suffix: Corvax
   components:
   - type: Sprite
     layers:
@@ -38,6 +40,7 @@
   parent: IDCardStandard
   id: MagistrateIDCard
   name: magistrate's ID card
+  suffix: Corvax
   components:
   - type: Sprite
     layers:
@@ -51,3 +54,108 @@
       state: Magistrate
   - type: PresetIdCard
     job: Magistrate
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomOfficerIDCard
+  name: Centcom officer's ID card
+  suffix: Corvax
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: stripe_top
+      color: &color-centcomm-top "#134975"
+    - state: stripe_bottom
+      color: &color-centcomm-bottom "#0d304d"
+    - sprite: Interface/Misc/job_icons.rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentcomOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomRepresentativeIDCard
+  name: Centcom representative's ID card
+  suffix: Corvax
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: stripe_top
+      color: *color-centcomm-top
+    - state: stripe_bottom
+      color: *color-centcomm-bottom
+    - sprite: Interface/Misc/job_icons.rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentcomRepresentative
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomStaffChiefIDCard
+  name: Centcom staff chief's ID card
+  suffix: Corvax
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: stripe_top
+      color: *color-centcomm-top
+    - state: stripe_bottom
+      color: *color-centcomm-bottom
+    - sprite: Interface/Misc/job_icons.rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentcomStaffChief
+
+- type: entity
+  parent: IDCardStandard
+  id: BlueshieldOfficerIDCard
+  name: blueshied officer's ID card
+  suffix: Corvax
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: stripe_top
+      color: *color-centcomm-top
+    - state: stripe_bottom
+      color: *color-centcomm-bottom
+    - sprite: Interface/Misc/job_icons.rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: BlueshieldOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: NanoTrasenDiplomatIDCard
+  name: NanoTrasen diplomat's ID card
+  suffix: Corvax
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: stripe_top
+      color: *color-centcomm-top
+    - state: stripe_bottom
+      color: *color-centcomm-bottom
+    - sprite: Interface/Misc/job_icons.rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: NanoTrasenDiplomat

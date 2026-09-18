@@ -185,8 +185,8 @@ ghost-role-information-ert-medical-description = Оказывайте содей
 ghost-role-information-cburn-agent-name = РХБЗЗ Оперативник
 ghost-role-information-cburn-agent-description = Высококвалифицированный специалист, способный справиться с любыми угрозами.
 
-ghost-role-information-centcom-official-name = Представитель ЦК
-ghost-role-information-centcom-official-description = Выполняйте обязанности, связанные с работой Центрального командования, такие как инспекция станции, составление служебных характеристик на руководителей и работа с факсом.
+ghost-role-information-centcom-official-name = Инспектор ЦК
+ghost-role-information-centcom-official-description = Вы — обычный бумагомаратель на службе у корпорации. К вашему сожалению или к удовольствию — тут смотрите сами, вас отправили на объект с инспекцией. Возможно проверять как уборщик ставит знаки мокрого пола, а может и разбираться с Командованием — только разбираться, ведь прямых командных полномочий у вас нет.
 
 ghost-role-information-nukeop-rules = Вы [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color], в команде с другими Ядерными оперативниками. Помощь агентов на станции не гарантируется.
 
