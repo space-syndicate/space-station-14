@@ -122,8 +122,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCaptainRoyal
-  name: роскошный мундир капитана
-  description: По королевски роскошная униформа. Идеально подходит для руководства станцией во время вторжения ядерных оперативников.
+  name: captain's royal uniform
+  description: A captain's royal uniform. Fit for commanding your Officers in the midst of a nuclear incursion.
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Uniforms/Jumpsuit/captain_royal.rsi
