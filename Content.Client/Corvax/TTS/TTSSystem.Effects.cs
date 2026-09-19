@@ -1,5 +1,6 @@
 using Content.Shared.Corvax.TTS;
 using Robust.Shared.Audio.Components;
+using Robust.Shared.Audio.Effects;
 
 namespace Content.Client.Corvax.TTS;
 
@@ -117,6 +118,52 @@ public sealed partial class TTSSystem
     }
 
     /// <summary>
+    /// Creates an effect and an auxiliary, configures the preset, and links them.
+    /// Rolls back everything created and returns null if any error occurs.
+    /// </summary>
+    private (EntityUid Effect, EntityUid Auxiliary)? TryCreateEffectWithAuxiliary(ReverbProperties preset, string debugName)
+    {
+        EntityUid? effectUid = null;
+        EntityUid? auxUid = null;
+
+        try
+        {
+            var (effect, effectComp) = _audio.CreateEffect();
+            effectUid = effect;
+
+            _audio.SetEffectPreset(effect, effectComp, preset);
+
+            var (aux, auxComp) = _audio.CreateAuxiliary();
+            auxUid = aux;
+
+            _audio.SetEffect(aux, auxComp, effect);
+
+            return (effect, aux);
+        }
+        catch (Exception ex)
+        {
+            _sawmill.Warning($"Failed to initialize {debugName} effect: {ex.Message}");
+            if (auxUid != null && !TerminatingOrDeleted(auxUid.Value))
+            {
+                if (TryComp<AudioAuxiliaryComponent>(auxUid.Value, out var auxComp))
+                {
+                    auxComp.Auxiliary?.SetEffect(null);
+                    auxComp.Auxiliary?.Dispose();
+                }
+                Del(auxUid.Value);
+            }
+
+            if (effectUid != null && !TerminatingOrDeleted(effectUid.Value))
+            {
+                _audio.Stop(effectUid.Value);
+                Del(effectUid.Value);
+            }
+
+            return null;
+        }
+    }
+
+    /// <summary>
     /// Initializes voice effect upon first use, if necessary.
     /// </summary>
     private bool EnsureVoiceEffectInitialized()
@@ -126,7 +173,7 @@ public sealed partial class TTSSystem
 
         if (_voiceEffectPreset == TTSVoiceEffectPreset.None)
         {
-            ShutdownVoiceEffect();
+            _cachedVoiceEffectEntity = null;
             return false;
         }
 
@@ -140,33 +187,19 @@ public sealed partial class TTSSystem
 
             if (_voiceEffectPreset == TTSVoiceEffectPreset.None)
             {
-                ShutdownVoiceEffect();
+                _cachedVoiceEffectEntity = null;
                 return false;
             }
 
-            try
-            {
-                _sawmill.Debug($"Initializing voice effect for preset: {_voiceEffectPreset}");
-
-                var (effectUid, effectComp) = _audio.CreateEffect();
-                var preset = GetVoicePreset(_voiceEffectPreset);
-                _audio.SetEffectPreset(effectUid, effectComp, preset);
-
-                var (auxUid, auxComp) = _audio.CreateAuxiliary();
-                _audio.SetEffect(auxUid, auxComp, effectUid);
-
-                _cachedVoiceEffectEntity = effectUid;
-                _voiceAuxiliaryEntity = auxUid;
-
-                _sawmill.Info($"Voice effect initialized: {_voiceEffectPreset}");
-                return true;
-            }
-            catch (Exception ex)
-            {
-                _sawmill.Warning($"Failed to initialize voice effect: {ex.Message}");
-                ShutdownVoiceEffect();
+            var result = TryCreateEffectWithAuxiliary(GetVoicePreset(_voiceEffectPreset), $"voice ({_voiceEffectPreset})");
+            if (result == null)
                 return false;
-            }
+
+            _cachedVoiceEffectEntity = result.Value.Effect;
+            _voiceAuxiliaryEntity = result.Value.Auxiliary;
+
+            _sawmill.Info($"Voice effect initialized: {_voiceEffectPreset}");
+            return true;
         }
     }
 
@@ -186,26 +219,14 @@ public sealed partial class TTSSystem
             if (_cachedRadioEffectEntity != null)
                 return true;
 
-            try
-            {
-                var (effectUid, effectComp) = _audio.CreateEffect();
-                var radioPreset = CreateRadioPreset();
-                _audio.SetEffectPreset(effectUid, effectComp, radioPreset);
-
-                var (auxUid, auxComp) = _audio.CreateAuxiliary();
-                _audio.SetEffect(auxUid, auxComp, effectUid);
-
-                _cachedRadioEffectEntity = effectUid;
-                _radioAuxiliaryEntity = auxUid;
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                _sawmill.Warning($"Failed to initialize radio EFX effect: {ex.Message}");
-                ShutdownRadioEffect();
+            var result = TryCreateEffectWithAuxiliary(CreateRadioPreset(), "radio");
+            if (result == null)
                 return false;
-            }
+
+            _cachedRadioEffectEntity = result.Value.Effect;
+            _radioAuxiliaryEntity = result.Value.Auxiliary;
+
+            return true;
         }
     }
 }
