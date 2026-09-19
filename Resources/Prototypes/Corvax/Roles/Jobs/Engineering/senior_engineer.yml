@@ -6,13 +6,13 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 6h
+      time: 10h
     - !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 6h
+      time: 15h
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 60h
+      time: 25h
   startingGear: SeniorEngineerGear
   icon: "JobIconSeniorEngineer"
   supervisors: job-supervisors-ce

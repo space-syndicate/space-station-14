@@ -26,7 +26,7 @@ namespace Content.Server.Voting
         /// <summary>
         ///     How long the vote lasts.
         /// </summary>
-        public TimeSpan Duration { get; set; } = TimeSpan.FromMinutes(1);
+        public TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(90);
 
         /// <summary>
         ///     How long the initiator should be timed out from calling votes. Defaults to duration * 2;

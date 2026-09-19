@@ -3,7 +3,7 @@
   alias:
     - survival
   name: survival-title
-  showInVote: false # secret
+  showInVote: true # secret
   description: survival-description
   rules:
     - MeteorSwarmScheduler
@@ -143,7 +143,7 @@
     - tator
   name: traitor-title
   description: traitor-description
-  showInVote: false
+  showInVote: true
   rules:
   - DummyNonAntagChance
   - Traitor
@@ -161,7 +161,7 @@
   name: death-match-title
   description: death-match-description
   maxPlayers: 15
-  showInVote: true
+  showInVote: false
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31
@@ -172,7 +172,7 @@
     - nukeops
   name: nukeops-title
   description: nukeops-description
-  showInVote: false
+  showInVote: true
   rules:
   - Nukeops
   - DummyNonAntagChance
@@ -190,7 +190,7 @@
     - revolutionaries
   name: rev-title
   description: rev-description
-  showInVote: false
+  showInVote: true
   rules:
   - DummyNonAntagChance
   - Revolutionary
@@ -222,7 +222,7 @@
     - xenoborgs
   name: xenoborgs-title
   description: xenoborgs-description
-  showInVote: false
+  showInVote: true
   rules:
   - Xenoborgs
   - DummyNonAntagChance
@@ -242,7 +242,7 @@
   - zomber
   name: zombie-title
   description: zombie-description
-  showInVote: false
+  showInVote: true
   rules:
   - Zombie
   - BasicStationEventScheduler

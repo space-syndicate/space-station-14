@@ -6,16 +6,16 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 6h
+      time: 5h
     - !type:RoleTimeRequirement
       role: JobDetective
-      time: 2h
+      time: 5h
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 6h
+      time: 15h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 60h
+      time: 30h
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
   supervisors: job-supervisors-hos

@@ -3,33 +3,11 @@
   copyright: "-Sector11 by MashedByMachines. Converted from MP3 to OGG."
   source: "https://www.newgrounds.com/audio/listen/312622"
 
-- files: ["endless_space.ogg"]
-  license: "CC-BY-3.0"
-  copyright: "Endless Space by SolusLunes. Converted from MP3 to OGG."
-  source: "https://www.newgrounds.com/audio/listen/67583"
-
 - files: ["space_asshole.ogg"]
   license: "Custom"
   copyright: "Space Asshole by Chris Remo is used with special permission from the author, under the condition that the project remains non-commercial and open source. The author also requested that a link to his bandcamp be included: https://chrisremo.bandcamp.com/"
   source: "https://idlethumbs.bandcamp.com/track/space-asshole"
   # The source is a direct link to the track, but not the "main" bandcamp of the author. Hence the link is also included separately in the copyright.
-
-- files: ["the_wizard.ogg"]
-  license: "Custom"
-  copyright: "The Wizard by Chris Remo is used with special permission from the author, under the condition that the project remains non-commercial and open source. The author also requested that a link to his bandcamp be included: https://chrisremo.bandcamp.com/"
-  source: "https://idlethumbs.bandcamp.com/track/the-wizard"
-  # The source is a direct link the the track, but not the "main" bandcamp of the author. Hence the link is also included separately in the copyright.
-  # Got permission from Chris for this song as well on 02/25/25, requires same attributions
-
-- files: ["absconditus.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "Absconditus by ZhayTee. Converted from MP3 to OGG."
-  source: "https://bandcamp.zhaytee.net/track/absconditus"
-
-- files: ["atomicamnesiammx.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "Atomic Amnesia MMX by Philip Dyer. Converted from MP3 to OGG."
-  source: "https://soundcloud.com/3kliksphilip/atomic-amnesia-mmx-1"
 
 - files: ["singuloose.ogg"]
   license: "CC-BY-NC-SA-3.0"
@@ -51,11 +29,6 @@
   copyright: "Comet Haley by Stellardrone. Converted from MP3 to OGG."
   source: "https://stellardrone.bandcamp.com/track/comet-halley"
 
-- files: ["mod.flip-flap.ogg"]
-  license: "Custom"
-  copyright: "Flip Flap by X-ceed is licensed under a short but clear license (see flip-flap.txt in this directory) and is free for non-commercial use. It was converted from MOD to WAV using Schism Tracker, in 16 Bit, Non-Interpolated mode, no output equalizer settings, Ramp volume at start of sample enabled. From there it was converted to OGG Vorbis with `ffmpeg -i flip-flap.wav -q 2.9 flip-flap-renc.ogg` (quality scale chosen to match size of the OGG file being replaced). Non-interpolated mode was chosen as the module has a high enough sample rate to balance it out, but seems muffled in other interpolation modes. If 'Ramp volume at start of sample' is not enabled, a clicking phenomenon results."
-  source: "http://aminet.net/package/mods/xceed/Flipflap"
-
 - files: ["Spac_Stac.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Spac Stac by Hayabusa. Converted from MP3 to OGG."
@@ -75,3 +48,20 @@
   license: "CC-BY-NC-SA-3.0"
   copyright: "every light is blinking at once by Sunbeamstress/Lauren Loveless."
   source: "https://soundcloud.com/sunbeamstress/every-light-is-blinking-at-once"
+
+- files: ["PinpinNeon_-_Sky_after_rain_76043041.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "ogo"
+  source: "N/A"
+
+- files: ["DM_DOKURO_-_Scourge_of_the_Universe_67256664.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "ogo"
+  source: "N/A"
+
+- files: ["Ben-Salisbury-_-Geoff-Barrow-—-The-Alien-_cut-version_-_www.lightaudio.ru_.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "ogo"
+  source: "N/A"
+
+
