@@ -13,9 +13,9 @@ public sealed partial class TTSSystem
     private readonly object _radioEffectLock = new();
 
     /// <summary>
-    /// Clears all EFX-effects.
+    /// It frees up only the vocal effect and its auxiliary.
     /// </summary>
-    private void ShutdownEffects()
+    private void ShutdownVoiceEffect()
     {
         if (_cachedVoiceEffectEntity != null && !TerminatingOrDeleted(_cachedVoiceEffectEntity.Value))
         {
@@ -34,7 +34,13 @@ public sealed partial class TTSSystem
             Del(_voiceAuxiliaryEntity);
         }
         _voiceAuxiliaryEntity = null;
+    }
 
+    /// <summary>
+    /// It frees up only the radio effect and its auxiliary.
+    /// </summary>
+    private void ShutdownRadioEffect()
+    {
         if (_cachedRadioEffectEntity != null && !TerminatingOrDeleted(_cachedRadioEffectEntity.Value))
         {
             _audio.Stop(_cachedRadioEffectEntity);
@@ -54,21 +60,27 @@ public sealed partial class TTSSystem
         _radioAuxiliaryEntity = null;
     }
 
+    /// <summary>
+    /// Clears all EFX-effects.
+    /// </summary>
+    private void ShutdownEffects()
+    {
+        ShutdownVoiceEffect();
+        ShutdownRadioEffect();
+    }
+
     private void ApplyVoiceEffect((EntityUid Entity, AudioComponent Component) audio, TTSVoiceEffectPreset effect)
     {
+        if (!_ttsEnabled)
+            return;
+
         if (effect == TTSVoiceEffectPreset.None)
             return;
 
-        if (_cachedVoiceEffectEntity == null)
-        {
-            if (!EnsureVoiceEffectInitialized())
-            {
-                if (_cachedVoiceEffectEntity == null)
-                    return;
-            }
-        }
+        if (!EnsureVoiceEffectInitialized())
+            return;
 
-        if (_cachedVoiceEffectEntity == null || _voiceAuxiliaryEntity == null)
+        if (_voiceAuxiliaryEntity == null)
             return;
 
         try
@@ -84,13 +96,13 @@ public sealed partial class TTSSystem
 
     private void ApplyRadioEffect((EntityUid Entity, AudioComponent Component) audio)
     {
-        if (!EnsureRadioEffectInitialized())
-        {
-            if (_cachedRadioEffectEntity == null)
-                return;
-        }
+        if (!_ttsEnabled)
+            return;
 
-        if (_cachedRadioEffectEntity == null || _radioAuxiliaryEntity == null)
+        if (!EnsureRadioEffectInitialized())
+            return;
+
+        if (_radioAuxiliaryEntity == null)
             return;
 
         try
@@ -109,9 +121,12 @@ public sealed partial class TTSSystem
     /// </summary>
     private bool EnsureVoiceEffectInitialized()
     {
+        if (!_ttsEnabled)
+            return false;
+
         if (_voiceEffectPreset == TTSVoiceEffectPreset.None)
         {
-            _cachedVoiceEffectEntity = null;
+            ShutdownVoiceEffect();
             return false;
         }
 
@@ -125,7 +140,7 @@ public sealed partial class TTSSystem
 
             if (_voiceEffectPreset == TTSVoiceEffectPreset.None)
             {
-                _cachedVoiceEffectEntity = null;
+                ShutdownVoiceEffect();
                 return false;
             }
 
@@ -133,17 +148,15 @@ public sealed partial class TTSSystem
             {
                 _sawmill.Debug($"Initializing voice effect for preset: {_voiceEffectPreset}");
 
-                var effectResult = _audio.CreateEffect();
-                var (effectUid, effectComp) = effectResult;
-                _cachedVoiceEffectEntity = effectUid;
-
+                var (effectUid, effectComp) = _audio.CreateEffect();
                 var preset = GetVoicePreset(_voiceEffectPreset);
                 _audio.SetEffectPreset(effectUid, effectComp, preset);
 
                 var (auxUid, auxComp) = _audio.CreateAuxiliary();
-                _voiceAuxiliaryEntity = auxUid;
-
                 _audio.SetEffect(auxUid, auxComp, effectUid);
+
+                _cachedVoiceEffectEntity = effectUid;
+                _voiceAuxiliaryEntity = auxUid;
 
                 _sawmill.Info($"Voice effect initialized: {_voiceEffectPreset}");
                 return true;
@@ -151,6 +164,7 @@ public sealed partial class TTSSystem
             catch (Exception ex)
             {
                 _sawmill.Warning($"Failed to initialize voice effect: {ex.Message}");
+                ShutdownVoiceEffect();
                 return false;
             }
         }
@@ -161,6 +175,9 @@ public sealed partial class TTSSystem
     /// </summary>
     private bool EnsureRadioEffectInitialized()
     {
+        if (!_ttsEnabled)
+            return false;
+
         if (_cachedRadioEffectEntity != null)
             return true;
 
@@ -171,23 +188,22 @@ public sealed partial class TTSSystem
 
             try
             {
-                var effectResult = _audio.CreateEffect();
-                var (effectUid, effectComp) = effectResult;
-                _cachedRadioEffectEntity = effectUid;
-
+                var (effectUid, effectComp) = _audio.CreateEffect();
                 var radioPreset = CreateRadioPreset();
                 _audio.SetEffectPreset(effectUid, effectComp, radioPreset);
 
                 var (auxUid, auxComp) = _audio.CreateAuxiliary();
-                _radioAuxiliaryEntity = auxUid;
-
                 _audio.SetEffect(auxUid, auxComp, effectUid);
+
+                _cachedRadioEffectEntity = effectUid;
+                _radioAuxiliaryEntity = auxUid;
 
                 return true;
             }
             catch (Exception ex)
             {
                 _sawmill.Warning($"Failed to initialize radio EFX effect: {ex.Message}");
+                ShutdownRadioEffect();
                 return false;
             }
         }
