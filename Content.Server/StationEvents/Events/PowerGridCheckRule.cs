@@ -135,6 +135,11 @@ namespace Content.Server.StationEvents.Events
 
             // Can't use the default EndAudio
             rule.Comp.AnnounceCancelToken?.Cancel();
+
+            // Corvax-Announcements-fix временная заплатка, удалить после реворка https://github.com/space-wizards/space-station-14/issues/46073
+            if (MetaData(rule).EntityLifeStage >= EntityLifeStage.Terminating)
+                return;
+
             rule.Comp.AnnounceCancelToken = new CancellationTokenSource();
             Timer.Spawn(3000,
                 () =>

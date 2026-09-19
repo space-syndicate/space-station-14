@@ -78,6 +78,10 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
 
         AdminLogManager.Add(LogType.EventStopped, $"Event ended: {ToPrettyString(rule)}");
 
+        // Corvax-Announcements-fix временная заплатка, удалить после реворка https://github.com/space-wizards/space-station-14/issues/46073
+        if (MetaData(rule).EntityLifeStage >= EntityLifeStage.Terminating)
+            return;
+
         // we don't want to send to players who aren't in game (i.e. in the lobby)
         Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
 
