@@ -354,6 +354,7 @@ namespace Content.Shared.Preferences
             if (ignoredSpecies != null)
             {
                 baseProfile.Species = RandomSpecies(ignoredSpecies);
+                config ^= RandomizeCfg.Species; // Corvax
             }
             var profile = Random(config, baseProfile);
             return profile;
