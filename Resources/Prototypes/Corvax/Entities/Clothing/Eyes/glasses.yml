@@ -23,7 +23,7 @@
     sprite: Corvax/Clothing/Eyes/Glasses/kim.rsi
 
 - type: entity
-  parent: [ ClothingEyesGlassesSecurity, ShowMedicalIcons ]
+  parent: [ ClothingEyesGlassesSecurity, ShowMedicalIcons, BaseToggleClothing ]
   id: ClothingEyesVisorTactical
   name: tactical visor
   description: NanoTrasen visor, that allow you to see a lot of tactical information.
@@ -39,5 +39,10 @@
     - Biological
     - Inorganic
     - Silicon
-  - type: NightVision
-    relayOverlay: true
+  - type: ToggleClothing
+    action: ActionToggleNightVision
+    mustEquip: true
+  - type: ComponentToggler
+    components:
+    - type: NightVision
+      relayOverlay: true

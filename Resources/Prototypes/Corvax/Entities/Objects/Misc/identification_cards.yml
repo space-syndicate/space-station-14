@@ -133,7 +133,7 @@
       color: *color-centcomm-bottom
     - sprite: Interface/Misc/job_icons.rsi
       offset: *icon-offset
-      state: Nanotrasen
+      state: ERTSecurity
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard

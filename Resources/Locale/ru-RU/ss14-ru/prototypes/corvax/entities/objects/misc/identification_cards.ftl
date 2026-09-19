@@ -12,3 +12,5 @@ ent-CentcomStaffChiefIDCard = ID-карта начальника штаба ЦК
     .desc = { ent-IDCardStandard.desc }
 ent-NanoTrasenDiplomatIDCard = ID-карта дипломата NanoTrasen
     .desc = { ent-IDCardStandard.desc }
+ent-BlueshieldOfficerIDCard = ID-карта офицера "Синий Щит"
+    .desc = { ent-IDCardStandard.desc }
