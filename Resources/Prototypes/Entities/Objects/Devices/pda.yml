@@ -1156,7 +1156,16 @@
 
 - type: entity
   parent: ClearPDA
+  id: PrisonerPDA # This mostly just exists for the sake of the chameleon UI giving a clear PDA with a prisoner ID
+  suffix: Prisoner
+  components:
+  - type: Pda
+    id: PrisonerIDCard
+
+- type: entity
+  parent: ClearPDA
   id: VisitorPDA
+  suffix: Visitor
   components:
   - type: Pda
     id: VisitorIDCard
@@ -1165,7 +1174,7 @@
     - DoorBumpOpener
 
 - type: entity
-  parent: [ BasePDA, BaseSyndicateContraband ]
+  parent: [ BasePDA ] # Corvax-Contraband BaseSyndicateContraband
   id: SyndiPDA
   name: syndicate PDA
   description: Ok, time to be a productive member of- oh cool I'm a bad guy time to kill people!
@@ -1790,6 +1799,7 @@
 - type: entity
   parent: ClearPDA
   id: ScurretPDA
+  suffix: Scurret
   description: A temporary PDA granted to scurret temps. Doesn't do much. Wawa!
   components:
   - type: Pda

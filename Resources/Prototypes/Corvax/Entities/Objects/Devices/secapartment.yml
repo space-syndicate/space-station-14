@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [ BaseCorvaxContraband433DepartmentsCommandSecurity, BaseItem ]
   id: SecApartmentTabletUnpowered
   name: SecApartment handheld tablet
   description: "A NanoTrasen-approved device for organizing and coordinating the actions of security personnel at corporate facilities."

@@ -116,7 +116,7 @@
 #Empty black
 - type: entity
   id: JetpackBlack
-  parent: [BaseJetpack, BaseSyndicateContraband]
+  parent: [BaseJetpack] # Corvax-Contraband BaseSyndicateContraband
   name: jetpack
   suffix: Empty
   components:

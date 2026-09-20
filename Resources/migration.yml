@@ -1190,7 +1190,13 @@ DrinkNeurotoxinGlass: null
 FloorAzureWaterEntity: FloorWaterEntity
 XenoborgModuleFireExtinguisher: BorgModuleFireExtinguisher
 LightReplacerEmpty: LightReplacer
+ArmBlade: Armblade # https://github.com/space-wizards/space-station-14/pull/45724/
 
 #2026-08-19
 JanitorServiceLight: null
 
+#2026-08-31
+DrinkWaterJug: JugWater
+
+#2026-09-05
+AsimovCircuitBoard: CrewsimovCircuitBoard
