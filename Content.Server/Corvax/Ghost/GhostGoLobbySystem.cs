@@ -5,6 +5,7 @@ using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.Events;
 using Content.Shared.Corvax.Ghost;
+using Content.Shared.GameTicking;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Popups;
 using Content.Shared.Preferences;
