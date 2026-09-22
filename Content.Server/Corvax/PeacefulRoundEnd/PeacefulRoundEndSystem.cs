@@ -1,4 +1,4 @@
-using Content.Server.GameTicking;
+using Content.Shared.GameTicking;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Mindshield.Components;
@@ -22,7 +22,7 @@ public sealed partial class PeacefulRoundEndSystem : EntitySystem
         SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEnded);
     }
 
-    private void OnRoundEnded(RoundEndTextAppendEvent ev)
+    private void OnRoundEnded(ref RoundEndTextAppendEvent ev)
     {
         if (!_isEnabled) return;
         foreach (var session in _playerManager.Sessions)
