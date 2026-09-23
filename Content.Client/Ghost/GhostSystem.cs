@@ -1,5 +1,4 @@
 using Content.Client.Movement.Systems;
-using Content.Shared.Corvax.Events;
 using Content.Shared.Actions;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Ghost.Systems;
@@ -186,11 +185,6 @@ namespace Content.Client.Ghost
         public void RequestWarps()
         {
             RaiseNetworkEvent(new GhostWarpsRequestEvent());
-        }
-
-        public void GhostGoLobby() // Corvax-GoLobby
-        {
-            RaiseNetworkEvent(new GhostGoLobbyEvent());
         }
 
         public void ReturnToBody()
