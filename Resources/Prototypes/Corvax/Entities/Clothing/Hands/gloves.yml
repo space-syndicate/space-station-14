@@ -3,6 +3,7 @@
   id: ClothingHandsGlovesAerostatic
   name: aerostatic gloves
   description: Breathable red gloves for expert handling of a pen and notebook.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Hands/Gloves/kim.rsi
@@ -13,11 +14,25 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsGlovesCentcomNaval
-  name: nanotrasen naval gloves
-  description: A high quality pair of thick gloves covered in gold stitching, given to Nanotrasen's Naval Commanders.
+  name: centcom gloves
+  description: A high quality pair of thick gloves covered in gold stitching, given to Nanotrasen's Central Command officers.
+  suffix: Corvax
   components:
     - type: Sprite
-      sprite: Corvax/Clothing/Hands/Gloves/centcom_naval.rsi
+      sprite: Corvax/Clothing/Hands/Gloves/centcom.rsi
     - type: Clothing
-      sprite: Corvax/Clothing/Hands/Gloves/centcom_naval.rsi
+      sprite: Corvax/Clothing/Hands/Gloves/centcom.rsi
     - type: Insulated
+    - type: FingerprintMask # Прикола ради. ЦК не оставляет следов!
+
+- type: entity
+  parent: ClothingHandsGlovesCentcomNaval
+  id: ClothingHandsGlovesCentcomWhite
+  name: centcom white gloves
+  description: A high quality special pair of thick gloves covered in gold stitching, given to Nanotrasen's Central Command high-ranking and diplomats.
+  suffix: Corvax
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Hands/Gloves/centcom_white.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Hands/Gloves/centcom_white.rsi

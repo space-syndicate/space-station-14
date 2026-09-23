@@ -1,11 +1,11 @@
 ent-ClothingUniformJumpsuitDeathSquad = униформа Эскадрона смерти
     .desc = Усовершенствованный бронированный комбинезон, используемый спецподразделениями при проведении специальных операций.
-ent-ClothingUniformJumpsuitCentcomAgent = комбинезон агента ЦК
+ent-ClothingUniformJumpsuitCentcomAgent = костюм агента ЦК
     .desc = Костюм, который носят сотрудники Юридического отдела Центрального командования. Пахнет подгоревшим кофе.
-ent-ClothingUniformJumpsuitCentcomOfficial = комбинезон офицера ЦК
-    .desc = Это комбинезон, который носят офицеры Центрального командования.
-ent-ClothingUniformJumpsuitCentcomOfficer = водолазка офицера ЦК
-    .desc = Водолазка, которую носят офицеры Центрального командования.
+ent-ClothingUniformJumpsuitCentcomOfficial = комбинезон сотрудника ЦК
+    .desc = Комбинезон, принадлежащий сотрудникам Центрального командования "низшего" звена — клеркам или инспекторам. Несмотря на отсутствие командных полномочий, комбинезон в в зелёных цветах придаёт им некий авторитет.
+ent-ClothingUniformJumpsuitCentcomOfficer = комбинезон офицера ЦК
+    .desc = Это комбинезон, который носят полноправные офицеры Центрального командования.
 ent-ClothingUniformJumpsuitCentcomFormal = торжественный костюм ЦК
     .desc = Костюм для особых случаев.
 ent-ClothingUniformJumpsuitERTChaplain = униформа священника ОБР
