@@ -29,9 +29,14 @@ public sealed partial class GhostGoLobbySystem : EntitySystem
 
     private readonly HashSet<int> _usedCharacters = new();
 
-    public bool TryTakeCharacter(HumanoidCharacterProfile profile)
+    public bool IsCharacterUsed(HumanoidCharacterProfile profile)
     {
-        return _usedCharacters.Add(GetCharacterHash(profile));
+        return _usedCharacters.Contains(GetCharacterHash(profile));
+    }
+
+    public void MarkCharacterUsed(HumanoidCharacterProfile profile)
+    {
+        _usedCharacters.Add(GetCharacterHash(profile));
     }
 
     private static int GetCharacterHash(HumanoidCharacterProfile profile)

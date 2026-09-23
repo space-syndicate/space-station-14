@@ -26,7 +26,24 @@ public sealed partial class GhostGoLobbyButton : Button
         IoCManager.InjectDependencies(this);
 
         OnPressed += _ => OnPress();
-        _cfg.OnValueChanged(CCCVars.GhostGoLobbyEnabled, value => Visible = value, true);
+    }
+
+    protected override void EnteredTree()
+    {
+        base.EnteredTree();
+        _cfg.OnValueChanged(CCCVars.GhostGoLobbyEnabled, OnEnabledChanged, true);
+    }
+
+    protected override void ExitedTree()
+    {
+        _cfg.UnsubValueChanged(CCCVars.GhostGoLobbyEnabled, OnEnabledChanged);
+        _confirmWindow?.Close();
+        base.ExitedTree();
+    }
+
+    private void OnEnabledChanged(bool enabled)
+    {
+        Visible = enabled;
     }
 
     private void OnPress()
