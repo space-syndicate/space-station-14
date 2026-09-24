@@ -166,14 +166,14 @@ public sealed partial class CCVars
     ///     If false, then admins will not be considered when checking whether the playercount is already above the soft player cap
     /// </summary>
     public static readonly CVarDef<bool> AdminsCountForMaxPlayers =
-        CVarDef.Create("admin.admins_count_for_max_players", false, CVar.SERVERONLY);
+        CVarDef.Create("admin.admins_count_for_max_players", true, CVar.SERVERONLY);
 
     /// <summary>
     /// Should admins be hidden from the player count reported to the launcher/via api?
     /// This is hub advert safe, in case that's a worry.
     /// </summary>
     public static readonly CVarDef<bool> AdminsCountInReportedPlayerCount =
-        CVarDef.Create("admin.admins_count_in_playercount", false, CVar.SERVERONLY);
+        CVarDef.Create("admin.admins_count_in_playercount", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Determine if custom rank names are used.

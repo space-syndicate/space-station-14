@@ -225,7 +225,7 @@ namespace Content.Client.Lobby
         {
             if (ev.SoundtrackFilename == null)
             {
-                Lobby!.LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
+              // Lobby!.LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
             }
             else if (
                 ev.SoundtrackFilename != null
@@ -246,7 +246,7 @@ namespace Content.Client.Lobby
                     ("songTitle", title),
                     ("songArtist", artist));
 
-                Lobby!.LobbySong.SetMarkup(markup);
+               // Lobby!.LobbySong.SetMarkup(markup);
             }
         }
 
@@ -260,13 +260,13 @@ namespace Content.Client.Lobby
                     ("backgroundTitle", Loc.GetString(proto.Title)),
                     ("backgroundArtist", Loc.GetString(proto.Artist)));
 
-                Lobby!.LobbyBackground.SetMarkup(markup);
+               // Lobby!.LobbyBackground.SetMarkup(markup);
             }
             else
             {
-                Lobby!.Background.Texture = null;
+              // Lobby!.Background.Texture = null;
 
-                Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
+              // Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
             }
         }
 
