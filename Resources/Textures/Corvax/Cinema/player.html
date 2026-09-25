@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>cinema</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+<video id="video" playsinline muted></video>
+<script>
+(function () {
+    var v = document.getElementById('video');
+
+    var segmentBlob = null;
+    var videoSrc = null;
+    var pendingSeek = null;
+    var playStarting = false;
+    var playAttempt = 0;
+    var retryAt = 0;
+    var readySource = null;
+    var readySignal = null;
+    function reportReady() {
+        if (!videoSrc || videoSrc.indexOf("segment:") !== 0 || v.readyState < 2 || v.seeking || v.error || readySource === videoSrc) return;
+        readySource = videoSrc;
+        // The res scheme supports resource loads, but does not enable the Fetch API.
+        readySignal = new Image();
+        readySignal.src = "res://localhost/cinema-ready/" + videoSrc.substring(8);
+    }
+    v.addEventListener("loadeddata", reportReady);
+    v.addEventListener("seeked", reportReady);
+    v.addEventListener("canplay", reportReady);
+    v.addEventListener('loadedmetadata', function () {
+        if (pendingSeek !== null) {
+            try { v.currentTime = pendingSeek; } catch (e) { /* retried next sync */ }
+            pendingSeek = null;
+        }
+    });
+
+    function setTime(t) {
+        if (v.readyState >= 1) {
+            try { v.currentTime = t; } catch (e) { pendingSeek = t; }
+        } else {
+            pendingSeek = t;
+        }
+    }
+
+    function videoStartPlayback() {
+        if (playStarting || Date.now() < retryAt) return;
+
+        // WebView owns video only. Keeping the element permanently muted makes Chromium's autoplay path stable
+        // on Linux; audible cinema sound is generated and played by the game's positional AudioSystem.
+        var attempt = ++playAttempt;
+        playStarting = true;
+        v.muted = true;
+        v.volume = 0;
+        var p = v.play();
+        if (p && typeof p.then === 'function') {
+            p.then(function () {
+                if (attempt !== playAttempt) return;
+                playStarting = false;
+            }).catch(function (error) {
+                if (attempt !== playAttempt) return;
+                // pause/load/seek can abort play(). Such an interruption must not permanently disable video.
+                retryAt = Date.now() + (error && error.name === "AbortError" ? 0 : 1000);
+                playStarting = false;
+            });
+        } else {
+            playStarting = false;
+        }
+    }
+
+    function applyState(url, playing, time, threshold) {
+        if (!v) return;
+
+        if (url !== videoSrc) {
+            videoSrc = url;
+            ++playAttempt;
+            retryAt = 0;
+            readySource = null;
+            playStarting = false;
+            if (url) {
+                // Remote URLs are media sources; the WebView stays on this local page.
+                if (url.indexOf("segment:") === 0) {
+                    v.src = segmentBlob;
+                    v.load();
+                } else {
+                    v.src = url;
+                    v.load();
+                }
+                setTime(time || 0);
+            } else {
+                v.removeAttribute('src');
+                v.load();
+                pendingSeek = null;
+            }
+        }
+
+        v.muted = true;
+        v.volume = 0;
+
+        if (url) {
+            var drift = Math.abs(v.currentTime - time);
+            var t = playing ? (threshold || 0.35) : 0.05;
+            if (drift > t) {
+                setTime(time);
+            }
+        }
+
+        if (playing && v.paused && url) {
+            videoStartPlayback();
+        } else if (!playing) {
+            if (playStarting) { ++playAttempt; playStarting = false; }
+            if (!v.paused) v.pause();
+        }
+        reportReady();
+    }
+
+    function loadSegment(base64) {
+        if (segmentBlob) URL.revokeObjectURL(segmentBlob);
+        var raw = atob(base64);
+        var bytes = new Uint8Array(raw.length);
+        for (var i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+        segmentBlob = URL.createObjectURL(new Blob([bytes], { type: 'video/webm' }));
+    }
+    window.cinema = { applyState: applyState, loadSegment: loadSegment };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+- type: entity
+  id: CinemaScreen
+  parent: BaseStructureDynamic
+  name: cinema screen
+  description: A wall screen that streams an external HTTPS video. Click it to open the controls.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-5,-2.8125,5,2.8125"
+        density: 60
+        hard: true
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileLayer
+  - type: Sprite
+    layers:
+    - map: ["screenVideo"]
+      texture: Corvax/Structures/Furniture/cinema_screen_off.png
+      scale: 0.5, 0.5
+    - map: ["screenFrame"]
+      texture: Corvax/Structures/Furniture/cinema_screen_frame.png
+      scale: 0.5, 0.5
+  - type: CinemaScreen
+    films:
+      cinema-film-pipe-and-jug: https://upload.wikimedia.org/wikipedia/commons/5/5b/1950._%D0%94%D1%83%D0%B4%D0%BE%D1%87%D0%BA%D0%B0_%D0%B8_%D0%BA%D1%83%D0%B2%D1%88%D0%B8%D0%BD%D1%87%D0%B8%D0%BA.webm
+      cinema-film-fisherman: https://upload.wikimedia.org/wikipedia/commons/a/a3/1950._%D0%A1%D0%BA%D0%B0%D0%B7%D0%BA%D0%B0_%D0%BE_%D1%80%D1%8B%D0%B1%D0%B0%D0%BA%D0%B5_%D0%B8_%D1%80%D1%8B%D0%B1%D0%BA%D0%B5.webm
+      cinema-film-yellow-stork: https://upload.wikimedia.org/wikipedia/commons/0/0e/1950._%D0%96%D1%91%D0%BB%D1%82%D1%8B%D0%B9_%D0%B0%D0%B8%D1%81%D1%82.webm
+      cinema-film-old-oak: https://upload.wikimedia.org/wikipedia/commons/8/89/1948._%D0%A1%D0%BA%D0%B0%D0%B7%D0%BA%D0%B0_%D1%81%D1%82%D0%B0%D1%80%D0%BE%D0%B3%D0%BE_%D0%B4%D1%83%D0%B1%D0%B0.webm
+      cinema-film-seven-colors: https://upload.wikimedia.org/wikipedia/commons/1/13/1948._%D0%A6%D0%B2%D0%B5%D1%82%D0%B8%D0%BA-%D0%A1%D0%B5%D0%BC%D0%B8%D1%86%D0%B2%D0%B5%D1%82%D0%B8%D0%BA.webm
+      cinema-film-fir-trees: https://upload.wikimedia.org/wikipedia/commons/6/63/1950._%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0_%D0%B7%D0%B0%D0%B6%D0%B8%D0%B3%D0%B0%D1%8E%D1%82%D1%81%D1%8F_%D1%91%D0%BB%D0%BA%D0%B8.webm
+      cinema-film-magic-mill: https://upload.wikimedia.org/wikipedia/commons/9/92/1950._%D0%A7%D1%83%D0%B4%D0%BE-%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%B0.webm
+      cinema-film-taiga: https://upload.wikimedia.org/wikipedia/commons/1/1c/1951._%D0%A2%D0%B0%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B0.webm
+      cinema-film-new-year: https://upload.wikimedia.org/wikipedia/commons/f/f5/1948._%D0%9D%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F%D1%8F_%D0%BD%D0%BE%D1%87%D1%8C.webm
+      cinema-film-fox-builder: https://upload.wikimedia.org/wikipedia/commons/2/22/1950._%D0%9B%D0%B8%D1%81%D0%B0_%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C.webm
+  - type: ActivatableUI
+    key: enum.CinemaScreenUiKey.Key
+    requiresComplex: false
+    blockSpectators: false
+  - type: UserInterface
+    interfaces:
+      enum.CinemaScreenUiKey.Key:
+        type: CinemaScreenBoundUserInterface
+        interactionRange: 8
+        # The server validates player interaction separately so admin ghosts can also use the controls.
+        requireInputValidation: false
+  - type: Damageable
+    damageModifierSet: StructuralMetallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+
+- type: entity
+  id: CinemaScreenMini
+  parent: CinemaScreen
+  name: cinema screen
+  description: A wall screen that streams an external HTTPS video. Click it to open the controls.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-2,-1.125,2,1.125"
+        density: 60
+        hard: true
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileLayer
+  - type: Sprite
+    layers:
+    - map: ["screenVideo"]
+      texture: Corvax/Structures/Furniture/cinema_screen_off.png
+      scale: 0.2, 0.2
+    - map: ["screenFrame"]
+      texture: Corvax/Structures/Furniture/cinema_screen_frame.png
+      scale: 0.2, 0.2
+
+- type: entity
+  id: CinemaScreenMini2
+  parent: CinemaScreen
+  name: cinema screen
+  description: A wall screen that streams an external HTTPS video. Click it to open the controls.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1,-0.5625,1,0.5625"
+        density: 60
+        hard: true
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileLayer
+  - type: Sprite
+    layers:
+    - map: ["screenVideo"]
+      texture: Corvax/Structures/Furniture/cinema_screen_off.png
+      scale: 0.1, 0.1
+    - map: ["screenFrame"]
+      texture: Corvax/Structures/Furniture/cinema_screen_frame.png
+      scale: 0.1, 0.1
