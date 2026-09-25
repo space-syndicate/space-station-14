@@ -4613,3 +4613,10 @@
   id: 750
   time: '2025-11-26T16:00:00.0000000+00:00'
   url: https://github.com/space-syndicate/space-station-14/pull/3457
+- author: kosticia
+  changes:
+  - message: "Возвращён дворфийский акцент, он был переименовал в шотландский и доступен во вкладке выбора черт"
+    type: Fix
+  id: 751
+  time: '2025-11-26T16:00:00.0000000+00:00'
+  url: https://github.com/space-syndicate/space-station-14/pull/3677
