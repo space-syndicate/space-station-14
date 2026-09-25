@@ -18,3 +18,7 @@ ent-ClothingHeadHatBeretSecurityPilot = берет пилота
     .desc = Черный берет с серебряным значком.
 ent-ClothingHeadHatPwigFancy = шикарный парик
     .desc = Честно говоря, они выглядят нелепо.
+ent-ClothingHeadHatCaptainBicorn = двууголка капитана
+    .desc = Зачем быть королём, если можно быть императором?
+ent-ClothingHeadHatCaptainBeret = берет капитана
+    .desc = Синий берет из дюраткани со значком из золота, обозначающим его владельца как гражданского капитана.
