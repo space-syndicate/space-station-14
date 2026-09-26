@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Threading.Tasks;
+using Content.Server.Chat.Systems;
 using Content.Server.Communications;
 using Content.Server.Power.Components;
 using Content.Server.Radio.EntitySystems;
@@ -22,6 +23,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Ghost.Components;
+using Robust.Shared.Network;
 
 namespace Content.Server.Corvax.TTS;
 
@@ -35,6 +37,7 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private StationSystem _stationSystem = default!;
     [Dependency] private SharedTransformSystem _xforms = default!;
     [Dependency] private IRobustRandom _rng = default!;
+    [Dependency] private ChatSystem _chatSys = default!;
 
     private readonly HashSet<string> _sampleText = new()
     {
@@ -91,6 +94,7 @@ public sealed partial class TTSSystem : EntitySystem
     private static readonly ProtoId<TTSVoicePrototype> AnnouncementSpeaker = "Glados";
     private const int MaxMessageChars = 100 * 2; // same as SingleBubbleCharLimit * 2
     private const float AnnouncementDelay = 2.25f;
+    private const float TTSRange = SharedChatSystem.VoiceRange * 1.5f;
     private bool _isEnabled;
 
     public override void Initialize()
@@ -226,8 +230,18 @@ public sealed partial class TTSSystem : EntitySystem
         if (soundData is null)
             return;
 
+        var recive = Filter.Empty();
+        foreach (var (session, data) in _chatSys.GetRecipients(uid, TTSRange))
+        {
+            var entRange = _chatSys.MessageRangeCheck(session, data, TTSRange);
+            if (entRange == MessageRangeCheckResult.Disallowed)
+                continue;
+            var entHideChat = entRange == MessageRangeCheckResult.HideChat;
+            recive.AddPlayer(session);
+        }
+
         RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)),
-            Filter.Pvs(uid),
+            recive,
             recordReplay: false);
 
         if (channel != null)
