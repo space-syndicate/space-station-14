@@ -154,7 +154,8 @@ public sealed partial class TTSSystem : EntitySystem
         HandleConsoleAnnouncement(ev.Text, voicePrototype.Speaker, ev.Component.Sound, station.Value);
     }
 
-    private async void HandleConsoleAnnouncement(string text,
+    private async void HandleConsoleAnnouncement(
+        string text,
         string speaker,
         SoundSpecifier sound,
         EntityUid station)
@@ -239,7 +240,8 @@ public sealed partial class TTSSystem : EntitySystem
         }
     }
 
-    private async void HandleWhisper(EntityUid uid,
+    private async void HandleWhisper(
+        EntityUid uid,
         string message,
         string speaker,
         RadioChannelPrototype? channel)
@@ -392,8 +394,8 @@ public sealed partial class TTSSystem : EntitySystem
             if (transformEntity.MapID != Transform(sourceUid).MapID)
                 continue;
 
-            if (!Transform(sourceUid).Coordinates.TryDistance(EntityManager, transformEntity.Coordinates, out var distance) ||
-                distance >= range)
+            if (!Transform(sourceUid).Coordinates.TryDistance(EntityManager, transformEntity.Coordinates, out var distance)
+                || distance >= range)
                 continue;
 
             filter.AddPlayer(player);
