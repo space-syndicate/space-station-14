@@ -213,7 +213,8 @@ public sealed partial class TTSSystem : EntitySystem
 
         try
         {
-            PlayTTSInternal(ev, () =>
+            PlayTTSInternal(ev,
+                () =>
             {
                 _playingEntities.Remove(entityUid);
                 ProcessNextInQueueForEntity(entityUid);
@@ -297,7 +298,8 @@ public sealed partial class TTSSystem : EntitySystem
         });
     }
 
-    private void PlayRadioWithEffectInternal(AudioResource audioResource, ResolvedPathSpecifier soundSpecifier,
+    private void PlayRadioWithEffectInternal(AudioResource audioResource,
+        ResolvedPathSpecifier soundSpecifier,
         AudioParams audioParams)
     {
         var audioResult = _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, audioParams);
@@ -322,7 +324,8 @@ public sealed partial class TTSSystem : EntitySystem
             ? MinimalVolume + SharedAudioSystem.GainToVolume(_radioVolume)
             : MinimalVolume + SharedAudioSystem.GainToVolume(_volume);
 
-        if (isGlobal) return volume + SharedAudioSystem.GainToVolume(GlobalVolumeBonus);
+        if (isGlobal)
+            return volume + SharedAudioSystem.GainToVolume(GlobalVolumeBonus);
 
         if (isWhisper)
         {
@@ -333,7 +336,7 @@ public sealed partial class TTSSystem : EntitySystem
         return volume;
     }
 
-    private float AdjustDistance(bool isWhisper)
+    private static float AdjustDistance(bool isWhisper)
     {
         return isWhisper ? SharedChatSystem.WhisperMuffledRange : SharedChatSystem.VoiceRange;
     }
