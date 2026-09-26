@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Threading.Tasks;
-using Content.Server.Chat.Systems;
 using Content.Server.Communications;
 using Content.Server.Power.Components;
 using Content.Server.Radio.EntitySystems;
@@ -23,8 +22,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Ghost.Components;
-using Robust.Server.Player;
-using Robust.Shared.Network;
 
 namespace Content.Server.Corvax.TTS;
 
@@ -36,10 +33,7 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private TTSManager _ttsManager = default!;
     [Dependency] private StationSystem _stationSystem = default!;
-    [Dependency] private SharedTransformSystem _xforms = default!;
     [Dependency] private IRobustRandom _rng = default!;
-    [Dependency] private ChatSystem _chatSys = default!;
-    [Dependency] private IPlayerManager _playerMan = default!;
 
     private readonly HashSet<string> _sampleText = new()
     {
