@@ -510,6 +510,9 @@
       shader: unshaded
       map: ["base"]
   - type: CameraActiveOnCollideCollider
+  - type: Tag
+    tags:
+    - TTSAudioIgnore
 
 # The holographic representation of the AI that is projected from a holopad.
 - type: entity
