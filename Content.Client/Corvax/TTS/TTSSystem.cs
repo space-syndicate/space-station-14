@@ -285,7 +285,8 @@ public sealed partial class TTSSystem : EntitySystem
         });
     }
 
-    private void PlayRadioWithEffectInternal(AudioResource audioResource,
+    private void PlayRadioWithEffectInternal(
+        AudioResource audioResource,
         ResolvedPathSpecifier soundSpecifier,
         AudioParams audioParams)
     {
