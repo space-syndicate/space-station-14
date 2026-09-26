@@ -227,8 +227,7 @@ public sealed partial class TTSSystem : EntitySystem
             return;
 
         // Should be here because EntitySpokeEvent may be called on the entities in the PVS range, but not always in range where player receives chat messages
-        // EntitySpokeEvent иногда вызывается на сущностях в PVS, но не находящихся достаточно близко, чтобы отправлять сообщения в чат, СКОРЕЕ ВСЕГО, чинит прослушку ТТС от ИИ.
-        var filter = GetReceptions(uid, TTSRange);
+        var filter = GetReceiversFilter(uid, TTSRange);
         if (filter.Recipients.Any())
         {
             RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)), filter, recordReplay: false);
@@ -252,7 +251,7 @@ public sealed partial class TTSSystem : EntitySystem
         var fullTtsEvent = new PlayTTSEvent(fullSoundData, GetNetEntity(uid), true);
 
         // TODO: Check obstacles
-        var filter = GetReceptions(uid, SharedChatSystem.WhisperClearRange);
+        var filter = GetReceiversFilter(uid, SharedChatSystem.WhisperClearRange);
         if (filter.Recipients.Any())
         {
             RaiseNetworkEvent(fullTtsEvent, filter, recordReplay: false);
@@ -378,10 +377,10 @@ public sealed partial class TTSSystem : EntitySystem
     }
 
     // TODO: Check obstacles
-    private Filter GetReceptions(EntityUid sourceUid, float range)
+    private Filter GetReceiversFilter(EntityUid sourceUid, float range)
     {
         var pvs = Filter.Pvs(sourceUid);
-        var clearFilter = Filter.Empty();
+        var filter = Filter.Empty();
 
         foreach (var player in pvs.Recipients)
         {
@@ -394,13 +393,13 @@ public sealed partial class TTSSystem : EntitySystem
                 continue;
 
             if (!Transform(sourceUid).Coordinates.TryDistance(EntityManager, transformEntity.Coordinates, out var distance) ||
-                !(distance < range))
+                distance >= range)
                 continue;
 
-            clearFilter.AddPlayer(player);
+            filter.AddPlayer(player);
         }
 
-        return clearFilter;
+        return filter;
     }
 
     // ReSharper disable once InconsistentNaming
