@@ -91,7 +91,7 @@ public sealed partial class TTSSystem : EntitySystem
     private static readonly ProtoId<TTSVoicePrototype> AnnouncementSpeaker = "Glados";
     private const int MaxMessageChars = 100 * 2; // same as SingleBubbleCharLimit * 2
     private const float AnnouncementDelay = 2.25f;
-    private bool _isEnabled = false;
+    private bool _isEnabled;
 
     public override void Initialize()
     {
@@ -104,7 +104,7 @@ public sealed partial class TTSSystem : EntitySystem
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
         => _ttsManager.ResetCache();
 
-    [SubscribeLocalEvent]
+    [SubscribeNetworkEvent]
     private async void OnRequestPreviewTTS(RequestPreviewTTSEvent ev, EntitySessionEventArgs args)
     {
         if (!_isEnabled || !ProtoMan.TryIndex<TTSVoicePrototype>(ev.VoiceId, out var protoVoice))
@@ -118,7 +118,8 @@ public sealed partial class TTSSystem : EntitySystem
         if (soundData is null)
             return;
 
-        RaiseNetworkEvent(new PlayTTSEvent(soundData), Filter.SinglePlayer(args.SenderSession),
+        RaiseNetworkEvent(new PlayTTSEvent(soundData),
+            Filter.SinglePlayer(args.SenderSession),
             recordReplay: false);
     }
 
@@ -174,37 +175,36 @@ public sealed partial class TTSSystem : EntitySystem
 
         var timeDelay = (float)_audio.GetAudioLength(_audio.ResolveSound(sound)).TotalSeconds + AnnouncementDelay;
 
-        Timer.Spawn(TimeSpan.FromSeconds(timeDelay), () =>
+        Timer.Spawn(TimeSpan.FromSeconds(timeDelay),
+            () =>
         {
             var filter = GetStationFilter(station);
             if (filter == null)
                 return;
 
-            RaiseNetworkEvent(new PlayTTSEvent(soundData), filter,
+            RaiseNetworkEvent(new PlayTTSEvent(soundData),
+                filter,
                 recordReplay: false);
         });
     }
 
     private Filter? GetStationFilter(Entity<StationDataComponent?> station)
     {
-        if (!Resolve(station, ref station.Comp, false))
-            return null;
-
-        return _stationSystem.GetInStation(station.Comp);
+        return !Resolve(station, ref station.Comp, false) ? null : _stationSystem.GetInStation(station.Comp);
     }
 
     [SubscribeLocalEvent(before: [typeof(RadioSystem), typeof(HeadsetSystem)])]  // Before the channel is cleared
-    private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
+    private void OnEntitySpoke(Entity<TTSComponent> ent, ref EntitySpokeEvent args)
     {
-        var voiceId = component.VoicePrototypeId;
+        var voiceId = ent.Comp.VoicePrototypeId;
         if (!_isEnabled || string.IsNullOrEmpty(voiceId))
             return;
 
         if (args.Message.Length > MaxMessageChars)
             return;
 
-        var voiceEv = new TransformSpeakerVoiceEvent(uid, voiceId);
-        RaiseLocalEvent(uid, voiceEv);
+        var voiceEv = new TransformSpeakerVoiceEvent(ent, voiceId);
+        RaiseLocalEvent(ent, voiceEv);
         voiceId = voiceEv.VoiceId;
 
         if (!ProtoMan.TryIndex(voiceId, out var protoVoice))
@@ -212,18 +212,22 @@ public sealed partial class TTSSystem : EntitySystem
 
         if (args.ObfuscatedMessage != null)
         {
-            HandleWhisper(uid, args.Message, args.ObfuscatedMessage, protoVoice.Speaker, args.Channel);
+            HandleWhisper(ent, args.Message, protoVoice.Speaker, args.Channel);
             return;
         }
 
-        HandleSay(uid, args.Message, protoVoice.Speaker, args.Channel);
+        HandleSay(ent, args.Message, protoVoice.Speaker, args.Channel);
     }
 
     private async void HandleSay(EntityUid uid, string message, string speaker, RadioChannelPrototype? channel)
     {
         var soundData = await GenerateTTS(message, speaker);
-        if (soundData is null) return;
-        RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)), Filter.Pvs(uid),
+
+        if (soundData is null)
+            return;
+
+        RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)),
+            Filter.Pvs(uid),
             recordReplay: false);
 
         if (channel != null)
@@ -232,26 +236,22 @@ public sealed partial class TTSSystem : EntitySystem
         }
     }
 
-    private async void HandleWhisper(EntityUid uid, string message, string obfMessage, string speaker,
+    private async void HandleWhisper(EntityUid uid,
+        string message,
+        string speaker,
         RadioChannelPrototype? channel)
     {
         var fullSoundData = await GenerateTTS(message, speaker, true);
-        if (fullSoundData is null) return;
-
-        // I never saw the point of voicing just four or five letters in a long message, only to get a jumbled mess in response.
-        // Response "~ ~~~~ ~~~ пыр-~ы~-~~~" this is the most useless waste of money I've ever seen.
-        // var obfSoundData = await GenerateTTS(obfMessage, speaker, true);
-        // if (obfSoundData is null) return;
+        if (fullSoundData is null)
+            return;
 
         var fullTtsEvent = new PlayTTSEvent(fullSoundData, GetNetEntity(uid), true);
-        // var obfTtsEvent = new PlayTTSEvent(obfSoundData, GetNetEntity(uid), true);
 
         // TODO: Check obstacles
         var xformQuery = GetEntityQuery<TransformComponent>();
         var sourcePos = _xforms.GetWorldPosition(xformQuery.GetComponent(uid), xformQuery);
         var receptions = Filter.Pvs(uid).Recipients;
         var clearFilter = Filter.Empty();
-        // var obfFilter = Filter.Empty();
 
         foreach (var session in receptions)
         {
@@ -271,11 +271,6 @@ public sealed partial class TTSSystem : EntitySystem
         {
             RaiseNetworkEvent(fullTtsEvent, clearFilter, recordReplay: false);
         }
-
-        // if (obfFilter.Recipients.Any())
-        // {
-        //     RaiseNetworkEvent(obfTtsEvent, obfFilter, recordReplay: false);
-        // }
 
         if (channel != null)
         {
@@ -372,7 +367,7 @@ public sealed partial class TTSSystem : EntitySystem
     /// <summary>
     /// Maps channel prototype ID to RadioChannelFlag.
     /// </summary>
-    private RadioChannelFlag GetChannelFlag(string channelId)
+    private static RadioChannelFlag GetChannelFlag(string channelId)
     {
         return channelId switch
         {
@@ -392,7 +387,7 @@ public sealed partial class TTSSystem : EntitySystem
             "CentCom" => RadioChannelFlag.CentCom,
             "Xenoborg" => RadioChannelFlag.Xenoborg,
             "Mothership" => RadioChannelFlag.Mothership,
-            _ => RadioChannelFlag.None
+            _ => RadioChannelFlag.None,
         };
     }
 
@@ -400,7 +395,10 @@ public sealed partial class TTSSystem : EntitySystem
     private async Task<byte[]?> GenerateTTS(string text, string speaker, bool isWhisper = false)
     {
         var textSanitized = Sanitize(text);
-        if (textSanitized == "") return null;
+
+        if (string.IsNullOrEmpty(textSanitized))
+            return null;
+
         if (char.IsLetter(textSanitized[^1]))
             textSanitized += ".";
 
