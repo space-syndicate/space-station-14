@@ -232,29 +232,13 @@ public sealed partial class TTSSystem : EntitySystem
         if (soundData is null)
             return;
 
-        var recipients = Filter.Empty();
-
-        foreach (var player in _playerMan.Sessions)
+        // Should be here because EntitySpokeEvent may be called on the entities in the PVS range, but not always in range where player receives chat messages
+        // EntitySpokeEvent иногда вызывается на сущностях в PVS, но не находящихся достаточно близко, чтобы отправлять сообщения в чат, СКОРЕЕ ВСЕГО, чинит прослушку ТТС от ИИ.
+        var filter = GetReceptions(uid, TTSRange);
+        if (filter.Recipients.Any())
         {
-            if (player.AttachedEntity is not { Valid: true } playerEntity)
-                continue;
-
-            var transformEntity = Transform(playerEntity);
-
-            if (transformEntity.MapID != Transform(uid).MapID)
-                continue;
-
-            // even if they are a ghost hearer, in some situations we still need the range
-            if (!Transform(uid).Coordinates.TryDistance(EntityManager, transformEntity.Coordinates, out var distance) ||
-                !(distance < TTSRange))
-                continue;
-
-            recipients.AddPlayer(player);
+            RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)), filter, recordReplay: false);
         }
-
-        RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)),
-            recipients,
-            recordReplay: false);
 
         if (channel != null)
         {
@@ -274,28 +258,10 @@ public sealed partial class TTSSystem : EntitySystem
         var fullTtsEvent = new PlayTTSEvent(fullSoundData, GetNetEntity(uid), true);
 
         // TODO: Check obstacles
-        var xformQuery = GetEntityQuery<TransformComponent>();
-        var sourcePos = _xforms.GetWorldPosition(xformQuery.GetComponent(uid), xformQuery);
-        var receptions = Filter.Pvs(uid).Recipients;
-        var clearFilter = Filter.Empty();
-
-        foreach (var session in receptions)
+        var filter = GetReceptions(uid, SharedChatSystem.WhisperClearRange);
+        if (filter.Recipients.Any())
         {
-            if (!session.AttachedEntity.HasValue)
-                continue;
-
-            var xform = xformQuery.GetComponent(session.AttachedEntity.Value);
-            var distance = (sourcePos - _xforms.GetWorldPosition(xform, xformQuery)).Length();
-
-            if (distance > SharedChatSystem.WhisperClearRange)
-                continue;
-
-            clearFilter.AddPlayer(session);
-        }
-
-        if (clearFilter.Recipients.Any())
-        {
-            RaiseNetworkEvent(fullTtsEvent, clearFilter, recordReplay: false);
+            RaiseNetworkEvent(fullTtsEvent, filter, recordReplay: false);
         }
 
         if (channel != null)
@@ -415,6 +381,33 @@ public sealed partial class TTSSystem : EntitySystem
             "Mothership" => RadioChannelFlag.Mothership,
             _ => RadioChannelFlag.None,
         };
+    }
+
+    // TODO: Check obstacles
+    private Filter GetReceptions(EntityUid sourceUid, float range)
+    {
+        var pvs = Filter.Pvs(sourceUid);
+        var clearFilter = Filter.Empty();
+
+        foreach (var player in pvs.Recipients)
+        {
+            if (player.AttachedEntity is not { Valid: true } playerEntity)
+                continue;
+
+            var transformEntity = Transform(playerEntity);
+
+            if (transformEntity.MapID != Transform(sourceUid).MapID)
+                continue;
+
+            // even if they are a ghost hearer, in some situations we still need the range
+            if (!Transform(sourceUid).Coordinates.TryDistance(EntityManager, transformEntity.Coordinates, out var distance) ||
+                !(distance < range))
+                continue;
+
+            clearFilter.AddPlayer(player);
+        }
+
+        return clearFilter;
     }
 
     // ReSharper disable once InconsistentNaming
