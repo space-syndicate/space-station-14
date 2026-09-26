@@ -399,7 +399,6 @@ public sealed partial class TTSSystem : EntitySystem
             if (transformEntity.MapID != Transform(sourceUid).MapID)
                 continue;
 
-            // even if they are a ghost hearer, in some situations we still need the range
             if (!Transform(sourceUid).Coordinates.TryDistance(EntityManager, transformEntity.Coordinates, out var distance) ||
                 !(distance < range))
                 continue;

@@ -2,7 +2,6 @@ using Content.Shared.Chat;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
-using Content.Shared.Tag;
 using Robust.Client.Audio;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Audio;
@@ -26,7 +25,6 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private IResourceManager _res = default!;
     [Dependency] private IRobustRandom _ran = default!;
     [Dependency] private AudioSystem _audio = default!;
-    [Dependency] private TagSystem _tag = default!;
 
     private ISawmill _sawmill = default!;
     private static MemoryContentRoot _contentRoot = new();
@@ -43,7 +41,6 @@ public sealed partial class TTSSystem : EntitySystem
     private const float RadioRolloffMin = 1.5f;
     private const float RadioRolloffMax = 2.5f;
     private const float PlaybackDelay = 0.8f;
-    private const string IgnoredTag = "TTSAudioIgnore";
 
     private float _lastRadioPitch = 0.98f;
     private float _radioVolume = 1.2f;
@@ -115,6 +112,7 @@ public sealed partial class TTSSystem : EntitySystem
         _radioVolume = value;
     }
 
+    [SubscribeNetworkEvent]
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
         _entityQueues.Clear();
@@ -132,10 +130,6 @@ public sealed partial class TTSSystem : EntitySystem
     private void OnPlayTTS(PlayTTSEvent ev, EntitySessionEventArgs args)
     {
         if (!_ttsEnabled)
-            return;
-
-        if (args.SenderSession.AttachedEntity is null ||
-            !_tag.HasTag(args.SenderSession.AttachedEntity.Value, IgnoredTag))
             return;
 
         // It will stop clogging up your memory if you turn off one of the sliders to 0
@@ -203,12 +197,6 @@ public sealed partial class TTSSystem : EntitySystem
 
                 return;
             }
-        }
-
-        if (ev == null)
-        {
-            _playingEntities.Remove(entityUid);
-            return;
         }
 
         try
@@ -292,7 +280,8 @@ public sealed partial class TTSSystem : EntitySystem
         var duration = audioResource.AudioStream?.Length ?? TimeSpan.Zero;
         var delay = duration + TimeSpan.FromSeconds(PlaybackDelay);
 
-        Timer.Spawn(delay,() =>
+        Timer.Spawn(delay,
+            () =>
         {
             onComplete?.Invoke();
         });
