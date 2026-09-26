@@ -144,7 +144,7 @@ public sealed partial class TTSSystem : EntitySystem
             _sawmill.Verbose("Radio TTS volume zero, skipping playback");
             return;
         }
-        else if (_volume <= 0)
+        if (_volume <= 0)
         {
             _sawmill.Verbose("TTS volume zero, skipping playback");
             return;
