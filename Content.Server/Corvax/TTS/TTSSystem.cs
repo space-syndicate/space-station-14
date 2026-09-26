@@ -23,6 +23,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Ghost.Components;
+using Robust.Server.Player;
 using Robust.Shared.Network;
 
 namespace Content.Server.Corvax.TTS;
@@ -38,6 +39,7 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private SharedTransformSystem _xforms = default!;
     [Dependency] private IRobustRandom _rng = default!;
     [Dependency] private ChatSystem _chatSys = default!;
+    [Dependency] private IPlayerManager _playerMan = default!;
 
     private readonly HashSet<string> _sampleText = new()
     {
@@ -231,9 +233,23 @@ public sealed partial class TTSSystem : EntitySystem
             return;
 
         var recipients = Filter.Empty();
-        foreach (var (session, _) in _chatSys.GetRecipients(uid, TTSRange))
+
+        foreach (var player in _playerMan.Sessions)
         {
-            recipients.AddPlayer(session);
+            if (player.AttachedEntity is not { Valid: true } playerEntity)
+                continue;
+
+            var transformEntity = Transform(playerEntity);
+
+            if (transformEntity.MapID != Transform(uid).MapID)
+                continue;
+
+            // even if they are a ghost hearer, in some situations we still need the range
+            if (!Transform(uid).Coordinates.TryDistance(EntityManager, transformEntity.Coordinates, out var distance) ||
+                !(distance < TTSRange))
+                continue;
+
+            recipients.AddPlayer(player);
         }
 
         RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)),
