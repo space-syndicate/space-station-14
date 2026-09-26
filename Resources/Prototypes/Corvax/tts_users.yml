@@ -3,3 +3,6 @@
   id: TTS_speaker
   components:
   - type: TTS
+
+- type: Tag
+  id: TTSAudioIgnore

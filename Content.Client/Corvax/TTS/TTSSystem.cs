@@ -2,6 +2,7 @@ using Content.Shared.Chat;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.GameTicking;
+using Content.Shared.Tag;
 using Robust.Client.Audio;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Audio;
@@ -25,6 +26,7 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private IResourceManager _res = default!;
     [Dependency] private IRobustRandom _ran = default!;
     [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private TagSystem _tag = default!;
 
     private ISawmill _sawmill = default!;
     private static MemoryContentRoot _contentRoot = new();
@@ -41,6 +43,7 @@ public sealed partial class TTSSystem : EntitySystem
     private const float RadioRolloffMin = 1.5f;
     private const float RadioRolloffMax = 2.5f;
     private const float PlaybackDelay = 0.8f;
+    private const string IgnoredTag = "TTSAudioIgnore";
 
     private float _lastRadioPitch = 0.98f;
     private float _radioVolume = 1.2f;
@@ -50,7 +53,7 @@ public sealed partial class TTSSystem : EntitySystem
     private readonly Dictionary<NetEntity, Queue<PlayTTSEvent>> _entityQueues = new();
     private TTSVoiceEffectPreset _voiceEffectPreset = TTSVoiceEffectPreset.None;
     private bool _ttsEnabled;
-    private int _fileIdx = 0;
+    private int _fileIdx;
 
     public override void Initialize()
     {
@@ -68,7 +71,6 @@ public sealed partial class TTSSystem : EntitySystem
         _cfg.OnValueChanged(CCCVars.TTSVolume, OnVolumeChanged, true);
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
-        SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
     }
 
     public override void Shutdown()
@@ -126,9 +128,14 @@ public sealed partial class TTSSystem : EntitySystem
         RaiseNetworkEvent(new RequestPreviewTTSEvent(voiceId));
     }
 
-    private void OnPlayTTS(PlayTTSEvent ev)
+    [SubscribeNetworkEvent]
+    private void OnPlayTTS(PlayTTSEvent ev, EntitySessionEventArgs args)
     {
         if (!_ttsEnabled)
+            return;
+
+        if (args.SenderSession.AttachedEntity is null ||
+            !_tag.HasTag(args.SenderSession.AttachedEntity.Value, IgnoredTag))
             return;
 
         // It will stop clogging up your memory if you turn off one of the sliders to 0
@@ -235,8 +242,6 @@ public sealed partial class TTSSystem : EntitySystem
 
         var soundSpecifier = new ResolvedPathSpecifier(Prefix / filePath);
 
-        (EntityUid Entity, AudioComponent Component)? audioResult = null;
-
         try
         {
             if (ev.IsRadio)
@@ -252,24 +257,26 @@ public sealed partial class TTSSystem : EntitySystem
 
                 PlayRadioWithEffectInternal(audioResource, soundSpecifier, radioParams);
             }
-            else if (ev.SourceUid != null)
-            {
-                var sourceUid = GetEntity(ev.SourceUid.Value);
-                if (TerminatingOrDeleted(sourceUid))
-                {
-                    onComplete?.Invoke();
-                    return;
-                }
-
-                audioResult = _audio.PlayEntity(audioResource.AudioStream, sourceUid, soundSpecifier, audioParams);
-                if (audioResult != null && _voiceEffectPreset != 0)
-                {
-                    ApplyVoiceEffect(audioResult.Value, _voiceEffectPreset);
-                }
-            }
             else
             {
-                audioResult = _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, audioParams);
+                Entity<AudioComponent>? audioResult;
+
+                if (ev.SourceUid != null)
+                {
+                    var sourceUid = GetEntity(ev.SourceUid.Value);
+                    if (TerminatingOrDeleted(sourceUid))
+                    {
+                        onComplete?.Invoke();
+                        return;
+                    }
+
+                    audioResult = _audio.PlayEntity(audioResource.AudioStream, sourceUid, soundSpecifier, audioParams);
+                }
+                else
+                {
+                    audioResult = _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, audioParams);
+                }
+
                 if (audioResult != null && _voiceEffectPreset != 0)
                 {
                     ApplyVoiceEffect(audioResult.Value, _voiceEffectPreset);
@@ -284,7 +291,7 @@ public sealed partial class TTSSystem : EntitySystem
         var duration = audioResource.AudioStream?.Length ?? TimeSpan.Zero;
         var delay = duration + TimeSpan.FromSeconds(PlaybackDelay);
 
-        Timer.Spawn(delay, () =>
+        Timer.Spawn(delay,() =>
         {
             onComplete?.Invoke();
         });

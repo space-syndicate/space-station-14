@@ -36,7 +36,7 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private SharedTransformSystem _xforms = default!;
     [Dependency] private IRobustRandom _rng = default!;
 
-    private readonly List<string> _sampleText = new()
+    private readonly HashSet<string> _sampleText = new()
     {
         // Neutral / Declarative
         "Съешь же ещё этих мягких французских булок, да выпей чаю.",
@@ -97,20 +97,14 @@ public sealed partial class TTSSystem : EntitySystem
     {
         _cfg.OnValueChanged(CCCVars.TTSEnabled, v => _isEnabled = v, true);
 
-        SubscribeLocalEvent<TransformSpeechEvent>(OnTransformSpeech);
-        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
-        SubscribeLocalEvent<CommunicationConsoleAnnouncementEvent>(OnConsoleAnnouncement);
-        SubscribeLocalEvent<TTSComponent, EntitySpokeEvent>(OnEntitySpoke,
-            before: [typeof(RadioSystem), typeof(HeadsetSystem)]); // Before the channel is cleared
-
-        SubscribeNetworkEvent<RequestPreviewTTSEvent>(OnRequestPreviewTTS);
-
         RegisterRateLimits();
     }
 
+    [SubscribeLocalEvent]
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
         => _ttsManager.ResetCache();
 
+    [SubscribeLocalEvent]
     private async void OnRequestPreviewTTS(RequestPreviewTTSEvent ev, EntitySessionEventArgs args)
     {
         if (!_isEnabled || !ProtoMan.TryIndex<TTSVoicePrototype>(ev.VoiceId, out var protoVoice))
@@ -128,6 +122,7 @@ public sealed partial class TTSSystem : EntitySystem
             recordReplay: false);
     }
 
+    [SubscribeLocalEvent]
     private void OnConsoleAnnouncement(ref CommunicationConsoleAnnouncementEvent ev)
     {
         if (!_isEnabled || string.IsNullOrEmpty(ev.Text))
@@ -158,8 +153,10 @@ public sealed partial class TTSSystem : EntitySystem
         HandleConsoleAnnouncement(ev.Text, voicePrototype.Speaker, ev.Component.Sound, station.Value);
     }
 
-    private async void HandleConsoleAnnouncement(string text, string speaker,
-        SoundSpecifier sound, EntityUid station)
+    private async void HandleConsoleAnnouncement(string text,
+        string speaker,
+        SoundSpecifier sound,
+        EntityUid station)
     {
         var textSanitized = Sanitize(text);
         if (string.IsNullOrEmpty(textSanitized))
@@ -196,6 +193,7 @@ public sealed partial class TTSSystem : EntitySystem
         return _stationSystem.GetInStation(station.Comp);
     }
 
+    [SubscribeLocalEvent(before: [typeof(RadioSystem), typeof(HeadsetSystem)])]  // Before the channel is cleared
     private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
     {
         var voiceId = component.VoicePrototypeId;
@@ -257,9 +255,12 @@ public sealed partial class TTSSystem : EntitySystem
 
         foreach (var session in receptions)
         {
-            if (!session.AttachedEntity.HasValue) continue;
+            if (!session.AttachedEntity.HasValue)
+                continue;
+
             var xform = xformQuery.GetComponent(session.AttachedEntity.Value);
             var distance = (sourcePos - _xforms.GetWorldPosition(xform, xformQuery)).Length();
+
             if (distance > SharedChatSystem.WhisperClearRange)
                 continue;
 
