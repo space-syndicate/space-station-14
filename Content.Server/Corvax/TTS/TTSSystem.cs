@@ -230,18 +230,14 @@ public sealed partial class TTSSystem : EntitySystem
         if (soundData is null)
             return;
 
-        var recive = Filter.Empty();
-        foreach (var (session, data) in _chatSys.GetRecipients(uid, TTSRange))
+        var recipients = Filter.Empty();
+        foreach (var (session, _) in _chatSys.GetRecipients(uid, TTSRange))
         {
-            var entRange = _chatSys.MessageRangeCheck(session, data, TTSRange);
-            if (entRange == MessageRangeCheckResult.Disallowed)
-                continue;
-            var entHideChat = entRange == MessageRangeCheckResult.HideChat;
-            recive.AddPlayer(session);
+            recipients.AddPlayer(session);
         }
 
         RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(uid)),
-            recive,
+            recipients,
             recordReplay: false);
 
         if (channel != null)
