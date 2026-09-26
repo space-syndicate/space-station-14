@@ -127,7 +127,7 @@ public sealed partial class TTSSystem : EntitySystem
     }
 
     [SubscribeNetworkEvent]
-    private void OnPlayTTS(PlayTTSEvent ev, EntitySessionEventArgs args)
+    private void OnPlayTTS(PlayTTSEvent ev)
     {
         if (!_ttsEnabled)
             return;
