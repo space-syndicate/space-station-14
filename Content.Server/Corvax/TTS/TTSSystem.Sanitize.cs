@@ -13,12 +13,6 @@ public sealed partial class TTSSystem
     private static readonly Regex RegexDecimal = new Regex(@"(?<=[1-90])(\.|,)(?=[1-90])");
     private static readonly Regex RegexDigits = new Regex(@"\d+");
 
-    private void OnTransformSpeech(TransformSpeechEvent args)
-    {
-        if (!_isEnabled) return;
-        args.Message = args.Message.Replace("+", "");
-    }
-
     private string Sanitize(string text)
     {
         text = text.Trim();
@@ -160,6 +154,7 @@ public sealed partial class TTSSystem
         {"исб", "И Эс Бэ"},
         {"мми", "М М И"},
         {"эми", "Э Ми"},
+        {"+", "Плюс"},
     };
 
     private static readonly IReadOnlyDictionary<string, string> ReverseTranslit = new Dictionary<string, string>()

@@ -70,7 +70,7 @@ public sealed partial class TTSSystem
         ShutdownRadioEffect();
     }
 
-    private void ApplyVoiceEffect((EntityUid Entity, AudioComponent Component) audio, TTSVoiceEffectPreset effect)
+    private void ApplyVoiceEffect(Entity<AudioComponent> ent, TTSVoiceEffectPreset effect)
     {
         if (!_ttsEnabled)
             return;
@@ -86,8 +86,7 @@ public sealed partial class TTSSystem
 
         try
         {
-            var (entity, comp) = audio;
-            _audio.SetAuxiliary(entity, comp, _voiceAuxiliaryEntity.Value);
+            _audio.SetAuxiliary(ent.Owner, ent.Comp, _voiceAuxiliaryEntity.Value);
         }
         catch (Exception ex)
         {
