@@ -228,6 +228,6 @@ guidebook-SOP-medical-tooltip-threat-examples =
     - Баллоны с опасными газами;
     - Прочие потенциально опасные предметы.
 guidebook-SOP-medical-tooltip-cloneable = Душа в теле, шансы на клонирование высоки
-guidebook-SOP-medical-tooltip-use-for-corp = Создание киборгов, извлечение и продажа органов, получение биомассы
+guidebook-SOP-medical-tooltip-use-for-corp = Создание боргов, извлечение и продажа органов, получение биомассы
 guidebook-SOP-medical-tooltip-special-equipment = Cкафандры, оборудование и прочее
 guidebook-SOP-medical-tooltip-armed-equipment = Оружие, боеприпасы, бронежилеты и прочее
