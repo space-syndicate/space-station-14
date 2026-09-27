@@ -93,3 +93,6 @@ reagent-desc-hivarol = Токсин, поражающий определённы
 
 reagent-name-phosphoric-acid = ортофосфорная кислота
 reagent-desc-phosphoric-acid = Кислота, часто используемая в сельском хозяйстве. Избегать попадания в глаза..
+
+reagent-name-hardlight-toxin = токсин «жёсткий свет»
+reagent-desc-hardlight-toxin = Высокотехнологичный токсин, который при метаболизме насыщает нервную систему жертвы ионизирующим излучением.

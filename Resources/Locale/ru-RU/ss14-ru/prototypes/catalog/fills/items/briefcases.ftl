@@ -19,6 +19,6 @@ ent-BriefcaseWeaponC20Filled = защищённый оружейный кейс 
 ent-BriefcaseWeaponBulldogFilled = защищённый оружейный кейс для Бульдога
     .desc = { ent-BriefcaseWeaponSmall.desc }
     .suffix = { ent-BriefcaseWeaponSmall.suffix }
-ent-BriefcaseWeaponChinaLakeFilled = защищённый оружейный кейс для china lake
+ent-BriefcaseWeaponChinaLakeFilled = защищённый оружейный кейс для China Lake
     .desc = { ent-BriefcaseWeapon.desc }
     .suffix = { ent-BriefcaseWeapon.suffix }

@@ -54,11 +54,11 @@ uplink-bulldog-bundle-desc = Компактный и мощный, содерж�
 uplink-estoc-bundle-name = Набор "Марксманская винтовка Эсток"
 uplink-estoc-bundle-desc = Марксманская винтовка Эсток, оснащённая оптическим прицелом среднего приближения, для ведения боя на дальних дистанциях. В комплекте с тремя магазинами патронов калибра .20 винтовочные.
 
-uplink-grenade-launcher-name = China-Lake
-uplink-grenade-launcher-desc = Старый гранатомёт China-Lake снабжённый 5 осколочными снарядами.
+uplink-grenade-launcher-name = China Lake
+uplink-grenade-launcher-desc = Старый гранатомёт China Lake снабжённый 5 осколочными снарядами.
 
-uplink-grenade-launcher-bundle-name = Набор "China-Lake"
-uplink-grenade-launcher-bundle-desc = Старый гранатомёт China-Lake, снабжённый 11 гранатами различной поражающей способности.
+uplink-grenade-launcher-bundle-name = Набор "China Lake"
+uplink-grenade-launcher-bundle-desc = Старый гранатомёт China Lake, снабжённый 11 гранатами различной поражающей способности.
 
 uplink-l6-saw-bundle-name = Набор "L6 Saw"
 uplink-l6-saw-bundle-desc = Ещё больше дакки: культовый лёгкий пулемёт L6 в комплекте с 2 коробами патронов.
