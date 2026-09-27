@@ -118,7 +118,8 @@ public sealed partial class TTSSystem : EntitySystem
         if (soundData is null)
             return;
 
-        RaiseNetworkEvent(new PlayTTSEvent(soundData),
+        RaiseNetworkEvent(
+            new PlayTTSEvent(soundData),
             Filter.SinglePlayer(args.SenderSession),
             recordReplay: false);
     }
