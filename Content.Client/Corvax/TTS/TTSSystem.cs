@@ -110,7 +110,7 @@ public sealed partial class TTSSystem : EntitySystem
         _radioVolume = value;
     }
 
-    [SubscribeNetworkEvent]
+    [SubscribeLocalEvent]
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
         _entityQueues.Clear();
