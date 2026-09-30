@@ -1,5 +1,4 @@
 using Content.Server._Corvax.Events;
-using Content.Server.GameTicking;
 using Content.Server.Mind;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Corvax.CCCVars;
@@ -48,7 +47,7 @@ public sealed partial class GhostGoLobbySystem : EntitySystem
     {
         SubscribeNetworkEvent<GhostGoLobbyEvent>(OnGhostGoLobby);
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
-        SubscribeLocalEvent<GhostComponent, PlayerAttachedEvent>(OnGhostAttached);
+        //SubscribeLocalEvent<GhostComponent, PlayerAttachedEvent>(OnGhostAttached); перенесено в class NewPlayerSystem - OnPlayerAttachedEvent изза дубликата
 
         Subs.CVar(_cfg, CCCVars.GhostGoLobbyEnabled, value => _enabled = value, true);
         Subs.CVar(_cfg, CCCVars.GhostGoLobbyTimeHours, value => _requiredPlaytime = TimeSpan.FromHours(value), true);
@@ -77,7 +76,7 @@ public sealed partial class GhostGoLobbySystem : EntitySystem
             _usedCharacters.Clear();
     }
 
-    private void OnGhostAttached(EntityUid uid, GhostComponent component, PlayerAttachedEvent args)
+    public void OnGhostAttached(EntityUid uid, PlayerAttachedEvent args)
     {
         if (HasComp<GhostGoLobbyComponent>(uid))
             return;
