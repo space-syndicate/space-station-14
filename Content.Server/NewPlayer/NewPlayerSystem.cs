@@ -1,4 +1,4 @@
-﻿using Content.Server.Database;
+using Content.Server.Database;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Players.Whitelist;
 using Content.Shared.CCVar;
@@ -8,6 +8,7 @@ using Content.Shared.Ghost.Components;
 using Robust.Shared.Configuration;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
+using Content.Server.Corvax.Ghost;
 
 namespace Content.Server.NewPlayer;
 
@@ -19,6 +20,7 @@ public sealed partial class NewPlayerSystem : EntitySystem
     [Dependency] private IConfigurationManager _config = default!;
     [Dependency] private PlayTimeTrackingManager _playtimeManager = default!;
     [Dependency] private WhitelistManager _whitelistManager = default!;
+    [Dependency] private GhostGoLobbySystem _ghostGoLobby = default!;//corvax
 
     [Dependency] private EntityQuery<ShowNewPlayerIconComponent> _showPlayerIconQuery = default!;
 
@@ -76,6 +78,8 @@ public sealed partial class NewPlayerSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnPlayerAttachedEvent(Entity<GhostComponent> ent, ref PlayerAttachedEvent ev)
     {
+        _ghostGoLobby.OnGhostAttached(ent, ev);// corvax - перенёс сюда ивент из GhostGoLobbySystem по причине дублирования подписки
+
         if (_whitelistManager.IsConnectedWhitelisted(ev.Player))
             EnsureComp<ShowNewPlayerIconComponent>(ev.Entity);
     }
