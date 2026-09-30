@@ -15,7 +15,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/ShipVsShip/recruit_nt.rsi
 
 - type: entity
-  parent: [ ClothingUniformBase, BaseSyndicateContraband ]
+  parent: [ ClothingUniformBase] # Corvax-Contraband BaseSyndicateContraband
   id: ClothingUniformJumpsuitRecruitSyndie
   name: syndicate recruit jumpsuit
   description: A dubious, dark-grey jumpsuit. As if passengers weren't dubious enough already.

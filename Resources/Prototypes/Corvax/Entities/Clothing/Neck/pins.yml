@@ -10,7 +10,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: ath
-      
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckUSSPPin
@@ -23,7 +23,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: comm
-      
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckCorvaxPin
@@ -36,7 +36,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: cor
-      
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckDonkPin
@@ -62,8 +62,8 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: earth
-      
-- type: entity    
+
+- type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckEchoPin
   name: comet pin
@@ -101,7 +101,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: logistika
-      
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckMainPin
@@ -114,7 +114,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: main
-      
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckDeForestPin
@@ -166,7 +166,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi
     equippedPrefix: neb
-    
+
 - type: entity
   parent: ClothingNeckPinBase
   id: ClothingNeckNovaPin
@@ -181,7 +181,7 @@
     equippedPrefix: nova
 
 - type: entity
-  parent: ClothingNeckPinBase
+  parent: [BaseCorvaxContraband131, ClothingNeckPinBase]
   id: ClothingNeckSyndicakePin
   name: Syndicake pin
   description: The pin of Syndicakes, on backside have a little numbers "2559".

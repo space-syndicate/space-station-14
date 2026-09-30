@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [ BaseCartridge, BaseSecurityContraband ]
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseCartridge, BaseSecurityContraband] # Corvax-Contraband
   id: BaseCartridgePistol
   name: cartridge (.35 auto)
   components:

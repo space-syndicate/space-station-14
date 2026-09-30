@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: BaseCartridge
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseCartridge] # Corvax-Contraband
   id: BaseShellShotgun
   name: shell (.50)
   components:

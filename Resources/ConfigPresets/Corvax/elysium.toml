@@ -8,6 +8,9 @@ map_rotation = true
 [server]
 lobby_name = "️🛰️ Corvax — Элизиум 🌑"
 
+[lobby]
+server_hub_enabled = true
+
 [game.panic_bunker]
 enabled = true
 show_reason = true

@@ -65,7 +65,7 @@
     - Flashlight
 
 - type: entity
-  parent: BaseDecoy
+  parent: [BaseCorvaxContraband131, BaseDecoy] # Corvax-Contraband
   id: BalloonOperative
   name: operative balloon
   description: Upon closer inspection, this Syndicate operative is actually a balloon.

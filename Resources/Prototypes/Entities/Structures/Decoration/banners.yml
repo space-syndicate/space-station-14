@@ -80,7 +80,7 @@
 
 - type: entity
   id: BannerRevolution
-  parent: BannerBase
+  parent: [BaseCorvaxContraband131, BannerBase] # Corvax-Contraband
   name: revolution banner
   description: A banner displaying revolution. Viva!
   components:
@@ -90,7 +90,7 @@
 
 - type: entity
   id: BannerSyndicate
-  parent: BannerBase
+  parent: [BaseCorvaxContraband131, BannerBase] # Corvax-Contraband
   name: syndicate banner
   description: A banner from which, according to the syndicate, you should feel hatred for NT.
   components:

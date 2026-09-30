@@ -358,7 +358,7 @@
   - type: AmbientMusicMarkerMedical
 
 - type: entity
-  parent: BaseComputerAiAccess
+  parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, BaseComputerAiAccess] # Corvax-Contraband
   id: ComputerCriminalRecords
   name: criminal records computer
   description: This can be used to check criminal records. Only security can modify them.
@@ -457,6 +457,7 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
+    prefix: device-address-prefix-crew-monitor
   - type: WirelessNetworkConnection
     range: 1200
   - type: AmbientMusicMarkerMedical
@@ -524,6 +525,10 @@
     access: [["Command"]]
   - type: Lock
     unlockOnClick: false
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - storagebase
+
 
 - type: entity
   parent: ComputerStationTeleportersControl
@@ -532,7 +537,7 @@
   components:
   - type: StationTeleporterConsole
     autoLinkKey: Nanotrasen
-  
+
 - type: entity
   parent: ComputerStationTeleportersControl
   id: ComputerSyndicateTeleportersControl
@@ -558,7 +563,7 @@
     access: [["SyndicateAgent"]]
   - type: StationTeleporterConsole
     portalColor: "#c61414"
-  
+
 - type: entity
   parent: BaseComputerAiAccess
   id: ComputerResearchAndDevelopment
@@ -663,7 +668,7 @@
     - AnalysisConsole
 
 - type: entity
-  parent: BaseComputerAiAccess
+  parent: [BaseCorvaxContraband433DepartmentsCommand, BaseComputerAiAccess] # Corvax-Contraband
   id: ComputerId
   name: ID card computer
   description: Terminal for programming Nanotrasen employee ID cards to access parts of the station.
@@ -740,7 +745,7 @@
   - type: AmbientMusicMarkerMedical
 
 - type: entity
-  parent: BaseComputerAiAccess
+  parent: [BaseCorvaxContraband433DepartmentsCommand, BaseComputerAiAccess] # Corvax-Contraband
   id: ComputerComms
   name: communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
@@ -998,7 +1003,7 @@
   - type: DeviceLinkSource
     range: 200
     ports:
-      - OrderSender
+    - OrderSender
   - type: GuideHelp
     guides:
     - Cargo
@@ -1384,7 +1389,7 @@
 # Corvax-StealTarget-end
 
 - type: entity
-  parent: BaseComputer
+  parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, BaseComputer] # Corvax-Contraband
   id: ComputerSurveillanceCameraMonitor
   name: camera monitor
   description: A surveillance camera monitor. You're watching them. Maybe.
@@ -1407,6 +1412,7 @@
     deviceNetId: Wired
     receiveFrequencyId: SurveillanceCamera
     transmitFrequencyId: SurveillanceCamera
+    prefix: device-address-prefix-camera-monitor
   - type: WiredNetworkConnection
   - type: DeviceNetworkRequiresPower
   - type: SurveillanceCameraMonitor
@@ -1446,6 +1452,7 @@
     deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCamera
     transmitFrequencyId: SurveillanceCamera
+    prefix: device-address-prefix-camera-monitor
   - type: WirelessNetworkConnection
     range: 200
   - type: DeviceNetworkRequiresPower

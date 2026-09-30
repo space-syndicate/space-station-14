@@ -5,6 +5,10 @@
   description: Corporation and profit are best friends.
   suffix: Corvax
   components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [IAA]
   - type: Pda
     id: IAAIDCard
     penSlot:
@@ -20,7 +24,7 @@
     state: pda-lawyer
 
 - type: entity
-  parent: BaseSecurityPDA
+  parent: [BaseCorvaxContraband431JobsPilot, BaseSecurityPDA] # Corvax-Contraband
   id: PilotPDA
   name: pilot PDA
   description: Нas protection from cosmic radiation.
@@ -56,6 +60,10 @@
   description: Corporation and profit are best friends.
   suffix: Corvax
   components:
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: []
+    allowedJobs: [Magistrate]
   - type: Sprite
     sprite: Corvax/Objects/Devices/pda.rsi
     state: pda-magistrate

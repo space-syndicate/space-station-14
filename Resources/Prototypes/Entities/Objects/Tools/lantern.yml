@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: lantern
   parent: BaseItem
   id: Lantern
@@ -70,7 +70,7 @@
       - Flashlight
 
 - type: entity
-  parent: Lantern
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, Lantern] # Corvax-Contraband
   id: LanternFlash
   suffix: Flash
   components:

@@ -29,7 +29,7 @@
     bodyType: Static
 
 - type: entity
-  parent: [ BaseSubfloorAnchorStorageAnchored, ClothingBackpackSatchel, BaseMinorContraband ]
+  parent: [BaseSubfloorAnchorStorageAnchored, ClothingBackpackSatchel] # Corvax-Contraband
   id: ClothingBackpackSatchelSmuggler
   name: smuggler's satchel
   suffix: Empty
@@ -40,7 +40,7 @@
     state: icon
 
 - type: entity
-  parent: [ BaseSubfloorAnchorStorage, ClothingBackpackSatchel, BaseMinorContraband ]
+  parent: [ BaseSubfloorAnchorStorage, ClothingBackpackSatchel ] # Corvax-Contraband BaseMinorContraband
   id: ClothingBackpackSatchelSmugglerUnanchored
   name: smuggler's satchel
   suffix: Empty, Unanchored

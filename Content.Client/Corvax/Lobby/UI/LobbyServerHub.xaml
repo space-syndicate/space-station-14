@@ -1,0 +1,65 @@
+<corvaxLobby:LobbyServerHub
+    xmlns="https://spacestation14.io"
+    xmlns:corvaxLobby="clr-namespace:Content.Client.Corvax.Lobby.UI"
+    Orientation="Vertical"
+    HorizontalAlignment="Left"
+    Margin="0 8 0 16"
+    SeparationOverride="4"
+    Visible="False">
+    <corvaxLobby:TranslucentPanelContainer Name="CollapsedPanel"
+                                            StyleClasses="BackgroundPanel"
+                                            BackgroundOpacity="0.85"
+                                            HorizontalAlignment="Left"
+                                            Visible="False">
+        <TextureButton Name="ExpandButton"
+                       TexturePath="filled_right_arrow.svg.192dpi"
+                       ToolTip="{Loc 'corvax-lobby-server-hub-expand'}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       ModulateSelfOverride="#DEDEDE"
+                       Scale="0.5 0.5" />
+    </corvaxLobby:TranslucentPanelContainer>
+    <corvaxLobby:TranslucentPanelContainer Name="ExpandedPanel"
+                                            StyleClasses="BackgroundPanel"
+                                            BackgroundOpacity="0.85">
+        <BoxContainer Orientation="Vertical" Margin="3 3 3 6" SeparationOverride="5" HorizontalExpand="True">
+            <!-- The lobby arrow is overlaid by the panel, so only reserve its visible height. -->
+            <Control MinHeight="8" />
+            <BoxContainer Name="ColumnHeader"
+                          Orientation="Horizontal"
+                          HorizontalExpand="True"
+                          SeparationOverride="6">
+                <Label Text="{Loc 'corvax-lobby-server-hub-server-heading'}"
+                       StyleClasses="LabelKeyText"
+                       HorizontalExpand="True" />
+                <PanelContainer MinWidth="2" VerticalExpand="True" StyleClasses="LowDivider" />
+                <Label Text="{Loc 'corvax-lobby-server-hub-online-heading'}"
+                       StyleClasses="LabelKeyText"
+                       MinWidth="64"
+                       MaxWidth="64"
+                       Align="Right" />
+            </BoxContainer>
+            <ScrollContainer Name="ServerScroll"
+                             MinHeight="320"
+                             MaxHeight="320"
+                             HorizontalExpand="True"
+                             HScrollEnabled="False"
+                             ReserveScrollbarSpace="True"
+                             ReturnMeasure="True">
+                <GridContainer Name="ServerGrid"
+                               Columns="1"
+                               VSeparationOverride="3"
+                               Margin="0 0 14 0"
+                               HorizontalExpand="True" />
+            </ScrollContainer>
+        </BoxContainer>
+        <TextureButton Name="CollapseButton"
+                       TexturePath="filled_left_arrow.svg.192dpi"
+                       ToolTip="{Loc 'corvax-lobby-server-hub-collapse'}"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Top"
+                       Margin="0 2 2 0"
+                       ModulateSelfOverride="#DEDEDE"
+                       Scale="0.5 0.5" />
+    </corvaxLobby:TranslucentPanelContainer>
+</corvaxLobby:LobbyServerHub>

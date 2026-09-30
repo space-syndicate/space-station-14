@@ -1,7 +1,7 @@
 # Empty mags
 - type: entity
   abstract: true
-  parent: [ BaseItem, BaseSecurityContraband ]
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseItem, BaseSecurityContraband] # Corvax-Contraband
   id: BaseMagazineLightRifle
   name: "magazine (.30 rifle)"
   components:

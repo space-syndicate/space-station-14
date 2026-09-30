@@ -11,5 +11,5 @@ public sealed partial class SquadMemberComponent : Component
     ///     The icon that should be displayed based on the squad icon of the entity.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public ProtoId<SecurityIconPrototype> StatusIcon = "SecuritySquadIconAlpha";
+    public ProtoId<StatusIconPrototype> StatusIcon = "SecuritySquadIconAlpha";
 }

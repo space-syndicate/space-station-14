@@ -17,12 +17,13 @@ public sealed partial class ChatSystem
         string? sender = null,
         bool playSound = true,
         SoundSpecifier? announcementSound = null,
-        Color? colorOverride = null
+        Color? colorOverride = null,
+        string? signature = null
         )
     {
         sender ??= Loc.GetString("chat-manager-sender-announcement");
 
-        var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
+        var wrappedMessage = WrapAnnouncement(sender, message, signature);
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
@@ -40,11 +41,12 @@ public sealed partial class ChatSystem
         string? sender = null,
         bool playSound = true,
         SoundSpecifier? announcementSound = null,
-        Color? colorOverride = null)
+        Color? colorOverride = null,
+        string? signature = null)
     {
         sender ??= Loc.GetString("chat-manager-sender-announcement");
 
-        var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
+        var wrappedMessage = WrapAnnouncement(sender, message, signature);
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source ?? default, false, true, colorOverride);
         if (playSound)
         {
@@ -60,11 +62,12 @@ public sealed partial class ChatSystem
         string? sender = null,
         bool playDefaultSound = true,
         SoundSpecifier? announcementSound = null,
-        Color? colorOverride = null)
+        Color? colorOverride = null,
+        string? signature = null)
     {
         sender ??= Loc.GetString("chat-manager-sender-announcement");
 
-        var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
+        var wrappedMessage = WrapAnnouncement(sender, message, signature);
         var station = _stationSystem.GetOwningStation(source);
 
         if (station == null)
@@ -85,5 +88,13 @@ public sealed partial class ChatSystem
         }
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");
+    }
+
+    private string WrapAnnouncement(string sender, string message, string? signature)
+    {
+        var escapedMessage = FormattedMessage.EscapeText(message);
+        return string.IsNullOrWhiteSpace(signature)
+            ? Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", escapedMessage))
+            : Loc.GetString("chat-manager-sender-announcement-wrap-message-signed", ("sender", sender), ("message", escapedMessage), ("signature", FormattedMessage.EscapeText(signature)));
     }
 }

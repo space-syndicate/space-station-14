@@ -166,7 +166,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, ClothingEyesBase, ShowSecurityIcons, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingEyesGlassesSecurity
   name: security glasses
   description: Upgraded sunglasses that provide flash immunity and a security HUD.
@@ -194,7 +194,7 @@
     coverage: EYES
 
 - type: entity
-  parent: [ClothingEyesBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, ClothingEyesBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingEyesGlassesCommand
   name: administration glasses
   description: Upgraded sunglasses that provide flash immunity and show ID card status.
@@ -252,7 +252,7 @@
   - type: ThermalSight
 
 - type: entity
-  parent: ClothingEyesBase
+  parent: [BaseCorvaxContraband431DepartmentsMedical, ClothingEyesBase] # Corvax-Contraband
   id: ClothingEyesGlassesChemical
   name: chemical analysis goggles
   description: Goggles that can scan the chemical composition of a solution.

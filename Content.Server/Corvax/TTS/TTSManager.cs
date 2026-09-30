@@ -100,7 +100,7 @@ public sealed partial class TTSManager
             }
 
             var json = await response.Content.ReadFromJsonAsync<GenerateVoiceResponse>(cancellationToken: cts.Token);
-            if (json.Results == null || json.Results.Count == 0)
+            if (json.Results.Count == 0)
             {
                 var rawJson = await response.Content.ReadAsStringAsync(cancellationToken: cts.Token);
                 _sawmill.Error($"TTS API returned empty results for '{text}'. Response: {rawJson}");

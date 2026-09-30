@@ -186,7 +186,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: [ BaseItem, BaseSyndicateContraband ]
+  parent: BaseItem # Corvax-Contraband: the hypodart case also conceals its properties.
   id: HypoDartBox
   name: hypodart box
   suffix: HypoDart

@@ -40,7 +40,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase]
+  parent: [BaseCorvaxContraband431DepartmentsEngineering, ClothingShoesBootsMagBase] # Corvax-Contraband
   id: ClothingShoesBootsMag
 
 - type: entity
@@ -67,7 +67,7 @@
     stealGroup: ClothingShoesBootsMagAdv
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase]
+  parent: [BaseCorvaxContraband431DepartmentsScience, ClothingShoesBootsMagBase] # Corvax-Contraband
   id: ClothingShoesBootsMagSci
   components:
   - type: Sprite
@@ -88,7 +88,7 @@
     price: 3000
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase, BaseJetpack, BaseSyndicateContraband]
+  parent: [ClothingShoesBootsMagBase, BaseJetpack] # Corvax-Contraband BaseSyndicateContraband
   id: ClothingShoesBootsMagSyndie
   name: blood-red magboots
   description: Reverse-engineered from ERT magboots, they have a heavy magnetic pull and integrated thrusters. It can hold 0.75 L of gas.
@@ -117,7 +117,7 @@
     price: 1500
 
 - type: entity
-  parent: [BaseCentcommContraband, ClothingShoesBootsMagSyndie]
+  parent: [ BaseTaskForceContraband, ClothingShoesBootsMagSyndie ]
   id: ClothingShoesBootsMagERT
   name: ERT magboots
   description: Upgraded magnetic boots utilized by Nanotrasen's Emergency Response Teams, they have a heavy magnetic pull and integrated thrusters. It can hold 0.75 L of gas.
@@ -128,12 +128,10 @@
     sprite: Clothing/Shoes/Boots/magboots-ert.rsi
 
 - type: entity
-  parent: BaseAction
+  parent: BaseToggleAction
   id: ActionToggleMagboots
   name: Toggle Magboots
   description: Toggles the magboots on and off.
   components:
   - type: Action
     itemIconStyle: BigItem
-  - type: InstantAction
-    event: !type:ToggleActionEvent

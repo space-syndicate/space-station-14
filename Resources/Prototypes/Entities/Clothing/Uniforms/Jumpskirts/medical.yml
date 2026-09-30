@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [BaseCorvaxContraband431JobsChemist, ClothingUniformSkirtBase] # Corvax-Contraband
   id: ClothingUniformJumpskirtChemistry
   name: chemistry jumpskirt
   description: There's some odd stains on this jumpskirt. Hm.
@@ -32,7 +32,7 @@
     sprite: Clothing/Uniforms/Jumpskirts/Medical/genetics.rsi
 
 - type: entity
-  parent: [ClothingUniformSkirtBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsChiefMedicalOfficer, ClothingUniformSkirtBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingUniformJumpskirtCMO
   name: chief medical officer's jumpskirt
   description: It's a jumpskirt worn by those with the experience to be Chief Medical Officer. It provides minor biological protection.
@@ -43,7 +43,7 @@
     sprite: Clothing/Uniforms/Jumpskirts/Medical/cmo.rsi
 
 - type: entity
-  parent: [ClothingUniformSkirtBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsChiefMedicalOfficer, ClothingUniformSkirtBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingUniformJumpskirtCMOTurtle
   name: chief medical officer's turtleneck jumpskirt
   description: It's a turtleneck worn by those with the experience to be Chief Medical Officer. It provides minor biological protection.
@@ -54,7 +54,7 @@
     sprite: Clothing/Uniforms/Jumpskirts/Medical/cmo_turtle.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [BaseCorvaxContraband431JobsMedicalDoctor, ClothingUniformSkirtBase] # Corvax-Contraband
   id: ClothingUniformJumpskirtMedicalDoctor
   name: medical doctor jumpskirt
   description: It's made of a special fiber that provides minor protection against biohazards. It has a cross on the chest denoting that the wearer is trained medical personnel.
@@ -65,7 +65,7 @@
     sprite: Clothing/Uniforms/Jumpskirts/Medical/medical.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [BaseCorvaxContraband431JobsParamedic, ClothingUniformSkirtBase] # Corvax-Contraband
   id: ClothingUniformJumpskirtParamedic
   name: paramedic jumpskirt
   description: It's got a plus on it, that's a good thing right?

@@ -1,6 +1,6 @@
 - type: entity
   id: MachineArtifactAnalyzer
-  parent: [ BaseMachinePowered, SmallConstructibleMachine, BaseSmallConstructibleMachineDestructible ]
+  parent: [BaseCorvaxContraband431DepartmentsScience, BaseMachinePowered, SmallConstructibleMachine, BaseSmallConstructibleMachineDestructible] # Corvax-Contraband
   name: artifact analyzer
   description: A platform capable of performing analysis on various types of artifacts.
   components:

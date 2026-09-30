@@ -4,6 +4,10 @@
   id: PenLegal
   description: Writes sentences and more.
   components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [Legal, CentralCommand]
+    allowedJobs: []
   - type: Sprite
     sprite: Corvax/Objects/Misc/pens.rsi
     state: legal_pen

@@ -39,7 +39,7 @@
 
 
 - type: entity
-  parent: ClothingOuterCoatDetective
+  parent: [BaseCorvaxContraband431DepartmentsSecurityJobsDetective, ClothingOuterCoatDetective] # Corvax-Contraband
   id: ClothingOuterCoatDetectiveLoadout
   components:
   - type: EntityTableContainerFill
@@ -89,7 +89,7 @@
         Caustic: 0.9
 
 - type: entity
-  parent: [BaseSecurityCommandContraband, ClothingOuterArmorHoS]
+  parent: [BaseCorvaxContraband431DepartmentsCommandSecurityJobsHeadOfSecurity, BaseSecurityCommandContraband, ClothingOuterArmorHoS] # Corvax-Contraband
   id: ClothingOuterCoatHoSTrench
   name: head of security's armored trenchcoat
   description: A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence.
@@ -158,7 +158,7 @@
   name: lab coat
 
 - type: entity
-  parent: ClothingOuterStorageFoldableBase
+  parent: [BaseCorvaxContraband431JobsChemist, ClothingOuterStorageFoldableBase] # Corvax-Contraband
   id: ClothingOuterCoatLabChem
   name: chemist lab coat
   description: A suit that protects against minor chemical spills. Has an orange stripe on the shoulder.
@@ -218,7 +218,7 @@
   name: geneticist lab coat
 
 - type: entity
-  parent: ClothingOuterStorageFoldableBase
+  parent: [BaseCorvaxContraband431JobsChiefMedicalOfficer, ClothingOuterStorageFoldableBase] # Corvax-Contraband
   id: ClothingOuterCoatLabCmo
   name: chief medical officer's lab coat
   description: Custom made blue lab coat for the Chief Medical Officer, offers improved protection against chemical spills and minor cuts.
@@ -240,7 +240,7 @@
   name: chief medical officer's lab coat
 
 - type: entity
-  parent: ClothingOuterStorageFoldableBase
+  parent: [BaseCorvaxContraband431JobsScientist, ClothingOuterStorageFoldableBase] # Corvax-Contraband
   id: ClothingOuterCoatRnd
   name: scientist lab coat
   description: A suit that protects against minor chemical spills. Has a purple stripe on the shoulder.
@@ -280,7 +280,7 @@
   name: roboticist lab coat
 
 - type: entity
-  parent: ClothingOuterStorageFoldableBase
+  parent: [BaseCorvaxContraband431JobsResearchDirector, ClothingOuterStorageFoldableBase] # Corvax-Contraband
   id: ClothingOuterCoatRD
   name: research director lab coat
   description: Woven with top of the line technology, this labcoat helps protect against radiation in similar way to the experimental hardsuit.
@@ -312,7 +312,7 @@
     sprite: Clothing/OuterClothing/Coats/pirate.rsi
 
 - type: entity
-  parent: [ClothingOuterArmorWarden, BaseSecurityContraband]
+  parent: [BaseCorvaxContraband431DepartmentsSecurityJobsWarden, ClothingOuterArmorWarden, BaseSecurityContraband] # Corvax-Contraband
   id: ClothingOuterCoatWarden
   name: warden's armored jacket
   description: A sturdy, utilitarian jacket designed to protect a warden from any brig-bound threats.
@@ -362,7 +362,7 @@
         Piercing: 0.85
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [BaseCorvaxContraband431JobsParamedic, ClothingOuterStorageBase] # Corvax-Contraband
   id: ClothingOuterCoatParamedicWB
   name: paramedic windbreaker
   description: A paramedic's trusty windbreaker, for all the space wind.
@@ -384,7 +384,7 @@
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecap.rsi
 
 - type: entity
-  parent: [BaseSyndicateContraband, ClothingOuterCoatHoSTrench] # BaseSyndicateContraband as first parent so contraband system takes that as priority, yeah I know
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, BaseSyndicateContraband, ClothingOuterCoatHoSTrench] # Corvax-Contraband; BaseSyndicateContraband as first parent so contraband system takes that as priority, yeah I know
   id: ClothingOuterCoatSyndieCapArmored
   name: syndicate's armored coat
   description: The syndicate's armored coat is made of durable fabric, with gilded patterns.
@@ -395,7 +395,7 @@
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [BaseCorvaxContraband431JobsBrigmedic, ClothingOuterStorageBase] # Corvax-Contraband
   id: ClothingOuterCoatAMG
   name: armored medical gown
   description: The version of the medical gown, with elements of a bulletproof vest, looks strange, but your heart is protected.
@@ -414,7 +414,7 @@
         Caustic: 0.75
 
 - type: entity
-  parent: ClothingOuterStorageFoldableBase
+  parent: [BaseCorvaxContraband431JobsScientistSeniorResearcher, ClothingOuterStorageFoldableBase] # Corvax-Contraband
   id: ClothingOuterCoatLabSeniorResearcher
   name: senior researcher lab coat
   description: A suit that protects against minor chemical spills. Has a purple collar and wrist trims.

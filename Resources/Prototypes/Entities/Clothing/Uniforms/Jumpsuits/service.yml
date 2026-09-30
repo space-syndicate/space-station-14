@@ -34,7 +34,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Service/bartender_purple.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [BaseCorvaxContraband431JobsChaplain, ClothingUniformBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitChaplain
   name: chaplain's jumpsuit
   description: It's a black jumpsuit, often worn by religious folk.
@@ -45,7 +45,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Service/chaplain.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [BaseCorvaxContraband431JobsChef, ClothingUniformBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitChef
   name: chef uniform
   description: Can't cook without this.
@@ -117,7 +117,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Service/hydro.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [BaseCorvaxContraband431JobsJanitor, ClothingUniformBase, ClothingUniformFoldableBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitJanitor
   name: janitor jumpsuit
   description: The jumpsuit for the poor sop with a mop.

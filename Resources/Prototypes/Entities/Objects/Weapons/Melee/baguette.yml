@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ FoodBreadBaguette, BaseSword, BaseSyndicateContraband ]
+  parent: [FoodBreadBaguette, BaseSword] # Corvax-Contraband: do not inherit a marker for hidden properties.
   id: WeaponBaguette
   suffix: Weapon
   components:

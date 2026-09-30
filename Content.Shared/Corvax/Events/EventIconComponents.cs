@@ -11,7 +11,7 @@ namespace Content.Shared.Corvax.Events.Components
     public sealed partial class EventIconComponent : Component
     {
         [DataField("eventStatusIcon")]
-        public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "EventFaction";
+        public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "EventFaction";
     }
 
     /// <summary>

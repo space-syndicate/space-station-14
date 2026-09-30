@@ -29,7 +29,7 @@
 
 - type: entity
   name: cane blade
-  parent: [BaseSword, BaseSyndicateContraband]
+  parent: BaseSword # Corvax-Contraband: do not inherit a marker for hidden properties.
   id: CaneBlade
   description: A sharp blade with a cane shaped hilt.
   components:

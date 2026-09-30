@@ -49,7 +49,7 @@
   group: Toxins
   desc: reagent-desc-buzzochloric-bees
   physicalDesc: reagent-physical-desc-buzzy
-  contrabandSeverity: Minor
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   flavor: bee
   color: "#FFD35D"
   tileReactions:
@@ -173,6 +173,7 @@
 
 - type: reagent
   id: Razorium
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   name: reagent-name-razorium
   group: Toxins
   slipData:
@@ -399,6 +400,7 @@
 
 - type: reagent
   id: Felinase
+  contrabandSeverity: Corvax445 # Corvax-Contraband
   name: reagent-name-catessence
   group: Toxins
   desc: reagent-desc-catessence
@@ -446,6 +448,10 @@
         visualType: Small
         messages: [ "capsaicin-effect-light-burn" ]
         probability: 0.05
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectNightVision
+        time: 2
+        type: Add
 
 - type: reagent
   id: Caninase

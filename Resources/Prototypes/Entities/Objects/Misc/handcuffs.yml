@@ -2,7 +2,7 @@
   name: handcuffs
   description: Used to detain criminals and other assholes.
   id: Handcuffs
-  parent: [BaseItem, BaseSecurityCommandContraband]
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, BaseItem, BaseSecurityCommandContraband] # Corvax-Contraband
   components:
   - type: Item
     size: Small

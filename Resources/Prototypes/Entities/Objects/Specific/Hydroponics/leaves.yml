@@ -3,7 +3,7 @@
 
 - type: entity
   name: cannabis leaves
-  parent: ProduceBaseRuminant
+  parent: [BaseCorvaxContraband432JobsBotanist, ProduceBaseRuminant] # Corvax-Contraband
   id: LeavesCannabis
   description: "Recently legalized in most galaxies."
   components:

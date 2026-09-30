@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [ BaseItem, BaseSecurityContraband ]
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseItem, BaseSecurityContraband] # Corvax-Contraband
   id: BaseMagazineRifle
   name: "magazine (.20 rifle)"
   components:

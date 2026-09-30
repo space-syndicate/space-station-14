@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [BaseCorvaxContraband431DepartmentsCommandJobsResearchDirector, ClothingUniformBase, BaseCommandContraband] # Corvax-Contraband
   id: ClothingUniformJumpsuitResearchDirector
   name: research director's turtleneck
   description: It's a turtleneck worn by those with the know-how to achieve the position of Research Director. Its fabric provides minor protection from biological contaminants.
@@ -10,7 +10,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Science/rnd.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
+  parent: [BaseCorvaxContraband431JobsScientist, ClothingUniformBase, ClothingUniformFoldableBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitScientist
   name: scientist jumpsuit
   description: It's made of a special fiber that increases perceived intelligence and decreases personal ethics. It has markings that denote the wearer as a scientist.
@@ -39,7 +39,7 @@
     sprite: Clothing/Uniforms/Jumpsuits/Science/roboticist.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [BaseCorvaxContraband431JobsScientistSeniorResearcher, ClothingUniformBase] # Corvax-Contraband
   id: ClothingUniformJumpsuitSeniorResearcher
   name: senior researcher jumpsuit
   description: A sign of skill and prestige within the science department.
