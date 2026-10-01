@@ -352,4 +352,4 @@ ghost-role-information-emotional-support-scurret-name = Слизенёк эмо�
 ghost-role-information-emotional-support-scurret-description = Поддерживайте экипаж, будьте очаровательными, часто говорите "ва".
 
 ghost-role-information-space-changeling-name = Древний мозговой червь
-ghost-role-information-space-changeling-description = Взрослая особь мозгового червя генокрада, стремящаяся ассимилировать членов экипажа и готовая скрыться в недрах станции. Этот мозговой червь особенно уязвим и нуждается в трупе, чтобы принять гуманоидный облик.
+ghost-role-information-space-changeling-description = Взрослая особь мозгового червя генокрада, стремящаяся ассимилировать членов экипажа и скрываться в недрах станции. Этот мозговой червь особенно уязвим и нуждается в трупе, чтобы принять гуманоидный облик.

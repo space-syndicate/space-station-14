@@ -6,7 +6,7 @@ mutation-plant-description-ligneous = Его стебель одеревенел
 mutation-plant-description-scream = Это растение кажется каким-то нервным.
 mutation-plant-description-unviable = Оно увядает и выглядит болезненно.
 mutation-plant-description-seedless = Его плоды не имеют семян.
-mutation-plant-description-sampled = Семена были взяты.
+mutation-plant-description-sampled = Семена уже были собраны.
 
 mutation-plant-noun-kudzu = растущая кудза
 mutation-plant-noun-ligneous = одревесневший нарост

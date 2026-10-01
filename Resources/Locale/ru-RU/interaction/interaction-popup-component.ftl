@@ -34,7 +34,7 @@ petting-success-snake = Вы гладите { $target } по { POSS-ADJ($target)
 petting-success-monkey = Вы гладите { $target } по { POSS-ADJ($target) } озорной маленькой голове.
 petting-success-nymph = Вы гладите { $target } по { POSS-ADJ($target) } маленькой деревянной голове.
 petting-success-scurret = Вы гладите { $target } по { POSS-ADJ($target) } юридически отличающейся голове.
-petting-success-headslug = Вы гладите {THE($target)} по {POSS-ADJ($target)} вязкой, сочащаяся поверхности.
+petting-success-headslug = Вы гладите {THE($target)} по {POSS-ADJ($target)} вязкой, сочащейся поверхности.
 petting-success-elder-headslug = Вы гладите {THE($target)} по {POSS-ADJ($target)} пульсирующей коже.
 
 petting-failure-generic = Вы тянетесь погладить { $target }, но { SUBJECT($target) } настороженно уклоняется от вас.
