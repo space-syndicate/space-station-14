@@ -60,7 +60,7 @@ petting-failure-nymph = Вы тянетесь погладить { $target }, н
 petting-failure-shadow = Вы тянетесь погладить { $target }, но ваша рука проходит сквозь холодную тьму { POSS-ADJ($target) } тела.
 petting-failure-scurret = Вы тянетесь погладить { $target }, но { SUBJECT($target) } делает сальто назад!
 petting-failure-headslug = Вы тянетесь погладить {THE($target)}, но ваша рука утопает в {POSS-ADJ($target)} плоти.
-petting-failure-elder-headslug = Вы тянетесь погладить {THE($target)}, но {SUBJECT($target)} едва не кусает вас!
+petting-failure-elder-headslug = Вы тянетесь погладить {THE($target)}, но {SUBJECT($target)} чуть не кусает вас!
 
 
 ## Petting silicons
