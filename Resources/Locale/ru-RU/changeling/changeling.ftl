@@ -18,9 +18,14 @@ changeling-devour-begin-consume-others = { CAPITALIZE(POSS-ADJ($user)) } жут�
 changeling-devour-consume-complete-self = Наша жуткая пасть скрывается, биомасса поглощена.
 changeling-devour-consume-complete-others = { CAPITALIZE(POSS-ADJ($user)) } жуткая пасть прячется.
 
+changeling-devour-doafter-windup = [color=red]{ CAPITALIZE(POSS-ADJ($user)) } лицо раскрывается, готовясь пиршествовать![/color]
+changeling-devour-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } вгрызается в плоть {$target}![/color]
+
 # transformation
 changeling-transform-attempt-self = Наши кости хрустят, мышцы рвутся, одна плоть превращается в другую.
 changeling-transform-attempt-others = { CAPITALIZE(POSS-ADJ($user)) } кости хрустят, мышцы рвутся, тело превращается в другое.
+
+changeling-transform-doafter = [color=red]{ CAPITALIZE(POSS-ADJ($user)) } кожа плавится, принимая иную форму.[/color]
 
 # transformation BUI
 changeling-transform-bui-select-entity = { $entity }

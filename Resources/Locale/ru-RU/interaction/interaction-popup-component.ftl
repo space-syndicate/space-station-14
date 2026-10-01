@@ -34,6 +34,8 @@ petting-success-snake = Вы гладите { $target } по { POSS-ADJ($target)
 petting-success-monkey = Вы гладите { $target } по { POSS-ADJ($target) } озорной маленькой голове.
 petting-success-nymph = Вы гладите { $target } по { POSS-ADJ($target) } маленькой деревянной голове.
 petting-success-scurret = Вы гладите { $target } по { POSS-ADJ($target) } юридически отличающейся голове.
+petting-success-headslug = Вы гладите {THE($target)} по {POSS-ADJ($target)} вязкой, сочащейся поверхности.
+petting-success-elder-headslug = Вы гладите {THE($target)} по {POSS-ADJ($target)} пульсирующей коже.
 
 petting-failure-generic = Вы тянетесь погладить { $target }, но { SUBJECT($target) } настороженно уклоняется от вас.
 
@@ -57,6 +59,9 @@ petting-failure-monkey = Вы тянетесь погладить { $target }, �
 petting-failure-nymph = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } отодвигает свои ветви в сторону.
 petting-failure-shadow = Вы тянетесь погладить { $target }, но ваша рука проходит сквозь холодную тьму { POSS-ADJ($target) } тела.
 petting-failure-scurret = Вы тянетесь погладить { $target }, но { SUBJECT($target) } делает сальто назад!
+petting-failure-headslug = Вы тянетесь погладить {THE($target)}, но ваша рука утопает в {POSS-ADJ($target)} плоти.
+petting-failure-elder-headslug = Вы тянетесь погладить {THE($target)}, но {SUBJECT($target)} чуть не кусает вас!
+
 
 ## Petting silicons
 

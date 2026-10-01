@@ -1,7 +1,7 @@
 ent-ClothingUniformJumpsuitAncient = старинный комбинезон
     .desc = Ужасно поношенный и потрёпанный серый комбинезон. Он выглядит так, будто его не стирали более десяти лет.
 ent-ClothingUniformJumpsuitKimono = кимоно
-    .desc = Традиционное китайское одеяние.
+    .desc = Традиционное японское одеяние.
 ent-ClothingUniformJumpsuitHawaiBlack = чёрная гавайская рубашка
     .desc = Чёрная, как звёздная ночь.
 ent-ClothingUniformJumpsuitHawaiBlue = синяя гавайская рубашка
