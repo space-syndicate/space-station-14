@@ -1,0 +1,60 @@
+name: Empty Files Checker
+
+on:
+  push:
+    branches: [ master, staging, stable ]
+  merge_group:
+  pull_request:
+    types: [ opened, reopened, synchronize, ready_for_review ]
+    paths:
+    - 'Content.Client/**'
+    - 'Content.Server/**'
+    - 'Content.Shared/**'
+    - 'Resources/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'merge_group' }}
+
+env:
+  # Directories to scan for empty files. obj/ and bin/ are skipped
+  SEARCH_PATHS: "Content.Client Content.Server Content.Shared Resources"
+  # File extensions to check, without dots
+  FILE_EXTENSIONS: "cs yml ftl json"
+
+jobs:
+  check_empty_files:
+    name: Check for empty files
+    if: github.actor != 'PJBot' && github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7
+
+    - name: Setup Submodule
+      run: git submodule update --init
+
+    - name: Find empty files
+      run: |
+        set -e
+
+        EXT_EXPR=""
+        for ext in $FILE_EXTENSIONS; do
+          if [ -z "$EXT_EXPR" ]; then
+            EXT_EXPR="-name '*.$ext'"
+          else
+            EXT_EXPR="$EXT_EXPR -o -name '*.$ext'"
+          fi
+        done
+
+        EMPTY=$(eval find $SEARCH_PATHS \
+          \\\( -name obj -o -name bin \\\) -prune -o \
+          -type f \\\( $EXT_EXPR \\\) \
+          -exec sh -c '"'"'test -z "\$(tr -d "[:space:]" < "\$1")" && echo "\$1"'"'"' sh {} \\\;)
+
+        if [ -n "$EMPTY" ]; then
+          echo "::error::Found empty files:"
+          echo "$EMPTY" | sed 's/^/  - /'
+          exit 1
+        fi
+
+        echo "No empty files found."
