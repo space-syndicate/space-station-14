@@ -17,7 +17,7 @@
 
 ## Требования
 <!-- Подтвердите следующее, поставив X в скобках без пробелов [x]: -->
-- [ ] Я прочитал(а) и следую [Руководству по оформлению Pull Request и Changelog](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html) и руководству по контрибьюту.
+- [ ] Я прочитал(а) и следую [Руководству по оформлению Pull Request и Changelog](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
 - [ ] Я протестировал(а) эти изменения и написал(а) инструкции по тестированию.
 - [ ] Я добавил(а) медиафайлы к этому PR или он не требует демонстрации в игре.
 <!-- Вы должны понимать, что несоблюдение вышеуказанного может привести к закрытию вашего PR по усмотрению сопровождающего. -->
