@@ -3,6 +3,7 @@
   id: ClothingOuterCoatHoSGreatcoat
   name: armored greatcoat
   description: A greatcoat enhanced with a special alloy for some extra protection and style for those with a commanding presence.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/OuterClothing/Coats/hos_greatcoat.rsi
@@ -21,6 +22,7 @@
   id: ClothingOuterCoatDetectiveDark
   name: noir trenchcoat
   description: A hard-boiled private investigator's dark trenchcoat.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/OuterClothing/Coats/noirdet.rsi
@@ -39,6 +41,7 @@
   id: ClothingOuterCoatWardenAlt
   name: warden's jacket
   description: A navy-blue armored jacket with blue shoulder designations and '/Warden/' stitched into one of the chest pockets.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/OuterClothing/Coats/warden_alt.rsi
@@ -57,6 +60,7 @@
   id: ClothingOuterCoatSecurityOvercoat
   name: security overcoat
   description: Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/OuterClothing/Coats/sec_leather.rsi
@@ -75,6 +79,7 @@
   id: ClothingOuterCoatLabSecurityMedic
   name: security medic labcoat
   description: A suit that protects against minor chemical spills.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/OuterClothing/Coats/labcoat_security_medic.rsi
@@ -90,6 +95,7 @@
   id: ClothingOuterCoatCaptain
   name: captain's jacket
   description: Captain's formal jacket, inlaid with gold.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/OuterClothing/Coats/captain.rsi
@@ -108,6 +114,7 @@
   id: ClothingOuterCoatHOP
   name: head of personnel's jacket
   description: Business jacket of the HOP for a professional look.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/OuterClothing/Coats/hop.rsi
@@ -119,3 +126,63 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.8
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatCentcom
+  name: Centcom officer's coat
+  description: Decorated with corpotation emblem, this complements the Centcom officer look. Often worn by internal oversight officers.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Coats/centcom_coat.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Coats/centcom_coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.7
+        Heat: 0.65
+        Caustic: 0.75
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatCentcomTunic
+  name: Centcom officer's tunic
+  description: An armored tunic for Central Command officers.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Coats/centcom_tunic.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Coats/centcom_tunic.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.5
+        Caustic: 0.9
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatCentcomDress
+  name: Centcom officer's dress
+  description: An armored dress for Central Command officers.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/Coats/centcom_dress.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/Coats/centcom_dress.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.5
+        Caustic: 0.9

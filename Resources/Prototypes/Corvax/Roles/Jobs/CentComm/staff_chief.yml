@@ -1,0 +1,52 @@
+- type: job
+  id: CentcomStaffChief
+  name: job-name-centcom-staff-chief
+  description: job-description-staff-chief
+  playTimeTracker: JobCentcomStaffChief
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 100h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 10h
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Muted
+  startingGear: CentcomStaffChiefGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom-sectoral-command
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm, FreedomImplant ]
+
+- type: startingGear
+  id: CentcomStaffChiefGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomAdmiral
+    back: ClothingBackpackSatchelCorporate
+    neck: ClothingNeckCloakCentcomAdmiral
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatCentcomcap
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCentcomWhite
+    belt: ClothingBeltSheathFilled
+    outerClothing: ClothingOuterArmorCentcomCarapace
+    id: CentcomStaffChiefPDA
+    ears: ClothingHeadsetAltCentCom
+    pocket1: WeaponPulsePistolM1911
+    pocket2: CentCommFlippo
+  storage:
+    back:
+    - Flash
+    - CigarGoldCase
+    - BoxFolderCentComThreePapers
+    - RubberStampCentcom
+    - RubberStampApproved
+    - RubberStampDenied
+    - DoorRemoteCustom

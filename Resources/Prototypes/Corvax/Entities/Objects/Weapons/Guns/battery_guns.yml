@@ -1,0 +1,102 @@
+- type: entity
+  name: M1911-P
+  parent: [BaseWeaponBatteryNoAmmoCounter, BaseCentcommContraband]
+  id: WeaponPulsePistolM1911
+  description: A heavily modified version of the M1911 pistol purchased from the Trans-Solar Federation. A powerful pulse core provides an ammunition supply measured in years. It is used by big corporate figures and high-ranking officers of the NanoTrasen military forces.
+  suffix: Corvax
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Corvax/Objects/Weapons/Guns/Battery/M1911P.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+    quickEquip: true
+    slots:
+    - Belt
+    - suitStorage
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Gun
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: EmpResistance
+    strengthMultiplier: 0
+  - type: BatteryAmmoProvider
+    proto: Pulse
+    fireCost: 0
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: Pulse
+      fireCost: 0
+    - proto: BulletDisabler
+      fireCost: 0
+  - type: DisarmMalus
+    malus: 0
+  - type: Tag
+    tags:
+    - Sidearm
+
+- type: entity
+  parent: BaseWeaponBatterySmall
+  id: WeaponEnergyRevolverBlueshield
+  name: blueshield officer's energy revolver
+  description: Matters isn't the weapon's ammo capacity, but how big a hole it leaves in the enemy.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Weapons/Guns/Battery/blueshiled_revolver.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Item
+    storedOffset: -2,-5
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+  - type: Gun
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: BatteryAmmoProvider
+    proto: RedHeavyLaser
+    fireCost: 187.5
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: RedHeavyLaser
+      fireCost: 187.5
+    - proto: BulletDisabler
+      fireCost: 62.5
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500
+  - type: BatterySelfRecharger
+    autoRechargeRate: 10
+  - type: Tag
+    tags:
+    - Sidearm
+    - LaserWeapon

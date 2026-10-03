@@ -1,0 +1,140 @@
+- type: entity
+  name: CentComm officer
+  id: RandomHumanoidSpawnerCentcomOfficer
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Markers/jobs.rsi
+    state: CCOfficer
+  - type: RandomHumanoidSpawner
+    settings: CentcomOfficer
+
+- type: randomHumanoidSettings
+  id: CentcomOfficer
+  parent: EventHumanoidCentcomm
+  randomizeName: true
+  components:
+  - type: GhostRole
+    name: ghost-role-information-centcom-officer-name
+    description: ghost-role-information-centcom-officer-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: default
+    job: CentcomOfficer
+  - type: Loadout
+    prototypes: [ CentcomOfficerGear ]
+    roleLoadout: [ RoleSurvivalExtendedAntag ] # ОЦК АНТАГОНИСТ АААААААААААА
+
+- type: entity
+  name: CentComm representative
+  id: RandomHumanoidSpawnerCentcomRepresentative
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Markers/jobs.rsi
+    state: CCRepresentative
+  - type: RandomHumanoidSpawner
+    settings: CentcomRepresentative
+
+- type: randomHumanoidSettings
+  id: CentcomRepresentative
+  parent: EventHumanoidCentcomm
+  randomizeName: true
+  components:
+  - type: GhostRole
+    name: ghost-role-information-centcom-representative-name
+    description: ghost-role-information-centcom-representative-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: default
+    job: CentcomRepresentative
+  - type: Loadout
+    prototypes: [ CentcomRepresentativeGear ]
+    roleLoadout: [ RoleSurvivalExtendedAntag ]
+
+- type: entity
+  name: CentComm staff chief
+  id: RandomHumanoidSpawnerCentcomStaffChief
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Markers/jobs.rsi
+    state: CCChief
+  - type: RandomHumanoidSpawner
+    settings: CentcomStaffChief
+
+- type: randomHumanoidSettings
+  id: CentcomStaffChief
+  parent: EventHumanoidCentcomm
+  randomizeName: true
+  components:
+  - type: GhostRole
+    name: ghost-role-information-centcom-staff-chief-name
+    description: ghost-role-information-centcom-staff-chief-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: default
+    job: CentcomStaffChief
+  - type: Loadout
+    prototypes: [ CentcomStaffChiefGear ]
+    roleLoadout: [ RoleSurvivalExtendedAntag ]
+  - type: AutoImplant
+    implants:
+    - MindShieldImplant
+    - DeathRattleImplantCentcomm
+    - RadioImplantCentcomm
+    - FreedomImplant
+
+- type: entity
+  name: NanoTrasen diplomat
+  id: RandomHumanoidSpawnerNanoTrasenDiplomat
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Markers/jobs.rsi
+    state: CCDiplomat
+  - type: RandomHumanoidSpawner
+    settings: NanoTrasenDiplomat
+
+- type: randomHumanoidSettings
+  id: NanoTrasenDiplomat
+  parent: EventHumanoidCentcomm
+  randomizeName: true
+  components:
+  - type: GhostRole
+    name: ghost-role-information-nanotrasen-diplomat-name
+    description: ghost-role-information-nanotrasen-diplomat-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: default
+    job: NanoTrasenDiplomat
+  - type: Loadout
+    prototypes: [ NanoTrasenDiplomatGear ]
+    roleLoadout: [ RoleSurvivalExtendedAntag ]
+
+- type: entity
+  name: Blueshield officer
+  id: RandomHumanoidSpawnerBlueshieldOfficer
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Markers/jobs.rsi
+    state: BlueshieldOfficer
+  - type: RandomHumanoidSpawner
+    settings: BlueshieldOfficer
+
+- type: randomHumanoidSettings
+  id: BlueshieldOfficer
+  parent: EventHumanoidCentcomm
+  randomizeName: true
+  components:
+  - type: GhostRole
+    name: ghost-role-information-blueshield-name
+    description: ghost-role-information-blueshield-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: default
+    job: BlueshieldOfficer
+  - type: Loadout
+    prototypes: [ BlueshieldOfficerGear ]
+    roleLoadout: [ RoleSurvivalMilitaryDouble ]

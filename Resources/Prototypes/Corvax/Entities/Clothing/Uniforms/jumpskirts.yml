@@ -2,8 +2,9 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCentcomOfficial
-  name: CentCom officer's suitskirt
+  name: CentCom officer's jumpskirt
   description: It's a suitskirt worn by CentCom's highest-tier Commanders.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/centcom_official.rsi
@@ -13,8 +14,9 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCentcomOfficer
-  name: CentCom turtleneck skirt
+  name: CentCom officer's jumpskirt
   description: A skirt version of the CentCom turtleneck, rarer and more sought after than the original.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/centcom_officer.rsi
@@ -26,6 +28,7 @@
   id: ClothingUniformJumpskirtElegantMaid
   name: elegant maid uniform
   description: Call me master and bring me some beer.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/elegantmaid.rsi
@@ -37,6 +40,7 @@
   id: ClothingUniformJumpskirtSchool
   name: school skirt
   description: Stylish and comfortable school skirt.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Uniforms/Jumpskirt/schoolskirt.rsi
@@ -48,6 +52,7 @@
   id: ClothingUniformJumpskirtCapTurtleneck
   name: captain's turtleneck
   description: True captain's turtleneck.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/cap_turtleneck.rsi
@@ -59,6 +64,7 @@
   id: ClothingUniformJumpskirtHoPTurtleneck
   name: head of personal's turtleneck
   description: It's Head of Personal's turtleneck.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/hop_turtleneck.rsi
@@ -70,6 +76,7 @@
   id: ClothingUniformJumpskirtHoSBlack
   name: head of security's black skirt
   description: It's Head of Security's black skirt.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/hos_black.rsi
@@ -81,6 +88,7 @@
   id: ClothingUniformJumpskirtRDClassical
   name: research director's classical skirt
   description: It's Research Director's classical skirt.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/rd_classical.rsi
@@ -92,6 +100,7 @@
   id: ClothingUniformJumpskirtPilot
   name: pilot skirt
   description: Security pilot skirt.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Uniforms/Jumpskirt/pilot.rsi
@@ -103,8 +112,33 @@
   id: ClothingUniformJumpskirtMagistrate
   name: magistrate's jumpskirt
   description: Judge of space law.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Uniforms/Jumpskirt/magistrate.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Uniforms/Jumpskirt/magistrate.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtCentcomAdmiral
+  name: сentcom staff chief's suitskirt
+  description: Someone in corporation considered that Centcom highest rank officers must shine.
+  suffix: Corvax
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/centcom_staff_chief.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Uniforms/Jumpskirt/centcom_staff_chief.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtBluesheildOfficer
+  name: blueshield officer's jumpskirt
+  description: Babe...
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/blueshield.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/blueshield.rsi
