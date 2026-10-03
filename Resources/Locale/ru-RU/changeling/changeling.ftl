@@ -66,5 +66,5 @@ changeling-not-enough-chemicals = У нас недостаточно химик�
 # other
 changeling-action-fail-generic = Мы не можем сделать это прямо сейчас.
 changeling-paused-map-name = Карта хранения личностей генокрада
-changeling-cocoon-success = Мы заключем {THE($target)} в кокон из плоти.
+changeling-cocoon-success = Мы заключили {THE($target)} в кокон из плоти.
 changeling-cocoon-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } покрывает { THE($target) } массой плоти![/color]

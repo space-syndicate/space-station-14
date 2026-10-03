@@ -19,6 +19,6 @@ generic-seconds = секунд
 generic-playtime-title = Игровое время
 
 generic-confirm = Подтвердить
-generic-disabled = Отключен
+generic-disabled = Отключён
 
 generic-no-access = Недостаточно доступов.
