@@ -20,7 +20,7 @@ env:
   # Directories to scan for empty files. obj/ and bin/ are skipped
   SEARCH_PATHS: "Content.Client Content.Server Content.Shared Resources"
   # File extensions to check, without dots
-  FILE_EXTENSIONS: "cs xaml yml ftl xml json"
+  FILE_EXTENSIONS: "cs xaml yaml yml ftl xml json"
 
 jobs:
   check_empty_files:
