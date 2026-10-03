@@ -1,3 +1,5 @@
+ent-FoodCakeBaseNoSecretStash = { ent-SolutionNormal }
+    .desc = { ent-SolutionNormal.desc }
 ent-FoodCakeBase = { ent-SolutionNormal }
     .desc = { ent-SolutionNormal.desc }
 ent-FoodCakeSliceBase = { ent-SolutionVeryTiny }

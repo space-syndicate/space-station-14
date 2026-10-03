@@ -55,14 +55,20 @@ job-description-passenger = Наслаждайтесь пребыванием н
 job-description-borg = Получеловек, полумашина. Придерживайтесь своих законов, служите экипажу и преследуйте учёных с просьбами об апгрейде.
 job-description-station-ai = Соблюдайте свои законы, служите экипажу.
 
-# Misc.
+# Central Command
 job-description-centcommoff = Выступите в роли официального представителя новейшей, самой современной космической станции во флоте Nanotrasen.
+
+# Task Force
+job-description-cburn = Очистите станцию ​​от всех биологических угроз.
+job=description-deathsquad = Устраните любые угрозы активам Nanotrasen.
 job-description-ertchaplain = Проследите за тем, чтобы последнее право экипажа станции было соблюдено.
 job-description-ertengineer = Убедитесь, что на станции имеется электропитание и чистый воздух.
 job-description-ertjanitor = Убедитесь, что станция убрана должным образом — для поддержания морального духа.
 job-description-ertleader = Возглавьте отряд быстрого реагирования для устранения угрозы активам компании Nanotrasen.
 job-description-ertmedic = Убедитесь, что экипаж станции жив и здоров.
 job-description-ertsecurity = Убедитесь, что все активные угрозы для станции устранены.
+
+# Misc.
 job-description-visitor = Наслаждайтесь своим визитом на станцию.
 
 # Corvax

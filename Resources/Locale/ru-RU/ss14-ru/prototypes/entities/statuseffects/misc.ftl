@@ -38,5 +38,5 @@ ent-StatusEffectForcedItemCatEars = принудительные кошачьи 
     .desc = { ent-MobStatusEffectDebuff.desc }
 ent-StatusEffectForcedItemMaid = принудительный наряд горничной
     .desc = { ent-MobStatusEffectDebuff.desc }
-ent-StatusEffectForcedItemArmblade = неконтролируемая клинок-рука
+ent-StatusEffectForcedItemArmblade = неконтролируемая рука-клинок
     .desc = { ent-MobStatusEffectDebuff.desc }

@@ -15,7 +15,7 @@ highlights-warden = смотрител, варден, служба безопа�
 
 # Cargo
 highlights-cargotechnician = грузчик, карго, снабжени
-highlights-salvagespecialist = утилизатор, "утиль", карго, снабжени, шахтёр
+highlights-salvagespecialist = утилизатор, "утиль", карго, снабжени
 
 # Engineering
 highlights-atmospherictechnician = атмосферный техник, атмосферник, атмос, инженер, "атмос", "инж"
@@ -29,8 +29,8 @@ highlights-medicalintern = интерн, "док", медблок, медбей,
 highlights-paramedic = парамед, медблок, медбей, "мед"
 
 # Science
-highlights-scientist = учёный, наука, "рнд", "нио"
 highlights-researchassistant = научный ассистент, наука, "рнд", "нио", "асист"
+highlights-scientist = учёный, наука, "рнд", "нио"
 
 # Service
 highlights-bartender = бармен, "бар"
@@ -46,13 +46,25 @@ highlights-musician = музыкант, театрал, артист, серви
 highlights-serviceworker = сервисный работник, сервисник
 
 # Station-specific
-highlights-reporter = репортёр, репортер, журналист
 highlights-psychologist = психолог
+highlights-reporter = репортёр, репортер, журналист
+highlights-tramdriver = водитель трамвая, трам, водитель, сервис
 
 # Silicon
-highlights-personal-ai = персональный ии, "пии"
-highlights-borg = киборг, борг
+highlights-borg = киборг, борг, законы, набор законов,
 highlights-stationai = станционный ии, "ии", "сии"
 
 # Civilian
 highlights-passenger = пассажир, грейтайдер, "тайдер"
+highlights-visitor = посетитель, гражданский, гражданские, гражд
+
+# Central Command
+highlights-centralcommandofficial = Central Command Official, "Official", "Central Command", CentCom, CentComm, "CC"
+highlights-cburn = РХБЗЗ
+highlights-deathsquad = отряд смерти, деды
+highlights-ertleader = Лидер, "ОБР", "Отряд Быстрого Реагирования", ЛОБР
+highlights-ertchaplain = священник, "ОБР", "Отряд Быстрого Реагирования"
+highlights-ertengineer = инженер, "инж", "ОБР", "Отряд Быстрого Реагирования"
+highlights-ertsecurity = "офицер безопасности", офицер, "ОБР", "Отряд Быстрого Реагирования"
+highlights-ertmedical = врач, "ОБР", "Отряд Быстрого Реагирования"
+highlights-ertjanitor = Уборщик, "ОБР", "Отряд Быстрого Реагирования"
