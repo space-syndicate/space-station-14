@@ -23,9 +23,6 @@ deny_vpn = true
 enable_without_admins = true
 disable_with_admins = true
 
-[skills]
-enabled = true
-
 [rules]
 time = 180.0
 
