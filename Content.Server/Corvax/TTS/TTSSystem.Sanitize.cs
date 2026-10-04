@@ -270,8 +270,12 @@ public static class NumberConverter
 
     private static void AppendWithSpace(StringBuilder stringBuilder, string str)
     {
+        if (string.IsNullOrEmpty(str))
+            return;
+
         if (stringBuilder.Length > 0)
             stringBuilder.Append(" ");
+
         stringBuilder.Append(str);
     }
 
