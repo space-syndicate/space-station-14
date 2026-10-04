@@ -59,12 +59,12 @@ highlights-passenger = пассажир, грейтайдер, "тайдер"
 highlights-visitor = посетитель, гражданский, гражданские, гражд
 
 # Central Command
-highlights-centralcommandofficial = Central Command Official, "Official", "Central Command", CentCom, CentComm, "CC"
+highlights-centralcommandofficial = Представитель центрального командования, "представитель", "центральное командование", ЦентКом, ЦенКом, "ЦК"
 highlights-cburn = РХБЗЗ
 highlights-deathsquad = отряд смерти, деды
-highlights-ertleader = Лидер, "ОБР", "Отряд Быстрого Реагирования", ЛОБР
-highlights-ertchaplain = священник, "ОБР", "Отряд Быстрого Реагирования"
-highlights-ertengineer = инженер, "инж", "ОБР", "Отряд Быстрого Реагирования"
-highlights-ertsecurity = "офицер безопасности", офицер, "ОБР", "Отряд Быстрого Реагирования"
-highlights-ertmedical = врач, "ОБР", "Отряд Быстрого Реагирования"
-highlights-ertjanitor = Уборщик, "ОБР", "Отряд Быстрого Реагирования"
+highlights-ertleader = Лидер, "ОБР", "отряд быстрого реагирования", ЛОБР
+highlights-ertchaplain = священник, "ОБР", "отряд быстрого реагирования"
+highlights-ertengineer = инженер, "инж", "ОБР", "отряд быстрого реагирования"
+highlights-ertsecurity = "офицер безопасности", офицер, "ОБР", "отряд быстрого реагирования"
+highlights-ertmedical = врач, "ОБР", "отряд быстрого реагирования"
+highlights-ertjanitor = Уборщик, "ОБР", "отряд быстрого реагирования"
