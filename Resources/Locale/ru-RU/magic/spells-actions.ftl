@@ -10,7 +10,7 @@ action-speech-spell-slip = СКУОЛЬ ЗКО!
 action-speech-spell-charge = ДИ'РИ СЕЛ!
 
 action-speech-spell-fireball-1 = ONI'SOMA!
-action-speech-spell-fireball-2 = FYIR'BHAL!
-action-speech-spell-fireball-3 = TEU A'SHIES!
-action-speech-spell-fireball-4 = B'COEM THOASHT!
+action-speech-spell-fireball-2 = ФОИР'БАЛ!
+action-speech-spell-fireball-3 = ТЭЯ П'ЕПЭЛ!
+action-speech-spell-fireball-4 = С'ТАН ТОС'ТМ!
 action-speech-spell-fireball-5 = KA'E BEUME!
