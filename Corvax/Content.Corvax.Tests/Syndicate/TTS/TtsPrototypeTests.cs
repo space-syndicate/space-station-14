@@ -1,3 +1,4 @@
+#nullable enable
 using System.Collections.Generic;
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
@@ -9,6 +10,9 @@ namespace Content.Corvax.Tests.Syndicate.TTS;
 [TestFixture]
 public sealed class TtsVoicePrototypeTest : GameTest
 {
+    public static readonly ProtoId<TTSVoicePrototype> DefaultVoice = "Taskmaster";
+    private static readonly ProtoId<TTSVoicePrototype> AnnouncementVoice = "Glados";
+
     [Test]
     public async Task PrototypesAreValid()
     {
@@ -38,8 +42,7 @@ public sealed class TtsVoicePrototypeTest : GameTest
 
         await server.WaitPost(() =>
         {
-            Assert.That(protoManager.HasIndex<TTSVoicePrototype>("Taskmaster"), Is.True,
-                "Default voice 'Taskmaster' must exist.");
+            Assert.That(protoManager.HasIndex(DefaultVoice), Is.True, "Default voice 'Taskmaster' must exist.");
         });
     }
 
@@ -51,8 +54,7 @@ public sealed class TtsVoicePrototypeTest : GameTest
 
         await server.WaitPost(() =>
         {
-            Assert.That(protoManager.HasIndex<TTSVoicePrototype>("Glados"), Is.True,
-                "Announcement speaker 'Glados' must exist.");
+            Assert.That(protoManager.HasIndex(AnnouncementVoice), Is.True, "Announcement speaker 'Glados' must exist.");
         });
     }
 }

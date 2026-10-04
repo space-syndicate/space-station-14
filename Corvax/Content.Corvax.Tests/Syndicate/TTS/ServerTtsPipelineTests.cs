@@ -1,3 +1,4 @@
+#nullable enable
 using Content.IntegrationTests.Fixtures;
 using Content.Shared.Chat;
 using Content.Shared.Corvax.TTS;
@@ -115,8 +116,8 @@ public sealed class TtsEntitySpokeTest : GameTest
         {
             mapSystem.CreateMap(out var mapId);
 
-            var voiceProto = protoManager.Index<TTSVoicePrototype>("Taskmaster");
-            var mob = SpawnSpeaker(entMan, mapSystem, mapId, "Taskmaster");
+            var voiceProto = protoManager.Index(TtsVoicePrototypeTest.DefaultVoice);
+            var mob = SpawnSpeaker(entMan, mapSystem, mapId, TtsVoicePrototypeTest.DefaultVoice.Id);
 
             // Pre-compute the exact SSML GenerateTTS will produce and seed the cache.
             TtsReflection.ClearServerCache(manager);
