@@ -1,21 +1,23 @@
+using System.Collections.Generic;
+using System.Reflection;
 using Content.IntegrationTests.Fixtures;
 using Content.Server.Corvax.Ghost;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
-using Robust.Shared.GameObjects;
 
 namespace Content.Corvax.Tests.Syndicate;
 
 [TestFixture]
 public sealed class GhostGoLobbyTest : GameTest
 {
-    public override PoolSettings PoolSettings => new()
-    {
-        Dirty = true,
-    };
-
     private const string TestName = "Oleg";
+
+    private static readonly FieldInfo UsedCharactersField = typeof(GhostGoLobbySystem)
+        .GetField("_usedCharacters", BindingFlags.NonPublic | BindingFlags.Instance)!;
+
+    private static readonly MethodInfo OnRunLevelChangedMethod = typeof(GhostGoLobbySystem)
+        .GetMethod("OnRunLevelChanged", BindingFlags.NonPublic | BindingFlags.Instance)!;
 
     [Test]
     public async Task MarkCharacterTracksUsedCharacter()
@@ -31,6 +33,8 @@ public sealed class GhostGoLobbyTest : GameTest
             system.MarkCharacterUsed(profile);
 
             Assert.That(system.IsCharacterUsed(profile), Is.True, "Character must be tracked after marking.");
+
+            ClearUsedCharacters(system);
         });
     }
 
@@ -45,12 +49,8 @@ public sealed class GhostGoLobbyTest : GameTest
             var profile = MakeProfile(TestName);
 
             Assert.That(system.IsCharacterUsed(profile), Is.False, "Untracked character must not be reported as used.");
-        });
 
-        await server.WaitPost(() =>
-        {
-            var ev = new GameRunLevelChangedEvent(GameRunLevel.InRound, GameRunLevel.PreRoundLobby);
-            server.EntMan.EventBus.RaiseEvent(EventSource.Local, ev);
+            ClearUsedCharacters(system);
         });
     }
 
@@ -68,6 +68,8 @@ public sealed class GhostGoLobbyTest : GameTest
             system.MarkCharacterUsed(a);
 
             Assert.That(system.IsCharacterUsed(b), Is.True, "Two profiles with identical Name/Sex/Age/Species must hash equally.");
+
+            ClearUsedCharacters(system);
         });
     }
 
@@ -87,6 +89,8 @@ public sealed class GhostGoLobbyTest : GameTest
                 expected
                     ? $"Expected '{checkName}' to match the previously used '{usedName}'."
                     : $"Expected '{checkName}' NOT to match the previously used '{usedName}'.");
+
+            ClearUsedCharacters(system);
         });
     }
 
@@ -104,6 +108,8 @@ public sealed class GhostGoLobbyTest : GameTest
             system.MarkCharacterUsed(used);
 
             Assert.That(system.IsCharacterUsed(other), Is.False, "Profiles with different Age must hash differently.");
+
+            ClearUsedCharacters(system);
         });
     }
 
@@ -121,12 +127,8 @@ public sealed class GhostGoLobbyTest : GameTest
             system.MarkCharacterUsed(used);
 
             Assert.That(system.IsCharacterUsed(other), Is.False, "Profiles with different Sex must hash differently.");
-        });
 
-        await server.WaitPost(() =>
-        {
-            var ev = new GameRunLevelChangedEvent(GameRunLevel.InRound, GameRunLevel.PreRoundLobby);
-            server.EntMan.EventBus.RaiseEvent(EventSource.Local, ev);
+            ClearUsedCharacters(system);
         });
     }
 
@@ -144,6 +146,8 @@ public sealed class GhostGoLobbyTest : GameTest
             system.MarkCharacterUsed(used);
 
             Assert.That(system.IsCharacterUsed(other), Is.False, "Profiles with different Species must hash differently.");
+
+            ClearUsedCharacters(system);
         });
     }
 
@@ -162,14 +166,14 @@ public sealed class GhostGoLobbyTest : GameTest
 
         await server.WaitPost(() =>
         {
-            // Simulate a transition into the pre-round lobby.
-            var ev = new GameRunLevelChangedEvent(GameRunLevel.InRound, GameRunLevel.PreRoundLobby);
-            server.EntMan.EventBus.RaiseEvent(EventSource.Local, ev);
+            RaiseRunLevelChanged(system, GameRunLevel.InRound, GameRunLevel.PreRoundLobby);
         });
 
         await server.WaitPost(() =>
         {
             Assert.That(system.IsCharacterUsed(profile), Is.False, "Used characters must be cleared when entering the pre-round lobby.");
+
+            ClearUsedCharacters(system);
         });
     }
 
@@ -187,14 +191,27 @@ public sealed class GhostGoLobbyTest : GameTest
 
         await server.WaitPost(() =>
         {
-            // Transition into PostRound — must NOT clear the tracked set.
-            var ev = new GameRunLevelChangedEvent(GameRunLevel.InRound, GameRunLevel.PostRound);
-            server.EntMan.EventBus.RaiseEvent(EventSource.Local, ev);
+            RaiseRunLevelChanged(system, GameRunLevel.InRound, GameRunLevel.PostRound);
         });
 
         await server.WaitPost(() =>
         {
             Assert.That(system.IsCharacterUsed(profile), Is.True, "Used characters must only be cleared on PreRoundLobby, not other run levels.");
+
+            ClearUsedCharacters(system);
+        });
+    }
+
+    private static void ClearUsedCharacters(GhostGoLobbySystem system)
+    {
+        ((HashSet<int>)UsedCharactersField.GetValue(system)!).Clear();
+    }
+
+    private static void RaiseRunLevelChanged(GhostGoLobbySystem system, GameRunLevel oldLevel, GameRunLevel newLevel)
+    {
+        OnRunLevelChangedMethod.Invoke(system, new object[]
+        {
+            new GameRunLevelChangedEvent(oldLevel, newLevel),
         });
     }
 
