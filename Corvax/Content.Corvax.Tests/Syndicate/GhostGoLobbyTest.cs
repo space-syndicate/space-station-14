@@ -10,6 +10,11 @@ namespace Content.Corvax.Tests.Syndicate;
 [TestFixture]
 public sealed class GhostGoLobbyTest : GameTest
 {
+    public override PoolSettings PoolSettings => new()
+    {
+        Dirty = true,
+    };
+
     private const string TestName = "Oleg";
 
     [Test]
@@ -40,6 +45,12 @@ public sealed class GhostGoLobbyTest : GameTest
             var profile = MakeProfile(TestName);
 
             Assert.That(system.IsCharacterUsed(profile), Is.False, "Untracked character must not be reported as used.");
+        });
+
+        await server.WaitPost(() =>
+        {
+            var ev = new GameRunLevelChangedEvent(GameRunLevel.InRound, GameRunLevel.PreRoundLobby);
+            server.EntMan.EventBus.RaiseEvent(EventSource.Local, ev);
         });
     }
 
@@ -110,6 +121,12 @@ public sealed class GhostGoLobbyTest : GameTest
             system.MarkCharacterUsed(used);
 
             Assert.That(system.IsCharacterUsed(other), Is.False, "Profiles with different Sex must hash differently.");
+        });
+
+        await server.WaitPost(() =>
+        {
+            var ev = new GameRunLevelChangedEvent(GameRunLevel.InRound, GameRunLevel.PreRoundLobby);
+            server.EntMan.EventBus.RaiseEvent(EventSource.Local, ev);
         });
     }
 
