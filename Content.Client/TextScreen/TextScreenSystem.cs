@@ -278,14 +278,23 @@ public sealed partial class TextScreenSystem : VisualizerSystem<TextScreenVisual
         // First checks if its one of our special characters
         if (CharStatePairs.TryGetValue(character.Value, out var value))
             return value;
-
-        // Or else it checks if its a normal letter or digit
-        // (With apologies to those using non-latin character sets)
-        if (char.IsAscii(character.Value) && char.IsLetterOrDigit(character.Value))
-            return character.Value.ToString().ToLower();
+        //Corvax-localisation start
+        // Or else it checks if its a supported letter or digit (Latin or Cyrillic)
+        var c = character.Value;
+        if (char.IsLetterOrDigit(c) && (char.IsAscii(c) || IsCyrillic(c)))
+            return char.ToLowerInvariant(c).ToString();
 
         return null;
     }
+
+    /// <summary>
+    /// Returns true if <paramref name="c"/> is a basic Russian Cyrillic letter (А-я, Ё, ё).
+    /// </summary>
+    private static bool IsCyrillic(char c)
+    {
+        return c is >= 'А' and <= 'я' or 'Ё' or 'ё';
+    }
+    //Corvax-localisation end
     #endregion Public API
 
     #region Event Handlers
