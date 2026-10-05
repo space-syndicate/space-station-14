@@ -232,7 +232,8 @@
   - type: Computer
     board: CargoShuttleConsoleCircuitboard
   - type: StealTarget
-    stealGroup: CargoShuttleConsoleCircuitboard
+    stealGroup:
+    - CargoShuttleConsoleCircuitboard
 
 - type: entity
   parent: BaseComputerAiAccess
