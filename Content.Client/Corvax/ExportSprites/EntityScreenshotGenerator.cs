@@ -142,7 +142,7 @@ public sealed partial class EntityScreenshotGenerator
 
                 try
                 {
-                    if (proto.HasComponent<SpriteComponent>(_entityManager.ComponentFactory))
+                    if (proto.HasComp<SpriteComponent>(_entityManager.ComponentFactory))
                     {
                         entity = _entityManager.SpawnEntity(proto.ID, new EntityCoordinates(previewGrid.Owner, default));
 
@@ -257,7 +257,7 @@ public sealed partial class EntityScreenshotGenerator
 
     private bool HasExportableSprite(EntityPrototype prototype)
     {
-        if (prototype.HasComponent<SpriteComponent>(_entityManager.ComponentFactory))
+        if (prototype.HasComp<SpriteComponent>(_entityManager.ComponentFactory))
             return true;
 
         return TryGetPrototypeIcon(prototype, out _);

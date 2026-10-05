@@ -236,7 +236,8 @@
   - type: ComputerBoard
     prototype: ComputerShuttleCargo
   - type: StealTarget
-    stealGroup: CargoShuttleConsoleCircuitboard
+    stealGroup:
+    - CargoShuttleConsoleCircuitboard
 
 - type: entity
   parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, BaseComputerCircuitboard] # Corvax-Contraband
