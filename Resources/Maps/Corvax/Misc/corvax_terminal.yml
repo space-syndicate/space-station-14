@@ -1,17 +1,18 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 292.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/05/2026 14:13:51
-  entityCount: 1594
-maps:
-- 23
+  time: 10/05/2026 17:00:22
+  entityCount: 1593
+maps: []
 grids:
 - 2
-orphans: []
+orphans:
+- 2
 nullspace:
+- 1585
 - 1586
 - 1587
 - 1588
@@ -20,7 +21,6 @@ nullspace:
 - 1591
 - 1592
 - 1593
-- 1594
 tilemap:
   0: Space
   20: FloorArcadeBlue
@@ -65,7 +65,7 @@ entities:
     - type: MetaData
       name: NT-EM Terminal
     - type: Transform
-      parent: 23
+      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:
@@ -298,6 +298,7 @@ entities:
     - type: GridSplitNode
     - type: ChunkContainer
       chunkEntities:
+      - 1585
       - 1586
       - 1587
       - 1588
@@ -306,23 +307,10 @@ entities:
       - 1591
       - 1592
       - 1593
-      - 1594
     - type: TileHistory
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
-  - uid: 23
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AirAlarm
   entities:
   - uid: 3
@@ -530,42 +518,42 @@ entities:
       pos: -4.5,4.5
 - proto: AirlockExternalGlass
   entities:
-  - uid: 24
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 14.5,-14.5
-  - uid: 25
+  - uid: 23
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: 15.5,2.5
+      pos: 13.5,-22.5
+  - uid: 24
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-8.5
+  - uid: 25
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 11.5,-26.5
   - uid: 26
     components:
     - type: Transform
       parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 14.5,-22.5
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-1.5
   - uid: 27
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: 15.5,-8.5
+      pos: 14.5,2.5
   - uid: 28
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: 15.5,-1.5
-  - uid: 1585
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 11.5,-28.5
+      pos: 13.5,-14.5
 - proto: AirlockExternalShuttleLocked
   entities:
   - uid: 29
@@ -2634,7 +2622,7 @@ entities:
       pos: 2.5,-20.5
 - proto: ChunkEntity
   entities:
-  - uid: 1586
+  - uid: 1585
     components:
     - type: ChunkEntity
       root: 2
@@ -3132,7 +3120,7 @@ entities:
           decals:
             356: 5,-16
             360: 6,-14
-  - uid: 1587
+  - uid: 1586
     components:
     - type: ChunkEntity
       root: 2
@@ -3441,7 +3429,7 @@ entities:
           decals:
             312: 6,8
             313: 11,8
-  - uid: 1588
+  - uid: 1587
     components:
     - type: ChunkEntity
       root: 2
@@ -3732,7 +3720,7 @@ entities:
           decals:
             715: 1,-21
             716: 1,-20
-  - uid: 1589
+  - uid: 1588
     components:
     - type: ChunkEntity
       root: 2
@@ -3979,7 +3967,7 @@ entities:
             color: '#422E23FF'
           decals:
             93: -1,0
-  - uid: 1590
+  - uid: 1589
     components:
     - type: ChunkEntity
       root: 2
@@ -4547,7 +4535,7 @@ entities:
             76: -4,-8
             110: -4,-8
             288: -1,-4
-  - uid: 1591
+  - uid: 1590
     components:
     - type: ChunkEntity
       root: 2
@@ -4720,7 +4708,7 @@ entities:
           decals:
             798: -9.075703,-16.024803
             799: -8.825703,-16.196678
-  - uid: 1592
+  - uid: 1591
     components:
     - type: ChunkEntity
       root: 2
@@ -4740,7 +4728,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             758: 16,-23
-  - uid: 1593
+  - uid: 1592
     components:
     - type: ChunkEntity
       root: 2
@@ -4764,7 +4752,7 @@ entities:
             752: 16,-2
             754: 16,-9
             756: 16,-15
-  - uid: 1594
+  - uid: 1593
     components:
     - type: ChunkEntity
       root: 2
