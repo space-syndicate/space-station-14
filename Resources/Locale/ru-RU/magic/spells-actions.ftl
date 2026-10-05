@@ -13,4 +13,4 @@ action-speech-spell-fireball-1 = ONI'SOMA!
 action-speech-spell-fireball-2 = ФОИР'БАЛ!
 action-speech-spell-fireball-3 = ТЭЯ П'ЕПЭЛ!
 action-speech-spell-fireball-4 = С'ТАН ТОС'ТМ!
-action-speech-spell-fireball-5 = KA'E BEUME!
+action-speech-spell-fireball-5 = К`Э БУМ!
