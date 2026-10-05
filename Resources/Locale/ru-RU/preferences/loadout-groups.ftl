@@ -63,6 +63,7 @@ loadout-group-chaplain-mask = Священник, маска
 loadout-group-chaplain-jumpsuit = Священник, комбинезон
 loadout-group-chaplain-outerclothing = Священник, верхняя одежда
 loadout-group-chaplain-neck = Священник, шея
+loadout-group-chaplain-shoes = Священник, обувь
 loadout-group-chaplain-bible = Священная книга
 
 loadout-group-janitor-head = Уборщик, голова

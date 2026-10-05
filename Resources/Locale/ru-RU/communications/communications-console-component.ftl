@@ -28,7 +28,6 @@ comms-console-message-too-long = Сообщение слишком длинно�
 comms-console-message-cannot-send = Связь временно отключена
 
 # Placeholder values
-comms-console-announcement-sent-by = Отправитель
 comms-console-announcement-unknown-sender = Неизвестный
 
 # Comms console variant titles

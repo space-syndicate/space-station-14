@@ -21,7 +21,7 @@ entity-effect-guidebook-spawn-entity =
         [1] Создаёт
         *[other] создать
     } { $amount ->
-        [1] { INDEFINITE($entname) }
+        [1] { INDEFINITE($entname) } { $entname }
         *[other] { $amount } { MAKEPLURAL($entname) }
     }
 
@@ -616,3 +616,9 @@ entity-effect-disarm =
         [1] Обезоруживает
         *[other] обезоружить
     } цель
+
+entity-effect-guidebook-make-trap-in-container =
+    { $chance ->
+        [1] Заключает
+        *[other] заключить
+    } цель в { $entityname }
