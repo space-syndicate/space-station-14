@@ -52,6 +52,36 @@ instruments-component-menu-midi-min-volume-slider-label = Минимальная
 # SwappableInstrumentComponent
 swappable-instrument-component-style-set = Установить стиль "{ $style }"
 
+swappable-instrument-style-electro = Электро
+swappable-instrument-style-bubbles = Бабблгам-поп
+swappable-instrument-style-square = Квадратная волна
+swappable-instrument-style-standard = Стандартный
+swappable-instrument-style-tango = Танго
+swappable-instrument-style-soprano = Сопрано
+swappable-instrument-style-alto = Альт
+swappable-instrument-style-tenor = Тенор
+swappable-instrument-style-baritone = Баритон
+swappable-instrument-style-clean = Чистый
+swappable-instrument-style-jazz = Джаз
+swappable-instrument-style-muted = Приглушенный
+swappable-instrument-style-fingered = Пальцевая техника
+swappable-instrument-style-pick = Медиатор
+swappable-instrument-style-slap = Слэп-хаус
+swappable-instrument-style-slap-extra-funky = Слэп-хаус (супер-фанк)
+swappable-instrument-style-fretless = Безладовый
+swappable-instrument-style-overdrive = Овердрайв
+swappable-instrument-style-distortion = Дисторшн
+swappable-instrument-style-harmonics = Гармоники
+swappable-instrument-style-nylon = Нейлон
+swappable-instrument-style-steel = Сталь
+swappable-instrument-style-classical = Классический
+swappable-instrument-style-bluegrass = Блюграсс
+swappable-instrument-style-aah = А-а-а
+swappable-instrument-style-ooh = О-о-о
+swappable-instrument-style-kweh = Кве
+swappable-instrument-style-waa = Уа-а
+swappable-instrument-style-wah = Ва-а
+
 instruments-component-menu-midi-channel-acoustic-grand-piano = Акустический рояль
 instruments-component-menu-midi-channel-bright-acoustic-piano = Яркое акустическое фортепиано
 instruments-component-menu-midi-channel-electric-grand-piano = Электрический рояль

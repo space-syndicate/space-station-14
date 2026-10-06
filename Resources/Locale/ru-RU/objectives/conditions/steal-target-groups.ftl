@@ -17,6 +17,7 @@ steal-target-groups-weapon-energy-magnum = энергетический магн
 steal-target-groups-figurines = фигурки
 steal-target-groups-heads-cloaks = плащи глав
 steal-target-groups-heads-bedsheets = одеяла глав
+steal-target-groups-heads-hardsuits = скафандры глав
 steal-target-groups-stamps = печати
 steal-target-groups-door-remotes = пульты от шлюзов
 steal-target-groups-encryption-keys = ключи шифрования

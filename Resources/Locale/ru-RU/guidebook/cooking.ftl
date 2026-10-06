@@ -14,3 +14,6 @@ guidebook-microwave-reagent-quantity-display = × { $amount } ед.
 
 guidebook-microwave-solid-name-display = [bold]{ $ingredient }[/bold]
 guidebook-microwave-solid-quantity-display = × { $amount }
+
+guidebook-microwave-stack-name-display = [bold]{$stack}[/bold]
+guidebook-microwave-stack-quantity-display = x {$amount}
