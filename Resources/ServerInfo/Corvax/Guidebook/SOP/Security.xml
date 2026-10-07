@@ -37,6 +37,16 @@
   ### Помощнику смотрителя запрещено
   <FTLTextpart Key="guidebook-SOP-WardenHelper-prohibited"/>
 
+  ## СРП Инструктора СБ
+  ### Инструктор СБ обязан
+  <FTLTextpart Key="guidebook-SOP-SeniorOfficer-must"/>
+
+  ### Инструктор СБ имеет право
+  <FTLTextpart Key="guidebook-SOP-SeniorOfficer-right"/>
+
+  ### Инструктору СБ запрещено
+  <FTLTextpart Key="guidebook-SOP-SeniorOfficer-prohibited"/>
+
   ## СРП Офицера СБ
   ### Офицер СБ обязан
   <FTLTextpart Key="guidebook-SOP-Security-must"/>
