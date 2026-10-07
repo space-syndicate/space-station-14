@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 289.0.0
+  engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/23/2026 09:01:07
+  time: 10/07/2026 18:03:33
   entityCount: 19609
 maps:
 - 1
@@ -14,12 +14,12 @@ grids:
 - 18674
 orphans: []
 nullspace:
-- 11654
-- 11656
+- 11896
 - 13095
 - 13207
 - 13209
 - 14704
+- 18255
 - 19018
 - 19559
 - 19560
@@ -2244,12 +2244,12 @@ entities:
     - type: GridSplitNode
     - type: ChunkContainer
       chunkEntities:
-      - 11654
-      - 11656
+      - 11896
       - 13095
       - 13207
       - 13209
       - 14704
+      - 18255
       - 19018
       - 19559
       - 19560
@@ -4916,7 +4916,7 @@ entities:
       pos: -43.5,-45.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -47603.008
+      secondsUntilStateChange: -47736.82
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -7265,15 +7265,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -45.468437,-1.5397301
-- proto: AsimovCircuitBoard
-  entities:
-  - uid: 577
-    components:
-    - type: Transform
-      parent: 575
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: AtmosDeviceFanDirectional
   entities:
   - uid: 606
@@ -37433,7 +37424,7 @@ entities:
       pos: -31.340986,-37.10668
 - proto: ChunkEntity
   entities:
-  - uid: 11654
+  - uid: 11896
     components:
     - type: ChunkEntity
       root: 2
@@ -37837,7 +37828,7 @@ entities:
             color: '#52B4E98B'
           decals:
             5128: -111,-58
-  - uid: 11656
+  - uid: 13095
     components:
     - type: ChunkEntity
       root: 2
@@ -38528,7 +38519,7 @@ entities:
           decals:
             6421: -18.503054,-18.438278
             6423: -16.645304,-19.478912
-  - uid: 13095
+  - uid: 13207
     components:
     - type: ChunkEntity
       root: 2
@@ -38810,7 +38801,7 @@ entities:
             6419: -11.223964,-28.066826
             6420: -11.19424,-26.8032
             6422: -15.72386,-18.913996
-  - uid: 13207
+  - uid: 13209
     components:
     - type: ChunkEntity
       root: 2
@@ -39236,7 +39227,7 @@ entities:
             5532: -29.80618,-41.3399
             5533: -29.647652,-40.95338
             5534: -29.469309,-40.96329
-  - uid: 13209
+  - uid: 14704
     components:
     - type: ChunkEntity
       root: 2
@@ -40019,7 +40010,7 @@ entities:
             6458: -59.495235,-37.43348
             6459: -60.96657,-38.44438
             6460: -60.832817,-35.47114
-  - uid: 14704
+  - uid: 18255
     components:
     - type: ChunkEntity
       root: 2
@@ -60922,6 +60913,15 @@ entities:
     - type: Transform
       parent: 2
       pos: -86.5,-66.5
+- proto: CrewsimovCircuitBoard
+  entities:
+  - uid: 577
+    components:
+    - type: Transform
+      parent: 575
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: Crowbar
   entities:
   - uid: 7062
@@ -66889,13 +66889,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -15.06435,11.805144
-- proto: DrinkWaterJug
-  entities:
-  - uid: 8010
-    components:
-    - type: Transform
-      parent: 2
-      pos: -76.49332,-77.35371
 - proto: DrinkWatermelonJuice
   entities:
   - uid: 8011
@@ -95461,6 +95454,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -54.389694,-37.312416
+- proto: JugWater
+  entities:
+  - uid: 8010
+    components:
+    - type: Transform
+      parent: 2
+      pos: -76.49332,-77.35371
 - proto: Jukebox
   entities:
   - uid: 19091
@@ -97128,13 +97128,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -49.5,-9.5
-- proto: MagazineBoxAntiMateriel
-  entities:
-  - uid: 11896
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.217636,-3.5208688
 - proto: MagazinePistolSubMachineGun
   entities:
   - uid: 11897
@@ -137525,9 +137518,9 @@ entities:
       parent: 2
       pos: -80.51544,-7.362196
     missingComponents:
+    - Contraband
     - AmmoCounter
     - RevolverAmmoProvider
-    - Contraband
 - proto: WeaponShotgunDoubleBarreledRubber
   entities:
   - uid: 18252
@@ -137536,6 +137529,18 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: -57.456436,-64.54108
+- proto: WeaponShotgunEnforcer
+  entities:
+  - uid: 11654
+    components:
+    - type: Transform
+      parent: 2
+      pos: -14.46422,-3.5793798
+  - uid: 11656
+    components:
+    - type: Transform
+      parent: 2
+      pos: -14.441396,-3.3327472
 - proto: WeaponShotgunKammerer
   entities:
   - uid: 18253
@@ -137548,13 +137553,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -12.669572,-1.101347
-- proto: WeaponSniperHristov
-  entities:
-  - uid: 18255
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.564501,-3.3821173
 - proto: WeaponSniperMosin
   entities:
   - uid: 18256
@@ -137566,9 +137564,9 @@ entities:
       parent: 2
       pos: -78.54529,-19.535015
     missingComponents:
+    - Contraband
     - AmmoCounter
     - BallisticAmmoProvider
-    - Contraband
 - proto: WeaponSubMachineGunDrozd
   entities:
   - uid: 18257
