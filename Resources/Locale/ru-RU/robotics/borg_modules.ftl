@@ -24,7 +24,7 @@ borg-slot-inflatable-door-empty = Надувная дверь
 borg-slot-inflatable-wall-empty = Надувная стена
 borg-slot-dining-ware-empty = Блюда и посуда
 borg-slot-seed-produce-empty = Урожай и семена
-borg-slot-pen-empty = Ручки
+borg-slot-pen-empty = Ручка
 borg-slot-gardening-tools-empty = Садовые
                             инструменты
 borg-slot-ingredients-empty = Ингредиенты
