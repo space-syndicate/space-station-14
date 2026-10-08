@@ -12,12 +12,12 @@
 
   Газовые смесители имеют 3 соединения: 2 входа и 1 выход, как показано ниже:
   <Box>
-    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Первичный" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Входящий" Rotation="90"/>
     <GuideEntityEmbed Entity="GasMixer" Caption="" Rotation="90"/>
     <GuideEntityEmbed Entity="GasPipeStraight" Caption="Выход" Rotation="90"/>
   </Box>
 <Box>
-  <GuideEntityEmbed Entity="GasPipeStraight" Caption="Вторичный"/>
+  <GuideEntityEmbed Entity="GasPipeStraight" Caption="Боковой"/>
 </Box>
 
   Газовые смесители будут соблюдать требуемый состав газовой смеси, даже если один из исходных газов недоступен. Например:
