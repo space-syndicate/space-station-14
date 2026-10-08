@@ -38,7 +38,7 @@
     layers:
     - state: default
     - sprite: &icon-rsi Interface/Misc/job_icons.rsi
-      offset: &icon-offset -0.09375, 0.0625 #3 pixels left, 2 pixels up
+      offset: &icon-offset -0.18750, 0.03125  # Corvax-ID-sprite 6 pixels left, 1 pixels up
       state: Passenger
   - type: PresetIdCard
     job: Passenger
@@ -1180,9 +1180,9 @@
     layers:
     - state: centcom
     - state: stripe_top
-      color: &color-centcomm-top "#134975"
+      color: &color-centcomm-top "#ffe78d" # Corvax-ID-sprite
     - state: stripe_bottom
-      color: &color-centcomm-bottom "#0d304d"
+      color: &color-centcomm-bottom "#ffd700" # Corvax-ID-sprite
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Nanotrasen
@@ -1198,7 +1198,7 @@
   components:
   - type: Sprite
     layers:
-    - state: gold
+    - state: centcom # Corvax-ID-sprite
     - state: stripe_top
       color: *color-centcomm-top
     - state: stripe_bottom
@@ -1207,7 +1207,7 @@
       offset: *icon-offset
       state: ERTLeader
   - type: Item
-    heldPrefix: gold
+    heldPrefix: blue # Corvax-ID-sprite
   - type: PresetIdCard
     job: ERTLeader
 
@@ -1339,9 +1339,9 @@
     layers:
     - state: centcom
     - state: stripe_top
-      color: *color-centcomm-top
+      color: *color-security-top # Corvax-ID-sprite
     - state: stripe_bottom
-      color: *color-centcomm-bottom
+      color: *color-security-bottom # Corvax-ID-sprite
     - sprite: *icon-rsi
       offset: *icon-offset
       state: CBURN
