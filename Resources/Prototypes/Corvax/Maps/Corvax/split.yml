@@ -63,6 +63,7 @@
         - type: StationGoal
           goals:
             - Artifacts
+            - Modification
             - XenobiologyRepair
             - VirusologyAmbusol
     Payback:
@@ -179,8 +180,11 @@
             CargoTechnician: [ 3, 4 ]
         - type: StationGoal
           goals:
-            - Singularity
             - SolarPanels
             - Zoo
-            - MiningOutpost
-            - Tesla
+            - Dorms
+            - LivingOutpost
+            - ShuttleCargo
+            - ShuttleMed
+            - ShuttleRnd
+            - ShuttleEmergency
