@@ -1,0 +1,42 @@
+name: Sync Goob Locale
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+    paths:
+      - 'Resources/Locale/ru-RU/corvax/guidebook/**'
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone target repo
+        env:
+          TOKEN: ${{ secrets.GOOB_REPO_TOKEN }}
+          TARGET_REPO: space-syndicate/Goob-Station
+        run: |
+          git clone "https://x-access-token:${TOKEN}@github.com/${TARGET_REPO}.git" target
+
+      - name: Sync folders
+        run: |
+          rsync -a --delete "Resources/Locale/ru-RU/corvax/guidebook/" \
+            "target/Resources/Locale/ru-RU/_CorvaxGoob/guidebook/"
+
+      - name: Commit and push
+        working-directory: target
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Sync locale from ${{ github.sha }}" || exit 0
+          git push origin HEAD:master
