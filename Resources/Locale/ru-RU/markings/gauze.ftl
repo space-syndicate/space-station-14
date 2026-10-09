@@ -34,14 +34,14 @@ marking-GauzeBoxerWrapLeft = Бинт, Перевязь кисти (Левый)
 marking-GauzeBoxerWrapRight-gauze_boxerwrap_r = Бинт, Перевязь кисти (Правый)
 marking-GauzeBoxerWrapRight = Бинт, Перевязь кисти (Правый)
 
-marking-GauzeUpperLegLeft-gauze_upperleg_l = Бинт, Перевязь бедра (Левый)
-marking-GauzeUpperLegLeft = Бинт, Перевязь бедра (Левый)
+marking-GauzeUpperLegLeft-gauze_upperleg_l = Бинт, Перевязь бёдра (Левый)
+marking-GauzeUpperLegLeft = Бинт, Перевязь бёдра (Левый)
 
 marking-GauzeLowerLegRight-gauze_lowerleg_r = Бинт, Перевязь голеностопа (Правый)
 marking-GauzeLowerLegRight = Бинт, Перевязь голеностопа (Правый)
 
-marking-GauzeUpperLegRight-gauze_upperleg_r = Бинт, Перевязь бедра (Правый)
-marking-GauzeUpperLegRight = Бинт, Перевязь бедра (Правый)
+marking-GauzeUpperLegRight-gauze_upperleg_r = Бинт, Перевязь бёдра (Правый)
+marking-GauzeUpperLegRight = Бинт, Перевязь бёдра (Правый)
 
 marking-GauzeBlindfold-gauze_blindfold = Бинт, Повязка на оба глаза
 marking-GauzeBlindfold = Бинт, Повязка на глаза
@@ -91,11 +91,11 @@ marking-GauzeMothUpperArmRight = Инсектоид, Бинт, Перевязь 
 marking-GauzeMothUpperArmLeft-gauze_moth_upperarm_l = Инсектоид, Бинт, Перевязь предплечья (Левый)
 marking-GauzeMothUpperArmLeft = Инсектоид, Бинт, Перевязь предплечья (Левый)
 
-marking-GauzeMothUpperLegRight-gauze_moth_upperleg_r = Инсектоид, Бинт, Перевязь бедра (Правый)
-marking-GauzeMothUpperLegRight = Инсектоид, Бинт, Перевязь бедра (Правый)
+marking-GauzeMothUpperLegRight-gauze_moth_upperleg_r = Инсектоид, Бинт, Перевязь бёдра (Правый)
+marking-GauzeMothUpperLegRight = Инсектоид, Бинт, Перевязь бёдра (Правый)
 
-marking-GauzeMothUpperLegLeft-gauze_moth_upperleg_l = Инсектоид, Бинт, Перевязь бедра (Левый)
-marking-GauzeMothUpperLegLeft = Инсектоид, Бинт, Перевязь бедра (Левый)
+marking-GauzeMothUpperLegLeft-gauze_moth_upperleg_l = Инсектоид, Бинт, Перевязь бёдра (Левый)
+marking-GauzeMothUpperLegLeft = Инсектоид, Бинт, Перевязь бёдра (Левый)
 
 marking-GauzeMothLowerLegRight-gauze_moth_lowerleg_r = Инсектоид, Бинт, Перевязь голени (Правый)
 marking-GauzeMothLowerLegRight = Инсектоид, Бинт, Перевязь голени (Правый)
@@ -142,9 +142,9 @@ marking-GauzeVulpShoulder = Вульпканин, Бинт, Перевязь п�
 marking-GauzeVulpUpperArmRight-gauze_vulp_upperarm_r = Вульпканин, Бинт, Перевязь предплечья (Правый)
 marking-GauzeVulpUpperArmRight = Вульпканин, Бинт, Перевязь предплечья (Правый)
 
-marking-GauzeVulpUpperLegLeft-gauze_vulp_upperleg_l = Вульпканин, Бинт, Перевязь бедра (Левый)
-marking-GauzeVulpUpperLegLeft = Вульпканин, Бинт, Перевязь бедра (Левый)
+marking-GauzeVulpUpperLegLeft-gauze_vulp_upperleg_l = Вульпканин, Бинт, Перевязь бёдра (Левый)
+marking-GauzeVulpUpperLegLeft = Вульпканин, Бинт, Перевязь бёдра (Левый)
 
-marking-GauzeVulpUpperLegRight-gauze_vulp_upperleg_r = Вульпканин, Бинт, Перевязь бедра (Правый)
-marking-GauzeVulpUpperLegRight = Вульпканин, Бинт, Перевязь бедра (Правый)
+marking-GauzeVulpUpperLegRight-gauze_vulp_upperleg_r = Вульпканин, Бинт, Перевязь бёдра (Правый)
+marking-GauzeVulpUpperLegRight = Вульпканин, Бинт, Перевязь бёдра (Правый)
 

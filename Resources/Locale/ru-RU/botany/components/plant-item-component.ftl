@@ -9,7 +9,7 @@ plant-shovel-component-no-plant-popup = Здесь нет растения.
 plant-sample-component-early-sample-popup = Растение ещё не выросло настолько, чтобы извлечь семена.
 plant-sample-component-already-sampled-popup = Из этого растения уже извлекли семена.
 plant-sample-component-take-sample-popup = Вы извлекаете семена из { $seedName }.
-plant-sample-component-dead-plant-popup = Это растение мертво.
+plant-sample-component-dead-plant-popup = Это растение мёртво.
 
 plant-produce-component-compost-popup = Вы компостируете { $usingItem } в { $owner }.
 plant-produce-component-compost-others-popup = { $user } компостирует { $usingItem } в { $owner }.
