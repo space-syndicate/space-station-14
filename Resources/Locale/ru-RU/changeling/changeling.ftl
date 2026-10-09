@@ -48,7 +48,7 @@ changeling-biodegrade-used-popup = { CAPITALIZE(THE($user)) } извергает
 changeling-biodegrade-used-popup-self = Мы извергаем кислоту на { $restraint }!
 
 # last resort
-changeling-takeover-not-dead = Это тело не мертво! Мы не можем заразить его.
+changeling-takeover-not-dead = Это тело не мёртво! Мы не можем заразить его.
 changeling-takeover-is-changeling = Это тело отвергает наши попытки завладеть им!
 changeling-takeover-start-others = { CAPITALIZE(THE($user)) } начинает залезать в тело!
 changeling-takeover-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } залезает в { $target }![/color]
