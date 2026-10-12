@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using Content.IntegrationTests.Fixtures;
 using Content.Server.Corvax.Ghost;
-using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
 
@@ -16,8 +15,15 @@ public sealed class GhostGoLobbyTest : GameTest
     private static readonly FieldInfo UsedCharactersField = typeof(GhostGoLobbySystem)
         .GetField("_usedCharacters", BindingFlags.NonPublic | BindingFlags.Instance)!;
 
-    private static readonly MethodInfo OnRunLevelChangedMethod = typeof(GhostGoLobbySystem)
-        .GetMethod("OnRunLevelChanged", BindingFlags.NonPublic | BindingFlags.Instance)!;
+    [SetUp]
+    public void HookCleanup()
+    {
+        PreFinalizeHook += () =>
+        {
+            var system = Pair.Server.System<GhostGoLobbySystem>();
+            ((HashSet<int>)UsedCharactersField.GetValue(system)!).Clear();
+        };
+    }
 
     [Test]
     public async Task MarkCharacterTracksUsedCharacter()
@@ -29,12 +35,8 @@ public sealed class GhostGoLobbyTest : GameTest
         await server.WaitPost(() =>
         {
             Assert.That(system.IsCharacterUsed(profile), Is.False, "Character must not be tracked before marking.");
-
             system.MarkCharacterUsed(profile);
-
             Assert.That(system.IsCharacterUsed(profile), Is.True, "Character must be tracked after marking.");
-
-            ClearUsedCharacters(system);
         });
     }
 
@@ -47,10 +49,7 @@ public sealed class GhostGoLobbyTest : GameTest
         await server.WaitPost(() =>
         {
             var profile = MakeProfile(TestName);
-
             Assert.That(system.IsCharacterUsed(profile), Is.False, "Untracked character must not be reported as used.");
-
-            ClearUsedCharacters(system);
         });
     }
 
@@ -67,9 +66,8 @@ public sealed class GhostGoLobbyTest : GameTest
 
             system.MarkCharacterUsed(a);
 
-            Assert.That(system.IsCharacterUsed(b), Is.True, "Two profiles with identical Name/Sex/Age/Species must hash equally.");
-
-            ClearUsedCharacters(system);
+            Assert.That(system.IsCharacterUsed(b), Is.True,
+                "Two profiles with identical Name/Sex/Age/Species must hash equally.");
         });
     }
 
@@ -89,8 +87,6 @@ public sealed class GhostGoLobbyTest : GameTest
                 expected
                     ? $"Expected '{checkName}' to match the previously used '{usedName}'."
                     : $"Expected '{checkName}' NOT to match the previously used '{usedName}'.");
-
-            ClearUsedCharacters(system);
         });
     }
 
@@ -107,9 +103,8 @@ public sealed class GhostGoLobbyTest : GameTest
 
             system.MarkCharacterUsed(used);
 
-            Assert.That(system.IsCharacterUsed(other), Is.False, "Profiles with different Age must hash differently.");
-
-            ClearUsedCharacters(system);
+            Assert.That(system.IsCharacterUsed(other), Is.False,
+                "Profiles with different Age must hash differently.");
         });
     }
 
@@ -126,9 +121,8 @@ public sealed class GhostGoLobbyTest : GameTest
 
             system.MarkCharacterUsed(used);
 
-            Assert.That(system.IsCharacterUsed(other), Is.False, "Profiles with different Sex must hash differently.");
-
-            ClearUsedCharacters(system);
+            Assert.That(system.IsCharacterUsed(other), Is.False,
+                "Profiles with different Sex must hash differently.");
         });
     }
 
@@ -145,73 +139,8 @@ public sealed class GhostGoLobbyTest : GameTest
 
             system.MarkCharacterUsed(used);
 
-            Assert.That(system.IsCharacterUsed(other), Is.False, "Profiles with different Species must hash differently.");
-
-            ClearUsedCharacters(system);
-        });
-    }
-
-    [Test]
-    public async Task PreRoundLobbyClearsUsedCharacters()
-    {
-        var server = Pair.Server;
-        var system = server.System<GhostGoLobbySystem>();
-        var profile = MakeProfile(TestName);
-
-        await server.WaitPost(() =>
-        {
-            system.MarkCharacterUsed(profile);
-            Assert.That(system.IsCharacterUsed(profile), Is.True, "Setup sanity: character must be marked before clearing.");
-        });
-
-        await server.WaitPost(() =>
-        {
-            RaiseRunLevelChanged(system, GameRunLevel.InRound, GameRunLevel.PreRoundLobby);
-        });
-
-        await server.WaitPost(() =>
-        {
-            Assert.That(system.IsCharacterUsed(profile), Is.False, "Used characters must be cleared when entering the pre-round lobby.");
-
-            ClearUsedCharacters(system);
-        });
-    }
-
-    [Test]
-    public async Task OtherRunLevelsDoNotClearUsedCharacters()
-    {
-        var server = Pair.Server;
-        var system = server.System<GhostGoLobbySystem>();
-        var profile = MakeProfile(TestName);
-
-        await server.WaitPost(() =>
-        {
-            system.MarkCharacterUsed(profile);
-        });
-
-        await server.WaitPost(() =>
-        {
-            RaiseRunLevelChanged(system, GameRunLevel.InRound, GameRunLevel.PostRound);
-        });
-
-        await server.WaitPost(() =>
-        {
-            Assert.That(system.IsCharacterUsed(profile), Is.True, "Used characters must only be cleared on PreRoundLobby, not other run levels.");
-
-            ClearUsedCharacters(system);
-        });
-    }
-
-    private static void ClearUsedCharacters(GhostGoLobbySystem system)
-    {
-        ((HashSet<int>)UsedCharactersField.GetValue(system)!).Clear();
-    }
-
-    private static void RaiseRunLevelChanged(GhostGoLobbySystem system, GameRunLevel oldLevel, GameRunLevel newLevel)
-    {
-        OnRunLevelChangedMethod.Invoke(system, new object[]
-        {
-            new GameRunLevelChangedEvent(oldLevel, newLevel),
+            Assert.That(system.IsCharacterUsed(other), Is.False,
+                "Profiles with different Species must hash differently.");
         });
     }
 

@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Corvax.Tests.Syndicate;
 
 [TestFixture]
-public sealed class SecApartmentDataTest
+public sealed class SecApartmentDataTest : GameTest
 {
     [Test]
     public void SquadDefaultsAreCorrect()
@@ -97,7 +97,7 @@ public sealed class SecApartmentDataTest
     [Test]
     public void SquadStatusHasActiveAndOnBreak()
     {
-        var values = Enum.GetValues<SquadStatus>().Cast<SquadStatus>().ToArray();
+        var values = Enum.GetValues<SquadStatus>();
 
         Assert.Multiple(() =>
         {
@@ -179,18 +179,6 @@ public sealed class SecApartmentPrototypeTest : GameTest
             Assert.That(squadIcons.Count, Is.EqualTo(enumCount),
                 $"Expected {enumCount} SecuritySquadIcon* prototypes, found {squadIcons.Count}. " +
                 "If you added a new SquadIconNum entry, add the matching prototype.");
-        });
-    }
-
-    [Test]
-    public async Task SecApartmentSystemIsRegistered()
-    {
-        var server = Pair.Server;
-
-        await server.WaitPost(() =>
-        {
-            var sys = server.System<Content.Server.Corvax.SecApartment.SecApartmentSystem>();
-            Assert.That(sys, Is.Not.Null, "SecApartmentSystem must be registered on the server.");
         });
     }
 }

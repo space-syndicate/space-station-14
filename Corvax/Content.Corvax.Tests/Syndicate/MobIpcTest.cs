@@ -30,13 +30,14 @@ public sealed class MobIpcTest : GameTest
 
             var uid = entManager.SpawnEntity("MobIpc", coords);
             entManager.EnsureComponent<IpcComponent>(uid);
-
+#pragma warning disable CS0618
             var before = damageableSystem.GetTotalDamage(uid);
 
             var ev = new EmpPulseEvent();
             server.EntMan.EventBus.RaiseLocalEvent(uid, ref ev);
 
             var after = damageableSystem.GetTotalDamage(uid);
+#pragma warning restore CS0618
 
             Assert.Multiple(() =>
             {

@@ -37,7 +37,7 @@ public sealed class TextToolsTest
     [Test]
     public void GetEditorSuffixFiltersIgnoredTokens()
     {
-        var ignored = new HashSet<string>(System.StringComparer.OrdinalIgnoreCase) { "do not map" };
+        var ignored = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "do not map" };
         var result = TextTools.GetEditorSuffix("test, do not map", ignored, TextTools.NormalizeSuffixToken);
         Assert.That(result, Is.EqualTo("test"));
     }
