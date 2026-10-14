@@ -13,7 +13,7 @@ status-effect-examine-seeing-rainbow = [color=lightgreen]{ CAPITALIZE(SUBJECT($t
 } на вещи, которых нет.[/color]
 status-effect-examine-stunned = [color=yellow]{ CAPITALIZE(POSS-ADJ($target)) } { GENDER($target) ->
     [male]выглядит изможденным и неспособным
-    [female]выглядит изможденным и неспособным
+    [female]выглядит измождённой и неспособной
     [epicence]выглядит изможденным и неспособным
     *[neuter]выглядят изможденными и неспособными
 } двигаться.[/color]

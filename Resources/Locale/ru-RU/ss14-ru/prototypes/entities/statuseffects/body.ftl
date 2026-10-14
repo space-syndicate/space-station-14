@@ -24,3 +24,5 @@ ent-PainNumbnessTraitStatusEffect = { ent-MobStatusEffectBase }
     .desc = { ent-MobStatusEffectBase.desc }
 ent-StatusEffectHemophiliaTrait = { ent-BloodstreamStatusEffectBase }
     .desc = { ent-BloodstreamStatusEffectBase.desc }
+ent-StatusEffectNightVision = Ночное зрение
+    .desc = { ent-MobStatusEffectBase.desc }

@@ -33,3 +33,13 @@ rich_main_icon_id = "corvax"
 
 [admin]
 see_own_notes = true
+
+[lobby]
+server_hub_enabled = true
+
+[afk]
+time = 1800
+confirm_timeout = 300
+
+[res]
+validate_prototype_upload = false

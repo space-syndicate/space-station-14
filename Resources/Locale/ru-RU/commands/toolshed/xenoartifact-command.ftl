@@ -26,4 +26,4 @@ command-spawnartifactwithnode-spawn-artifact-item-hint = использоват�
 command-spawnartifactwithnode-spawn-artifact-structure-hint = использовать полноразмерный артефакт
 command-spawnartifactwithnode-spawn-artifact-type-hint = <artifact entity proto id>
 
-command-xenoartifact-common-node-hint = глубина {$depth} узел {$nodeId} стимулятор {$nodeDetail}
+command-xenoartifact-common-node-hint = глубина {$depth} узел {$nodeId} стимулятор: '{$trigger}', 'эффект': '{$effect}'

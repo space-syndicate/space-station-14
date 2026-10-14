@@ -568,7 +568,8 @@
     - WhitelistChameleon
     - Kangaroo
   - type: StealTarget
-    stealGroup: ClothingHandsKnuckleDustersQM
+    stealGroup:
+    - ClothingHandsKnuckleDustersQM
 
 - type: entity
   parent: [BaseCorvaxContraband433DepartmentsSecurity, ClothingHandsBase, BaseSyndicateContraband] # Corvax-Contraband

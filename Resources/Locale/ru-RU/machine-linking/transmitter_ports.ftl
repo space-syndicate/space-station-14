@@ -19,6 +19,9 @@ signal-port-description-right = Этот порт задействуется в�
 signal-port-name-doorstatus = Статус шлюза
 signal-port-description-doorstatus = Этот порт задействуется с высоким уровнем когда с устройством взаимодействуют, и низким уровнем в закрытом состоянии.
 
+signal-port-name-doorboltstatus = Статус болтов
+signal-port-description-doorboltstatus = Отправляет высокий уровень сигнала когда заболтирован и низкий уровень сигнала, когда разболтирован.
+
 signal-port-name-dockstatus = Статус дока
 signal-port-description-dockstatus = Этот порт задействуется с высоким уровнем когда устройство состыковано, и низким уровнем когда отстыковано.
 
