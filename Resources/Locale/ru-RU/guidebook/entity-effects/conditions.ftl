@@ -89,7 +89,7 @@ entity-condition-guidebook-breathing =
 
 entity-condition-guidebook-internals =
     цель { $usingInternals ->
-        [true] использует балон
+        [true] использует баллон
         *[false] дышит атмосферой
     }
 
