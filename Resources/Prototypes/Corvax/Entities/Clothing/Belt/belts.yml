@@ -6,9 +6,9 @@
   suffix: Corvax
   components:
   - type: Sprite
-    sprite: Clothing/Belt/assault.rsi
+    sprite: Corvax/Clothing/Belt/assault.rsi
   - type: Clothing
-    sprite: Clothing/Belt/assault.rsi
+    sprite: Corvax/Clothing/Belt/assault.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: Storage

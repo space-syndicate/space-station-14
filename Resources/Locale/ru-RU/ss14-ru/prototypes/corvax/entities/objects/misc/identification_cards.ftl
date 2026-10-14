@@ -14,3 +14,5 @@ ent-NanoTrasenDiplomatIDCard = ID-карта дипломата NanoTrasen
     .desc = { ent-IDCardStandard.desc }
 ent-BlueshieldOfficerIDCard = ID-карта офицера "Синий Щит"
     .desc = { ent-IDCardStandard.desc }
+ent-SpecopsOfficerIDCard = ID-карта офицера спецопераций
+    .desc = { ent-IDCardStandard.desc }

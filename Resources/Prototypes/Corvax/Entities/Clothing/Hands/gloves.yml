@@ -36,3 +36,15 @@
       sprite: Corvax/Clothing/Hands/Gloves/centcom_white.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Hands/Gloves/centcom_white.rsi
+
+- type: entity
+  parent: ClothingHandsGlovesCentcomNaval
+  id: ClothingHandsGlovesSpecops
+  name: special operations officer gloves
+  description: Do not leave fibers or fingerprints. If you work without them, you're A TERRIBLE WAR CRIMINAL.
+  suffix: Corvax
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Hands/Gloves/soo.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Hands/Gloves/soo.rsi

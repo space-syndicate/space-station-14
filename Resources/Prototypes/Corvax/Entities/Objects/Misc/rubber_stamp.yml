@@ -25,3 +25,18 @@
   - type: Sprite
     sprite: Corvax/Objects/Misc/stamps.rsi
     state: stamp-magistrate
+
+- type: entity
+  name: specops HQ rubber stamp
+  parent: RubberStampBase
+  id: RubberStampSpecops
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-specops
+    stampedColor: "#454350"
+    stampState: "paper_stamp-lawyer"
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/stamps.rsi
+    state: stamp-specops
+

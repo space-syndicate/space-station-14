@@ -30,9 +30,9 @@
   suffix: Corvax
   components:
     - type: Sprite
-      sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_officer_black.rsi
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/soo.rsi
     - type: Clothing
-      sprite: Corvax/Clothing/Uniforms/Jumpsuit/centcom_officer_black.rsi
+      sprite: Corvax/Clothing/Uniforms/Jumpsuit/soo.rsi
 
 - type: entity
   parent: ClothingUniformBase

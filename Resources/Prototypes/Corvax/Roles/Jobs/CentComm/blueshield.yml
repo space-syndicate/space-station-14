@@ -44,15 +44,16 @@
     id: BlueshieldOfficerPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltAssault
-    pocket1: TelescopicShield
-    pocket2: DoorRemoteCustom
+    pocket2: PinpointerUniversal
     suitstorage: WeaponEnergyRevolverBlueshield
+  inhand:
+  - TelescopicShield
+  - WeaponSubMachineGunAtreides
   storage:
     back:
     - Flash
     - MedkitCombatFilled
     - BodyBagFolded
-    - WeaponSubMachineGunAtreides # Хороший телохранитель же не будет держать своё главное оружие на виду, верно?
     - MagazinePistolSubMachineGun
     - MagazinePistolSubMachineGun
     - MagazinePistolSubMachineGun
@@ -61,6 +62,7 @@
     - ChemistryBottleTranexamicAcid
     - ChemistryBottleOmnizine
     - ChemistryBottleOmnizine
+    - DoorRemoteCustom
     belt:
     - JawsOfLife
     - Stunbaton

@@ -114,6 +114,45 @@
   components:
   - type: Pda
     id: CentcomStaffChiefIDCard
+    penSlot:
+      startingItem: PenGilded
+      whitelist:
+        tags:
+        - Write
+
+- type: entity
+  parent: CentcomPDA
+  id: SpecopsOfficerPDA
+  name: specops officer's PDA
+  description: Dark sign of walking death.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Devices/pda.rsi
+    state: pda-soo
+  - type: Contraband
+    severity: Corvax431
+    allowedDepartments: [TaskForce]
+    allowedJobs: [SpecopsOfficer]
+  - type: Pda
+    id: SpecopsOfficerIDCard
+    penSlot:
+      startingItem: PenGilded
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-soo
+  - type: PdaBorderColor
+    borderColor: "#333333"
+    accentVColor: "#e6a64e"
+    accentHColor: "#e6a64e"
+  - type: Icon
+    sprite: Corvax/Objects/Devices/pda.rsi
+    state: pda-soo
 
 - type: entity
   parent: CentcomPDA
@@ -130,7 +169,7 @@
   - type: Pda
     id: NanoTrasenDiplomatIDCard
     penSlot:
-      startingItem: PenCentcom
+      startingItem: PenGilded
       whitelist:
         tags:
         - Write

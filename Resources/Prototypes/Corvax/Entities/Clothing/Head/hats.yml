@@ -2,13 +2,13 @@
   parent: ClothingHeadBase
   id: ClothingHeadCapCentcomBlack
   name: special operations officer cap
-  description: The NanoTrasen gold-engraved special cap of the higher ranks, which has long gone through more than one blitzkrieg...
+  description: A formidable gold-engraved cap of the higher rank officers of the NanoTrasen Special Operations Department, which has long gone through more than one blitzkrieg...
   suffix: Corvax
   components:
     - type: Sprite
-      sprite: Corvax/Clothing/Head/Hats/centcom_officer_black.rsi
+      sprite: Corvax/Clothing/Head/Hats/soo.rsi
     - type: Clothing
-      sprite: Corvax/Clothing/Head/Hats/centcom_officer_black.rsi
+      sprite: Corvax/Clothing/Head/Hats/soo.rsi
 
 - type: entity
   parent: ClothingHeadBase

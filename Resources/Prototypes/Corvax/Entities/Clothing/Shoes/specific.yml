@@ -3,6 +3,7 @@
   id: ClothingShoesGreenLizardskin
   name: green lizardskin shoes
   description: They may have lost some of their lustre over the years, but these green lizardskin shoes fit you perfectly.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Shoes/Specific/disco.rsi
@@ -14,6 +15,7 @@
   id: ClothingShoesAerostatic
   name: aerostatic boots
   description: A crisp, clean set of boots for working long hours on the beat.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Shoes/Specific/kim.rsi
@@ -21,21 +23,31 @@
       sprite: Corvax/Clothing/Shoes/Specific/kim.rsi
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: [ ClothingShoesMilitaryBase, ClothingShoesBootsSecFilled ]
   id: ClothingShoesCentcomBlack
   name: special operations officer shoes
   description: Leather, black, high-quality shoes, you can hardly find similar ones on the black market...
+  suffix: Corvax
   components:
     - type: Sprite
-      sprite: Corvax/Clothing/Shoes/Specific/centcom_officer_black.rsi
+      sprite: Corvax/Clothing/Shoes/Specific/soo.rsi
     - type: Clothing
-      sprite: Corvax/Clothing/Shoes/Specific/centcom_officer_black.rsi
+      sprite: Corvax/Clothing/Shoes/Specific/soo.rsi
+    - type: NoSlip
+    - type: Magboots
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepSpurs
+        params:
+          variation: 0.09
+          volume: -4
 
 - type: entity
   parent: ClothingShoesBaseButcherable
   id: ClothingShoesSchoolBlack
   name: school black shoes
   description: Stylish and comfortable school shoes in dark color with stockings.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Shoes/Specific/schoolblackshoes.rsi
@@ -47,6 +59,7 @@
   id: ClothingShoesSchoolWhite
   name: school white shoes
   description: Stylish and comfortable school shoes in light color with stockings.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Shoes/Specific/schoolwhiteshoes.rsi

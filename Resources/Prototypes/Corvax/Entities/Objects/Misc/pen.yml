@@ -3,6 +3,7 @@
   parent: BaseAdvancedPen
   id: PenLegal
   description: Writes sentences and more.
+  suffix: Corvax
   components:
   - type: Contraband
     severity: Corvax432
@@ -13,3 +14,20 @@
     state: legal_pen
   - type: Item
     heldPrefix: legal_pen
+
+- type: entity
+  name: gilded pen
+  parent: BaseAdvancedPen
+  id: PenGilded
+  description: Golden pen... Do they have gold toilet paper? Just don't tell me that...
+  suffix: Corvax
+  components:
+  - type: Contraband
+    severity: Corvax432
+    allowedDepartments: [CentralCommand]
+    allowedJobs: [SpecopsOfficer]
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/pens.rsi
+    state: golden_pen
+  - type: Item
+    heldPrefix: golden_pen

@@ -65,9 +65,9 @@
     layers:
     - state: centcom
     - state: stripe_top
-      color: &color-centcomm-top "#134975"
+      color: &color-centcomm-top "#ffe78d"
     - state: stripe_bottom
-      color: &color-centcomm-bottom "#0d304d"
+      color: &color-centcomm-bottom "#ffd700"
     - sprite: Interface/Misc/job_icons.rsi
       offset: *icon-offset
       state: Nanotrasen
@@ -117,6 +117,27 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CentcomStaffChief
+
+- type: entity
+  parent: IDCardStandard
+  id: SpecopsOfficerIDCard
+  name: specops officer's ID card
+  suffix: Corvax
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: stripe_top
+      color: "#302e39"
+    - state: stripe_bottom
+      color: "#302e39"
+    - sprite: Interface/Misc/job_icons.rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: SpecopsOfficer
 
 - type: entity
   parent: IDCardStandard

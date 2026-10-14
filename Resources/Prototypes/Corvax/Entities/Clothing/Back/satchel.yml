@@ -25,7 +25,7 @@
   parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelCorporate
   name: branded satchel
-  description: A premium high-capacity satchel made from the durable hide of a terrible monster from the planet Cerebrus-6A in the Trans-Solar Federation.
+  description: A premium high-capacity satchel made from the durable hide of a terrible monster from the Trans-Solar Federation.
   suffix: Corvax
   components:
   - type: Sprite
@@ -35,3 +35,15 @@
     - 0,0,2,3
     - 4,0,7,3
     - 9,0,11,3
+
+- type: entity
+  parent: ClothingBackpackHoldingBase
+  id: ClothingBackpackSatchelCorporateBluespace
+  name: branded bluespace satchel
+  description: A premium bluespace satchel made from the durable hide of a terrible monster from the Trans-Solar Federation.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Back/Satchels/corporate.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
