@@ -28,7 +28,6 @@ comms-console-message-too-long = Сообщение слишком длинно�
 comms-console-message-cannot-send = Связь временно отключена
 
 # Placeholder values
-comms-console-announcement-sent-by = Отправитель
 comms-console-announcement-unknown-sender = Неизвестный
 
 # Comms console variant titles
@@ -47,6 +46,7 @@ comms-console-level-Red-flavour-label = Сохраняйте бдительно�
 comms-console-level-Gamma-flavour-label = Рекомендуется проявлять крайнюю осторожность
 comms-console-level-Delta-flavour-label = Удачи :)
 comms-console-level-Epsilon-flavour-label = Контракты расторгнуты
+comms-console-level-Unknown-flavour-label = Сохраняйте бдительность
 
 #CorvaxFix There no Delta code in Ban-Sing-Se
 comms-console-level-DeltaNuke-flavour-label = Удачи :)

@@ -1,19 +1,32 @@
 borg-slot-cables-empty = Кабели
-borg-slot-construction-empty = Строительные материалы
+borg-slot-construction-empty = Строительные
+                            материалы
 borg-slot-circuitboards-empty = Платы
 borg-slot-flatpacks-empty = Упаковки
 borg-slot-tiles-empty = Плитки
-borg-slot-topicals-empty = Наружные препараты
-borg-slot-injector-dropper-empty = Прецизионные инжекторы
-borg-slot-small-containers-empty = Маленькие ёмкости
-borg-slot-chemical-containers-empty = Химические ёмкости
+borg-slot-topicals-empty = Наружные
+                            препараты
+borg-slot-injector-dropper-empty = Прецизионные
+                            инжекторы
+borg-slot-small-containers-empty = Маленькие
+                            ёмкости
+borg-slot-chemical-containers-empty = Химические
+                            ёмкости
 borg-slot-documents-empty = Книги и бумаги
 borg-slot-soap-empty = Мыло
-borg-slot-instruments-empty = Музыкальные инструменты
+borg-slot-instruments-empty = Музыкальные
+                            инструменты
 borg-slot-beakers-empty = Мензурки
 borg-slot-brains-empty = Мозги и ММИ
 borg-slot-modules-empty = Модули
 borg-slot-powercell-empty = Батареи
 borg-slot-inflatable-door-empty = Надувная дверь
 borg-slot-inflatable-wall-empty = Надувная стена
-borg-slot-xenoborg-crystal-empty = Кристалл ксеноборгов
+borg-slot-dining-ware-empty = Блюда и посуда
+borg-slot-seed-produce-empty = Урожай и семена
+borg-slot-pen-empty = Ручка
+borg-slot-gardening-tools-empty = Садовые
+                            инструменты
+borg-slot-ingredients-empty = Ингредиенты
+borg-slot-xenoborg-crystal-empty = Кристаллы
+                            ксеноборгов

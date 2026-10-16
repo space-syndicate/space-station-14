@@ -51,7 +51,7 @@ changeling-biodegrade-used-popup-self = Мы извергаем кислоту �
 changeling-takeover-not-dead = Это тело не мертво! Мы не можем заразить его.
 changeling-takeover-is-changeling = Это тело отвергает наши попытки завладеть им!
 changeling-takeover-start-others = { CAPITALIZE(THE($user)) } начинает залезать в тело!
-changeling-takeover-success-self = Мы успешно заразили тело и приняли его облик.
+changeling-takeover-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } залезает в { $target }![/color]
 
 # stings
 changeling-sting-success = Мы незаметно жалим { THE($target) }!
@@ -64,4 +64,7 @@ changeling-fake-mindshield-disabled = Мы прекращаем излучать
 changeling-not-enough-chemicals = У нас недостаточно химикатов.
 
 # other
+changeling-action-fail-generic = Мы не можем сделать это прямо сейчас.
 changeling-paused-map-name = Карта хранения личностей генокрада
+changeling-cocoon-success = Мы заключили {THE($target)} в кокон из плоти.
+changeling-cocoon-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } покрывает { THE($target) } массой плоти![/color]

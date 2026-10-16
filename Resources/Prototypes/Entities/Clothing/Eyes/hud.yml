@@ -5,7 +5,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StealTarget
-    stealGroup: ClothingEyesHuds
+    stealGroup:
+    - ClothingEyesHuds
 
 - type: entity
   id: ShowSecurityIcons
@@ -266,7 +267,8 @@
   suffix: Syndicate
   components:
   - type: StealTarget
-    stealGroup: ClothingEyesHuds
+    stealGroup:
+    - ClothingEyesHuds
 
 - type: entity
   parent: [ClothingEyesHudMedical, ClothingHeadEyeBaseFlippable]

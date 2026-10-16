@@ -1,4 +1,4 @@
-changeling-catalog-arm-blade-name = Выдвижной клинок-рука
+changeling-catalog-arm-blade-name = Выдвижной рука-клинок
 changeling-catalog-arm-blade-desc = Превратите свою руку в ужасающий клинок из плоти и кости. Можно использовать чтобы вскрывать обесточенные шлюзы. Можно убрать.
 
 changeling-catalog-flesh-clothing-name = Одежда из плоти
@@ -14,7 +14,7 @@ changeling-catalog-sting-dna-name = Извлечение ДНК
 changeling-catalog-sting-dna-desc = Научитесь использовать свое жало, чтобы поглотить личность ни о чём не подозревающих жертв. Не предоставляет ДНК для новых способностей или не засчитывается как поглощение.
 
 changeling-catalog-blind-sting-name = Ослепляющее жало
-changeling-catalog-blind-sting-desc = Вызывает временную слепоту у цели. Хорошо подходит для побега или начала драки. Может быть использовано на себе.
+changeling-catalog-blind-sting-desc = Вызывает временную слепоту у цели и травмирует глаза. Хорошо подходит для побега или начала драки. Может быть использовано на себе.
 
 changeling-catalog-cryogenic-sting-name = Охлаждающее жало
 changeling-catalog-cryogenic-sting-desc = Вызывает замедление движения у цели. Идеально подходит для предотвращения побега добычи. Может быть использовано на себе.
@@ -28,7 +28,7 @@ changeling-catalog-hallucinogenic-sting-desc = Вызывает у жертвы 
 changeling-catalog-mute-sting-name = Жало немоты
 changeling-catalog-mute-sting-desc = Лишает способности говорить. Эффект незаметен, пока цель не попытается заговорить. Можно использовать на себе.
 
-changeling-catalog-armblade-sting-name = Жало клинок-рука
+changeling-catalog-armblade-sting-name = Жало рука-клинок
 changeling-catalog-armblade-sting-desc = Заставляет цель после длительной задержки спонтанно отрастить затупленную клинок-руку. На трупах действует мгновенно и дольше. Можно использовать на себе.
 
 changeling-catalog-screech-name = Крик ужаса [ВРЕМЕННЫЙ]
@@ -44,3 +44,6 @@ changeling-catalog-voice-mindshield-desc = Модифицируйте собст
 
 changeling-catalog-night-vision-name = Ночное зрение
 changeling-catalog-night-vision-desc = Вы модифицируете свои фоторецепторы и обостряете свои чувства, чтобы обрести способность видеть в полной темноте.
+
+changeling-catalog-fleshtomb-name = Кокон плоти [ЭКСПЕРИМЕНТАЛЬНЫЙ]
+changeling-catalog-fleshtomb-desc = Законсервируйте труп в мясной темнице, постепенно извлекая из него генетический код для собственных нужд. Эта конструкция медленно вырабатывает ДНК. Является очень хрупкой конструкцией и разрушается без подходящей атмосферы.

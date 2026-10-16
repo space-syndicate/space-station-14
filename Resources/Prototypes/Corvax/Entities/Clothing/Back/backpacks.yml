@@ -12,19 +12,6 @@
 
 - type: entity
   parent: ClothingBackpack
-  id: ClothingDeathSquadronBackpack
-  name: death squadron backpack
-  description: A spacious backpack using bluespace technology.
-  components:
-  - type: Sprite
-    sprite: Corvax/Clothing/Back/Backpacks/deathsquad-backpack.rsi
-  - type: Storage
-    grid:
-    - 0,0,13,7
-    maxItemSize: Huge
-
-- type: entity
-  parent: ClothingBackpack
   id: ClothingBackpackCE
   name: chief engineer backpack
   description: Technicially progressive backpack.
