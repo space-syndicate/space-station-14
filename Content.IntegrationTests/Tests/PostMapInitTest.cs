@@ -29,8 +29,37 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 namespace Content.IntegrationTests.Tests
 {
+    // Corvax-Tests-start
     [TestFixture]
-    public sealed class PostMapInitTest : GameTest
+    public sealed class PostMapInitTest : PostMapInitTestBase
+    {
+        // ReSharper disable UseCollectionExpression
+        private const string ExcludeCorvax = "/Maps/Corvax";
+
+        [Test, TestCaseSource(nameof(GridsSource), new object[] { false, new string[] { ExcludeCorvax } })]
+        [EnsureCVar(Side.Server, typeof(CCVars), nameof(CCVars.GridFill), false)]
+        public async Task GridsLoadableTest(string mapFile) => await RunGridsLoadableTest(mapFile);
+
+        [Test, TestCaseSource(nameof(ShuttleMapFilesSource), new object[] { false, new string[] { ExcludeCorvax } })]
+        [EnsureCVar(Side.Server, typeof(CCVars), nameof(CCVars.GridFill), false)]
+        public async Task ShuttlesLoadableTest(ResPath path) => await RunShuttlesLoadableTest(path);
+
+        [Test, TestCaseSource(nameof(AllMapFilesSource), new object[] { false, new string[] { ExcludeCorvax } })]
+        public async Task NoSavedPostMapInitTest(ResPath map) => await RunNoSavedPostMapInitTest(map);
+
+        [Test, TestCaseSource(nameof(GameMapsSource))]
+        [EnsureCVar(Side.Server, typeof(CCVars), nameof(CCVars.GridFill), false)]
+        public async Task GameMapsLoadableTest(string mapProto)
+            => await RunGameMapsLoadableTest(mapProto, customOnly: false, new string[] { ExcludeCorvax });
+
+        [Test, TestCaseSource(nameof(AllMapFilesSource), new object[] { false, new string[] { ExcludeCorvax } })]
+        [EnsureCVar(Side.Server, typeof(CCVars), nameof(CCVars.GridFill), false)]
+        public async Task NonGameMapsLoadableTest(ResPath mapPath) => await RunNonGameMapsLoadableTest(mapPath);
+        // ReSharper restore UseCollectionExpression
+    }
+    // Corvax-Tests-end
+
+    public abstract class PostMapInitTestBase : GameTest // Corvax-Tests-Edit
     {
         public override PoolSettings PoolSettings => new PoolSettings()
         {
@@ -41,6 +70,63 @@ namespace Content.IntegrationTests.Tests
         private const bool SkipTestMaps = true;
         private const string TestMapsPath = "/Maps/Test/";
 
+        // Corvax-Tests-start
+        private static bool MatchesAnyPrefix(string path, string[] prefixes)
+        {
+            foreach (var prefix in prefixes)
+            {
+                if (path.StartsWith(prefix, StringComparison.Ordinal))
+                    return true;
+            }
+
+            return false;
+        }
+
+        private static bool MatchesAnyPrefix(ResPath path, string[] prefixes)
+            => MatchesAnyPrefix(path.ToString(), prefixes);
+
+        public static IEnumerable<TestCaseData> GridsSource(bool customOnly, string[] prefixes)
+        {
+            foreach (var map in Grids)
+            {
+                if (MatchesAnyPrefix(map, prefixes) != customOnly)
+                    continue;
+
+                yield return new TestCaseData(map).SetName(map);
+            }
+        }
+
+        public static IEnumerable<TestCaseData> AllMapFilesSource(bool customOnly, string[] prefixes)
+        {
+            foreach (var path in AllMapFiles)
+            {
+                if (MatchesAnyPrefix(path, prefixes) != customOnly)
+                    continue;
+
+                yield return new TestCaseData(path).SetName(path.ToString());
+            }
+        }
+
+        public static IEnumerable<TestCaseData> ShuttleMapFilesSource(bool customOnly, string[] prefixes)
+        {
+            foreach (var path in ShuttleMapFiles)
+            {
+                if (MatchesAnyPrefix(path, prefixes) != customOnly)
+                    continue;
+
+                yield return new TestCaseData(path).SetName(path.ToString());
+            }
+        }
+
+        public static IEnumerable<TestCaseData> GameMapsSource()
+        {
+            foreach (var id in GameMaps)
+            {
+                yield return new TestCaseData(id).SetName(id);
+            }
+        }
+        // Corvax-Tests-end
+
         private static readonly string[] NoSpawnMaps =
         {
             "CentComm",
@@ -50,7 +136,7 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] Grids =
         {
             "/Maps/centcomm.yml",
-            "/Maps/Corvax/corvax_centcomm.yml", // Corvax edit
+            "/Maps/Corvax/corvax_centcomm.yml", // Corvax-Tests
             AdminTestArenaSystem.ArenaMapPath
         };
 
@@ -83,7 +169,7 @@ namespace Content.IntegrationTests.Tests
         {
             "/Maps/centcomm.yml",
             "/Maps/Shuttles/AdminSpawn/**", // admin gaming
-            "/Maps/Corvax/corvax_centcomm.yml" // Corvax edit
+            "/Maps/Corvax/corvax_centcomm.yml" // Corvax-Tests
         };
 
         /// <summary>
@@ -95,16 +181,19 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] GameMaps = GameDataScrounger.PrototypesOfKind<GameMapPrototype>().Where(x => x != PoolManager.TestMap).ToArray();
         private static readonly ResPath[] AllMapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps", "*.yml");
-        private static readonly ResPath[] ShuttleMapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps/Shuttles", "*.yml");
+        // Corvax-Tests-start
+        private static readonly ResPath[] ShuttleMapFiles =
+            GameDataScrounger.FilesInDirectoryInVfs("/Maps/Shuttles", "*.yml")
+                .Concat(GameDataScrounger.FilesInDirectoryInVfs("/Maps/Corvax/Shuttles", "*.yml"))
+                .ToArray();
+        // Corvax-Tests-end
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
 
         /// <summary>
         /// Asserts that specific files have been saved as grids and not maps.
         /// </summary>
-        [Test, TestCaseSource(nameof(Grids))]
-        [EnsureCVar(Side.Server, typeof(CCVars), nameof(CCVars.GridFill), false)]
-        public async Task GridsLoadableTest(string mapFile)
+        protected async Task RunGridsLoadableTest(string mapFile) // Corvax-Tests-Edit
         {
             var pair = Pair;
             var server = pair.Server;
@@ -134,10 +223,7 @@ namespace Content.IntegrationTests.Tests
         /// <summary>
         /// Asserts that shuttles are loadable and have been saved as grids and not maps.
         /// </summary>
-        [Test]
-        [TestCaseSource(nameof(ShuttleMapFiles))]
-        [EnsureCVar(Side.Server, typeof(CCVars), nameof(CCVars.GridFill), false)]
-        public async Task ShuttlesLoadableTest(ResPath path)
+        protected async Task RunShuttlesLoadableTest(ResPath path) // Corvax-Tests-Edit
         {
             var pair = Pair;
             var server = pair.Server;
@@ -167,9 +253,7 @@ namespace Content.IntegrationTests.Tests
             });
         }
 
-        [Test]
-        [TestCaseSource(nameof(AllMapFiles))]
-        public async Task NoSavedPostMapInitTest(ResPath map)
+        protected async Task RunNoSavedPostMapInitTest(ResPath map) // Corvax-Tests-Edit
         {
             var pair = Pair;
             var server = pair.Server;
@@ -204,7 +288,7 @@ namespace Content.IntegrationTests.Tests
 
             // TODO MAP TESTS
             // Move this to some separate test?
-            //CheckDoNotMap(map, root, protoManager); // Corvax-Changes
+            //CheckDoNotMap(map, root, protoManager); // Corvax-Tests
 
             if (version >= 7)
             {
@@ -233,7 +317,7 @@ namespace Content.IntegrationTests.Tests
             await server.WaitPost(() => server.EntMan.Spawn(null, new MapCoordinates(0, 0, id)));
 
             // First check that a pre-init version passes
-            var path = new ResPath($"{nameof(NoSavedPostMapInitTest)}.yml");
+            var path = new ResPath($"{nameof(RunNoSavedPostMapInitTest)}.yml"); // Corvax-Tests-Edit
             Assert.That(loader.TrySaveMap(id, path));
             Assert.That(IsPreInit(path, loader, deps, ev.RenamedPrototypes, ev.DeletedPrototypes));
 
@@ -324,9 +408,7 @@ namespace Content.IntegrationTests.Tests
             return true;
         }
 
-        [Test, TestCaseSource(nameof(GameMaps))]
-        [EnsureCVar(Side.Server, typeof(CCVars), nameof(CCVars.GridFill), false)]
-        public async Task GameMapsLoadableTest(string mapProto)
+        protected async Task RunGameMapsLoadableTest(string mapProto, bool customOnly, string[] prefixes) // Corvax-Tests-Edit
         {
             var pair = Pair;
             var server = pair.Server;
@@ -339,13 +421,19 @@ namespace Content.IntegrationTests.Tests
             var shuttleSystem = entManager.EntitySysManager.GetEntitySystem<ShuttleSystem>();
             var cfg = server.ResolveDependency<IConfigurationManager>();
 
+            // Corvax-Tests-start
+            var gameMapProto = protoManager.Index<GameMapPrototype>(mapProto);
+            if (MatchesAnyPrefix(gameMapProto.MapPath, prefixes) != customOnly)
+                return;
+            // Corvax-Tests-end
+
             await server.WaitPost(() =>
             {
                 MapId mapId;
                 try
                 {
                     var opts = DeserializationOptions.Default with { InitializeMaps = true };
-                    ticker.LoadGameMap(protoManager.Index<GameMapPrototype>(mapProto), out mapId, opts);
+                    ticker.LoadGameMap(gameMapProto, out mapId, opts); // Corvax-Tests-Edit
                 }
                 catch (Exception ex)
                 {
@@ -464,10 +552,7 @@ namespace Content.IntegrationTests.Tests
             return resultCount;
         }
 
-        [Test]
-        [TestCaseSource(nameof(AllMapFiles))]
-        [EnsureCVar(Side.Server, typeof(CCVars), nameof(CCVars.GridFill), false)]
-        public async Task NonGameMapsLoadableTest(ResPath mapPath)
+        protected async Task RunNonGameMapsLoadableTest(ResPath mapPath) // Corvax-Tests-Edit
         {
             var pair = Pair;
             var server = pair.Server;
