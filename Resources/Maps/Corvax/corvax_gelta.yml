@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 289.0.0
+  engineVersion: 292.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/13/2026 20:14:10
+  time: 10/16/2026 18:52:55
   entityCount: 44729
 maps:
 - 84
@@ -209,6 +209,8 @@ entities:
       parallax: DeltaStation
     - type: ChunkContainer
       chunkEntities: []
+    - type: MapLight
+      ambientLightColor: '#59212CFF'
   - uid: 13307
     components:
     - type: MetaData
