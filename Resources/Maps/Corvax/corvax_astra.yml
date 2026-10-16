@@ -196187,7 +196187,7 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -1.5,-78.5
-    - type: WirelessNetworkConnection
+    - type: WirelessNetwork
       range: 2000
     - type: DeviceLinkSource
       range: 3000
@@ -196304,7 +196304,7 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 46.5,-45.5
-    - type: WirelessNetworkConnection
+    - type: WirelessNetwork
       range: 2000
     - type: DeviceLinkSource
       range: 3000
@@ -229176,7 +229176,7 @@ entities:
     - type: Transform
       parent: 2
       pos: 0.5,23.5
-    - type: WirelessNetworkConnection
+    - type: WirelessNetwork
       range: 2000
   - uid: 31828
     components:

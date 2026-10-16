@@ -174,8 +174,6 @@
     weight: 7
     duration: 1
     minimumPlayers: 15
-    startAudio:
-      path: /Audio/Announcements/announce.ogg
   - type: BreakerFlipRule
   - type: DynamicRuleCost
     cost: 10

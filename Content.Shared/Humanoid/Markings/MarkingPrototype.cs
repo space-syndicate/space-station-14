@@ -34,13 +34,11 @@ public sealed partial class MarkingPrototype : IPrototype
     /// </summary>
     [DataField("sexRestriction")]
     public Sex? SexRestriction { get; private set; }
-        // Corvax-Sponsors-Start
-        [DataField("sponsorOnly")]
-        public bool SponsorOnly = false;
-        // Corvax-Sponsors-End
 
-        [DataField("forcedColoring")]
-        public bool ForcedColoring { get; private set; } = false;
+    // Corvax-Sponsors-Start
+    [DataField("sponsorOnly")]
+    public bool SponsorOnly = false;
+    // Corvax-Sponsors-End
 
     /// <summary>
     ///     Whether or not this marking's colors can be manually changed by the player.
