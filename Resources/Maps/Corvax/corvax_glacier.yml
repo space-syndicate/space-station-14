@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 289.0.0
+  engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/23/2026 09:23:41
-  entityCount: 49706
+  time: 10/07/2026 20:40:52
+  entityCount: 49705
 maps:
 - 1
 grids:
@@ -166469,11 +166469,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 15315
-    components:
-    - type: Transform
-      parent: 2
-      pos: -48.456856,-8.764416
   - uid: 15316
     components:
     - type: Transform
@@ -167267,13 +167262,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadHelmetSwat
-  entities:
-  - uid: 15402
-    components:
-    - type: Transform
-      parent: 2
-      pos: -48.47248,-9.170666
 - proto: ClothingHeadNurseHat
   entities:
   - uid: 15403
@@ -167473,11 +167461,6 @@ entities:
       pos: 36.666206,80.40411
 - proto: ClothingMaskGasSwat
   entities:
-  - uid: 15434
-    components:
-    - type: Transform
-      parent: 2
-      pos: -48.47248,-8.436291
   - uid: 42846
     components:
     - type: Transform
@@ -168059,13 +168042,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -37.29088,-8.407377
-- proto: ClothingOuterArmorHeavy
-  entities:
-  - uid: 15500
-    components:
-    - type: Transform
-      parent: 2
-      pos: -48.488106,-9.467541
 - proto: ClothingOuterArmorRaid
   entities:
   - uid: 42847
@@ -230839,6 +230815,7 @@ entities:
     missingComponents:
     - ApcPowerReceiver
     - DeviceNetwork
+    - AtmosPipeLayers
     - GasVentPump
     - VentCritterSpawnLocation
     - AtmosMonitoringConsoleDevice
@@ -230846,7 +230823,6 @@ entities:
     - PipeRestrictOverlap
     - AtmosUnsafeUnanchor
     - AtmosPipeColor
-    - AtmosPipeLayers
     - DeviceNetworkRequiresPower
     - AtmosMonitor
 - proto: GasVentScrubber
@@ -266799,10 +266775,10 @@ entities:
     - ApcPowerReceiver
     - StaticPrice
     - Destructible
+    - Contraband
     - ExtensionCableReceiver
     - LightningTarget
     - Pullable
-    - Contraband
     - Damageable
   - uid: 44450
     components:
@@ -266821,10 +266797,10 @@ entities:
     - ApcPowerReceiver
     - StaticPrice
     - Destructible
+    - Contraband
     - ExtensionCableReceiver
     - LightningTarget
     - Pullable
-    - Contraband
     - Damageable
   - uid: 44451
     components:
@@ -266843,10 +266819,10 @@ entities:
     - ApcPowerReceiver
     - StaticPrice
     - Destructible
+    - Contraband
     - ExtensionCableReceiver
     - LightningTarget
     - Pullable
-    - Contraband
     - Damageable
   - uid: 44452
     components:
@@ -266865,10 +266841,10 @@ entities:
     - ApcPowerReceiver
     - StaticPrice
     - Destructible
+    - Contraband
     - ExtensionCableReceiver
     - LightningTarget
     - Pullable
-    - Contraband
     - Damageable
 - proto: Sink
   entities:
@@ -360015,6 +359991,26 @@ entities:
       pos: 44.338074,80.65854
 - proto: WeaponDisablerSMG
   entities:
+  - uid: 15315
+    components:
+    - type: Transform
+      parent: 2
+      pos: -48.67986,-9.351215
+  - uid: 15402
+    components:
+    - type: Transform
+      parent: 2
+      pos: -48.45282,-9.643105
+  - uid: 15434
+    components:
+    - type: Transform
+      parent: 2
+      pos: -48.615063,-8.426878
+  - uid: 15500
+    components:
+    - type: Transform
+      parent: 2
+      pos: -48.42473,-8.699022
   - uid: 23726
     components:
     - type: Transform
@@ -360351,14 +360347,9 @@ entities:
       pos: -122.017136,18.040043
     missingComponents:
     - Gun
+    - Contraband
     - AmmoCounter
     - GunWieldBonus
-    - Contraband
-  - uid: 41204
-    components:
-    - type: Transform
-      parent: 2
-      pos: -48.468174,-8.610992
 - proto: WeaponSprayNozzle
   entities:
   - uid: 41205
