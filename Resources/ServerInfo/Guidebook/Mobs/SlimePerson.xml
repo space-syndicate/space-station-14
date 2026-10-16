@@ -5,11 +5,12 @@
   </Box>
   Слаймолюды - слаймоподобные существа с планеты Ксарксис 5, ростом от 100 до 150 сантиметров. Эти существа дышат азотом вместо кислорода который присутствует в воздухе станции, но его сложнее найти в сжатом виде в газовых баллонах. Они получают значительный урон, если их обрызгать водой, но могут (и, как и другие виды, должны) пить её.
 
-  Слаймолюды обладают чуть более ускоренной регенерацией по сравнению с другими гуманоидами. Так же, они способны делать свои кулаки более твердыми нанося более сильные удары за счет уменьшения их скорости.
+  ## General Information
 
-  ## Внутреннее хранилище
-  Внутри оболочки слаймолюда есть внутреннее хранилище, объемом 2x3. Любой может видеть что находится внутри и забрать это без разрешения, так что будьте осторожнее. При превращении в гераса внутреннее хранилище остается.
+  Slimes breathe nitrogen instead of oxygen (though inhaling oxygen has no ill effect on them). They exhale nitrous oxide and are unaffected by inhaling it.
 
+  They have an [color=lightgreen]internal 2x3 slot inventory[/color] inside of their slime membrane. This allows them to carry a bit more than other species,
+  though [italic]anyone[/italic] is able to reach inside this inventory without asking.
   ## Расовые особенности
   - Слаймолюды получают [color=#1e90ff]на 40% меньше урона от ушибов и на 20% меньше от ядов[/color], но [color=#ffa500]на 50% больше урона холодом, на 20% больше от порезов и уколов[/color].
   - Быстрее пьянеют.
@@ -23,5 +24,18 @@
   - Могут твердо сжимать кулаки, что даёт им более сильные удары, хотя они и немного медленнее в их выполнении.
   - Слизистая "кровь" не восстанавливается железом. Тем не менее, слизь является умеренно питательным источником пищи для других существ, но пить кровь своих товарищей по команде обычно считается неприемлемым.
   - Слаймолюды способны выживать в условиях вакуума дольше других рас, хотя при этом получают повышенный урон от давления.
+
+  They have slime rather than blood, which is replenished when metabolizing iron or drinking slime.
+  Slime is moderately nutritious when consumed by other species, though drinking the blood of your coworkers is usually frowned upon.
+
+  They metabolize reagents with a single organ, up to six reagents per metabolism stage (digestion, bloodstream, and metabolites).
+
+  They take [color=lightgreen]40% less Blunt damage[/color] and [color=lightgreen]20% less Poison damage[/color], but
+  [color=palevioletred]50% more Cold damage[/color], [color=palevioletred]20% more Slash damage[/color], and [color=palevioletred]20% more Piercing damage[/color].
+  They naturally recover from Heat damage [color=lightgreen]twice as fast[/color] as most other species do (though proper medical treatment isn't any faster).
+
+  They [color=lightgreen]suffocate five times slower[/color], but [color=palevioletred]take pressure damage 9% faster[/color]. This makes them by far the most capable of surviving the longest unprotected in a hard vacuum.
+
+  They take [color=palevioletred]minor Heat damage[/color] if their outer membranes come into contact with water or water vapor, though they can still drink water normally with no ill effect.
 
 </Document>

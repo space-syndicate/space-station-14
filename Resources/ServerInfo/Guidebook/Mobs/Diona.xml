@@ -4,14 +4,43 @@
     <GuideEntityEmbed Entity="MobDiona" Caption=""/>
   </Box>
 
-  Диона - это сплетение разумных нимфоподобных существ (далее - нимф) образующих собой единоличное существо с общими потребностями и разумом. Дионы адаптивные существа основная цель которых - познать мир вокруг себя. По своей сути это разумные, добрые и социальные растения.
+  ## General Information
 
-  ## Превратись в Дерево
+  Diona have large, dense bodies, so they're slowed less when dragging objects and slow others more when dragged themselves.
+
+  They have plant-like metabolisms, [color=lightgreen]getting hungry slower[/color] than other species, but [color=palevioletred]getting thirsty faster[/color].
+
+  They have sap rather than blood, which replenishes when metabolizing iron.
+  Sap is slightly nutritious when consumed by other species, though drinking the blood of your coworkers is usually frowned upon.
+
+  They metabolize reagents with a single organ, up to six reagents per metabolism stage (digestion, bloodstream, and metabolites).
+
+  They take [color=lightgreen]30% less Blunt damage[/color] and [color=lightgreen]20% less Slash damage[/color],
+  but [color=palevioletred]50% more Heat damage[/color] and [color=palevioletred]20% more Shock damage[/color]. Their
+  bark-like skin can [color=palevioletred]easily catch fire[/color] when receiving enough Heat damage from [italic]any[/italic] source.
+
+  They [color=lightgreen]suffocate 100% slower[/color].
+
+  ## Rooting
+
+  Diona move around using a dense network of roots. This [color=palevioletred]prevents them from wearing [italic]any[/italic] footwear[/color], but
+  these roots also allow a diona to firmly root themselves to the ground.
+
+  While rooted, a diona [color=palevioletred]moves 20% slower[/color], but is able to freely move around in zero-gravity environments
+  instead of awkwardly floating around. Being rooted also causes a diona to passively absorb reagents from puddles they're standing in;
+  this can potentially be dangerous if they're standing in something unsafe to drink!
+
+  ## Botanical Reagents
   <Box>
     <GuideEntityEmbed Entity="FloraTree" Caption=""/>
   </Box>
-  Под воздействием слишком большого количества Робаст харвеста Диона начинает неуправляемо расти, превращаясь в неподвижное дерево (сбрасывая всё своё снаряжение).
-  После вырубки дерева Диона "восстанавливается" в своё подвижное состояние.
+
+  While diona can digest the same foods that most other species can, they're also affected by certain botanical reagents.
+  Fertilizers will [color=lightgreen]sate their hunger[/color], but pesticides will [color=palevioletred]poison[/color] them!
+
+  Robust harvest (an especially potent fertilizer) will [color=lightgreen]heal a diona's injuries[/color], but overdosing will cause
+  them to [color=palevioletred]grow out of control[/color], turning into an immobile tree (and dropping all their equipment). Cutting down the tree will
+  "restore" the diona to their regular, mobile state.
 
   ## Нимфы
   <Box>
