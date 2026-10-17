@@ -30,7 +30,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
     back: ClothingBackpackSatchelCorporateBluespace
-    shoes: ClothingShoesBootsLaceup
+    shoes: ClothingShoesCentcomBlack
     head: ClothingHeadCapCentcomBlack
     mask: CigarGold
     eyes: ClothingEyesGlassesSecurity
@@ -49,4 +49,7 @@
     - PinpointerNuclear
     - PinpointerUniversal
     - BoxZiptie
+    - ClothingMaskGasSwat
     - RubberStampSpecops
+    - RadioJammer # Ты не можешь кричать в рацию пока тебя убивают
+    - SprayBottleSpaceCleaner # Надо же подтирать улики...
