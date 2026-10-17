@@ -266,7 +266,7 @@ reagent-name-snow-white = Белый Снег
 reagent-desc-snow-white = Морозная свежесть.
 
 reagent-name-sui-dream = сон Сью
-reagent-desc-sui-dream = 'Состав: Белая газировка, голубой Кюрасао, дынный ликер.'
+reagent-desc-sui-dream = 'Состав: Белая газировка, голубой Кюрасао, дынный ликёр.'
 
 reagent-name-syndicate-bomb = бомба Синдиката
 reagent-desc-syndicate-bomb = Кто-то подложил нам бомбу!

@@ -16,7 +16,7 @@
            !type:NanotrasenNameGenerator
             prefixCreator: "MG"
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_maus.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/Emergency/emergency_corvaxmaus.yml
         - type: StationJobs
           availableJobs:
             # command

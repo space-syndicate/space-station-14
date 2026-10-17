@@ -16,7 +16,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'MT'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/corvax_emergency.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/Emergency/corvax_emergency.yml
         - type: StationBiome
           biome: TerraPlanet
           mapLightColor: "#090303FF"

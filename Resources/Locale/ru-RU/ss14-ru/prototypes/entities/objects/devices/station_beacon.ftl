@@ -1,9 +1,9 @@
 ent-BaseStationBeacon = станционный маяк
     .desc = Небольшое устройство, передающее информацию на карты станций. Может быть сконфигурировано.
-    .suffix = Не является точкой телепорта, черный список для подрыва Ниндзей
+    .suffix = Не является точкой телепорта, чёрный список для подрыва Ниндзей
 ent-TeleportStationBeacon = { ent-BaseStationBeacon }
     .desc = { ent-BaseStationBeacon.desc }
-    .suffix = Черный список подрыва для Ниндзи
+    .suffix = Чёрный список подрыва для Ниндзи
 ent-DefaultStationBeacon = { ent-BaseStationBeacon }
     .desc = { ent-BaseStationBeacon.desc }
     .suffix = Общий

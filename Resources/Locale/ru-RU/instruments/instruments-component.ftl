@@ -207,6 +207,6 @@ instruments-component-menu-midi-channel-breath-noise = Шум дыхания
 instruments-component-menu-midi-channel-seashore = Морской берег
 instruments-component-menu-midi-channel-bird-tweet = Пение птиц
 instruments-component-menu-midi-channel-telephone-ring = Звонок телефона
-instruments-component-menu-midi-channel-helicopter = Вертолет
+instruments-component-menu-midi-channel-helicopter = Вертолёт
 instruments-component-menu-midi-channel-applause = Аплодисменты
 instruments-component-menu-midi-channel-gunshot = Выстрел
