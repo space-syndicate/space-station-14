@@ -42,7 +42,7 @@ guidebook-corporatelaw-mod-complicity-perpetrator-effect = Полное нака
 guidebook-corporatelaw-mod-complicity-perpetrator-desc = Лицо, совершающее преступление
 
 guidebook-corporatelaw-mod-complicity-instigator-effect = Полное наказание
-guidebook-corporatelaw-mod-complicity-instigator-desc = Лицо, склонившее другое лицо к совершению преступления путем уговора, подкупа, угрозы или другим способом
+guidebook-corporatelaw-mod-complicity-instigator-desc = Лицо, склонившее другое лицо к совершению преступления путём уговора, подкупа, угрозы или другим способом
 
 guidebook-corporatelaw-mod-complicity-accomplice-effect = Полное наказание
 guidebook-corporatelaw-mod-complicity-accomplice-desc = Лицо, содействовавшее совершению преступления советами, указаниями, предоставлением информации, средств или орудий совершения преступления, либо устранением препятствий или иными способами.
