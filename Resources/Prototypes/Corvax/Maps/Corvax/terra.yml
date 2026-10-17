@@ -77,11 +77,3 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 1, 1 ]
-        - type: StationGoal
-          goals:
-          - SolarPanels
-          - Artifacts
-          - Bank
-          - Zoo
-          - MiningOutpost
-          - Tesla
