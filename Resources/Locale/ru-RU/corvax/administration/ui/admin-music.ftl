@@ -1,9 +1,9 @@
-admin-player-actions-window-music = Музыкальное сопровождение
+admin-player-actions-window-music = Музыкальный проигрыватель
 
-cmd-musicui-desc = Открывает окно музыкального сопровождения.
+cmd-musicui-desc = Открывает окно музыкального проигрывателя.
 cmd-musicui-help = Использование: musicui
 
-admin-music-window-title = Музыкальное сопровождение
+admin-music-window-title = Музыкальный проигрыватель
 admin-music-tab-library = Библиотека
 admin-music-tab-active = Воспроизводится
 admin-music-tab-active-count = Воспроизводится ({ $count })
@@ -57,8 +57,8 @@ admin-music-active-remove = Удалить
 admin-music-error-generic = Не удалось воспроизвести трек.
 admin-music-error-max-active = Одновременно может воспроизводиться не больше { $max } треков.
 admin-music-error-too-large = Файл слишком большой. Максимальный размер: { $max } МБ.
-admin-music-error-invalid-file = Файл не является корректным .ogg (Vorbis) аудио.
-admin-music-error-file-missing = Файл трека не найден в локальной библиотеке.
+admin-music-error-invalid-file = Файл не соответствует формату .ogg (Vorbis).
+admin-music-error-file-missing = Не удалось найти аудиофайл трека. Проверьте путь к нему.
 admin-music-error-no-recipients = Ни один из выбранных игроков не в игре.
 admin-music-error-upload = Не удалось загрузить трек на сервер.
 admin-music-error-download-failed = Ни один игрок не смог загрузить трек.
