@@ -4,9 +4,21 @@
     <GuideEntityEmbed Entity="MobArachnid" Caption=""/>
   </Box>
 
-  Арахниды — это паукообразные гуманоидные разумные существа с планеты Расгар. Большинство из представителей вида ведет ночной и в основном подземный образ жизни.
+  ## General Information
 
-  ## Производство шёлка
+  Arachnids can use webbing to carry small items, effectively giving them [color=lightgreen]two extra pockets[/color] for item storage.
+
+  Their strong fangs make their unarmed attacks deal Piercing damage.
+
+  Their animal-like digestive system can [color=lightgreen]digest raw meat and blood[/color] without ill effects.
+  They are [color=palevioletred]poisoned[/color] by allicin (found in garlic and onions) and theobromine (found in caffeinated beverages and chocolate).
+
+  Their blue blood is copper-based, and is replenished by metabolizing copper, rather than iron.
+
+  They [color=palevioletred]suffocate 50% faster[/color] and [color=palevioletred]recover from Asphyxiation damage 100% slower[/color].
+
+  ## Sericulture
+
   <Box>
     <GuideEntityEmbed Entity="MaterialWebSilk" Caption=""/>
     <GuideEntityEmbed Entity="ClothingUniformJumpskirtWeb" Caption=""/>

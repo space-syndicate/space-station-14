@@ -7,6 +7,7 @@ using Content.Server.Afk;
 using Content.Corvax.Interfaces.Shared;
 using Content.Server.Database;
 using Content.Shared.Body;
+using Content.Shared.Chat.Prototypes;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Humanoid;
@@ -127,7 +128,7 @@ namespace Content.Server.Preferences.Managers
             }
 
             var voice = profile.Voice ?? speciesPrototype.DefaultSoundsBySex[(int)sex];
-            if (!_prototypeManager.HasIndex(voice))
+            if (!_prototypeManager.HasIndex<EmoteSoundsPrototype>(voice))
                 voice = speciesPrototype.DefaultSoundsBySex[(int)sex];
 
             if (profile.OrganMarkings?.RootElement is { } element)

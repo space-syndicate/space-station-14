@@ -8,15 +8,13 @@
   <GuideEntityEmbed Entity="AppearanceDiona" Caption="Диона"/>
   <GuideEntityEmbed Entity="AppearanceDwarf" Caption="Дворф"/>
   <GuideEntityEmbed Entity="AppearanceHuman" Caption="Человек"/>
+    <GuideEntityEmbed Entity="AppearanceMoth" Caption="Moth Person"/>
   </Box>
   <Box>
-  <GuideEntityEmbed Entity="AppearanceMoth" Caption="Ниан"/>
   <GuideEntityEmbed Entity="AppearanceReptilian" Caption="Унатх"/>
   <GuideEntityEmbed Entity="AppearanceSlimePerson" Caption="Слаймалюд"/>
   <GuideEntityEmbed Entity="AppearanceVox" Caption="Вокс"/>
-  </Box>
-  <Box>
-    <GuideEntityEmbed Entity="AppearanceVulpkanin" Caption="Вульпакин"/>
+    <GuideEntityEmbed Entity="AppearanceVulpkanin" Caption="Vulpkanin"/>
   </Box>
 
 </Document>
