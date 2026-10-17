@@ -118,3 +118,14 @@
     sprite: Corvax/Clothing/Uniforms/Jumpsuit/magistrateformal.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Uniforms/Jumpsuit/magistrateformal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCaptainRoyal
+  name: captain's royal uniform
+  description: A captain's royal uniform. Fit for commanding your Officers in the midst of a nuclear incursion.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/captain_royal.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Uniforms/Jumpsuit/captain_royal.rsi

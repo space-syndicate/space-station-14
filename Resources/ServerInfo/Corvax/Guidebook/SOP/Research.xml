@@ -20,15 +20,19 @@
   ### Научному руководителю запрещено
   <FTLTextpart Key="guidebook-SOP-ResearchDirector-prohibited"/>
 
+  ## СРП Ведущего учёного
+  ### Ведущий учёный обязан
+  <FTLTextpart Key="guidebook-SOP-SeniorResearcher-must"/>
+
+  ### Ведущий учёный имеет право
+  <FTLTextpart Key="guidebook-SOP-SeniorResearcher-right"/>
+
   ## СРП Учёного
   ### Учёный обязан
   <FTLTextpart Key="guidebook-SOP-Scientist-must"/>
 
   ### Учёный имеет право
   <FTLTextpart Key="guidebook-SOP-Scientist-right"/>
-
-  ### Учёному запрещено
-  <FTLTextpart Key="guidebook-SOP-Scientist-prohibited"/>
 
   ## СРП Научного ассистента
   ### Научный ассистент обязан

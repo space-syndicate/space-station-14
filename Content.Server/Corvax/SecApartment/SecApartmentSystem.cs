@@ -4,10 +4,10 @@ using Content.Server.Medical.CrewMonitoring;
 using Content.Server.Pinpointer;
 using Content.Shared.CrewManifest;
 using Content.Shared.GameTicking;
-using Content.Shared.Medical.SuitSensor;
+using Content.Shared.Medical.SuitSensors;
 using Content.Shared.Roles;
 using Content.Shared.SecApartment;
-using Content.Shared.Station;
+using Content.Shared.Station.Systems;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
@@ -22,7 +22,7 @@ namespace Content.Server.Corvax.SecApartment;
 
 public sealed partial class SecApartmentSystem : EntitySystem
 {
-    [Dependency] private SharedStationSystem _station = default!;
+    [Dependency] private StationSystem _station = default!;
     [Dependency] private CrewManifestSystem _crewManifest = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
     [Dependency] private IRobustRandom _random = default!;
@@ -441,31 +441,35 @@ public sealed partial class SecApartmentSystem : EntitySystem
         if (manifest == null)
             return result;
 
+        TryComp<CrewMonitoringConsoleComponent>(tablet, out var monitoring);
+
         foreach (var entry in manifest.Entries)
         {
-            if (_securityJobs.Contains(entry.JobPrototype))
+            if (!_securityJobs.Contains(entry.JobPrototype))
+                continue;
+
+            NetEntity? ownerUid = null;
+            SuitSensorStatus? status = null;
+
+            if (monitoring != null)
             {
-                NetEntity? ownerUid = null;
-                SuitSensorStatus? status = null;
-                if (TryComp<CrewMonitoringConsoleComponent>(tablet, out var monitoring))
-                {
-                    var sensor = monitoring.ConnectedSensors.Values
-                        .FirstOrDefault(s => s.Name == entry.Name && s.Job == entry.JobTitle);
+                status = monitoring.ConnectedSensors.Values
+                    .Where(s => s.Name == entry.Name && s.Job == entry.JobTitle)
+                    .Select(s => (SuitSensorStatus?)s)
+                    .FirstOrDefault();
 
-                    status = sensor;
-                    ownerUid = sensor?.OwnerUid;
-                }
-
-                var memberId = GenerateMemberId(entry);
-                result.Add(new CrewMemberInfo(
-                    memberId,
-                    ownerUid,
-                    entry.Name,
-                    entry.JobTitle,
-                    entry.JobIcon,
-                    status
-                ));
+                if (status is { } sensorStatus)
+                    ownerUid = sensorStatus.OwnerUid;
             }
+
+            var memberId = GenerateMemberId(entry);
+            result.Add(new CrewMemberInfo(
+                memberId,
+                ownerUid,
+                entry.Name,
+                entry.JobTitle,
+                entry.JobIcon,
+                status));
         }
 
         return result;
@@ -484,19 +488,18 @@ public sealed partial class SecApartmentSystem : EntitySystem
         foreach (var memberId in squad.Members.Select(m => m.MemberId))
         {
             var memberInfo = securityCrew.FirstOrDefault(c => c.MemberId == memberId);
-            if (memberInfo?.SensorStatus == null)
+            if (memberInfo?.SensorStatus is not { } sensorStatus || !sensorStatus.IsAlive)
                 continue;
 
-            if (!memberInfo.SensorStatus.IsAlive)
+            var ownerUid = GetEntity(sensorStatus.OwnerUid);
+            if (!Exists(ownerUid) || Terminating(ownerUid))
                 continue;
 
-            var ownerUid = GetEntity(memberInfo.SensorStatus.OwnerUid);
             var memberTransform = Transform(ownerUid);
             if (memberTransform.GridUid == null)
                 continue;
 
             var mapPos = _transform.GetMapCoordinates(ownerUid);
-
             trackedPositions.Add(mapPos.Position);
             mapId = mapPos.MapId;
         }

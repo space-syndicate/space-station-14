@@ -4,6 +4,9 @@ signal-port-description-autoclose = Переключает, должно ли у
 signal-port-name-toggle = Переключить
 signal-port-description-toggle = Переключает состояние устройства.
 
+signal-port-name-dock-toggle = Переключить стыковку
+signal-port-description-dock-toggle = Переключает стыковку, если поступил высокий уровень сигнала.
+
 signal-port-name-on-receiver = Вкл
 signal-port-description-on-receiver = Включает устройство.
 

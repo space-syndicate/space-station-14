@@ -20,3 +20,5 @@ ent-ClothingUniformJumpsuitMagistrate = комбинезон магистрат�
     .desc = Это комбинезон судьи корпоративного закона.
 ent-ClothingUniformJumpsuitMagistrateFormal = торжественный костюм магистрата
     .desc = Это комбинезон шикарного судьи корпоративного закона.
+ent-ClothingUniformJumpsuitCaptainRoyal = роскошный мундир капитана
+    .desc = По-королевски роскошная униформа. Идеально подходит для руководства станцией во время вторжения ядерных оперативников.

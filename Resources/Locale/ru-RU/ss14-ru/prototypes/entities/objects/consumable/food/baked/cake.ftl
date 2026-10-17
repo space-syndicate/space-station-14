@@ -1,3 +1,5 @@
+ent-FoodCakeBaseNoSecretStash = { ent-SolutionNormal }
+    .desc = { ent-SolutionNormal.desc }
 ent-FoodCakeBase = { ent-SolutionNormal }
     .desc = { ent-SolutionNormal.desc }
 ent-FoodCakeSliceBase = { ent-SolutionVeryTiny }
@@ -74,7 +76,7 @@ ent-FoodCakeSpaceman = космонавтский торт
     .desc = Торт из трубы космонавта с глазурью.
 ent-FoodCakeSpacemanSlice = кусок космонавтского торта
     .desc = Торт из трубы космонавта с глазурью.
-ent-MobCatCake = Корт
+ent-MobCatCake = корт
     .desc = Это кот. Это торт. Это корт.
 ent-FoodCakeSuppermatter = суперматерия
     .desc = Чрезвычайно плотная и мощная пища.

@@ -29,7 +29,7 @@
           components:
           - Defibrillator
   - type: Construction
-    graph: DefibrillatorCabinet
+    graph: DefibrillatorCabinetGraph
     node: done
   - type: Destructible
     thresholds:

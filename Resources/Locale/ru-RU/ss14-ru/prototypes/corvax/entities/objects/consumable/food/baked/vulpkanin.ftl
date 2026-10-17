@@ -1,2 +1,4 @@
 ent-FoodBakedVulpkaninPlate = запечённый вульпканин
     .desc = На поверхности блюда всё ещё виднеются клочки шерсти..
+
+microwave-meal-Vulpkanin-name = рецепт вульпканина

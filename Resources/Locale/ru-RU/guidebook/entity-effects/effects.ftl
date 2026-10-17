@@ -21,7 +21,7 @@ entity-effect-guidebook-spawn-entity =
         [1] Создаёт
         *[other] создать
     } { $amount ->
-        [1] { INDEFINITE($entname) }
+        [1] { INDEFINITE($entname) } { $entname }
         *[other] { $amount } { MAKEPLURAL($entname) }
     }
 
@@ -571,6 +571,22 @@ entity-effect-guidebook-plant-seeds-remove =
         *[other] убирают
     } семена из растения
 
+entity-effect-guidebook-plant-change-trait =
+    { $chance ->
+        [1] { $change ->
+            [Add] Добавляет {$trait} в растение
+            [Remove] Удаляет {$trait} из растения
+            [Toggle] Переключает {$trait} в растении
+            *[other] Изменяет {$trait} в растении
+        }
+        *[other] { $change ->
+            [Add] добавить {$trait} в растение
+            [Remove] удалить {$trait} из растения
+            [Toggle] переключить {$trait} в растении
+            *[other] изменить {$trait} в растении
+        }
+    }
+
 entity-effect-guidebook-plant-mutate-exude-gasses =
     { $chance ->
         [1] Мутирует
@@ -600,3 +616,9 @@ entity-effect-disarm =
         [1] Обезоруживает
         *[other] обезоружить
     } цель
+
+entity-effect-guidebook-make-trap-in-container =
+    { $chance ->
+        [1] Заключает
+        *[other] заключить
+    } цель в { $entityname }

@@ -209,7 +209,7 @@
 
 #ERT
 - type: entity
-  parent: [ ClothingBackpack, BaseCentcommContraband ]
+  parent: [ ClothingBackpack, BaseTaskForceContraband ]
   id: ClothingBackpackERTLeader
   name: ERT leader backpack
   description: A spacious backpack with lots of pockets, worn by the Leader of an Emergency Response Team.
@@ -283,11 +283,12 @@
   description: Holds the kit of CentComm's most feared agents.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/ertsec.rsi
+     # sprite: Clothing/Back/Backpacks/ertsec.rsi
+    sprite: Corvax/Clothing/Back/Backpacks/deathsquad-backpack.rsi # Corvax
 
 #Syndicate
 - type: entity
-  parent: [ClothingBackpack, BaseSyndicateContraband]
+  parent: [ClothingBackpack] # Corvax-Contraband BaseSyndicateContraband
   id: ClothingBackpackSyndicate
   name: syndicate backpack
   description:

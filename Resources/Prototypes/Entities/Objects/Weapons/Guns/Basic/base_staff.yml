@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: WeaponStaffBase
   abstract: true
   parent: BaseItem # Corvax-Contraband: do not inherit a marker for hidden properties.

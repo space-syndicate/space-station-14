@@ -104,6 +104,8 @@ ghost-role-information-salvage-carp-description = Защищайте ценно�
 ghost-role-information-sentient-carp-name = Разумный карп
 ghost-role-information-sentient-carp-description = Помогите дракону наводнить станцию карпами!
 
+ghost-role-information-sentient-sharkminnow-name = Разумная карпоакула
+
 ghost-role-information-willow-name = Кенгуру Уиллоу
 ghost-role-information-willow-description = Вы кенгуру по имени Уиллоу! Уиллоу любит бокс.
 
@@ -350,3 +352,6 @@ ghost-role-information-wizard-desc = ТЫ ВОЛШЕБНИК! Покажи ст�
 
 ghost-role-information-emotional-support-scurret-name = Слизенёк эмоциональной поддержки
 ghost-role-information-emotional-support-scurret-description = Поддерживайте экипаж, будьте очаровательными, часто говорите "ва".
+
+ghost-role-information-space-changeling-name = Древний мозговой червь
+ghost-role-information-space-changeling-description = Взрослая особь мозгового червя генокрада, стремящаяся ассимилировать членов экипажа и скрываться в недрах станции. Этот мозговой червь особенно уязвим и нуждается в трупе, чтобы принять гуманоидный облик.

@@ -107,3 +107,25 @@
     sprite: Corvax/Clothing/Head/Hats/true_wig.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Head/Hats/true_wig.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCaptainBicorn
+  name: captain's bicorne
+  description: Why be king when you can be Emperor?
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/Hats/captain_royal_hat.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/Hats/captain_royal_hat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCaptainBeret
+  name: captain beret
+  description: A blue beret made of durathread with a genuine golden badge, denoting its owner as a captain.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/Hats/captain_beret.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/Hats/captain_beret.rsi

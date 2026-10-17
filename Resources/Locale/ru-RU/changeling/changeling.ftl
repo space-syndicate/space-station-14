@@ -18,9 +18,14 @@ changeling-devour-begin-consume-others = { CAPITALIZE(POSS-ADJ($user)) } жут�
 changeling-devour-consume-complete-self = Наша жуткая пасть скрывается, биомасса поглощена.
 changeling-devour-consume-complete-others = { CAPITALIZE(POSS-ADJ($user)) } жуткая пасть прячется.
 
+changeling-devour-doafter-windup = [color=red]{ CAPITALIZE(POSS-ADJ($user)) } лицо раскрывается, готовясь пиршествовать![/color]
+changeling-devour-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } вгрызается в плоть {$target}![/color]
+
 # transformation
 changeling-transform-attempt-self = Наши кости хрустят, мышцы рвутся, одна плоть превращается в другую.
 changeling-transform-attempt-others = { CAPITALIZE(POSS-ADJ($user)) } кости хрустят, мышцы рвутся, тело превращается в другое.
+
+changeling-transform-doafter = [color=red]{ CAPITALIZE(POSS-ADJ($user)) } кожа плавится, принимая иную форму.[/color]
 
 # transformation BUI
 changeling-transform-bui-select-entity = { $entity }
@@ -46,7 +51,7 @@ changeling-biodegrade-used-popup-self = Мы извергаем кислоту �
 changeling-takeover-not-dead = Это тело не мертво! Мы не можем заразить его.
 changeling-takeover-is-changeling = Это тело отвергает наши попытки завладеть им!
 changeling-takeover-start-others = { CAPITALIZE(THE($user)) } начинает залезать в тело!
-changeling-takeover-success-self = Мы успешно заразили тело и приняли его облик.
+changeling-takeover-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } залезает в { $target }![/color]
 
 # stings
 changeling-sting-success = Мы незаметно жалим { THE($target) }!
@@ -59,4 +64,7 @@ changeling-fake-mindshield-disabled = Мы прекращаем излучать
 changeling-not-enough-chemicals = У нас недостаточно химикатов.
 
 # other
+changeling-action-fail-generic = Мы не можем сделать это прямо сейчас.
 changeling-paused-map-name = Карта хранения личностей генокрада
+changeling-cocoon-success = Мы заключили {THE($target)} в кокон из плоти.
+changeling-cocoon-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } покрывает { THE($target) } массой плоти![/color]

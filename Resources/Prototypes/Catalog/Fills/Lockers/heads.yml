@@ -56,7 +56,6 @@
       prob: 0.02
     # Corvax-Start
     - id: PrinterDocFlatpack
-    - id: ClothingHeadCaptainHat
     - id: ClothingOuterCoatCaptain
     # Corvax-End
 
@@ -348,9 +347,6 @@
     - id: PlushieLizardJobHeadofsecurity
       prob: 0.02
     # Corvax-Start
-    - id: ClothingHeadHatCapHoS
-      prob: 0.5
-    - id: ClothingOuterCoatHoSGreatcoat
     - id: BookBusido
     - id: SecApartmentTablet
     - id: PrinterDocFlatpack

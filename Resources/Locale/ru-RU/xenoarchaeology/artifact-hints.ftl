@@ -22,65 +22,6 @@ artifact-effect-hint-polymorph = Трансмогрификационная ак
 artifact-effect-hint-magnet = Магнитные волны
 artifact-effect-hint-visual = Визуальное искажение
 
-# the triggers should be more obvious than the effects
-# gives people an idea of what to do: don't be too specific (i.e. no "welders")
-
-artifact-trigger-hint-electricity = Электричество
-artifact-trigger-hint-heat = Высокая температура
-artifact-trigger-hint-physical = Физические повреждения
-artifact-trigger-hint-tool = Использование инструментов
-artifact-trigger-hint-music = Звуковые вибрации
-artifact-trigger-hint-water = Водочувствительность
-artifact-trigger-hint-blood = Взаимодействие с гематологической жидкостью
-artifact-trigger-hint-magnet = Магнитные волны
-artifact-trigger-hint-death = Эссенция жизни
-artifact-trigger-hint-radiation = Радиация
-artifact-trigger-hint-pressure = Экстремальное давление
-artifact-trigger-hint-regular-gases = Стандартные атмосферные газы
-artifact-trigger-hint-plasma = Газообразная плазма
-artifact-trigger-hint-land = Активное замедление
-artifact-trigger-hint-examine = Внимательное изучение
-artifact-trigger-hint-medical = Терапевтические химикаты
-
-xenoarch-trigger-tip-music = Гармоничные звуковые вибрации
-xenoarch-trigger-tip-heat = Газ высокой температуры
-xenoarch-trigger-tip-cold = Газ низкой температуры
-xenoarch-trigger-tip-no-oxygen = Безкислородное окружение
-xenoarch-trigger-tip-water = Вода
-xenoarch-trigger-tip-co2 = Диоксид углерода
-xenoarch-trigger-tip-plasma = Нетвёрдая плазма
-xenoarch-trigger-tip-tritium = Тритий
-xenoarch-trigger-tip-ammonia = Аммиак
-xenoarch-trigger-tip-n2o = Оксид азота
-xenoarch-trigger-tip-frezon = Фрезон
-xenoarch-trigger-tip-radiation = Излучение тяжелых ионов
-xenoarch-trigger-tip-microwave = Микроволновое излучение
-xenoarch-trigger-tip-brute-damage = Физический урон
-xenoarch-trigger-tip-interaction = Физическое взаимодействие
-xenoarch-trigger-tip-wrenching = Затягивание
-xenoarch-trigger-tip-prying = Вскрывание
-xenoarch-trigger-tip-screwing = Свинчивание
-xenoarch-trigger-tip-pulsing = Пульсирование
-xenoarch-trigger-tip-pressure-low = Низкое давление
-xenoarch-trigger-tip-pressure-high = Высокое давление
-xenoarch-trigger-tip-examine = Внимательное изучение
-xenoarch-trigger-tip-timer = Регулярная само-активация
-xenoarch-trigger-tip-blood = Кровь
-xenoarch-trigger-tip-throw = Бросок
-xenoarch-trigger-tip-death = Смерть
-xenoarch-trigger-tip-magnet = Магнитные волны
-xenoarch-trigger-tip-money = Взяточничество
-xenoarch-trigger-tip-knowledge = Усвоение знаний
-xenoarch-trigger-tip-carbs = Употребление углеводов
-xenoarch-trigger-tip-meat = Употребление протеинов
-xenoarch-trigger-tip-produce = Употребление здоровых продуктов
-xenoarch-trigger-tip-stamp = Бюрократическое одобрение
-xenoarch-trigger-tip-shock = Электрический шок
-xenoarch-trigger-tip-particle = Воздействие частиц
-xenoarch-trigger-tip-anomparticle = Воздействие аномальных частиц
-xenoarch-trigger-tip-stamina-damage = Органическое истощение
-xenoarch-trigger-tip-laser = Воздействие фотонов высокой интенсивности
-
 ### Description hints
 xenoarch-trigger-examine-wrenching = Вокруг него свободно крутится частичка.
 xenoarch-trigger-examine-prying = С его поверхности поднимается панель.
