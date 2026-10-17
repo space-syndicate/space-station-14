@@ -40412,7 +40412,7 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: -3.5,-1.5
-    - type: WirelessNetwork
+    - type: WirelessNetworkConnection
       range: 2000000
     - type: DeviceLinkSource
       range: 300000
@@ -40435,7 +40435,7 @@ entities:
     - type: Transform
       parent: 2
       pos: -13.5,15.5
-    - type: WirelessNetwork
+    - type: WirelessNetworkConnection
       range: 2000000
     - type: DeviceLinkSource
       range: 300000
