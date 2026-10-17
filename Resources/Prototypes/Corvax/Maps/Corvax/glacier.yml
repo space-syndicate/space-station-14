@@ -15,7 +15,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'DZX'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxglacier.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/Emergency/emergency_corvaxglacier.yml
         - type: StationJobs
           availableJobs:
             # command
