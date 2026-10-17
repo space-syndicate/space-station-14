@@ -9,10 +9,10 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseItem, FoodMeatBase ]
+  parent: FoodMeatBase
   id: BaseAquariumFish
   name: bag with a fish
-  description: Do yoy want it to survive, don't you? Well then, keep it in the bag with water!
+  description: You do want it to survive, don't you? Well then, keep it in the bag with water!
   suffix: Corvax
   components:
   - type: Sprite
@@ -26,7 +26,6 @@
         Quantity: 1
       - ReagentId: Fat
         Quantity: 1
-  - type: Tag
 
 - type: entity
   parent: BaseAquariumFish
@@ -39,6 +38,7 @@
   - type: Tag
     tags:
     - AquariumFish1
+    - Meat
 
 - type: entity
   parent: BaseAquariumFish
@@ -51,6 +51,7 @@
   - type: Tag
     tags:
     - AquariumFish2
+    - Meat
 
 - type: entity
   parent: BaseAquariumFish
@@ -63,6 +64,7 @@
   - type: Tag
     tags:
     - AquariumFish3
+    - Meat
 
 - type: entity
   parent: [ BaseStructure, StructureHealthBarrier, BaseDeltaPressureGlass ]
@@ -133,6 +135,8 @@
         collection: GlassSmack
   - type: Anchorable
   - type: Pullable
+  - type: Airtight
+    noAirWhenFullyAirBlocked: false
   - type: Solution
     solution:
       reagents:
@@ -159,6 +163,7 @@
       behaviors:
       - !type:SpillBehavior
         solution: solution
+      - !type:EmptyAllContainersBehaviour
       - !type:PlaySoundBehavior
         sound:
           collection: WindowShatter
@@ -170,6 +175,8 @@
           SheetSteel1:
             min: 1
             max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: Aquarium
@@ -182,5 +189,5 @@
       - AquariumFish1
       Fish2:
       - AquariumFish2
-      Fish3: 
+      Fish3:
       - AquariumFish3
