@@ -16,7 +16,15 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'ABK'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxsilly.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/Emergency/emergency_corvaxsilly.yml
+        - type: GridSpawn
+          groups:
+            trade: !type:GridSpawnGroup
+              addComponents:
+                - type: ProtectedGrid
+                - type: TradeStation
+              paths:
+                - /Maps/Corvax/Shuttles/trading_outpostcorvaxsilly.yml
         - type: StationCargoShuttle
           path: /Maps/Corvax/Shuttles/cargo_corvaxsilly.yml
         - type: StationJobs
