@@ -9,7 +9,6 @@ using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.Station.Systems;
-using Robust.Server.GameStates;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
@@ -37,7 +36,6 @@ public sealed partial class AdminMusicSystem : EntitySystem
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private IResourceManager _res = default!;
     [Dependency] private ITransferManager _transfer = default!;
-    [Dependency] private PvsOverrideSystem _pvs = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private StationSystem _station = default!;
 
@@ -50,6 +48,11 @@ public sealed partial class AdminMusicSystem : EntitySystem
     ///     Сколько максимум может длиться сама загрузка файла от администратора.
     /// </summary>
     private static readonly TimeSpan UploadReadTimeout = TimeSpan.FromMinutes(5);
+
+    /// <summary>
+    ///     Сколько максимум может длиться отправка файла одному игроку, прежде чем считать её зависшей.
+    /// </summary>
+    private static readonly TimeSpan SendTimeout = TimeSpan.FromMinutes(5);
 
     /// <summary>
     ///     Guid + int32 длина данных.
@@ -127,12 +130,12 @@ public sealed partial class AdminMusicSystem : EntitySystem
         }
     }
 
-    private void SendError(ICommonSession admin, string message)
+    private void SendError(ICommonSession admin, string message, Guid? trackId = null)
     {
         foreach (var eui in _euis)
         {
             if (eui.Player == admin)
-                eui.SendMessage(new AdminMusicEuiMsg.Error { Message = message });
+                eui.SendMessage(new AdminMusicEuiMsg.Error { Message = message, TrackId = trackId });
         }
     }
 
@@ -234,19 +237,23 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
         if (_tracks.Count >= _maxActive)
         {
-            SendError(admin, Loc.GetString("admin-music-error-max-active", ("max", _maxActive)));
+            SendError(admin, Loc.GetString("admin-music-error-max-active", ("max", _maxActive)), msg.TrackId);
             return;
         }
 
         if (msg.Size <= 0 || msg.Size > _maxSizeBytes)
         {
-            SendError(admin, Loc.GetString("admin-music-error-too-large", ("max", _maxSizeBytes / 1024 / 1024)));
+            SendError(admin, Loc.GetString("admin-music-error-too-large", ("max", _maxSizeBytes / 1024 / 1024)), msg.TrackId);
             return;
         }
 
-        if (msg.TrackId == Guid.Empty || _tracks.ContainsKey(msg.TrackId))
+        if (msg.TrackId == Guid.Empty
+            || _tracks.ContainsKey(msg.TrackId)
+            || !float.IsFinite(msg.Volume)
+            || !float.IsFinite(msg.Start)
+            || !float.IsFinite(msg.End))
         {
-            SendError(admin, Loc.GetString("admin-music-error-generic"));
+            SendError(admin, Loc.GetString("admin-music-error-generic"), msg.TrackId);
             return;
         }
 
@@ -259,7 +266,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
         if (recipients.Count == 0)
         {
-            SendError(admin, Loc.GetString("admin-music-error-no-recipients"));
+            SendError(admin, Loc.GetString("admin-music-error-no-recipients"), msg.TrackId);
             return;
         }
 
@@ -297,6 +304,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
         _audio.SetState(audio, paused ? AudioState.Paused : AudioState.Playing);
         track.Status = paused ? AdminMusicTrackStatus.Paused : AdminMusicTrackStatus.Playing;
+        SendPlayback(track);
 
         _adminLog.Add(LogType.AdminCommands, LogImpact.Low,
             $"{admin:actor} {(paused ? "paused" : "resumed")} admin music \"{track.Title}\" ({track.Id})");
@@ -306,11 +314,12 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
     public void Seek(ICommonSession admin, Guid trackId, float position)
     {
-        if (!_tracks.TryGetValue(trackId, out var track) || track.Audio is not { } audio)
+        if (!float.IsFinite(position) || !_tracks.TryGetValue(trackId, out var track) || track.Audio is not { } audio)
             return;
 
         position = Math.Clamp(position, 0f, Math.Max(0f, track.End - 0.1f));
         _audio.SetPlaybackPosition(audio, position);
+        SendPlayback(track);
 
         _adminLog.Add(LogType.AdminCommands, LogImpact.Low,
             $"{admin:actor} moved admin music \"{track.Title}\" ({track.Id}) to {position:F1}s");
@@ -320,13 +329,16 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
     public void SetVolume(ICommonSession admin, Guid trackId, float volume)
     {
-        if (!_tracks.TryGetValue(trackId, out var track))
+        if (!float.IsFinite(volume) || !_tracks.TryGetValue(trackId, out var track))
             return;
 
         track.Volume = Math.Clamp(volume, _minVolume, _maxVolume);
 
         if (track.Audio is { } audio)
+        {
             _audio.SetVolume(audio, track.Volume);
+            SendPlayback(track);
+        }
 
         _adminLog.Add(LogType.AdminCommands, LogImpact.Low,
             $"{admin:actor} set volume of admin music \"{track.Title}\" ({track.Id}) to {track.Volume:F1}dB");
@@ -398,7 +410,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
             if (track != null && _tracks.ContainsKey(track.Id))
             {
-                SendError(session, Loc.GetString("admin-music-error-upload"));
+                SendError(session, Loc.GetString("admin-music-error-upload"), track.Id);
                 RemoveTrack(track);
             }
         }
@@ -410,7 +422,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
         if (!AdminMusicConstants.IsOgg(data))
         {
-            SendError(track.Admin, Loc.GetString("admin-music-error-invalid-file"));
+            SendError(track.Admin, Loc.GetString("admin-music-error-invalid-file"), track.Id);
             RemoveTrack(track);
             return;
         }
@@ -425,7 +437,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
         catch (Exception e)
         {
             Log.Warning($"Admin music {track.Id} from {track.Admin} is not a valid audio file: {e.Message}");
-            SendError(track.Admin, Loc.GetString("admin-music-error-invalid-file"));
+            SendError(track.Admin, Loc.GetString("admin-music-error-invalid-file"), track.Id);
             RemoveTrack(track);
             return;
         }
@@ -436,7 +448,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
         if (track.End - track.Start < 0.5f)
         {
-            SendError(track.Admin, Loc.GetString("admin-music-error-too-short"));
+            SendError(track.Admin, Loc.GetString("admin-music-error-too-short"), track.Id);
             RemoveTrack(track);
             return;
         }
@@ -469,6 +481,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
             return;
         }
 
+        recipient.Sending = true;
         try
         {
             await using var stream = _transfer.StartTransfer(recipient.Session.Channel, AdminMusicConstants.DownloadTransferKey);
@@ -484,13 +497,23 @@ public sealed partial class AdminMusicSystem : EntitySystem
         {
             Log.Warning($"Failed to send admin music {track.Id} to {recipient.Session}: {e.Message}");
         }
+        finally
+        {
+            // Таймаут подтверждения считаем с момента окончания отправки.
+            recipient.Sending = false;
+            recipient.LastSent = _timing.RealTime;
+        }
     }
 
     private void OnDownloaded(AdminMusicDownloadedEvent ev, EntitySessionEventArgs args)
     {
         if (!_tracks.TryGetValue(ev.TrackId, out var track)
             || !track.Recipients.TryGetValue(args.SenderSession.UserId, out var recipient)
-            || recipient.Status != RecipientStatus.Pending)
+            || recipient.Status == RecipientStatus.Received)
+            return;
+
+        // Успешная загрузка засчитывается, даже если игрока уже пометили Failed по таймауту.
+        if (!ev.Success && recipient.Status == RecipientStatus.Failed)
             return;
 
         if (!ev.Success)
@@ -507,8 +530,8 @@ public sealed partial class AdminMusicSystem : EntitySystem
         recipient.Status = RecipientStatus.Received;
 
         // Трек уже играет — опоздавший игрок подключается с текущей позиции.
-        if (track.Audio is { } audio)
-            _pvs.AddSessionOverride(audio, recipient.Session);
+        if (GetPlaybackEvent(track) is { } playback)
+            RaiseNetworkEvent(playback, recipient.Session);
 
         DirtyEuis();
     }
@@ -531,7 +554,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
                 case AdminMusicTrackStatus.Uploading:
                     if (now - track.StatusChanged > UploadTimeout)
                     {
-                        SendError(track.Admin, Loc.GetString("admin-music-error-upload"));
+                        SendError(track.Admin, Loc.GetString("admin-music-error-upload"), track.Id);
                         RemoveTrack(track);
                     }
 
@@ -542,7 +565,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
                     {
                         if (now - track.StatusChanged > UploadReadTimeout)
                         {
-                            SendError(track.Admin, Loc.GetString("admin-music-error-upload"));
+                            SendError(track.Admin, Loc.GetString("admin-music-error-upload"), track.Id);
                             RemoveTrack(track);
                         }
 
@@ -556,7 +579,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
                     if (!anyPending && !anyReceived)
                     {
-                        SendError(track.Admin, Loc.GetString("admin-music-error-download-failed"));
+                        SendError(track.Admin, Loc.GetString("admin-music-error-download-failed"), track.Id);
                         RemoveTrack(track);
                         break;
                     }
@@ -590,7 +613,22 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
         foreach (var recipient in track.Recipients.Values)
         {
-            if (recipient.Status != RecipientStatus.Pending || now - recipient.LastSent <= _downloadTimeout)
+            if (recipient.Status != RecipientStatus.Pending)
+                continue;
+
+            // Пока файл ещё отправляется, повторно его не шлём.
+            if (recipient.Sending)
+            {
+                if (now - recipient.LastSent > SendTimeout)
+                {
+                    recipient.Status = RecipientStatus.Failed;
+                    changed = true;
+                }
+
+                continue;
+            }
+
+            if (now - recipient.LastSent <= _downloadTimeout)
                 continue;
 
             if (recipient.Attempts < _downloadAttempts)
@@ -609,19 +647,13 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
     private void StartPlayback(AdminMusicTrack track)
     {
-        var filter = Filter.Empty();
-        foreach (var recipient in track.Recipients.Values)
-        {
-            if (recipient.Status == RecipientStatus.Received && recipient.Session.Status == SessionStatus.InGame)
-                filter.AddPlayer(recipient.Session);
-        }
-
         var path = AdminMusicConstants.GetTrackPath(track.Id);
         var audioParams = AudioParams.Default.WithVolume(track.Volume);
 
-        if (_audio.PlayGlobal(new ResolvedPathSpecifier(path), filter, false, audioParams) is not { } audio)
+        // Клиенты играют его локально по AdminMusicPlaybackEvent, чтобы применять свою громкость.
+        if (_audio.PlayGlobal(new ResolvedPathSpecifier(path), Filter.Empty(), false, audioParams) is not { } audio)
         {
-            SendError(track.Admin, Loc.GetString("admin-music-error-generic"));
+            SendError(track.Admin, Loc.GetString("admin-music-error-generic"), track.Id);
             RemoveTrack(track);
             return;
         }
@@ -644,7 +676,41 @@ public sealed partial class AdminMusicSystem : EntitySystem
         }
 
         track.StatusChanged = _timing.RealTime;
+        SendPlayback(track);
         DirtyEuis();
+    }
+
+    private AdminMusicPlaybackEvent? GetPlaybackEvent(AdminMusicTrack track)
+    {
+        if (!TryComp<AudioComponent>(track.Audio, out var audio))
+            return null;
+
+        return new AdminMusicPlaybackEvent
+        {
+            TrackId = track.Id,
+            AudioStart = audio.AudioStart,
+            PauseTime = audio.PauseTime,
+            Volume = track.Volume,
+        };
+    }
+
+    /// <summary>
+    ///     Рассылает текущее состояние воспроизведения всем, кто уже получил трек.
+    /// </summary>
+    private void SendPlayback(AdminMusicTrack track)
+    {
+        if (GetPlaybackEvent(track) is not { } playback)
+            return;
+
+        var filter = Filter.Empty();
+        foreach (var recipient in track.Recipients.Values)
+        {
+            if (recipient.Status == RecipientStatus.Received && recipient.Session.Status == SessionStatus.InGame)
+                filter.AddPlayer(recipient.Session);
+        }
+
+        if (filter.Count > 0)
+            RaiseNetworkEvent(playback, filter);
     }
 
     #region Cleanup
@@ -738,7 +804,13 @@ public sealed partial class AdminMusicSystem : EntitySystem
         public readonly ICommonSession Session = session;
         public RecipientStatus Status = RecipientStatus.Pending;
         public int Attempts;
+
+        /// <summary>
+        ///     Начало текущей отправки, пока идёт <see cref="Sending"/>, иначе время окончания последней.
+        /// </summary>
         public TimeSpan LastSent;
+
+        public bool Sending;
     }
 
     private enum RecipientStatus : byte

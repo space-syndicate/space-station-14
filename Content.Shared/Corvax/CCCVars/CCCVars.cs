@@ -199,4 +199,10 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<int> AdminMusicDownloadAttempts =
         CVarDef.Create("admin_music.download_attempts", 3, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Громкость админской музыки у клиента (множитель громкости).
+    /// </summary>
+    public static readonly CVarDef<float> AdminMusicVolume =
+        CVarDef.Create("admin_music.volume", 1f, CVar.ARCHIVE | CVar.CLIENTONLY);
 }

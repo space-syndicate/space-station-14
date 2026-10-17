@@ -63,3 +63,5 @@ admin-music-error-no-recipients = None of the selected players are in game.
 admin-music-error-upload = Failed to upload the track to the server.
 admin-music-error-download-failed = No player managed to download the track.
 admin-music-error-too-short = Selected fragment is too short.
+
+ui-options-admin-music-volume = Admin music volume:

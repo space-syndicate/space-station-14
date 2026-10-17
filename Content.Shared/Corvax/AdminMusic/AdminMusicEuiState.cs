@@ -116,6 +116,11 @@ public static class AdminMusicEuiMsg
     public sealed class Error : EuiMessageBase
     {
         public string Message = string.Empty;
+
+        /// <summary>
+        ///     Трек, к которому относится ошибка, если есть.
+        /// </summary>
+        public Guid? TrackId;
     }
 
     [Serializable, NetSerializable]

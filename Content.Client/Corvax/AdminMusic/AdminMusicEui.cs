@@ -100,7 +100,9 @@ public sealed partial class AdminMusicEui : BaseEui
 
             case AdminMusicEuiMsg.Error error:
                 // Запрос, на который пришла ошибка, уже не будет одобрен.
-                _pendingUploads.Clear();
+                if (error.TrackId is { } trackId)
+                    _pendingUploads.Remove(trackId);
+
                 _window.SetStatus(error.Message);
                 _settingsWindow?.SetError(error.Message);
                 break;

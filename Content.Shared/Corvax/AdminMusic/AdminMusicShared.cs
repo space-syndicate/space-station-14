@@ -74,3 +74,28 @@ public sealed class AdminMusicTrackDisposedEvent : EntityEventArgs
         TrackId = trackId;
     }
 }
+
+/// <summary>
+///     Состояние воспроизведения трека. Сервер рассылает его слушателям при старте, паузе, перемотке
+///     и смене громкости, а клиент проигрывает трек локально, чтобы учитывать свои настройки звука.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class AdminMusicPlaybackEvent : EntityEventArgs
+{
+    public Guid TrackId;
+
+    /// <summary>
+    ///     Время сервера, соответствующее началу файла.
+    /// </summary>
+    public TimeSpan AudioStart;
+
+    /// <summary>
+    ///     Время сервера, когда трек был поставлен на паузу, или null, если он играет.
+    /// </summary>
+    public TimeSpan? PauseTime;
+
+    /// <summary>
+    ///     Громкость трека в дБ, выставленная администратором.
+    /// </summary>
+    public float Volume;
+}

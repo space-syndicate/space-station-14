@@ -1,12 +1,14 @@
 using System.Buffers.Binary;
 using System.IO;
+using System.Linq;
+using Content.Shared.CCVar;
 using Content.Shared.Corvax.AdminMusic;
 using Content.Shared.Corvax.CCCVars;
 using Robust.Client;
 using Robust.Client.Audio;
-using Robust.Client.ResourceManagement;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Network.Transfer;
@@ -16,11 +18,11 @@ using Robust.Shared.Utility;
 namespace Content.Client.Corvax.AdminMusic;
 
 /// <summary>
-///     Принимает треки админской музыки с сервера, отправляет загруженные администратором файлы
-///     и отвечает за предпрослушивание.
+///     Принимает треки админской музыки с сервера, проигрывает их локально, отправляет загруженные
+///     администратором файлы и отвечает за предпрослушивание.
 /// </summary>
 /// <remarks>
-///     Полученные файлы хранятся только в памяти (декодированный <see cref="AudioStream"/> в кэше ресурсов)
+///     Полученные файлы хранятся только в памяти (декодированный <see cref="AudioStream"/>)
 ///     и никогда не пишутся на диск, поэтому после выхода из игры от них ничего не остаётся.
 /// </remarks>
 public sealed partial class AdminMusicSystem : EntitySystem
@@ -30,7 +32,6 @@ public sealed partial class AdminMusicSystem : EntitySystem
     [Dependency] private IClientNetManager _net = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IResourceCache _resourceCache = default!;
     [Dependency] private ITransferManager _transfer = default!;
     [Dependency] private AudioSystem _audio = default!;
 
@@ -52,9 +53,23 @@ public sealed partial class AdminMusicSystem : EntitySystem
     private readonly Dictionary<ResPath, AudioStream> _pendingDispose = new();
 
     /// <summary>
-    ///     Треки, удалённые сервером до окончания загрузки.
+    ///     Треки, удалённые сервером. Храним до отключения, чтобы не загрузить трек снова,
+    ///     если повторная передача закончится уже после удаления.
     /// </summary>
     private readonly HashSet<Guid> _disposedIds = new();
+
+    /// <summary>
+    ///     Последнее состояние воспроизведения каждого трека от сервера.
+    /// </summary>
+    private readonly Dictionary<Guid, AdminMusicPlaybackEvent> _playback = new();
+
+    /// <summary>
+    ///     Локальные аудио-сущности играющих треков.
+    /// </summary>
+    private readonly Dictionary<Guid, EntityUid> _playing = new();
+
+    private bool _enabled = true;
+    private float _volume = 1f;
 
     private TimeSpan _nextDisposeCheck;
     private int _maxSizeBytes;
@@ -83,10 +98,13 @@ public sealed partial class AdminMusicSystem : EntitySystem
         }
 
         SubscribeNetworkEvent<AdminMusicTrackDisposedEvent>(OnTrackDisposed);
+        SubscribeNetworkEvent<AdminMusicPlaybackEvent>(OnPlayback);
 
         _client.RunLevelChanged += OnRunLevelChanged;
 
         Subs.CVar(_cfg, CCCVars.AdminMusicMaxSizeMb, v => _maxSizeBytes = (int) (v * 1024 * 1024), true);
+        Subs.CVar(_cfg, CCVars.AdminSoundsEnabled, OnEnabledChanged, true);
+        Subs.CVar(_cfg, CCCVars.AdminMusicVolume, OnVolumeChanged, true);
     }
 
     public override void Shutdown()
@@ -139,7 +157,7 @@ public sealed partial class AdminMusicSystem : EntitySystem
             await stream.ReadExactlyAsync(data);
 
             // Трек уже удалён сервером, пока мы его качали.
-            if (_disposedIds.Remove(trackId))
+            if (_disposedIds.Contains(trackId))
                 return;
 
             // Повторная отправка: файл уже есть, просто подтверждаем.
@@ -162,20 +180,112 @@ public sealed partial class AdminMusicSystem : EntitySystem
         var path = AdminMusicConstants.GetTrackPath(trackId);
         var audioStream = _audioManager.LoadAudioOggVorbis(new MemoryStream(data, false), path.ToString());
 
-        // Аудио-сущность с сервера ищет файл по пути в кэше ресурсов, поэтому кладём поток туда.
-        _resourceCache.CacheResource(path, new AudioResource(audioStream));
+        // В кэш ресурсов поток не кладём: трек играется локально прямо из потока,
+        // а удалить AudioResource из кэша движок не позволяет.
         _loaded[trackId] = audioStream;
     }
 
     private void OnTrackDisposed(AdminMusicTrackDisposedEvent ev)
     {
+        StopTrack(ev.TrackId);
+        _playback.Remove(ev.TrackId);
+        _disposedIds.Add(ev.TrackId);
+
         if (!_loaded.Remove(ev.TrackId, out var stream))
+            return;
+
+        _pendingDispose[AdminMusicConstants.GetTrackPath(ev.TrackId)] = stream;
+    }
+
+    #endregion
+
+    #region Playback
+
+    private void OnPlayback(AdminMusicPlaybackEvent ev)
+    {
+        var volumeOnly = _playback.TryGetValue(ev.TrackId, out var old)
+                         && old.AudioStart == ev.AudioStart
+                         && old.PauseTime == ev.PauseTime;
+
+        _playback[ev.TrackId] = ev;
+
+        // Изменилась только громкость — не перезапускаем трек.
+        if (volumeOnly && _playing.TryGetValue(ev.TrackId, out var uid) && Exists(uid))
         {
-            _disposedIds.Add(ev.TrackId);
+            _audio.SetVolume(uid, GetVolume(ev));
             return;
         }
 
-        _pendingDispose[AdminMusicConstants.GetTrackPath(ev.TrackId)] = stream;
+        RestartTrack(ev.TrackId);
+    }
+
+    /// <summary>
+    ///     Запускает трек заново с позиции, рассчитанной по состоянию от сервера.
+    /// </summary>
+    private void RestartTrack(Guid trackId)
+    {
+        StopTrack(trackId);
+
+        if (!_enabled
+            || !_playback.TryGetValue(trackId, out var playback)
+            || !_loaded.TryGetValue(trackId, out var stream))
+            return;
+
+        var position = (float) ((playback.PauseTime ?? _timing.CurTime) - playback.AudioStart).TotalSeconds;
+        position = Math.Max(0f, position);
+        if (position >= stream.Length.TotalSeconds)
+            return;
+
+        var audioParams = AudioParams.Default
+            .WithVolume(GetVolume(playback))
+            .WithPlayOffset(position);
+
+        var specifier = new ResolvedPathSpecifier(AdminMusicConstants.GetTrackPath(trackId));
+        if (_audio.PlayGlobal(stream, specifier, audioParams) is not { } audio)
+            return;
+
+        if (playback.PauseTime != null)
+            _audio.SetState(audio.Entity, AudioState.Paused, component: audio.Component);
+
+        _playing[trackId] = audio.Entity;
+    }
+
+    private void StopTrack(Guid trackId)
+    {
+        if (_playing.Remove(trackId, out var uid))
+            _audio.Stop(uid);
+    }
+
+    /// <summary>
+    ///     Громкость трека с учётом настройки громкости админской музыки.
+    /// </summary>
+    private float GetVolume(AdminMusicPlaybackEvent playback)
+    {
+        return playback.Volume + SharedAudioSystem.GainToVolume(_volume);
+    }
+
+    private void OnEnabledChanged(bool enabled)
+    {
+        _enabled = enabled;
+
+        foreach (var trackId in _playback.Keys.ToArray())
+        {
+            if (enabled)
+                RestartTrack(trackId);
+            else
+                StopTrack(trackId);
+        }
+    }
+
+    private void OnVolumeChanged(float volume)
+    {
+        _volume = volume;
+
+        foreach (var (trackId, uid) in _playing)
+        {
+            if (Exists(uid) && _playback.TryGetValue(trackId, out var playback))
+                _audio.SetVolume(uid, GetVolume(playback));
+        }
     }
 
     #endregion
@@ -231,8 +341,6 @@ public sealed partial class AdminMusicSystem : EntitySystem
             return false;
         }
 
-        _resourceCache.CacheResource(path, new AudioResource(audioStream));
-
         var length = (float) audioStream.Length.TotalSeconds;
         start = Math.Clamp(start, 0f, length);
         if (end <= start || end > length)
@@ -285,6 +393,13 @@ public sealed partial class AdminMusicSystem : EntitySystem
 
     private void ReleaseAll()
     {
+        foreach (var trackId in _playing.Keys.ToArray())
+        {
+            StopTrack(trackId);
+        }
+
+        _playback.Clear();
+
         foreach (var (trackId, stream) in _loaded)
         {
             _pendingDispose[AdminMusicConstants.GetTrackPath(trackId)] = stream;

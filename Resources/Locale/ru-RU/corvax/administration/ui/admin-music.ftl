@@ -63,3 +63,5 @@ admin-music-error-no-recipients = Ни один из выбранных игро
 admin-music-error-upload = Не удалось загрузить трек на сервер.
 admin-music-error-download-failed = Ни один игрок не смог загрузить трек.
 admin-music-error-too-short = Выбранный отрезок трека слишком короткий.
+
+ui-options-admin-music-volume = Громкость музыки админов:
