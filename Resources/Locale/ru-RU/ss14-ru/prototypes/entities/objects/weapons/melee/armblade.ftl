@@ -4,5 +4,5 @@ ent-ArmbladeDull = { ent-Armblade }
     .desc = { ent-Armblade.desc }
     .suffix = Затупленный
 ent-ArmbladeHorror = { ent-Armblade }
-    .desc - { ent-Armblade.desc }
+    .desc = { ent-Armblade.desc }
     .suffix = Ужас
