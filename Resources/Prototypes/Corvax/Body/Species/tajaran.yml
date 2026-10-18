@@ -264,6 +264,10 @@
 - type: entity
   parent: [ OrganTajaranVisual, OrganBaseEyes, OrganTajaranInternal ]
   id: OrganTajaranEyes
+  components:
+  - type: EyeBlinking
+    eyelidsSprite: /Textures/Corvax/Mobs/Species/Tajaran/parts.rsi
+  - type: Appearance
 
 - type: entity
   parent: [ OrganBaseTongue, OrganTajaranInternal ]
