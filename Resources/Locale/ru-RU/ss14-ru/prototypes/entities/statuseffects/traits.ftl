@@ -6,5 +6,7 @@ ent-TraitStatusEffectHemophilia = { ent-BloodstreamStatusEffectBase }
     .desc = { ent-BloodstreamStatusEffectBase.desc }
 ent-TraitStatusEffectPainNumbness = pain numbness
     .desc = { ent-PainNumbnessStatusEffectBase.desc }
+ent-TraitStatusEffectBlinkDyspraxia = диспраксия моргания
+    .desc = { ent-TraitStatusEffectBase.desc }
 ent-TraitStatusEffectMuted = { ent-MutedStatusEffectBase }
     .desc = { ent-MutedStatusEffectBase.desc }

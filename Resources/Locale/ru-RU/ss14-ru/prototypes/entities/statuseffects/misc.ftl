@@ -40,3 +40,5 @@ ent-StatusEffectForcedItemMaid = принудительный наряд гор�
     .desc = { ent-MobStatusEffectDebuff.desc }
 ent-StatusEffectForcedItemArmblade = неконтролируемая рука-клинок
     .desc = { ent-MobStatusEffectDebuff.desc }
+ent-StatusEffectHorrorFormArmblades = неконтролируемая рука-клинок
+    .desc = { ent-MobStatusEffectDebuff.desc }
