@@ -16,5 +16,5 @@ alerts-vow-silence-desc = Вы дали обет, запрещающий уст�
 alerts-blind-name = Слепой
 alerts-blind-desc = Вы толком не можете увидеть, что происходит вокруг вас.
 
-alerts-frail-name = [color=yellow]Хилость[/color]
-alerts-mild-frail-desc = Вы [color=yellow]хилый[/color]! Получаемые [color=white]{ damage-group-brute }[/color] и [color=white]{ damage-group-burn }[/color] типы урона увеличены!
+alerts-frail-name = [color=yellow]Хрупкость[/color]
+alerts-mild-frail-desc = Вы [color=yellow]хрупкий[/color]! Получаемые [color=white]{ damage-group-brute }[/color] и [color=white]{ damage-group-burn }[/color] типы урона увеличены!

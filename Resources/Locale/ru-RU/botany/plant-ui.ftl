@@ -12,7 +12,7 @@ botany-ui-harvest-type-value = { $type ->
     [SelfHarvest] Самосбор
    *[other] Неизвестно
 }
-botany-ui-harvest-ready = Готов для сбора
+botany-ui-harvest-ready = Созрел для сбора
 
 botany-ui-section-traits = Характеристики
 botany-ui-endurance = Выносливость

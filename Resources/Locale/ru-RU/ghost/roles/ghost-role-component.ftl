@@ -220,7 +220,7 @@ ghost-role-information-space-ninja-name = Космический ниндзя
 ghost-role-information-space-ninja-description = Используйте хитрость и скрытность, чтобы устроить диверсию на станции.
 
 ghost-role-information-paradox-clone-name = Парадоксальный клон
-ghost-role-information-paradox-clone-description = Странная пространственно-временная аномалия забросила вас в другую реальность! Убейте свою здешнюю версию и займите её место.
+ghost-role-information-paradox-clone-description = Странная пространственно-временная аномалия забросила вас в другую реальность! Убейте свою местную версию и займите её место.
 
 ghost-role-information-syndicate-reinforcement-name = Агент Синдиката
 ghost-role-information-syndicate-reinforcement-description = Кому-то нужно подкрепление. Вы первый, кого Синдикат смог найти и послать на помощь.

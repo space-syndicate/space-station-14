@@ -11,6 +11,6 @@ plant-component-ligneous-cant-harvest-message = Растение слишком 
 plant-component-improper-heat-warning = Неподходящие [color=orange]температурные условия[/color] для растения.
 plant-component-improper-pressure-warning = Неподходящие [color=lightblue]атмосферные условия[/color] для растения.
 plant-component-missing-gas-warning = Неподходящий [color=skyblue]состав атмосферы[/color] для растения.
-plant-component-toxins-high-warning = Опасный [color=mediumpurple]уровень токсиновl[/color] для растения.
+plant-component-toxins-high-warning = Опасный [color=mediumpurple]уровень токсинов[/color] для растения.
 plant-component-weeds-high-warning = Опасный [color=lightgreen]уровень сорняков[/color] для растения.
 plant-component-pests-high-warning = Опасный [color=gray]уровень вредителей[/color] для растения.
