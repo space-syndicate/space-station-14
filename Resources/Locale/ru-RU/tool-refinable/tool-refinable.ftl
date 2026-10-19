@@ -13,6 +13,6 @@ refined-slice-verb-name = Разрезать
 refined-screw-verb-name = Раскрутить
 refined-butchered-verb-name = Разделать
 
-tool-refinable-component-hint = { CAPITALIZE(SUBJECT($target)) } может быть обработан [color=cyan]{ $quality }[/color].
-tool-refinable-component-hint-slicing = { CAPITALIZE(SUBJECT($target)) } может быть разрезан используя инструмент с возможностью [color=cyan]{ $quality }[/color].
-tool-refinable-component-hint-butchering = { CAPITALIZE(SUBJECT($target)) } может быть разделан используя инструмент с возможностью [color=cyan]{ $quality }[/color].
+tool-refinable-component-hint = { CAPITALIZE(SUBJECT($target)) } может быть обработано [color=cyan]{ $quality }[/color].
+tool-refinable-component-hint-slicing = { CAPITALIZE(SUBJECT($target)) } может быть разрезано используя инструмент с возможностью [color=cyan]{ $quality }[/color].
+tool-refinable-component-hint-butchering = { CAPITALIZE(SUBJECT($target)) } может быть разделано используя инструмент с возможностью [color=cyan]{ $quality }[/color].
