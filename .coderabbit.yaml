@@ -1,0 +1,28 @@
+language: "ru-RU"
+early_access: false
+tone_instructions: "Be terse and to the point in all statements and commentary."
+
+chat:
+  auto_reply: false
+
+reviews:
+  #high_level_summary: false
+  high_level_summary_placeholder: "@coderabbitai summary"
+  review_status: false
+  changed_files_summary: false
+  assess_linked_issues: false
+  related_issues: false
+  suggested_reviewers: false
+  abort_on_close: true
+  #sequence_diagrams: false
+
+  auto_review: #пользуйтесь @coderabbitai review
+    enabled: false
+    auto_incremental_review: false
+    drafts: false
+
+issue_enrichment:
+  auto_enrich:
+    enabled: false
+  planning:
+    enabled: false
