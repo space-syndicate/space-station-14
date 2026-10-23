@@ -43,59 +43,23 @@
     - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_overlay.rsi
       state: stripes_body
 
-- type: marking
-  id: GradientRleg
-  bodyPart: RLeg
-  groupWhitelist: [Tajaran]
-  sponsorOnly: true # Corvax-Sponsors
-  sprites:
-    - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
-      state: gradient_RLeg
+# - type: marking
+#   id: GradientRleg
+#   bodyPart: RFoot
+#   groupWhitelist: [Tajaran]
+#   sponsorOnly: true # Corvax-Sponsors
+#   sprites:
+#     - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
+#       state: gradient_RLeg
 
-- type: marking
-  id: GradientLleg
-  bodyPart: LLeg
-  groupWhitelist: [Tajaran]
-  sponsorOnly: true # Corvax-Sponsors
-  sprites:
-    - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
-      state: gradient_LLeg
-
-- type: marking
-  id: GradientRfoot
-  bodyPart: RFoot
-  groupWhitelist: [Tajaran]
-  sponsorOnly: true # Corvax-Sponsors
-  sprites:
-    - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
-      state: gradient_RFoot
-
-- type: marking
-  id: GradientLfoot
-  bodyPart: LFoot
-  groupWhitelist: [Tajaran]
-  sponsorOnly: true # Corvax-Sponsors
-  sprites:
-    - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
-      state: gradient_LFoot
-
-- type: marking
-  id: PointsRfoot
-  bodyPart: RFoot
-  groupWhitelist: [Tajaran]
-  sponsorOnly: true # Corvax-Sponsors
-  sprites:
-    - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
-      state: RFoot_points
-
-- type: marking
-  id: PointsLfoot
-  bodyPart: LFoot
-  groupWhitelist: [Tajaran]
-  sponsorOnly: true # Corvax-Sponsors
-  sprites:
-    - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
-       state: LFoot_points
+# - type: marking
+#   id: GradientLleg
+#   bodyPart: LFoot
+#   groupWhitelist: [Tajaran]
+#   sponsorOnly: true # Corvax-Sponsors
+#   sprites:
+#     - sprite: Corvax/Mobs/Customization/Tajaran/tajaran_parts.rsi
+#       state: gradient_LLeg
 
 - type: marking
   id: TajaranGradientLhand
