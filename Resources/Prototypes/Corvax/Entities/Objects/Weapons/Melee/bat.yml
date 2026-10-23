@@ -1,0 +1,66 @@
+- type: entity
+  name: NanoTrasen telescopic baton
+  parent: BaseItem
+  id: NanotrasenTelescopicBat
+  description: Officially, it is a device for the discipline improvement. But in reality it is terrible anti-knee weapon.
+  suffix: Svist
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Corvax/Objects/Weapons/Melee/bat.rsi
+    layers:
+    - state: icon_off
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: GenericVisualizer
+    visuals:
+     enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: icon_on}
+          False: {state: icon_off}
+  - type: Item
+    size: Small
+    heldPrefix: off
+  - type: Clothing
+    slots:
+    - suitStorage
+    - Belt
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Weapons/telescopicon.ogg
+      params:
+        volume: -5
+    soundDeactivate:
+      path: /Audio/Weapons/telescopicoff.ogg
+      params:
+          volume: -5
+  - type: ItemTogglePrefix
+    prefixOn: on
+    prefixOff: off
+  - type: ItemToggleSize
+    activatedSize: Normal
+    activatedShape:
+    - 0,0,1,3
+  - type: UseDelay
+    delay: 0.5
+  - type: StaminaDamageOnHit
+    damage: 20
+  - type: ItemToggleMeleeWeapon
+    activateSoundOnHit:
+      collection: MetalThud
+    activatedDamage:
+      types:
+        Blunt: 15
+  - type: MeleeThrowOnHit
+    distance: 2
+    speed: 3
+    stunTime: 0
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      collection: MetalThud
+    angle: 60
+  - type: DisarmMalus
+    malus: 0

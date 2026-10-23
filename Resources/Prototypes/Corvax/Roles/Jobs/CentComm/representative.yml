@@ -38,15 +38,13 @@
     outerClothing: ClothingOuterArmorCentcommCarapace
     id: CentcomRepresentativePDA
     ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltSheathFilled
+    belt: NanotrasenTelescopicBat
     pocket1: BoxFolderCentComClipboard
-    pocket2: WeaponDisabler
-    suitstorage: WeaponPistolN1984
+    pocket2: WeaponPistolN1984
   storage:
     back:
     - Flash
     - CigarGoldCase
-    - MagazineMagnum
     - MagazineMagnum
     - Handcuffs
     - BoxFolderCentComThreePapers

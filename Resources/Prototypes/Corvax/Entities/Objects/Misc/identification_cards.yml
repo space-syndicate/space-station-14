@@ -14,6 +14,8 @@
     - sprite: &icon-rsi Corvax/Interface/Misc/job_icons.rsi
       offset: &icon-offset -0.18750, 0.03125
       state: IAA
+  - type: Item
+    heldPrefix: blue
   - type: PresetIdCard
     job: IAA
 
@@ -52,6 +54,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Magistrate
+  - type: Item
+    heldPrefix: blue
   - type: PresetIdCard
     job: Magistrate
 

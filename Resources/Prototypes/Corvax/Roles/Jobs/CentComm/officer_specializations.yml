@@ -11,7 +11,7 @@
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCentcomNaval
     id: CentcomOfficerPDA
-    ears: ClothingHeadsetCentCom
+    ears: ClothingHeadsetAltCentCom
     belt: WeaponPistolN1984
     pocket1: WeaponDisabler
     pocket2: Matchbox
@@ -19,7 +19,6 @@
     back:
     - Flash
     - CigarGoldCase
-    - MagazineMagnum
     - MagazineMagnum
     - Handcuffs
     - BoxFolderCentComThreePapers
@@ -40,14 +39,12 @@
     outerClothing: ClothingOuterCoatCentcom
     id: CentcomOfficerPDA
     ears: ClothingHeadsetCentCom
-    belt: BoxFolderCentComClipboardThreePapers
     pocket1: WeaponPistolN1984
-    pocket2: NanotrasenFlippo
+    pocket2: BoxFolderCentComClipboardThreePapers
   storage:
     back:
     - Flash
     - CigarGoldCase
-    - MagazineMagnum
     - MagazineMagnum
     - BoxFolderCentComThreePapers
     - BoxFolderRedEmpty
@@ -55,6 +52,7 @@
     - RubberStampApproved
     - RubberStampDenied
     - DoorRemoteCustom
+    - NanotrasenFlippo
 
 - type: startingGear
   id: CentcomAccountingOfficerGear
@@ -63,7 +61,7 @@
     back: ClothingBackpackSatchelCorporate
     shoes: ClothingShoesBootsLaceup
     eyes: ClothingEyesGlassesSecurity
-    gloves: ClothingHandsGlovesHop
+    gloves: ClothingHandsGlovesColorWhite
     id: CentcomOfficerPDA
     ears: ClothingHeadsetCentCom
     belt: BoxFolderCentComClipboardThreePapers
@@ -73,7 +71,6 @@
     back:
     - Flash
     - CigarGoldCase
-    - MagazineMagnum
     - MagazineMagnum
     - BoxFolderCentComThreePapers
     - BoxFolderRedEmpty

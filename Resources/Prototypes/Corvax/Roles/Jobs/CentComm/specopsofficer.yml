@@ -38,18 +38,18 @@
     belt: WeaponPulsePistolM1911
     id: SpecopsOfficerPDA
     ears: ClothingHeadsetAltCentCom
-    pocket1: Matchbox
-    pocket2: DoorRemoteCustom
+    pocket1: NanotrasenTelescopicBat
+    pocket2: Matchbox
   storage:
     back:
     - Flash
     - CigarGoldCase
-    - BoxFolderNuclearCodes
     - BoxFolderBlackThreePapers
     - PinpointerNuclear
     - PinpointerUniversal
     - BoxZiptie
     - ClothingMaskGasSwat
     - RubberStampSpecops
+    - DoorRemoteCustom
     - RadioJammer # Ты не можешь кричать в рацию пока тебя убивают
     - SprayBottleSpaceCleaner # Надо же подтирать улики...

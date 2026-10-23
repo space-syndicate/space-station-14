@@ -148,7 +148,7 @@
         Caustic: 0.75
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ ClothingOuterStorageBase, AllowSuitStorageClothing ]
   id: ClothingOuterCoatCentcomTunic
   name: Centcom officer's tunic
   description: An armored tunic for Central Command officers.
@@ -168,7 +168,7 @@
         Caustic: 0.9
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ ClothingOuterStorageBase, AllowSuitStorageClothing ]
   id: ClothingOuterCoatCentcomDress
   name: Centcom officer's dress
   description: An armored dress for Central Command officers.
@@ -187,9 +187,8 @@
         Heat: 0.5
         Caustic: 0.9
 
-
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ ClothingOuterStorageBase, AllowSuitStorageClothing ]
   id: ClothingOuterCoatSpecopsOfficer
   name: special operations officer's tunic
   description: Enhanced with innovative nanites tunic for high ranked NanoTrasen Special Operations Department officers. Holder has a very long list of war crimes...
