@@ -1,7 +1,7 @@
 - type: job
   id: CentcomRepresentative
   name: job-name-centcom-representative
-  description: job-description-representative
+  description: job-description-centcom-representative
   playTimeTracker: JobCentcomRepresentative
   requirements:
   - !type:DepartmentTimeRequirement

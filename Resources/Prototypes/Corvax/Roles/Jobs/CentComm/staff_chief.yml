@@ -1,7 +1,7 @@
 - type: job
   id: CentcomStaffChief
   name: job-name-centcom-staff-chief
-  description: job-description-staff-chief
+  description: job-description-centcom-staff-chief
   playTimeTracker: JobCentcomStaffChief
   requirements:
   - !type:DepartmentTimeRequirement
