@@ -17,6 +17,12 @@
   parent: RestrictedAntag
   id: Changeling
   prefRoles: [ Changeling ]
+  # Corvax-MRP-start
+  blacklist:
+    components:
+    - AntagImmune
+    - Ipc
+  # Corvax-MRP-end
   briefing:
     text: changeling-role-greeting
     color: Red
