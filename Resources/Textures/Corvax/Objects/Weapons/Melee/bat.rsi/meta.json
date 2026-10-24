@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Paradise station https://github.com/ParadiseSS13/Paradise and recolored by _Svist_. (Discord)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon_on"
+    },
+    {
+      "name": "icon_off"
+    },
+	{
+      "name": "off-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "off-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "on-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "on-inhand-right",
+      "directions": 4
+    }
+  ]
+}

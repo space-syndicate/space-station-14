@@ -1,12 +1,40 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Made by kbas5 (Github/Discord)",
+  "copyright": "pda-magistrate made by kbas5 (Github/Discord), pda-centcom-personnel, pda-centcom-white, pda-blueshield, pda-soo by _Svist_. (Discord)",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
+  {
+    "name": "pda-blueshield"
+  },
+  {
+    "name": "pda-soo"
+  },
+  {
+    "name": "pda-centcom-personnel",
+    "delays": [
+      [
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ]
+    ]
+  },
+  {
+    "name": "pda-centcom-white",
+    "delays": [
+      [
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ]
+    ]
+  },
   {
       "name": "pda-magistrate"
   },

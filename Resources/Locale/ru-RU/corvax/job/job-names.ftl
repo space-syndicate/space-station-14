@@ -5,6 +5,12 @@ job-name-senior-engineer = ведущий инженер
 job-name-senior-researcher = ведущий учёный
 job-name-senior-physician = ведущий врач
 job-name-senior-officer = инструктор СБ
+job-name-centcom-officer = офицер ЦК
+job-name-centcom-representative = представитель ЦК
+job-name-centcom-staff-chief = начальник штаба ЦК
+job-name-specops-officer = офицер спецопераций
+job-name-nanotrasen-diplomat = дипломат NanoTrasen
+job-name-blueshield-officer = офицер "Синий Щит"
 # Role timers
 JobMagistrate = магистрат
 JobIAA = агент внутренних дел

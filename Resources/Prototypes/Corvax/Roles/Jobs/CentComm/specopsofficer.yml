@@ -1,0 +1,55 @@
+- type: job
+  id: SpecopsOfficer
+  name: job-name-specops-officer
+  description: job-description-specops-officer
+  playTimeTracker: JobSpecialOperationsOfficer
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 100h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 10h
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Muted
+  startingGear: SpecopsOfficerGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom-sectoral-command
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm, FreedomImplant ]
+
+- type: startingGear
+  id: SpecopsOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
+    back: ClothingBackpackSatchelCorporateBluespace
+    shoes: ClothingShoesCentcomBlack
+    head: ClothingHeadCapCentcomBlack
+    mask: CigarGold
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesSpecops
+    belt: WeaponPulsePistolM1911
+    id: SpecopsOfficerPDA
+    ears: ClothingHeadsetAltCentCom
+    pocket1: NanotrasenTelescopicBat
+    pocket2: Matchbox
+  storage:
+    back:
+    - Flash
+    - CigarGoldCase
+    - BoxFolderBlackThreePapers
+    - PinpointerNuclear
+    - PinpointerUniversal
+    - BoxZiptie
+    - ClothingMaskGasSwat
+    - RubberStampSpecops
+    - DoorRemoteCustom
+    - RadioJammer # Ты не можешь кричать в рацию пока тебя убивают
+    - SprayBottleSpaceCleaner # Надо же подтирать улики...
