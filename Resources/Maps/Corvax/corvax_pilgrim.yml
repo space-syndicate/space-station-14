@@ -12411,7 +12411,7 @@ entities:
     - type: Transform
       parent: 31820
       pos: 59.5,17.5
-    - type: WirelessNetworkConnection
+    - type: WirelessNetwork
       range: 500
     - type: DeviceLinkSource
       range: 300
@@ -188473,7 +188473,7 @@ entities:
       on: False
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: WirelessNetworkConnection
+    - type: WirelessNetwork
       range: 500
     - type: DeviceLinkSink
       invokeCounter: 1
