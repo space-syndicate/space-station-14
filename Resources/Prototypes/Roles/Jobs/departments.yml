@@ -16,6 +16,13 @@
   weight: 120 # Highest weight of all NT departments; Central Command's authority is absolute
   editorHidden: true
   roles:
+  # Corvax-CC-Roles-Start
+  - CentcomStaffChief
+  - CentcomRepresentative
+  - CentcomOfficer
+  - NanoTrasenDiplomat
+  - BlueshieldOfficer
+  # Corvax-CC-Roles-End
   - CentralCommandOfficial
 
 - type: department
@@ -137,6 +144,7 @@
   weight: 110 # Higher weight than Command, but below Central Command
   editorHidden: true
   roles:
+  - SpecopsOfficer # Corvax-CC-Roles
   - CBURN
   - ERTLeader
   - ERTChaplain
