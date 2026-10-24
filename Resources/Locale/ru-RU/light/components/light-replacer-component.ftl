@@ -10,19 +10,11 @@ comp-light-replacer-insert-broken-light = Вы не можете вставля�
 comp-light-replacer-same-light = В этом светильнике уже есть { $light }!
 
 # Radial Menu messages
-comp-light-replacer-eject-specified-lights = Извлечь все { $light }.
-comp-light-replacer-select-lights = Выбрать { $light }.
 comp-light-replacer-open-empty = { CAPITALIZE(THE($light-replacer)) } совершенно пуст!
 
 # Label
 comp-light-replacer-label = Труба: {$tube}
                             Лампа: {$bulb}
-
-### Examine
-
-comp-light-replacer-no-lights = Здесь пусто.
-comp-light-replacer-has-lights = Здесь находится следующее:
-comp-light-replacer-light-listing = [color=yellow]{ $amount }[/color] ед. [color=gray]{ $name }[/color]
 
 ### Status Control
 

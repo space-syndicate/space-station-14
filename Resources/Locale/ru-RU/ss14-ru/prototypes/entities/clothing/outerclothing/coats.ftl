@@ -96,3 +96,7 @@ ent-ClothingOuterCoatExpensive = дорогая шуба
 ent-ClothingOuterCoatExpensiveOpened = дорогая шуба
     .desc = { ent-ClothingOuterCoatExpensive.desc }
     .suffix = { ent-ClothingOuterStorageFoldableBaseOpened.suffix }
+ent-ClothingOuterCoatVirtualIce = халат ледяного певца
+    .desc = Белый халат с синей отделкой, предназначенное для защиты от сильного ветра. На груди нанесён код "CRV2".
+ent-ClothingOuterCoatVirtualIceOpened = халат ледяного певца
+    .desc = { ent-ClothingOuterCoatVirtualIce.desc}

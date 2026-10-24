@@ -1,4 +1,8 @@
-ent-BaseSpeciesMob = { ent-BaseMob }
+ent-BaseSpeciesMob = { ent-BaseSpeciesMobNoCrawl }
+    .desc = { ent-BaseSpeciesMobNoCrawl.desc }
+ent-BaseSpeciesMobNoCrawl = { ent-BaseMob }
     .desc = { ent-BaseMob.desc }
-ent-BaseSpeciesMobOrganic = { ent-MobBloodstream }
-    .desc = { ent-MobBloodstream.desc }
+ent-BaseSpeciesMobOrganicNoCrawl = { ent-BaseSpeciesMobNoCrawl }
+    .desc = { ent-BaseSpeciesMobNoCrawl.desc }
+ent-BaseSpeciesMobOrganic = { ent-BaseSpeciesMobOrganicNoCrawl }
+    .desc = { ent-BaseSpeciesMobOrganicNoCrawl.desc }

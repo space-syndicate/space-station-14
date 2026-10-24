@@ -5,20 +5,20 @@
     <GuideEntityEmbed Entity="MobVox" Caption=""/>
   </Box>
 
-  [color=#ffa500]Внимание! Эта раса имеет сильно ограничивающие игровые механики и не рекомендуется для новых игроков. [/color]
+  [color=#ffa500]Внимание! Этот вид не рекомендуется для новичков из-за смертельной аллергии на кислород![/color]
 
-  ## General Information
+  ## Общая информация
 
-  Voxes' sharp talons make their unarmed attacks deal Slash damage.
+  Воксы, благодаря их острым когтям, наносят режущий урон безоружными атаками.
 
-  The highly-efficient vox digestive system can [color=lightgreen]digest raw meat, blood, eggshells, banana peels,
-  snack packaging, and even welding fuel[/color] without ill effects.
+  Высокоэффективная пищеварительная система воксов способна [color=lightgreen]переваривать сырое мясо, кровь, яичную скорлупу, банановую кожуру,
+  упаковки от закусок и даже сварочное топливо[/color] без каких-либо негативных последствий.
 
-  Their ammonia-based blood is replenished when metabolizing iron.
+  Их кровь на основе аммиака пополняется в процессе метаболизма железа.
 
-  They [color=lightgreen]slowly recover from Poison damage[/color] on their own.
+  Они [color=lightgreen]постепенно восстанавливаются от отравления[/color] самостоятельно.
 
-  ## Oxygen Allergy
+  ## Аллергия на кислород
 
   <Box>
     <GuideEntityEmbed Entity="SignDanger" Caption=""/>
@@ -26,13 +26,13 @@
     <GuideEntityEmbed Entity="SignDanger" Caption=""/>
   </Box>
 
-  Vox breathe nitrogen, and [color=palevioletred]oxygen is poisonous to them[/color]. Unfortunately, Nanotrasen space stations
-  are designed for oxygen-breathing species, so Vox must breathe from a nitrogen tank at almost all times to avoid fatal exposure.
+  Воксы дышат азотом, а [color=palevioletred]кислород для них ядовит[/color]. К сожалению, космические станции Nanotrasen
+  спроектированы для видов, дышащих кислородом, поэтому воксам практически всё время приходится дышать из баллона с азотом, чтобы избежать смертельного воздействия кислорода.
 
-  Vox always spawn wearing working nitrogen internals. Similarly to most other species,
-  a spare breathing mask and emergency nitrogen tank is also provided in their survival box.
+  Воксы всегда начинают с включённым баллоном азота. Как и у большинства других видов,
+  в их аварийном запасе также находится запасная дыхательная маска и аварийный баллон с азотом.
 
-  Vox's innate ability to heal Poison damage also applies to oxygen poisoning, giving them some leeway to briefly take
-  off their internals to eat, drink, take oral medication, and so on.
+  Врождённая способность воксов исцелять яды распространяется и на кислородное отравление, что даёт им возможность на короткое время
+  снимать дыхательное оборудование, чтобы поесть, попить, принять лекарство и так далее.
 
 </Document>

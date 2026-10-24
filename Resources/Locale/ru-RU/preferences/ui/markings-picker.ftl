@@ -54,6 +54,7 @@ markings-layer-SnoutCover = Нос (Покрытие)
 markings-layer-HeadSide = Голова (Бок)
 markings-layer-HeadTop = Голова (Верх)
 markings-layer-Eyes = Глаза
+markings-layer-OverEyes = Поверх глаз
 markings-layer-RArm = Правая рука
 markings-layer-LArm = Левая рука
 markings-layer-RHand = Правая кисть

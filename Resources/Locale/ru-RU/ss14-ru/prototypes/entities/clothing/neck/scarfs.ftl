@@ -47,3 +47,5 @@ ent-ClothingNeckScarfStripedTrans = { ent-ClothingNeckScarfStripedAce }
     .desc = { ent-ClothingNeckScarfStripedAce.desc }
 ent-ClothingNeckScarfStripedLesbianLong = длинный бекон
     .desc = Длинный бекон! Идеально подходит для того, чтобы поделиться с подругой!
+ent-ClothingNeckScarfVirtualIce = шарф ледяного певца
+    .desc = Ярко-синий шарф с жёлтыми кончиками.
