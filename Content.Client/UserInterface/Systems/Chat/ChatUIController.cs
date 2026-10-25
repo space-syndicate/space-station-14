@@ -898,7 +898,7 @@ public sealed partial class ChatUIController : UIController
                 if (_ghost is not { IsGhost: true})
                     break;
 
-                if (_ghost.GhostVisibility)
+                if (_ghost.GhostVisibility == GhostVisibilityMode.ShowAllGhosts)
                     AddSpeechBubble(msg, SpeechBubble.SpeechType.Say);
                 break;
 
