@@ -1,2 +1,2 @@
-ent-LockerSpecopsOfficer = шкаф офицера спецопераций
+ent-LockerSpecopsOfficer = шкаф офицера специальных операций
     .desc = { ent-LockerDetective.desc }
