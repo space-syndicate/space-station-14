@@ -1,3 +1,5 @@
+ent-ClothingEyesGlassesBase = { ent-BaseScrewingRefinable }
+    .desc = { ent-BaseScrewingRefinable.desc }
 ent-ClothingEyesGlassesGar = мужицкие очки
     .desc = Совершать невозможное и раздавать пинки здравому смыслу!
 ent-ClothingEyesGlassesGarOrange = оранжевые мужицкие очки

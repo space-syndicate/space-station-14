@@ -4,8 +4,8 @@ meta:
   engineVersion: 293.0.1
   forkId: ""
   forkVersion: ""
-  time: 10/24/2026 11:15:41
-  entityCount: 22583
+  time: 10/20/2026 10:26:49
+  entityCount: 22598
 maps:
 - 17546
 grids:
@@ -13,34 +13,19 @@ grids:
 - 21128
 orphans: []
 nullspace:
-- 997
-- 998
-- 4498
-- 4655
-- 5155
-- 5422
-- 5568
-- 5699
-- 7155
-- 7442
-- 8346
-- 9182
-- 13736
-- 13737
-- 13738
 - 13739
 - 15419
+- 15593
 - 15604
 - 15607
-- 16527
-- 20485
-- 20494
+- 15805
 - 20777
 - 20778
 - 20779
 - 20780
 - 20783
 - 22032
+- 22033
 - 22109
 - 22140
 - 22145
@@ -79,6 +64,21 @@ nullspace:
 - 22563
 - 22564
 - 22565
+- 22566
+- 22567
+- 22568
+- 22569
+- 22570
+- 22571
+- 22572
+- 22573
+- 22574
+- 22575
+- 22576
+- 22577
+- 22578
+- 22579
+- 22580
 tilemap:
   9: Space
   84: FloorArcadeBlue
@@ -2416,34 +2416,19 @@ entities:
     - type: GridSplitNode
     - type: ChunkContainer
       chunkEntities:
-      - 997
-      - 998
-      - 4498
-      - 4655
-      - 5155
-      - 5422
-      - 5568
-      - 5699
-      - 7155
-      - 7442
-      - 8346
-      - 9182
-      - 13736
-      - 13737
-      - 13738
       - 13739
       - 15419
+      - 15593
       - 15604
       - 15607
-      - 16527
-      - 20485
-      - 20494
+      - 15805
       - 20777
       - 20778
       - 20779
       - 20780
       - 20783
       - 22032
+      - 22033
       - 22109
       - 22140
       - 22145
@@ -2480,6 +2465,21 @@ entities:
       - 22561
       - 22562
       - 22563
+      - 22564
+      - 22565
+      - 22566
+      - 22567
+      - 22568
+      - 22569
+      - 22570
+      - 22571
+      - 22572
+      - 22573
+      - 22574
+      - 22575
+      - 22576
+      - 22577
+      - 22578
   - uid: 1962
     components:
     - type: MetaData
@@ -2629,8 +2629,8 @@ entities:
     - type: GridSplitNode
     - type: ChunkContainer
       chunkEntities:
-      - 22564
-      - 22565
+      - 22579
+      - 22580
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 4746
@@ -5145,6 +5145,12 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: -1.5,-24.5
+  - uid: 5926
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: 17.5,-46.5
 - proto: AirlockChiefEngineerLocked
   entities:
   - uid: 16
@@ -5155,6 +5161,16 @@ entities:
       parent: 2
       rot: 4.71238898038469 rad
       pos: 1.5,-26.5
+  - uid: 13737
+    components:
+    - type: Transform
+      parent: 2
+      pos: 8.5,-43.5
+  - uid: 13738
+    components:
+    - type: Transform
+      parent: 2
+      pos: 8.5,-45.5
 - proto: AirlockChiefMedicalOfficerGlassLocked
   entities:
   - uid: 6693
@@ -5214,22 +5230,6 @@ entities:
       parent: 2
       rot: 4.71238898038469 rad
       pos: 30.5,-29.5
-  - uid: 7952
-    components:
-    - type: MetaData
-      name: Camera room airlock
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: 17.5,-46.5
-  - uid: 22033
-    components:
-    - type: MetaData
-      name: AI upload airlock
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 21.5,-52.5
 - proto: AirlockCommandLocked
   entities:
   - uid: 21
@@ -5290,20 +5290,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 30.5,-36.5
-  - uid: 7742
-    components:
-    - type: MetaData
-      name: High security mainframe airlock
-    - type: Transform
-      parent: 2
-      pos: 18.5,-42.5
-  - uid: 7747
-    components:
-    - type: MetaData
-      name: High security mainframe airlock
-    - type: Transform
-      parent: 2
-      pos: 19.5,-42.5
   - uid: 22030
     components:
     - type: MetaData
@@ -7943,6 +7929,12 @@ entities:
       parent: 2
       rot: 4.71238898038469 rad
       pos: 67.5,-20.5
+  - uid: 7742
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: 21.5,-52.5
 - proto: AirlockResearchDirectorLocked
   entities:
   - uid: 1013
@@ -50687,7 +50679,7 @@ entities:
       pos: 65.5038,-52.411602
 - proto: ChunkEntity
   entities:
-  - uid: 997
+  - uid: 13739
     components:
     - type: ChunkEntity
       root: 2
@@ -50955,7 +50947,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             5983: 57,14
-  - uid: 998
+  - uid: 15419
     components:
     - type: ChunkEntity
       root: 2
@@ -51277,7 +51269,7 @@ entities:
           decals:
             7555: 13.372841,25.77221
             7556: 12.982216,23.225334
-  - uid: 4498
+  - uid: 15593
     components:
     - type: ChunkEntity
       root: 2
@@ -51423,7 +51415,7 @@ entities:
             25: 4,-14
             26: 5,-14
             27: 6,-14
-  - uid: 4655
+  - uid: 15604
     components:
     - type: ChunkEntity
       root: 2
@@ -51887,7 +51879,7 @@ entities:
             1321: 33,12
             1322: 33,13
             1323: 33,14
-  - uid: 5155
+  - uid: 15607
     components:
     - type: ChunkEntity
       root: 2
@@ -52233,7 +52225,7 @@ entities:
             1781: 69,-21
             6561: 76,-24
             6562: 76,-23
-  - uid: 5422
+  - uid: 15805
     components:
     - type: ChunkEntity
       root: 2
@@ -52491,7 +52483,7 @@ entities:
             2015: 10,-39
             2016: 8,-39
             2017: 11,-39
-  - uid: 5568
+  - uid: 20777
     components:
     - type: ChunkEntity
       root: 2
@@ -52706,7 +52698,7 @@ entities:
           decals:
             6656: -34,16
             6657: -33,16
-  - uid: 5699
+  - uid: 20778
     components:
     - type: ChunkEntity
       root: 2
@@ -53088,7 +53080,7 @@ entities:
             7305: 43,-30
             7306: 43,-29
             7307: 43,-28
-  - uid: 7155
+  - uid: 20779
     components:
     - type: ChunkEntity
       root: 2
@@ -53503,7 +53495,7 @@ entities:
             7712: 26,4
             7713: 27,4
             7714: 28,4
-  - uid: 7442
+  - uid: 20780
     components:
     - type: ChunkEntity
       root: 2
@@ -53769,7 +53761,7 @@ entities:
           decals:
             514: -24,17
             517: -24,21
-  - uid: 8346
+  - uid: 20783
     components:
     - type: ChunkEntity
       root: 2
@@ -54152,7 +54144,7 @@ entities:
           decals:
             1679: 61,-24
             1692: 61,-23
-  - uid: 9182
+  - uid: 22032
     components:
     - type: ChunkEntity
       root: 2
@@ -54488,7 +54480,7 @@ entities:
             1849: 24,-37
             1898: 28,-38
             1899: 29,-38
-  - uid: 13736
+  - uid: 22033
     components:
     - type: ChunkEntity
       root: 2
@@ -54615,7 +54607,7 @@ entities:
             cleanable: True
           decals:
             4504: -17,41
-  - uid: 13737
+  - uid: 22109
     components:
     - type: ChunkEntity
       root: 2
@@ -54873,7 +54865,7 @@ entities:
           decals:
             7560: 16.929115,25.08471
             7561: 17.00724,25.006584
-  - uid: 13738
+  - uid: 22140
     components:
     - type: ChunkEntity
       root: 2
@@ -55140,7 +55132,7 @@ entities:
             1708: 68,-11
             1709: 69,-11
             1710: 70,-11
-  - uid: 13739
+  - uid: 22145
     components:
     - type: ChunkEntity
       root: 2
@@ -55612,7 +55604,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             868: -40.502983,-9.132956
-  - uid: 15419
+  - uid: 22170
     components:
     - type: ChunkEntity
       root: 2
@@ -56050,7 +56042,7 @@ entities:
             187: 16,-27
             188: 16,-28
             189: 16,-29
-  - uid: 15604
+  - uid: 22532
     components:
     - type: ChunkEntity
       root: 2
@@ -56240,7 +56232,7 @@ entities:
           decals:
             6240: 89,-13
             6241: 90,-13
-  - uid: 15607
+  - uid: 22533
     components:
     - type: ChunkEntity
       root: 2
@@ -56397,7 +56389,7 @@ entities:
             2885: 50.31763,23.128677
             2886: 51.239506,23.738052
             2887: 52.00513,23.034927
-  - uid: 16527
+  - uid: 22534
     components:
     - type: ChunkEntity
       root: 2
@@ -56734,7 +56726,7 @@ entities:
             537: -37,-21
             538: -37,-20
             539: -37,-19
-  - uid: 20485
+  - uid: 22535
     components:
     - type: ChunkEntity
       root: 2
@@ -57010,7 +57002,7 @@ entities:
             1034: -59,-28
             1035: -59,-27
             1036: -59,-26
-  - uid: 20494
+  - uid: 22536
     components:
     - type: ChunkEntity
       root: 2
@@ -57215,7 +57207,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             298: -15,-2
-  - uid: 20777
+  - uid: 22537
     components:
     - type: ChunkEntity
       root: 2
@@ -57400,7 +57392,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1417: -46,-49
-  - uid: 20778
+  - uid: 22538
     components:
     - type: ChunkEntity
       root: 2
@@ -57564,7 +57556,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1416: -51,-49
-  - uid: 20779
+  - uid: 22539
     components:
     - type: ChunkEntity
       root: 2
@@ -57828,7 +57820,7 @@ entities:
           decals:
             695: -40,-33
             696: -39,-33
-  - uid: 20780
+  - uid: 22540
     components:
     - type: ChunkEntity
       root: 2
@@ -58229,7 +58221,7 @@ entities:
             7: -1,-17
             230: -2,-22
             231: -1,-22
-  - uid: 20783
+  - uid: 22541
     components:
     - type: ChunkEntity
       root: 2
@@ -58671,7 +58663,7 @@ entities:
             cleanable: True
           decals:
             7045: 4.268362,-21.183928
-  - uid: 22032
+  - uid: 22542
     components:
     - type: ChunkEntity
       root: 2
@@ -58769,7 +58761,7 @@ entities:
             273: 16,-11
             274: 16,-10
             275: 16,-9
-  - uid: 22109
+  - uid: 22543
     components:
     - type: ChunkEntity
       root: 2
@@ -58902,7 +58894,7 @@ entities:
             cleanable: True
           decals:
             7033: -15.867262,12.443624
-  - uid: 22140
+  - uid: 22544
     components:
     - type: ChunkEntity
       root: 2
@@ -59266,7 +59258,7 @@ entities:
             7467: -30,-4
             7468: -30,-3
             7469: -30,-2
-  - uid: 22145
+  - uid: 22545
     components:
     - type: ChunkEntity
       root: 2
@@ -59601,7 +59593,7 @@ entities:
           decals:
             6516: -20,-21
             6518: -18,-21
-  - uid: 22170
+  - uid: 22546
     components:
     - type: ChunkEntity
       root: 2
@@ -59777,7 +59769,7 @@ entities:
             725: -23,-38
             726: -20,-38
             727: -19,-38
-  - uid: 22532
+  - uid: 22547
     components:
     - type: ChunkEntity
       root: 2
@@ -59961,7 +59953,7 @@ entities:
             782: -50,3
             783: -50,3
             784: -49,3
-  - uid: 22533
+  - uid: 22548
     components:
     - type: ChunkEntity
       root: 2
@@ -60208,7 +60200,7 @@ entities:
             797: -51,-3
             798: -51,-3
             805: -50,-3
-  - uid: 22534
+  - uid: 22549
     components:
     - type: ChunkEntity
       root: 2
@@ -60466,7 +60458,7 @@ entities:
             6503: 33,-11
             6504: 34,-11
             6505: 35,-11
-  - uid: 22535
+  - uid: 22550
     components:
     - type: ChunkEntity
       root: 2
@@ -60678,7 +60670,7 @@ entities:
             color: '#334E6DC8'
           decals:
             982: 44,-36
-  - uid: 22536
+  - uid: 22551
     components:
     - type: ChunkEntity
       root: 2
@@ -61063,7 +61055,7 @@ entities:
             1121: -14,31
             1122: -13,31
             1123: -12,31
-  - uid: 22537
+  - uid: 22552
     components:
     - type: ChunkEntity
       root: 2
@@ -61273,7 +61265,7 @@ entities:
             1118: -15,32
             1119: -15,33
             1120: -15,34
-  - uid: 22538
+  - uid: 22553
     components:
     - type: ChunkEntity
       root: 2
@@ -61530,7 +61522,7 @@ entities:
           decals:
             1125: 4,32
             1126: 5,32
-  - uid: 22539
+  - uid: 22554
     components:
     - type: ChunkEntity
       root: 2
@@ -61590,7 +61582,7 @@ entities:
           decals:
             4560: -1,48
             4562: -3,50
-  - uid: 22540
+  - uid: 22555
     components:
     - type: ChunkEntity
       root: 2
@@ -61699,7 +61691,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             6744: 46,16
-  - uid: 22541
+  - uid: 22556
     components:
     - type: ChunkEntity
       root: 2
@@ -61922,7 +61914,7 @@ entities:
           decals:
             1380: 56,-33
             1381: 57,-33
-  - uid: 22542
+  - uid: 22557
     components:
     - type: ChunkEntity
       root: 2
@@ -62337,7 +62329,7 @@ entities:
             6069: 52,-11
             6070: 53,-11
             6824: 59,-5
-  - uid: 22543
+  - uid: 22558
     components:
     - type: ChunkEntity
       root: 2
@@ -62468,7 +62460,7 @@ entities:
             2031: -5,-35
             2043: -6,-35
             2044: -4,-35
-  - uid: 22544
+  - uid: 22559
     components:
     - type: ChunkEntity
       root: 2
@@ -63000,7 +62992,7 @@ entities:
           decals:
             7031: -16.50268,11.829041
             7032: -16.78393,13.3082075
-  - uid: 22545
+  - uid: 22560
     components:
     - type: ChunkEntity
       root: 2
@@ -63031,7 +63023,7 @@ entities:
             angle: 1.5707963267948966 rad
           decals:
             2080: -40,-66
-  - uid: 22546
+  - uid: 22561
     components:
     - type: ChunkEntity
       root: 2
@@ -63061,7 +63053,7 @@ entities:
             angle: -1.5707963267948966 rad
           decals:
             2064: -56,-66
-  - uid: 22547
+  - uid: 22562
     components:
     - type: ChunkEntity
       root: 2
@@ -63125,7 +63117,7 @@ entities:
             cleanable: True
           decals:
             4563: 0,51
-  - uid: 22548
+  - uid: 22563
     components:
     - type: ChunkEntity
       root: 2
@@ -63261,7 +63253,7 @@ entities:
           decals:
             6563: 80,-24
             6564: 80,-23
-  - uid: 22549
+  - uid: 22564
     components:
     - type: ChunkEntity
       root: 2
@@ -63307,7 +63299,7 @@ entities:
             5000: 68,1
             5001: 68,2
             5002: 67,0
-  - uid: 22550
+  - uid: 22565
     components:
     - type: ChunkEntity
       root: 2
@@ -63330,7 +63322,7 @@ entities:
           decals:
             2842: 14,1
             2844: 0,14
-  - uid: 22551
+  - uid: 22566
     components:
     - type: ChunkEntity
       root: 2
@@ -63346,7 +63338,7 @@ entities:
           decals:
             6934: 65,19
             6935: 65,21
-  - uid: 22552
+  - uid: 22567
     components:
     - type: ChunkEntity
       root: 2
@@ -63362,7 +63354,7 @@ entities:
           decals:
             7017: -67,-33
             7018: -66,-33
-  - uid: 22553
+  - uid: 22568
     components:
     - type: ChunkEntity
       root: 2
@@ -63523,7 +63515,7 @@ entities:
             7139: 18,-64
             7140: 19,-64
             7141: 20,-64
-  - uid: 22554
+  - uid: 22569
     components:
     - type: ChunkEntity
       root: 2
@@ -63772,7 +63764,7 @@ entities:
             7087: 22,-71
             7129: 23,-65
             7130: 24,-65
-  - uid: 22555
+  - uid: 22570
     components:
     - type: ChunkEntity
       root: 2
@@ -63904,7 +63896,7 @@ entities:
             2402: -56,-48
             2403: -56,-48
             2404: -56,-47
-  - uid: 22556
+  - uid: 22571
     components:
     - type: ChunkEntity
       root: 2
@@ -63969,7 +63961,7 @@ entities:
             angle: -1.5707963267948966 rad
           decals:
             7531: -36,37
-  - uid: 22557
+  - uid: 22572
     components:
     - type: ChunkEntity
       root: 2
@@ -64403,7 +64395,7 @@ entities:
           decals:
             477: -36,6
             478: -36,7
-  - uid: 22558
+  - uid: 22573
     components:
     - type: ChunkEntity
       root: 2
@@ -64448,7 +64440,7 @@ entities:
             color: '#D4D4D411'
           decals:
             7125: 15,-64
-  - uid: 22559
+  - uid: 22574
     components:
     - type: ChunkEntity
       root: 2
@@ -64619,7 +64611,7 @@ entities:
             cleanable: True
           decals:
             5835: 81.10044,-36.13364
-  - uid: 22560
+  - uid: 22575
     components:
     - type: ChunkEntity
       root: 2
@@ -64684,7 +64676,7 @@ entities:
             cleanable: True
           decals:
             5836: 79.79176,-36.060257
-  - uid: 22561
+  - uid: 22576
     components:
     - type: ChunkEntity
       root: 2
@@ -64748,7 +64740,7 @@ entities:
             6444: 16,40
             6445: 16,41
             6446: 16,40
-  - uid: 22562
+  - uid: 22577
     components:
     - type: ChunkEntity
       root: 2
@@ -64776,7 +64768,7 @@ entities:
             2891: 65,-52
             2892: 66,-52
             2893: 67,-52
-  - uid: 22563
+  - uid: 22578
     components:
     - type: ChunkEntity
       root: 2
@@ -64813,7 +64805,7 @@ entities:
           decals:
             7123: 15,-66
             7124: 15,-65
-  - uid: 22564
+  - uid: 22579
     components:
     - type: ChunkEntity
       root: 21128
@@ -64878,7 +64870,7 @@ entities:
             6: 0,-5
             7: 0,-4
             8: 0,-3
-  - uid: 22565
+  - uid: 22580
     components:
     - type: ChunkEntity
       root: 21128
@@ -75840,11 +75832,116 @@ entities:
       pos: 22.5,-65.5
 - proto: FaxMachineBase
   entities:
+  - uid: 997
+    components:
+    - type: Transform
+      parent: 2
+      pos: -4.5,-26.5
+    - type: FaxMachine
+      name: Инженерия
+  - uid: 998
+    components:
+    - type: Transform
+      parent: 2
+      pos: 17.5,-20.5
+    - type: FaxMachine
+      name: Атмосферика
+  - uid: 4498
+    components:
+    - type: Transform
+      parent: 2
+      pos: -50.5,-15.5
+    - type: FaxMachine
+      name: Агент внутренних дел
+  - uid: 4655
+    components:
+    - type: Transform
+      parent: 2
+      pos: -54.5,-29.5
+    - type: FaxMachine
+      name: Репортёр
+  - uid: 5155
+    components:
+    - type: Transform
+      parent: 2
+      pos: -9.5,29.5
+    - type: FaxMachine
+      name: Служба безопасности
+  - uid: 5422
+    components:
+    - type: Transform
+      parent: 2
+      pos: -26.5,-36.5
+    - type: FaxMachine
+      name: Храм
+  - uid: 5568
+    components:
+    - type: Transform
+      parent: 2
+      pos: 28.5,11.5
+    - type: FaxMachine
+      name: Снабжение
+  - uid: 5699
+    components:
+    - type: Transform
+      parent: 2
+      pos: 33.5,15.5
+    - type: FaxMachine
+      name: Квартирмейстер
   - uid: 5753
     components:
     - type: Transform
       parent: 2
       pos: 23.5,8.5
+  - uid: 7155
+    components:
+    - type: Transform
+      parent: 2
+      pos: 57.5,-11.5
+    - type: FaxMachine
+      name: Научный отдел
+  - uid: 7442
+    components:
+    - type: Transform
+      parent: 2
+      pos: 70.5,-20.5
+    - type: FaxMachine
+      name: Научный руководитель
+  - uid: 8346
+    components:
+    - type: Transform
+      parent: 2
+      pos: -17.5,-17.5
+    - type: FaxMachine
+      name: Библиотека
+  - uid: 9182
+    components:
+    - type: Transform
+      parent: 2
+      pos: -25.5,25.5
+    - type: FaxMachine
+      name: Детектив
+  - uid: 16527
+    components:
+    - type: Transform
+      parent: 2
+      pos: 44.5,-32.5
+    - type: FaxMachine
+      name: Мостик
+  - uid: 20485
+    components:
+    - type: Transform
+      parent: 2
+      pos: 50.5,-5.5
+    - type: FaxMachine
+      name: Медблок
+  - uid: 20494
+    components:
+    - type: Transform
+      parent: 2
+      pos: 41.5,-23.5
+    - type: FaxMachine
+      name: Глава персонала
 - proto: FaxMachineCaptain
   entities:
   - uid: 13489
@@ -106935,43 +107032,13 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 1.5,31.5
-- proto: HighSecCommandLocked
+- proto: HighSecChiefEngineerLocked
   entities:
-  - uid: 5926
+  - uid: 7802
     components:
-    - type: MetaData
-      name: Gravity door
     - type: Transform
       parent: 2
       pos: 52.5,-37.5
-  - uid: 7755
-    components:
-    - type: MetaData
-      name: AI entrance door
-    - type: Transform
-      parent: 2
-      pos: 19.5,-50.5
-  - uid: 7802
-    components:
-    - type: MetaData
-      name: AI entrance door
-    - type: Transform
-      parent: 2
-      pos: 18.5,-50.5
-  - uid: 15593
-    components:
-    - type: MetaData
-      name: Secure board room airlock
-    - type: Transform
-      parent: 2
-      pos: 8.5,-43.5
-  - uid: 15805
-    components:
-    - type: MetaData
-      name: Secure board room internal airlock
-    - type: Transform
-      parent: 2
-      pos: 8.5,-45.5
 - proto: HighSecDoor
   entities:
   - uid: 20388
@@ -106981,12 +107048,32 @@ entities:
       pos: 13.5,38.5
 - proto: HighSecSatelliteLocked
   entities:
+  - uid: 7747
+    components:
+    - type: Transform
+      parent: 2
+      pos: 19.5,-42.5
+  - uid: 7755
+    components:
+    - type: Transform
+      parent: 2
+      pos: 18.5,-42.5
+  - uid: 7952
+    components:
+    - type: Transform
+      parent: 2
+      pos: 18.5,-50.5
   - uid: 10319
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 19.5,-66.5
+  - uid: 13736
+    components:
+    - type: Transform
+      parent: 2
+      pos: 19.5,-50.5
 - proto: HighSecVaultLocked
   entities:
   - uid: 9093

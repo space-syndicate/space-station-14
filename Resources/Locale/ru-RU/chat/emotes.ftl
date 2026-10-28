@@ -38,6 +38,9 @@ chat-emote-name-whine = Скулить
 chat-emote-name-howl = Выть
 chat-emote-name-growl = Рычать
 chat-emote-name-flap = Взмахнуть крыльями
+chat-emote-name-blink = Моргнуть
+chat-emote-name-hiss = Шипеть
+chat-emote-name-caw = Каркать
 
 # Message
 chat-emote-msg-scream = кричит!
@@ -80,3 +83,6 @@ chat-emote-msg-whine = скулит.
 chat-emote-msg-howl = воет.
 chat-emote-msg-growl = рычит.
 chat-emote-msg-flap = машет { POSS-ADJ($entity) } крыльями.
+chat-emote-msg-blink = моргает.
+chat-emote-msg-hiss = шипит!
+chat-emote-msg-caw = каркает.
