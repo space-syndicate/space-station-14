@@ -4,16 +4,8 @@
   name: salvage shuttle console
   description: Used to pilot the salvage shuttle.
   components:
-    - type: Sprite
-      layers:
-        - map: ["computerLayerBody"]
-          state: computer
-        - map: ["computerLayerKeyboard"]
-          state: generic_keyboard
-        - map: ["computerLayerScreen"]
-          state: shuttle
-        - map: ["computerLayerKeys"]
-          state: generic_keys
+    - type: ComputerVisuals
+      stateScreen: shuttle
     - type: DroneConsole
       components:
         - type: SalvageShuttle

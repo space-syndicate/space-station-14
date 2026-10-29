@@ -1,41 +1,27 @@
 <Document>
   # Слаймолюды
+
   <Box>
     <GuideEntityEmbed Entity="MobSlimePerson" Caption=""/>
   </Box>
-  Слаймолюды - слаймоподобные существа с планеты Ксарксис 5, ростом от 100 до 150 сантиметров. Эти существа дышат азотом вместо кислорода который присутствует в воздухе станции, но его сложнее найти в сжатом виде в газовых баллонах. Они получают значительный урон, если их обрызгать водой, но могут (и, как и другие виды, должны) пить её.
 
-  ## General Information
+  ## Общая информация
 
-  Slimes breathe nitrogen instead of oxygen (though inhaling oxygen has no ill effect on them). They exhale nitrous oxide and are unaffected by inhaling it.
+  Слаймолюды дышат азотом вместо кислорода (хотя вдыхание кислорода не оказывает на них никакого вредного воздействия). Они выдыхают оксид азота, и её вдыхание также никак на них не влияет.
 
-  They have an [color=lightgreen]internal 2x3 slot inventory[/color] inside of their slime membrane. This allows them to carry a bit more than other species,
-  though [italic]anyone[/italic] is able to reach inside this inventory without asking.
-  ## Расовые особенности
-  - Слаймолюды получают [color=#1e90ff]на 40% меньше урона от ушибов и на 20% меньше от ядов[/color], но [color=#ffa500]на 50% больше урона холодом, на 20% больше от порезов и уколов[/color].
-  - Быстрее пьянеют.
-  - Слаймолюды дышат реже человека в 5 раз, следовательно получают по [color=red]0.2[/color] урона удушьем без азота, но могут долго обходиться без азота.
-  - Имеют всего два внутренних органа: легкие и ядро слайма. Ядро слайма переваривает еду, напитки, лекарства, яды, наркотики и алкоголь. Максимальная вместимость 50 единиц, а максимальное количество одновременно усваиваемых веществ - 6.
-  - Скорость метаболизма - 0.13 единиц за тик. Это означает, что у них всё усваивается медленней, чем у других.
-  - Вместо крови - слизь зеленого цвета. Она замедляет персонажей на ней на 25%.
-  - При контакте с водой (огнетушители, спреи) наносится 12 термического урона. Инъекции, питьё воды, хождение по лужам, вдыхание водяного пара - не наносят урон.
-  - Повышенный урон от давления.
-  - Слаймолюды дышат азотом (N2) и выдыхают его оксид (N2O).
-  - Могут твердо сжимать кулаки, что даёт им более сильные удары, хотя они и немного медленнее в их выполнении.
-  - Слизистая "кровь" не восстанавливается железом. Тем не менее, слизь является умеренно питательным источником пищи для других существ, но пить кровь своих товарищей по команде обычно считается неприемлемым.
-  - Слаймолюды способны выживать в условиях вакуума дольше других рас, хотя при этом получают повышенный урон от давления.
+  Внутри их слизистой оболочки находится [color=lightgreen]внутренний инвентарь размером 2x3[/color]. Это позволяет им переносить немного больше предметов, чем другим видам,
+  однако [italic]любой[/italic] может залезть в этот инвентарь без спроса.
 
-  They have slime rather than blood, which is replenished when metabolizing iron or drinking slime.
-  Slime is moderately nutritious when consumed by other species, though drinking the blood of your coworkers is usually frowned upon.
+  Вместо крови у них слизь, которая восполняется при переработке железа или употреблении слизи.
+  Слизь обладает умеренной питательной ценностью, если её потребляют представители других видов, хотя пить кровь своих коллег - занятие, как правило, не одобряемое.
 
-  They metabolize reagents with a single organ, up to six reagents per metabolism stage (digestion, bloodstream, and metabolites).
+  Они метаболизируют реагенты с помощью одного органа, вплоть до шести реагентов на каждом этапе метаболизма (пищеварение, кровоток и метаболиты).
 
-  They take [color=lightgreen]40% less Blunt damage[/color] and [color=lightgreen]20% less Poison damage[/color], but
-  [color=palevioletred]50% more Cold damage[/color], [color=palevioletred]20% more Slash damage[/color], and [color=palevioletred]20% more Piercing damage[/color].
-  They naturally recover from Heat damage [color=lightgreen]twice as fast[/color] as most other species do (though proper medical treatment isn't any faster).
+  Они получают на [color=lightgreen]40% меньше тупого урона[/color] и [color=lightgreen]20% меньше урона ядами[/color], но
+  на [color=palevioletred]50% больше урона охлаждением[/color], на [color=palevioletred]20% больше режущего урона[/color], и на [color=palevioletred]20% больше колющего урона[/color].
+  Они восстанавливаются после термических повреждений естественным путём [color=lightgreen]в два раза быстрее[/color], чем большинство других видов (хотя при получении надлежащей медицинской помощи скорость восстановления не увеличивается).
 
-  They [color=lightgreen]suffocate five times slower[/color], but [color=palevioletred]take pressure damage 9% faster[/color]. This makes them by far the most capable of surviving the longest unprotected in a hard vacuum.
+  Они [color=lightgreen]задыхаются в пять раз медленнее[/color], но [color=palevioletred]получают урон от давления на 9% быстрее[/color]. Благодаря этому они, безусловно, лучше всех приспособлены к тому, чтобы дольше остальных оставаться в глубоком вакууме без какой-либо защиты.
 
-  They take [color=palevioletred]minor Heat damage[/color] if their outer membranes come into contact with water or water vapor, though they can still drink water normally with no ill effect.
-
+  Они получают [color=palevioletred]незначительный термический урон[/color] если их внешние оболочки соприкасаются с водой или водяным паром, хотя при этом они могут без каких-либо негативных последствий пить воду.
 </Document>

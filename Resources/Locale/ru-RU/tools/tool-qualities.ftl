@@ -1,41 +1,41 @@
-tool-quality-anchoring-name = Закрепление
-tool-quality-anchoring-tool-name = Гаечный ключ
+tool-quality-anchoring-name = закрепление
+tool-quality-anchoring-tool-name = гаечный ключ
 
-tool-quality-prying-name = Монтирование
-tool-quality-prying-tool-name = Монтировка
+tool-quality-prying-name = монтирование
+tool-quality-prying-tool-name = монтировка
 
-tool-quality-screwing-name = Свинчивание
-tool-quality-screwing-tool-name = Отвёртка
+tool-quality-screwing-name = свинчивание
+tool-quality-screwing-tool-name = отвёртка
 
-tool-quality-cutting-name = Резка
-tool-quality-cutting-tool-name = Кусачки
+tool-quality-cutting-name = резка
+tool-quality-cutting-tool-name = кусачки
 
-tool-quality-shearing-name = Стрижка
-tool-quality-shearing-tool-name = Кусачки
+tool-quality-shearing-name = стрижка
+tool-quality-shearing-tool-name = кусачки
 
-tool-quality-welding-name = Сварка
-tool-quality-welding-tool-name = Сварка
+tool-quality-welding-name = сварка
+tool-quality-welding-tool-name = сварка
 
-tool-quality-pulsing-name = Пульсирование
-tool-quality-pulsing-tool-name = Мультитул
+tool-quality-pulsing-name = пульсирование
+tool-quality-pulsing-tool-name = мультитул
 
-tool-quality-slicing-name = Нарезка
-tool-quality-slicing-tool-name = Нож
+tool-quality-slicing-name = нарезка
+tool-quality-slicing-tool-name = нож
 
-tool-quality-sawing-name = Отпиливание
-tool-quality-sawing-tool-name = Пила
+tool-quality-sawing-name = отпиливание
+tool-quality-sawing-tool-name = пила
 
-tool-quality-honking-name = Хонканье
-tool-quality-honking-tool-name = Клаксон
+tool-quality-honking-name = хонканье
+tool-quality-honking-tool-name = ключлаксон
 
-tool-quality-woodcutting-name = Рубка дерева
-tool-quality-woodcutting-tool-name = Топор
+tool-quality-woodcutting-name = рубка дерева
+tool-quality-woodcutting-tool-name = топор
 
-tool-quality-rolling-name = Раскатывание
-tool-quality-rolling-tool-name = Скалка
+tool-quality-rolling-name = раскатывание
+tool-quality-rolling-tool-name = скалка
 
-tool-quality-digging-name = Копание
-tool-quality-digging-tool-name = Лопата
+tool-quality-digging-name = копание
+tool-quality-digging-tool-name = лопата
 
-tool-quality-brushing-name = Оттирание
-tool-quality-brushing-tool-name = Проволочная щётка
+tool-quality-brushing-name = оттирание
+tool-quality-brushing-tool-name = проволочная щётка

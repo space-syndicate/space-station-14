@@ -1,46 +1,50 @@
 <Document>
   # Дионы
+
   <Box>
     <GuideEntityEmbed Entity="MobDiona" Caption=""/>
   </Box>
 
-  ## General Information
+  ## Общая информация
 
-  Diona have large, dense bodies, so they're slowed less when dragging objects and slow others more when dragged themselves.
+  У Дион крупные, плотные тела, поэтому они меньше замедляются, когда тащат за собой предметы, и сильнее замедляют других, когда тащат их.
 
-  They have plant-like metabolisms, [color=lightgreen]getting hungry slower[/color] than other species, but [color=palevioletred]getting thirsty faster[/color].
+  У них метаболизм, подобный растительному, [color=lightgreen]они медленнее начинают испытывать голод[/color] по сравнению с другими видами, но [color=palevioletred]быстрее начинают испытывать жажду[/color].
 
-  They have sap rather than blood, which replenishes when metabolizing iron.
-  Sap is slightly nutritious when consumed by other species, though drinking the blood of your coworkers is usually frowned upon.
+  Вместо крови у них древесный сок, который восполняется в процессе метаболизма железа.
+  Древесный сок обладает некоторой питательной ценностью, если его потребляют представители других видов, хотя пить кровь своих коллег - занятие, как правило, неодобряемое.
 
-  They metabolize reagents with a single organ, up to six reagents per metabolism stage (digestion, bloodstream, and metabolites).
+  Они метаболизируют реагенты с помощью одного органа, вплоть до шести реагентов на каждом этапе метаболизма (пищеварение, кровоток и метаболиты).
 
-  They take [color=lightgreen]30% less Blunt damage[/color] and [color=lightgreen]20% less Slash damage[/color],
-  but [color=palevioletred]50% more Heat damage[/color] and [color=palevioletred]20% more Shock damage[/color]. Their
-  bark-like skin can [color=palevioletred]easily catch fire[/color] when receiving enough Heat damage from [italic]any[/italic] source.
+  Они получают на [color=lightgreen]30% меньше тупого урона[/color] и на [color=lightgreen]20% меньше режущего урона[/color],
+  но на [color=palevioletred]50% больше термического[/color] и [color=palevioletred]20% электрического урона[/color]. Их
+  похожая на кору кожа может [color=palevioletred]легко загореться[/color] при получении достаточного термического урона от [italic]любого[/italic] источника.
 
-  They [color=lightgreen]suffocate 100% slower[/color].
+  Они [color=lightgreen]задыхаются на 100% медленнее[/color].
 
-  ## Rooting
+  <!-- Corvax-MRP-diona-pacifist -->
+  Так же они, как правило, пацифисты.
 
-  Diona move around using a dense network of roots. This [color=palevioletred]prevents them from wearing [italic]any[/italic] footwear[/color], but
-  these roots also allow a diona to firmly root themselves to the ground.
+  ## Укоренение
 
-  While rooted, a diona [color=palevioletred]moves 20% slower[/color], but is able to freely move around in zero-gravity environments
-  instead of awkwardly floating around. Being rooted also causes a diona to passively absorb reagents from puddles they're standing in;
-  this can potentially be dangerous if they're standing in something unsafe to drink!
+  Дионы передвигаются, используя густую сеть корней. Это [color=palevioletred]не позволяет им носить [italic]любую[/italic] обувь[/color], но
+  эти корни также позволяют дионе прочно прикрепится к полу.
 
-  ## Botanical Reagents
+  Пока укоренена, диона [color=palevioletred]передвигается на 20% медленнее[/color], но способна свободно перемещаться в условиях невесомости
+  вместо того чтобы неуклюже парить в воздухе. Находясь в укоренённом состоянии, диона также пассивно поглощает реагенты из луж, в которых она стоит;
+  это может быть потенциально опасно, если они стоят в чём-то, что небезопасно пить!
+
+  ## Ботанические химикаты
   <Box>
     <GuideEntityEmbed Entity="FloraTree" Caption=""/>
   </Box>
 
-  While diona can digest the same foods that most other species can, they're also affected by certain botanical reagents.
-  Fertilizers will [color=lightgreen]sate their hunger[/color], but pesticides will [color=palevioletred]poison[/color] them!
+  Хотя дионы способны переваривать ту же пищу, что и большинство других видов, на них также воздействуют определённые ботанические химикаты.
+  Удобрения [color=lightgreen]утоляют их голод[/color], а пестициды [color=palevioletred]отравляют[/color]!
 
-  Robust harvest (an especially potent fertilizer) will [color=lightgreen]heal a diona's injuries[/color], but overdosing will cause
-  them to [color=palevioletred]grow out of control[/color], turning into an immobile tree (and dropping all their equipment). Cutting down the tree will
-  "restore" the diona to their regular, mobile state.
+  Робаст харвест (особенно эффективное удобрение) [color=lightgreen]залечит раны дионы[/color], но передозировка заставит
+  их [color=palevioletred]бесконтрольно расти[/color], превращаясь в неподвижное дерево (и роняя всё снаряжение). Если срубить такое дерево,
+  диона "вернётся" в своё обычное, подвижное состояние.
 
   ## Нимфы
   <Box>
@@ -51,22 +55,7 @@
   После смерти, Диона может добровольно уничтожить собственное тело, превращая свои внутренние органы в трех нимф.
   Игрок получает управление над нимфой-мозгом. Она может говорить, но у неё нет рук или инвентаря.
 
-  Посла 10 минут, нимфа может реформироваться в новую диону. Это будет случайное тело со случайным именем. 
-  Не останется практически и следа от того, чем нимфа была раньше.
-
-  ## Расовые особенности
-
-  - Получают [color=#ffa500]на 50% больше урона огнём и 20% электричеством[/color], но [color=#1e90ff]на 30% меньше тупого и на 20% меньше режущего урона[/color].
-  - Cкорость метаболизма - 0.05 единиц за тик. Это означает, что они усваивают всё намного медленнее, чем другие расы. (Самый медленный метаболизм из всех)
-  - Органы работают иначе: Мозг выполняет свои функции и работает, как легкие, сердце и печень у них отсутствуют, поэтому их функции выполняет желудок. Максимальное количество веществ в желудке - 6. Желудок объединяет максимальные вещества: от сердца человека (2), от желудка человека (3) и от печени (1). Их желудок переваривает еду, напитки, лекарства, яды, наркотики, алкоголь, всё опять же из-за объединения органов
-  - Получают урон от голода кровотечением по [color=red]0.5[/color] единице в секунду.
-  - Голодают и испытывают жажду [color=#1e90ff]на ~50% медленней.[/color]
-  - Не может бить врукопашную, но может стрелять.
-  - Могут дышать углекислым газом.
-  - Дышат реже в 2 раза, следовательно без воздуха/углекислого газа получают по [color=red]0.5[/color] урона удушьем.
-  - Вместо крови у них древесный сок, при кровотечении истекают им же.
-  - Так как дионы растения, они могут употреблять удобрения в качестве лекарств и гербициды в качестве отравы.
-  - Не могут носить обувь.
-  - Можно разделать на крюке и получить 5 мяса растения.
+  После 10 минут, нимфа с мозгом может вырастить в "полноценную" диону. Это будет совершенно новое тело с новым именем, внешностью, отпечатками пальцев и даже ДНК,
+  что практически не оставляет следа от того, кем нимфа была раньше.
 
 </Document>

@@ -98,9 +98,9 @@ entity-condition-guidebook-mouth-uncovered-condition =
 
 entity-condition-guidebook-bloodlevel =
     { $max ->
-        [2147483648] the target has at least {NATURALFIXED($min, 2)}% total blood
+        [2147483648] уровень крови у цели как минимум {NATURALFIXED($min, 2)}%
         *[other] { $min ->
-                    [0] the target has at most {NATURALFIXED($max, 2)}% total blood
-                    *[other] the target has between {NATURALFIXED($min, 2)}% and {NATURALFIXED($max, 2)}% total blood
+                    [0] уровень крови у цели в сумме не более {NATURALFIXED($max, 2)}%
+                    *[other] уровень крови у цели в диапазоне {NATURALFIXED($min, 2)}% и {NATURALFIXED($max, 2)}%
                  }
     }

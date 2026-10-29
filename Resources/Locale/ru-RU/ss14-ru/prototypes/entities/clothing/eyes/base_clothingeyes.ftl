@@ -1,5 +1,7 @@
 ent-ClothingEyesBase = { ent-Clothing }
     .desc = { ent-Clothing.desc }
+ent-ClothingEyesSunglassesBase = { ent-ClothingEyesGlassesBase }
+    .desc = { ent-ClothingEyesGlassesBase.desc }
 ent-ClothingHeadEyeBaseFlippable = { ent-ClothingEyesBase }
     .desc = { ent-ClothingEyesBase.desc }
 ent-ClothingHeadEyeBaseFlipped = { ent-ClothingHeadEyeBaseFlippable }

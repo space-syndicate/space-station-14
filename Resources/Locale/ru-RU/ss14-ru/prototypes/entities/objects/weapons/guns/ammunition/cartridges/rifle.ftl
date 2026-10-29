@@ -1,10 +1,10 @@
 ent-BaseCartridgeRifle = патрон (.20 винтовочный)
     .desc = { ent-BaseCartridge.desc }
 ent-CartridgeRifle = патрон (.20 винтовочный)
-    .desc = A modern intermediate cartridge for combat rifles. Standard kinetic ammunition is common and useful in most situations.
+    .desc = Современный промежуточный патрон для боевых винтовок. Стандартные кинетические боеприпасы встречаются повсеместно и эффективны в большинстве ситуаций.
 ent-CartridgeRiflePractice = патрон (.20 винтовочный учебный)
-    .desc = A modern intermediate cartridge for combat rifles. Practice ammunition fires a chalk projectile that stings a little, but otherwise causes no lasting damage.
+    .desc = Современный промежуточный патрон для боевых винтовок. Учебные боеприпасы с меловым снарядом, попадание которого вызывает лёгкую боль, но не наносит серьёзного ущерба.
 ent-CartridgeRifleIncendiary = патрон (.20 винтовочный зажигательный)
-    .desc = A modern intermediate cartridge for combat rifles. Incendiary ammunition contains a self-igniting compound that sets targets ablaze.
+    .desc = Современный промежуточный патрон для боевых винтовок. Зажигательные боеприпасы содержат самовоспламеняющееся вещество, которое поджигает цели.
 ent-CartridgeRifleUranium = патрон (.20 винтовочный урановый)
-    .desc = A modern intermediate cartridge for combat rifles. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
+    .desc = Современный промежуточный патрон для боевых винтовок. В урановых боеприпасах свинцовый сердечник пули заменяется расщепляющимся материалом, что приводит к облучению целей изнутри.
