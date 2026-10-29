@@ -1,5 +1,5 @@
-ent-BaseHandheldGrinder = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-BaseHandheldGrinder = { ent-SolutionToolSmall }
+    .desc = { ent-SolutionToolSmall.desc }
 ent-MortarAndPestle = ступка и пестик
     .desc = Используется для измельчения в малых количествах.
 ent-MortarAndPestleMakeshift = самодельная ступка и пестик

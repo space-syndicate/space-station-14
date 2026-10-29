@@ -1,4 +1,4 @@
-ent-RandomHumanoidSpawnerDeathSquad = Агент Эскадрона смерти
+ent-RandomHumanoidSpawnerDeathSquad = Коммандос Эскадрона смерти
     .desc = { "" }
     .suffix = Роль ОБР, Эскадрон смерти
 
@@ -81,7 +81,7 @@ ent-RandomHumanoidSpawnerCBURNUnit = Агент РХБЗЗ
     .desc = { "" }
 
 # misc
-ent-RandomHumanoidSpawnerCentcomOfficial = Представитель Центком
+ent-RandomHumanoidSpawnerCentcomOfficial = Представитель ЦК
     .desc = { "" }
 ent-RandomHumanoidSpawnerSyndicateAgent = Агент Синдиката
     .desc = { "" }

@@ -1,0 +1,17 @@
+# Entries are displayed in the lobby and sorted by current online count.
+# The launcher requires an ss14:// or ss14s:// address and will load the target fork's build.
+
+primary:
+  - address: ss14s://game1.station14.ru/elysium/server
+  - address: ss14s://game1.station14.ru/main/server
+  - address: ss14s://game1.station14.ru/lumen/server
+  - address: ss14s://game1.station14.ru/void/server
+
+subprojects:
+  - address: ss14s://corvaxforge.ru/server/frontier
+  - address: ss14s://game1.station14.ru/wl/server
+  - address: ss14s://corvaxcm.space/marines
+  - address: ss14://188.124.37.118:1212/
+  - address: ss14s://corvaxforge.ru/server/fallout/
+  - address: ss14s://game1.station14.ru/wega-main/server
+    adult: true

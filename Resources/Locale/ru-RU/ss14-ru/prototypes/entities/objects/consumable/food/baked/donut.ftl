@@ -1,11 +1,11 @@
-ent-FoodDonutBase = { ent-FoodInjectableBase }
+ent-FoodDonutBase = { ent-SolutionVeryTiny }
     .desc = Отлично сочетается с крепким кофе.
 ent-FoodDonutFruitBase = { ent-FoodDonutBase }
     .desc = { ent-FoodDonutBase.desc }
 ent-FoodDonutPlain = обычный пончик
     .desc = { ent-FoodDonutBase.desc }
 ent-FoodDonutJellyPlain = обычный желейный пончик
-    .desc = { ent-FoodDonutBase.desc }
+    .desc = { ent-FoodDonutFruitBase.desc }
 ent-FoodDonutHomer = пончик
     .desc = { ent-FoodDonutBase.desc }
 ent-FoodDonutChaos = пончик хаоса

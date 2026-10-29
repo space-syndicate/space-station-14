@@ -1,6 +1,8 @@
+using Content.Shared.Chat.Prototypes;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
+using Content.Shared.Speech.Components;
 using Robust.Shared.Enums;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -17,6 +19,14 @@ public sealed partial class HumanoidProfileComponent : Component
     [DataField, AutoNetworkedField]
     public Gender Gender;
 
+    /// <summary>
+    /// Holds the EmoteSoundsPrototype that the humanoid will use to speak with
+    /// To change in-game, you still have to use the <see cref="VoiceChangedEvent"/>
+    /// or edit the <see cref="VocalComponent"/>
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public ProtoId<EmoteSoundsPrototype> Voice = HumanoidCharacterProfile.DefaultVoice;
+
     [DataField, AutoNetworkedField]
     public Sex Sex;
 
@@ -26,8 +36,14 @@ public sealed partial class HumanoidProfileComponent : Component
     [DataField, AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species = HumanoidCharacterProfile.DefaultSpecies;
 
+    /// <summary>
+    /// Whether the humanoid profile shows on examine. Such as "They are a young human".
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Examinable = true;
+
     // Corvax-TTS-Start
-    [DataField("voice")]
-    public ProtoId<TTSVoicePrototype> Voice { get; set; } = HumanoidProfileSystem.DefaultVoice;
+    [DataField, AutoNetworkedField]
+    public ProtoId<TTSVoicePrototype> TTSVoice { get; set; } = HumanoidProfileSystem.DefaultVoice;
     // Corvax-TTS-End
 }

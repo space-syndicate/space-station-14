@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseItem
   id: BaseComputerCircuitboard
   name: computer board
@@ -64,7 +64,7 @@
       prototype: ComputerMedicalRecords
 
 - type: entity
-  parent: BaseComputerCircuitboard
+  parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, BaseComputerCircuitboard] # Corvax-Contraband
   id: CriminalRecordsComputerCircuitboard
   name: criminal records computer board
   description: A computer printed circuit board for a criminal records computer.
@@ -236,10 +236,11 @@
   - type: ComputerBoard
     prototype: ComputerShuttleCargo
   - type: StealTarget
-    stealGroup: CargoShuttleConsoleCircuitboard
+    stealGroup:
+    - CargoShuttleConsoleCircuitboard
 
 - type: entity
-  parent: BaseComputerCircuitboard
+  parent: [BaseCorvaxContraband433DepartmentsCommandSecurity, BaseComputerCircuitboard] # Corvax-Contraband
   id: SurveillanceCameraMonitorCircuitboard
   name: surveillance camera monitor board
   description: A computer printed circuit board for a surveillance camera monitor.
@@ -331,7 +332,7 @@
     prototype: ComputerCrewMonitoring
 
 - type: entity
-  parent: [BaseComputerCircuitboard, BaseCommandContraband]
+  parent: [BaseCorvaxContraband433DepartmentsCommand, BaseComputerCircuitboard, BaseCommandContraband] # Corvax-Contraband
   id: IDComputerCircuitboard
   name: ID card computer board
   description: A computer printed circuit board for an ID card console.
@@ -355,10 +356,10 @@
     - type: Sprite
       state: cpu_medical
     - type: ComputerBoard
-      prototype: computerBodyScanner
+      prototype: ComputerBodyScanner
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseCommandContraband ]
+  parent: [BaseCorvaxContraband433DepartmentsCommand, BaseComputerCircuitboard, BaseCommandContraband] # Corvax-Contraband
   id: CommsComputerCircuitboard
   name: communications computer board
   description: A computer printed circuit board for a communications console.
@@ -562,6 +563,26 @@
       state: cpu_science
     - type: ComputerBoard
       prototype: StationAiUploadComputer
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: StationTeleportersControlCircuitboard
+  name: teleporters control console board
+  description: A computer printed circuit board for a teleporter control console.
+  components:
+  - type: Sprite
+    state: cpu_command
+  - type: ComputerBoard
+    prototype: ComputerStationTeleportersControl
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SyndicateTeleportersControlCircuitboard
+  name: syndicate teleporters control console board
+  description: A computer printed circuit board for a teleporter control console.
+  components:
+  - type: ComputerBoard
+    prototype: ComputerSyndicateTeleportersControl
 
 - type: entity
   parent: BaseComputerCircuitboard

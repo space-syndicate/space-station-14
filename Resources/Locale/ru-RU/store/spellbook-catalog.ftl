@@ -50,6 +50,9 @@ spellbook-slip-desc = Изучите древние приёмы уборщик�
 spellbook-item-recall-name = Отозвать предмет
 spellbook-item-recall-description = Пометьте удерживаемый предмет и призывайте его обратно в любое время по щелчку пальцев.
 
+spellbook-guardian-deck-name = Колода Таро
+spellbook-guardian-deck-description = Странная колода карт, которая при использовании дарует вам спектрального стража.
+
 # Equipment
 
 spellbook-wand-polymorph-door-name = Волшебная палочка входа
@@ -62,7 +65,7 @@ spellbook-wand-locker-name = Волшебная палочка шкафчика
 spellbook-wand-locker-description = Стреляйте в своих врагов проклятыми шкафчиками и запирайте их!
 
 spellbook-hammer-mjollnir-name = Мьёльнир
-spellbook-hammer-mjollnir-description = В ваших руках мощь ГРОЗЫ. Отправляйте врагов в полет с помощью мощного взмаха или броска прямо в них!
+spellbook-hammer-mjollnir-description = В ваших руках мощь ГРОЗЫ. Отправляйте врагов в полёт с помощью мощного взмаха или броска прямо в них!
 
 spellbook-hammer-singularity-name = Молот сингулярности
 spellbook-hammer-singularity-description = Вы когда-нибудь задумывались, каково это — быть сингулярностью? Размахивайте этим молотом, чтобы притянуть всё вокруг, даже если вы промахнётесь!

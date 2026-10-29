@@ -26,15 +26,15 @@ public sealed class StationPowerTests : GameTest
         "Bagel",
         "Box",
         "Elkridge",
-        "Fland",
+        "Exo",
         "Marathon",
-        "Oasis",
         "Packed",
         "Plasma",
         "Relic",
         "Snowball",
-        "Reach",
-        "Exo",
+        "Sushi",
+        "Tram2",
+        "gear"
     ];
 
     public override PoolSettings PoolSettings => new ()
@@ -51,7 +51,7 @@ public sealed class StationPowerTests : GameTest
 
         var entMan = server.EntMan;
         var protoMan = server.ProtoMan;
-        var ticker = entMan.System<GameTicker>();
+        var ticker = entMan.System<ServerGameTicker>();
         var batterySys = entMan.System<BatterySystem>();
 
         // Load the map
@@ -109,7 +109,7 @@ public sealed class StationPowerTests : GameTest
 
         var entMan = server.EntMan;
         var protoMan = server.ProtoMan;
-        var ticker = entMan.System<GameTicker>();
+        var ticker = entMan.System<ServerGameTicker>();
         var xform = entMan.System<TransformSystem>();
 
         // Load the map

@@ -1,8 +1,6 @@
-﻿using System.Linq;
-using System.Text.Json.Serialization;
 using System.IO;
-using System.Text.Json;
-using System.Text.Encodings.Web;
+using System.Linq;
+using System.Text.Json.Serialization;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Sequence;
@@ -12,12 +10,6 @@ namespace Content.Server.Corvax.GuideGenerator;
 
 public sealed class EntityParentJsonGenerator
 {
-    private static readonly JsonSerializerOptions SerializeOptions = new()
-    {
-        WriteIndented = true,
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-    };
-
     [JsonPropertyName("id")]
     public string Id { get; }
 
@@ -44,11 +36,8 @@ public sealed class EntityParentJsonGenerator
 
             parents.Add(id);
 
-            if (!YAMLEntry.TryGetRawMapping(prototypeManager, typeof(EntityPrototype), id, out var mapping) ||
-                mapping == null)
-            {
+            if (!YAMLEntry.TryGetRawMapping(prototypeManager, typeof(EntityPrototype), id, out var mapping) || mapping == null)
                 return;
-            }
 
             foreach (var parent in GetParentIds(mapping))
             {
@@ -79,10 +68,7 @@ public sealed class EntityParentJsonGenerator
 
         foreach (var parentNode in parentSequence)
         {
-            if (parentNode is not ValueDataNode valueNode)
-                continue;
-
-            if (!string.IsNullOrWhiteSpace(valueNode.Value))
+            if (parentNode is ValueDataNode valueNode && !string.IsNullOrWhiteSpace(valueNode.Value))
                 yield return valueNode.Value;
         }
     }
@@ -96,6 +82,6 @@ public sealed class EntityParentJsonGenerator
             .Select(x => new EntityParentJsonGenerator(x))
             .ToDictionary(x => x.Id, x => x.Parents);
 
-        JsonSerializer.Serialize(stream, prototypes, SerializeOptions);
+        GuideJson.Write(stream, prototypes);
     }
 }

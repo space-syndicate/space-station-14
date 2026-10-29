@@ -15,6 +15,7 @@ station-ai-fixer-console-window-station-ai-online = Онлайн
 station-ai-fixer-console-window-station-ai-offline = Оффлайн
 station-ai-fixer-console-window-station-ai-rebooting = Перезапуск...
 
+station-ai-fixer-console-window-controls = Управление
 station-ai-fixer-console-window-controls-locked = Управление заблокировано
 
 station-ai-fixer-console-window-station-ai-eject = Извлечь контейнер хранения

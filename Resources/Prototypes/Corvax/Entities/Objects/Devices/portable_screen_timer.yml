@@ -6,12 +6,12 @@
   components:
   - type: SignalTimer
     canEditLabel: true
+  - type: TextScreenTimerVisuals
   - type: TextScreenVisuals
     color: Gold
     textOffset: 0,0
-    timerOffset: 0,0
     rowOffset: 5
-    rows: 1
+    rowData: [{}]
   - type: Appearance
   - type: Sprite
     sprite: Corvax/Objects/Devices/portable_screen_timer.rsi

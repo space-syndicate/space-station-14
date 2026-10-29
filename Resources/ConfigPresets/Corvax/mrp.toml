@@ -2,7 +2,7 @@
 fallbackpreset = "extended"
 lobbyenabled = true
 role_timers = true
-contraband_examine = false
+# contraband_examine = false
 
 [ic]
 flavor_text = true
@@ -14,7 +14,7 @@ enable_during_round = false
 [atmos]
 space_wind = true
 space_wind_max_velocity = 22.0
-max_explosion_range = 10.0
+# max_explosion_range = 1000.0 # базово без лимита, формула в IntensityToRadius Content.Server/Explosion/EntitySystems/ExplosionSystem.cs
 
 [shuttle]
 emergency_early_launch_allowed = true
@@ -27,3 +27,6 @@ same_type_timeout = 300.0
 timerrestart = 30
 preset_enabled = false
 restart_enabled = false
+
+[ghost.go_lobby]
+enabled = true

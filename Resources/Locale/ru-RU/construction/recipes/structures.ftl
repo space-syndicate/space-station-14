@@ -22,6 +22,6 @@ construction-recipe-fence-wood-t-junction-small = небольшой дерев�
 construction-recipe-fence-wood-gate-small = ворота деревянного забора (небольшой)
 construction-recipe-pinion-airlock = заводной шлюз
 construction-recipe-pinion-airlock-glass = стеклянный заводной шлюз
-construction-recipe-airlock-glass-shuttle = стеклянный шлюз шаттла
+construction-recipe-airlock-glass-shuttle = стеклянный стыковочный шлюз
 construction-recipe-plastic-flaps-clear = пластиковые шторки (прозрачные)
 construction-recipe-plastic-flaps-opaque = пластиковые шторки (непрозрачные)

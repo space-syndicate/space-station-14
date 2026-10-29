@@ -11,6 +11,8 @@ chat-manager-crit-looc-chat-enabled-message = Игроки в критическ
 chat-manager-crit-looc-chat-disabled-message = Игроки в критическом состоянии больше не могут говорить в LOOC.
 chat-manager-admin-ooc-chat-enabled-message = Админ OOC чат был включён.
 chat-manager-admin-ooc-chat-disabled-message = Админ OOC чат был выключен.
+chat-manager-dead-chat-enabled-message = Чат мёртвых был включен.
+chat-manager-dead-chat-disabled-message = Чат мёртвых был выключен.
 
 chat-manager-max-message-length-exceeded-message = Ваше сообщение превышает лимит в { $limit } символов
 chat-manager-no-headset-on-message = У вас нет гарнитуры!
@@ -18,19 +20,28 @@ chat-manager-no-radio-key = Не задан ключ канала!
 chat-manager-no-such-channel = Нет канала с ключём '{ $key }'!
 chat-manager-whisper-headset-on-message = Вы не можете шептать в радио!
 
+# Unicode U+201C and U+201D Double quotes.
+chat-manager-speech-double-quote-begin = "
+chat-manager-speech-double-quote-end = "
+
 chat-manager-server-wrap-message = [bold]{ $message }[/bold]
 chat-manager-sender-announcement = Центральное командование
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]Объявление { $sender }:[/font][font size=12]
                                                 { $message }[/bold][/font]
-chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize } ]"[BubbleContent]{ $message }[/BubbleContent]"[/font]
-chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]"[BubbleContent][bold]{ $message }[/bold][/BubbleContent]"[/font]
+chat-manager-sender-announcement-wrap-message-signed = [font size=14][bold]Объявление {$sender}:[/bold][/font][font size=12]
+                                                       {$message}[bold]
+                                                       Отправитель: {$signature}[/bold][/font]
+chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize } ]{ chat-manager-speech-double-quote-begin }[BubbleContent]{ $message }[/BubbleContent]{ chat-manager-speech-double-quote-end }[/font]
+chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]{ chat-manager-speech-double-quote-begin }[BubbleContent][bold]{ $message }[/bold][/BubbleContent]{ chat-manager-speech-double-quote-end }[/font]
 
-chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][Name]{ $entityName }[/Name][/BubbleHeader] шепчет,"[BubbleContent]{ $message }[/BubbleContent]"[/italic][/font]
-chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader]Кто-то[/BubbleHeader] шепчет, "[BubbleContent]{ $message }[/BubbleContent]"[/italic][/font]
+chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][Name]{ $entityName }[/Name][/BubbleHeader] шепчет,{ chat-manager-speech-double-quote-begin }[BubbleContent]{ $message }[/BubbleContent]{ chat-manager-speech-double-quote-end }[/italic][/font]
+chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader]Кто-то[/BubbleHeader] шепчет, { chat-manager-speech-double-quote-begin }[BubbleContent]{ $message }[/BubbleContent]{ chat-manager-speech-double-quote-end }[/italic][/font]
 
 # THE() is not used here because the entity and its name can technically be disconnected if a nameOverride is passed...
-chat-manager-entity-me-wrap-message = [italic]{ CAPITALIZE($entityName) } { $message }[/italic]
-
+chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
+    *[false] { CAPITALIZE($entityName) } {$message}[/italic]
+     [true] {CAPITALIZE($entityName)} {$message}[/italic]
+    }
 chat-manager-entity-looc-wrap-message = LOOC: [bold]{ $entityName }:[/bold] { $message }
 chat-manager-send-ooc-wrap-message = OOC: [bold]{ $playerName }:[/bold] { $message }
 chat-manager-send-ooc-patron-wrap-message = OOC: [bold][color={ $patronColor }]{ $playerName }[/color]:[/bold] { $message }
@@ -121,6 +132,10 @@ chat-speech-verb-goat-1 = блеет
 chat-speech-verb-goat-2 = кряхтит
 chat-speech-verb-goat-3 = кричит
 
+chat-speech-verb-name-sheep = Овца
+chat-speech-verb-sheep-1 = блеет
+chat-speech-verb-sheep-2 = фыркает
+
 chat-speech-verb-name-small-mob = Мышь
 chat-speech-verb-small-mob-1 = скрипит
 chat-speech-verb-small-mob-2 = пищит
@@ -166,3 +181,5 @@ chat-speech-verb-wawa-1 = произносит
 chat-speech-verb-wawa-2 = заявляет
 chat-speech-verb-wawa-3 = объявляет
 chat-speech-verb-wawa-4 = размышляет
+
+chat-speech-verb-name-horror = Ужас

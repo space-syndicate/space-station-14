@@ -63,12 +63,6 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50 #excess damage avoids cost of spawning entities.
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
         damage: 20
       behaviors:
       - !type:PlaySoundBehavior
@@ -178,12 +172,6 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 500
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
         damage: 300
       behaviors:
       - !type:SpawnEntitiesBehavior
@@ -198,7 +186,7 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: [ BaseItem, BaseSyndicateContraband ]
+  parent: BaseItem # Corvax-Contraband: the hypodart case also conceals its properties.
   id: HypoDartBox
   name: hypodart box
   suffix: HypoDart

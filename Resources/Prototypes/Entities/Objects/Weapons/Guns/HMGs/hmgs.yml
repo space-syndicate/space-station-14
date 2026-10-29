@@ -29,7 +29,7 @@
 - type: entity
   name: minigun
   id: WeaponMinigun
-  parent: [ BaseWeaponHeavyMachineGun, BaseMajorContraband ]
+  parent: [BaseCorvaxContraband434DepartmentsSecurity, BaseWeaponHeavyMachineGun, BaseMajorContraband] # Corvax-Contraband
   description: Vzzzzzt! Rahrahrahrah! Vrrrrr! Uses .10 rifle ammo.
   components:
   - type: Sprite
@@ -38,6 +38,10 @@
     - state: icon
   - type: Item
     sprite: Objects/Weapons/Guns/HMGs/minigun.rsi
+    shape:
+    - 0,0,2,0
+    - 0,1,6,2
+    - 1,3,4,4
   - type: Gun
     fireRate: 15
     soundGunshot:

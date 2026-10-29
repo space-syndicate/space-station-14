@@ -1,4 +1,4 @@
-ent-SheetMetalBase = { ent-BaseItem }
+ent-SheetMetalBase = { ent-BaseSheet }
     .desc = Металлический лист, широко применяемый на станции в различных целях.
 ent-SheetSteel = сталь
     .desc = { ent-SheetMetalBase.desc }

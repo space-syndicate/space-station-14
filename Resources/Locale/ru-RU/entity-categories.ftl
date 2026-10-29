@@ -5,5 +5,7 @@ entity-category-name-roles = Роли сознания
 entity-category-name-mapping = Маппинг
 entity-category-name-donotmap = не маппить
 entity-category-name-status-effects = Статусные эффекты
+entity-category-name-xeno-artifact-effects = Эффекты ксено-артефактов
+entity-category-name-xeno-artifact-triggers = Стимуляторы ксено-артефактов
 
 entity-category-suffix-donotmap = НЕ МАППИТЬ

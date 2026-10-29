@@ -1,0 +1,68 @@
+- type: entity
+  id: LockerPilotFilledHardsuit
+  suffix: Filled, Hardsuit
+  parent: LockerPilot
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerPilot
+        - !type:NestedSelector
+          tableId: FillLockerPilotWeapon
+        - !type:NestedSelector
+          tableId: FillLockerPilotHarduit
+
+- type: entity
+  id: LockerPilotFilled
+  suffix: Filled
+  parent: LockerPilot
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerPilot
+        - !type:NestedSelector
+          tableId: FillLockerPilotWeapon
+
+- type: entityTable
+  id: FillLockerPilot
+  table: !type:AllSelector
+    children:
+    - id: Binoculars
+    - id: FlashlightSeclite
+    - id: WeaponDisabler
+    - id: ClothingOuterArmorBasic
+    - id: ClothingOuterWinterPilot
+    - id: ClothingBeltSecurityFilled
+    - id: Flash
+    - id: ClothingEyesGlassesSecurity
+    - id: ClothingHeadsetSecurity
+    - id: ClothingHandsGlovesCombat
+    - id: ClothingShoesBootsJack
+    - id: ClothingBeltUtilityEngineering
+      prob: 0.1
+
+- type: entityTable
+  id: FillLockerPilotHarduit
+  table: !type:AllSelector
+    children:
+    - id: JetpackSecurityFilled
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: ClothingOuterHardsuitSecurityPilot
+    - id: ClothingMaskBreath
+    - id: ClothingShoesBootsMag
+
+- type: entityTable
+  id: FillLockerPilotWeapon
+  table: !type:GroupSelector
+    children:
+      - id: WeaponLaserCarbine
+        weight: 55
+      - id: WeaponLaserGun
+        weight: 35
+      - id: WeaponLaserCannon # фофан
+        weight: 10

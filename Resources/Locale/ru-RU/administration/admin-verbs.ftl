@@ -4,6 +4,7 @@ edit-solutions-verb-get-data-text = Редактировать растворы
 explode-verb-get-data-text = Взорвать
 ahelp-verb-get-data-text = Написать
 admin-verbs-admin-logs-entity = Логи сущности
+admin-verbs-admin-logs-player = Логи игрока
 admin-verbs-teleport-to = Телепортироваться к
 admin-verbs-teleport-here = Телепортировать сюда
 admin-verbs-freeze = Заморозить

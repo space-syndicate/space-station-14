@@ -4,7 +4,7 @@
   id: OpporozidoneBeakerSmall
   components:
   - type: Label
-    currentLabel: reagent-name-opporozidone
+    localizedLabel: reagent-name-opporozidone
   - type: Solution
     solution:
         reagents:

@@ -16,4 +16,7 @@ public interface ISharedSponsorsManager
     public bool TryGetServerOocColor(NetUserId userId, [NotNullWhen(true)] out Color? color);
     public int GetServerExtraCharSlots(NetUserId userId);
     public bool HaveServerPriorityJoin(NetUserId userId);
+
+    // Shared
+    public bool TryGetTierNameForPrototype(string prototypeId, [NotNullWhen(true)] out string? tierName);
 }

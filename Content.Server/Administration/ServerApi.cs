@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
@@ -8,17 +8,17 @@ using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
+using Content.Server.Corvax.Api.AHelp; // Corvax-API
 using Content.Server.Database;
 using Content.Server.GameTicking;
-using Content.Server.GameTicking.Presets;
-using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Maps;
 using Content.Server.RoundEnd;
 using Content.Shared.Administration.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
+using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Prototypes;
+using Content.Shared.GameTicking.Prototypes;
 using Robust.Server.ServerStatus;
 using Robust.Shared.Asynchronous;
 using Robust.Shared.Configuration;
@@ -88,6 +88,7 @@ public sealed partial class ServerApi : IPostInjectInit
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/force_preset", ActionForcePreset);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/set_motd", ActionForceMotd);
         RegisterActorHandler(HttpMethod.Patch, "/admin/actions/panic_bunker", ActionPanicPunker);
+        AHelpBotApiSystem.RegisterStatusHostHandler(_statusHost, _entitySystemManager); // Corvax-API
     }
 
     public void Initialize()
@@ -218,7 +219,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
         await RunOnMainThread(async () =>
         {
-            var ticker = _entitySystemManager.GetEntitySystem<GameTicker>();
+            var ticker = _entitySystemManager.GetEntitySystem<ServerGameTicker>();
             if (ticker.RunLevel != GameRunLevel.PreRoundLobby)
             {
                 await RespondError(
@@ -258,7 +259,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
         await RunOnMainThread(async () =>
         {
-            var ticker = _entitySystemManager.GetEntitySystem<GameTicker>();
+            var ticker = _entitySystemManager.GetEntitySystem<ServerGameTicker>();
             var gameRule = ticker
                 .GetActiveGameRules()
                 .FirstOrNull(rule =>
@@ -292,7 +293,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
         await RunOnMainThread(async () =>
         {
-            var ticker = _entitySystemManager.GetEntitySystem<GameTicker>();
+            var ticker = _entitySystemManager.GetEntitySystem<ServerGameTicker>();
             if (!_prototypeManager.HasIndex<EntityPrototype>(body.GameRuleId))
             {
                 await RespondError(context,
@@ -302,11 +303,13 @@ public sealed partial class ServerApi : IPostInjectInit
                 return;
             }
 
-            var ruleEntity = ticker.AddGameRule(body.GameRuleId);
+            if (ticker.AddGameRule(body.GameRuleId) is not { } ruleEntity)
+                return;
+
             _sawmill.Info($"Added game rule {body.GameRuleId} by {FormatLogActor(actor)}.");
             if (ticker.RunLevel == GameRunLevel.InRound)
             {
-                ticker.StartGameRule(ruleEntity);
+                ticker.StartGameRule(ruleEntity.AsNullable());
                 _sawmill.Info($"Started game rule {body.GameRuleId} by {FormatLogActor(actor)}.");
             }
 
@@ -418,7 +421,7 @@ public sealed partial class ServerApi : IPostInjectInit
     {
         await RunOnMainThread(async () =>
         {
-            var ticker = _entitySystemManager.GetEntitySystem<GameTicker>();
+            var ticker = _entitySystemManager.GetEntitySystem<ServerGameTicker>();
 
             if (ticker.RunLevel != GameRunLevel.PreRoundLobby)
             {
@@ -441,7 +444,7 @@ public sealed partial class ServerApi : IPostInjectInit
         await RunOnMainThread(async () =>
         {
             var roundEndSystem = _entitySystemManager.GetEntitySystem<RoundEndSystem>();
-            var ticker = _entitySystemManager.GetEntitySystem<GameTicker>();
+            var ticker = _entitySystemManager.GetEntitySystem<ServerGameTicker>();
 
             if (ticker.RunLevel != GameRunLevel.InRound)
             {
@@ -463,7 +466,7 @@ public sealed partial class ServerApi : IPostInjectInit
     {
         await RunOnMainThread(async () =>
         {
-            var ticker = _entitySystemManager.GetEntitySystem<GameTicker>();
+            var ticker = _entitySystemManager.GetEntitySystem<ServerGameTicker>();
 
             ticker.RestartRound();
             _sawmill.Info($"Forced instant round restart by {FormatLogActor(actor)}");
@@ -514,7 +517,7 @@ public sealed partial class ServerApi : IPostInjectInit
             if (gameRule.Abstract)
                 continue;
 
-            if (gameRule.HasComponent<GameRuleComponent>(_componentFactory))
+            if (gameRule.HasComp<GameRuleComponent>(_componentFactory))
                 gameRules.Add(gameRule.ID);
         }
 
@@ -544,7 +547,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
         var info = await RunOnMainThread<InfoResponse>(() =>
         {
-            var ticker = _entitySystemManager.GetEntitySystem<GameTicker>();
+            var ticker = _entitySystemManager.GetEntitySystem<ServerGameTicker>();
             var adminSystem = _entitySystemManager.GetEntitySystem<AdminSystem>();
 
             var players = new List<InfoResponse.Player>();

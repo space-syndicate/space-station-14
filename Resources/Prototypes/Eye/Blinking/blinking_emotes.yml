@@ -1,0 +1,16 @@
+- type: emote
+  id: Blink
+  name: chat-emote-name-blink
+  icon: Interface/Emotes/blink.png
+  chatMessages: ["chat-emote-msg-blink"]
+  chatTriggers:
+  - blink
+  - blinks
+  # Corvax-Localization-Start
+  - моргает
+  - моргают
+  - моргнул
+  - моргнула
+  - моргнуло
+  - моргнули
+  # Corvax-Localization-End

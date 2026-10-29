@@ -262,6 +262,37 @@
    - клацнула
    # Corvax-Localization-End
 
+- type: emote
+  id: Hiss
+  name: chat-emote-name-hiss
+  category: Vocal
+  available: false
+  icon: Interface/Emotes/hiss.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [chat-emote-msg-hiss]
+  chatTriggers:
+  - hiss
+  - hisses
+  - hissed
+  - hissing
+  # Corvax-Localization-Start
+  - шипит
+  - шипят
+  - зашипел
+  - зашипела
+  - зашипело
+  - зашипели
+  - прошипел
+  - прошипела
+  - прошипело
+  - прошипели
+  # Corvax-Localization-End
+
 # Vulpkanin
 - type: emote
   id: Bark
@@ -374,6 +405,33 @@
   - growling
   # Corvax-Localization-Start
   - рычит
+  # Corvax-Localization-End
+
+#vox
+- type: emote
+  id: Caw
+  name: chat-emote-name-caw
+  category: Vocal
+  icon: Interface/Emotes/caw.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [chat-emote-msg-caw]
+  chatTriggers:
+  - caw
+  - caws
+  - cawed
+  - cawing
+  # Corvax-Localization-Start
+  - каркает
+  - каркнул
+  - каркнула
+  - каркнуло
+  - каркнули
   # Corvax-Localization-End
 
 # hand emotes
@@ -557,6 +615,12 @@
   - умирает
   - умер
   # Corvax-Localization-End
+
+- type: emote
+  id: KoboldDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  chatMessages: ["chat-emote-msg-deathgasp-kobold"]
 
 - type: emote
   id: MonkeyDeathgasp

@@ -1,5 +1,7 @@
 ent-Dart = дротик
     .desc = Лёгкий метательный дротик для игры в дартс. Не попадите в глаз!
+ent-SolutionDart = { ent-Solution }
+    .desc = { ent-Solution.desc }
 ent-DartBlue = { ent-Dart }
     .desc = { ent-Dart.desc }
 ent-DartPurple = { ent-Dart }

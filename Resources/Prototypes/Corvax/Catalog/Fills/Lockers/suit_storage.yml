@@ -3,11 +3,9 @@
   parent: SuitStorageBase
   suffix: Security
   components:
-  - type: StorageFill
-    contents:
-        - id: DoubleEmergencyOxygenTankFilled
-        - id: ClothingOuterHardsuitSecurityPilot
-        - id: ClothingMaskBreath
-        - id: ClothingShoesBootsMag
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillLockerPilotHarduit
   - type: AccessReader
     access: [["Security"]]

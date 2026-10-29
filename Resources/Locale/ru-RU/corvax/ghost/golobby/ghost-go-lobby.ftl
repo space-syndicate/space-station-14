@@ -1,0 +1,19 @@
+ghost-go-lobby-button = Вернуться в лобби
+ghost-go-lobby-button-waiting = В лобби через { $time }
+
+ghost-go-lobby-deathtime = Вернуться в лобби можно через {$minutes} мин.
+ghost-go-lobby-playtime = Вам нужно наиграть еще {$hours} ч.
+ghost-go-lobby-used = Выберите другого персонажа.
+
+ghost-go-lobby-confirm-title = Возвращение в лобби
+ghost-go-lobby-confirm = Вы уверены, что хотите вернуться в лобби?
+                                 Вы забыли всё о своём текущем персонаже и ничего не помните из того, что узнали, будучи призраком.
+                                 Вам разрешается помнить общие знания об игре: например, как готовить, использовать предметы и т.д.
+                                 Вам [color=red]НЕ[/color] разрешается помнить или говорить имя, внешность и т.д. вашего предыдущего персонажа.
+ghost-go-lobby-confirm-continue = Продолжить
+
+cmd-ghost_golobby-desc = Переключает кнопку призрака "вернуться в лобби" (ghost.go_lobby.enabled).
+cmd-ghost_golobby-help = ghost_golobby <true|false>
+
+cmd-ghost_golobby_deathtime-desc = Задаёт задержку возврата в лобби в минутах (ghost.go_lobby.death_time). Укорачивает таймер у уже ждущих призраков.
+cmd-ghost_golobby_deathtime-help = ghost_golobby_deathtime <минуты>

@@ -1,6 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c838ba21dae97db345e0113f99596decd1d66039, equipped-FEET modified by Psychpsyo, Inhands by Prole0 (GitHub)",
   "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c838ba21dae97db345e0113f99596decd1d66039, equipped-FEET modified by Psychpsyo, fix digi sprites by DreamlyJack",
   "size": {
     "x": 32,
@@ -16,6 +17,14 @@
     },
     {
       "name": "equipped-FEET",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
       "directions": 4
     }
   ]

@@ -1,9 +1,8 @@
-﻿- type: entity
+- type: entity
   parent: [BaseStructureDynamic, BaseXenoArtifact]
   id: BaseXenoArtifactStructure
   name: artifact
   abstract: true
-  noSpawn: true
   components:
   # Visual
   - type: Sprite
@@ -42,7 +41,16 @@
         - MachineMask
 
 - type: entity
+  id: DummyArtifactStructure
   parent: BaseXenoArtifactStructure
+  name: artifact
+  suffix: Debug
+  components:
+  - type: XenoArtifact
+    isGenerationRequired: false
+
+- type: entity
+  parent: [BaseCorvaxContraband434DepartmentsScience, BaseXenoArtifactStructure] # Corvax-Contraband
   id: ComplexXenoArtifact
   components:
   - type: XenoArtifact

@@ -5,7 +5,7 @@
   description: A large duffel bag for holding any army goods.
   components:
   - type: Sprite
-    sprite: Corvax/Back/Duffels/military.rsi
+    sprite: Corvax/Clothing/Back/Duffels/military.rsi
   - type: Storage
     grid:
     - 0,0,8,4
@@ -17,4 +17,4 @@
   description: A large duffel bag for all instruments you need to create singularity.
   components:
   - type: Sprite
-    sprite: Corvax/Back/Duffels/ce.rsi
+    sprite: Corvax/Clothing/Back/Duffels/ce.rsi

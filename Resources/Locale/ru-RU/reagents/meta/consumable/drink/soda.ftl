@@ -5,7 +5,7 @@ reagent-name-shirley-temple = Ширли Темпл
 reagent-desc-shirley-temple = Фаворит среди более юных членов экипажа.
 
 reagent-name-changeling-sting = Жало Генокрада
-reagent-desc-changeling-sting = Вы делаете маленький глоток и чувствуете жжение...
+reagent-desc-changeling-sting = Слабоалкогольная газировка. Вы делаете маленький глоток и чувствуете жжение...
 
 reagent-name-dr-gibb = доктор Гибб
 reagent-desc-dr-gibb = Восхитительная смесь из 42 различных вкусов.

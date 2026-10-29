@@ -1,0 +1,83 @@
+# Corvax: localized contraband articles from the Station14 wiki (2026-09-06).
+# https://station14.ru/wiki/Контрабанда
+# Article numbers describe legality, not whether a character has identified an item.
+# Identification, research, licenses and contextual exceptions remain roleplay rules.
+# Corvax: XX1-XX5 use the corporate law table colors from the wiki dark theme.
+
+# 131: Propaganda of prohibited organizations.
+- type: contrabandSeverity
+  id: Corvax131
+  examineText: contraband-examine-text-Corvax131
+  color: "#1A4B1E"
+  priority: 1
+
+# 431: Misuse of professional equipment.
+- type: contrabandSeverity
+  id: Corvax431
+  examineText: contraband-examine-text-Corvax431
+  showDepartmentsAndJobs: true
+  color: "#1A4B1E"
+  priority: 2
+
+# 432: Dangerous items.
+- type: contrabandSeverity
+  id: Corvax432
+  examineText: contraband-examine-text-Corvax432
+  color: "#564513"
+  priority: 3
+
+# 433: Regulated items.
+- type: contrabandSeverity
+  id: Corvax433
+  examineText: contraband-examine-text-Corvax433
+  color: "#652F0F"
+  priority: 4
+
+# 434: Restricted-circulation items.
+- type: contrabandSeverity
+  id: Corvax434
+  examineText: contraband-examine-text-Corvax434
+  color: "#65240F"
+  priority: 5
+
+# 435: Contraband items.
+- type: contrabandSeverity
+  id: Corvax435
+  examineText: contraband-examine-text-Corvax435
+  color: "#ff0000"
+  priority: 6
+
+# 436: Terrorist equipment.
+- type: contrabandSeverity
+  id: Corvax436
+  examineText: contraband-examine-text-Corvax436
+  color: darkred
+  priority: 7
+
+# 442: Harmful basic chemicals and weak narcotics.
+- type: contrabandSeverity
+  id: Corvax442
+  examineText: contraband-examine-text-Corvax442
+  color: "#564513"
+  priority: 3
+
+# 443: Complex medicines.
+- type: contrabandSeverity
+  id: Corvax443
+  examineText: contraband-examine-text-Corvax443
+  color: "#652F0F"
+  priority: 4
+
+# 444: Toxins, strong narcotics and explosive chemicals.
+- type: contrabandSeverity
+  id: Corvax444
+  examineText: contraband-examine-text-Corvax444
+  color: "#65240F"
+  priority: 5
+
+# 445: Critical toxins, stimulants and mutagens.
+- type: contrabandSeverity
+  id: Corvax445
+  examineText: contraband-examine-text-Corvax445
+  color: "#ff0000"
+  priority: 6

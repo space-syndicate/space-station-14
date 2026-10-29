@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ CrateSyndicate, StorePresetUplink, BaseSyndicateContraband ]
+  parent: [CrateSyndicate, StorePresetUplink] # Corvax-Contraband
   id: CrateSyndicateSurplusBundle
   name: Syndicate surplus crate
   description: Contains 50 telecrystals worth of completely random Syndicate items. It can be useless junk or really good.
@@ -23,7 +23,7 @@
           tableId: SyndicateHardsuitExtrasEntityTable
 
 - type: entity
-  parent: [ CrateSyndicate, StorePresetUplink, BaseSyndicateContraband ]
+  parent: [CrateSyndicate, StorePresetUplink] # Corvax-Contraband
   id: CrateSyndicateSuperSurplusBundle
   name: Syndicate super surplus crate
   description: Contains 125 telecrystals worth of completely random Syndicate items.

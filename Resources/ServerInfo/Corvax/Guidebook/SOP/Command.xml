@@ -97,20 +97,17 @@
   <FTLTextpart Key="guidebook-SOP-command-procedure-remove-acting-head"/>
 
   ## Процедуры изменения доступов
-  ### Политика назначения на должность
+  ### Процедура найма и перевода
+  <FTLTextpart Key="guidebook-SOP-command-procedure-hire"/>
+
+  ### Процедура понижения и увольнения
+  <FTLTextpart Key="guidebook-SOP-command-procedure-dismissal"/>
+
+  ### Процедура повышения
+  <FTLTextpart Key="guidebook-SOP-command-procedure-promotion"/>
+
+  ### Процедура выдачи дополнительных доступов
   <FTLTextpart Key="guidebook-SOP-command-procedure-accesses"/>
-
-  ### Политика повышения/перевода на другую должность
-  <FTLTextpart Key="guidebook-SOP-command-procedure-promotion-transfer"/>
-
-  ### Процедура выдачи доступов
-  <FTLTextpart Key="guidebook-SOP-command-procedure-issue-accesses"/>
-
-  ### Процедура снятия доступов
-  <FTLTextpart Key="guidebook-SOP-command-procedure-removal-from-post"/>
-
-  ### Процедура снятия доступов
-  <FTLTextpart Key="guidebook-SOP-command-procedure-revoke-accesses"/>
 
   ### Причины отстранения от должности
   <FTLTextpart Key="guidebook-SOP-command-procedure-reasons-for-removal"/>

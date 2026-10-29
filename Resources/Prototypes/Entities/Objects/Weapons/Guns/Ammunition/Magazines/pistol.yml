@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [ BaseItem, BaseSecurityContraband ]
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseItem, BaseSecurityContraband] # Corvax-Contraband
   id: BaseMagazinePistol
   name: pistol magazine (.35 auto)
   components:
@@ -33,7 +33,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseItem, BaseSecurityContraband ]
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseItem, BaseSecurityContraband] # Corvax-Contraband
   id: BaseMagazinePistolHighCapacity
   name: machine pistol magazine (.35 auto)
   components:
@@ -66,7 +66,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseItem, BaseSecurityContraband ]
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseItem, BaseSecurityContraband] # Corvax-Contraband
   id: BaseMagazinePistolSubMachineGun  # Yeah it's weird but it's pistol caliber
   name: SMG magazine (.35 auto)
   components:

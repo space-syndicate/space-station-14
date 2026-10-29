@@ -66,6 +66,8 @@ ent-FakeMindShieldToggleAction = [color=green]Переключить фальш�
     .desc = Переключить трансляцию фальшивого Щита разума
 ent-ActionToggleParamedicSiren = Переключить сирену парамедика
     .desc = Включает или выключает сирену парамедика.
+ent-ActionToggleNightVision = Переключить ночное зрение
+    .desc = Включает и выключает ночное зрение.
 ent-ActionToggleWaggingVulpkanin = { ent-ActionToggleWagging }
     .desc = { ent-ActionToggleWagging.desc }
 ent-ActionGravityJump = Прыжок
@@ -80,5 +82,7 @@ ent-ActionChameleonController = Управление одеждой
     .desc = Быстро смените весь свой наряд!
 ent-ActionIntrinsicStore = Магазин
     .desc = Открыть магазин
+ent-ActionOpenVendingMachineInterface = Переключить интерфейс
+    .desc = Выберите бесплатные подарки из своего каталога!
 ent-ActionChangeVoiceMaskImplant = { ent-ActionChangeVoiceMask }
     .desc = { ent-ActionChangeVoiceMask.desc }

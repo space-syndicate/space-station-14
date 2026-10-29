@@ -1,5 +1,5 @@
 ent-CableStack = моток кабеля
-    .desc = { ent-BaseItem.desc }
+    .desc = { ent-SolutionCompositeSmallStackable.desc }
     .suffix = Полный
 ent-CableHVStack = моток ВВ-кабеля
     .desc = Моток высоковольтных проводов для подключения генераторов энергии к СМЭС, подстанциям и специальному оборудованию.
@@ -13,6 +13,8 @@ ent-CableHVStack1 = { ent-CableHVStack }
 ent-CableMVStack = моток СВ-кабеля
     .desc = Моток средневольтных проводов для подключения подстанций к ЛКП, а также для питания некоторого оборудования, например, эмиттеров.
     .suffix = Полный
+ent-SolutionCompositeCable = { ent-SolutionCompositeSmallStackable }
+    .desc = { ent-SolutionCompositeSmallStackable.desc }
 ent-CableMVStack10 = { ent-CableMVStack }
     .desc = { ent-CableMVStack.desc }
     .suffix = 10

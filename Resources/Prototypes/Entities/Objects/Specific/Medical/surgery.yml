@@ -17,7 +17,7 @@
 - type: entity
   name: cautery
   id: Cautery
-  parent: BaseToolSurgery
+  parent: [BaseCorvaxContraband432DepartmentsMedical, BaseToolSurgery] # Corvax-Contraband
   description: A surgical tool used to cauterize open wounds.
   components:
   - type: Sprite
@@ -38,7 +38,7 @@
 - type: entity
   name: drill
   id: Drill
-  parent: BaseToolSurgery
+  parent: [BaseCorvaxContraband432DepartmentsMedical, BaseToolSurgery] # Corvax-Contraband
   description: A surgical drill for making holes into hard material.
   components:
   - type: Sprite
@@ -63,11 +63,9 @@
 - type: entity
   name: scalpel
   id: Scalpel
-  parent: BaseToolSurgery
+  parent: [BaseCorvaxContraband432DepartmentsMedical, BaseToolSurgery] # Corvax-Contraband
   description: A surgical tool used to make incisions into flesh.
   components:
-  - type: Sharp
-    butcherDelayModifier: 1.5 # Butchering with a scalpel, regardless of the type, will take 50% longer
   - type: Tool
     qualities:
     - Slicing
@@ -144,7 +142,7 @@
 - type: entity
   name: retractor
   id: Retractor
-  parent: BaseToolSurgery
+  parent: [BaseCorvaxContraband432DepartmentsMedical, BaseToolSurgery] # Corvax-Contraband
   description: A surgical tool used to hold open incisions.
   components:
   - type: Sprite
@@ -177,10 +175,9 @@
 - type: entity
   name: metal saw
   id: Saw
-  parent: BaseToolSurgery
+  parent: [BaseCorvaxContraband432DepartmentsMedical, BaseToolSurgery] # Corvax-Contraband
   description: For cutting wood and other objects to pieces. Or sawing bones, in case of emergency.
   components:
-  - type: Sharp
   - type: Utensil
     types:
       - Knife
@@ -193,7 +190,8 @@
     storedRotation: 90
   - type: Tool
     qualities:
-      - Sawing
+    - Sawing
+    - Slicing
 # No melee for regular saw because have you ever seen someone use a band saw as a weapon? It's dumb.
 
 - type: entity

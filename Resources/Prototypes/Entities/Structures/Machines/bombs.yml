@@ -76,10 +76,6 @@
           primed:
             True: { visible: true }
             False: { visible: false }
-        enum.WiresVisualLayers.MaintenancePanel:
-          enum.WiresVisualLayers.MaintenancePanel:
-            True: { visible: true }
-            False: { visible: false }
     - type: PointLight
       color: "#0063C7"
       radius: 1.1
@@ -94,7 +90,7 @@
       disposable: false
 
 - type: entity
-  parent: [BaseHardBomb, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband436, BaseHardBomb, BaseSyndicateContraband] # Corvax-Contraband
   id: SyndicateBomb
   name: syndicate bomb
   description: A bomb for Syndicate operatives and agents alike. The real deal, no more training, get to it!
@@ -113,10 +109,6 @@
       visuals:
         enum.DefusableVisuals.Active:
           primed:
-            True: { visible: true }
-            False: { visible: false }
-        enum.WiresVisualLayers.MaintenancePanel:
-          enum.WiresVisualLayers.MaintenancePanel:
             True: { visible: true }
             False: { visible: false }
     - type: PointLight

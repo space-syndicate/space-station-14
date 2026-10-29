@@ -11,7 +11,9 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Input;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Robust.Client.Graphics;
 using Content.Corvax.Interfaces.Shared; // Corvax-Sponsors
+using static Content.Client.Corvax.SponsorOnlyHelpers; // Corvax-Sponsors
 
 namespace Content.Client.Humanoid;
 
@@ -90,13 +92,22 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
 
     private void UpdateData()
     {
-        MarkingTexture.Textures = _markingPrototype.Sprites.Select(layer => _sprite.Frame0(layer)).ToList();
+        var textures = _markingPrototype.Sprites
+            .Select(l => _sprite.Frame0(l.Sprite))
+            .ToList();
+
+        MarkingTexture.Textures = textures;
         SelectButton.Text = Loc.GetString($"marking-{_markingPrototype.ID}");
 
         // Corvax-Sponsors-Start
         if (_markingPrototype.SponsorOnly && _sponsorsManager != null && _interactive)
         {
-            SelectButton.Disabled = !_sponsorsManager.GetClientPrototypes().Contains(_markingPrototype.ID);
+            var hasAccess = _sponsorsManager?.GetClientPrototypes().Contains(_markingPrototype.ID) ?? false;
+            if (!hasAccess)
+            {
+                SelectButton.Disabled = true;
+                SelectButton.Text += GetSponsorOnlySuffix(_markingPrototype.ID);
+            }
         }
         // Corvax-Sponsors-End
     }
@@ -116,7 +127,7 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
         if (_markingsModel.GetMarking(_organ, _layer, _markingPrototype.ID) is { } marking &&
             _colorSliders is { } sliders)
         {
-            for (var i = 0; i < _markingPrototype.Sprites.Count; i++)
+            for (var i = 0; i < _markingPrototype.GetColorCount(); i++)
             {
                 sliders[i].Color = marking.MarkingColors[i];
             }
@@ -157,40 +168,36 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
         if (_markingsModel.GetMarking(_organ, _layer, _markingPrototype.ID) is not { } marking)
             return;
 
+        PopulateColorChannelsForLayers(marking);
+    }
+
+    /// <summary>
+    ///     Adds color sliders for each layer of this marking.
+    /// </summary>
+    private void PopulateColorChannelsForLayers(Marking marking)
+    {
         _colorSliders = new();
 
         for (var i = 0; i < _markingPrototype.Sprites.Count; i++)
         {
-            var container = new BoxContainer()
-            {
-                Orientation = LayoutOrientation.Vertical,
-                HorizontalExpand = true,
-            };
-
-            ColorsContainer.AddChild(container);
-
-            var selector = new ColorSelectorSliders();
-            selector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv;
-
-            var label = _markingPrototype.Sprites[i] switch
-            {
-                SpriteSpecifier.Rsi rsi => Loc.GetString($"marking-{_markingPrototype.ID}-{rsi.RsiState}"),
-                SpriteSpecifier.Texture texture => Loc.GetString($"marking-{_markingPrototype.ID}-{texture.TexturePath.Filename}"),
-                _ => throw new InvalidOperationException("SpriteSpecifier not of known type"),
-            };
-
-            container.AddChild(new Label { Text = label });
-            container.AddChild(selector);
-
-            selector.Color = marking.MarkingColors[i];
-
-            _colorSliders.Add(selector);
-
+            var layer = _markingPrototype.Sprites[i];
+            var labelText = layer.GetLayerName(_markingPrototype.ID);
             var colorIndex = i;
-            selector.OnColorChanged += _ =>
+            var colorChannel = new LayerMarkingColorChannel();
+            colorChannel.SetLayerText(labelText);
+            colorChannel.SetColor(marking.MarkingColors[i]);
+            colorChannel.Visible = !layer.ForcedColoring; // may be iffy to keep invisible sliders, but whatever
+            colorChannel.OnColorChanged += _ =>
             {
-                _markingsModel.TrySetMarkingColor(_organ, _layer, _markingPrototype.ID, colorIndex, selector.Color);
+                _markingsModel.TrySetMarkingColor(_organ,
+                    _layer,
+                    _markingPrototype.ID,
+                    colorIndex,
+                    colorChannel.LayerColor);
             };
+
+            ColorsContainer.AddChild(colorChannel);
+            _colorSliders.Add(colorChannel.ColorSliders);
         }
     }
 

@@ -4,6 +4,7 @@ artifact-verb-activate = Активировать артефакт
 
 ### Unlocking
 artifact-unlock-state-begin = Он начинает меняться странным образом...
+artifact-unlock-state-continue = Изменения продолжаются, усиливаясь...
 artifact-unlock-state-end-success = Он замедляется, визуально меняясь.
 artifact-unlock-state-end-failure = Он замедляется, а затем плавно останавливается.
 

@@ -52,7 +52,7 @@ trait-french-name = Французский акцент
 trait-french-desc = Ваш акцент, похоже, имеет определённый «je ne sais quoi».
 
 trait-spanish-name = Испанский акцент
-trait-spanish-desc = Hola señor, как пройти в la biblioteca.
+trait-spanish-desc = Hola señor, ¿как пройти в la biblioteca?
 
 trait-scottish-name = Шотландский акцент
 trait-scottish-desc = Ты говоришь как настоящий шотландец!
@@ -65,3 +65,6 @@ trait-hemophilia-desc = Ваш организм не справляется со
 
 trait-impaired-mobility-name = Нарушение подвижности
 trait-impaired-mobility-desc = Вам тяжело передвигаться без посторонней помощи.
+
+trait-blink-dyspraxia-name = Асинхронное моргание
+trait-blink-dyspraxia-desc = Вашим векам не хватает гармонии. Чтобы моргнуть, требуется сознательное усилие, а порой глаза просто отказываются действовать синхронно.

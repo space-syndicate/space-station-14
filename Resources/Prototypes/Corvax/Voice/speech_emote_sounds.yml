@@ -1,6 +1,7 @@
 # species
 - type: emoteSounds
   id: MaleTajaran
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
   params:
     variation: 0.125
   sounds:
@@ -33,6 +34,7 @@
 
 - type: emoteSounds
   id: FemaleTajaran
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
   params:
     variation: 0.125
   sounds:
@@ -65,24 +67,8 @@
 
 # species
 - type: emoteSounds
-  id: MaleIpc
-  params:
-    variation: 0.125
-  sounds:
-    Scream:
-      path: /Audio/Corvax/Effects/Ipc/scream.ogg
-    Laugh:
-      path: /Audio/Corvax/Effects/Ipc/laugh.ogg
-    Snore:
-      path: /Audio/Machines/buzz-two.ogg
-    Crying:
-      path: /Audio/Corvax/Effects/Ipc/cry.ogg
-    Weh:
-      collection: Weh
-
-
-- type: emoteSounds
-  id: FemaleIpc
+  id: UnisexIpc
+  voiceSelectorName: humanoid-profile-editor-voice-neutral
   params:
     variation: 0.125
   sounds:

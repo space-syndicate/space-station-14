@@ -1,16 +1,27 @@
 <Document>
-  # Vulpkanin
+  # Вулпканин
 
   <Box>
     <GuideEntityEmbed Entity="MobVulpkanin" Caption=""/>
   </Box>
 
-  Vulpkanin, due to their dense fur, [color=#1e90ff]prefer colder temperatures[/color] and [color=#ffa500]heat up faster.[/color]
-  Their agile (but clumsy) legs allow them to leap short distances, be careful not to bump into anything!
+  ## Общая информация
 
-  Their diet allows them to safely eat raw meat but they get poisoned by theobromine.
+  Вульпканины, благодаря их острым когтям, наносят режущий урон безоружными атаками.
 
-  Their weirdly shaped muzzle leads to difficulties drinking, making them sometimes spill small amounts of whatever they drank onto the ground.
+  Их пищеварительная система, подобная животной, способна [color=lightgreen]переваривать сырое мясо и кровь[/color] без каких-либо негативных последствий.
+  Аллицин (содержащийся в чесноке и луке) и теобромин (содержащийся в напитках с кофеином и шоколаде) являются [color=palevioletred]ядом[/color] для них.
 
-  They take [color=#1e90ff]15% less Cold damage[/color] but [color=#ffa500]15% more Heat damage.[/color].
+  Из-за формы морды они, как правило, проливают немного жидкости, когда пьют.
+
+  Они получают на [color=lightgreen]15% меньше урона охлаждением[/color], но [color=palevioletred]15% больше термического урона[/color].
+  Из-за густого меха им комфортнее при слегка более низких температурах, чем людям, кроме того, этот мех делает их [color=palevioletred]чрезвычайно уязвимыми к огню[/color].
+
+  ## Прыжок
+
+  Пальцеобразные ноги вульпканинов позволяют им [color=lightgreen]прыгать на впечатляющие расстояния[/color]. Это полезно для перепрыгивания через наземные опасности
+  (например, бездонные пропасти) либо совершать резкий рывок, чтобы выбраться из опасной ситуации  или даже кого-то догнать.
+
+  Будьте осторожны, не врежьтесь во что-нибудь при прыжке, иначе вы [color=palevioletred]упадёте на землю[/color] и выроните то, что держите в руках!
+
 </Document>

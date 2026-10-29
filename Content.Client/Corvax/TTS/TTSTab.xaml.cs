@@ -8,7 +8,6 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 using Content.Client.Stylesheets;
-using Content.Shared.Humanoid;
 using System.Text.RegularExpressions;
 
 namespace Content.Client.Corvax.TTS;
@@ -95,9 +94,8 @@ public sealed partial class TTSTab : Control
         {
             var name = Loc.GetString(voice.Name).ToLowerInvariant();
 
-            if (string.IsNullOrEmpty(searchText) ||
-                name.Contains(searchText) ||
-                voice.ID.ToLowerInvariant().Contains(searchText))
+            if (string.IsNullOrEmpty(searchText) || name.Contains(searchText)
+                || voice.ID.ToLowerInvariant().Contains(searchText))
             {
                 _filteredVoices.Add(voice);
             }
@@ -118,16 +116,11 @@ public sealed partial class TTSTab : Control
             var selectButton = new Button
             {
                 Text = displayName,
-                ToolTip = canSelectVoice ? voice.ID : Loc.GetString("humanoid-profile-editor-voice-tooltip-sponsoronly"),
+                ToolTip = canSelectVoice ? voice.ID : GetSponsorOnlyTooltip(voice.ID),
                 HorizontalExpand = true,
                 Disabled = !canSelectVoice,
                 StyleClasses = { StyleClass.ButtonOpenRight }
             };
-
-            if (voice.ID == _selectedVoiceId)
-            {
-                selectButton.AddStyleClass(StyleClass.Negative);
-            }
 
             selectButton.OnPressed += _ =>
             {
@@ -150,6 +143,12 @@ public sealed partial class TTSTab : Control
                 OnPreviewRequested?.Invoke(voice.ID);
             };
 
+            if (voice.ID == _selectedVoiceId)
+            {
+                selectButton.AddStyleClass(StyleClass.Negative);
+                previewButton.AddStyleClass(StyleClass.Negative);
+            }
+
             voiceContainer.AddChild(selectButton);
             voiceContainer.AddChild(previewButton);
 
@@ -158,6 +157,17 @@ public sealed partial class TTSTab : Control
 
         ResultsLabel.Text = Loc.GetString("humanoid-profile-editor-voice-match",
             ("filtered", _filteredVoices.Count), ("all", _allVoices.Count));
+    }
+
+    private string GetSponsorOnlyTooltip(string voiceId)
+    {
+        var sponsorsManager = IoCManager.Resolve<ISharedSponsorsManager>();
+        if (sponsorsManager?.TryGetTierNameForPrototype(voiceId, out var tier) == true)
+        {
+            return Loc.GetString("humanoid-profile-editor-voice-tooltip-sponsoronly-tier", ("tier", tier));
+        }
+
+        return Loc.GetString("humanoid-profile-editor-voice-tooltip-sponsoronly");
     }
 
     private bool CanUseVoice(TTSVoicePrototype voice)
@@ -169,16 +179,16 @@ public sealed partial class TTSTab : Control
         return sponsorsManager?.GetClientPrototypes().Contains(voice.ID) == true;
     }
 
-    public void UpdateControls(HumanoidCharacterProfile? profile, Sex sex)
+    public void UpdateControls(HumanoidCharacterProfile? profile, string voicePrototype)
     {
         if (profile == null)
             return;
 
-        _selectedVoiceId = profile.Voice;
+        _selectedVoiceId = profile.TTSVoice;
 
         _allVoices = _prototypeManager
             .EnumeratePrototypes<TTSVoicePrototype>()
-            .Where(o => o.RoundStart && HumanoidCharacterProfile.CanHaveVoice(o, sex))
+            .Where(o => o.RoundStart && HumanoidCharacterProfile.CanHaveVoice(o, voicePrototype))
             .OrderBy(o => Loc.GetString(o.Name))
             .ToList();
 

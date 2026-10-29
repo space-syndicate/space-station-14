@@ -8,3 +8,30 @@
   id: CaptainJumpskirtTurtleneck
   equipment:
     jumpsuit: ClothingUniformJumpskirtCapTurtleneck
+
+- type: loadout
+  id: CaptainJumpsuitRoyal
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCaptainRoyal
+
+# Head
+- type: loadout
+  id: CaptainBeret
+  equipment:
+    head: ClothingHeadHatCaptainBeret
+
+- type: loadout
+  id: CaptainBicorn
+  equipment:
+    head: ClothingHeadHatCaptainBicorn
+
+- type: loadout
+  id: CaptainHat
+  equipment:
+    head: ClothingHeadCaptainHat
+
+# Outer clothing
+- type: loadout
+  id: CaptainCoat
+  equipment:
+    outerClothing: ClothingOuterCoatCaptain

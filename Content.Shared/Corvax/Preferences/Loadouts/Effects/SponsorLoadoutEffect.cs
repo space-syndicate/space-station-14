@@ -23,21 +23,31 @@ public sealed partial class SponsorLoadoutEffect : LoadoutEffect
         if (session == null)
             return true;
 
-        var sponsorProtos = GetPrototypes(session, collection);
+        if (!collection.TryResolveType<ISharedSponsorsManager>(out var sponsorsManager))
+            return true;
+
+        var sponsorProtos = GetPrototypes(session, collection, sponsorsManager);
         if (!sponsorProtos.Contains(proto.ID))
         {
-            reason = FormattedMessage.FromMarkupOrThrow(Loc.GetString("loadout-sponsor-only"));
+            if (sponsorsManager.TryGetTierNameForPrototype(proto.ID, out var tierName) && !string.IsNullOrEmpty(tierName))
+            {
+                reason = FormattedMessage.FromMarkupOrThrow(
+                    Loc.GetString("loadout-sponsor-only-tier", ("tierName", tierName)));
+            }
+            else
+            {
+                reason = FormattedMessage.FromMarkupOrThrow(
+                    Loc.GetString("loadout-sponsor-only"));
+            }
+
             return false;
         }
 
         return true;
     }
 
-    public List<string> GetPrototypes(ICommonSession session, IDependencyCollection collection)
+    private List<string> GetPrototypes(ICommonSession session, IDependencyCollection collection, ISharedSponsorsManager sponsorsManager)
     {
-        if (!collection.TryResolveType<ISharedSponsorsManager>(out var sponsorsManager))
-            return new List<string>();
-
         var net = collection.Resolve<INetManager>();
 
         if (net.IsClient)

@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -27,8 +26,6 @@ using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
 using Content.Shared.CCVar;
-using Content.Shared.FeedbackSystem;
-using Content.Shared.Kitchen;
 using Content.Shared.Localizations;
 using Robust.Server;
 using Robust.Server.ServerStatus;
@@ -79,7 +76,6 @@ namespace Content.Server.Entry
         [Dependency] private MultiServerKickManager _multiServerKick = default!;
         [Dependency] private PlayTimeTrackingManager _playTimeTracking = default!;
         [Dependency] private PlayerRateLimitManager _rateLimit = default!;
-        [Dependency] private RecipeManager _recipe = default!;
         [Dependency] private RulesManager _rules = default!;
         [Dependency] private ServerApi _serverApi = default!;
         [Dependency] private ServerInfoManager _serverInfo = default!;
@@ -155,31 +151,12 @@ namespace Content.Server.Entry
             {
                 var resPath = new ResPath(dest).ToRootedPath();
                 // Corvax-Wiki-Start
-                void WriteFile(string name, Action<Stream> write)
-                {
-                    using var stream = _res.UserData.OpenWrite(resPath.WithName(name));
-                    write(stream);
-                }
-                WriteFile("entity_prototypes.json", EntityJsonGenerator.PublishJson);
-                WriteFile("entity_parent.json", EntityParentJsonGenerator.PublishJson);
-                WriteFile("loc.json", LocJsonGenerator.PublishJson);
-                WriteFile("meta_license.json", MetaLicenseGenerator.PublishJson);
-                WriteFile("prototype.json", PrototypeListGenerator.PublishJson);
-                WriteFile("component.json", ComponentListGenerator.PublishJson);
-                WriteFile("prototype_store.json", PrototypeStoreGenerator.PublishJson);
-                WriteFile("component_store.json", ComponentStoreGenerator.PublishJson);
-                WriteFile("entity_project.json", EntityProjectGenerator.PublishJson);
-                WriteFile("entity_name.json", EntityNameDuplicatesJsonGenerator.PublishNameJson);
-                WriteFile("entity_name_wiki.json", file => WikiEntityNameGenerator.PublishJson(file, _res, resPath));
-                WriteFile("entity_name_duplicates.json", EntityNameDuplicatesJsonGenerator.PublishDuplicatesJson);
-                PrototypeJsonGenerator.PublishAll(_res, new ResPath("prototype").ToRootedPath());
-                ComponentJsonGenerator.PublishAll(_res, new ResPath("component").ToRootedPath());
+                GuideDataGenerator.Generate(_res, resPath);
                 // Corvax-Wiki-End
                 Dependencies.Resolve<IBaseServer>().Shutdown("Data generation done");
                 return;
             }
 
-            _recipe.Initialize();
             _admin.Initialize();
             _afk.Initialize();
             _rules.Initialize();
@@ -187,7 +164,7 @@ namespace Content.Server.Entry
             _discordChatLink.Initialize();
             _euiManager.Initialize();
             _gameMap.Initialize();
-            _entSys.GetEntitySystem<GameTicker>().PostInitialize();
+            _entSys.GetEntitySystem<ServerGameTicker>().PostInitialize();
             _ban.Initialize();
             _connection.PostInit();
             _multiServerKick.Initialize();

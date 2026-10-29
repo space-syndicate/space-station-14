@@ -4,6 +4,7 @@ loadout-group-species-restriction = Этот предмет недоступен
 # Miscellaneous
 loadout-group-trinkets = Безделушки
 loadout-group-jobtrinkets = Безделушки должности
+loadout-group-assistive-items = Вспомогательные предметы
 loadout-group-glasses = Очки
 loadout-group-backpack = Рюкзак
 loadout-group-instruments = Инструменты
@@ -62,6 +63,7 @@ loadout-group-chaplain-mask = Священник, маска
 loadout-group-chaplain-jumpsuit = Священник, комбинезон
 loadout-group-chaplain-outerclothing = Священник, верхняя одежда
 loadout-group-chaplain-neck = Священник, шея
+loadout-group-chaplain-shoes = Священник, обувь
 loadout-group-chaplain-bible = Священная книга
 
 loadout-group-janitor-head = Уборщик, голова
@@ -207,3 +209,8 @@ loadout-group-reporter-head = Репортёр, голова
 loadout-group-reporter-outerclothing = Репортёр, верхняя одежда
 
 loadout-group-psychologist-jumpsuit = Психолог, комбинезон
+
+loadout-group-tramdriver-jumpsuit = Водитель трамвая, комбинезон
+loadout-group-tramdriver-outerclothing = Водитель трамвая, костюм
+loadout-group-tramdriver-hat = Водитель трамвая, голова
+loadout-group-tramdriver-gloves = Водитель трамвая, перчатки

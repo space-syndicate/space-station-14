@@ -24,7 +24,7 @@
       path: /Audio/Items/smoke_grenade_prime.ogg
 
 - type: entity
-  parent: [ BaseCivilianContraband, SmokeGrenade ]
+  parent: [ BaseServiceContraband, SmokeGrenade ]
   id: CleanerGrenade
   name: cleanade
   description: Special grenade for janitors, releasing large cloud of space cleaner foam.
@@ -46,7 +46,7 @@
     - CleanerGrenade
 
 - type: entity
-  parent: SmokeGrenade
+  parent: [BaseCorvaxContraband432DepartmentsSecurity, SmokeGrenade] # Corvax-Contraband
   id: TearGasGrenade
   name: tear gas grenade
   description: A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.

@@ -20,6 +20,13 @@
   ### Главному врачу запрещено
   <FTLTextpart Key="guidebook-SOP-ChiefMedicalOfficer-prohibited"/>
 
+  ## СРП Ведущего врача
+  ### Ведущий врач обязан
+  <FTLTextpart Key="guidebook-SOP-SeniorPhysician-must"/>
+
+  ### Ведущий врач имеет право
+  <FTLTextpart Key="guidebook-SOP-SeniorPhysician-right"/>
+
   ## СРП Парамедика
   ### Парамедик обязан
   <FTLTextpart Key="guidebook-SOP-Paramedic-must"/>
@@ -66,13 +73,6 @@
 
   ### Хирургу запрещено
   <FTLTextpart Key="guidebook-SOP-Surgeon-prohibited"/>
-
-  ## СРП Патологоанатома
-  ### Патологоанатом обязан
-  <FTLTextpart Key="guidebook-SOP-Pathologist-must"/>
-
-  ### Патологоанатом имеет право
-  <FTLTextpart Key="guidebook-SOP-Pathologist-right"/>
 
   ## СРП Вирусолога
   ### Вирусолог обязан

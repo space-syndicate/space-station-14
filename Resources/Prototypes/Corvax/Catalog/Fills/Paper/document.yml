@@ -97,6 +97,14 @@
 
 - type: entity
   parent: PrintedDocument
+  id: PrintedDocumentApplicationAppointmentInterimCaptain
+  name: Statement of Appointment to the Temporary Acting Captain
+  components:
+    - type: Paper
+      content: doc-text-printer-application-appointment-interim-captain
+
+- type: entity
+  parent: PrintedDocument
   id: PrintedDocumentApplicationEmployment
   name: Statement of Employment
   components:

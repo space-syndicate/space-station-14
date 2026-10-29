@@ -16,7 +16,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant ]
+          type: [ Human, Animal, Rat, Plant, Arachnid ]
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -76,6 +76,7 @@
 
 - type: reagent
   id: Plasma
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-plasma
   desc: reagent-desc-plasma
   physicalDesc: reagent-physical-desc-gaseous
@@ -218,6 +219,7 @@
 
 - type: reagent
   id: Nitrogen
+  contrabandSeverity: Corvax442 # Corvax-Contraband
   name: reagent-name-nitrogen
   desc: reagent-desc-nitrogen
   physicalDesc: reagent-physical-desc-gaseous
@@ -279,7 +281,6 @@
           type: [ Slime ]
           inverted: true
         emote: Laugh
-        showInChat: true
         probability: 0.1
       - !type:Emote
         minScale: 0.2
@@ -288,7 +289,6 @@
           type: [ Slime ]
           inverted: true
         emote: Scream
-        showInChat: true
         probability: 0.01
       - !type:PopupMessage
         minScale: 0.5
@@ -331,6 +331,7 @@
 
 - type: reagent
   id: Frezon
+  contrabandSeverity: Corvax444 # Corvax-Contraband
   name: reagent-name-frezon
   desc: reagent-desc-frezon
   physicalDesc: reagent-physical-desc-gaseous

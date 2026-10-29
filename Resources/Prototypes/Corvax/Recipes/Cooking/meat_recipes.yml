@@ -1,6 +1,5 @@
 - type: microwaveMealRecipe
   id: RecipePelmeni
-  name: pelmeni recipe
   result: FoodPelmeniBowl
   time: 10
   reagents:
@@ -12,7 +11,6 @@
 
 - type: microwaveMealRecipe
   id: RecipeBakedCorvaxVulpkanin
-  name: baked vulpkanin recipe
   result: FoodBakedVulpkaninPlate
   time: 15
   reagents:

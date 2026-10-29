@@ -1,7 +1,8 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/2fea0a59470c476cf3f927833d3918d89cbe6af8 & inhand taken at commit https://github.com/tgstation/tgstation/commit/d1582bf1b41a0e24fd7a18124c6ff46b86b393f9 and modified by github:Morb0",
+  "copyright": "-visor states Made by DieselMohawk for use in SS14, non-visor states edited by Nox38.",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/2fea0a59470c476cf3f927833d3918d89cbe6af8 & inhand taken at commit https://github.com/tgstation/tgstation/commit/d1582bf1b41a0e24fd7a18124c6ff46b86b393f9 and modified by github:Morb0. Vox state by Flareguy for SS14, resproted vox helmet by @mishutka09",
   "size": {
     "x": 32,
     "y": 32
@@ -11,7 +12,22 @@
       "name": "icon"
     },
     {
+      "name": "icon-visor"
+    },
+    {
       "name": "equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "visor-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "equipped-HELMET-vox",
+      "directions": 4
+    },
+    {
+      "name": "visor-equipped-HELMET-vox",
       "directions": 4
     },
     {
@@ -19,7 +35,15 @@
       "directions": 4
     },
     {
+      "name": "visor-inhand-left",
+      "directions": 4
+    },
+    {
       "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "visor-inhand-right",
       "directions": 4
     }
   ]

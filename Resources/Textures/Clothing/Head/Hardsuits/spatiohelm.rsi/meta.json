@@ -7,53 +7,62 @@
     "y": 32
   },
   "states": [
-    {
-      "name": "icon"
-    },
-    {
-      "name": "icon-unshaded"
-    },
-    {
-      "name": "icon-flash"
-    },
-    {
-      "name": "light-overlay"
-    },
-    {
-      "name": "equipped-head",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-light",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-unshaded",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-vox",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-light-vox",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-unshaded-vox",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-vulpkanin",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-unshaded-vulpkanin",
-      "directions": 4
-    },
-    {
-      "name": "equipped-head-light-vulpkanin",
-      "directions": 4
-    }
-  ]
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon-unshaded"
+        },
+        {
+            "name": "light-overlay"
+        },
+        {
+            "name": "equipped-head",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-vox",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light-vox",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded-vox",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-vulpkanin",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light-vulpkanin",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded-vulpkanin",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded-reptilian",
+            "directions": 4
+        }
+    ]
 }

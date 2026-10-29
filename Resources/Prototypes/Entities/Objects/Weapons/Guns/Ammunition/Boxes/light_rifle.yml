@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: [BaseCorvaxContraband433DepartmentsSecurity, BaseItem] # Corvax-Contraband
   id: BaseMagazineBoxLightRifle
   name: ammunition box (.30 rifle)
   components:

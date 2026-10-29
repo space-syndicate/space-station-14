@@ -13,6 +13,10 @@
     sprite: Clothing/Belt/sheath.rsi
   - type: Item
     size: Ginormous
+    shape:
+    - 0,0,1,2
+    storedOffset: 0,-2
+    storedRotation: 45
   - type: ItemSlots
     slots:
       item:
@@ -21,6 +25,7 @@
         ejectVerbText: sheath-eject-verb
         insertSound: /Audio/Items/sheath.ogg
         ejectSound: /Audio/Items/unsheath.ogg
+        ejectOnBreak: true
         whitelist:
           tags:
           - CaptainSabre
@@ -53,6 +58,10 @@
       tags:
       - Arrow
       - Plunger
+  - type: Item
+    size: Ginormous
+    shape:
+    - 0,0,5,2
   - type: Appearance
   - type: StorageContainerVisuals
     maxFillLevels: 3
@@ -102,7 +111,7 @@
 ## Holsters
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: [BaseCorvaxContraband431DepartmentsSecurity, ClothingBeltStorageBase] # Corvax-Contraband
   id: ClothingBeltHolster
   name: shoulder holster
   description: 'A holster to carry a handgun and ammo. WARNING: Badasses only.'
@@ -114,9 +123,13 @@
   - type: Storage
     grid:
     - 0,0,3,1
+  - type: Item
+    size: Ginormous
+    shape:
+    - 0,0,4,1
 
 - type: entity
-  parent: [ClothingBeltStorageBase, BaseSyndicateContraband]
+  parent: [BaseCorvaxContraband431DepartmentsSecurity, ClothingBeltStorageBase, BaseSyndicateContraband] # Corvax-Contraband
   id: ClothingBeltSyndieHolster
   name: syndicate shoulder holster
   description: A deep shoulder holster capable of holding many types of ballistics.
@@ -134,6 +147,10 @@
       - Gun
       - BallisticAmmoProvider
       - CartridgeAmmo
+  - type: Item
+    size: Ginormous
+    shape:
+    - 0,0,4,2
   - type: StaticPrice
     price: 500
 
@@ -201,7 +218,7 @@
     sprite: Clothing/Belt/militarywebbingmed.rsi
 
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingBeltMilitaryWebbing ]
+  parent: [ BaseTaskForceContraband, ClothingBeltMilitaryWebbing ]
   id: ClothingBeltMilitaryWebbingERT
   name: ERT chest rig
   description: A set of tactical webbing worn by Emergency Response Team operatives.

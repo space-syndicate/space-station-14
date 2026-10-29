@@ -81,6 +81,9 @@
     interfaces:
       enum.DeimplantUiKey.Key:
         type: DeimplantBoundUserInterface
+  - type: Tag
+    tags:
+    - SmeltingImmune
 
 - type: entity
   id: Implanter
@@ -153,7 +156,8 @@
           True: {state: broken}
           False: {state: implanter1}
   - type: Tag
-    tags: []
+    tags:
+    - SmeltingImmune
 
 #Fun implanters
 
@@ -220,7 +224,7 @@
 - type: entity
   id: UplinkImplanter
   name: uplink implanter
-  parent: BaseImplantOnlyImplanterSyndi
+  parent: [BaseCorvaxContraband436, BaseImplantOnlyImplanterSyndi] # Corvax-Contraband
   components:
   - type: Implanter
     implant: UplinkImplant

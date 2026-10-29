@@ -103,6 +103,7 @@
         enum.ToggleableVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
+  - type: ItemToggleExaminableStatus
   - type: ItemToggle
   - type: ProximityBeeper
   - type: ProximityDetector
@@ -121,7 +122,7 @@
 
 - type: entity
   id: AnomalyLocator
-  parent: [ AnomalyLocatorUnpowered, PowerCellSlotSmallItem ]
+  parent: [BaseCorvaxContraband432DepartmentsScience, AnomalyLocatorUnpowered, PowerCellSlotSmallItem] # Corvax-Contraband
   suffix: ""
   components:
   - type: PowerCellDraw
@@ -156,7 +157,7 @@
 
 - type: entity
   id: AnomalyLocatorWide
-  parent: [ AnomalyLocatorWideUnpowered, PowerCellSlotSmallItem ]
+  parent: [BaseCorvaxContraband432DepartmentsScience, AnomalyLocatorWideUnpowered, PowerCellSlotSmallItem] # Corvax-Contraband
   suffix: ""
   components:
   - type: PowerCellDraw
