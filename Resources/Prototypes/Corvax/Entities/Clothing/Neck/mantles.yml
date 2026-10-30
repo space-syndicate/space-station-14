@@ -3,6 +3,7 @@
   id: ClothingNeckMantleHOSShoulder
   name: head of security's shoulder mantle
   description: Shootouts with nukies are just another Tuesday for this HoS. This mantle is a symbol of commitment to the station.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Clothing/Neck/mantles/hosmantle_shoulder.rsi
@@ -14,8 +15,21 @@
   id: ClothingNeckMantleERTLeader
   name: ERT leader's mantle
   description: Extraordinary decorative drape over the shoulders.
+  suffix: Corvax
   components:
     - type: Sprite
       sprite: Corvax/Clothing/Neck/Mantles/ERTmantle.rsi
     - type: Clothing
       sprite: Corvax/Clothing/Neck/Mantles/ERTmantle.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMantleCentcom
+  name: Centcom officer's shoulder mantle
+  description: Luxuriously finished shoulder wrap.
+  suffix: Corvax
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Neck/Mantles/centcommantle_shoulder.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Neck/Mantles/centcommantle_shoulder.rsi

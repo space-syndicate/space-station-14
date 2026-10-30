@@ -8,5 +8,5 @@ department-Science-description = Изучайте и разрабатывайт�
 department-Security-description = Защищайте станцию и поддерживайте порядок.
 department-Service-description = Удовлетворяйте основные физические и психологические потребности экипажа.
 department-Silicon-description = Следуйте установленным вам законам.
-department-Task-Force-description = Проводите специальные операции под руководством Центрального командования.
+department-Task-Force-description = Проводите специальные операции под руководством штаба Департамента специальных операций и его офицеров.
 department-Specific-description = Должности, которые есть не на всех станциях.

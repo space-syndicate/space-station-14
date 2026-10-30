@@ -1,23 +1,63 @@
 - type: vendingMachineInventory
   id: CentDrobeInventory
-  startingInventory:
-    ClothingShoesBootsLaceup: 3
-    ClothingShoesBootsJack: 3
-    ClothingHandsGlovesCombat: 3
-    ClothingEyesGlassesSunglasses: 3
-    ClothingUniformJumpsuitCentcomOfficer: 3
+  startingInventory: # Corvax-Centcom-Start
+    ClothingHeadHatBeretCentcomNaval: 3
+    ClothingHeadHatBeretCentcomWhite: 1
+    ClothingHeadHatCentcomcap: 3
+    ClothingHeadCapCentcomNaval: 3
+    ClothingHeadHatCentcom: 3
+
+    ClothingEyesGlassesSecurity: 3
+    ClothingEyesGlassesCommand: 3
+    ClothingNeckCloakCentcom: 2
+    ClothingNeckMantleCentcom: 3
+
+    ClothingHeadsetCentCom: 3
+    ClothingHeadsetAltCentCom: 3
+
     ClothingUniformJumpsuitCentcomOfficial: 3
+    ClothingUniformJumpskirtCentcomOfficial: 3
+    ClothingUniformJumpsuitCentcomOfficer: 3
+    ClothingUniformJumpskirtCentcomOfficer: 3
     ClothingUniformJumpsuitCentcomAgent: 3
+    ClothingUniformJumpsuitCentcomOfficerShirt: 3
     ClothingUniformJumpsuitCentcomFormal: 3
     ClothingUniformJumpskirtCentcomFormalDress: 3
-    ClothingHeadHatCentcom: 3
-    ClothingHeadHatCentcomcap: 3
-    ClothingMaskGasCentcom: 3
-    ClothingHeadsetCentCom: 3
-    ClothingOuterWinterCentcom: 3
+    ClothingUniformJumpsuitCentcomOfficerWhite: 1
+
+    ClothingOuterArmorCentcommCarapace: 3
+    ClothingOuterCoatCentcomTunic: 3
+    ClothingOuterCoatCentcomDress: 3
+    ClothingOuterCoatCentcom: 3
+
+    ClothingHandsGlovesCentcomNaval: 3
+    ClothingHandsGlovesCentcomWhite: 1
+
     ClothingOuterCoatExpensive: 1
-    ClothingNeckScarfStripedCentcom: 3
-    ClothingNeckCloakCentcom: 3
+    ClothingNeckScarfStripedCentcom: 5
+    ClothingOuterWinterCentcom: 5
+    ClothingMaskGasCentcom: 5
+    ClothingShoesBootsLaceup: 5
+    ClothingShoesBootsJack: 3
+
+    # ClothingShoesBootsLaceup: 3
+    # ClothingShoesBootsJack: 3
+    # ClothingHandsGlovesCombat: 3
+    # ClothingEyesGlassesSunglasses: 3
+    # ClothingUniformJumpsuitCentcomOfficer: 3
+    # ClothingUniformJumpsuitCentcomOfficial: 3
+    # ClothingUniformJumpsuitCentcomAgent: 3
+    # ClothingUniformJumpsuitCentcomFormal: 3
+    # ClothingUniformJumpskirtCentcomFormalDress: 3
+    # ClothingHeadHatCentcom: 3
+    # ClothingHeadHatCentcomcap: 3
+    # ClothingMaskGasCentcom: 3
+    # ClothingHeadsetCentCom: 3
+    # ClothingOuterWinterCentcom: 3
+    # ClothingOuterCoatExpensive: 1
+    # ClothingNeckScarfStripedCentcom: 3
+    # ClothingNeckCloakCentcom: 3
+  # Corvax-Centcom-End
   contrabandInventory:
     ToyFigurineCaptain: 1
     ToyFigurineHeadOfPersonnel: 1
