@@ -1,0 +1,25 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              Orientation="Vertical"
+              HorizontalExpand="True"
+              Margin="0 0 0 6">
+    <PanelContainer StyleClasses="BackgroundDark" HorizontalExpand="True">
+        <BoxContainer Orientation="Vertical" Margin="8 6">
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <Label Name="TitleLabel" StyleClasses="LabelHeading" HorizontalExpand="True" ClipText="True" />
+                <Label Name="StatusLabel" Margin="8 0 0 0" />
+            </BoxContainer>
+            <Label Name="InfoLabel" FontColorOverride="#aaaaaa" />
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 4 0 0">
+                <Button Name="PauseButton" MinWidth="110" />
+                <Slider Name="PositionSlider" HorizontalExpand="True" Margin="8 0" VerticalAlignment="Center" />
+                <Label Name="PositionLabel" MinWidth="110" />
+                <Button Name="StopButton" Text="{Loc 'admin-music-active-remove'}" StyleClasses="negative" />
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 4 0 0">
+                <Label Text="{Loc 'admin-music-volume'}" MinWidth="110" />
+                <Slider Name="VolumeSlider" HorizontalExpand="True" Margin="8 0" VerticalAlignment="Center" />
+                <Label Name="VolumeLabel" MinWidth="110" />
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
+</BoxContainer>
