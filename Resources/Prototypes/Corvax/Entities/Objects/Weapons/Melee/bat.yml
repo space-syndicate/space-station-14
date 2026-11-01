@@ -18,7 +18,6 @@
           True: {state: icon_on}
           False: {state: icon_off}
   - type: Item
-    size: Small
     heldPrefix: off
   - type: Clothing
     slots:
