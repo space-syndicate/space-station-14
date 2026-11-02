@@ -1,0 +1,14 @@
+ent-MobSheepBase = sheepBase
+    .desc = овца
+ent-MobSheep = овца
+    .desc = Очаровательная генетически модифицированная химическая фабрика, производящая молоко и хлопок.
+    .suffix = { ent-SimpleMobBase.suffix }
+ent-SolutionWoolSheep = { ent-SolutionWool }
+    .desc = { ent-SolutionWool.desc }
+ent-SolutionUdderSheep = { ent-SolutionUdder }
+    .desc = { ent-SolutionUdder.desc }
+ent-MobSheepRainbow = радужная овца
+    .desc = Овца. Эта кажется... светящейся.
+    .suffix = { ent-MobSheep.suffix }
+ent-SolutionWoolSheepRainbow = { ent-SolutionWool }
+    .desc = { ent-SolutionWool.desc }

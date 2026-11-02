@@ -1,0 +1,15 @@
+ent-MobBaseKobold = кобольд
+    .desc = Двоюродные братья разумного вида унатхов, кобольды сливаются со своей естественной средой обитания, и так же противны, как обезьяны. Они готовы вырвать ваши волосы и заколоть вас до смерти.
+    .suffix = { ent-MobBaseAncestor.suffix }
+ent-MobKobold = кобольд
+    .desc = Двоюродные братья разумного вида унатхов, кобольды сливаются со своей естественной средой обитания, и так же противны, как обезьяны. Они готовы вырвать ваши волосы и заколоть вас до смерти.
+    .suffix = { ent-MobBaseKobold.suffix }
+ent-MobBaseSyndicateKobold = { ent-MobBaseKobold }
+    .desc = { ent-MobBaseKobold.desc }
+    .suffix = Синдикат, Базовый
+ent-MobKoboldSyndicateAgent = { ent-MobBaseSyndicateKobold }
+    .desc = { ent-MobBaseSyndicateKobold.desc }
+    .suffix = Агент Синдиката
+ent-MobKoboldSyndicateAgentNukeops = { ent-MobBaseSyndicateKobold }
+    .desc = { ent-MobBaseSyndicateKobold.desc }
+    .suffix = Ядерные оперативники

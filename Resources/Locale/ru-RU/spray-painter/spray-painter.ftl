@@ -77,6 +77,7 @@ spray-painter-style-airlockstandard-engineering = Инженерный
 spray-painter-style-airlockstandard-freezer = Холодильник
 spray-painter-style-airlockstandard-hydroponics = Гидропоника
 spray-painter-style-airlockstandard-maintenance = Технический
+spray-painter-style-airlockstandard-service = Сервисный
 spray-painter-style-airlockstandard-medical = Медицинский
 spray-painter-style-airlockstandard-salvage = Утилизаторский
 spray-painter-style-airlockstandard-science = Научный
