@@ -1,4 +1,4 @@
-ent-MobSheepBase = sheepBase
+ent-MobSheepBase = овца
     .desc = овца
 ent-MobSheep = овца
     .desc = Очаровательная генетически модифицированная химическая фабрика, производящая молоко и хлопок.
