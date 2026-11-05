@@ -6,30 +6,62 @@
   setPreference: false
   startingGear: CentcommGear
   icon: "JobIconNanotrasen"
-  supervisors: job-supervisors-centcom # Corvax-JobSupervisors
-  accessGroups:
-  - AllAccess
+  # Corvax-Start
+  supervisors: job-supervisors-centcom
+  # accessGroups:
+  # - AllAccess
   access:
   - CentralCommand
+  - Command
+  - HeadOfPersonnel
+  - Bar
+  - Service
+  - Maintenance
+  - Janitor
+  - Theatre
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - External
+  - Cryogenics
+  - Chemistry
+  - Engineering
+  - Research
+  - Detective
+  - Salvage
+  - Security
+  - Brig
+  - Lawyer
+  - Cargo
+  - Atmospherics
+  - Medical
+  - GenpopEnter
+  - GenpopLeave
+  # Corvax-End
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
   id: CentcommGear
+  # Corvax-Start
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomOfficial
-    shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatCentcom
+    back: ClothingBackpackSatchelLeather
+    neck: ClothingNeckTieSerious
+    shoes: ClothingShoesColorBlack
     eyes: ClothingEyesGlassesCommand
     gloves: ClothingHandsGlovesColorBlack
-    outerClothing: ClothingOuterArmorCentcommCarapace
     id: CentcomPDA
-    ears: ClothingHeadsetAltCentCom
-    belt: WeaponPistolN1984
-    pocket1: BoxFolderCentComClipboardThreePapers
-    pocket2: PenCentcom
-
+    ears: ClothingHeadsetCentCom
+    belt: BoxFolderClipboardThreePapers
+    pocket1: WeaponDisabler
+    pocket2: Flash
+  storage:
+    back:
+    - DrinkWaterBottleFull
+    - Zipties
+  # Corvax-End
 
 - type: chameleonOutfit
   id: CentralCommandOfficialOutfit
