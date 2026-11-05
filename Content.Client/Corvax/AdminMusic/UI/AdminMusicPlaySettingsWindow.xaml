@@ -1,0 +1,65 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+               Title="{Loc 'admin-music-settings-title'}"
+               MinSize="1000 560"
+               SetSize="1150 680">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="10 6 10 6">
+        <Label Name="TrackLabel" StyleClasses="LabelHeading" ClipText="True" />
+        <controls:Separator StyleClasses="LowDivider" Margin="0 4" />
+
+        <!-- Параметры воспроизведения -->
+        <GridContainer Columns="3" HorizontalExpand="True">
+            <Label Text="{Loc 'admin-music-volume'}" MinWidth="150" />
+            <Slider Name="VolumeSlider" HorizontalExpand="True" Margin="8 0" VerticalAlignment="Center" />
+            <Label Name="VolumeLabel" MinWidth="80" />
+
+            <Label Text="{Loc 'admin-music-settings-start'}" MinWidth="150" />
+            <Slider Name="StartSlider" HorizontalExpand="True" Margin="8 0" VerticalAlignment="Center" />
+            <Label Name="StartLabel" MinWidth="80" />
+
+            <Label Text="{Loc 'admin-music-settings-end'}" MinWidth="150" />
+            <Slider Name="EndSlider" HorizontalExpand="True" Margin="8 0" VerticalAlignment="Center" />
+            <Label Name="EndLabel" MinWidth="80" />
+        </GridContainer>
+
+        <BoxContainer Orientation="Horizontal" Margin="0 6 0 0">
+            <Button Name="PreviewButton" Text="{Loc 'admin-music-settings-preview'}" MinWidth="160" />
+            <CheckBox Name="StartPausedCheckBox" Text="{Loc 'admin-music-settings-start-paused'}" Margin="12 0 0 0" />
+        </BoxContainer>
+
+        <controls:Separator StyleClasses="LowDivider" Margin="0 6" />
+
+        <!-- Фильтр игроков -->
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="3" Margin="0 0 4 0">
+                <Label Text="{Loc 'admin-music-settings-players'}" StyleClasses="LabelSubHeading" />
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <LineEdit Name="PlayerSearch" PlaceHolder="{Loc 'admin-music-settings-player-search'}" HorizontalExpand="True" MinWidth="240" Margin="0 2" />
+                    <Button Name="SelectAllButton" Text="{Loc 'admin-music-settings-select-all'}" Margin="4 2 0 2" />
+                    <Button Name="ClearSelectionButton" Text="{Loc 'admin-music-settings-clear'}" Margin="4 2 0 2" />
+                    <Button Name="RefreshButton" Text="{Loc 'admin-music-settings-refresh'}" Margin="4 2 0 2" />
+                </BoxContainer>
+                <PanelContainer StyleClasses="BackgroundDark" HorizontalExpand="True" VerticalExpand="True">
+                    <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+                        <BoxContainer Name="PlayerList" Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Top" Margin="4" />
+                    </ScrollContainer>
+                </PanelContainer>
+            </BoxContainer>
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="2" Margin="4 0 0 0">
+                <Label Text="{Loc 'admin-music-settings-objects'}" StyleClasses="LabelSubHeading" />
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <OptionButton Name="ObjectTypeOptions" Margin="0 2" />
+                    <LineEdit Name="ObjectSearch" PlaceHolder="{Loc 'admin-music-settings-object-search'}" HorizontalExpand="True" Margin="4 2 0 2" />
+                </BoxContainer>
+                <ItemList Name="ObjectList" HorizontalExpand="True" VerticalExpand="True" />
+                <Label Text="{Loc 'admin-music-settings-object-hint'}" FontColorOverride="#999999" />
+            </BoxContainer>
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 6 0 0">
+            <Label Name="SelectedLabel" HorizontalExpand="True" VerticalAlignment="Center" />
+            <Label Name="ErrorLabel" FontColorOverride="#ff8888" Visible="False" Margin="0 0 8 0" VerticalAlignment="Center" />
+            <Button Name="PlayButton" Text="{Loc 'admin-music-settings-play'}" MinWidth="160" Disabled="True" />
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>
