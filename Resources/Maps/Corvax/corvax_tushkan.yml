@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 293.0.1
+  engineVersion: 294.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/28/2026 14:55:40
+  time: 11/04/2026 20:57:00
   entityCount: 10960
 maps:
 - 7011
@@ -1237,6 +1237,10 @@ entities:
     - type: ChunkContainer
       chunkEntities: []
     - type: OccluderTree
+    - type: Parallax
+      parallax: OriginStation
+    - type: MapLight
+      ambientLightColor: '#750DBAFF'
 - proto: AirAlarm
   entities:
   - uid: 5
@@ -5395,13 +5399,13 @@ entities:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
-      pos: -1.53125,40.75
+      pos: -1.5,40.5
   - uid: 734
     components:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: 19.53125,31.59375
+      pos: 19.5,31.5
   - uid: 735
     components:
     - type: Transform
@@ -5426,7 +5430,7 @@ entities:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: 2.53125,40.75
+      pos: 2.5,40.5
   - uid: 739
     components:
     - type: Transform
@@ -5440,7 +5444,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -20.25,-6.5
+      pos: -20.5,-6.5
   - uid: 741
     components:
     - type: Transform
@@ -23615,35 +23619,10 @@ entities:
           decals:
             3347: -14,-29
         - node:
-            id: WarnCornerNW
-            color: '#000000FF'
-          decals:
-            1969: -1,-20
-        - node:
-            id: WarnCornerSW
-            color: '#000000FF'
-          decals:
-            1973: -1,-22
-        - node:
             id: WarnCornerSmallGreyscaleSW
             color: '#FFFFFFFF'
           decals:
             3360: -15,-29
-        - node:
-            id: WarnCornerSmallNW
-            color: '#000000FF'
-          decals:
-            1975: -1,-21
-        - node:
-            id: WarnCornerSmallSW
-            color: '#000000FF'
-          decals:
-            1978: -1,-21
-        - node:
-            id: WarnEndW
-            color: '#000000FF'
-          decals:
-            1971: -2,-21
         - node:
             id: WarnLineGreyscaleE
             color: '#FFFFFFFF'
@@ -23670,15 +23649,40 @@ entities:
             3354: -15,-32
             3355: -15,-31
         - node:
+            id: WoodTrimThinCornerNwWhite
+            color: '#2E211AFF'
+          decals:
+            0: -1,-20
+        - node:
             id: WoodTrimThinCornerSw
             color: '#FFFFFFFF'
           decals:
             1953: -1,-18
         - node:
+            id: WoodTrimThinCornerSwWhite
+            color: '#2E211AFF'
+          decals:
+            1: -1,-22
+        - node:
+            id: WoodTrimThinEndWWhite
+            color: '#2E211AFF'
+          decals:
+            2: -2,-21
+        - node:
+            id: WoodTrimThinInnerNwWhite
+            color: '#2E211AFF'
+          decals:
+            3: -1,-21
+        - node:
             id: WoodTrimThinInnerSw
             color: '#FFFFFFFF'
           decals:
             3376: -1,-18
+        - node:
+            id: WoodTrimThinInnerSwWhite
+            color: '#2E211AFF'
+          decals:
+            4: -1,-21
         - node:
             id: WoodTrimThinLineW
             color: '#FFFFFFFF'
@@ -27469,60 +27473,60 @@ entities:
           decals:
             5146: 9,-21
         - node:
-            id: WarnCornerNE
-            color: '#000000FF'
+            id: WoodTrimThinCornerNeWhite
+            color: '#2E211AFF'
           decals:
-            1968: 1,-20
-        - node:
-            id: WarnCornerSE
-            color: '#000000FF'
-          decals:
-            1972: 1,-22
-        - node:
-            id: WarnCornerSmallNE
-            color: '#000000FF'
-          decals:
-            1976: 1,-21
-        - node:
-            id: WarnCornerSmallSE
-            color: '#000000FF'
-          decals:
-            1977: 1,-21
-        - node:
-            id: WarnEndE
-            color: '#000000FF'
-          decals:
-            1970: 2,-21
-        - node:
-            id: WarnLineN
-            color: '#000000FF'
-          decals:
-            1980: 0,-22
-        - node:
-            id: WarnLineW
-            color: '#000000FF'
-          decals:
-            1979: 0,-20
+            0: 1,-20
         - node:
             id: WoodTrimThinCornerSe
             color: '#FFFFFFFF'
           decals:
             1954: 1,-18
         - node:
+            id: WoodTrimThinCornerSeWhite
+            color: '#2E211AFF'
+          decals:
+            1: 1,-22
+        - node:
+            id: WoodTrimThinEndEWhite
+            color: '#2E211AFF'
+          decals:
+            2: 2,-21
+        - node:
+            id: WoodTrimThinInnerNeWhite
+            color: '#2E211AFF'
+          decals:
+            6: 1,-21
+        - node:
             id: WoodTrimThinInnerSe
             color: '#FFFFFFFF'
           decals:
             3375: 1,-18
+        - node:
+            id: WoodTrimThinInnerSeWhite
+            color: '#2E211AFF'
+          decals:
+            5: 1,-21
         - node:
             id: WoodTrimThinLineE
             color: '#FFFFFFFF'
           decals:
             1959: 1,-17
         - node:
+            id: WoodTrimThinLineNWhite
+            color: '#2E211AFF'
+          decals:
+            4: 0,-20
+        - node:
             id: WoodTrimThinLineS
             color: '#FFFFFFFF'
           decals:
             1962: 0,-18
+        - node:
+            id: WoodTrimThinLineSWhite
+            color: '#2E211AFF'
+          decals:
+            3: 0,-22
   - uid: 9000
     components:
     - type: ChunkEntity
@@ -41302,58 +41306,58 @@ entities:
       pos: -24.5,7.5
     - type: Fixtures
       fixtures: {}
-- proto: FloorWaterEntity
+- proto: FloorSwimmingPoolEntity
   entities:
   - uid: 5055
     components:
     - type: Transform
       parent: 2
-      pos: -0.5,-19.5
+      pos: 2.5,-20.5
   - uid: 5056
     components:
     - type: Transform
       parent: 2
-      pos: 0.5,-19.5
+      pos: -0.5,-20.5
   - uid: 5057
     components:
     - type: Transform
       parent: 2
-      pos: -0.5,-20.5
+      pos: 0.5,-21.5
   - uid: 5058
     components:
     - type: Transform
       parent: 2
-      pos: -1.5,-20.5
+      pos: 0.5,-19.5
   - uid: 5059
     components:
     - type: Transform
       parent: 2
-      pos: 0.5,-20.5
+      pos: 1.5,-19.5
   - uid: 5060
     components:
     - type: Transform
       parent: 2
-      pos: 1.5,-20.5
+      pos: 1.5,-21.5
   - uid: 5061
     components:
     - type: Transform
       parent: 2
-      pos: 1.5,-19.5
+      pos: -0.5,-19.5
   - uid: 5062
     components:
     - type: Transform
       parent: 2
-      pos: 2.5,-20.5
+      pos: 0.5,-20.5
   - uid: 5063
     components:
     - type: Transform
       parent: 2
-      pos: 1.5,-21.5
+      pos: -1.5,-20.5
   - uid: 5064
     components:
     - type: Transform
       parent: 2
-      pos: 0.5,-21.5
+      pos: 1.5,-20.5
   - uid: 5065
     components:
     - type: Transform
@@ -57381,7 +57385,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
-      pos: -1.53125,40.75
+      pos: -1.5,40.5
     - type: DeviceLinkSource
       linkedPorts:
         8202:
@@ -57436,7 +57440,7 @@ entities:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: 2.53125,40.75
+      pos: 2.5,40.5
     - type: DeviceLinkSource
       linkedPorts:
         7429:
@@ -57451,7 +57455,7 @@ entities:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: 19.53125,31.59375
+      pos: 19.5,31.5
     - type: DeviceLinkSource
       linkedPorts:
         8263:
@@ -57469,7 +57473,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -20.25,-6.5
+      pos: -20.5,-6.5
     - type: DeviceLinkSource
       linkedPorts:
         209:
@@ -65255,7 +65259,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -20.75,-6.5
+      pos: -20.5,-6.5
     - type: DeviceLinkSource
       linkedPorts:
         7087:
@@ -65314,7 +65318,7 @@ entities:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: 34.5,3.75
+      pos: 34.5,3.5
     - type: DeviceLinkSource
       linkedPorts:
         527:
@@ -65333,7 +65337,7 @@ entities:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: 34.5,3.25
+      pos: 34.5,3.5
     - type: DeviceLinkSource
       linkedPorts:
         530:
