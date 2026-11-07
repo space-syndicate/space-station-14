@@ -90,6 +90,7 @@ ui-options-hud-theme-clockwork = Механизм
 ui-options-hud-theme-retro = Ретро
 ui-options-hud-theme-minimalist = Минимализм
 ui-options-hud-theme-ashen = Пепел
+ui-options-hud-theme-trasen = Трейзен-Нокс
 ui-options-hud-layout-default = Стандартный
 ui-options-hud-layout-separated = Разделённый
 ui-options-vp-stretch = Растянуть изображение для соответствия окну игры

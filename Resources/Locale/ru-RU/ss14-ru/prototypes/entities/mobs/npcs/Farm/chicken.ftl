@@ -1,0 +1,12 @@
+ent-MobChicken = курица
+    .desc = Была раньше яйца, динозавром!
+    .suffix = { ent-SimpleMobBase.suffix }
+ent-MobChicken1 = { ent-MobChicken }
+    .desc = { ent-MobChicken.desc }
+    .suffix = { ent-MobChicken.suffix }
+ent-MobChicken2 = { ent-MobChicken }
+    .desc = { ent-MobChicken.desc }
+    .suffix = { ent-MobChicken.suffix }
+ent-FoodEggChickenFertilized = { ent-FoodEgg }
+    .desc = { ent-FoodEgg.desc }
+    .suffix = Оплодотворённый, Курица
