@@ -10,4 +10,5 @@ damage-throw = метательное
 damage-examine = Наносит следующие повреждения:
 damage-examine-type = Наносит следующие повреждения ([color=cyan]{ $type }[/color]):
 damage-value = - [color=red]{ $amount }[/color] единиц [color=yellow]{ $type }[/color].
+damage-value-stamina = - [color=red]{$amount}[/color] единиц [color=cyan]Выносливости[/color].
 damage-none = Не наносит повреждений.
