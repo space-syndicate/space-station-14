@@ -1,1 +1,1 @@
-ignis-inside-effect-light = Ваша кровь ощущается как жидкий огонь.
+ignis-inside-effect-light = Ваша кровь пылает, словно расплавленный металл.
