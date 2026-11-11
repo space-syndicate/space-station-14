@@ -1,6 +1,6 @@
 - type: guideEntry
   id: SOP
-  name: guide-entry-sop
+  name: guide-entry-corvax-sop
   text: "/ServerInfo/Corvax/Guidebook/SOP/SOP.xml"
   children:
   - SOPService
@@ -18,58 +18,58 @@
 # Отделы
 - type: guideEntry
   id: SOPService
-  name: guide-entry-sop-service
+  name: guide-entry-corvax-sop-service
   text: "/ServerInfo/Corvax/Guidebook/SOP/Service.xml"
 
 - type: guideEntry
   id: SOPResearch
-  name: guide-entry-sop-research
+  name: guide-entry-corvax-sop-research
   text: "/ServerInfo/Corvax/Guidebook/SOP/Research.xml"
 
 - type: guideEntry
   id: SOPCargo
-  name: guide-entry-sop-cargo
+  name: guide-entry-corvax-sop-cargo
   text: "/ServerInfo/Corvax/Guidebook/SOP/Cargo.xml"
 
 - type: guideEntry
   id: SOPMedical
-  name: guide-entry-sop-medical
+  name: guide-entry-corvax-sop-medical
   text: "/ServerInfo/Corvax/Guidebook/SOP/Medical.xml"
 
 - type: guideEntry
   id: SOPEngineering
-  name: guide-entry-sop-engineering
+  name: guide-entry-corvax-sop-engineering
   text: "/ServerInfo/Corvax/Guidebook/SOP/Engineering.xml"
 
 - type: guideEntry
   id: SOPSecurity
-  name: guide-entry-sop-security
+  name: guide-entry-corvax-sop-security
   text: "/ServerInfo/Corvax/Guidebook/SOP/Security.xml"
 
 - type: guideEntry
   id: SOPCommand
-  name: guide-entry-sop-command
+  name: guide-entry-corvax-sop-command
   text: "/ServerInfo/Corvax/Guidebook/SOP/Command.xml"
 
 - type: guideEntry
   id: SOPCentcomm
-  name: guide-entry-sop-centcomm
+  name: guide-entry-corvax-sop-centcomm
   text: "/ServerInfo/Corvax/Guidebook/SOP/Centcomm.xml"
 
 - type: guideEntry
   id: SOPDSO
-  name: guide-entry-sop-dso
+  name: guide-entry-corvax-sop-dso
   text: "/ServerInfo/Corvax/Guidebook/SOP/DSO.xml"
 
 - type: guideEntry
   id: SOPLegal
-  name: guide-entry-sop-legal
+  name: guide-entry-corvax-sop-legal
   text: "/ServerInfo/Corvax/Guidebook/SOP/Legal.xml"
 
 # Общее
 - type: guideEntry
   id: SOPGeneral
-  name: guide-entry-sop-general
+  name: guide-entry-corvax-sop-general
   text: "/ServerInfo/Corvax/Guidebook/SOP/General.xml"
   children:
   - SOPCodes
@@ -77,10 +77,10 @@
 
 - type: guideEntry
   id: SOPCodes
-  name: guide-entry-sop-codes
+  name: guide-entry-corvax-sop-codes
   text: "/ServerInfo/Corvax/Guidebook/SOP/Codes.xml"
 
 - type: guideEntry
   id: SOPEmergencies
-  name: guide-entry-sop-emergencies
+  name: guide-entry-corvax-sop-emergencies
   text: "/ServerInfo/Corvax/Guidebook/SOP/Emergencies.xml"
