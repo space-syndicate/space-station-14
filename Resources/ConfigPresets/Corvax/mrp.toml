@@ -30,3 +30,6 @@ restart_enabled = false
 
 [ghost.go_lobby]
 enabled = true
+
+[accessibility]
+vacuum_overlay = false

@@ -32,9 +32,6 @@
   ### Инженер обязан
   <FTLTextpart Key="guidebook-SOP-StationEngineer-must"/>
 
-  ### Инженер имеет право
-  <FTLTextpart Key="guidebook-SOP-StationEngineer-right"/>
-
   ### Инженеру запрещено
   <FTLTextpart Key="guidebook-SOP-StationEngineer-prohibited"/>
 
@@ -57,4 +54,23 @@
 
   ### Техническому ассистенту запрещено
   <FTLTextpart Key="guidebook-SOP-TechnicalAssistant-prohibited"/>
+
+  # Процедуры и протоколы
+  ## Руководство по эксплуатации двигателя на основе гравитационной сингулярности
+  <FTLTextpart Key="guidebook-SOP-enigneering-procedure-singularity"/>
+
+  ## Руководство по эксплуатации двигателя на основе шаровой молнии Тесла
+  <FTLTextpart Key="guidebook-SOP-enigneering-procedure-tesla"/>
+
+  ## Руководство по эксплуатации двигателя на основе суперматерии (СМ)
+  <FTLTextpart Key="guidebook-SOP-enigneering-procedure-supermatter"/>
+
+  ## Руководство по эксплуатации термоэлектрического генератора (ТЭГ)
+  <FTLTextpart Key="guidebook-SOP-enigneering-procedure-teg"/>
+
+  ## Руководство по эксплуатации солнечных панелей
+  <FTLTextpart Key="guidebook-SOP-enigneering-procedure-solar-panels"/>
+
+  ## Руководство по эксплуатации ядерного реактора
+  <FTLTextpart Key="guidebook-SOP-enigneering-procedure-nuclear-reactor"/>
 </Document>

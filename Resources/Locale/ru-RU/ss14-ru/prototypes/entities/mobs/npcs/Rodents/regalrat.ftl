@@ -1,0 +1,9 @@
+ent-MobRatKing = крысиный король
+    .desc = Он крысюк и он тут босс.
+    .suffix = { ent-SimpleMobBase.suffix }
+ent-MobRatKingBuff = { ent-MobRatKing }
+    .desc = { ent-MobRatKing.desc }
+    .suffix = Качок
+ent-MobRatServant = крысиный слуга
+    .desc = Он мини-крысюк и он тут не босс.
+    .suffix = { ent-SimpleMobBase.suffix }

@@ -28,6 +28,7 @@
   - type: WirelessNetwork
     range: 500
   - type: StationLimitedNetwork
+  - type: StationTracker
   - type: Appearance
   - type: GenericVisualizer
     visuals:

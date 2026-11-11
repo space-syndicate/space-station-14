@@ -1,9 +1,9 @@
 ent-HighSecVaultLocked = { ent-HighSecDoor }
     .desc = { ent-HighSecDoor.desc }
-    .suffix = Хранилище, Закрыт
+    .suffix = Хранилище, Доступ
 ent-HighSecSatelliteLocked = { ent-HighSecDoor }
     .desc = { ent-HighSecDoor.desc }
-    .suffix = Спутник ИИ, Закрыт
+    .suffix = Спутник ИИ, Доступ
 ent-HighSecChiefEngineerLocked = { ent-HighSecDoor }
     .desc = { ent-HighSecDoor.desc }
-    .suffix = Старший инженер, Закрыт
+    .suffix = Старший инженер, Доступ

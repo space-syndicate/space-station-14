@@ -1,0 +1,12 @@
+ent-MobDuckMallard = кряква
+    .desc = Очаровательная кряква, она пушистая и мягкая!
+    .suffix = { ent-SimpleMobBase.suffix }
+ent-MobDuckWhite = белая утка
+    .desc = Очаровательная белая уточка, она пушистая и мягкая!
+    .suffix = { ent-MobDuckMallard.suffix }
+ent-MobDuckBrown = коричневая утка
+    .desc = Очаровательная коричневая уточка, пушистая и мягкая!
+    .suffix = { ent-MobDuckMallard.suffix }
+ent-FoodEggDuckFertilized = { ent-FoodEgg }
+    .desc = { ent-FoodEgg.desc }
+    .suffix = Оплодотворённый, Утка

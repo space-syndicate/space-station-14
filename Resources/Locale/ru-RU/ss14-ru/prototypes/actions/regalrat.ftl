@@ -1,12 +1,3 @@
-ent-MobRatKing = крысиный король
-    .desc = Он крысюк и он тут босс.
-    .suffix = { ent-SimpleMobBase.suffix }
-ent-MobRatKingBuff = { ent-MobRatKing }
-    .desc = { ent-MobRatKing.desc }
-    .suffix = Качок
-ent-MobRatServant = крысиный слуга
-    .desc = Он мини-крысюк и он тут не босс.
-    .suffix = { ent-SimpleMobBase.suffix }
 ent-ActionRatKingRaiseArmy = Призвать армию
     .desc = Потратьте некоторое количество голода, чтобы призвать дружественную крысу для вашей защиты.
 ent-ActionRatKingDomain = Крысиное королевство

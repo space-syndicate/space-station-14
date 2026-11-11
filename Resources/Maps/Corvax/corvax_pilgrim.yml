@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 293.0.1
+  engineVersion: 294.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/20/2026 10:35:44
+  time: 11/04/2026 21:01:10
   entityCount: 42676
 maps:
 - 1
@@ -5721,7 +5721,6 @@ entities:
       - 42631
     - type: GravityShake
       shakeTimes: 10
-      nextShake: 0
   - uid: 4
     components:
     - type: MetaData
@@ -10955,7 +10954,7 @@ entities:
       pos: -11.5,1.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -52447.02
+      secondsUntilStateChange: -52618.53
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -16810,7 +16809,7 @@ entities:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: -49.375343,9.023268
+      pos: -49.5,9.5
   - uid: 1122
     components:
     - type: Transform
@@ -16821,7 +16820,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: 127.5,20.84375
+      pos: 127.5,20.5
 - proto: ButtonFrameCautionSecurity
   entities:
   - uid: 1124
@@ -16834,7 +16833,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -49.4375,-22.625
+      pos: -49.5,-22.5
   - uid: 1126
     components:
     - type: Transform
@@ -16844,7 +16843,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: 45.5,-50
+      pos: 45.5,-49.5
   - uid: 1128
     components:
     - type: Transform
@@ -16856,23 +16855,23 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: -29.375,-34.375
+      pos: -29.5,-34.5
   - uid: 1130
     components:
     - type: Transform
       parent: 2
-      pos: -26.375,-39.5
+      pos: -26.5,-39.5
   - uid: 1131
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -23.375,-36.5
+      pos: -23.5,-36.5
   - uid: 1132
     components:
     - type: Transform
       parent: 2
-      pos: -20.375,-39.5
+      pos: -20.5,-39.5
   - uid: 31908
     components:
     - type: Transform
@@ -127659,6 +127658,228 @@ entities:
     - type: Transform
       parent: 31820
       pos: 55.5,110.5
+- proto: FloorSwimmingPoolEntity
+  entities:
+  - uid: 12716
+    components:
+    - type: Transform
+      parent: 2
+      pos: -29.5,-41.5
+  - uid: 12717
+    components:
+    - type: Transform
+      parent: 2
+      pos: -30.5,-42.5
+  - uid: 12718
+    components:
+    - type: Transform
+      parent: 2
+      pos: -29.5,-42.5
+  - uid: 12719
+    components:
+    - type: Transform
+      parent: 2
+      pos: -11.5,-34.5
+  - uid: 12720
+    components:
+    - type: Transform
+      parent: 2
+      pos: -10.5,-35.5
+  - uid: 12721
+    components:
+    - type: Transform
+      parent: 2
+      pos: -15.5,-37.5
+  - uid: 12722
+    components:
+    - type: Transform
+      parent: 2
+      pos: -10.5,-34.5
+  - uid: 12723
+    components:
+    - type: Transform
+      parent: 2
+      pos: -10.5,-37.5
+  - uid: 12724
+    components:
+    - type: Transform
+      parent: 2
+      pos: -10.5,-38.5
+  - uid: 12725
+    components:
+    - type: Transform
+      parent: 2
+      pos: -8.5,-35.5
+  - uid: 12726
+    components:
+    - type: Transform
+      parent: 2
+      pos: -15.5,-35.5
+  - uid: 12727
+    components:
+    - type: Transform
+      parent: 2
+      pos: -10.5,-36.5
+  - uid: 12728
+    components:
+    - type: Transform
+      parent: 2
+      pos: -8.5,-36.5
+  - uid: 12729
+    components:
+    - type: Transform
+      parent: 2
+      pos: -15.5,-38.5
+  - uid: 12730
+    components:
+    - type: Transform
+      parent: 2
+      pos: -8.5,-34.5
+  - uid: 12731
+    components:
+    - type: Transform
+      parent: 2
+      pos: -8.5,-37.5
+  - uid: 12732
+    components:
+    - type: Transform
+      parent: 2
+      pos: -11.5,-35.5
+  - uid: 12733
+    components:
+    - type: Transform
+      parent: 2
+      pos: -11.5,-36.5
+  - uid: 12734
+    components:
+    - type: Transform
+      parent: 2
+      pos: -11.5,-38.5
+  - uid: 12735
+    components:
+    - type: Transform
+      parent: 2
+      pos: -11.5,-37.5
+  - uid: 12736
+    components:
+    - type: Transform
+      parent: 2
+      pos: -9.5,-37.5
+  - uid: 12737
+    components:
+    - type: Transform
+      parent: 2
+      pos: -9.5,-38.5
+  - uid: 12738
+    components:
+    - type: Transform
+      parent: 2
+      pos: -15.5,-36.5
+  - uid: 12739
+    components:
+    - type: Transform
+      parent: 2
+      pos: -15.5,-34.5
+  - uid: 12740
+    components:
+    - type: Transform
+      parent: 2
+      pos: -9.5,-35.5
+  - uid: 12741
+    components:
+    - type: Transform
+      parent: 2
+      pos: -9.5,-36.5
+  - uid: 12742
+    components:
+    - type: Transform
+      parent: 2
+      pos: -12.5,-35.5
+  - uid: 12743
+    components:
+    - type: Transform
+      parent: 2
+      pos: -12.5,-34.5
+  - uid: 12744
+    components:
+    - type: Transform
+      parent: 2
+      pos: -13.5,-35.5
+  - uid: 12745
+    components:
+    - type: Transform
+      parent: 2
+      pos: -12.5,-37.5
+  - uid: 12746
+    components:
+    - type: Transform
+      parent: 2
+      pos: -13.5,-37.5
+  - uid: 12747
+    components:
+    - type: Transform
+      parent: 2
+      pos: -9.5,-34.5
+  - uid: 12748
+    components:
+    - type: Transform
+      parent: 2
+      pos: -14.5,-38.5
+  - uid: 12750
+    components:
+    - type: Transform
+      parent: 2
+      pos: -30.5,-41.5
+  - uid: 12752
+    components:
+    - type: Transform
+      parent: 2
+      pos: -14.5,-36.5
+  - uid: 12753
+    components:
+    - type: Transform
+      parent: 2
+      pos: -14.5,-34.5
+  - uid: 12754
+    components:
+    - type: Transform
+      parent: 2
+      pos: -13.5,-38.5
+  - uid: 12755
+    components:
+    - type: Transform
+      parent: 2
+      pos: -8.5,-38.5
+  - uid: 12756
+    components:
+    - type: Transform
+      parent: 2
+      pos: -12.5,-36.5
+  - uid: 12757
+    components:
+    - type: Transform
+      parent: 2
+      pos: -14.5,-35.5
+  - uid: 12758
+    components:
+    - type: Transform
+      parent: 2
+      pos: -12.5,-38.5
+  - uid: 12759
+    components:
+    - type: Transform
+      parent: 2
+      pos: -14.5,-37.5
+  - uid: 12760
+    components:
+    - type: Transform
+      parent: 2
+      pos: -13.5,-36.5
+  - uid: 12761
+    components:
+    - type: Transform
+      parent: 2
+      pos: -13.5,-34.5
 - proto: FloorTileItemWhite
   entities:
   - uid: 12783
@@ -127761,251 +127982,16 @@ entities:
     - type: Transform
       parent: 2
       pos: -44.5,34.5
-  - uid: 12716
-    components:
-    - type: Transform
-      parent: 2
-      pos: -29.5,-42.5
-  - uid: 12717
-    components:
-    - type: Transform
-      parent: 2
-      pos: -30.5,-41.5
-  - uid: 12718
-    components:
-    - type: Transform
-      parent: 2
-      pos: -29.5,-41.5
-  - uid: 12719
-    components:
-    - type: Transform
-      parent: 2
-      pos: -9.5,-35.5
-  - uid: 12720
-    components:
-    - type: Transform
-      parent: 2
-      pos: -9.5,-36.5
-  - uid: 12721
-    components:
-    - type: Transform
-      parent: 2
-      pos: -10.5,-38.5
-  - uid: 12722
-    components:
-    - type: Transform
-      parent: 2
-      pos: -10.5,-37.5
-  - uid: 12723
-    components:
-    - type: Transform
-      parent: 2
-      pos: -8.5,-34.5
-  - uid: 12724
-    components:
-    - type: Transform
-      parent: 2
-      pos: -9.5,-34.5
-  - uid: 12725
-    components:
-    - type: Transform
-      parent: 2
-      pos: -9.5,-37.5
-    missingComponents:
-    - SpeedModifierContacts
-    - FootstepModifier
-    - StepTrigger
-    - TileEntityEffect
-  - uid: 12726
-    components:
-    - type: Transform
-      parent: 2
-      pos: -9.5,-38.5
-  - uid: 12727
-    components:
-    - type: Transform
-      parent: 2
-      pos: -8.5,-36.5
-  - uid: 12728
-    components:
-    - type: Transform
-      parent: 2
-      pos: -8.5,-35.5
-    missingComponents:
-    - SpeedModifierContacts
-    - FootstepModifier
-    - StepTrigger
-    - TileEntityEffect
-  - uid: 12729
-    components:
-    - type: Transform
-      parent: 2
-      pos: -8.5,-38.5
-  - uid: 12730
-    components:
-    - type: Transform
-      parent: 2
-      pos: -8.5,-37.5
-    missingComponents:
-    - SpeedModifierContacts
-    - FootstepModifier
-    - StepTrigger
-    - TileEntityEffect
-  - uid: 12731
-    components:
-    - type: Transform
-      parent: 2
-      pos: -10.5,-36.5
-  - uid: 12732
-    components:
-    - type: Transform
-      parent: 2
-      pos: -10.5,-35.5
-  - uid: 12733
-    components:
-    - type: Transform
-      parent: 2
-      pos: -10.5,-34.5
-  - uid: 12734
-    components:
-    - type: Transform
-      parent: 2
-      pos: -11.5,-34.5
-  - uid: 12735
-    components:
-    - type: Transform
-      parent: 2
-      pos: -11.5,-35.5
-  - uid: 12736
-    components:
-    - type: Transform
-      parent: 2
-      pos: -11.5,-36.5
-  - uid: 12737
-    components:
-    - type: Transform
-      parent: 2
-      pos: -11.5,-37.5
-  - uid: 12738
-    components:
-    - type: Transform
-      parent: 2
-      pos: -11.5,-38.5
-  - uid: 12739
-    components:
-    - type: Transform
-      parent: 2
-      pos: -12.5,-38.5
-  - uid: 12740
-    components:
-    - type: Transform
-      parent: 2
-      pos: -12.5,-37.5
-  - uid: 12741
-    components:
-    - type: Transform
-      parent: 2
-      pos: -12.5,-36.5
-  - uid: 12742
-    components:
-    - type: Transform
-      parent: 2
-      pos: -12.5,-35.5
-  - uid: 12743
-    components:
-    - type: Transform
-      parent: 2
-      pos: -12.5,-34.5
-  - uid: 12744
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.5,-34.5
-  - uid: 12745
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.5,-35.5
-  - uid: 12746
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.5,-36.5
-  - uid: 12747
-    components:
-    - type: Transform
-      parent: 2
-      pos: -13.5,-37.5
-  - uid: 12748
-    components:
-    - type: Transform
-      parent: 2
-      pos: -13.5,-38.5
   - uid: 12749
     components:
     - type: Transform
       parent: 2
       pos: -45.5,34.5
-  - uid: 12750
-    components:
-    - type: Transform
-      parent: 2
-      pos: -30.5,-42.5
   - uid: 12751
     components:
     - type: Transform
       parent: 2
       pos: -45.5,35.5
-  - uid: 12752
-    components:
-    - type: Transform
-      parent: 2
-      pos: -15.5,-38.5
-  - uid: 12753
-    components:
-    - type: Transform
-      parent: 2
-      pos: -15.5,-36.5
-  - uid: 12754
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.5,-37.5
-  - uid: 12755
-    components:
-    - type: Transform
-      parent: 2
-      pos: -13.5,-36.5
-  - uid: 12756
-    components:
-    - type: Transform
-      parent: 2
-      pos: -13.5,-35.5
-  - uid: 12757
-    components:
-    - type: Transform
-      parent: 2
-      pos: -15.5,-37.5
-  - uid: 12758
-    components:
-    - type: Transform
-      parent: 2
-      pos: -15.5,-35.5
-  - uid: 12759
-    components:
-    - type: Transform
-      parent: 2
-      pos: -14.5,-38.5
-  - uid: 12760
-    components:
-    - type: Transform
-      parent: 2
-      pos: -15.5,-34.5
-  - uid: 12761
-    components:
-    - type: Transform
-      parent: 2
-      pos: -13.5,-34.5
   - uid: 12793
     components:
     - type: Transform
@@ -172084,7 +172070,7 @@ entities:
       pos: -18.5,-29.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -180632.5
+      secondsUntilStateChange: -180804.02
   - uid: 18363
     components:
     - type: Transform
@@ -174682,7 +174668,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -9.908466,-7.580327
+      pos: -9.5,-7.5
     - type: DeviceLinkSource
       linkedPorts:
         22293:
@@ -174943,7 +174929,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -49.4375,-22.625
+      pos: -49.5,-22.5
     - type: UseDelay
       delay: 1
     - type: DeviceLinkSource
@@ -175056,7 +175042,7 @@ entities:
       desc: Эта кнопка переключает ставни шлюза.
     - type: Transform
       parent: 2
-      pos: -55.625,-28.25
+      pos: -55.5,-28.5
     - type: DeviceLinkSource
       linkedPorts:
         22273:
@@ -175071,7 +175057,7 @@ entities:
       desc: Эта кнопка активирует систему защиты камеры, и отправляет сигнал бедствия Службе Безопасности.
     - type: Transform
       parent: 2
-      pos: 127.5,20.84375
+      pos: 127.5,20.5
     - type: UseDelay
       delay: 1
     - type: DeviceLinkSource
@@ -175253,7 +175239,7 @@ entities:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: -49.37868,9.020679
+      pos: -49.5,9.5
     - type: DeviceLinkSource
       linkedPorts:
         464:
@@ -175278,7 +175264,7 @@ entities:
       desc: Эта кнопка болтирует шлюзы до зоны ожидания. Временно не работает! ПОЗОВИТЕ УЖЕ ИНЖЕНЕРА!!!
     - type: Transform
       parent: 2
-      pos: 45.5,-50
+      pos: 45.5,-49.5
     - type: DeviceLinkSource
       linkedPorts:
         281:
@@ -203256,7 +203242,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -35.914795,15.5
+      pos: -35.5,15.5
     - type: DeviceLinkSource
       linkedPorts:
         22247:
@@ -203275,7 +203261,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: -65.11998,17.695107
+      pos: -65.5,17.5
     - type: DeviceLinkSource
       linkedPorts:
         22258:
@@ -203313,7 +203299,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -35.5,-21.625
+      pos: -35.5,-21.5
     - type: DeviceLinkSource
       linkedPorts:
         22263:
@@ -203325,7 +203311,7 @@ entities:
       desc: Эта кнопка переключает ставни на окнах.
     - type: Transform
       parent: 2
-      pos: -32,-14.125
+      pos: -31.5,-14.5
     - type: DeviceLinkSource
       linkedPorts:
         22268:
@@ -203344,7 +203330,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -32,-22.75
+      pos: -31.5,-22.5
     - type: DeviceLinkSource
       linkedPorts:
         22265:
@@ -203389,7 +203375,7 @@ entities:
       desc: Эта кнопка переключает тонированное окно наблюдательной.
     - type: Transform
       parent: 2
-      pos: -55.5,-28
+      pos: -55.5,-27.5
     - type: DeviceLinkSource
       linkedPorts:
         22301:
@@ -203410,7 +203396,7 @@ entities:
       desc: Эта кнопка переключает свет в комнате.
     - type: Transform
       parent: 2
-      pos: -29.75,-34.375
+      pos: -29.5,-34.5
     - type: DeviceLinkSource
       linkedPorts:
         19898:
@@ -203425,7 +203411,7 @@ entities:
       desc: Эта кнопка болтирует шлюз в комнату.
     - type: Transform
       parent: 2
-      pos: -29.375,-34.375
+      pos: -29.5,-34.5
     - type: DeviceLinkSource
       linkedPorts:
         73:
@@ -203781,7 +203767,7 @@ entities:
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
-      pos: -54.5,-29.75
+      pos: -54.5,-29.5
     - type: DeviceLinkSource
       linkedPorts:
         19622:
@@ -203810,7 +203796,7 @@ entities:
       desc: Эта кнопка переключает тонированное окно коридора.
     - type: Transform
       parent: 2
-      pos: -55.375,-28.25
+      pos: -55.5,-28.5
     - type: DeviceLinkSource
       linkedPorts:
         22300:
@@ -203834,7 +203820,7 @@ entities:
       desc: Эта кнопка переключает свет в комнате.
     - type: Transform
       parent: 2
-      pos: -26.75,-39.5
+      pos: -26.5,-39.5
     - type: DeviceLinkSource
       linkedPorts:
         19965:
@@ -203847,7 +203833,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -23.75,-36.5
+      pos: -23.5,-36.5
     - type: DeviceLinkSource
       linkedPorts:
         19967:
@@ -203859,7 +203845,7 @@ entities:
       desc: Эта кнопка болтирует шлюз в комнату.
     - type: Transform
       parent: 2
-      pos: -20.375,-39.5
+      pos: -20.5,-39.5
     - type: DeviceLinkSource
       linkedPorts:
         22277:
@@ -203877,7 +203863,7 @@ entities:
       desc: Эта кнопка переключает свет в комнате.
     - type: Transform
       parent: 2
-      pos: -20.75,-39.5
+      pos: -20.5,-39.5
     - type: DeviceLinkSource
       linkedPorts:
         19632:
@@ -203892,7 +203878,7 @@ entities:
       desc: Эта кнопка болтирует шлюз в комнату.
     - type: Transform
       parent: 2
-      pos: -26.375,-39.5
+      pos: -26.5,-39.5
     - type: DeviceLinkSource
       linkedPorts:
         76:
@@ -203911,7 +203897,7 @@ entities:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
-      pos: -23.375,-36.5
+      pos: -23.5,-36.5
     - type: DeviceLinkSource
       linkedPorts:
         75:
@@ -293634,7 +293620,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -109453.84
+      secondsUntilStateChange: -109625.35
     - type: Airlock
       autoClose: False
   - uid: 29903
