@@ -4,6 +4,7 @@
   categories: [ HideSpawnMenu ]
   name: cburn commander helmet
   description: A pressure resistant and fireproof hood worn by special cleanup units.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Head/hardsuits/cburncommander.rsi
@@ -24,8 +25,23 @@
   categories: [ HideSpawnMenu ]
   name: security pilot hardsuit helmet
   description: Armored hardsuit helmet for security needs.
+  suffix: Corvax
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Head/hardsuits/security-pilot.rsi
   - type: Clothing
     sprite: Corvax/Clothing/Head/hardsuits/security-pilot.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSecurity
+  id: ClothingHeadHelmetHardsuitBlueshieldOfficer
+  categories: [ HideSpawnMenu ]
+  name: blueshield officer's void armor helmet
+  description: Armored helmet for bodyguard needs.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Head/hardsuits/blueshield.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Head/hardsuits/blueshield.rsi
+
