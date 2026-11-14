@@ -1,8 +1,8 @@
 using Content.Server.Administration;
+using Content.Server.Shuttles.Components;
 using Content.Shared.Administration;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
-using Content.Server.Shuttles.Components;
 using Content.Shared.Timing;
 using Robust.Shared.Console;
 using Robust.Shared.Timing;
@@ -11,7 +11,7 @@ namespace Content.Server.Corvax.Shuttle.Commands;
 
 [AdminCommand(AdminFlags.Fun)]
 
-public sealed partial class FTLTravelTimeSetCommand : LocalizedCommands
+public sealed partial class FTLTravelTimeSetCommand : LocalizedEntityCommands
 {
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IGameTiming _gameTiming = default!; 
@@ -59,5 +59,15 @@ public sealed partial class FTLTravelTimeSetCommand : LocalizedCommands
         var newEndTime = _gameTiming.CurTime + TimeSpan.FromSeconds(time);
 
         comp.StateTime = new StartEndTime(startTime, newEndTime);
+    }
+
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        return args.Length switch
+        {
+            1 => CompletionResult.FromHintOptions(CompletionHelper.Components<FTLComponent>(args[0], EntityManager), Loc.GetString("cmd-hint-ftltraveltimeset-id")),
+            2 => CompletionResult.FromHint(Loc.GetString("cmd-hint-ftltraveltimeset-time")),
+            _ => CompletionResult.Empty,
+        };
     }
 }
