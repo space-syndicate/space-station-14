@@ -581,6 +581,7 @@
 - type: randomHumanoidSettings
   id: CentcomOfficial
   parent: EventHumanoidCentcomm
+  randomizeName: true # Corvax-Name-To-Officials
   components:
     - type: GhostRole
       name: ghost-role-information-centcom-official-name

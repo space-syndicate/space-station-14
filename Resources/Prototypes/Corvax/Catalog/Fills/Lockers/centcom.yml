@@ -1,0 +1,36 @@
+- type: entity
+  parent: LockerBooze
+  id: LockerSpecopsOfficer
+  name: special operations officer's cabinet
+  description: Usually cold and empty... like your heart.
+  suffix: Corvax
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"]]
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillLockerSpecopsOfficer
+
+- type: entityTable
+  id: FillLockerSpecopsOfficer
+  table: !type:AllSelector
+    children:
+    - id: ClothingEyesGlassesSecurity
+    - id: ClothingEyesVisorTactical
+    - id: ClothingOuterCoatSpecopsOfficer
+    - id: ClothingBeltHolster
+    - id: WeaponRevolverMatebaAP
+    - id: SpeedLoaderMagnumAP
+      amount: 2
+    - id: MagazineBoxMagnumAP
+    - id: ClothingHeadsetAltCentCom
+    - id: BoxFolderBlackThreePapers
+    - id: ClothingBeltAssault
+    - id: ClothingNeckBronzeheart
+      amount: 3
+    - id: RubberStampSpecops
+    - id: RubberStampDenied
+    - id: RubberStampApproved
+    - id: SyndicateBusinessCard
+      prob: 0.05

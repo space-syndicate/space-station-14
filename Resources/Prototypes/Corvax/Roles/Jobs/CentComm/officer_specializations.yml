@@ -1,0 +1,80 @@
+# Без роли. Просто задуманные специализации офицеров, отличающиеся лишь визуально. Оператор это просто офицер вот так вот
+
+- type: startingGear
+  id: CentcomInternalOversightOfficerGear
+  equipment:
+    head: ClothingHeadHatCentcomcap
+    neck: ClothingNeckMantleCentcom
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    back: ClothingBackpackSatchelCorporate
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCentcomNaval
+    id: CentcomOfficerPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: WeaponPistolN1984
+    pocket1: WeaponDisabler
+    pocket2: Matchbox
+  storage:
+    back:
+    - Flash
+    - CigarGoldCase
+    - MagazineMagnum
+    - Handcuffs
+    - BoxFolderCentComThreePapers
+    - RubberStampCentcom
+    - RubberStampApproved
+    - RubberStampDenied
+    - DoorRemoteCustom
+
+- type: startingGear
+  id: CentcomHROfficerGear
+  equipment:
+    head: ClothingHeadHatBeretCentcomNaval
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerShirt
+    back: ClothingBackpackSatchelCorporate
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCentcomNaval
+    outerClothing: ClothingOuterCoatCentcom
+    id: CentcomOfficerPDA
+    ears: ClothingHeadsetCentCom
+    pocket1: WeaponPistolN1984
+    pocket2: BoxFolderCentComClipboardThreePapers
+  storage:
+    back:
+    - Flash
+    - CigarGoldCase
+    - MagazineMagnum
+    - BoxFolderCentComThreePapers
+    - BoxFolderRedEmpty
+    - RubberStampCentcom
+    - RubberStampApproved
+    - RubberStampDenied
+    - DoorRemoteCustom
+    - NanotrasenFlippo
+
+- type: startingGear
+  id: CentcomAccountingOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomAgent
+    back: ClothingBackpackSatchelCorporate
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesColorWhite
+    id: CentcomOfficerPDA
+    ears: ClothingHeadsetCentCom
+    belt: BoxFolderCentComClipboardThreePapers
+    pocket1: WeaponPistolN1984
+    pocket2: NanotrasenFlippo
+  storage:
+    back:
+    - Flash
+    - CigarGoldCase
+    - MagazineMagnum
+    - BoxFolderCentComThreePapers
+    - BoxFolderRedEmpty
+    - RubberStampCentcom
+    - RubberStampApproved
+    - RubberStampDenied
+    - DoorRemoteCustom
