@@ -160,4 +160,49 @@ public sealed class CCCVars
     public static readonly CVarDef<float> GhostGoLobbyDeathTimeMinutes =
         CVarDef.Create("ghost.go_lobby.death_time", 15f, CVar.SERVERONLY);
 
+    /*
+     * Admin music
+     */
+
+    /// <summary>
+    ///     Максимальный размер .ogg файла админской музыки в мегабайтах.
+    /// </summary>
+    public static readonly CVarDef<float> AdminMusicMaxSizeMb =
+        CVarDef.Create("admin_music.max_size_mb", 10f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     Максимальное количество одновременно активных треков.
+    /// </summary>
+    public static readonly CVarDef<int> AdminMusicMaxActive =
+        CVarDef.Create("admin_music.max_active", 5, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     Минимальная громкость трека в дБ.
+    /// </summary>
+    public static readonly CVarDef<float> AdminMusicMinVolume =
+        CVarDef.Create("admin_music.min_volume", -20f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     Максимальная громкость трека в дБ.
+    /// </summary>
+    public static readonly CVarDef<float> AdminMusicMaxVolume =
+        CVarDef.Create("admin_music.max_volume", 5f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     Сколько секунд ждать подтверждения загрузки трека клиентом, прежде чем отправить его снова.
+    /// </summary>
+    public static readonly CVarDef<float> AdminMusicDownloadTimeout =
+        CVarDef.Create("admin_music.download_timeout", 20f, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Количество попыток отправки трека клиенту.
+    /// </summary>
+    public static readonly CVarDef<int> AdminMusicDownloadAttempts =
+        CVarDef.Create("admin_music.download_attempts", 3, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Громкость админской музыки у клиента (множитель громкости).
+    /// </summary>
+    public static readonly CVarDef<float> AdminMusicVolume =
+        CVarDef.Create("admin_music.volume", 1f, CVar.ARCHIVE | CVar.CLIENTONLY);
 }
