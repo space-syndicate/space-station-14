@@ -10,17 +10,17 @@ guidebook-SOP-infobox-main =
 
     Общие СРП в равной степени должно соблюдаться как и ведомственные СРП.
 
-guide-entry-sop = СРП
-guide-entry-sop-service = Сервисный отдел
-guide-entry-sop-research = Научный отдел
-guide-entry-sop-cargo = Отдел снабжения
-guide-entry-sop-medical = Медицинский отдел
-guide-entry-sop-engineering = Инженерный отдел
-guide-entry-sop-security = Служба безопасности
-guide-entry-sop-command = Командование
-guide-entry-sop-centcomm = Центральное Командование
-guide-entry-sop-dso = Департамент Специальных Операций
-guide-entry-sop-legal = Юридический департамент
-guide-entry-sop-general = Общее
-guide-entry-sop-codes = Уровни угроз
-guide-entry-sop-emergencies = Чрезвычайные ситуации
+guide-entry-corvax-sop = СРП
+guide-entry-corvax-sop-service = Сервисный отдел
+guide-entry-corvax-sop-research = Научный отдел
+guide-entry-corvax-sop-cargo = Отдел снабжения
+guide-entry-corvax-sop-medical = Медицинский отдел
+guide-entry-corvax-sop-engineering = Инженерный отдел
+guide-entry-corvax-sop-security = Служба безопасности
+guide-entry-corvax-sop-command = Командование
+guide-entry-corvax-sop-centcomm = Центральное Командование
+guide-entry-corvax-sop-dso = Департамент Специальных Операций
+guide-entry-corvax-sop-legal = Юридический департамент
+guide-entry-corvax-sop-general = Общее
+guide-entry-corvax-sop-codes = Уровни угроз
+guide-entry-corvax-sop-emergencies = Чрезвычайные ситуации
