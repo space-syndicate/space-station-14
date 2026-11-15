@@ -6,9 +6,9 @@
   components:
   # need to redefine sprites, so game wouldn't cry about icon states
   - type: Sprite
-    sprite: _CorvaxGoob/Clothing/Hands/Gloves/paws.rsi
+    sprite: _CorvaxGenesis/Clothing/Hands/Gloves/paws.rsi
   - type: Clothing
-    sprite: _CorvaxGoob/Clothing/Hands/Gloves/paws.rsi
+    sprite: _CorvaxGenesis/Clothing/Hands/Gloves/paws.rsi
   - type: MeleeWeapon
     soundHit:
       collection: ToySqueak
