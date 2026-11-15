@@ -1,0 +1,44 @@
+- type: entity
+  parent: ClothingHandsCatPawsBase
+  id: ClothingHandsCatPawsBrown
+  name: коричневые кошачьи лапки
+  description: Супер мягкие коричневые кошачьи лапки, созданные специально для самых брутальных агентов Синдиката.
+  components:
+  - type: Sprite
+    state: brown-icon
+  - type: Clothing
+    clothingVisuals:
+      gloves:
+      - state: brown-equipped-HAND
+  - type: Fiber
+    fiberColor: fibers-brown
+
+- type: entity
+  parent: ClothingHandsCatPawsBase
+  id: ClothingHandsCatPawsBlack
+  name: черные кошачьи лапки
+  description: Cупер мягкие черные кошачьи лапки, созданные специально для самых брутальных агентов Синдиката.
+  components:
+  - type: Sprite
+    state: black-icon
+  - type: Clothing
+    clothingVisuals:
+      gloves:
+      - state: black-equipped-HAND
+  - type: Fiber
+    fiberColor: fibers-black
+
+- type: entity
+  parent: ClothingHandsCatPawsBase
+  id: ClothingHandsCatPawsBlackWhite
+  name: черно-белые кошачьи лапки
+  description: Супер мягкие черно-белые кошачьи лапки, созданные специально для самых брутальных агентов Синдиката.
+  components:
+  - type: Sprite
+    state: blackwhite-icon
+  - type: Clothing
+    clothingVisuals:
+      gloves:
+      - state: blackwhite-equipped-HAND
+  - type: Fiber
+    fiberColor: fibers-grey

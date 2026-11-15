@@ -234,7 +234,7 @@
   - type: OwOAccent
     relayAccent: true
   - type: StaticPrice
-    price: 15000
+    price: 5000 # CorvaxGenesis
 
 - type: entity
   parent: [ClothingHeadHatCatEars, BaseToggleClothing]

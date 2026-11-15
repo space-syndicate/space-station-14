@@ -51,20 +51,21 @@
   - !type:ListingLimitedStockCondition
     stock: 1
 
-- type: listing
-  id: UplinkCatEars
-  name: uplink-cat-ears-name
-  description: uplink-cat-ears-desc
-  productEntity: ClothingHeadHatCatEars
-  cost:
-    Telecrystal: 26
-  categories:
-  - UplinkPointless
-  conditions:
-  - !type:BuyerWhitelistCondition
-    blacklist:
-      components:
-      - SurplusBundle
+# CorvaxGenesis - Cat Maid bundle
+#- type: listing
+#  id: UplinkCatEars
+#  name: uplink-cat-ears-name
+#  description: uplink-cat-ears-desc
+#  productEntity: ClothingHeadHatCatEars
+#  cost:
+#    Telecrystal: 26
+#  categories:
+#  - UplinkPointless
+#  conditions:
+#  - !type:BuyerWhitelistCondition
+#    blacklist:
+#      components:
+#      - SurplusBundle
 
 - type: listing
   id: UplinkOutlawHat
