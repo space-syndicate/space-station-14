@@ -22,6 +22,6 @@ ent-SpawnMobCobraSalvage = спавнер обломок космическая 
 ent-SalvageFleshSpawner = спавнер обломок плоть
     .desc = { ent-MarkerBase.desc }
     .suffix = 100
-ent-SalvageLivingLightSpawner = Salvage Living Light Spawner
+ent-SalvageLivingLightSpawner = спавнер обломок живой свет
     .desc = { ent-MarkerBase.desc }
     .suffix = 100
