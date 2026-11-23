@@ -1,6 +1,6 @@
 # Traitor single items
 steal-target-groups-hypospray = гипоспрей
-steal-target-groups-handheld-crew-monitor = ручной монитор экипажа
+steal-target-groups-handheld-crew-monitor = портативный монитор экипажа
 steal-target-groups-clothing-outer-hardsuit-rd = экспериментальный исследовательский скафандр
 steal-target-groups-hand-teleporter = ручной телепортер
 steal-target-groups-clothing-shoes-boots-mag-adv = продвинутые магнитные сапоги
