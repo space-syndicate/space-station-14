@@ -6,6 +6,8 @@ using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.NUnit.Constraints;
 using Content.Shared.Alert;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Robust.Client.UserInterface;
 using Robust.Server.Player;
 using Robust.Shared.GameObjects;
@@ -34,12 +36,19 @@ public sealed class AlertsComponentTests : GameTest
     public async Task AlertsTest()
     {
         EntityUid playerUid = default;
+        // Corvax-IPC-start
+        ProtoId<AlertPrototype> healthAlert = default;
+        // Corvax-IPC-end
         await Server.WaitAssertion(() =>
         {
             playerUid = _sPlayerManager.Sessions.Single().AttachedEntity.GetValueOrDefault();
             Assume.That(playerUid, Is.Not.Default);
             // Making sure it exists
             Assume.That(playerUid, Has.Comp<AlertsComponent>(Server));
+
+            // Corvax-IPC-start
+            healthAlert = SComp<MobThresholdsComponent>(playerUid).StateAlertDict[MobState.Alive];
+            // Corvax-IPC-end
 
             var alerts = _sAlertsSystem.GetActiveAlerts(playerUid);
             Assume.That(alerts, Is.Not.Null);
@@ -87,6 +96,9 @@ public sealed class AlertsComponentTests : GameTest
             var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl)c);
             var alertIDs = alertControls.Select(ac => ac.Alert.ID).ToArray();
             var expectedIDs = new[] { HumanHealth, Debug1, Debug2 };
+            // Corvax-IPC-start
+            expectedIDs[0] = healthAlert;
+            // Corvax-IPC-end
             Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
         });
 
@@ -104,7 +116,9 @@ public sealed class AlertsComponentTests : GameTest
             var alertControls = clientAlertsUI.AlertContainer.Children.Select(c => (AlertControl)c);
             var alertIDs = alertControls.Select(ac => ac.Alert.ID).ToArray();
             var expectedIDs = new[] { HumanHealth, Debug2 };
-                if (entManager.GetComponent<MetaDataComponent>(playerUid).EntityPrototype.ID != "MobIpc") // Corvax-IPC
+            // Corvax-IPC-start
+            expectedIDs[0] = healthAlert;
+            // Corvax-IPC-end
             Assert.That(alertIDs, Is.SupersetOf(expectedIDs));
         });
     }
