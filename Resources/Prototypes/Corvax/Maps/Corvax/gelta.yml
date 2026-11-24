@@ -15,7 +15,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Corvax/Shuttles/emergency_corvaxdelta.yml
+          emergencyShuttlePath: /Maps/Corvax/Shuttles/Emergency/emergency_corvaxdelta.yml
         - type: StationJobs
           availableJobs:
             # command
@@ -66,3 +66,24 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]
+        - type: StationGoal
+          goals:
+          - Singularity
+          - SolarPanels
+          - Artifacts
+          - Bank
+          - Zoo
+          - MiningOutpost
+          - Tesla
+          - SecurityTraining
+          - ShuttleMed
+          - ShuttleSec
+          - ShuttleRnd
+          - ShuttleSrv
+          - ShuttleEmergency
+          - Theatre
+          - CellAI
+          - Botany
+          - Bunker
+          - XenobiologyRepair
+          - VirusologyAmbusol

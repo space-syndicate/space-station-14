@@ -99,7 +99,7 @@ namespace Content.Server.Corvax.StationGoal
                 foreach (var spawnEnt in goal.Spawns)
                     SpawnAtPosition(spawnEnt, Transform(faxUid).Coordinates);
 
-                wasSent |= fax.ReceiveStationGoal;
+                wasSent = true;
             }
 
             // Publish news if at least one fax received the goal.
