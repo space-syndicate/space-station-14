@@ -14,7 +14,7 @@ public sealed class WizdenContentFreeze : GameTest
     /// The current number of microwave recipes in the freeze.
     /// If any are removed, update this count.
     /// </summary>
-    public const int RecipesLimit = 219;
+    public const int RecipesLimit = 221;//Corvax Pelmeni
 
     /// <summary>
     /// This freeze prohibits the addition of new microwave recipes.

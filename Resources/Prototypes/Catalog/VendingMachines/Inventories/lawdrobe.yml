@@ -19,16 +19,16 @@
     startingInventory:
       BriefcaseBrown: 2
       BookSpaceLaw: 3
-    # Corvax-LawyerDrip-Start
-    ClothingHandsGlovesColorWhite: 1
-    ClothingHandsGlovesColorGray: 1
-    ClothingHandsGlovesColorBlack: 1
-    ClothingHandsGlovesColorRed: 1
-    ClothingHandsGlovesColorBlue: 1
-    ClothingHeadHatBowlerHat: 1
-    ClothingHeadHatOutlawHat: 1
-    ClothingHeadHatTophat: 1
-    # Corvax-LawyerDrip-End
+      # Corvax-LawyerDrip-Start
+      ClothingHandsGlovesColorWhite: 1
+      ClothingHandsGlovesColorGray: 1
+      ClothingHandsGlovesColorBlack: 1
+      ClothingHandsGlovesColorRed: 1
+      ClothingHandsGlovesColorBlue: 1
+      ClothingHeadHatBowlerHat: 1
+      ClothingHeadHatOutlawHat: 1
+      ClothingHeadHatTophat: 1
+      # Corvax-LawyerDrip-End
       LuxuryPen: 2
       HandLabeler: 2
     contrabandInventory:
@@ -38,7 +38,7 @@
     icon: { entity: ClothingNeckLawyerbadge }
     startingInventory:
       ClothingShoesBootsLaceup: 2
-    ClothingHeadsetIAA: 2 # Corvax-IAA
+      ClothingHeadsetIAA: 2 # Corvax-IAA
       ClothingHeadsetService: 2
       ClothingNeckLawyerbadge: 2
     contrabandInventory:

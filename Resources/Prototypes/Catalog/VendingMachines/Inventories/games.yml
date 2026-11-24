@@ -8,7 +8,7 @@
       BackgammonBoard: 1
       ParchisBoard: 1
       CheckerBoard: 1
-    BookStationsAndAgents: 4 # Corvax-Tabletop
+      BookStationsAndAgents: 4 # Corvax-Tabletop
   - name: vending-machine-category-battle-maps
     icon: { entity: ShipBattlemap }
     startingInventory:

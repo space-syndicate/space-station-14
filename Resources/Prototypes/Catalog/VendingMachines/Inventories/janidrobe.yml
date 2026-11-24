@@ -9,7 +9,7 @@
     emaggedInventory:
       ClothingUniformJumpskirtJanimaid: 2
       ClothingUniformJumpskirtJanimaidmini: 1
-    ClothingUniformJumpskirtElegantMaid: 2 # Corvax
+      ClothingUniformJumpskirtElegantMaid: 2 # Corvax
   - name: vending-machine-category-equipment
     icon: { entity: ClothingBeltJanitor }
     startingInventory:
