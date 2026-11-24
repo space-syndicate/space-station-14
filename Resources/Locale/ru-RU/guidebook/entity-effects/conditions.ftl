@@ -44,7 +44,12 @@ entity-condition-guidebook-reagent-threshold =
     }
 
 entity-condition-guidebook-mob-state-condition =
-    пациент { $state }
+    пациент { $state ->
+        [alive] в сознании
+        [critical] без сознания
+        [dead] мертв
+        *[other] в состоянии: { $state }
+    }
 
 entity-condition-guidebook-job-condition =
     должность цели — { $job }

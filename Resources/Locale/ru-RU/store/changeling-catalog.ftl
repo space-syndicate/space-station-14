@@ -1,4 +1,4 @@
-changeling-catalog-arm-blade-name = Выдвижной рука-клинок
+changeling-catalog-arm-blade-name = Рука-клинок
 changeling-catalog-arm-blade-desc = Превратите свою руку в ужасающий клинок из плоти и кости. Можно использовать чтобы вскрывать обесточенные шлюзы. Можно убрать.
 
 changeling-catalog-flesh-clothing-name = Одежда из плоти
@@ -25,7 +25,7 @@ changeling-catalog-lethal-sting-desc = Со временем наносит ур
 changeling-catalog-mute-sting-name = Жало немоты
 changeling-catalog-mute-sting-desc = Лишает способности говорить. Эффект незаметен, пока цель не попытается заговорить. Можно использовать на себе.
 
-changeling-catalog-armblade-sting-name = Жало рука-клинок
+changeling-catalog-armblade-sting-name = Жало руки-клинка
 changeling-catalog-armblade-sting-desc = Заставляет цель после длительной задержки спонтанно отрастить затупленную клинок-руку. На трупах действует мгновенно и дольше. Можно использовать на себе.
 
 changeling-catalog-hemotoxin-sting-name = Жало геморринола
