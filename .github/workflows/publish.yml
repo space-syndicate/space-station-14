@@ -103,6 +103,9 @@ jobs:
     - name: Package client
       run: dotnet run --project Content.Packaging client --no-wipe-release
 
+    - name: Route to direct IP
+      run: echo "${{ secrets.CDN_DIRECT }} cdn.station14.ru" | sudo tee -a /etc/hosts
+
     - name: Publish version
       run: Tools/publish_multi_request.py
       env:

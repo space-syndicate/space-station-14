@@ -77,6 +77,7 @@ food-sequence-content-spacemans-trumpet = космической трубкой
 food-sequence-content-cherry = вишней
 food-sequence-content-snail = улиткой
 food-sequence-content-anomaly-berry = аномальной ягодой
+food-sequence-content-aloe-ignis = алоэ игнисом
 
 # BURGERS
 
@@ -120,6 +121,7 @@ food-sequence-burger-content-spacemans-trumpet = космотрубо
 food-sequence-burger-content-anomaly-berry = аномо
 food-sequence-burger-content-extradimensional-orange = три-дэ
 food-sequence-burger-content-world-pea = миро
+food-sequence-burger-content-aloe-ignis = алоэ игни
 
 # COTTON BURGERS
 

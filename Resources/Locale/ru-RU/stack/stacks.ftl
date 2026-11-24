@@ -245,6 +245,7 @@ stack-inflatable-wall = надувная стена
 stack-inflatable-door = надувная дверь
 stack-ointment = мазь
 stack-aloe-cream = алоэ крем
+stack-dragon-tail-compress = компресс из драконьего хвоста
 stack-gauze = марлевый бинт
 stack-brutepack = набор от ушибов
 stack-bloodpack = пакет крови
