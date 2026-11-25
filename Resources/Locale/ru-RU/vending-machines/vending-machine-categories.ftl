@@ -1,73 +1,73 @@
 # General
-vending-machine-category-all = Всё
+vending-machine-category-all = все товары
 
 # Clothing
-vending-machine-category-uniforms = Униформы
-vending-machine-category-jumpsuits = Комбинезоны
-vending-machine-category-jumpskirts = Юбки-комбинезоны
-vending-machine-category-outerwear = Верхняя одежда
-vending-machine-category-headwear = Головные уборы
-vending-machine-category-footwear = Обувь
-vending-machine-category-eyewear = Очки
-vending-machine-category-gloves = Перчатки
-vending-machine-category-scarves = Шарфы
-vending-machine-category-accessories = Аксессуары
-vending-machine-category-bags = Сумки
-vending-machine-category-pins = Значки
+vending-machine-category-uniforms = униформы
+vending-machine-category-jumpsuits = комбинезоны
+vending-machine-category-jumpskirts = юбки-комбинезоны
+vending-machine-category-outerwear = верхняя одежда
+vending-machine-category-headwear = головные уборы
+vending-machine-category-footwear = обувь
+vending-machine-category-eyewear = очки
+vending-machine-category-gloves = перчатки
+vending-machine-category-scarves = шарфы
+vending-machine-category-accessories = аксессуары
+vending-machine-category-bags = сумки
+vending-machine-category-pins = значки
 
 # Food
-vending-machine-category-food = Еда
-vending-machine-category-snacks = Закуски
+vending-machine-category-food = еда
+vending-machine-category-snacks = закуски
 
 # Drinks
-vending-machine-category-hot-drinks = Горячие напитки
-vending-machine-category-soft-drinks = Безалкогольные напитки
-vending-machine-category-beer-and-wine = Пиво и вино
-vending-machine-category-spirits = Алкогольные напитки
-vending-machine-category-bar-supplies = Барные принадлежности
+vending-machine-category-hot-drinks = горячие напитки
+vending-machine-category-soft-drinks = безалкогольные напитки
+vending-machine-category-beer-and-wine = пиво и вино
+vending-machine-category-spirits = алкогольные напитки
+vending-machine-category-bar-supplies = барные принадлежности
 
 # Kitchen
-vending-machine-category-fresh-ingredients = Свежие ингредиенты
-vending-machine-category-dry-ingredients = Сухие ингредиенты
-vending-machine-category-condiments = Приправы
-vending-machine-category-cutlery = Столовые приборы
-vending-machine-category-tableware = Посуда
-vending-machine-category-drinkware = Посуда для жидкостей
-vending-machine-category-kitchen-tools = Кухонные принадлежности
+vending-machine-category-fresh-ingredients = свежие ингредиенты
+vending-machine-category-dry-ingredients = сухие ингредиенты
+vending-machine-category-condiments = приправы
+vending-machine-category-cutlery = столовые приборы
+vending-machine-category-tableware = столовая посуда
+vending-machine-category-drinkware = посуда для напитков
+vending-machine-category-kitchen-tools = кухонные принадлежности
 
 # Botanical
-vending-machine-category-fruit-seeds = Семена фруктов
-vending-machine-category-vegetable-seeds = Семена овощей
-vending-machine-category-grain-seeds = Семена зерновых
-vending-machine-category-other-seeds = Прочие семена
-vending-machine-category-gardening-tools = Садовые инструменты
+vending-machine-category-fruit-seeds = семена фруктов
+vending-machine-category-vegetable-seeds = семена овощей
+vending-machine-category-grain-seeds = семена зерновых
+vending-machine-category-other-seeds = прочие семена
+vending-machine-category-gardening-tools = садовые инструменты
 
 # Medical
-vending-machine-category-medicine = Медицина
-vending-machine-category-medical-equipment = Медицинское оборудование
-vending-machine-category-trauma-care = Первая помощь
-vending-machine-category-chemicals = Химикаты
+vending-machine-category-medicine = медицина
+vending-machine-category-medical-equipment = медицинское оборудование
+vending-machine-category-trauma-care = первая помощь
+vending-machine-category-chemicals = химикаты
 
 # Security
-vending-machine-category-security-equipment = Снаряжение СБ
-vending-machine-category-protective-equipment = Средства защиты
-vending-machine-category-restraints = Оковы
-vending-machine-category-shields = Щиты
-vending-machine-category-grenades = Гранаты
-vending-machine-category-ammunition = Боеприпасы
+vending-machine-category-security-equipment = снаряжение СБ
+vending-machine-category-protective-equipment = средства защиты
+vending-machine-category-restraints = средства удержания
+vending-machine-category-shields = щиты
+vending-machine-category-grenades = гранаты
+vending-machine-category-ammunition = боеприпасы
 
 # Engineering
-vending-machine-category-tools = Инструменты
-vending-machine-category-components = Компоненты
-vending-machine-category-equipment = Снаряжение
+vending-machine-category-tools = инструменты
+vending-machine-category-components = компоненты
+vending-machine-category-equipment = снаряжение
 
 # Personnel
-vending-machine-category-office-supplies = Офисные принадлежности
-vending-machine-category-encryption-keys = Ключи шифрования
-vending-machine-category-identification = Идентификация
+vending-machine-category-office-supplies = офисные принадлежности
+vending-machine-category-encryption-keys = ключи шифрования
+vending-machine-category-identification = идентификация
 
 # Recreation
-vending-machine-category-board-games = Настольные игры
+vending-machine-category-board-games = настольные игры
 vending-machine-category-battle-maps = Поля боя
 vending-machine-category-tabletop-supplies = Аксессуары для настолок
 vending-machine-category-plushies = Плюшевые игрушки
