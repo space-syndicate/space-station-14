@@ -7,6 +7,7 @@ using Content.Shared.MassMedia.Components;
 using Content.Shared.Station.Components;
 using Content.Shared.Station.Systems;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Corvax.Tests.Syndicate;
@@ -188,7 +189,10 @@ public sealed class StationGoalTest : GameTest
         var grid = stationSystem.GetLargestGrid(station);
         Assert.That(grid, Is.Not.Null, "The station has no grid to spawn the fax machine on.");
 
-        var coords = entManager.GetComponent<TransformComponent>(grid!.Value).Coordinates;
+        // Use grid-local coordinates so the fax is actually parented to the station's grid.
+        // TransformComponent.Coordinates returns map coordinates here, which can leave the fax on the map
+        // (null GridUid) and make GetOwningStation() fail, so the goal fax is never accepted.
+        var coords = new EntityCoordinates(grid!.Value, 0, 0);
         return entManager.SpawnAttachedTo("FaxMachineCaptain", coords);
     }
 }
