@@ -68,10 +68,10 @@ vending-machine-category-identification = идентификация
 
 # Recreation
 vending-machine-category-board-games = настольные игры
-vending-machine-category-battle-maps = Поля боя
-vending-machine-category-tabletop-supplies = Аксессуары для настолок
-vending-machine-category-plushies = Плюшевые игрушки
+vending-machine-category-battle-maps = игровые поля
+vending-machine-category-tabletop-supplies = игровые аксессуары
+vending-machine-category-plushies = плюшевые игрушки
 
 # Smoking
-vending-machine-category-smoking-products = Курительные изделия
-vending-machine-category-smoking-supplies = Аксессуары для курения
+vending-machine-category-smoking-products = курительные изделия
+vending-machine-category-smoking-supplies = принадлежности для курения
