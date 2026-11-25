@@ -108,7 +108,7 @@ reagent-name-shake-meat = мясной коктейль
 reagent-desc-shakemeat = Молочный коктейль из измельченных кусочков того, что когда-то было живым существом.
 
 reagent-name-shake-robo = робо-коктейль
-reagent-desc-shakerobo = Стёртый в порошок робот, растворенный в молоке, сахаре и сливках.
+reagent-desc-shakerobo = Стёртый в порошок робот, растворённый в молоке и сливках с сахаром.
 
 reagent-name-shake-white = белый коктейль
 reagent-desc-shakewhite = Этот коктейль белый, а не ванильный.
