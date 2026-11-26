@@ -105,7 +105,7 @@ reagent-name-shake-blue = синий молочный коктейль
 reagent-desc-shakeblue = Молочный коктейль, но синий.
 
 reagent-name-shake-meat = мясной коктейль
-reagent-desc-shakemeat = Молочный коктейль из измельченных кусочков того, что когда-то было живым существом.
+reagent-desc-shakemeat = Молочный коктейль из измельчённых кусочков того, что когда-то было живым существом.
 
 reagent-name-shake-robo = робо-коктейль
 reagent-desc-shakerobo = Стёртый в порошок робот, растворённый в молоке и сливках с сахаром.
