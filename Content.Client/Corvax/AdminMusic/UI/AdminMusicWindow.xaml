@@ -1,0 +1,40 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+               Title="{Loc 'admin-music-window-title'}"
+               MinSize="760 480"
+               SetSize="860 560">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <TabContainer Name="Tabs" HorizontalExpand="True" VerticalExpand="True">
+            <!-- LIBRARY TAB -->
+            <BoxContainer Name="LibraryTab" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="10 6 10 6">
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <LineEdit Name="SearchBar" Margin="4" PlaceHolder="{Loc 'admin-music-search'}" HorizontalExpand="True" />
+                    <Button Name="AddButton" Margin="4" Text="{Loc 'admin-music-add'}" />
+                </BoxContainer>
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+                    <ItemList Name="TrackList" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="3" Margin="4" />
+                    <PanelContainer StyleClasses="BackgroundDark" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="2" Margin="4">
+                        <BoxContainer Orientation="Vertical" Margin="8">
+                            <Label Name="NoSelectionLabel" Text="{Loc 'admin-music-no-selection'}" FontColorOverride="#999999" />
+                            <BoxContainer Name="DetailsBox" Orientation="Vertical" Visible="False" VerticalExpand="True">
+                                <Label Name="DetailsTitle" StyleClasses="LabelHeading" ClipText="True" />
+                                <controls:Separator StyleClasses="LowDivider" Margin="0 4" />
+                                <RichTextLabel Name="DetailsText" VerticalExpand="True" />
+                                <Button Name="SettingsButton" Text="{Loc 'admin-music-play-settings'}" Margin="0 4" />
+                                <Button Name="DeleteButton" Text="{Loc 'admin-music-delete'}" StyleClasses="negative" Margin="0 4" />
+                            </BoxContainer>
+                        </BoxContainer>
+                    </PanelContainer>
+                </BoxContainer>
+            </BoxContainer>
+            <!-- ACTIVE TAB -->
+            <BoxContainer Name="ActiveTab" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="10 6 10 6">
+                <Label Name="NoActiveLabel" Text="{Loc 'admin-music-no-active'}" FontColorOverride="#999999" Margin="4" />
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 100" HScrollEnabled="False">
+                    <BoxContainer Name="ActiveList" Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Top" />
+                </ScrollContainer>
+            </BoxContainer>
+        </TabContainer>
+        <Label Name="StatusLabel" Margin="10 2 10 4" FontColorOverride="#ff8888" Visible="False" />
+    </BoxContainer>
+</DefaultWindow>
