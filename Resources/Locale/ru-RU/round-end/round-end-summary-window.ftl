@@ -12,6 +12,7 @@ round-end-summary-window-player-manifest-tab-sort-role = Должность
 round-end-summary-window-player-manifest-tab-sort-player-type = Роль
 round-end-summary-window-player-manifest-tab-sort-player = Игрок
 round-end-summary-window-player-manifest-tab-sort-player-type-antag = Антагонист
+round-end-summary-window-player-manifest-tab-sort-player-type-familiar = Фамильяр
 round-end-summary-window-player-manifest-tab-sort-player-type-crew = Экипаж
 round-end-summary-window-player-manifest-tab-sort-player-type-observer = Наблюдатель
 
