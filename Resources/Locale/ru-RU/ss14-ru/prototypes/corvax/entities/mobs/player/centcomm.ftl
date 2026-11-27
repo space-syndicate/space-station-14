@@ -1,0 +1,12 @@
+ent-RandomHumanoidSpawnerCentcomOfficer = Офицер ЦК
+    .desc = { "" }
+ent-RandomHumanoidSpawnerCentcomRepresentative = Представитель ЦК
+    .desc = { "" }
+ent-RandomHumanoidSpawnerCentcomStaffChief = Начальник штаба ЦК
+    .desc = { "" }
+ent-RandomHumanoidSpawnerSpecopsOfficer = Офицер специальных операций
+    .desc = { "" }
+ent-RandomHumanoidSpawnerNanoTrasenDiplomat = Дипломат NanoTrasen
+    .desc = { "" }
+ent-RandomHumanoidSpawnerBlueshieldOfficer = Офицер "Синий Щит"
+    .desc = { "" }

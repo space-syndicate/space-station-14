@@ -4,13 +4,24 @@
   id: RubberStampIAA
   suffix: DO NOT MAP
   components:
-    - type: Stamp
-      stampedName: stamp-component-stamped-name-iaa
-      stampedColor: "#33CC33"
-      stampState: "paper_stamp-ok"
-    - type: Sprite
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-iaa
+    stampedColor: "#33CC33"
+    stampState: "paper_stamp-ok"
+  - type: Sprite
+    layers:
+    - state: stamp-iaa
       sprite: Corvax/Objects/Misc/stamps.rsi
-      state: stamp-iaa
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: stamp-inhand-left
+      - state: handle-inhand-left
+        color: "#33CC33"
+      right:
+      - state: stamp-inhand-right
+      - state: handle-inhand-right
+        color: "#33CC33"
 
 - type: entity
   name: magistrate's rubber stamp
@@ -23,5 +34,42 @@
     stampedColor: "#eebe35"
     stampState: "paper_stamp-qm"
   - type: Sprite
-    sprite: Corvax/Objects/Misc/stamps.rsi
-    state: stamp-magistrate
+    layers:
+    - state: stamp-magistrate
+      sprite: Corvax/Objects/Misc/stamps.rsi
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: stamp-inhand-left
+      - state: handle-inhand-left
+        color: "#eebe35"
+      right:
+      - state: stamp-inhand-right
+      - state: handle-inhand-right
+        color: "#eebe35"
+
+- type: entity
+  name: specops HQ rubber stamp
+  parent: RubberStampBase
+  id: RubberStampSpecops
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-specops
+    stampedColor: "#454350"
+    stampState: "paper_stamp-lawyer"
+  - type: Sprite
+    layers:
+    - state: stamp-specops
+      sprite: Corvax/Objects/Misc/stamps.rsi
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: stamp-inhand-left
+      - state: handle-inhand-left
+        color: "#454350"
+      right:
+      - state: stamp-inhand-right
+      - state: handle-inhand-right
+        color: "#454350"
+

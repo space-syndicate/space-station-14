@@ -3,19 +3,46 @@
   id: ClothingEyesSalesman
   name: colored glasses
   description: A pair of glasses with uniquely colored lenses. The frame is inscribed with 'Best Salesman 1997'.
+  suffix: Corvax
   components:
-    - type: Sprite
-      sprite: Corvax/Clothing/Eyes/Glasses/salesman.rsi
-    - type: Clothing
-      sprite: Corvax/Clothing/Eyes/Glasses/salesman.rsi
+  - type: Sprite
+    sprite: Corvax/Clothing/Eyes/Glasses/salesman.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Eyes/Glasses/salesman.rsi
 
 - type: entity
   parent: ClothingEyesBase
   id: ClothingEyesBinoclardLenses
   name: binoclard lenses
   description: Shows you know how to sew a lapel and center a back vent.
+  suffix: Corvax
   components:
-    - type: Sprite
-      sprite: Corvax/Clothing/Eyes/Glasses/kim.rsi
-    - type: Clothing
-      sprite: Corvax/Clothing/Eyes/Glasses/kim.rsi
+  - type: Sprite
+    sprite: Corvax/Clothing/Eyes/Glasses/kim.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Eyes/Glasses/kim.rsi
+
+- type: entity
+  parent: [ ClothingEyesGlassesSecurity, ShowMedicalIcons, BaseToggleClothing ]
+  id: ClothingEyesVisorTactical
+  name: tactical visor
+  description: NanoTrasen visor, that allow you to see a lot of tactical information.
+  suffix: Corvax
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Eyes/Glasses/tactical.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Eyes/Glasses/tactical.rsi
+  - type: ShowAccessReaderSettings
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - Inorganic
+    - Silicon
+  - type: ToggleClothing
+    action: ActionToggleNightVision
+    mustEquip: true
+  - type: ComponentToggler
+    components:
+    - type: NightVision
+      relayOverlay: true
