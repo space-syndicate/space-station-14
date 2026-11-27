@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 289.0.0
+  engineVersion: 297.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/22/2026 21:04:53
+  time: 11/26/2026 08:32:09
   entityCount: 1687
 maps: []
 grids:
@@ -6454,8 +6454,8 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         1231:
-        - - DoorStatus
-          - Open
+        - source: DoorStatus
+          sink: Open
     missingComponents:
     - Destructible
     - Construction
@@ -6469,8 +6469,8 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         1478:
-        - - DoorStatus
-          - Trigger
+        - source: DoorStatus
+          sink: Trigger
     missingComponents:
     - Destructible
     - Construction
@@ -8055,8 +8055,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-    missingComponents:
-    - Contraband
 - proto: ComfyChair
   entities:
   - uid: 1371
@@ -8239,14 +8237,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 39.56231,-10.351073
-- proto: DrinkWaterJug
-  entities:
-  - uid: 1390
-    components:
-    - type: Transform
-      parent: 1
-      rot: -1.5707963267948966 rad
-      pos: 36.654926,-5.390104
 - proto: EmergencyMedipen
   entities:
   - uid: 1391
@@ -8444,6 +8434,14 @@ entities:
     - type: Transform
       parent: 1
       pos: 25.5,-10.5
+- proto: JugWater
+  entities:
+  - uid: 1390
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: 36.654926,-5.390104
 - proto: Lantern
   entities:
   - uid: 1417
@@ -9081,63 +9079,63 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         1518:
-        - - Timer
-          - Trigger
+        - source: Timer
+          sink: Trigger
         1517:
-        - - Timer
-          - Trigger
+        - source: Timer
+          sink: Trigger
         1519:
-        - - Timer
-          - Trigger
+        - source: Timer
+          sink: Trigger
         1520:
-        - - Timer
-          - Trigger
+        - source: Timer
+          sink: Trigger
         1480:
-        - - Start
-          - Trigger
+        - source: Start
+          sink: Trigger
         1516:
-        - - Timer
-          - Trigger
+        - source: Timer
+          sink: Trigger
         1434:
-        - - Start
-          - On
-        - - Timer
-          - Off
+        - source: Start
+          sink: On
+        - source: Timer
+          sink: Off
         1426:
-        - - Start
-          - On
-        - - Timer
-          - Off
+        - source: Start
+          sink: On
+        - source: Timer
+          sink: Off
         1230:
-        - - Timer
-          - Close
+        - source: Timer
+          sink: Close
         1348:
-        - - Timer
-          - Trigger
+        - source: Timer
+          sink: Trigger
         1430:
-        - - Start
-          - On
-        - - Timer
-          - Off
+        - source: Start
+          sink: On
+        - source: Timer
+          sink: Off
         1418:
-        - - Start
-          - On
-        - - Timer
-          - Off
+        - source: Start
+          sink: On
+        - source: Timer
+          sink: Off
         1432:
-        - - Start
-          - On
-        - - Timer
-          - Off
+        - source: Start
+          sink: On
+        - source: Timer
+          sink: Off
         1521:
-        - - Timer
-          - Trigger
+        - source: Timer
+          sink: Trigger
         1375:
-        - - Timer
-          - Trigger
+        - source: Timer
+          sink: Trigger
         1515:
-        - - Timer
-          - Trigger
+        - source: Timer
+          sink: Trigger
     - type: DeviceLinkSink
       invokeLimit: 100
       invokeCounter: 101
@@ -9153,20 +9151,20 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         1440:
-        - - Timer
-          - Off
-        - - Start
-          - On
+        - source: Timer
+          sink: Off
+        - source: Start
+          sink: On
         10:
-        - - Start
-          - Toggle
-        - - Start
-          - AutoClose
+        - source: Start
+          sink: Toggle
+        - source: Start
+          sink: AutoClose
         7:
-        - - Start
-          - Toggle
-        - - Start
-          - AutoClose
+        - source: Start
+          sink: Toggle
+        - source: Start
+          sink: AutoClose
     - type: DeviceLinkSink
       invokeCounter: 1
   - uid: 1480
@@ -9179,34 +9177,34 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         1489:
-        - - Start
-          - Trigger
+        - source: Start
+          sink: Trigger
         1490:
-        - - Start
-          - Trigger
+        - source: Start
+          sink: Trigger
         1481:
-        - - Start
-          - Trigger
+        - source: Start
+          sink: Trigger
         1424:
-        - - Start
-          - On
-        - - Timer
-          - Off
+        - source: Start
+          sink: On
+        - source: Timer
+          sink: Off
         1438:
-        - - Start
-          - On
-        - - Timer
-          - Off
+        - source: Start
+          sink: On
+        - source: Timer
+          sink: Off
         1422:
-        - - Start
-          - On
-        - - Timer
-          - Off
+        - source: Start
+          sink: On
+        - source: Timer
+          sink: Off
         1420:
-        - - Start
-          - On
-        - - Timer
-          - Off
+        - source: Start
+          sink: On
+        - source: Timer
+          sink: Off
     - type: DeviceLinkSink
       invokeCounter: 1
     missingComponents:
@@ -9231,16 +9229,16 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         1428:
-        - - Start
-          - On
-        - - Timer
-          - Off
+        - source: Start
+          sink: On
+        - source: Timer
+          sink: Off
         9:
-        - - Timer
-          - DoorBolt
+        - source: Timer
+          sink: DoorBolt
         8:
-        - - Timer
-          - DoorBolt
+        - source: Timer
+          sink: DoorBolt
     - type: DeviceLinkSink
       invokeCounter: 1
 - proto: ShellShotgun
@@ -9285,11 +9283,11 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         1231:
-        - - Pressed
-          - Open
+        - source: Pressed
+          sink: Open
         1230:
-        - - Pressed
-          - Open
+        - source: Pressed
+          sink: Open
 - proto: SignalTimer
   entities:
   - uid: 1489
@@ -9302,8 +9300,8 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         1479:
-        - - Start
-          - Trigger
+        - source: Start
+          sink: Trigger
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: ActiveSignalTimer
@@ -9319,8 +9317,8 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         1482:
-        - - Start
-          - Trigger
+        - source: Start
+          sink: Trigger
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: ActiveSignalTimer

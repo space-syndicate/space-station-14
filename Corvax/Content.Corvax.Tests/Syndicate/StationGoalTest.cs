@@ -5,7 +5,9 @@ using Content.Server.Corvax.StationGoal;
 using Content.Shared.Fax.Components;
 using Content.Shared.MassMedia.Components;
 using Content.Shared.Station.Components;
+using Content.Shared.Station.Systems;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Corvax.Tests.Syndicate;
@@ -56,6 +58,7 @@ public sealed class StationGoalTest : GameTest
 
         var entManager = server.ResolveDependency<IEntityManager>();
         var goalSystem = server.System<StationGoalPaperSystem>();
+        var stationSystem = server.System<StationSystem>();
         var protoManager = server.ResolveDependency<IPrototypeManager>();
 
         EntityUid station = default;
@@ -66,6 +69,10 @@ public sealed class StationGoalTest : GameTest
             var stationQuery = entManager.EntityQueryEnumerator<StationDataComponent>();
             Assert.That(stationQuery.MoveNext(out var stationUid, out _), "Pool did not create a station from the map.");
             station = stationUid;
+
+            // The test map is bare-bones and has no fax machines, so spawn one
+            // that is authorized to receive station goals.
+            SpawnGoalFax(entManager, stationSystem, station);
 
             if (expectNews)
             {
@@ -126,6 +133,7 @@ public sealed class StationGoalTest : GameTest
 
         var entManager = server.ResolveDependency<IEntityManager>();
         var goalSystem = server.System<StationGoalPaperSystem>();
+        var stationSystem = server.System<StationSystem>();
         var protoManager = server.ResolveDependency<IPrototypeManager>();
 
         EntityUid station = default;
@@ -136,6 +144,12 @@ public sealed class StationGoalTest : GameTest
             Assert.That(stationQuery.MoveNext(out var stationUid, out _), "Pool did not create a station from the map.");
             station = stationUid;
 
+            // The test map is bare-bones and has no fax machines, so spawn one
+            // first to make sure this test actually proves something.
+            var spawnedFax = SpawnGoalFax(entManager, stationSystem, station);
+            Assert.That(entManager.HasComponent<FaxMachineComponent>(spawnedFax), Is.True,
+                "Sanity: the spawned fax machine must have a FaxMachineComponent.");
+
             var faxQuery = entManager.EntityQueryEnumerator<FaxMachineComponent>();
             var faxUids = new List<EntityUid>();
             while (faxQuery.MoveNext(out var faxUid, out _))
@@ -144,7 +158,7 @@ public sealed class StationGoalTest : GameTest
             }
 
             Assert.That(faxUids, Is.Not.Empty,
-                "Sanity: the test station must have at least one fax machine, otherwise this test proves nothing.");
+                "Sanity: there must be at least one fax machine, otherwise this test proves nothing.");
 
             foreach (var faxUid in faxUids)
             {
@@ -165,5 +179,20 @@ public sealed class StationGoalTest : GameTest
             Assert.That(result, Is.False,
                 $"SendStationGoal must fail when no fax machine exists on the station, but it returned true for {goalId}.");
         });
+    }
+
+    /// <summary>
+    /// Spawns a fax machine on the station's grid that is authorized to receive station goals.
+    /// </summary>
+    private static EntityUid SpawnGoalFax(IEntityManager entManager, StationSystem stationSystem, EntityUid station)
+    {
+        var grid = stationSystem.GetLargestGrid(station);
+        Assert.That(grid, Is.Not.Null, "The station has no grid to spawn the fax machine on.");
+
+        // Use grid-local coordinates so the fax is actually parented to the station's grid.
+        // TransformComponent.Coordinates returns map coordinates here, which can leave the fax on the map
+        // (null GridUid) and make GetOwningStation() fail, so the goal fax is never accepted.
+        var coords = new EntityCoordinates(grid!.Value, 0, 0);
+        return entManager.SpawnAttachedTo("FaxMachineCaptain", coords);
     }
 }
